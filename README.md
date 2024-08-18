@@ -1,4 +1,4 @@
-# 28-Alphas-Later-for-v1
+# 28 Alphas Later - now for v1
 Will you survive?
 
 The idea behind this mod is to slow progression, make traders less powerful, and generally extend the time for a playthrough, while keeping the vanilla look and feel.
