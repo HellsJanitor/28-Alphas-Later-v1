@@ -1,0 +1,29 @@
+<HellsJanitor>
+	<append xpath="/materials">
+	<material id="Mtorch">
+		<property name="damage_category" value="wood"/>
+		<property name="surface_category" value="wood"/>
+		<property name="forge_category" value="wood_scraps"/>
+		<property name="Hardness" type="float" value="1"/>
+		<property name="stepsound" value="wood"/>
+		<property name="fertile_level" value="0"/>
+		<property name="stability_glue" value="1"/>
+		<property name="Mass" type="int" value="1"/>
+		<property name="MaxDamage" value="1"/>
+		<property name="Experience" value="0"/>
+	</material>
+	
+	<material id="MtorchNoGlue">
+		<property name="damage_category" value="wood"/>
+		<property name="surface_category" value="wood"/>
+		<property name="forge_category" value="wood_scraps"/>
+		<property name="Hardness" type="float" value="1"/>
+		<property name="stepsound" value="wood"/>
+		<property name="fertile_level" value="0"/>
+		<property name="stability_glue" value="0"/>
+		<property name="Mass" type="int" value="1"/>
+		<property name="MaxDamage" value="1"/>
+		<property name="Experience" value="0"/>
+	</material>
+	</append>
+</HellsJanitor>

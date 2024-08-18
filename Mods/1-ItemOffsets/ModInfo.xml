@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<xml>
+	<Name value="28AL_ItemOffsets" />
+	<DisplayName value="28 Days Later - Item Offsets"/>
+	<Description value="Enables adjustment of item prefabs' pos/rot on a per-item basis." />
+	<Author value="Redbeardt" />
+	<Version value="1.0.0.0" />
+	<Website value="" />
+</xml>

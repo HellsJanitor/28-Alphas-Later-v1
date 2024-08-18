@@ -1,0 +1,5 @@
+<xml>
+	<set xpath="//window[@name='windowResponses']/grid/@rows">20</set>
+	<set xpath="//window[@name='windowResponses']/@height">440</set>
+	<set xpath="//window[@name='windowResponses']/@pos">-650,300</set>
+</xml>

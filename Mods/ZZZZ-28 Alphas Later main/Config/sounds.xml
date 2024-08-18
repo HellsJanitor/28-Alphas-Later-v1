@@ -1,0 +1,51 @@
+<config>
+	<append xpath="/Sounds">
+		<SoundDataNode name="BeehiveOpen"> <AudioSource name="Sounds/AudioSource_Interact"/>
+			<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+			<AudioClip ClipName="#@modfolder:Assets/idc_beehive.unity3d?BeehiveSoundOpen.wav" />
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> 
+		</SoundDataNode>
+		
+		<SoundDataNode name="BeehiveProduce"> <AudioSource name="Sounds/AudioSource_VO"/>
+			<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+			<AudioClip ClipName="#@modfolder:Assets/idc_beehive.unity3d?BeehiveSoundProduction.wav" />
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> 
+		</SoundDataNode>
+
+		<SoundDataNode name="tablesaw_start_click">
+			<AudioSource name="Sounds/AudioSource_Interact"/>
+			<AudioClip ClipName="#@modfolder:Resources/Tablesaw.unity3d?Tablesaw_Start.wav"/>
+			<LocalCrouchVolumeScale value="1.0"/>
+			<CrouchNoiseScale value="0.5"/>
+			<NoiseScale value="1"/>
+			<MaxVoices value="10"/>
+			<MaxEntities name="30"/>
+			<MaxRepeatRate value="0.01"/>
+			</SoundDataNode>
+			
+		<SoundDataNode name="tablesaw_lp">			
+			<AudioSource name="Sounds/AudioSource_Interact"/>
+			<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+			<AudioClip ClipName="#@modfolder:Resources/Tablesaw.unity3d?Tablesaw_Run.wav" Loop="true"/>
+			<LocalCrouchVolumeScale value="1.0"/>
+			<CrouchNoiseScale value="0.5"/>
+			<NoiseScale value="1"/>
+			<MaxVoices value="10"/>
+			<MaxEntities name="30"/>
+			<MaxRepeatRate value="0.01"/>
+		</SoundDataNode>			
+
+		<SoundDataNode name="tablesaw_complete">
+			<AudioSource name="Sounds/AudioSource_Interact"/>
+			<AudioClip ClipName="#@modfolder:Resources/Tablesaw.unity3d?Tablesaw_Stop.wav"/>
+			<LocalCrouchVolumeScale value="1.0"/>
+			<CrouchNoiseScale value="0.5"/>
+			<NoiseScale value="1"/>
+			<MaxVoices value="10"/>
+			<MaxEntities name="30"/>
+			<MaxRepeatRate value="0.01"/>
+			</SoundDataNode>
+	</append>
+	
+	<set xpath="//SoundDataNode[@name='suv_horn']//AudioClip[@ClipName='Sounds/Vehicles/Suv/truck_horn']/@ClipName">#@modfolder:Resources/4x4horn.unity3d?truckHorn</set>
+</config>

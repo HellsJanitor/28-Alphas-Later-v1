@@ -1,0 +1,19 @@
+<news>
+<entry>
+        <date>2024-06-12 22:00:00Z</date><!-- year/month/day time GMT -->
+        <title>Latest Updates</title>
+            <text>• Fixed "super rad" colours not applying properly to certain zombies
+					• Fixed super-rad zombies reverting to radiated colours when decapped
+					• All "fat" zombies now have a vomit attack
+					• Fixed bug with Well Lit showing even when batteries/fuel are depleted from light source
+					• Reworked the UI a little more - fixed some scaling issues
+					• Fixed the "double laser" from the laser sight mod
+					• Removed a few mutated entities due to performance issues
+					• Halved the level for action skills. Max level is now 50, not 100
+					• Lowered the number of zombie nightspawns across all biomes at later gamestages
+					• Fixed headshot damage multiplier applying to non-zombies
+					• Well Rested buff now counts up quicker, and counts down slower (lasts longer)
+            </text>
+        <link>https://community.7daystodie.com/topic/34695-28-alphas-later/</link>
+    </entry>
+</news>

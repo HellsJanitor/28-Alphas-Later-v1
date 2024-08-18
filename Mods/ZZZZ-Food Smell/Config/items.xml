@@ -1,0 +1,39 @@
+<Hells_Janitor>
+	<append xpath="//item[not (@name='foodRawMeat')]/effect_group[@name='Food Tier 0']">
+		<display_value name="dSmell" value="0"/>
+	</append>
+	
+	<append xpath="//item[@name='foodRawMeat']/effect_group[@name='Food Tier 0']">
+		<display_value name="dSmell" value="10"/>
+	</append>
+	
+	<append xpath="//item[not (@name='foodEggBoiled')]/effect_group[@name='Food Tier 0/1']">
+		<display_value name="dSmell" value="5"/>
+	</append>
+	
+	<append xpath="//item[@name='foodGrilledMeat']/effect_group[@name='Food Tier 1']">
+		<display_value name="dSmell" value="5"/>
+	</append>
+	
+	<append xpath="//item[@name='foodBoiledMeat']/effect_group[@name='Food Tier 1']">
+		<display_value name="dSmell" value="5"/>
+	</append>
+	
+	<append xpath="//item[@name='foodBaconAndEggs']/effect_group[@name='Food Tier 1']">
+		<display_value name="dSmell" value="4"/>
+	</append>
+	
+	<append xpath="//item/effect_group[@name='Food Tier 2']">
+		<display_value name="dSmell" value="4"/>
+	</append>
+	
+	<append xpath="//item/effect_group[@name='Food Tier 3']">
+		<display_value name="dSmell" value="3"/>
+	</append>
+	
+	<append xpath="//item/effect_group[@name='Food Tier 4']">
+		<display_value name="dSmell" value="2"/>
+	</append>
+	
+	
+</Hells_Janitor>

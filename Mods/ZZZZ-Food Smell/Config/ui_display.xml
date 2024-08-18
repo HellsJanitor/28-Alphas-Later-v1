@@ -1,0 +1,5 @@
+<Hells_Janitor>
+	<append xpath="//item_display_info[@display_type='food']">
+		<display_entry name="dSmell" title_key="statSmell"/>
+	</append>	
+</Hells_Janitor>

@@ -1,0 +1,124 @@
+<Hells_Janitor>
+	<!-- *** adds a chance to harvest a battery from various blocks *** -->
+	<insertafter xpath="//block[@name='wallClock']//drop[@name='resourceElectricParts']">
+		<drop event="Destroy" name="resourceNiCdBattery" count="1" prob=".3" tag="salvageHarvest"/>
+	</insertafter>
+	<append xpath="//block[contains(@name,'lanternDecor') and not (contains(@name,'White')) and not (contains(@name,'player'))]">
+		<drop event="Destroy" name="resourceNiCdBattery" count="1" prob=".3" tag="salvageHarvest"/>
+	</append>
+	<insertafter xpath="//block[@name='cntVendingMachine2Broken']//drop[@name='resourceScrapIron']">
+		<drop event="Destroy" name="resourceNiCdBattery" count="1" prob=".3" tag="salvageHarvest"/>
+	</insertafter>
+	
+	<append xpath="//block[starts-with(@name,'flashlight')]">
+		<drop event="Destroy" name="resourceNiCdBattery" count="1" prob=".3" tag="salvageHarvest"/>
+	</append>
+	
+	<append xpath="/blocks">
+	<block name="placedLitTorch3Harvest">
+		<property name="Material" value="Mtorch"/>
+		<property name="PlantGrowing.FertileLevel" value="0"/>
+		<property name="CustomIcon" value="wallTorchLight"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="DisplayInfo" value="Description"/>
+		<property name="Shape" value="ModelEntity"/>
+		<property name="Model" value="#@modfolder:Resources/walltorch.unity3d?torch_wallCustom.prefab"/>
+		<property name="WaterFlow" value="permitted"/>
+		<property name="Collide" value="melee"/>
+		<property name="IsTerrainDecoration" value="true"/>
+		<property name="VehicleHitScale" value=".1"/>
+		<property name="HarvestOverdamage" value="false"/>
+		<drop event="Harvest" name="spentWallTorch" count="1" />		
+		<drop event="Destroy" name="spentWallTorch" count="1"/>
+		<drop event="Fall" name="resourceWoodScraps" count="0" prob="1" stick_chance="0"/>
+		<property name="SortOrder1" value="B951"/>
+		<property name="SortOrder2" value="0004"/>
+		<property name="FilterTags" value="MC_playerBlocks,SC_electrical"/>
+	</block>
+	
+	<block name="placedUnlitLantern">
+		<property name="Material" value="Mmetal_thin"/>
+		<property name="PlantGrowing.FertileLevel" value="0"/>
+		<property name="CustomIcon" value="lanternDecorLightWhite"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="DisplayInfo" value="Description"/>
+		<property name="Shape" value="ModelEntity"/>
+		<property name="Model" value="#@modfolder:Resources/lanternunlit.unity3d?lantern_02Unlit.prefab"/>
+		<property name="WaterFlow" value="permitted"/>
+		<property name="Collide" value="melee"/>
+		<property name="IsTerrainDecoration" value="true"/>
+		<property name="VehicleHitScale" value=".1"/>
+		<property name="HarvestOverdamage" value="false"/>
+		<property name="CanPickup" value="true" param1="placedUnlitLantern"/>
+		<drop event="Harvest" name="placedUnlitLantern" count="1" />		
+		<drop event="Destroy" name="placedUnlitLantern" count="1"/>
+		<drop event="Fall" name="resourceWoodScraps" count="0" prob="1" stick_chance="0"/>
+		<property name="SortOrder1" value="B951"/>
+		<property name="SortOrder2" value="0004"/>
+		<property name="FilterTags" value="MC_playerBlocks,SC_electrical"/>
+	</block>
+	</append>
+	
+	<set xpath="//block[@name='wallTorchLight']">
+		<property name="Extends" value="cropsGrowingMaster" param1="CustomIcon,DescriptionKey,MultiBlockDim,OnlySimpleRotations"/>
+		<property name="CustomIcon" value="wallTorchLight"/>
+		<property name="PlantGrowing.GrowthRate" value="95.0"/>
+		<property name="PlantGrowing.FertileLevel" value="0"/>		
+		<property name="PlantGrowing.Next" value="placedLitTorch3Harvest"/>
+		<property name="DisplayInfo" value="Name"/>
+		<property name="Material" value="Mtorch"/>
+		<property name="Shape" value="ModelEntity"/>
+		<property name="Model" value="Entities/Lighting/torch_wallPrefab"/>
+		<property name="LightOpacity" value="0"/>
+		<property name="Place" value="Torch"/>
+		<property name="Collide" value="melee"/>
+		<property name="EconomicValue" value="0"/>
+		<property name="HarvestOverdamage" value="false"/>
+		<drop event="Destroy" name="meleeToolTorch" count="1"/>
+		<property name="SortOrder1" value="B951"/>
+		<property name="SortOrder2" value="0002"/>
+		<property name="Group" value="Building,advBuilding"/>
+	</set>
+	
+	<set xpath="//block[@name='wallTorchLightPlayer']">
+		<property name="Extends" value="cropsGrowingMaster" param1="CustomIcon,DescriptionKey,MultiBlockDim,OnlySimpleRotations"/>
+		<property name="CustomIcon" value="wallTorchLight"/>
+		<property name="PlantGrowing.GrowthRate" value="95.0"/>
+		<property name="PlantGrowing.FertileLevel" value="0"/>		
+		<property name="PlantGrowing.Next" value="placedLitTorch3Harvest"/>
+		<property name="DisplayInfo" value="Name"/>
+		<property name="Material" value="Mtorch"/>
+		<property name="Shape" value="ModelEntity"/>
+		<property name="Model" value="Entities/Lighting/torch_wall_playerPrefab"/>
+		<property name="LightOpacity" value="0"/>
+		<property name="Place" value="Torch"/>
+		<property name="Collide" value="melee"/>
+		<property name="EconomicValue" value="0"/>
+		<property name="HarvestOverdamage" value="false"/>
+		<drop event="Destroy" name="meleeToolTorch" count="1"/>
+		<property name="SortOrder1" value="B951"/>
+		<property name="SortOrder2" value="0002"/>
+		<property name="Group" value="Building,advBuilding"/>
+	</set>
+	
+	<set xpath="//block[@name='lanternDecorLightWhite_player']">
+		<property name="Extends" value="cropsGrowingMaster" param1="CustomIcon,DescriptionKey,MultiBlockDim,OnlySimpleRotations"/>
+		<property name="CustomIcon" value="lanternDecorLightWhite"/>
+		<property name="PlantGrowing.GrowthRate" value="95.0"/>
+		<property name="PlantGrowing.FertileLevel" value="0"/>		
+		<property name="PlantGrowing.Next" value="placedUnlitLantern"/>
+		<property name="DisplayInfo" value="Name"/>
+		<property name="Material" value="Mmetal_thin"/>
+		<property name="Shape" value="ModelEntity"/>
+		<property name="Model" value="Entities/Lighting/lantern_02PlayerPrefab"/>
+		<property name="LightOpacity" value="0"/>
+		<property name="Place" value="TowardsPlacer"/>
+		<property name="Collide" value="melee"/>
+		<property name="EconomicValue" value="0"/>
+		<property name="HarvestOverdamage" value="false"/>
+		<drop event="Destroy" name="lanternDecorLightWhite_player" count="1"/>
+		<property name="SortOrder1" value="B951"/>
+		<property name="SortOrder2" value="0002"/>
+		<property name="Group" value="Building,advBuilding"/>
+	</set>
+</Hells_Janitor>

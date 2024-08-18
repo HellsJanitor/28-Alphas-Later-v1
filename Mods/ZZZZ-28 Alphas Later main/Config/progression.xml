@@ -1,0 +1,360 @@
+<configs>
+	<!-- search find all *** for changes -->
+	
+	<!-- *** more XP per level *** -->
+	<set xpath="/progression/level[@max_level='300']/@exp_to_level">12500</set>
+	
+	<!-- *** change to Nightstalker Adrenaline Thief *** -->
+	<set xpath="/progression/perks/book[@name='perkNightStalkerThiefAdrenaline']/effect_group/passive_effect[@name='CarryCapacity']/@value">30</set>
+	
+	<!-- *** acid from car batteries unlocked with Wasteland treasures Vol. 3 *** -->
+	<append xpath="/progression/perks/book[@name='perkWasteTreasuresAcid']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="resourceAcid"/>
+	</append>
+	
+	<!-- *** rad removing throwables unlocks *** -->
+	<set xpath="//crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT1-1,explosivesT1-2,explosivesT1-3']//unlock_entry[@item='thrownAmmoPipeBomb']/@item">thrownAmmoPipeBomb,thrownAmmoAntiRadPipeBomb</set>
+	<set xpath="//crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT1-1,explosivesT1-2,explosivesT1-3']//unlock_entry[@item='thrownGrenade']/@item">thrownGrenade,thrownAntiRadGrenade</set>
+	<set xpath="//crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT2-1,explosivesT2-2,explosivesT2-3']//unlock_entry[@item='thrownGrenadeContact']/@item">thrownGrenadeContact,thrownGrenadeAntiRadContact</set>
+	
+	<set xpath="//crafting_skill[@name='craftingExplosives']/effect_group//passive_effect[@tags='thrownAmmoPipeBomb']/@tags">thrownAmmoPipeBomb,thrownAmmoAntiRadPipeBomb</set>
+	<set xpath="//crafting_skill[@name='craftingExplosives']/effect_group//passive_effect[@tags='thrownGrenade']/@tags">thrownGrenade,thrownAntiRadGrenade</set>
+	<set xpath="//crafting_skill[@name='craftingExplosives']/effect_group//passive_effect[@tags='thrownGrenadeContact']/@tags">thrownGrenadeContact,thrownGrenadeAntiRadContact</set>
+	
+	<!-- *** vehicle bundle unlocks *** -->
+	<set xpath="//crafting_skill[@name='craftingVehicles']/effect_group//passive_effect[2]/@tags">vehicleMinibikeChassis,vehicleMinibikeHandlebars,carBattery,resourceOil,ammoGasCan,MinibikeBundle</set>
+	<set xpath="//crafting_skill[@name='craftingVehicles']/effect_group//passive_effect[3]/@tags">vehicleMotorcycleChassis,vehicleMotorcycleHandlebars,ammoGasCanBundle,MotorcycleBundle</set>
+	<set xpath="//crafting_skill[@name='craftingVehicles']/effect_group//passive_effect[4]/@tags">vehicle4x4TruckChassis,vehicle4x4TruckAccessories,4x4Bundle</set>
+	<set xpath="//crafting_skill[@name='craftingVehicles']/effect_group//passive_effect[5]/@tags">vehicleGyroCopterChassis,vehicleGyroCopterAccessories,GyroBundle</set>
+	
+	<!-- *** Urban Combat Vol. 2 unlocks *** -->
+	<set xpath="/progression/perks/book[@name='perkUrbanCombatCigar']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">modGunBrassCatcher</set>
+	
+	<!-- *** removes harvesting boost and bonus from crops (lines 47 & 48) *** -->
+	<set xpath="//perk[@name='perkLivingOffTheLand']">
+	<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="1" desc_key="reqFortitudeLevel01"/></level_requirements>
+		<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="3" desc_key="reqFortitudeLevel03"/></level_requirements>
+		<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="5" desc_key="reqFortitudeLevel05"/></level_requirements>
+		<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="7" desc_key="reqFortitudeLevel07"/></level_requirements>
+		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10" desc_key="reqFortitudeLevel10"/></level_requirements>
+
+		<effect_group>
+			<passive_effect name="CraftingTier" operation="base_set" level="0,3" value="0,3" tags="perkLivingOffTheLandCrafting"/><!-- fake crafting perk that is used to scale resources -->
+
+			<!-- <passive_effect name="HarvestCount" operation="perc_add" level="1,2,3" value="0,0,0" tags="cropHarvest,wildCropsHarvest"/> -->
+			<!-- <passive_effect name="HarvestCount" operation="base_set" level="2,3" value="1,1" tags="bonusCropHarvest"/> -->
+
+			<!-- Increase the chance to find seeds with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="seedSkill"/>
+
+			<!-- Increase the chance to find seed crafting skill magazines with each perk rank up to crafting skill 20 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="seedCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingSeeds" operation="LT" value="20"/>
+			</passive_effect>
+
+			<!-- Once seed crafting skill reaches 20, set the probability bonus of finding seed crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="seedCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingSeeds" operation="Equals" value="20"/>
+			</passive_effect>
+
+			<effect_description level="1" desc_key="perkLivingOffTheLandRank1Desc" long_desc_key="perkLivingOffTheLandRank1LongDesc"/>
+			<effect_description level="2" desc_key="perkLivingOffTheLandRank2Desc" long_desc_key="perkLivingOffTheLandRank2LongDesc"/>
+			<effect_description level="3" desc_key="perkLivingOffTheLandRank3Desc" long_desc_key="perkLivingOffTheLandRank3LongDesc"/>
+			<effect_description level="4" desc_key="perkLivingOffTheLandRank4Desc" long_desc_key="perkLivingOffTheLandRank4LongDesc"/>
+			<effect_description level="5" desc_key="perkLivingOffTheLandRank5Desc" long_desc_key="perkLivingOffTheLandRank5LongDesc"/>
+		</effect_group>	
+	</set>
+	
+	<!-- *** reduce lockpick break chance *** -->
+	<set xpath="//perk[@name='perkLockPicking']/effect_group//passive_effect[@name='LockPickBreakChance']/@value">.3,.5</set>
+	
+	<!-- *** reduced dismember chance *** -->
+	<set xpath="//attribute//effect_group//passive_effect[@name='DismemberChance']/@value">.01,.09</set>
+	
+	<!-- *** antivenom crafting added *** -->
+	<remove xpath="//crafting_skill[@name='craftingMedical']"/>
+	<insertafter xpath="//crafting_skill[@name='craftingArmor']">
+	<crafting_skill name="craftingMedical" max_level="100" parent="attCrafting" name_key="craftingMedicalName" desc_key="craftingMedicalDesc" long_desc_key="craftingMedicalLongDesc" icon="ui_game_symbol_medical">
+
+		<display_entry icon="medicalFirstAidBandage,antivenom,drugFortBites" name_key="medicalT1-1,medicalT1-2,medicalT1-3" has_quality="false" unlock_level="5,10,15" >
+			<unlock_entry item="medicalFirstAidBandage" unlock_tier="1" />
+			<unlock_entry item="antivenom" unlock_tier="2" />
+			<unlock_entry item="drugFortBites" unlock_tier="3" />
+		</display_entry>
+		<display_entry icon="medicalPlasterCast,drugHerbalAntibiotics,drugRecog" name_key="medicalT2-1,medicalT2-2,medicalT2-3" has_quality="false" unlock_level="20,30,40" >
+			<unlock_entry item="medicalPlasterCast" unlock_tier="1" />
+			<unlock_entry item="drugHerbalAntibiotics" unlock_tier="2" />
+			<unlock_entry item="drugRecog" unlock_tier="3" />
+		</display_entry>
+		<display_entry icon="medicalFirstAidKit,drugAntibiotics,drugSteroids,drugTheCure" name_key="medicalT3-1,medicalT3-2,medicalT3-3,medicalT3-4" has_quality="false" unlock_level="50,60,75,100" >
+			<unlock_entry item="medicalFirstAidKit" unlock_tier="1" />
+			<unlock_entry item="drugAntibiotics" unlock_tier="2" />
+			<unlock_entry item="drugSteroids" unlock_tier="3" />
+			<unlock_entry item="TheCure" unlock_tier="4" />
+		</display_entry>
+
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="medicalFirstAidBandage"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="antivenom"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="15,100" value="1" tags="drugFortBites"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="medicalPlasterCast"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="drugHerbalAntibiotics"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="40,100" value="1" tags="drugRecog"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="medicalFirstAidKit"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="drugAntibiotics"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="drugSteroids"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1" tags="TheCure"/>
+		</effect_group>
+	</crafting_skill>
+	</insertafter>
+	<!-- <set xpath="//crafting_skill[@name='craftingMedical']//display_entry[1]/@icon">medicalFirstAidBandage,drugFortBites,antivenom</set>
+	<set xpath="//crafting_skill[@name='craftingMedical']/display_entry[1]//unlock_entry[2]/@item">antivenom</set>
+	<insertafter xpath="//crafting_skill[@name='craftingMedical']/display_entry[1]//unlock_entry[2]">
+		<unlock_entry item="drugFortBites" unlock_tier="3" />
+	</insertafter>
+	<set xpath="//crafting_skill[@name='craftingMedical']/effect_group//passive_effect[2]/@tags">antivenom</set>
+	<insertafter xpath="//crafting_skill[@name='craftingMedical']/effect_group//passive_effect[2]">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="15,100" value="1" tags="drugFortBites"/>
+	</insertafter> -->
+	
+	<!-- *** remove dew collector from crafting progresion *** -->	
+	<remove xpath="//crafting_skill[@name='craftingWorkstations']/display_entry[1]//unlock_entry[1]"/>
+	<remove xpath="//crafting_skill[@name='craftingWorkstations']/effect_group//passive_effect[1]"/>
+	
+	<!-- *** new dew & rain collector *** -->
+	<insertbefore xpath="/progression//crafting_skill[@name='craftingWorkstations']/display_entry[1]//unlock_entry[@item='forge']">
+		<unlock_entry item="cntAdvancedDewCollector" unlock_tier="1" />
+		<unlock_entry item="cntRainCollector" unlock_tier="1" />
+	</insertbefore>
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="cntAdvancedDewCollector"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="cntRainCollector"/>
+	</append>
+	
+	<!-- *** Better Barter & Daring Adventurer removed from skill tree - now a "passive" unlock *** -->	
+	<remove xpath="//perk[@name='perkBetterBarter']"/>
+	<remove xpath="//perk[@name='perkDaringAdventurer']"/>
+	
+	<!-- *** Single player version of Charismatic Nature, "Survival Instinct" added *** -->
+	<set xpath="//perk[@name='perkCharismaticNature']/@icon">ui_game_symbol_allies</set>	
+	<insertbefore xpath="//perk[@name='perkCharismaticNature']">
+	<perk name="perkSurvivalInstinct" max_level="5" parent="skillIntellectInfluence" name_key="perkSurvivalInstinctName" desc_key="perkSurvivalInstinctDesc" icon="ui_game_symbol_talk">
+		<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="2" desc_key="reqIntellectLevel02"/>
+		<requirement name="ProgressionLevel" progression_name="perkCharismaticNature" operation="LTE" value="0" desc_key="reqCharismaticNatureLevel00"/></level_requirements>
+		<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="4" desc_key="reqIntellectLevel04"/>
+		<requirement name="ProgressionLevel" progression_name="perkCharismaticNature" operation="LTE" value="0" desc_key="reqCharismaticNatureLevel00"/></level_requirements>
+		<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="6" desc_key="reqIntellectLevel06"/>
+		<requirement name="ProgressionLevel" progression_name="perkCharismaticNature" operation="LTE" value="0" desc_key="reqCharismaticNatureLevel00"/></level_requirements>
+		<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="8" desc_key="reqIntellectLevel08"/>
+		<requirement name="ProgressionLevel" progression_name="perkCharismaticNature" operation="LTE" value="0" desc_key="reqCharismaticNatureLevel00"/></level_requirements>
+		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10" desc_key="reqIntellectLevel10"/>
+		<requirement name="ProgressionLevel" progression_name="perkCharismaticNature" operation="LTE" value="0" desc_key="reqCharismaticNatureLevel00"/></level_requirements>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="SurvivalInstinctLevel" operation="set" value="1" target="self" target_tags="player">
+				<requirement name="ProgressionLevel" progression_name="perkSurvivalInstinct" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" target="self" operation="LT" value="1"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="SurvivalInstinctLevel" operation="set" value="2" target="self" target_tags="player">
+				<requirement name="ProgressionLevel" progression_name="perkSurvivalInstinct" operation="Equals" value="2"/>
+				<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" target="self" operation="LT" value="2"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="SurvivalInstinctLevel" operation="set" value="3" target="self" target_tags="player">
+				<requirement name="ProgressionLevel" progression_name="perkSurvivalInstinct" operation="Equals" value="3"/>
+				<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" target="self" operation="LT" value="3"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="SurvivalInstinctLevel" operation="set" value="4" target="self" target_tags="player">
+				<requirement name="ProgressionLevel" progression_name="perkSurvivalInstinct" operation="Equals" value="4"/>
+				<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" target="self" operation="LT" value="4"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="SurvivalInstinctLevel" operation="set" value="5" target="self" target_tags="player">
+				<requirement name="ProgressionLevel" progression_name="perkSurvivalInstinct" operation="GTE" value="5"/>
+				<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" target="self" operation="LT" value="5"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfProgressionUpdate" action="AddBuff" buff="buffPerkSurvivalInstinct" target="self" target_tags="player">
+				<requirement name="ProgressionLevel" progression_name="perkSurvivalInstinct" operation="GTE" value="1"/>
+				<requirement name="ProgressionLevel" progression_name="perkCharismaticNature" operation="LTE" value="0" desc_key="reqSurvivalInstinctLevel00"/>
+			</triggered_effect>
+
+			<!-- testing
+			<triggered_effect trigger="onSelfProgressionUpdate" action="LogMessage" message="buff triggered"/>
+			-->
+
+			<effect_description level="1" desc_key="perkSurvivalInstinctRank1Desc" long_desc_key="perkSurvivalInstinctRank1LongDesc"/>
+			<effect_description level="2" desc_key="perkSurvivalInstinctRank2Desc" long_desc_key="perkSurvivalInstinctRank2LongDesc"/>
+			<effect_description level="3" desc_key="perkSurvivalInstinctRank3Desc" long_desc_key="perkSurvivalInstinctRank3LongDesc"/>
+			<effect_description level="4" desc_key="perkSurvivalInstinctRank4Desc" long_desc_key="perkSurvivalInstinctRank4LongDesc"/>
+			<effect_description level="5" desc_key="perkSurvivalInstinctRank5Desc" long_desc_key="perkSurvivalInstinctRank5LongDesc"/>
+		</effect_group>
+	</perk>
+	</insertbefore>	
+	
+	<set xpath="//perk[@name='perkCharismaticNature']">
+	<!-- <perk name="perkCharismaticNature" max_level="5" parent="skillIntellectInfluence" name_key="perkCharismaticNatureName" desc_key="perkCharismaticNatureDesc" icon="ui_game_symbol_talk"> -->
+		<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="5" desc_key="reqIntellectLevel05"/>
+		<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" operation="LTE" value="0" desc_key="reqSurvivalInstinctLevel00"/></level_requirements>
+		<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="7" desc_key="reqIntellectLevel07"/>
+		<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" operation="LTE" value="0" desc_key="reqSurvivalInstinctLevel00"/></level_requirements>
+		<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="8" desc_key="reqIntellectLevel08"/>
+		<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" operation="LTE" value="0" desc_key="reqSurvivalInstinctLevel00"/></level_requirements>
+		<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="9" desc_key="reqIntellectLevel09"/>
+		<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" operation="LTE" value="0" desc_key="reqSurvivalInstinctLevel00"/></level_requirements>
+		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10" desc_key="reqIntellectLevel10"/>
+		<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" operation="LTE" value="0" desc_key="reqSurvivalInstinctLevel00"/></level_requirements>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="CharismaticNatureLevel" operation="set" value="1" target="selfOtherPlayers" target_tags="ally,party">
+				<requirement name="ProgressionLevel" progression_name="perkCharismaticNature" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="CharismaticNatureLevel" target="other" operation="LT" value="1"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="CharismaticNatureLevel" operation="set" value="2" target="selfOtherPlayers" target_tags="ally,party">
+				<requirement name="ProgressionLevel" progression_name="perkCharismaticNature" operation="Equals" value="2"/>
+				<requirement name="CVarCompare" cvar="CharismaticNatureLevel" target="other" operation="LT" value="2"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="CharismaticNatureLevel" operation="set" value="3" target="selfOtherPlayers" target_tags="ally,party">
+				<requirement name="ProgressionLevel" progression_name="perkCharismaticNature" operation="Equals" value="3"/>
+				<requirement name="CVarCompare" cvar="CharismaticNatureLevel" target="other" operation="LT" value="3"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="CharismaticNatureLevel" operation="set" value="4" target="selfOtherPlayers" target_tags="ally,party">
+				<requirement name="ProgressionLevel" progression_name="perkCharismaticNature" operation="GTE" value="4"/>
+				<requirement name="CVarCompare" cvar="CharismaticNatureLevel" target="other" operation="LT" value="4"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="CharismaticNatureLevel" operation="set" value="5" target="selfOtherPlayers" target_tags="ally,party">
+				<requirement name="ProgressionLevel" progression_name="perkCharismaticNature" operation="GTE" value="5"/>
+				<requirement name="CVarCompare" cvar="CharismaticNatureLevel" target="other" operation="LT" value="5"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfProgressionUpdate" action="AddBuff" buff="buffPerkCharismaticNature" target="selfOtherPlayers" target_tags="ally,party">
+				<requirement name="ProgressionLevel" progression_name="perkCharismaticNature" operation="GTE" value="1"/>
+				<requirement name="ProgressionLevel" progression_name="perkSurvivalInstinct" operation="LTE" value="0"/>
+			</triggered_effect>
+
+			<effect_description level="1" desc_key="perkCharismaticNatureRank1Desc" long_desc_key="perkCharismaticNatureRank1LongDesc"/>
+			<effect_description level="2" desc_key="perkCharismaticNatureRank2Desc" long_desc_key="perkCharismaticNatureRank2LongDesc"/>
+			<effect_description level="3" desc_key="perkCharismaticNatureRank3Desc" long_desc_key="perkCharismaticNatureRank3LongDesc"/>
+			<effect_description level="4" desc_key="perkCharismaticNatureRank4Desc" long_desc_key="perkCharismaticNatureRank4LongDesc"/>
+			<effect_description level="5" desc_key="perkCharismaticNatureRank5Desc" long_desc_key="perkCharismaticNatureRank5LongDesc"/>
+		</effect_group>
+	</set>
+	
+	<!-- *** new food crafting unlocks *** -->
+	<remove xpath="//crafting_skill[@name='craftingFood']"/>
+	<insertafter xpath="//crafting_skill[@name='craftingMedical']">
+	<crafting_skill name="craftingFood" max_level="100" parent="attCrafting" name_key="craftingFoodName" desc_key="craftingFoodDesc" long_desc_key="craftingFoodLongDesc" icon="ui_game_symbol_fork">
+
+		<display_entry icon="foodCornOnTheCob,foodCornBread,foodGrilledMeat,foodBoiledMeat,foodBaconAndEggs" name_key="foodT1-1,foodT1-2,foodT1-3,foodT1-4,foodT1-5" has_quality="false" unlock_level="2,4,6,8,10" >
+			<unlock_entry item="foodCornOnTheCob,foodBakedPotato" unlock_tier="1" />
+			<unlock_entry item="foodCornBread,drinkJarGoldenRodTea" unlock_tier="2" />
+			<unlock_entry item="foodGrilledMeat,drinkJarRedTea" unlock_tier="3" />
+			<unlock_entry item="foodBoiledMeat,drinkJarYuccaJuice" unlock_tier="4" />
+			<unlock_entry item="foodBaconAndEggs,drinkJarCoffee" unlock_tier="5" />
+		</display_entry>
+		<display_entry icon="foodPumpkinBread,foodPumpkinPie,foodPumpkinCheesecake,foodMeatStew,foodSteakAndPotato,drinkCanMegaCrush" name_key="foodT2-1,foodT2-2,foodT2-3,foodT2-4,foodT2-5,foodT2-6" has_quality="false" unlock_level="11,14,18,22,24,26" >
+			<unlock_entry item="foodPumpkinBread,foodBlueberryPie" unlock_tier="1" />
+			<unlock_entry item="foodPumpkinPie" unlock_tier="2" />
+			<unlock_entry item="foodPumpkinCheesecake" unlock_tier="3" />
+			<unlock_entry item="foodVegetableStew,foodMeatStew" unlock_tier="4" />
+			<unlock_entry item="foodSteakAndPotato" unlock_tier="5" />
+			<unlock_entry item="drinkCanMegaCrush" unlock_tier="6" />
+		</display_entry>
+		<display_entry icon="drinkYuccaJuiceSmoothie,foodHoboStew,foodFishTacos,foodChiliDog,foodShamChowder,foodChickenStew,foodChickenMiso" name_key="foodT3-1,foodT3-2,foodT3-3,foodT3-4,foodT3-5,foodT3-6,foodT3-7" has_quality="false" unlock_level="27,32,37,42,47,53,59" >
+			<unlock_entry item="drinkYuccaJuiceSmoothie,drinkJarBeer" unlock_tier="1" />
+			<unlock_entry item="foodHoboStew" unlock_tier="2" />
+			<unlock_entry item="foodFishTacos" unlock_tier="3" />
+			<unlock_entry item="foodChiliDog" unlock_tier="4" />
+			<unlock_entry item="foodShamChowder" unlock_tier="5" />
+			<unlock_entry item="foodChickenStew" unlock_tier="6" />
+			<unlock_entry item="foodChickenMiso" unlock_tier="7" />
+		</display_entry>
+		<display_entry icon="foodTunaFishGravyToast,foodShepardsPie,drinkJarGrandpasLearningElixir,foodSpaghetti,foodGumboStew" name_key="foodT4-1,foodT4-2,foodT4-3,foodT4-4,foodT4-5" has_quality="false" unlock_level="60,70,80,90,100" >
+			<unlock_entry item="foodTunaFishGravyToast,drinkJarGrandpasAwesomeSauce" unlock_tier="1" />
+			<unlock_entry item="foodShepardsPie,drinkJarGrandpasMoonshine" unlock_tier="2" />
+			<unlock_entry item="drinkJarGrandpasLearningElixir" unlock_tier="3" />
+			<unlock_entry item="foodSpaghetti" unlock_tier="4" />
+			<unlock_entry item="foodGumboStew" unlock_tier="5" />
+		</display_entry>
+
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="foodCornOnTheCob,foodBakedPotato"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,100" value="1" tags="foodCornBread,drinkJarGoldenRodTea"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="6,100" value="1" tags="foodGrilledMeat,drinkJarRedTea"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="8,100" value="1" tags="foodBoiledMeat,drinkJarYuccaJuice"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="foodBaconAndEggs,drinkJarCoffee"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="foodPumpkinBread,foodBlueberryPie"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="14,100" value="1" tags="foodPumpkinPie"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="18,100" value="1" tags="foodPumpkinCheesecake"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="22,100" value="1" tags="foodVegetableStew,foodMeatStew"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="24,100" value="1" tags="foodSteakAndPotato"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="26,100" value="1" tags="drinkCanMegaCrush"/>
+			
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="27,100" value="1" tags="drinkYuccaJuiceSmoothie,drinkJarBeer"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="32,100" value="1" tags="foodHoboStew"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="37,100" value="1" tags="foodFishTacos"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="42,100" value="1" tags="foodChiliDog"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="47,100" value="1" tags="foodShamChowder"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="53,100" value="1" tags="foodChickenStew"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="59,100" value="1" tags="foodChickenMiso"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="foodTunaFishGravyToast,drinkJarGrandpasAwesomeSauce"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="70,100" value="1" tags="foodShepardsPie,drinkJarGrandpasMoonshine"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="80,100" value="1" tags="drinkJarGrandpasLearningElixir"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="90,100" value="1" tags="foodSpaghetti"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1" tags="foodGumboStew"/>
+		</effect_group>
+	</crafting_skill>
+	</insertafter>
+	
+	<!-- *** tablesaw unlock *** -->
+	<!-- <remove xpath="//crafting_skill[@name='craftingWorkstations']"/>
+	<insertafter xpath="//crafting_skill[@name='craftingTraps']">
+	<crafting_skill name="craftingWorkstations" max_level="75" parent="attCrafting" name_key="craftingWorkstationsName" desc_key="craftingWorkstationsDesc" long_desc_key="craftingWorkstationsLongDesc" icon="ui_game_symbol_workbench">
+
+		<display_entry icon="cntDewCollector,forge,tableSaw" name_key="workstationsT1-1,workstationsT1-2,workstationsT1-3" has_quality="false" unlock_level="1,7" >
+			<unlock_entry item="cntDewCollector" unlock_tier="1" />
+			<unlock_entry item="forge" unlock_tier="2" />
+			<unlock_entry item="tableSaw" unlock_tier="3" />			
+		</display_entry>
+		<display_entry icon="workbench,resourceLockPick,toolBellows,toolAnvil" name_key="workstationsT2-1,workstationsT2-2,workstationsT2-3,workstationsT2-4" has_quality="false" unlock_level="10,15,20,25" >
+			<unlock_entry item="workbench" unlock_tier="1" />			
+			<unlock_entry item="resourceLockPick" unlock_tier="2" />
+			<unlock_entry item="toolBellows" unlock_tier="3" />
+			<unlock_entry item="toolAnvil" unlock_tier="4" />
+		</display_entry>
+		<display_entry icon="cementMixer" name_key="workstationsT3-1" has_quality="false" unlock_level="30" >
+			<unlock_entry item="cementMixer" unlock_tier="1" />
+		</display_entry>
+		<display_entry icon="chemistryStation" name_key="workstationsT4" has_quality="false" unlock_level="50" >
+			<unlock_entry item="chemistryStation" unlock_tier="1" />
+		</display_entry>
+		<display_entry icon="toolForgeCrucible" name_key="workstationsT5" has_quality="false" unlock_level="75" >
+			<unlock_entry item="toolForgeCrucible" unlock_tier="1" />
+		</display_entry>
+		
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="cntDewCollector"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="forge"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="7,100" value="1" tags="playerTableSaw"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="workbench"/>			
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="15,100" value="1" tags="resourceLockPick"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="toolBellows"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="toolAnvil"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="cementMixer"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="chemistryStation"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="toolForgeCrucible"/>
+		</effect_group>
+	</crafting_skill>
+	</insertafter> -->
+	
+</configs>

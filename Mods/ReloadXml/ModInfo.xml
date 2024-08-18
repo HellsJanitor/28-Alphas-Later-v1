@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<xml>
+	<Name value="ReloadXml" />
+	<DisplayName value="ReloadXml"/>
+	<Description value="Lets you reload xml while ingame." />
+	<Author value="Redbeardt" />
+	<Version value="1.0.0.0" />
+	<Website value="" />
+</xml>

@@ -1,0 +1,7 @@
+<Hells_Janitor>
+	<append xpath="entity_classes/entity_class[@name='playerMale']">
+	<effect_group>
+		<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" target="self" buff="buffAddHeatTrigger"/>
+	</effect_group>
+	</append>
+</Hells_Janitor>

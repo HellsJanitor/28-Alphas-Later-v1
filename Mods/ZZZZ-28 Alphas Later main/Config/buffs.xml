@@ -1,0 +1,3030 @@
+<HellsJanitor>
+	<append xpath="//buff[@name='buffStatusCheck01']/effect_group">
+		<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buff28AlphasLaterPlayer"/>
+		<!-- radiation protection after death -->			
+		<triggered_effect trigger="onSelfRespawn" action="AddBuff" buff="buffRadSuitRespawnProtection">
+			<requirement name="!HasBuff" buff="buffRadSuit"/>
+		</triggered_effect>			
+		<!-- corpse run trigger -->			
+		<triggered_effect trigger="onSelfRespawn" action="AddBuff" buff="buffCorpseRun"/>
+			
+	</append>
+	
+	<!-- *** despair modifiers for debuffs *** -->
+	<append xpath="//buff[@name='buffElementWet']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="5"/>
+			<requirement name="!IsIndoors"/>
+			<requirement name="CVarCompare" cvar="$WetTempModifierDisplay" operation="GTE" value="50"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffElementFreezing']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="10"/>
+			<requirement name="HasBuff" buff="buffElementFreezing"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffElementSweltering']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="10"/>
+			<requirement name="HasBuff" buff="buffElementSweltering"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffInfection01Untreated']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffInfection01Untreated"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffInfection02Untreated']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="3"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffInfection02Untreated"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffInfection03Untreated']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="3.5"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffInfection03Untreated"/>
+		</effect_group>
+	</append>
+	<append xpath="//buff[@name='buffInjuryAbrasion']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.5"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffInjuryAbrasion"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffLegBroken']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffLegBroken"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffArmBroken']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffArmBroken"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffInjuryConcussion']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffInjuryConcussion"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffLaceration']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffLaceration"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffFatigued']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffFatigued"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffStatusHungry01']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffStatusHungry01"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffStatusThirsty01']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffStatusThirsty01"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffStatusHungry02']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffStatusHungry02"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffStatusThirsty02']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffStatusThirsty02"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffStatusHungry03']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="5"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffStatusHungry03"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffStatusThirsty03']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="5"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffStatusThirsty03"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffCampfireAOEEffect']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.1"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="HasBuff" buff="buffCampfireAOEEffect"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffPerkCharismaticNature']//effect_group[1]">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.05"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffPerkCharismaticNature']//effect_group[2]">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.05"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffPerkCharismaticNature']//effect_group[3]">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.1"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffPerkCharismaticNature']//effect_group[4]">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.1"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//buff[@name='buffPerkCharismaticNature']//effect_group[5]">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.2"/>
+			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+		</effect_group>
+	</append>
+	
+	<!-- *** removes bleed particle from undead *** -->
+	<set xpath="//buff[@name='buffInjuryBleedingParticle']">
+		<duration value="0"/>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_impact_metal_on_organic" local_offset="0,.25,0" parent_transform="LOD0">
+				<requirement name="!EntityTagCompare" tags="zombie"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffInjuryBleedingParticleTimer" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffInjuryBleedingParticleTimer" operation="add" value="1"/>
+
+			<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_impact_metal_on_organic" local_offset="0,.25,0" parent_transform="LOD0">
+				<requirement name="CVarCompare" cvar=".buffInjuryBleedingParticleTimer" operation="GTE" value="4"/>
+				<requirement name="!EntityTagCompare" tags="zombie"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffInjuryBleedingParticleTimer" operation="set" value="0">
+				<requirement name="CVarCompare" cvar=".buffInjuryBleedingParticleTimer" operation="GTE" value="4"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffInjuryBleedingParticle">
+				<requirement name="!HasBuff" buff="buffInjuryBleeding"/>
+				<requirement name="!HasBuff" buff="buffInjuryBleedingOne"/>
+				<requirement name="!HasBuff" buff="buffInjuryBleedingTwo"/>
+				<requirement name="!HasBuff" buff="buffInjuryBleedingBarbedWire"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffInjuryBleedingParticleTimer" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_impact_metal_on_organic"/>
+			<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_impact_metal_on_organic"/>
+		</effect_group>
+	</set>
+	
+		
+	<append xpath="/buffs">
+		<!-- *** all running player buffs *** -->
+		<buff name="buff28AlphasLaterPlayer" hidden="true">
+			<!-- add random horde buff -->
+			<effect_group>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="hordedelay" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" target="self" buff="buffRandomHorde"/>
+				<triggered_effect trigger="onSelfRespawn" action="AddBuff" target="self" buff="buffRandomHorde"/>
+			</effect_group>
+			<!-- remove all "light" buffs on entering game -->
+			<effect_group>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffHeldLight"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffHelmetLight"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffHeldTorch"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffGunFlashlight"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffNightVision"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffBurningShaft"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffWallTorch"/>
+			</effect_group>			
+			<!-- start with despair -->			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespairMain"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffDespairMain"/>
+				<triggered_effect trigger="onSelfRespawn" action="AddBuff" buff="buffDespairMain"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffDespairMain"/>
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="despair_trigger" allow_client_call="true"/> -->
+				<!-- <triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="despair_trigger" allow_client_call="true"/> -->
+				<!-- <triggered_effect trigger="onSelfRespawn" action="CallGameEvent" event="despair_trigger" allow_client_call="true"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="despair_trigger" allow_client_call="true"/> -->
+			</effect_group>
+			<!-- well fed -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWellFed"/>
+				<requirement name="StatComparePercCurrentToMax" stat="Food" operation="GT" value=".98"/>
+				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="GT" value=".98"/>
+			</effect_group>
+			<!-- well rested -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWellRestedTrigger"/>
+				<requirement name="BlockStandingOn" tags="bedroll"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+				<requirement name="!HasBuff" target="self" buff="buffInCombat"/>
+				<requirement name="CVarCompare" cvar="is_bloodmoon" operation="Equals" value="0"/>
+			</effect_group>
+			<effect_group compare_type="or">
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffWellRestedTrigger"/>
+				<requirement name="!BlockStandingOn" tags="bedroll"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="!HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+				<requirement name="HasBuff" target="self" buff="buffInCombat"/>
+				<requirement name="CVarCompare" cvar="is_bloodmoon" operation="Equals" value="1"/>
+			</effect_group>
+			<!-- passive healing when standing on a bed -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBedHealHealth"/>
+				<requirement name="BlockStandingOn" tags="playercraftedbed"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="!HasBuff" target="self" buff="buffInCombat"/>
+				<requirement name="CVarCompare" cvar="is_bloodmoon" operation="Equals" value="0"/>
+			</effect_group>
+			<effect_group compare_type="or">
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBedHealHealth"/>
+				<requirement name="!BlockStandingOn" tags="playercraftedbed"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="HasBuff" target="self" buff="buffInCombat"/>
+				<requirement name="CVarCompare" cvar="is_bloodmoon" operation="Equals" value="1"/>
+			</effect_group>
+			<!-- bloodmoon XP adjustment -->
+			<effect_group>
+				<passive_effect name="PlayerExpGain" operation="perc_subtract" value="0.5" tags="Kill">
+					<requirement name="CVarCompare" cvar="is_bloodmoon" operation="Equals" value="1"/>
+				</passive_effect>
+			</effect_group>
+			<!-- adjustments for loot drops for zombie backpacks -->
+			<effect_group>
+				<passive_effect name="LootDropProb" operation="base_set" value="-1"/>
+			</effect_group>
+			<effect_group compare_type="or">
+				<requirement name="HasBuff" target="other" buff="zombieBackpack"/>
+				<requirement name="HasBuff" target="other" buff="zombieFatbackpack"/>
+				<requirement name="HasBuff" target="other" buff="zombieBossbackpack"/>
+				<requirement name="HasBuff" target="other" buff="zombieWightBackpack"/>
+				<passive_effect name="LootDropProb" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfKilledOther" action="_28AL.CC.MinEventActions.DropLootBag,28ALCC" target="other"/>
+			</effect_group>
+			<!-- damage modifier for missed headshots -->
+			<effect_group>
+				<requirement name="HitLocation" body_parts="Torso,LeftUpperArm,RightUpperArm,LeftLowerArm,RightLowerArm,LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
+				<requirement name="EntityTagCompare" target="other" tags="zombie,feral,radiated,hazmat,mutated,mutant"/>
+				<requirement name="IsAlive" target="other" tags="zombie,mutated,mutant"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.90"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HitLocation" body_parts="Head"/>
+				<requirement name="EntityTagCompare" target="other" tags="zombie,feral,radiated,hazmat,mutated,mutant"/>
+				<requirement name="IsAlive" target="other" tags="zombie,mutated,mutant"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value=".50"/>
+			</effect_group>
+			<!-- trigger for moving vehicle crates -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffVehicleCrateTrigger"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffVehicleCrateTrigger"/>
+				<triggered_effect trigger="onSelfRespawn" action="AddBuff" buff="buffVehicleCrateTrigger"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffVehicleCrateTrigger"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffVehicleTrigger"/>
+			</effect_group>
+			<!-- head shots only -->
+			<effect_group>
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffAlwaysHeadShotsOnly"/> -->
+			</effect_group>
+			<!-- general gameplay triggers/buffs -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffShieldEnemies"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffArrowBleed"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="NoVehicleUnderwater"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffCraftingCount"/>
+			</effect_group>
+			<!-- bloodmoon zombie resurrection trigger -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffResurrect">
+					<requirement name="CVarCompare" cvar="is_bloodmoon" operation="GTE" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffResurrect">
+					<requirement name="CVarCompare" cvar="is_bloodmoon" operation="LT" value="1"/>
+				</triggered_effect>
+			</effect_group>
+			<!-- radiated wasteland and rad suit protection -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffRadiation01">
+					<requirement name="NotHasBuff" buff="god"/>
+					<requirement name="NotHasBuff" buff="buffRadSuit"/>
+					<requirement name="InBiome" biome="8"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffWasteland">
+					<requirement name="InBiome" biome="8"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffRadSuit">
+					<requirement name="HasBuff" buff="buffRadSuitHelmet"/>
+					<requirement name="HasBuff" buff="buffRadSuitOutfit"/>
+					<requirement name="HasBuff" buff="buffRadSuitGloves"/>
+					<requirement name="HasBuff" buff="buffRadSuitBoots"/>
+					
+				</triggered_effect>
+			</effect_group>
+			<!-- determines if the player is in combat or not -->
+			<effect_group>
+				<triggered_effect trigger="onCombatEntered" action="AddBuff" buff="buffInCombat"/>
+			</effect_group>
+			<!-- initialise meds resistance cvars -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" target="self" action="ModifyCVar" cvar="lithiumrescount" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" target="self" action="ModifyCVar" cvar="wortrescount" operation="set" value="0"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfPlaceBlock" target="self" action="ModifyCVar" cvar="testingcvar" operation="add" value="1"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** dummy buff to determine if player is in combat or not *** -->
+		<buff name="buffInCombat" name_key="buffInCombatName" description_key="buffInCombatDesc" showonhud="false" icon="ui_game_symbol_twitch_no_melee" icon_color="139,0,0">
+			<duration value="20"/>
+			<stack_type value="replace"/>
+		</buff>
+		
+		<!-- *** buff for healing when standing on a bed *** -->
+		<buff name="buffBedHealHealth" name_key="buffBedHealHealthName" description_key="buffBedHealHealthDesc" icon="ui_game_symbol_add" icon_color="0,128,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<update_rate value="1"/>
+			<display_value value=".healHealthAmountDisplay"/>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="add" value=".5"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** buff(s) for visible backpacks *** -->
+		<buff name="zombieBackpack" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Yellow" local_offset="0,-.1,-.125" local_rotation="0,115,-10" local_scale="1,1,1" parent_transform="Spine2"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow"/>
+				<requirement name="HasBuff" buff="zombieBackpack"/>
+				<requirement name="HasAttachedPrefab" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Yellow" parent_transform="Spine2"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onOtherKilledSelf" action="SetTransformActive" active="false" transform_path="modelYellow"/>
+			</effect_group>
+			
+			<effect_group>
+				<!-- <requirement name="HasBuff" buff="buffBurningMolotov"/> -->
+				<triggered_effect trigger="onSelfDied" action="SetTransformActive" active="false" transform_path="modelYellow"/>
+				<triggered_effect trigger="onSelfDied" action="_28AL.CC.MinEventActions.DropLootBag,28ALCC" target="self"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Yellow" parent_transform="Spine2"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="zombieWightBackpack" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Blue" local_offset="0,-.1,-.125" local_rotation="0,115,-10" local_scale="1,1,1" parent_transform="Spine2"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelBlue"/>
+				<requirement name="HasBuff" buff="zombieBackpack"/>
+				<requirement name="HasAttachedPrefab" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Blue" parent_transform="Spine2"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onOtherKilledSelf" action="SetTransformActive" active="false" transform_path="modelBlue"/>
+			</effect_group>
+			
+			<effect_group>
+				<!-- <requirement name="HasBuff" buff="buffBurningMolotov"/> -->
+				<triggered_effect trigger="onSelfDied" action="SetTransformActive" active="false" transform_path="modelBlue"/>
+				<triggered_effect trigger="onSelfDied" action="_28AL.CC.MinEventActions.DropLootBag,28ALCC" target="self"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Blue" parent_transform="Spine2"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="zombieFatbackpack" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Blue" local_offset="0,-.1,-.26" local_rotation="0,115,-10" local_scale="1,1,1" parent_transform="Spine2"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelBlue"/>
+				<requirement name="HasBuff" buff="zombieFatbackpack"/>
+				<requirement name="HasAttachedPrefab" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Blue" parent_transform="Spine2"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onOtherKilledSelf" action="SetTransformActive" active="false" transform_path="modelBlue"/>
+			</effect_group>
+			
+			<effect_group>
+				<!-- <requirement name="HasBuff" buff="buffBurningMolotov"/> -->
+				<triggered_effect trigger="onSelfDied" action="SetTransformActive" active="false" transform_path="modelBlue"/>
+				<triggered_effect trigger="onSelfDied" action="_28AL.CC.MinEventActions.DropLootBag,28ALCC" target="self"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Blue" parent_transform="Spine2"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="zombieBossbackpack" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Red" local_offset="0,-.1,-.26" local_rotation="0,115,-10" local_scale="1,1,1" parent_transform="Spine2"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelRed"/>
+				<requirement name="HasBuff" buff="zombieBossbackpack"/>
+				<requirement name="HasAttachedPrefab" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Red" parent_transform="Spine2"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onOtherKilledSelf" action="SetTransformActive" active="false" transform_path="modelRed"/>
+			</effect_group>
+
+			<effect_group>
+				<!-- <requirement name="HasBuff" buff="buffBurningMolotov"/> -->
+				<triggered_effect trigger="onSelfDied" action="SetTransformActive" active="false" transform_path="modelRed"/>
+				<triggered_effect trigger="onSelfDied" action="_28AL.CC.MinEventActions.DropLootBag,28ALCC" target="self"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Red" parent_transform="Spine2"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** adds firefighter helmet to burnt zombie *** -->
+		<buff name="zombieFirefighter" hidden="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/firefighterhelmet.unity3d?Peglow_Helmet" local_offset="-.28,-1.55,.8" local_rotation="0,0,0" local_scale="1,1,1" parent_transform="Head"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffLootDropProb" hidden="true">
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="HasBuff" target="other" buff="buffBurningMolotov"/>
+				<!-- <triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffLootDropProb"/> -->
+				<passive_effect name="LootDropProb" operation="base_set" value="500"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="!HasBuff" target="other" buff="buffBurningMolotov"/>
+				<triggered_effect trigger="RemoveBuff" buff="buffLootDropProb"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** corpse run *** -->
+		<buff name="buffCorpseRun" name_key="buffCorpseRunName" description_key="buffCorpseRunDesc" icon="ui_game_symbol_run" icon_blink="true" icon_color="192,192,192">
+			<duration value="30"/>
+			<stack_type value="effect"/>
+			<display_value value="corpserun"/>
+			<display_value_format value="time"/>
+			<display_value_key value="{0:0.00}"/>
+			<update_rate value="1"/>
+	
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="corpserun" operation="set" value="30"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="corpserun" operation="set" value="30"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="corpserun" operation="subtract" value="1"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="ElementalDamageResist" operation="perc_add" value=".20" tags="cold,heat,electrical"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_add" value=".20"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_add" value=".20" tags="coredamageresist"/>
+				<passive_effect name="ElementalDamageResist" operation="perc_add" value=".20" tags="heat,electrical"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".25"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value=".25"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** well fed buff, increases resistance to despair *** -->
+		<buff name="buffWellFed" name_key="buffWellFedName" description_key="buffWellFedDesc" icon="ui_game_symbol_cookware" icon_color="0,128,0">
+			<duration value="0"/>
+			<stack_type value="effect"/>
+			<update_rate value="1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="wellfed" operation="set" value="120"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="wellfed" operation="set" value="120"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="wellfed" operation="subtract" value="1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="StatComparePercCurrentToMax" stat="Food" operation="GT" value="0.98"/>
+				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="GT" value="0.98"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.5"/>
+				<passive_effect name="HealthChangeOT" operation="perc_add" value=".25"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="0.98"/>
+				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="LT" value="0.98"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffWellFed"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** well rested buff, increases stamina regen for its duration *** -->
+		<buff name="buffWellRestedTrigger" name_key="buffWellRestedTriggerName" description_key="buffWellRestedTriggerDesc" icon="ui_game_symbol_map_bed" icon_color="208,255,20" showonhud="false">
+			<duration value="0"/>
+			<stack_type value="effect"/>
+			<display_value value="wellrested"/>
+			<display_value_format value="time"/>
+			<display_value_key value="{0:0.00}"/>
+			<update_rate value="1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffWellRested"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="wellrested" operation="add" value="2"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="wellrested" operation="set" value="600">
+					<requirement name="CVarCompare" cvar="wellrested" operation="GTE" value="600"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="wellrestedHUD" operation="set" value="@wellrested"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="wellrestedHUD" operation="divide" value="600"/>
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="wellrestedHUD" operation="multiply" value="100"/> -->
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffWellRested"/>
+				<requirement name="CVarCompare" cvar="wellrested" operation="GTE" value="1"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffWellRested" name_key="buffWellRestedName" description_key="buffWellRestedDesc" icon="ui_game_symbol_survival" icon_color="0,66,37" showonhud="false">
+			<duration value="0"/>
+			<stack_type value="effect"/>
+			<display_value value="wellrested"/>
+			<display_value_format value="time"/>
+			<display_value_key value="{0:0.00}"/>
+			<update_rate value="1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffWellRested">
+					<requirement name="CVarCompare" cvar="wellrested" operation="LTE" value="0"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="wellrested" operation="subtract" value=".66"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="wellrested" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="wellrested" operation="LT" value="0"/></triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="wellrestedHUD" operation="set" value="@wellrested"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="wellrestedHUD" operation="divide" value="600"/>
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="wellrestedHUD" operation="multiply" value="100"/> -->
+			</effect_group>
+			<effect_group>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".1"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** buff for random zombie walk types *** -->
+		<buff name="buffRandomWalk" hidden="true">
+			<duration value="0"/>
+	
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="walktype" operation="set" value="randomint(1,22)"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="2"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="4"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="2"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="5"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="5"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="6"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="6"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="7"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="7"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="8"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="9"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="2"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="10"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="11"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="12"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="5"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="13"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="6"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="14"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="7"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="15"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="16"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="2"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="17"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="18"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="5"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="19"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="5"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="20"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="6"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="21"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="7"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="22"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="7"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect name="onDismember" target="self" action="RemoveBuff" buff="buffRandomWalk"/>
+			</effect_group>
+		</buff>
+
+		<!-- *** buff for helmet lights, flashlights, torches, nightvision, burning shaft etc. *** -->
+		<buff name="buffHeldLight" hidden="true">
+			<duration value="0"/>
+		
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.25"/>
+				<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" buff="buffHeldLight"/>
+				<requirement name="HasBuff" buff="buffFlashLightActive"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffHelmetLight" hidden="true">
+			<duration value="0"/>
+		
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.25"/>
+				<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" buff="buffHelmetLight"/>
+				<requirement name="HasBuff" buff="buffHelmetLightActive"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffHeldTorch" hidden="true">
+			<duration value="0"/>
+		
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.25"/>
+				<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" buff="buffHeldTorch"/>
+				<requirement name="HasBuff" buff="buffHandTorchActive"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffGunFlashlight" hidden="true">
+			<duration value="0"/>
+		
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.25"/>
+				<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" buff="buffGunFlashlight"/>
+				<requirement name="HasBuff" buff="buffWeaponLightActive"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffNightVision" hidden="true">
+			<duration value="0"/>
+		</buff>
+	
+		<buff name="buffBurningShaft" hidden="true">
+			<duration value="0"/>
+		
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.25"/>
+				<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" buff="buffBurningShaftActive"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffWallTorch" hidden="true">
+			<duration value="1"/>
+		
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.25"/>
+				<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" buff="buffWallTorch"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** Despair *** -->
+		<buff name="buffDespairMain" name_key="buff Despair Main" hidden="true" remove_on_death="false" icon="ui_game_symbol_near_death_trauma">
+			<damage_type value="Infection"/>
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<update_rate value="1"/>
+			<tags value="deathpenalty_injured"/>
+
+			<!-- Despair is fully %-based. DespairCounter is a float % value. Despair kills the player when it reaches 100%, and can't be removed. -->
+			<effect_group>
+				<!-- DespairMaxDuration defined in buffStatusCheck01 (7 hours) -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$DespairMaxDuration" operation="set" value="25200">
+					<requirement name="CVarCompare" cvar="$DespairMaxDuration" operation="Equals" value="0"/>
+				</triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="1.5"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$DespairStage2Duration" operation="set" value="30"/><!-- % of the full buff duration -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$DespairStage3Duration" operation="set" value="65"/><!-- % of the full buff duration -->
+
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$DespairDisplayDivisor" operation="set" value="@$DespairMaxDuration"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$DespairDisplayDivisor" operation="divide" value="100"/>				
+				<!-- DespairDisplayPerc = DespairCounter / DespairDisplayDivisor -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$DespairStage2Duration" operation="multiply" value="@$DespairDisplayDivisor"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$DespairStage3Duration" operation="multiply" value="@$DespairDisplayDivisor"/>
+
+				<!-- cleanup -->
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="DespairCounter" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".DespairDisplayPerc" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$DespairDisplayDivisor" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$DespairCureCounter" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$DespairStage2Duration" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$DespairStage3Duration" operation="set" value="0"/>
+			</effect_group>
+
+			<!-- adjust despair tick rates based on conditional requirements -->
+			<!-- Indoors at night -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.25"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsNight"/>
+			</effect_group>
+		
+			<!-- outdoors at night -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffHeldLight"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffHeldTorch"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffHelmetLight"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffGunFlashlight"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffNightVision"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffBurningShaft"/>
+			</effect_group>
+		
+			<!-- outdoors at night, with a light -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.75"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="HasBuff" target="self" buff="buffHeldLight"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.75"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="HasBuff" target="self" buff="buffHeldTorch"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.75"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="HasBuff" target="self" buff="buffHelmetLight"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.75"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="HasBuff" target="self" buff="buffGunFlashlight"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.75"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="HasBuff" target="self" buff="buffNightVision"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.75"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="HasBuff" target="self" buff="buffBurningShaft"/>
+			</effect_group>
+		
+			<!-- Indoors, daytime -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="1"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsDay"/>
+			</effect_group>
+		
+			<!-- outdoors, daytime -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="1.25"/>
+				<requirement name="!IsIndoors"/>
+				<requirement name="IsDay"/>
+			</effect_group>
+		
+			<!-- indoors, with a light source, near a campfire, not freezing or sweltering, and dry -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsDay"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+				<requirement name="HasBuff" target="self" buff="buffHeldLight"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsDay"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffHelmetLight"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsDay"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffHeldTorch"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsDay"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffGunFlashlight"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsDay"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffNightVision"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsDay"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffBurningShaft"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.1"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsDay"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffWallTorch"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffHeldLight"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffHelmetLight"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffHeldTorch"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffGunFlashlight"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffNightVision"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffBurningShaft"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.1"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="HasBuff" target="self" buff="buffWallTorch"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+			
+			<!-- indoors, near a campfire -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.2"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsDay"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="!HasBuff" target="self" buff="buffHeldTorch"/>
+				<requirement name="!HasBuff" target="self" buff="buffHeldLight"/>
+				<requirement name="!HasBuff" target="self" buff="buffHelmetLight"/>
+				<requirement name="!HasBuff" target="self" buff="buffGunFlashlight"/>
+				<requirement name="!HasBuff" target="self" buff="buffNightVision"/>
+				<requirement name="!HasBuff" target="self" buff="buffBurningShaft"/>
+				<requirement name="!HasBuff" target="self" buff="buffWallTorch"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.3"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="!HasBuff" target="self" buff="buffHeldTorch"/>
+				<requirement name="!HasBuff" target="self" buff="buffHeldLight"/>
+				<requirement name="!HasBuff" target="self" buff="buffHelmetLight"/>
+				<requirement name="!HasBuff" target="self" buff="buffGunFlashlight"/>
+				<requirement name="!HasBuff" target="self" buff="buffNightVision"/>
+				<requirement name="!HasBuff" target="self" buff="buffBurningShaft"/>
+				<requirement name="!HasBuff" target="self" buff="buffWallTorch"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<!-- buffs/cvars for UI display -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="warm" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWarm"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="warm" operation="set" value="0"/>
+				<!-- <requirement name="IsIndoors"/> -->
+				<requirement name="!HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="shelter" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffShelter"/>
+				<requirement name="IsIndoors"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="shelter" operation="set" value="0"/>
+				<requirement name="!IsIndoors"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="comfort" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWellLit"/>
+				<!-- <requirement name="IsIndoors"/>	 -->
+				<requirements compare_type="or">
+					<requirement name="HasBuff" target="self" buff="buffFlashLightActive"/>
+					<requirement name="HasBuff" target="self" buff="buffHelmetLightActive"/>
+					<requirement name="HasBuff" target="self" buff="buffHandTorchActive"/>
+					<requirement name="HasBuff" target="self" buff="buffWeaponLightActive"/>
+					<requirement name="HasBuff" target="self" buff="buffNVGActive"/>
+					<requirement name="HasBuff" target="self" buff="buffBurningShaftActive"/>
+					<requirement name="HasBuff" target="self" buff="buffWallTorch"/>
+					<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+				</requirements>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="comfort" operation="set" value="0"/>
+				<requirements compare_type="and">
+					<requirement name="!HasBuff" target="self" buff="buffFlashLightActive"/>
+					<requirement name="!HasBuff" target="self" buff="buffHelmetLightActive"/>
+					<requirement name="!HasBuff" target="self" buff="buffHandTorchActive"/>
+					<requirement name="!HasBuff" target="self" buff="buffWeaponLightActive"/>
+					<requirement name="!HasBuff" target="self" buff="buffNVGActive"/>
+					<requirement name="!HasBuff" target="self" buff="buffBurningShaftActive"/>
+					<requirement name="!HasBuff" target="self" buff="buffWallTorch"/>
+					<requirement name="!HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+				</requirements>
+			</effect_group>
+		
+			<!-- getting hit by enemies -->
+			<effect_group>
+				<triggered_effect trigger="onOtherAttackedSelf" action="ModifyCVar" cvar="DespairCounter" operation="add" value="15"/>
+				<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffDespairGetsWorse"/>
+				<requirement name="EntityTagCompare" target="other" tags="zombie,hostile"/>
+			</effect_group>
+			<!-- hitting enemies -->
+			<effect_group>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-1"/>
+			</effect_group>
+			<!-- killing enemies -->
+			<effect_group>
+				<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-5"/>
+			</effect_group>
+			<!-- reduces tick rate if player has drone morale booster buff -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-1.25"/>
+				<requirement name="HasBuff" buff="buffJunkDroneSupportEffect"/>
+			</effect_group>
+			<!-- perk From the Shadows negates effects of despair from darkness -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.5">
+					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="GTE" value="5"/>
+					<requirement name="IsNight"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.4">
+					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="GTE" value="4"/>
+					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="LT" value="5"/>
+					<requirement name="IsNight"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.3">
+					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="GTE" value="3"/>
+					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="LT" value="4"/>
+					<requirement name="IsNight"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.2">
+					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="LT" value="3"/>
+					<requirement name="IsNight"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.1">
+					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="LT" value="2"/>
+					<requirement name="IsNight"/>
+				</triggered_effect>
+			</effect_group>
+		
+			<!-- alters tick rate for despair based on player "wellness" (health) -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.25">
+					<requirement name="StatCompareMax" target="self" stat="health" operation="GTE" value="200"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.225">
+					<requirement name="StatCompareMax" target="self" stat="health" operation="LT" value="190"/>
+					<requirement name="StatCompareMax" target="self" stat="health" operation="GTE" value="180"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.2">
+					<requirement name="StatCompareMax" target="self" stat="health" operation="LT" value="180"/>
+					<requirement name="StatCompareMax" target="self" stat="health" operation="GTE" value="170"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.175">
+					<requirement name="StatCompareMax" target="self" stat="health" operation="LT" value="170"/>
+					<requirement name="StatCompareMax" target="self" stat="health" operation="GTE" value="160"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.15">
+					<requirement name="StatCompareMax" target="self" stat="health" operation="LT" value="160"/>
+					<requirement name="StatCompareMax" target="self" stat="health" operation="GTE" value="150"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.125">
+					<requirement name="StatCompareMax" target="self" stat="health" operation="LT" value="150"/>
+					<requirement name="StatCompareMax" target="self" stat="health" operation="GTE" value="140"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.1">
+					<requirement name="StatCompareMax" target="self" stat="health" operation="LT" value="140"/>
+					<requirement name="StatCompareMax" target="self" stat="health" operation="GTE" value="130"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.075">
+					<requirement name="StatCompareMax" target="self" stat="health" operation="LT" value="130"/>
+					<requirement name="StatCompareMax" target="self" stat="health" operation="GTE" value="120"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.05">
+					<requirement name="StatCompareMax" target="self" stat="health" operation="LT" value="120"/>
+					<requirement name="StatCompareMax" target="self" stat="health" operation="GTE" value="110"/>
+				</triggered_effect>
+			</effect_group>
+		
+			<effect_group name="main loop">
+				<!-- upward tick for despair -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="@DespairCounterModifier"/>
+			
+				<!-- downward tick for despair if cure counter is GT zero -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-3">
+					<requirement name="CVarCompare" cvar="$DespairCureCounter" operation="GT" value="0"/>
+				</triggered_effect>
+			
+				<!-- downward tick for cure if cure counter is GT zero -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$DespairCureCounter" operation="add" value="-2">
+					<requirement name="CVarCompare" cvar="$DespairCureCounter" operation="GT" value="0"/>
+				</triggered_effect>
+			
+				<!-- sets despair cure counter to zero if LT zero -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$DespairCureCounter" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$DespairCureCounter" operation="LT" value="0"/>
+				</triggered_effect>
+			
+				<!-- what the fuck does this do? -->
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="DespairCounterRespawn" operation="set" value="@DespairCounter"/>
+			</effect_group>
+		
+			<effect_group name="display % values">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPerc" operation="set" value="@DespairCounter"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPerc" operation="divide" value="@$DespairDisplayDivisor"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairCureDisplayPerc" operation="set" value="@$DespairCureCounter"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairCureDisplayPerc" operation="divide" value="@$DespairDisplayDivisor"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayHUD" operation="set" value="@.DespairDisplayPerc"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayHUD" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairCureDisplayHUD" operation="set" value="@.DespairCureDisplayPerc"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairCureDisplayHUD" operation="divide" value="100"/>
+			</effect_group>
+
+			<effect_group name="signaling buffs">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespairCureDisplay">
+					<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+					<requirement name="!HasBuff" buff="buffDespairCureDisplayFood"/>
+					<requirement name="CVarCompare" cvar="$DespairCureCounter" operation="GT" value="0"/>
+				</triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespairCureDisplayPositive01">
+					<requirement name="!HasBuff" buff="buffDespairCureDisplayPositive01"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="0"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GT" value="-8400"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespairCureDisplayPositive02">
+					<requirement name="!HasBuff" buff="buffDespairCureDisplayPositive02"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="-8400"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GT" value="-16800"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespairCureDisplayPositive03">
+					<requirement name="!HasBuff" buff="buffDespairCureDisplayPositive03"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="-16800"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GT" value="-25200"/>
+				</triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespair01Untreated">
+					<requirement name="!HasBuff" buff="buffDespair01Untreated"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="@$DespairStage2Duration"/>
+					<requirement name="CVarCompare" cvar="$DespairCureCounter" operation="LTE" value="0"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespair01GetBetter">
+					<requirement name="!HasBuff" buff="buffDespair01GetBetter"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="@$DespairStage2Duration"/>
+					<requirement name="CVarCompare" cvar="$DespairCureCounter" operation="GT" value="0"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespair01GetBetter">
+					<requirement name="HasBuff" buff="buffDespair01GetBetter"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LTE" value="0"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespair02Untreated">
+					<requirement name="!HasBuff" buff="buffDespair02Untreated"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GTE" value="@$DespairStage2Duration"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="@$DespairStage3Duration"/>
+					<requirement name="CVarCompare" cvar="$DespairCureCounter" operation="LTE" value="0"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespair02GetBetter">
+					<requirement name="!HasBuff" buff="buffDespair02GetBetter"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GTE" value="@$DespairStage2Duration"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="@$DespairStage3Duration"/>
+					<requirement name="CVarCompare" cvar="$DespairCureCounter" operation="GT" value="0"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespair03Untreated">
+					<requirement name="!HasBuff" buff="buffDespair03Untreated"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GTE" value="@$DespairStage3Duration"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="@$DespairMaxDuration"/>
+					<requirement name="CVarCompare" cvar="$DespairCureCounter" operation="LTE" value="0"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespair03GetBetter">
+					<requirement name="!HasBuff" buff="buffDespair03GetBetter"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GTE" value="@$DespairStage3Duration"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="@$DespairMaxDuration"/>
+					<requirement name="CVarCompare" cvar="$DespairCureCounter" operation="GT" value="0"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespair04">
+					<requirement name="!HasBuff" buff="buffDespair04"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GTE" value="@$DespairMaxDuration"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	
+		<!-- blinks the display to show that Despair is getting worse with each hit from an entity -->
+		<buff name="buffDespairGetsWorse" name_key="buff Despair Gets Worse" icon="ui_game_symbol_brokenbone" icon_color="255,128,0" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="1.1"/>
+
+			<effect_group>
+				<!-- Blinks the display -->
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffDespair01Untreated,buffDespair01GetBetter,buffDespair02Untreated,buffDespair02GetBetter,buffDespair03Untreated,buffDespair03GetBetter,buffDespairCureDisplayPositive"/>
+			</effect_group>
+		</buff>
+	
+		<!-- Decreases the Despair Counter -->
+		<buff name="buffDespairAddCure" name_key="buff Despair Add Cure" hidden="true" remove_on_death="false" icon="ui_game_symbol_speed">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDespairAddCurePerc" operation="multiply" value="@$DespairMaxDuration"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDespairAddCurePerc" operation="divide" value="100"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$DespairCureCounter" operation="add" value="@$buffDespairAddCurePerc"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDespairAddCurePerc" operation="set" value="0"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$DespairCureCounter" operation="set" value="@$DespairMaxDuration">
+					<requirement name="CVarCompare" cvar="$DespairCureCounter" operation="GT" value="@$DespairMaxDuration"/>
+				</triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffDespairMain"/>
+			</effect_group>
+		</buff>
+	
+		<!-- Sets up the cure display -->
+		<buff name="buffDespairCureDisplay" name_key="buffDespairCureDisplayName" description_key="buffDespairCureDisplayDesc" showonhud="false" remove_on_death="false" icon="ui_game_symbol_intellect" icon_color="0,128,0">
+			<duration value="0"/>
+			<update_rate value="1.7"/>
+			<display_value_key value="{0:0.0}%"/>
+			<display_value value=".DespairCureDisplayPerc"/>
+
+			<effect_group>
+				<requirements compare_type="or">
+					<requirement name="CVarCompare" cvar="$DespairCureCounter" operation="LTE" value="0"/>
+					<requirement name="!HasBuff" buff="buffDespairMain"/>
+				</requirements>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespairCureDisplay"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$DespairCureCounter" operation="set" value="0"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".DespairCureDisplayPerc" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespairCureDisplayPositive01" name_key="buffDespairCureDisplayPositive01Name" description_key="buffDespairCureDisplayPositive01Desc" remove_on_death="false" icon="ui_game_symbol_muscle" icon_color="208,255,20" showonhud="false">
+			<duration value="0"/>
+			<!-- <update_rate value="1.7"/> -->
+			<display_value_key value="{0:0.0}%"/>
+			<display_value value=".DespairDisplayPositivePerc"/>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="set" value="-25200"/>
+				<requirement name="CVarCompare" cvar="DespairCounter" operation="LTE" value="-25200"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespairCureDisplayPositive02"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespairCureDisplayPositive03"/>
+			</effect_group>
+		
+			<effect_group>
+				<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="0"/>
+				<requirement name="CVarCompare" cvar="DespairCounter" operation="GT" value="-8400"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value=".75"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositivePerc" operation="set" value="@.DespairDisplayPerc"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositivePerc" operation="multiply" value="-1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive01HUD" operation="set" value="@.DespairDisplayPositivePerc"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive01HUD" operation="divide" value="100"/>
+					
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.05"/>
+				<passive_effect name="BuffResistance" operation="base_add" value=".1" tags="buffInjuryBleeding,buffInjuryStunned00,buffInjuryStunned01,buffInjuryStunned01Shotgun,buffInjuryStunned02,buffInjuryStunned02Shotgun,buffInjuryStunned03,buffInjuryStunned03Shotgun,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="GeneralDamageResist" operation="base_add" value=".05"/>
+			</effect_group>
+			<effect_group>
+				<requirements compare_type="or">
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GT" value="0"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LTE" value="-8400"/>
+					<requirement name="!HasBuff" buff="buffDespairCureDisplayPositive01"/>
+				</requirements>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespairCureDisplayPositive01"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffDespairCureDisplayPositive02" name_key="buffDespairCureDisplayPositive02Name" description_key="buffDespairCureDisplayPositive02Desc" remove_on_death="false" icon="ui_game_symbol_muscle" icon_color="144,238,144" showonhud="false">
+			<duration value="0"/>
+			<!-- <update_rate value="1.7"/> -->
+			<display_value_key value="{0:0.0}%"/>
+			<display_value value=".DespairDisplayPositivePerc"/>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="set" value="-25200"/>
+				<requirement name="CVarCompare" cvar="DespairCounter" operation="LTE" value="-25200"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespairCureDisplayPositive01"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespairCureDisplayPositive03"/>
+			</effect_group>
+		
+			<effect_group>
+				<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="-8400"/>
+				<requirement name="CVarCompare" cvar="DespairCounter" operation="GT" value="-16800"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value=".8"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositivePerc" operation="set" value="@.DespairDisplayPerc"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositivePerc" operation="multiply" value="-1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive02HUD" operation="set" value="@.DespairDisplayPositivePerc"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive02HUD" operation="divide" value="100"/>
+					
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.1"/>
+				<passive_effect name="BuffResistance" operation="base_add" value=".15" tags="buffInjuryBleeding,buffInjuryStunned00,buffInjuryStunned01,buffInjuryStunned01Shotgun,buffInjuryStunned02,buffInjuryStunned02Shotgun,buffInjuryStunned03,buffInjuryStunned03Shotgun,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="GeneralDamageResist" operation="base_add" value=".1"/>
+			</effect_group>
+
+			<effect_group>
+				<requirements compare_type="or">
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GTE" value="-8400"/>
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LTE" value="-16800"/>
+					<requirement name="!HasBuff" buff="buffDespairCureDisplayPositive02"/>
+				</requirements>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespairCureDisplayPositive02"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffDespairCureDisplayPositive03" name_key="buffDespairCureDisplayPositive03Name" description_key="buffDespairCureDisplayPositive03Desc" remove_on_death="false" icon="ui_game_symbol_muscle" icon_color="50,205,50" showonhud="false">
+			<duration value="0"/>
+			<!-- <update_rate value="1.7"/> -->
+			<display_value_key value="{0:0.0}%"/>
+			<display_value value=".DespairDisplayPositivePerc"/>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="set" value="-25200"/>
+				<requirement name="CVarCompare" cvar="DespairCounter" operation="LTE" value="-25200"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespairCureDisplayPositive01"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespairCureDisplayPositive02"/>
+			</effect_group>
+		
+			<effect_group>
+				<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="-16800"/>
+				<requirement name="CVarCompare" cvar="DespairCounter" operation="GT" value="-25200"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value=".85"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositivePerc" operation="set" value="@.DespairDisplayPerc"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositivePerc" operation="multiply" value="-1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive03HUD" operation="set" value="@.DespairDisplayPositivePerc"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive03HUD" operation="divide" value="100"/>
+					
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.15"/>
+				<passive_effect name="BuffResistance" operation="base_add" value=".2" tags="buffInjuryBleeding,buffInjuryStunned00,buffInjuryStunned01,buffInjuryStunned01Shotgun,buffInjuryStunned02,buffInjuryStunned02Shotgun,buffInjuryStunned03,buffInjuryStunned03Shotgun,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+				<passive_effect name="GeneralDamageResist" operation="base_add" value=".15"/>
+			</effect_group>
+
+			<effect_group>
+				<requirements compare_type="or">
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="GTE" value="-16800"/>
+					<requirement name="!HasBuff" buff="buffDespairCureDisplayPositive03"/>
+				</requirements>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespairCureDisplayPositive03"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffDespair01Untreated" remove_on_death="false" name_key="buffDespair01UntreatedName" description_key="buffDespair01UntreatedDesc" tooltip_key="buffDespair01UntreatedTooltip" icon="ui_game_symbol_intellect" icon_color="255,244,79" showonhud="false">
+			<damage_type value="Disease"/>
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value_key value="{0:0.0}%"/>
+			<display_value value=".DespairDisplayPerc"/>
+			<tags value="deathpenalty_injured"/>
+
+			<effect_group>
+				<!-- Blinks the display -->
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffDespair01Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair01GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair02Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair02GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair03Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair03GetBetter"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="DespairCounter" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespair01Untreated"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.05"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespair01GetBetter" remove_on_death="false" name_key="buffDespair01GetBetterName" description_key="buffDespair01GetBetterDesc" icon="ui_game_symbol_intellect" icon_color="219,112,147" showonhud="false">
+			<damage_type value="Disease"/>
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value_key value="{0:0.0}%"/>
+			<display_value value=".DespairDisplayPerc"/>
+			<tags value="deathpenalty_injured"/>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair01Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair02Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair02GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair03Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair03GetBetter"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespair02Untreated" remove_on_death="false" name_key="buffDespair02UntreatedName" description_key="buffDespair02UntreatedDesc" icon="ui_game_symbol_intellect" icon_color="255,128,0" showonhud="false">
+			<damage_type value="Disease"/>
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value_key value="{0:0.0}%"/>
+			<display_value value=".DespairDisplayPerc"/>
+			<tags value="deathpenalty_injured"/>
+
+			<effect_group>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffDespair02Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair01Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair01GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair02GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair03Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair03GetBetter"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.15"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespair02GetBetter" remove_on_death="false" name_key="buffDespair02GetBetterName" description_key="buffDespair02GetBetterDesc" icon="ui_game_symbol_intellect" icon_color="219,112,147" showonhud="false">
+			<damage_type value="Disease"/>
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value_key value="{0:0.0}%"/>
+			<display_value value=".DespairDisplayPerc"/>
+			<tags value="deathpenalty_injured"/>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair01Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair01GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair02Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair03Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair03GetBetter"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.075"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespair03Untreated" remove_on_death="false" name_key="buffDespair03UntreatedName" description_key="buffDespair03UntreatedDesc" icon="ui_game_symbol_intellect" icon_color="255,0,0" icon_blink="true" showonhud="false">
+			<damage_type value="Disease"/>
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value_key value="{0:0.0}%"/>
+			<display_value value=".DespairDisplayPerc"/>
+			<tags value="deathpenalty_injured"/>
+
+			<effect_group>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffDespair03Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair01Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair01GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair02Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair02GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair03GetBetter"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="AttributeLevel" operation="base_subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.25"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespair03GetBetter" remove_on_death="false" name_key="buffDespair03GetBetterName" description_key="buffDespair03GetBetterDesc" icon="ui_game_symbol_intellect" icon_color="219,112,147" showonhud="false">
+			<damage_type value="Disease"/>
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<display_value_key value="{0:0.0}%"/>
+			<display_value value=".DespairDisplayPerc"/>
+			<tags value="deathpenalty_injured"/>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair01Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair01GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair02Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair02GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair03Untreated"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="AttributeLevel" operation="base_subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.125"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespair04" tooltip_key="buffDespair04Tooltip" icon="ui_game_symbol_near_death_trauma" icon_color="255,0,0" icon_blink="true" showonhud="false">
+			<damage_type value="Infection"/>
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="set" value="@$DespairMaxDuration"/>
+				<requirement name="CVarCompare" cvar="DespairCounter" operation="GTE" value="@$DespairMaxDuration"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="buff_bleeding" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="buff_bleeding" play_in_head="true"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="buff_bleeding" play_in_head="true"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="PlaySound" sound="buff_bleeding" play_in_head="true"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="DespairCounter" operation="set" value="@$DespairStage2Duration"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="DespairCounterRespawn" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair01Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair01GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair02Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair02GetBetter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair03Untreated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespair03GetBetter"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffDespair04"/>
+				<!-- <triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffDespairMain"/>			 -->
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespair04">
+					<requirement name="CVarCompare" cvar="DespairCounter" operation="LT" value="@$DespairMaxDuration"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespair04">
+					<requirement name="HasBuff" buff="buffDespairCureDisplay"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	
+		<!-- *** despair meds blocking buff *** -->
+		<buff name="buffLithiumBlocker" tooltip_key="buffLithiumBlockerTooltip" name_key="buffLithiumBlockerName" description_key="buffLithiumBlockerDesc" showonhud="true" icon_color="219,112,147" icon="ui_game_symbol_pills" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="1500"/>
+			<update_rate value="1"/>
+			<display_value_key value="{0:0.0}"/>
+			<display_value_format value="time"/>
+			<display_value value="lithiumblocker"/>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="lithiumblocker" operation="set" value="1500"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffLithiumResistance"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="lithiumblocker" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveBuff" buff="buffLithiumBlocker"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="lithiumblocker" operation="set" value="0"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value=".05"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffLithiumResistance" hidden="true">
+			<duration value="1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="lithiumrescount" operation="add" value=".5"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="lithiumrescount" operation="set" value="15"/>
+				<requirement name="CVarCompare" cvar="lithiumrescount" operation="GTE" value="15"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffStJohnsWortBlocker" tooltip_key="buffLithiumBlockerTooltip" name_key="buffStJohnsWortBlockerName" description_key="buffLithiumBlockerDesc" showonhud="true" icon_color="255,196,12" icon="ui_game_symbol_pills" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="600"/>
+			<update_rate value="1"/>
+			<display_value_key value="{0:0.0}"/>
+			<display_value_format value="time"/>
+			<display_value value="stjohnswortblocker"/>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="stjohnswortblocker" operation="set" value="600"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffStJohnsWortResistance"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="stjohnswortblocker" operation="subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveBuff" buff="buffStJohnsWortBlocker"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="stjohnswortblocker" operation="set" value="0"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value=".05"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffStJohnsWortResistance" hidden="true">
+			<duration value="1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="wortrescount" operation="add" value=".25"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="wortrescount" operation="set" value="5"/>
+				<requirement name="CVarCompare" cvar="wortrescount" operation="GTE" value="5"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** dummy buffs for manipulating cvars for UI elements *** -->
+		<buff name="buffWarm" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="warmAlpha" operation="set" value="255"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="warmAlpha" operation="set" value="255"/>
+				<requirement name="HasBuff" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWarmFade"/>
+				<requirement name="!HasBuff" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffWarmFade" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffWarm"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="warmAlpha" operation="set" value="255"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="warmAlpha" operation="subtract" value="5"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="warmAlpha" operation="set" value="0"/>
+				<requirement name="CVarCompare" cvar="warmAlpha" operation="LTE" value="0"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="warmAlpha" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffShelter" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="shelterAlpha" operation="set" value="255"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="shelterAlpha" operation="set" value="255"/>
+				<requirement name="IsIndoors"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffShelterFade"/>
+				<requirement name="!IsIndoors"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffShelterFade" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffShelter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="shelterAlpha" operation="set" value="255"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="shelterAlpha" operation="subtract" value="5"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="shelterAlpha" operation="set" value="0"/>
+				<requirement name="CVarCompare" cvar="shelterAlpha" operation="LTE" value="0"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="shelterAlpha" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffWellLit" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="welllitAlpha" operation="set" value="255"/>
+			</effect_group>
+			<effect_group compare_type="or">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="welllitAlpha" operation="set" value="255"/>
+				<requirement name="HasBuff" buff="buffFlashLightActive"/>
+				<requirement name="HasBuff" buff="buffHandTorchActive"/>
+				<requirement name="HasBuff" buff="buffHelmetLightActive"/>
+				<requirement name="HasBuff" buff="buffNVGActive"/>
+				<requirement name="HasBuff" buff="buffBurningShaftActive"/>
+				<requirement name="HasBuff" buff="buffWeaponLightActive"/>
+				<requirement name="HasBuff" buff="buffWallTorch"/>
+				<requirement name="HasBuff" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWellLitFade"/>
+				<requirement name="!HasBuff" buff="buffFlashLightActive"/>
+				<requirement name="!HasBuff" buff="buffHandTorchActive"/>
+				<requirement name="!HasBuff" buff="buffHelmetLightActive"/>
+				<requirement name="!HasBuff" buff="buffNVGActive"/>
+				<requirement name="!HasBuff" buff="buffBurningShaftActive"/>
+				<requirement name="!HasBuff" buff="buffWeaponLightActive"/>
+				<requirement name="!HasBuff" buff="buffWallTorch"/>
+				<requirement name="!HasBuff" buff="buffCampfireAOEEffect"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffWellLitFade" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffWellLit"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="welllitAlpha" operation="set" value="255"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="welllitAlpha" operation="subtract" value="5"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="welllitAlpha" operation="set" value="0"/>
+				<requirement name="CVarCompare" cvar="welllitAlpha" operation="LTE" value="0"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="welllitAlpha" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+
+		<!-- *** knife required to butcher chickens, repair tool required to assemble compost bin, chicken coops and beehives *** -->
+		<buff name="buffCraftingCount" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeWpnBladeT1HuntingKnife" operation="GTE" value="1"/>
+				<passive_effect name="RecipeTagUnlocked" tags="foodRawMeat" operation="base_set" value="1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeWpnBladeT1HuntingKnife" operation="LTE" value="0"/>
+				<triggered_effect trigger="ShowToolbeltMessage" message="You need a hunting knife for this" sound="missingitemtorepair"/>
+				<passive_effect name="RecipeTagUnlocked" tags="foodRawMeat" operation="base_set" value="0"/>
+			</effect_group>
+			<effect_group>
+				<requirements compare_type="or">
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeToolRepairT0StoneAxe" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeToolRepairT0TazasStoneAxe" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeToolRepairT1ClawHammer" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeToolRepairT3Nailgun" operation="GTE" value="1"/>
+				</requirements>
+				<passive_effect name="RecipeTagUnlocked" tags="ctnChickenCoop" operation="base_set" value="1"/>
+			</effect_group>
+			<effect_group>
+				<requirements compare_type="or">
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeToolRepairT0StoneAxe" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeToolRepairT0TazasStoneAxe" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeToolRepairT1ClawHammer" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeToolRepairT3Nailgun" operation="GTE" value="1"/>
+				</requirements>
+				<passive_effect name="RecipeTagUnlocked" tags="ctnIDCBeehive" operation="base_set" value="1"/>
+			</effect_group>
+			<effect_group>
+				<requirements compare_type="or">
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeToolRepairT0StoneAxe" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeToolRepairT0TazasStoneAxe" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeToolRepairT1ClawHammer" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="meleeToolRepairT3Nailgun" operation="GTE" value="1"/>
+				</requirements>
+				<passive_effect name="RecipeTagUnlocked" tags="cntCompostBin" operation="base_set" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** effects for liquid nitrogen *** -->
+		<buff name="buffInjuryFrozen" name_key="buff Injury Stunned 01 Shotgun" hidden="true" icon="ui_game_symbol_cold" icon_color="255,128,0">
+			<damage_type value="stun"/>
+			<stack_type value="replace"/>
+			<duration value="4"/>
+
+			<effect_group>
+				<!-- Blinks the display -->
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffInjuryFrozen"/>
+				<!-- If not a walker, remove the buff -->
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInjuryFrozen">
+					<requirement name="!EntityTagCompare" tags="walker"/>
+				</triggered_effect>
+				<!-- If a player, remove the buff -->
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInjuryFrozen">
+					<requirement name="EntityTagCompare" tags="player"/>
+				</triggered_effect>
+			</effect_group>
+
+			<effect_group>
+				<!-- If not a player, reduce the walk and run speed -->
+				<requirement name="!EntityTagCompare" tags="player"/>
+				<passive_effect name="RunSpeed" operation="base_set" value="0.25"/>
+				<passive_effect name="WalkSpeed" operation="base_set" value="0.25"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5"/>
+				<triggered_effect trigger="onSelfBuffStart" action="_28AL.ParticleSystems.Attach,ParticleSystems" particle="#@modfolder:Assets/28al_ps_frosty.unity3d?PS_Frosty_Prefab" shape_to_mesh="true"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="_28AL.ParticleSystems.Attach,ParticleSystems" particle="#@modfolder:Assets/28al_ps_frosty.unity3d?PS_Frosty_Prefab" shape_to_mesh="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="buff_burn_extinguish"/>
+
+				<triggered_effect trigger="onSelfDied" action="_28AL.ParticleSystems.Detach,ParticleSystems" particle="PS_Frosty_Prefab"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="_28AL.ParticleSystems.Detach,ParticleSystems" particle="PS_Frosty_Prefab"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="_28AL.ParticleSystems.Detach,ParticleSystems" particle="PS_Frosty_Prefab"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="buff_burn_extinguish"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="buff_burn_extinguish"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** poison *** -->
+		<buff name="buffPoisoned" name_key="buffPoisonedName" description_key="buffPoisonedDesc" tooltip_key="buffPoisonedTooltip" icon="ui_game_symbol_skull" remove_on_death="true" icon_color="255,0,255" icon_blink="true">
+			<damage_type value="Bashing"/>
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<display_value value=".PoisonDurationDisplay"/>
+			<display_value_format value="time"/>
+			<display_value_key value="{0:0.00}"/>
+			<tags value="deathpenalty_injured"/>
+			<!-- <effect_group>
+			<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,2" tags="buffPoisoned"/>
+		</effect_group> -->
+		
+			<effect_group>
+				<!-- Blinks the display -->
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffInjuryPoison"/>
+			
+				<!-- Setup or stack the counters -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PoisonCounter" operation="set" value="25228"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$PoisonCounter" operation="set" value="25228"/>
+				<!-- Reduce counter by natural healing rate -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$PoisonCounter" operation="subtract" value="@$critHitNaturalHealingRate"/>
+				<!-- If the counter LT 0, remove the buff -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffInjuryPoison">
+					<requirement name="CVarCompare" cvar="$PoisonCounter" operation="LTE" value="0"/>
+				</triggered_effect>
+				<!-- Reset the counters/cvars -->
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$PoisonCounter" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$PoisonNextBlur" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$PoisonNextBlur" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".PoisonHealthBlockage" operation="set" value="0"/>
+			</effect_group>
+
+			<effect_group name="DisplayDuration">
+				<!-- Handlers for the display -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".PoisonDurationDisplay" operation="set" value="@$PoisonCounter"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".PoisonDurationDisplay" operation="divide" value="@$critHitNaturalHealingRate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".PoisonDurationDisplay" operation="set" value="0"/>
+			</effect_group>
+			<effect_group name="getting hit makes it worse">
+				<!-- If the counter is GT, clamp it -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$PoisonCounter" operation="set" value="25228">
+					<requirement name="CVarCompare" cvar="$PoisonCounter" operation="GT" value="25228"/>
+				</triggered_effect>
+			</effect_group>
+
+			<effect_group name="periodic blur">
+				<!-- If counter is LT next blur OR next blur = 0 -->
+				<requirements compare_type="or">
+					<requirement name="CVarCompare" cvar="$PoisonCounter" operation="LT" value="@$PoisonNextBlur"/>
+					<requirement name="CVarCompare" cvar="$PoisonNextBlur" operation="Equals" value="0"/>
+				</requirements>
+				<!-- If next blur = 0, do the blur -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffInjuryPoisonBlur">
+					<requirement name="CVarCompare" cvar="$PoisonNextBlur" operation="NotEquals" value="0"/>
+				</triggered_effect>
+				<!-- Setup next blur counter with random -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".dummy" operation="set" value="@$PoisonCounter"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".dummy" operation="subtract" value="randomint(120,600)"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$PoisonNextBlur" operation="set" value="@.dummy"/>
+			</effect_group>
+
+			<effect_group>
+				<!-- Setup the max health blockage based on the remaining counter -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".PoisonHealthBlockage" operation="set" value="@$PoisonCounter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".PoisonHealthBlockage" operation="divide" value="1009"/><!-- 25 @ 25200s -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".PoisonHealthBlockage" operation="set" value="@$PoisonCounter"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".PoisonHealthBlockage" operation="divide" value="1009"/><!-- 25 @ 25200s -->
+				<passive_effect name="HealthMaxBlockage" operation="base_add" value="@.PoisonHealthBlockage"/>
+				<!-- Reduce Perk Attributes by 1 and recalculate all abilities -->
+				<passive_effect name="AttributeLevel" operation="base_subtract" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value=".05"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="fx_acid" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="fx_acid" play_in_head="true"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="fx_acid" play_in_head="true"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="PlaySound" sound="fx_acid" play_in_head="true"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" effect_name="Infected" intensity="0" fade="0"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffInjuryPoisonBlur" name_key="buffInjuryPoisonBlurName" icon="ui_game_symbol_trash" icon_color="255,128,0" hidden="true">
+			<damage_type value="Bashing"/>
+			<duration value="5"/>
+
+			<effect_group>
+				<!-- Blinks the display -->
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,4" tags="buffInjuryPoison"/>
+				<!-- Handlers for screen effects -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.3" fade="1" effect_name="Trippy"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Trippy"/>
+				<!-- Handlers for sounds -->
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="buff_bleeding" play_in_head="true"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="PlaySound" sound="buff_bleeding" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="buff_bleeding" play_in_head="true"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="buff_bleeding" play_in_head="true"/>
+				<!-- Handlers for camera shake -->
+				<triggered_effect trigger="onSelfBuffStart" action="ShakeCamera" shake_speed="0.02" shake_amplitude="60" shake_time="10"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ShakeCamera" shake_speed="0" shake_amplitude="0" shake_time="10"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** immunity from infection after taking "The Cure" *** -->
+		<buff name="infectionImmunity" name_key="infectionImmunity" description_key="infectionImmunityDesc" icon="ui_game_symbol_infection" remove_on_death="false" icon_color="0,255,0">
+			<damage_type value="Infection"/>
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<update_rate value="1"/>
+			<display_value_key value="TheCureDescShort"/>
+			<display_value value="xxx"/>
+			<tags value="deathpenalty_injured"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$infectionMaxDuration" operation="set" value="-1">
+					<!-- <requirement name="CVarCompare" cvar="$infectionMaxDuration" operation="Equals" value="0"/> -->
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="infectionCounter" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="infectionCounter" operation="add" value="-1.25"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInfectionCatch,buffInfectionMain,buffInfectionGetsWorse,buffInfection01Untreated,buffInfection02Untreated,buffInfection03Untreated,buffInfection04"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** radiated zombie melee buff *** -->
+		<buff name="buffMeleeRadiation" name_key="buffRadiation03Name" description_key="buffRadiation03Desc" icon="ui_game_symbol_radiation" icon_color="255,0,0" icon_blink="true">
+			<damage_type value="radiation"/>
+			<stack_type value="ignore"/>
+			<duration value="5"/>
+			<update_rate value="1"/>
+
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1">
+					<requirement name="EntityTagCompare" tags="player"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" intensity="0" fade=".7" effect_name="Hot"/>
+
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Hot"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Radiation" intensity=".6" fade="2"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" effect_name="Radiation" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffTwitchRadiation"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Radiation" intensity="0" fade="2"/>
+
+				<passive_effect name="HealthMaxBlockage" operation="base_add" value="10"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** frozen zombie melee buff *** -->
+		<buff name="buffFrozen_Slow" showonhud="true" name_key="buffElementFreezingName" description_key="buffElementFreezingDesc" tooltip_key="buffElementFreezingTooltip" icon="ui_game_symbol_cold" icon_color="255,0,0" icon_blink="true">
+			<stack_type value="replace"/>
+			<duration value="5"/>
+
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<!-- <passive_effect name="Mobility" operation="base_add" value="-.25"/> -->
+				<passive_effect name="WalkSpeed" operation="base_add" value="-.10"/>
+				<passive_effect name="RunSpeed" operation="base_add" value="-.10"/>
+				<!-- <passive_effect name="JumpStrength" operation="perc_subtract" value="0.85"/> -->
+				<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="0.5"/>
+				<passive_effect name="VehicleMotorTorquePer" operation="perc_set" value="0.5"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="3" effect_name="Cold2"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="3" effect_name="Cold2"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** cowboy/desert zombie melee buff *** -->
+		<buff name="buffElementSwelteringOnHit" showonhud="true" name_key="buffElementSwelteringName" description_key="buffElementSwelteringDesc" tooltip_key="buffElementSwelteringTooltip" icon="ui_game_symbol_hot" icon_color="255,0,0" icon_blink="true">
+			<stack_type value="replace"/>
+			<duration value="7"/>
+
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="player"/>
+				<!-- <passive_effect name="Mobility" operation="base_add" value="-.25"/> -->
+				<passive_effect name="WalkSpeed" operation="base_add" value="-.10"/>
+				<passive_effect name="RunSpeed" operation="base_add" value="-.10"/>
+				<!-- <passive_effect name="JumpStrength" operation="perc_subtract" value="0.85"/> -->
+				<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="0.5"/>
+				<passive_effect name="VehicleMotorTorquePer" operation="perc_set" value="0.5"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="3" effect_name="Hot2"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="3" effect_name="Hot2"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Player$Thirsty" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffStatusThirstyBlockage" operation="set" value="100"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffStatusThirstyBlockage" operation="add" value="@$PlayerLevelBonus"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffStatusThirstyBlockage" operation="multiply" value=".066"/>
+				<passive_effect name="StaminaMaxBlockage" operation="base_add" value="@$buffStatusThirstyBlockage"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffStatusThirstyBlockage" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** burning zombie melee buff *** -->
+		<buff name="buffBurningZombieTrigger" hidden="true">
+			<damage_type value="heat"/>
+			<stack_type value="ignore"/>
+			<duration value="0.1"/>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBurningMeleeDuration" operation="set" value="5"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBurningZombieMelee"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffBurningZombieMelee" hidden="true">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="0"/>
+
+			<effect_group>
+				<!-- If burning duration is low, set it and/or stack it -->
+				<requirement name="CVarCompare" cvar="$buffBurningMeleeDuration" operation="LTE" value="5"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBurningMeleeDuration" operation="set" value="5"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffBurningMeleeDuration" operation="set" value="5"/>
+			</effect_group>
+
+			<effect_group>
+				<!-- Blinks the display -->
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffBurningZombieMelee"/>
+				<!-- On update, decrease duration -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBurningMeleeDuration" operation="add" value="-1"/>
+				<!-- If duration is 0, remove buff -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBurningZombieMelee">
+					<requirement name="CVarCompare" cvar="$buffBurningMeleeDuration" operation="LTE" value="0"/>
+				</triggered_effect>
+				<!-- Reset duration when removed -->
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffBurningMeleeDuration" operation="set" value="0"/>
+			</effect_group>
+
+			<effect_group>
+				<!-- Start fire buff -->
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffIsOnFire"/>
+				<!-- Decrease health and water, adjust thermal stats -->
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1"/>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="1.5"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="30"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="-10"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** 10% chance of blood moon zombies reviving *** -->
+		<buff name="buffResurrect" name_key="buffResurrectName" description_key="buffResurrectDesc" icon="ui_game_symbol_twitch_resurrect" icon_color="139,0,0" remove_on_death="false">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+
+			<effect_group>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffResurrect"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffResurrect"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onDismember" target="other" action="UnregisterSequenceLink" sequence_link="resurrect"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" target="other" event="buff_rez" sequence_link="resurrect" allow_client_call="true">
+					<requirement name="EntityTagCompare" target="other" tags="zombie"/>
+					<requirement name="!EntityTagCompare" target="other" tags="hazmat,radiated,mutated,dog,vulture,buster"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+					<requirement name="!ItemHasTags" tags="perkDemolitionsExpert"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="UnregisterSequenceLink" sequence_link="resurrect"/>
+				<triggered_effect trigger="onDismember" target="other" action="UnregisterSequenceLink" sequence_link="resurrect"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** 5% chance of blood moon boss zombies  *** -->
+		<buff name="buffBossAOETrigger" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<requirement name="HasBuff" buff="buffResurrect" target="other" tags="player"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="bloodmoonboss" operation="set" value="randomint(1,20)"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="CVarCompare" cvar="bloodmoonboss" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetNavObject" nav_object="twitch_vote_boss" add="true"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="SetNavObject" nav_object="twitch_vote_boss" add="true"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="CVarCompare" cvar="bloodmoonboss" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="50" buff="buffBossAOE"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="CVarCompare" cvar="bloodmoonboss" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffBoss"/>
+				<triggered_effect trigger="onOtherKilledSelf" action="RemoveBuff" target="self" buff="buffBoss"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffBossAOE">
+			<stack_type value="ignore"/>
+			<duration value="1"/>
+		
+			<effect_group>
+				<!-- <passive_effect name="HealthChangeOT" operation="base_add" value="10"/> -->
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".2" tags="melee"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffBoss">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<passive_effect name="HealthMax" operation="perc_add" value=".5"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="5"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="5"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="5" tags="coredamageresist"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3" tags="melee"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** zombies in range affect despair *** -->
+		<buff name="buffDespairAOETrigger" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" buff="buffDespairAOE">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+					<requirement name="!EntityTagCompare" target="other" tags="zombie"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespairAOE" hidden="true" icon_color="139,0,0" remove_on_death="false">
+			<stack_type value="replace"/>
+			<duration value="5"/>
+		
+			<effect_group>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffDespair01Untreated,buffDespair01GetBetter,buffDespair02Untreated,buffDespair02GetBetter,buffDespair03Untreated,buffDespair03GetBetter,buffDespairCureDisplayPositive"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffDespairAOE"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.25"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespairAOEFeralTrigger" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" buff="buffDespairFeralAOE">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+					<requirement name="!EntityTagCompare" target="other" tags="zombie"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespairFeralAOE" hidden="true" icon_color="255,255,0" remove_on_death="false">
+			<stack_type value="replace"/>
+			<duration value="5"/>
+		
+			<effect_group>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffDespair01Untreated,buffDespair01GetBetter,buffDespair02Untreated,buffDespair02GetBetter,buffDespair03Untreated,buffDespair03GetBetter"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffDespairFeralAOE"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.5"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespairAOERadiatedTrigger" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="4" buff="buffDespairRadiatedAOE">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+					<requirement name="!EntityTagCompare" target="other" tags="zombie"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespairRadiatedAOE" hidden="true" icon_color="0,255,0" remove_on_death="false">
+			<stack_type value="replace"/>
+			<duration value="5"/>
+		
+			<effect_group>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffDespair01Untreated,buffDespair01GetBetter,buffDespair02Untreated,buffDespair02GetBetter,buffDespair03Untreated,buffDespair03GetBetter"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffDespairRadiatedAOE"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.75"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespairAOEMutatedTrigger" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="buffDespairMutatedAOE">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+					<requirement name="!EntityTagCompare" target="other" tags="zombie"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDespairMutatedAOE" hidden="true" icon_color="0,255,0" remove_on_death="false">
+			<stack_type value="replace"/>
+			<duration value="5"/>
+		
+			<effect_group>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffDespair01Untreated,buffDespair01GetBetter,buffDespair02Untreated,buffDespair02GetBetter,buffDespair03Untreated,buffDespair03GetBetter"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffDespairMutatedAOE"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2"/>
+			</effect_group>
+		</buff>
+
+		<!-- *** Fatties are Boomers *** -->
+		<buff name="buffExplodeEffect">
+			<effect_group>
+				<!-- <triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" buff="buffCopTimerCheck"/> -->
+				<triggered_effect trigger="onSelfExplosionAttackedOther" target="other" tags="player" action="AddBuff" buff="buffBoomerHorde">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+					<requirement name="!EntityTagCompare" target="other" tags="zombie"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfExplosionDamagedOther" target="other" tags="player" action="AddBuff" buff="buffBoomerHorde">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+					<requirement name="!EntityTagCompare" target="other" tags="zombie"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+
+		<buff name="buffCopTimerCheck">
+			<duration value=".01"/>
+			<effect_group>
+				<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LTE" value=".4"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="buffCopTimer"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffCopTimer">
+			<duration value="5.89"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="buffGoo" target="otherAOE" range="6"/>
+				<requirement name="EntityTagCompare" target="other" tags="player"/>
+				<requirement name="!EntityTagCompare" target="other" tags="zombie"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffGoo">
+			<duration value=".26"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffBoomerHorde"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffBoomerHorde">
+			<duration value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="boomer_horde_sequence"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart"  action="ModifyScreenEffect" effect_name="Blur" intensity="1" fade=".1"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffFinish" action="ModifyScreenEffect" effect_name="Blur" intensity="0" fade="5"/> -->
+			</effect_group>
+		</buff>
+	
+		<!-- *** trader buff that reduces despair when in range *** -->
+		<buff name="buffGoodCompany" hidden="true">
+			<stack_type value="ignore"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="6" buff="buffGoodCompanyFromTrader">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffGoodCompanyFromTrader" name_key="buffGoodCompanyFromTraderName" description_key="buffGoodCompanyFromTraderDesc" icon="ui_game_symbol_allies" icon_color="0,255,0">
+			<stack_type value="replace"/>
+			<duration value="5"/>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-2.5">
+					<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	
+		<!-- *** radiated wasteland *** -->
+		<buff name="buffRadiation01" name_key="buffRadiation01Name" description_key="buffRadiation01Desc" tooltip_key="buffRadiation01Tooltip" icon="ui_game_symbol_radiation" icon_color="255,69,0" icon_blink="true">
+			<damage_type value="radiation"/>
+			<stack_type value="ignore"/>
+			<duration value="5000"/>
+			<update_rate value="1"/>
+			<effect_group name="Radiation">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="Damage" operation="set" value="randomint(8,10)"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="@Damage"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="player#painsm" play_in_head="true"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="RadiationSignal" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="RadiationSignal" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="RadiationSignal" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="RadiationSignal" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" intensity="1" fade=".2" effect_name="Hot">
+					<requirement name="CVarCompare" cvar="RadiationSignal" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" intensity="0" fade=".2" effect_name="Hot">
+					<requirement name="CVarCompare" cvar="RadiationSignal" operation="Equals" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Hot"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffRadiation01">
+					<requirement name="!InBiome" biome="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffRadiation01">
+					<requirement name="HasBuff" buff="buffRadSuit"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Radiation" intensity=".2" fade="2"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" effect_name="Radiation" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Radiation" intensity="0" fade="2"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfRespawn" action="AddBuff" buff="buffRadSuitRespawnProtection"/>
+				<!-- <requirement name="InBiome" biome="8"/> -->
+				<requirement name="!HasBuff" buff="buffRadSuit"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffRadSuitHelmet" hidden="true"/>
+		<buff name="buffRadSuitOutfit" hidden="true"/>
+		<buff name="buffRadSuitGloves" hidden="true"/>
+		<buff name="buffRadSuitBoots" hidden="true"/>
+		
+		<buff name="buffWasteland" name_key="buffWastelanddName" description_key="buffWastelanddDesc" tooltip_key="buffWastelanddTooltip" icon="ui_game_symbol_quest" icon_color="0,205,50">
+			<stack_type value="ignore"/>
+			<effect_group>
+				<passive_effect name="Gamestage" operation="perc_add" value=".3"/>
+				<passive_effect name="ScavengingTime" operation="perc_add" value=".8"/>
+				<passive_effect name="LootQuantity" operation="perc_add" value=".5"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".1"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffWasteland">
+					<requirement name="!InBiome" biome="8"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffRadSuit" name_key="buffRadSuitName" description_key="buffRadSuitDesc" tooltip_key="buffRadSuitTooltip" icon="ui_game_symbol_radiation" icon_color="154,205,50">
+			<stack_type value="ignore"/>
+			<display_value_key value="Protected"/>
+			<effect_group>
+				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffRadiation01"/>
+			</effect_group>
+			<!-- <effect_group> -->
+				<!-- <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="radiationready" operation="set" value="0"/> -->
+			<!-- </effect_group> -->
+		</buff>
+		
+		<buff name="buffRadSuitRespawnProtection" name_key="buffRadSuitName" description_key="buffRadSuitRespawnDesc" tooltip_key="buffRadSuitTooltip" icon="ui_game_symbol_radiation" icon_color="154,205,50" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="120"/>
+			<display_value value="RadSuitRespawnProtection"/>
+			<display_value_format value="time"/>
+			<display_value_key value="{0:0.00}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="RadSuitRespawnProtection" operation="set" value="120"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="RadSuitRespawnProtection" operation="set" value="120"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="RadSuitRespawnProtection" operation="subtract" value="1"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffRadiation01"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** bunker buster zombie buff *** -->
+		<buff name="buffBunkerBuster">
+			<duration value="6000"/>
+		
+			<effect_group>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="SetNavObject" nav_object="twitch_explode_v2" add="true" />
+			<triggered_effect trigger="onSelfBuffFinish" action="SetNavObject" nav_object="twitch_explode_v2" add="true" /> -->
+			
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
+				<passive_effect name="HealthMax" operation="perc_add" value="-.10"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_add" value="-.25"/>
+			</effect_group>
+		
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/TimedCharge/timedChargePrefab.prefab" local_offset="-.06,.2,0.1" local_rotation="-80,180,0" local_scale="1,1,1" parent_transform="Spine1">
+					<requirement name="!HasAttachedPrefab" prefab="@:Other/Items/Weapons/Ranged/TimedCharge/timedChargePrefab.prefab" parent_transform="Spine1"/>
+				</triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="@:Other/Items/Weapons/Ranged/TimedCharge/timedChargePrefab.prefab" local_offset="-.06,.2,0.1" local_rotation="-80,180,0" local_scale="1,1,1" parent_transform="Spine1">
+					<requirement name="!HasAttachedPrefab" prefab="@:Other/Items/Weapons/Ranged/TimedCharge/timedChargePrefab.prefab" parent_transform="Spine1"/>
+				</triggered_effect>
+			
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="timedChargePrefab" parent_transform="Spine1"/>
+			
+				<triggered_effect trigger="onSelfAttackedOther" action="Explode" blast_power="0" block_damage="750" block_radius="5" entity_damage="30" entity_radius="4"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="set" value="0"/>
+				
+				<triggered_effect trigger="onSelfDamagedBlock" action="Explode" blast_power="0" block_damage="750" block_radius="5" entity_damage="30" entity_radius="4"/>
+				<triggered_effect trigger="onSelfDamagedBlock" action="ModifyStats" stat="Health" operation="set" value="0"/>
+				
+				<triggered_effect trigger="onSelfDied" action="Explode" blast_power="0" block_damage="0" block_radius="1" entity_damage="50" entity_radius="4"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** vehicle can be picked up, but player becomes immobilized *** -->
+		<buff name="buffImmobilized" name_key="buffImmobilizedName" description_key="buffImmobilizedDesc" tooltip_key="buffImmobilizedTooltip" remove_on_death="false" icon="ui_game_symbol_pack_mule" icon_color="149,52,54">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffImmobilized"/>
+				<passive_effect name="Mobility" operation="base_add" value="-.95"/>
+				<passive_effect name="JumpStrength" operation="base_add" value="-.95"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffVehicleCrate" name_key="buffVehicleCrateName" description_key="buffVehicleCrateDesc" tooltip_key="buffVehicleCrateTooltip" remove_on_death="false" icon="ui_game_symbol_4x4" icon_color="0,255,0">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffVehicleCrate"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffVehicleCrateTrigger" hidden="true" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<update_rate value=".1"/>
+			<effect_group compare_type="or">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffVehicleCrate"/>
+				<requirement name="PlayerItemCount" item_name="MinibikeBundle" operation="GTE" value="1"/>
+				<requirement name="PlayerItemCount" item_name="MotorcycleBundle" operation="GTE" value="1"/>
+				<requirement name="PlayerItemCount" item_name="4x4Bundle" operation="GTE" value="1"/>
+				<requirement name="PlayerItemCount" item_name="GyroBundle" operation="GTE" value="1"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffVehicleCrate"/>
+				<requirement name="PlayerItemCount" item_name="MinibikeBundle" operation="equals" value="0"/>
+				<requirement name="PlayerItemCount" item_name="MotorcycleBundle" operation="equals" value="0"/>
+				<requirement name="PlayerItemCount" item_name="4x4Bundle" operation="equals" value="0"/>
+				<requirement name="PlayerItemCount" item_name="GyroBundle" operation="equals" value="0"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffVehicleTrigger" hidden="true" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<update_rate value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffImmobilized"/>
+				<requirements compare_type="or">
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleMinibikePlaceable" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleMotorcyclePlaceable" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleTruck4x4Placeable" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleGyrocopterPlaceable" operation="GTE" value="1"/>
+				</requirements>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffImmobilized"/>
+				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleMinibikePlaceable" operation="equals" value="0"/>
+				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleMotorcyclePlaceable" operation="equals" value="0"/>
+				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleTruck4x4Placeable" operation="equals" value="0"/>
+				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleGyrocopterPlaceable" operation="equals" value="0"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** disables vehicle when vehicle is submerged *** -->
+		<buff name="NoVehicleUnderwater" hidden="true" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<update_rate value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="disableVehicle"/>
+				<requirements>
+					<requirement name="IsAttachedToEntity"/>
+					<requirement name="CVarCompare" cvar="_underwater" operation="GTE" value="1"/>
+				</requirements>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="disableVehicle"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNoVehicle"/>
+				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="disableVehicle" hidden="true" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<update_rate value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="buff_novehicle_submerged"/>
+				<passive_effect name="NoVehicle" operation="base_set" value="1"/>
+			</effect_group>
+		</buff>
+
+		<buff name="buffNoVehicle" name_key="TwitchBuff_NoVehicle" description_key="TwitchBuff_NoVehicleDesc" icon="ui_game_symbol_twitch_no_vehicle" icon_color="255,175,175">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+
+			<effect_group>
+				<!-- Blinks the display -->
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="twitch_buffNoVehicle"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="twitch_buffNoVehicle"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="twitch_buffNoVehicle">
+					<requirement name="HasBuff" buff="twitch_buffVoteNoVehicle"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="PlaySound" sound="twitch_bad_buff_ended" play_in_head="true"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="NoVehicle" operation="base_set" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** always headshots *** -->
+		<buff name="buffAlwaysHeadShotsOnly" name_key="buffHeadShotsOnlyName" description_key="buffHeadShotsOnlyDesc" tooltip_key="buffHeadShotsOnlyTooltip" showonhud="false" icon="ui_game_symbol_head_shot" icon_color="255,128,0" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+
+			<effect_group>
+				<requirement name="EntityTagCompare" target="other" tags="entity,zombie,walker,spider"/>
+				<passive_effect name="HeadShotOnly" operation="base_set" value="0"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="other" tags="animal"/>
+				<passive_effect name="HeadShotOnly" operation="base_set" value="0"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="ItemHasTags" target="other" tags="perkDemolitionsExpert"/>
+				<passive_effect name="HeadShotOnly" operation="base_set" value="0"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** zombies have decreased damage resistance *** -->
+		<buff name="buffShieldEnemies" hidden="true" remove_on_death="false">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+
+			<effect_group>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** arrows/bolts have a small chance to cause bleed *** -->
+		<buff name="buffArrowBleed" name_key="buffArrowBleedName" description_key="buffArrowBleedDesc" tooltip_key="buffArrowBleedtip" showonhud="false" icon="ui_game_symbol_twitch_strength_ranged" icon_color="255,0,0" remove_on_death="false">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<requirement name="ItemHasTags" tags="perkArchery"/>
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+				<requirement name="IsAlive" target="other"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="1" target="other"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** increase bartering and trader stage for each quest tier completed *** -->
+		<buff name="buffDaringAdventurer1" name_key="buffDaringAdventurerOneName" description_key="buffDaringAdventurerOneDesc" tooltip_key="buffDaringAdventurerOneTooltip" icon="ui_game_symbol_barter" remove_on_death="false" showonhud="false">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<passive_effect name="TraderStage" operation="base_add" value="10"/>
+				<passive_effect name="QuestBonusItemReward" operation="perc_add" value=".05"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="BarteringBuying" operation="base_add" value=".05"/>
+				<passive_effect name="BarteringSelling" operation="base_add" value=".05"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDaringAdventurer2" name_key="buffDaringAdventurerTwoName" description_key="buffDaringAdventurerTwoDesc" tooltip_key="buffDaringAdventurerTwoTooltip" icon="ui_game_symbol_barter" remove_on_death="false" showonhud="false">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<passive_effect name="TraderStage" operation="base_add" value="20"/>
+				<passive_effect name="QuestBonusItemReward" operation="perc_add" value=".10"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="BarteringBuying" operation="base_add" value=".1"/>
+				<passive_effect name="BarteringSelling" operation="base_add" value=".1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDaringAdventurer3" name_key="buffDaringAdventurerThreeName" description_key="buffDaringAdventurerThreeDesc" tooltip_key="buffDaringAdventurerThreeTooltip" icon="ui_game_symbol_barter" remove_on_death="false" showonhud="false">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<passive_effect name="TraderStage" operation="base_add" value="30"/>
+				<passive_effect name="QuestBonusItemReward" operation="perc_add" value=".15"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="BarteringBuying" operation="base_add" value=".15"/>
+				<passive_effect name="BarteringSelling" operation="base_add" value=".15"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDaringAdventurer4" name_key="buffDaringAdventurerFourName" description_key="buffDaringAdventurerFourDesc" tooltip_key="buffDaringAdventurerFourTooltip" icon="ui_game_symbol_barter" remove_on_death="false" showonhud="false">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<passive_effect name="TraderStage" operation="base_add" value="40"/>
+				<passive_effect name="QuestBonusItemReward" operation="perc_add" value=".20"/>
+				<passive_effect name="QuestRewardChoiceCount" operation="base_add" value="1"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="BarteringBuying" operation="base_add" value=".20"/>
+				<passive_effect name="BarteringSelling" operation="base_add" value=".20"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="buffDaringAdventurer5" name_key="buffDaringAdventurerFiveName" description_key="buffDaringAdventurerFiveDesc" tooltip_key="buffDaringAdventurerFiveTooltip" icon="ui_game_symbol_barter" remove_on_death="false" showonhud="false">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+		
+			<effect_group>
+				<passive_effect name="TraderStage" operation="base_add" value="50"/>
+				<passive_effect name="QuestBonusItemReward" operation="perc_add" value=".25"/>
+				<passive_effect name="QuestRewardChoiceCount" operation="base_add" value="2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="BarteringBuying" operation="base_add" value=".25"/>
+				<passive_effect name="BarteringSelling" operation="base_add" value=".25"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** brass catcher *** -->
+		<buff name="buffReclaimBrass" hidden="true" remove_on_death="true">
+			<stack_type value="replace"/>
+			<duration value="0.01"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="modBrassCatcher" allow_client_call="true"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** "anytime" horde *** -->
+		<buff name="buffRandomHorde" hidden="true">
+			<duration value="0"/>
+			<update_rate value="1"/>
+			<effect_group>				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hordedelay" operation="add" value="1"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hordedelay" operation="set" value="901"/>
+				<requirement name="CVarCompare" cvar="hordedelay" operation="GTE" value="901"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hordetimer" operation="set" value="randomint(1,5000)"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="hordedelay" operation="GTE" value="900"/>
+				<requirement name="CVarCompare" cvar="hordetimer" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="random_horde_sequence"/>
+			</effect_group>			
+		</buff>
+	</append>	
+	
+	<!-- *** equalize molotov damage for all difficulties *** -->
+	<set xpath="//buff[@name='buffBurningMolotov']//effect_group[5]//passive_effect[@name='HealthChangeOT']/@value">10,15,20,25</set>
+	<set xpath="//buff[@name='buffBurningMolotov']/effect_group[4]//passive_effect[@name='HealthChangeOT']/@value">1,5,11,13</set>
+	
+	<!-- *** hazmat zombies immune to fire damage *** -->
+	<append xpath="//buff[@name='buffBurningMolotov']">
+		<!-- if entity is hazmat, no burning -->
+		<effect_group>
+			<passive_effect name="HealthChangeOT" operation="base_set" duration="0,8,14,18" value="0,0,0,0">
+				<requirement name="EntityTagCompare" tags="hazmat"/>
+			</passive_effect>
+		</effect_group>
+	</append>
+	<append xpath="//buff[@name='buffHazardBurningElement']">
+		<!-- if entity is hazmat, no burning -->
+		<effect_group>
+			<requirement name="EntityTagCompare" tags="hazmat"/>
+			<!-- Start burning cycle -->
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffIsOnFire"/>
+			<!-- No health loss -->
+			<passive_effect name="HealthChangeOT" operation="base_set" value="0"/>
+		</effect_group>
+	</append>
+	
+	<!-- *** set radiated regen to restore max health, up from 80% *** -->
+	<set xpath="//buff[@name='buffRadiatedRegen']//effect_group/triggered_effect[@trigger='onSelfBuffUpdate']/requirement[@name='StatComparePercCurrentToMax']/@value">1</set>
+	
+	<!-- *** if player has hazmat gear, immune to mutated radiation *** -->
+	<insertafter xpath="//buff[@name='buffRadiationPool']/effect_group/passive_effect[@name='HealthChangeOT']/requirement[@name='EntityTagCompare']">
+		<requirement name="!HasBuff" buff="buffRadSuit"/>
+	</insertafter>
+	<insertbefore xpath="//buff[@name='buffRadiationPool']/effect_group//triggered_effect[@trigger='onSelfBuffUpdate']">
+		<requirement name="!HasBuff" buff="buffRadSuit"/>
+	</insertbefore>
+	
+	<!-- *** dysentery is more aggressive *** -->
+	<set xpath="//buff[@name='buffDysenteryMain']/@icon">ui_game_symbol_stomach</set>
+	<set xpath="//buff[@name='buffDysentery01Untreated']/@icon">ui_game_symbol_stomach</set>
+	<set xpath="//buff[@name='buffDysentery01Untreated']/@icon_color">157,194,9</set>
+	<set xpath="//buff[@name='buffDysentery01UntreatedDiarrhea']/@icon">ui_game_symbol_stomach</set>
+	<set xpath="//buff[@name='buffDysentery01UntreatedDiarrhea']/@icon_color">157,194,9</set>
+	<set xpath="//buff[@name='buffDysentery01GetBetter']/@icon">ui_game_symbol_stomach</set>
+	<setattribute xpath="//buff[@name='buffDysentery01GetBetter']" name="icon_color">65,105,225</setattribute>
+	<set xpath="//buff[@name='buffDysentery01GetBetterDiarrhea']/@icon">ui_game_symbol_stomach</set>
+	<set xpath="//buff[@name='buffDysentery01GetBetterDiarrhea']/@icon_color">65,105,225</set>
+	<set xpath="//buff[@name='buffDysentery01UntreatedDiarrhea']//effect_group//triggered_effect[@stat='water']/@value">-2.5</set>
+	<set xpath="//buff[@name='buffDysentery01UntreatedDiarrhea']//effect_group//triggered_effect[@stat='Food']/@value">-7.5</set>
+	<set xpath="//buff[@name='buffDysentery01GetBetterDiarrhea']//effect_group//triggered_effect[@stat='water']/@value">-2.5</set>
+	<set xpath="//buff[@name='buffDysentery01GetBetterDiarrhea']//effect_group//triggered_effect[@stat='food']/@value">-7.5</set>
+	
+	<!-- *** newbie coat removed at level 1 *** -->
+	<set xpath="/buffs/buff[@name='buffNewbieCoat']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate']/requirement[@name='PlayerLevel']/@value">0</set>
+	<set xpath="/buffs/buff[@name='buffNearDeathRegen']/effect_group/triggered_effect[@action='RemoveAllNegativeBuffs']/requirement[@name='PlayerLevel']/@value">1</set>
+	<set xpath="/buffs/buff[@name='buffNearDeathRegen']/effect_group/triggered_effect[@action='RemoveBuff']/requirement[@name='PlayerLevel']/@value">1</set>
+	<remove xpath="/buffs/buff[@name='buffNearDeathRegen']/effect_group/passive_effect[@name='HealthChangeOT']"/><!-- You may want this too?? -->
+	<!-- <remove xpath="/buffs/buff[@name='buffNearDeathRegen']/effect_group/passive_effect[@name='WaterChangeOT']"/>  -->
+	<remove xpath="/buffs/buff[@name='buffNearDeathProtection']/effect_group/passive_effect[@name='BuffResistance']"/><!-- Removes invisible buff section that gives resistance to negative buffs -->
+	
+	<!-- *** remove bleed from the undead *** -->
+	<insertafter xpath="//buff[@name='buffInjuryBleeding']/effect_group//passive_effect[@name='HealthChangeOT']">
+		<requirement name="!EntityTagCompare" tags="zombie"/>
+	</insertafter>
+	
+	<!-- *** lowers stamina regen pause on power attack *** -->
+	<set xpath="//buff[@name='buffPowerAttackStaminaStunt']/duration/@value">1.5</set>
+
+	<!-- *** Survival Instinct *** -->
+	<insertAfter xpath="//buff[@name='buffDeadEye']">
+		<buff name="buffPerkSurvivalInstinct" name_key="perkSurvivalInstinctName" description_key="buffPerkSurvivalInstinctDesc" showonhud="false" icon="ui_game_symbol_talk" icon_color="0,255,0" icon_blink="false" hidden="false">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+
+			<effect_group>
+				<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" operation="GTE" value="1"/>
+				<passive_effect name="HealthMax" operation="base_add" value="5"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="5"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1" tags="melee"/>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".03"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" operation="GTE" value="2"/>
+				<passive_effect name="HealthMax" operation="base_add" value="5"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="5"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1" tags="melee"/>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".03"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" operation="GTE" value="3"/>
+				<passive_effect name="HealthMax" operation="base_add" value="5"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="5"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1" tags="melee"/>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".03"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" operation="GTE" value="4"/>
+				<passive_effect name="HealthMax" operation="base_add" value="5"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="5"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1" tags="melee"/>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".03"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" operation="GTE" value="5"/>
+				<passive_effect name="HealthMax" operation="base_add" value="5"/>
+				<passive_effect name="StaminaMax" operation="base_add" value="5"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1" tags="melee"/>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".03"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="SurvivalInstinctLevel" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+	</insertAfter>
+	
+	<!-- doubles the effects from adverse heat/cold -->
+	<!-- <set xpath="//buff[@name='buffElementHot']/effect_group//passive_effect[2]/@value">6</set>
+	<set xpath="//buff[@name='buffElementHot']/effect_group//passive_effect[3]/@value">-.9</set>
+	<set xpath="//buff[@name='buffElementHot']/effect_group//passive_effect[4]/@value">-1.8</set>
+	
+	<set xpath="//buff[@name='buffElementSweltering']/effect_group//passive_effect[2]/@value">12</set>
+	<set xpath="//buff[@name='buffElementSweltering']/effect_group//passive_effect[3]/@value">-1.8</set>
+	<set xpath="//buff[@name='buffElementSweltering']/effect_group//passive_effect[4]/@value">-3.6</set>
+	
+	<set xpath="//buff[@name='buffElementCold']/effect_group//passive_effect[2]/@value">.6</set>
+	<set xpath="//buff[@name='buffElementCold']/effect_group//passive_effect[3]/@value">-.09</set>
+	<set xpath="//buff[@name='buffElementCold']/effect_group//passive_effect[4]/@value">-1.8</set>
+	<set xpath="//buff[@name='buffElementCold']/effect_group//passive_effect[5]/@value">2</set>
+	<set xpath="//buff[@name='buffElementCold']/effect_group//passive_effect[6]/@value">-.3</set>
+	<set xpath="//buff[@name='buffElementCold']/effect_group//passive_effect[7]/@value">-.6</set>
+	
+	<set xpath="//buff[@name='buffElementFreezing']/effect_group//passive_effect[2]/@value">1.2</set>
+	<set xpath="//buff[@name='buffElementFreezing']/effect_group//passive_effect[3]/@value">-.18</set>
+	<set xpath="//buff[@name='buffElementFreezing']/effect_group//passive_effect[4]/@value">-.36</set>
+	<set xpath="//buff[@name='buffElementFreezing']/effect_group//passive_effect[5]/@value">4</set>
+	<set xpath="//buff[@name='buffElementFreezing']/effect_group//passive_effect[6]/@value">-.6</set>
+	<set xpath="//buff[@name='buffElementFreezing']/effect_group//passive_effect[7]/@value">-1.2</set> -->
+</HellsJanitor>

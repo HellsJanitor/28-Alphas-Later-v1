@@ -1,0 +1,7 @@
+<HellsJanitor>
+	<set xpath="//challenges/challenge[@name='gatherResources']/objective[@item='resourceWood']/@count">20</set>
+	<set xpath="//challenges/challenge[@name='gatherResources']/objective[@item='resourceWood']/@item">resourceBranch</set>
+	
+	<set xpath="//challenges/challenge[@name='gatherResourcesStoneAxe']/objective[@item='resourceWood']/@count">3</set>
+	<set xpath="//challenges/challenge[@name='gatherResourcesStoneAxe']/objective[@item='resourceWood']/@item">woodLogPillar100</set>
+</HellsJanitor>

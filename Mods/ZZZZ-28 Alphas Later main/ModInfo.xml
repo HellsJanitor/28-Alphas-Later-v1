@@ -1,0 +1,14 @@
+<xml>	
+	<!-- (required) Unique internal name. Allowed chars: 0-9 A-Z a-z _ - -->
+	<Name value="28_Alphas_Later" />
+	<!-- (required) Name used for display. Duh. -->
+	<DisplayName value="28 Alphas Later" />
+	<!-- (required) Nomen omen. Format: x.y.z (https://semver.org/) -->
+	<Version value="2.0.0" />
+	<!-- (optional) Nomen omen. -->
+	<Description value="An overhaul mod for 7 Days to Die" />
+	<!-- (optional) Nomen omen. -->
+	<Author value="HellsJanitor" />
+	<!-- (optional) Nomen omen. -->
+	<Website value="" />
+</xml>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="28ALWMMTraderQuestMapFix" />
+	<DisplayName value="28 Alphas Later Trader Quest Map Fix" />
+	<Version value="1.4.1" />
+	<Description value="Workaround to allow WMMTraderQuestMap to work with more than 5 quest choices" />
+	<Author value="Mewtiny" />
+	<Website value="" />
+</xml>

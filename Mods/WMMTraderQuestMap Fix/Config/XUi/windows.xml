@@ -1,0 +1,20 @@
+﻿<config>
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']" name="height">770</setattribute>
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']/rect[@name='content']" name="pos">-1024,-1024</setattribute>
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']/rect[@name='content']" name="height">1</setattribute>
+	<remove xpath="/windows/window[@name='mapTraderQuests']/rect[@name='content']/rect[@name='searchControls']"/>
+
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']/panel[@name='header'][@pos='2,-330']" name="pos">2,-45</setattribute>
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']/panel[@name='content']" name="pos">2,-87</setattribute>
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']/panel[@name='content']" name="height">691</setattribute>
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']/panel[@name='content']/sprite[@name='backgroundMain']" name="height">690</setattribute>
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']/panel[@name='content']/label[@name='descriptionText']" name="height">577</setattribute>
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']/panel[@name='content']" name="height">691</setattribute>
+
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']/rect[@name='btnAccept']" name="pos">2,-742</setattribute>
+
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']/panel[@name='previewFrame']" name="pos">6,-472</setattribute>
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']/panel[@name='previewFrame']" name="width">347</setattribute>
+	<setattribute xpath="/windows/window[@name='mapTraderQuests']/panel[@name='previewFrame']" name="height">265</setattribute>
+
+</config>

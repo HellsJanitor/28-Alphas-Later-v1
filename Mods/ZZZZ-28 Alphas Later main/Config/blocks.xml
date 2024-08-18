@@ -1,0 +1,1693 @@
+<configs>
+	<!-- search find all *** for changes -->
+	
+	<!-- *** player heals when standing on player crafted king-size bed *** -->
+	<insertafter xpath="//block[@name='bed02']">
+		<block name="bedPlayer">
+			<property name="Class" value="SleepingBag"/>
+			<property name="CustomIcon" value="bed02"/>
+			<property name="DescriptionKey" value="bedGroupDesc"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="Material" value="Mfurniture"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="Entities/Furniture/kingSizedBedPrefab"/>
+			<property name="MultiBlockDim" value="2,1,2"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="EconomicValue" value="2600"/>
+			<property name="FallDamage" value=".6"/>
+			<property class="RepairItems">
+				<property name="resourceCloth" value="40"/>
+				<property name="resourceSpring" value="20"/>
+				<property name="resourceWood" value="20"/>
+				<property name="resourceMetalPipe" value="10"/>
+			</property>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="resourceCloth" count="16" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceWood" count="8" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceSpring" count="6" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceMetalPipe" count="2,3" tag="salvageHarvest"/>
+			<drop event="Destroy" name="resourceScrapIron" count="10,15"/>
+			<property name="CanPickup" value="true" param1="bedPlayer"/>
+			<property name="SortOrder1" value="B434"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Group" value="Decor/Miscellaneous"/>
+			<property name="FilterTags" value="MC_building,SC_decor"/>
+			<property name="Tags" value="bedroll,playercraftedbed"/>
+		</block>
+	</insertafter>
+	
+	<set xpath="//block[@name='bedroll']">
+		<property name="CreativeMode" value="Player"/>
+		<property name="Class" value="SleepingBag"/>
+		<property name="IndexName" value="brBlock"/> <!-- need this to show the bigger covering area -->
+		<property name="DescriptionKey" value="bedGroupDesc"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="CustomIconTint" value="50493F"/>
+		<property name="TintColor" value="50493F"/>
+		<property name="Stacknumber" value="10"/>
+		<property name="Material" value="Mplants"/>
+		<property name="Shape" value="ModelEntity"/>
+		<property name="Model" value="Entities/RespawnPoints/bedRollPrefab"/>
+		<property name="ModelOffset" value=".5,0,0"/>
+		<property name="MultiBlockDim" value="2,2,1"/>
+		<!-- <property name="GndAlign" value="1"/> -->
+		<property name="WaterFlow" value="permitted"/>
+		<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+		<property name="Place" value="TowardsPlacerInverted"/>
+		<property name="OnlySimpleRotations" value="true"/>
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+		<property name="FuelValue" value="20"/>
+		<property name="EconomicValue" value="10"/>
+		<property name="EconomicBundleSize" value="10"/>
+		<property name="MaxDamage" value="100"/>
+		<property name="FallDamage" value=".8"/>
+		<property name="CanPickup" value="true" param1="bedrollBlockVariantHelper"/>
+		<property name="IsTerrainDecoration" value="true"/>
+		<property class="RepairItems">
+			<property name="resourceYuccaFibers" value="20"/>
+		</property>
+		<drop event="Harvest" name="resourceYuccaFibers" count="5" tag="allHarvest"/>
+		<drop event="Destroy" name="resourceYuccaFibers" count="1,3"/>
+		<drop event="Fall" name="resourceYuccaFibers" count="5" prob="1" stick_chance="0"/>
+		<property name="SortOrder1" value="B433"/>
+		<property name="SortOrder2" value="0001"/>
+		<property name="Group" value="Basics,Building,advBuilding"/>
+		<property name="Tags" value="bedroll"/>
+		<property name="FilterTags" value="MC_building,SC_decor"/>
+	</set>	
+	
+	<!-- *** double planted crops growth time *** -->
+	<set xpath="//block[@name='cropsGrowingMaster']//property[@name='PlantGrowing.GrowthRate']/@value">126</set>
+	
+	<!-- *** new fertilized terrain *** -->
+	<append xpath="/blocks"> 
+		<block name="terrFertilizedFarmland3">
+			<property name="Material" value="MfertilizedFarmland3"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="2"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="CanMobsSpawnOn" value="false"/>
+			<property class="RepairItems"><property name="resourceClayLump" value="14"/></property>
+			<drop event="Harvest" name="resourceClayLump" count="22" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="terrFertileDirt" count="1" prob="0.25" stick_chance="1"/>
+			<drop event="Fall" name="resourceClayLump" count="44" prob="0.187" stick_chance="0"/>
+			<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+			<property name="FilterTags" value="fterrain"/>
+			<property name="SortOrder1" value="d0m0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrainFertile"/>
+		</block>
+		
+	<!-- *** chicken coop *** -->
+		<block name="ctnChickenCoop">
+			<property name="CustomIcon" value="ChickenCoop"/>
+			<property name="Class" value="IDC_Core.PassiveCollector, IDCCore"/>
+			<!-- <property name="UnlockedBy" value="craftingWorkstations"/> -->
+			<property name="WorkstationIcon" value="ui_game_symbol_water"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="DescriptionKey" value="ctnChickenCoopDesc"/>
+			<property name="Material" value="Mwood"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/furnishings.unity3d?ChickenCoop"/>
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="MultiBlockDim" value="1,2,1"/>
+			<property name="ImposterExchange" value="imposterBlock" param1="116"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="RestrictSubmergedPlacement" value="true"/>
+			<property name="AllowedRotations" value="Basic90"/>
+			<property name="Path" value="solid"/>
+			<property name="IsDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="OpenSound" value="door_wood_roughcut_open"/>
+			<property name="CloseSound" value="door_wood_roughcut_close"/>
+			<property name="ConvertSound" value="chickenpain,1"/>
+			<property name="MinConvertTime" value="11000"/>
+			<property name="MaxConvertTime" value="15000"/>
+			<property name="EconomicValue" value="3"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="MaxDamage" value="200"/>
+			<property name="HeatMapStrength" value="1"/>
+			<property name="HeatMapTime" value="2000"/>
+			<property name="HeatMapFrequency" value="5000"/>
+			<property class="RepairItems">
+				<property name="resourceWood" value="20"/>
+			</property>
+			<drop event="Destroy" name="resourceWood" count="15"/>
+			<property name="SortOrder1" value="B281"/>
+			<property name="SortOrder2" value="0100"/>
+			<property name="Group" value="Basics,Food/Cooking,Building,advBuilding"/>
+			<property name="Tags" value="workstationSkill,twitch_workstation"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+			<property name="HasModifiers" value="true"/>
+			<property name="HasItemConversions" value="true"/>
+			<property name="FuelItems" value="fuelChicken,1"/>
+			<property name="NeedsSkyAccess" value="false"/>
+			
+			<property name="ContColumns" value="3"/>
+			<property name="ContRows" value="1"/>
+			<property name="NumModifiersSlots" value="1"/>
+			
+			<item_conversion item="foodEgg" lower_range="1" upper_range="2"/>
+			
+		</block>
+
+	<!-- *** dew collector *** -->
+		<block name="cntAdvancedDewCollector">
+			<property name="CustomIcon" value="cntDewCollector"/>
+			<property name="Class" value="IDC_Core.PassiveCollector, IDCCore"/>
+			<property name="UnlockedBy" value="craftingWorkstations"/>
+			<property name="WorkstationIcon" value="ui_game_symbol_water"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="DescriptionKey" value="advancedDewCollectorDesc"/>
+			<property name="Material" value="MFuelBarrelPolymer"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="Entities/Furniture/collectorDewPrefab"/>
+			<property name="MultiBlockDim" value="3,3,3"/>
+			<property name="ImposterExchange" value="imposterBlock" param1="116"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="RestrictSubmergedPlacement" value="true"/>
+			<property name="AllowedRotations" value="Basic90"/>
+			<property name="Path" value="solid"/>
+			<property name="IsDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="OpenSound" value="open_workbench"/>
+			<property name="CloseSound" value="close_workbench"/>
+			<property name="ConvertSound" value="bucketfill_water,1"/>
+			<property name="MinConvertTime" value="31200"/>
+			<property name="MaxConvertTime" value="52000"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="MaxDamage" value="200"/>
+			<property name="HeatMapStrength" value="2"/>
+			<property name="HeatMapTime" value="5000"/>
+			<property name="HeatMapFrequency" value="1000"/>
+			<property class="RepairItems">
+				<property name="resourceScrapPolymers" value="20"/>
+				<!-- <property name="resourceForgedIron" value="10"/> -->
+			</property>
+			<!-- <drop event="Destroy" name="cntAdvancedDewCollector" count="1"/> -->
+			<drop event="Harvest" name="resourceScrapPolymers" count="40,60" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceMetalPipe" count="1,3" tag="allHarvest"/>
+			<drop event="Destroy" name="resourceScrapPolymers" count="10"/>
+			<property name="DestroyFX" value="blockdestroy_cloth,collector_destroy"/>
+			<property name="SortOrder1" value="B281"/>
+			<property name="SortOrder2" value="0100"/>
+			<property name="Group" value="Basics,Food/Cooking,Building,advBuilding"/>
+			<property name="Tags" value="workstationSkill,twitch_workstation"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+			
+			<property name="HasModifiers" value="true"/>
+			<property name="NumModifiersSlots" value="3"/>
+			<property name="HasItemConversions" value="true"/>
+			<property name="FuelItems" value="resourceWaterFilter,1"/>
+			
+			<property name="ContColumns" value="3"/>
+			<property name="ContRows" value="1"/>
+			
+			<item_conversion item="drinkJarRiverWater" lower_range="1" upper_range="1"/>
+			<modifier name="adcLargeCatcher" effect="ItemQuantity" value="drinkJarRiverWater" secondary="2" thirdValue="2"/>
+			<modifier name="adcAdvancedFilter" effect="ReplaceItem" value="drinkJarRiverWater" secondary="drinkJarBoiledWater"/>			
+			<!-- <modifier name="adcAdvancedFilter" effect="Speed" value="-1.0"/> -->
+			<modifier name="adcBigBarrel" effect="OutputSlots" value="2"/><!-- Additive effect -->
+		</block>
+	
+	<!-- *** rain catcher for buckets of water *** -->
+		<block name="cntRainCollector">
+			<property name="CustomIcon" value="cntDewCollector"/>
+			<property name="Class" value="IDC_Core.PassiveCollector, IDCCore"/>
+			<property name="UnlockedBy" value="craftingWorkstations"/>
+			<property name="WorkstationIcon" value="ui_game_symbol_water"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="DescriptionKey" value="RainCollectorDesc"/>
+			<property name="Material" value="MFuelBarrelPolymer"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="Entities/Furniture/collectorDewPrefab"/>
+			<property name="MultiBlockDim" value="3,3,3"/>
+			<property name="ImposterExchange" value="imposterBlock" param1="116"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="RestrictSubmergedPlacement" value="true"/>
+			<property name="AllowedRotations" value="Basic90"/>
+			<property name="Path" value="solid"/>
+			<property name="IsDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="OpenSound" value="open_workbench"/>
+			<property name="CloseSound" value="close_workbench"/>
+			<property name="ConvertSound" value="bucketfill_water,1"/>
+			<property name="MinConvertTime" value="15600"/>
+			<property name="MaxConvertTime" value="26000"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="MaxDamage" value="200"/>
+			<property name="HeatMapStrength" value="2"/>
+			<property name="HeatMapTime" value="5000"/>
+			<property name="HeatMapFrequency" value="1000"/>
+			<property class="RepairItems">
+				<property name="resourceScrapPolymers" value="20"/>
+			</property>
+			<drop event="Harvest" name="resourceScrapPolymers" count="40,60" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceMetalPipe" count="1,3" tag="allHarvest"/>
+			<drop event="Destroy" name="resourceWaterFilter" count="0,1"/>
+			<property name="DestroyFX" value="blockdestroy_cloth,collector_destroy"/>
+			<property name="SortOrder1" value="B281"/>
+			<property name="SortOrder2" value="0100"/>
+			<property name="Group" value="Basics,Food/Cooking,Building,advBuilding"/>
+			<property name="Tags" value="workstationSkill,twitch_workstation"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+			
+			<property name="HasModifiers" value="true"/>
+			<property name="HasItemConversions" value="true"/>
+			<property name="FuelItems" value="bucketEmpty,1"/>
+			
+			<property name="ContColumns" value="1"/>
+			<property name="ContRows" value="1"/>
+			
+			<item_conversion item="bucketRiverWater" lower_range="1" upper_range="1"/>
+		</block>
+	
+	<!-- *** chicken trap *** -->
+		<block name="cntIDCAnimalSnare">
+			<property name="CustomIcon" value="AnimalSnare"/>
+			<property name="Class" value="IDC_Core.PassiveCollector, IDCCore"/>
+			<property name="WorkstationIcon" value="ui_game_symbol_water"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="DescriptionKey" value="cntIDCAnimalSnareDesc"/>
+			<property name="Material" value="MFuelBarrelPolymer"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Assets/idc_animal_snare.unity3d?Animal_Cage_Prefab_V2"/>
+			<property name="MultiBlockDim" value="3,1,1"/>
+			<property name="ImposterExchange" value="imposterBlock" param1="116"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="RestrictSubmergedPlacement" value="true"/>
+			<property name="AllowedRotations" value="Basic90"/>
+			<property name="Path" value="solid"/>
+			<property name="IsDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="OpenSound" value="open_workbench"/>
+			<property name="CloseSound" value="close_workbench"/>
+			<property name="ConvertSound" value="chickenpain,10"/>
+			<property name="MinConvertTime" value="21000"/>
+			<property name="MaxConvertTime" value="30000"/>
+			<property name="EconomicValue" value="3"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="MaxDamage" value="1000"/>
+			<property name="HeatMapStrength" value="5"/>
+			<property name="HeatMapTime" value="5000"/>
+			<property name="HeatMapFrequency" value="1000"/>
+			<property class="RepairItems">
+				<property name="resourceScrapPolymers" value="20"/>
+				<property name="resourceForgedIron" value="10"/>
+			</property>
+			<drop event="Destroy" name="cntIDCAnimalSnare" count="1"/>
+			<property name="SortOrder1" value="B281"/>
+			<property name="SortOrder2" value="0100"/>
+			<property name="Group" value="Basics,Food/Cooking,Building,advBuilding"/>
+			<property name="Tags" value="workstationSkill,twitch_workstation"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+			
+			<property name="HasModifiers" value="true"/>
+			<property name="HasItemConversions" value="true"/>
+			<property name="NeedsSkyAccess" value="false"/>
+			<property name="ContColumns" value="5"/>
+			<property name="ContRows" value="2"/>
+			<property name="NumModifiersSlots" value="4"/>
+			
+			<item_conversion item="fuelChicken" lower_range="0" upper_range="1"/>
+			<!-- <item_conversion item="resourceAnimalFat" lower_range="2" upper_range="4"/> -->
+			<!-- <item_conversion item="resourceLeather" lower_range="1" upper_range="3"/> -->
+			
+			<property name="FuelItems" value="plantedCorn1,1"/>
+			
+			<!-- <modifier name="idcMeatCooker" effect="ReplaceItem" value="foodRawMeat" secondary="foodCharredMeat"/> -->
+			<!-- <modifier name="idcMeatCooker" effect="ItemQuantity" value="foodCharredMeat" secondary="1" thirdValue="3"/> -->
+			<!-- <modifier name="idcEnhancedSkinningDevice" effect="ItemQuantity" value="resourceLeather" secondary="4" thirdValue="6"/> -->
+			<modifier name="idcUpgradedStorage" effect="OutputSlots" value="3"/>
+			<modifier name="plantedGraceCorn1" effect="Speed" value="-0.5"/>
+		</block>
+	
+	<!-- *** beehive and treestump *** -->
+		<block name="ctnIDCBeehive">
+			<property name="CustomIcon" value="Beehive"/>
+			<property name="Class" value="IDC_Core.PassiveCollector, IDCCore"/>
+			<property name="UnlockedBy" value="craftingWorkstations"/>
+			<property name="WorkstationIcon" value="ui_game_symbol_water"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="DescriptionKey" value="ctnIDCBeehiveDesc"/>
+			<property name="Material" value="Mwood"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/furnishings.unity3d?Beehive"/>
+			<property name="MultiBlockDim" value="1,2,1"/>
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="ImposterExchange" value="imposterBlock" param1="116"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="RestrictSubmergedPlacement" value="true"/>
+			<property name="AllowedRotations" value="Basic90"/>
+			<property name="Path" value="solid"/>
+			<property name="IsDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="OpenSound" value="BeehiveOpen"/>
+			<property name="CloseSound" value="close_workbench"/>
+			<property name="ConvertSound" value="BeehiveProduce,10"/>
+			<property name="MinConvertTime" value="11000"/>
+			<property name="MaxConvertTime" value="15000"/>
+			<property name="EconomicValue" value="3"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="MaxDamage" value="1000"/>
+			<property name="HeatMapStrength" value="1"/>
+			<property name="HeatMapTime" value="2000"/>
+			<property name="HeatMapFrequency" value="5000"/>
+			<property class="RepairItems">
+				<property name="resourceWood" value="20"/>
+				<property name="resourceForgedIron" value="10"/>
+			</property>
+			<drop event="Destroy" name="resourceWood" count="15"/>
+			<property name="SortOrder1" value="B281"/>
+			<property name="SortOrder2" value="0100"/>
+			<property name="Group" value="Basics,Food/Cooking,Building,advBuilding"/>
+			<property name="Tags" value="workstationSkill,twitch_workstation"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+			<property name="HasModifiers" value="true"/>
+			<property name="HasItemConversions" value="true"/>
+			
+			<property name="ContColumns" value="5"/>
+			<property name="ContRows" value="1"/>
+			<property name="NumModifiersSlots" value="1"/>
+			
+			<item_conversion item="foodHoney" lower_range="1" upper_range="2"/>
+			<property name="FuelItems" value="honeyBee,1"/>
+		</block>
+		
+		<block name="cntCompostBin">
+			<property name="CustomIcon" value="composter"/>
+			<property name="Class" value="IDC_Core.PassiveCollector, IDCCore"/>
+			<property name="UnlockedBy" value="craftingWorkstations"/>
+			<property name="WorkstationIcon" value="ui_game_symbol_water"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="DescriptionKey" value="cntCompostBinDesc"/>
+			<property name="Material" value="Mwood"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/furnishings.unity3d?CompostBin"/>
+			<property name="MultiBlockDim" value="1,1,2"/>
+			<!-- <property name="ModelOffset" value="0,0,0"/> -->
+			<property name="ImposterExchange" value="imposterBlock" param1="116"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="RestrictSubmergedPlacement" value="true"/>
+			<property name="AllowedRotations" value="Basic90"/>
+			<property name="Path" value="solid"/>
+			<property name="IsDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="OpenSound" value="open_cooler"/>
+			<property name="CloseSound" value="close_cooler"/>
+			<property name="ConvertSound" value="close_corpse,1"/>
+			<property name="MinConvertTime" value="11000"/>
+			<property name="MaxConvertTime" value="15000"/>
+			<property name="EconomicValue" value="3"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="MaxDamage" value="1000"/>
+			<property name="HeatMapStrength" value="1"/>
+			<property name="HeatMapTime" value="2000"/>
+			<property name="HeatMapFrequency" value="5000"/>
+			<property class="RepairItems">
+				<property name="resourceWood" value="20"/>
+			</property>
+			<drop event="Destroy" name="resourceWood" count="15"/>
+			<property name="SortOrder1" value="B281"/>
+			<property name="SortOrder2" value="0100"/>
+			<property name="Group" value="Basics,Food/Cooking,Building,advBuilding"/>
+			<property name="Tags" value="workstationSkill,twitch_workstation"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+			<property name="HasModifiers" value="true"/>
+			<property name="HasItemConversions" value="true"/>
+			
+			<property name="ContColumns" value="3"/>
+			<property name="ContRows" value="1"/>
+			<property name="NumModifiersSlots" value="1"/>
+			
+			<item_conversion item="resourceFertilizer" lower_range="1" upper_range="2"/>
+			<property name="FuelItems" value="resourceYuccaFibers,1"/>
+		</block>
+		
+		<block name="beehiveTreeStump">
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="beehiveTreeStump"/>
+			<property name="Material" value="MtreeWoodSmall"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="IsPlant" value="true"/>
+			<!-- it shall never be placed on rocks -->
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="@:Entities/Trees/Prefabs/Stump.prefab"/>
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="Path" value="solid"/>
+			<property name="BigDecorationRadius" value="3"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<!-- <drop event="Harvest" name="resourceWood" count="20,30" tag="oreWoodHarvest"/> -->
+			<drop event="Harvest" name="resourceWoodScraps" count="10,20" tag="oreWoodHarvest"/>
+			<drop event="Destroy" name="foodHoney" count="1" prob=".2"/>
+			<property name="SortOrder1" value="B907"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Tags" value="wood"/>
+			<property name="FilterTags" value="MC_outdoor,SC_trees"/>
+		</block>
+
+	<!-- *** player wood burning stove *** -->
+		<block name="playerWoodBurningStove">
+			<property name="Class" value="Campfire"/>
+			<property name="CustomIcon" value="cntWoodBurningStove"/>
+			<property class="Workstation">
+				<property name="CraftingAreaRecipes" value="campfire"/>
+				<property name="Modules" value="tools,output,fuel"/>
+				<property name="Collide" value="melee,bullet,arrow,rocket"/>
+			</property>
+			<property name="CreativeMode" value="Player"/>
+			<property name="DescriptionKey" value="campfireDesc"/>
+			<property name="PickupJournalEntry" value="campfireTip"/>
+			<property name="WorkstationIcon" value="ui_game_symbol_campfire"/>
+			<property name="WorkstationJournalTip" value="heatMapTip"/>
+			<property name="CraftIcon" value="ui_game_symbol_spatula"/>
+			<property name="CraftActionName" value="lblContextActionCook"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="Mmetal_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/furnishings.unity3d?woodBurningStovePlayer"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="ParticleName" value="campfire"/>
+			<property name="ParticleOffset" value="0.5,0.5,0.5"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="MaxDamage" value="100"/>
+			<property name="HeatMapStrength" value="5"/>
+			<property name="HeatMapTime" value="5000"/>
+			<property name="HeatMapFrequency" value="1000"/>
+			<property name="ActiveRadiusEffects" value="buffCampfireAOE(3)"/>
+			<property name="OpenSound" value="campfire_open"/>
+			<property name="CloseSound" value="campfire_close"/>
+			<property name="CraftSound" value="campfire_cook_click"/>
+			<property name="CraftCompleteSound" value="campfire_complete_item"/>
+			<property class="RepairItems">
+				<property name="resourceForgedIron" value="10"/>
+				<!-- <property name="resourceElectricParts" value="4"/> -->
+			</property>
+			<drop event="Destroy" name="resourceScrapIron" count="3,6"/>
+			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+			<property name="SortOrder1" value="B281"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Group" value="Basics,Food/Cooking,Building,advBuilding"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+			
+			<!-- <property name="Fuels" value="resourceWood,100"/> -->
+		</block>
+		
+	<!-- *** wasteland boulders *** -->
+		<block name="rockWastelandRockResource"><!-- biome decoration -->
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DisplayType" value="blockHardenedMulti"/>
+			<property name="Map.Color" value="120,120,120"/>
+			<property name="IndexName" value="quest_stone_boulder"/>
+			<property name="Material" value="Mboulder"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="Entities/Resources/resourceRock01Prefab"/>
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="MultiBlockDim" value="3,2,3"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="BigDecorationRadius" value="3"/>
+			<property name="IsDistantDecoration" value="false"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="PassThroughDamage" value="true"/>
+			<drop event="Harvest" name="resourceRockSmall" count="22" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceFeldspar" count="5,10" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<!-- <property name="DowngradeBlock" value="rockWastelandRockResourceBroke1"/> -->
+			<property name="SortOrder1" value="B275"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_outdoor,SC_decor"/>
+		</block>
+
+		<!-- <block name="rockWastelandRockResourceBroke1"> -->
+			<!-- <property name="Extends" value="rockWastelandRockResource"/> -->
+			<!-- <property name="CreativeMode" value="Dev"/> -->
+			<!-- <property name="Model" value="Entities/Resources/rock_resource_broke1Prefab"/> -->
+			<!-- <property name="DowngradeBlock" value="rockWastelandRockResourceBroke2"/> -->
+			<!-- <property name="SortOrder2" value="0001"/> -->
+			<!-- <property name="DowngradedToEvent" value="action_block_DowngradedTo"/> -->
+		<!-- </block> -->
+
+		<!-- <block name="rockWastelandRockResourceBroke2"> -->
+			<!-- <property name="Extends" value="rockWastelandRockResource" param1="DowngradeBlock"/> -->
+			<!-- <property name="CreativeMode" value="Dev"/> -->
+			<!-- <property name="Model" value="Entities/Resources/rock_resource_broke2Prefab"/> -->
+			<!-- <property name="SortOrder2" value="0002"/> -->
+			<!-- <property name="DowngradedToEvent" value="action_block_DowngradedTo"/> -->
+		<!-- </block> -->
+
+		<block name="rockWastelandRockResource02"><!-- biome decoration -->
+			<property name="Extends" value="rockWastelandRockResource"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Model" value="Entities/Resources/resourceRock02Prefab"/>
+			<property name="ModelOffset" value="0,-0.08,0"/>
+			<property name="MultiBlockDim" value="3,2,3"/>
+			<!-- <property name="DowngradeBlock" value="rockWastelandRockResource02Broke1"/> -->
+			<property name="SortOrder2" value="0003"/>
+		</block>
+
+		<!-- <block name="rockWastelandRockResource02Broke1"> -->
+			<!-- <property name="Extends" value="rockWastelandRockResource"/> -->
+			<!-- <property name="CreativeMode" value="Dev"/> -->
+			<!-- <property name="Model" value="Entities/Resources/rock_resource02_broke1Prefab"/> -->
+			<!-- <property name="DowngradeBlock" value="rockWastelandRockResource02Broke2"/> -->
+			<!-- <property name="SortOrder2" value="0004"/> -->
+			<!-- <property name="DowngradedToEvent" value="action_block_DowngradedTo"/> -->
+		<!-- </block> -->
+
+		<!-- <block name="rockWastelandRockResource02Broke2"> -->
+			<!-- <property name="Extends" value="rockWastelandRockResource" param1="DowngradeBlock"/> -->
+			<!-- <property name="CreativeMode" value="Dev"/> -->
+			<!-- <property name="Model" value="Entities/Resources/rock_resource02_broke2Prefab"/> -->
+			<!-- <property name="MultiBlockDim" value="1,2,1"/> -->
+			<!-- <property name="SortOrder2" value="0005"/> -->
+			<!-- <property name="DowngradedToEvent" value="action_block_DowngradedTo"/> -->
+		<!-- </block> -->
+		
+	<!-- *** wasteland terrain *** -->
+		<block name="terrWastelandDestroyedStone">
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="DisplayType" value="blockTerrainFertile"/>
+			<property name="Map.Color" value="152,149,63"/>
+			<property name="Material" value="Mrubble"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="438"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Weight" value="90"/>
+			<property name="NoScrapping" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceCobblestones" value="6"/>
+			</property>
+			<drop event="Harvest" name="resourceCrushedSand" count="4" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceRockSmall" count="12" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceFeldspar" count="1,2" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<property name="SortOrder1" value="0000"/>
+			<property name="SortOrder2" value="0700"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain,MC_building,SC_destruction"/>
+		</block>
+	</append>
+	
+	<!-- *** biome terrain upgrades to plantable terrain with hoe *** -->
+	<append xpath="/blocks/block[@name='terrDirt']">
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value="terrFertileFarmland"/>
+			<property name="Item" value="meleeToolFarmT2IronHoe"/>
+			<property name="ToBlock" value="terrFertilizedFarmland3"/>
+			<property name="Item" value="resourceFertilizer"/>
+			<property name="ItemCount" value="20"/>
+			<property name="UpgradeHitCount" value="4"/>
+		</property>
+	</append>
+	
+	<append xpath="/blocks/block[@name='terrForestGround']">
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value="terrFertileFarmland"/>
+			<property name="Item" value="meleeToolFarmT2IronHoe"/>
+			<property name="ToBlock" value="terrFertilizedFarmland3"/>
+			<property name="Item" value="resourceFertilizer"/>
+			<property name="ItemCount" value="20"/>
+			<property name="UpgradeHitCount" value="4"/>
+		</property>
+	</append>
+	
+	<append xpath="/blocks/block[@name='terrBurntForestGround']">
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value="terrFertileFarmland"/>
+			<property name="Item" value="meleeToolFarmT2IronHoe"/>
+			<property name="ToBlock" value="terrFertilizedFarmland3"/>
+			<property name="Item" value="resourceFertilizer"/>
+			<property name="ItemCount" value="20"/>
+			<property name="UpgradeHitCount" value="4"/>
+		</property>
+	</append>
+	
+	<append xpath="/blocks/block[@name='terrDesertGround']">
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value="terrFertileFarmland"/>
+			<property name="Item" value="meleeToolFarmT2IronHoe"/>
+			<property name="ToBlock" value="terrFertilizedFarmland3"/>
+			<property name="Item" value="resourceFertilizer"/>
+			<property name="ItemCount" value="20"/>
+			<property name="UpgradeHitCount" value="4"/>
+		</property>
+	</append>
+	
+	<!-- *** sets crops grown quantity *** -->
+	<set xpath="//block[starts-with(@name,'planted') and contains(@name,'HarvestPlayer')]//drop[@event='Harvest'][@tag='cropHarvest']/@count">1</set>
+	
+	<append xpath="//block[starts-with(@name,'planted') and contains(@name,'HarvestPlayer')]">
+		<property name="Class" value="CropsGrown"/>
+		<property name="Tags" value="cropTrample"/>
+	</append>
+	
+	<insertafter xpath="//block[starts-with(@name,'planted') and not (contains(@name,'HarvestPlayer'))]//property[1]">
+		<property name="CropsGrown.BonusHarvestDivisor" value="16"/>
+	</insertafter>
+	
+	<set xpath="//block[@name='plantedMushroom3Harvest']">
+		<property name="Material" value="Mmushrooms"/>
+		<property name="PlantGrowing.FertileLevel" value="0"/>
+		<property name="CropsGrown.BonusHarvestDivisor" value="16"/>
+		<property name="PickupJournalEntry" value="farmingTip"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="DisplayInfo" value="Description"/>
+		<property name="Shape" value="ModelEntity"/>
+		<property name="Model" value="Entities/OutdoorDecor/mushroomHarvestPrefab"/>
+		<property name="WaterFlow" value="permitted"/>
+		<property name="Collide" value="melee"/>
+		<property name="IsTerrainDecoration" value="true"/>
+		<property name="VehicleHitScale" value=".1"/>
+		<property name="HarvestOverdamage" value="false"/>
+		<drop event="Harvest" name="foodCropMushrooms" count="1" tag="wildCropsHarvest"/>
+		<drop event="Harvest" name="foodCropMushrooms" prob="0.5" count="1" tag="bonusCropHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<drop event="Fall" name="resourceYuccaFibers" count="0" prob="1" stick_chance="0"/>
+		<property name="SortOrder1" value="B951"/>
+		<property name="SortOrder2" value="0004"/>
+		<property name="FilterTags" value="MC_outdoor,SC_crops"/>
+	</set>
+	
+	<!-- *** new wild crop - lavender *** -->
+	<set xpath="//block[@name='forestFlower']">
+		<property name="Extends" value="cropsHarvestableMaster"/>
+		<property name="CustomIcon" value="resourceCropLavenderPlayer"/>
+		<property name="Texture" value="567"/>
+		<drop event="Harvest" name="resourceCropLavender" count="1" tag="wildCropsHarvest"/>
+		<drop event="Harvest" name="resourceCropLavender" prob="0.5" count="1" tag="bonusCropHarvest"/>
+		<property name="SortOrder1" value="B910"/>
+		<property name="SortOrder2" value="0007"/>
+		<property name="CanPickup" value="true" param1="resourceCropLavender"/>
+		<property name="CropsGrown.BonusHarvestDivisor" value="16"/>
+	</set>
+	
+	<append xpath="/blocks">
+		<block name="plantedLavender1">
+			<property name="Extends" value="cropsGrowingMaster" param1="CustomIcon"/>
+			<property name="CropsGrown.BonusHarvestDivisor" value="16"/>
+			<property name="CustomIcon" value="plantedLavender1"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="PlantGrowing.Next" value="plantedLavender2"/>
+			<property name="Texture" value="573"/>
+			<property name="PlaceAsRandomRotation" value="true"/>
+			<property name="CraftingIngredientTime" value="5"/>
+			<drop event="Destroy" name="plantedLavender1" count="1"/>
+			<property name="SortOrder1" value="B954"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Group" value="Food/Cooking"/>
+			<property name="Tags" value="seedSkill"/>
+		</block>
+
+		<block name="plantedLavender2">
+			<property name="Extends" value="cropsGrowingMaster"/>
+			<property name="CropsGrown.BonusHarvestDivisor" value="16"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="PlantGrowing.Next" value="plantedLavender3HarvestPlayer"/>
+			<property name="CustomIcon" value="resourceCropLavenderPlayer"/>
+			<property name="Texture" value="40"/>
+			<drop event="Destroy" name="plantedLavender1" count="1"/>
+			<property name="SortOrder1" value="B954"/>
+			<property name="SortOrder2" value="0001"/>
+		</block>
+	
+		<block name="plantedLavender3HarvestPlayer">
+			<property name="Extends" value="cropsHarvestableMaster"/>
+			<property name="CropsGrown.BonusHarvestDivisor" value="16"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="resourceCropLavenderPlayer"/>
+			<property name="DescriptionKey" value="plantedLavender3HarvestDesc"/>
+			<property name="Texture" value="567"/>
+			<drop event="Harvest" name="resourceCropLavender" count="1" tag="cropHarvest"/>
+			<drop event="Harvest" name="resourceCropLavender" prob="0.5" count="1" tag="bonusCropHarvest"/>
+			<drop event="Destroy" name="plantedLavender1" count="1" prob="0.5"/>
+			<!-- <property name="DowngradeBlock" value="plantedLavender1"/> -->
+			<property name="SortOrder1" value="B954"/>
+			<property name="SortOrder2" value="0002"/>
+			<property name="Class" value="CropsGrown"/>
+		</block>
+	</append>
+	
+	<!-- *** fertilizer from pallets *** -->
+	<set xpath="//block[contains(@name,'palletBagFertilizer')]//drop[@name='resourcePotassiumNitratePowder']/@name">resourceFertilizer</set>
+	<set xpath="//block[@name='palletBagFertilizerBaseFull']//drop[@name='resourceFertilizer']/@count">5,10</set>
+	<set xpath="//block[@name='palletBagFertilizerTile']//drop[@name='resourceFertilizer']/@count">5,10</set>
+	<set xpath="//block[@name='palletBagFertilizerBaseMed']//drop[@name='resourceFertilizer']/@count">2,5</set>
+	<set xpath="//block[@name='palletBagFertilizerCapMed']//drop[@name='resourceFertilizer']/@count">2,5</set>
+	<set xpath="//block[@name='palletBagFertilizerCapSml']//drop[@name='resourceFertilizer']/@count">2,3</set>
+	<set xpath="//block[@name='palletBagFertilizerSingleBent']//drop[@name='resourceFertilizer']/@count">1,2</set>
+	<set xpath="//block[@name='palletBagFertilizerSingleFlat']//drop[@name='resourceFertilizer']/@count">1,2</set>
+	
+	<!-- *** carboard boxes loot *** -->
+	<insertafter xpath="//block[@name='palletBrownBoxesBase']//property[@name='Material']">
+	<property name="Class" value="Loot"/>
+	<property name="LootList" value="cardboardboxloot"/>
+	</insertafter>
+	
+	<!-- *** makes various deco blocks able to be picked up *** -->
+	<!-- *** neon signs *** -->
+	<remove xpath="//block[@name='signNeonColdBeer']/drop[@event='Harvest']"/>
+	<remove xpath="//block[@name='signShopOpen']/drop[@event='Harvest']"/>
+	<remove xpath="//block[@name='signNeonColdBeer']/drop[@event='Destroy']"/>
+	<remove xpath="//block[@name='signShopOpen']/drop[@event='Destroy']"/>
+	
+	<append xpath="//block[@name='signShopOpen']">
+		<drop event="Destroy" name="signShopOpen" count="1" tag="salvageHarvest"/>
+		<property name="Class" value="PoweredLight"/>
+		<property name="TakeDelay" value="3"/>
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<append xpath="//block[@name='signNeonColdBeer']">
+		<drop event="Destroy" name="signNeonColdBeer" count="1" tag="salvageHarvest"/>
+		<property name="Class" value="PoweredLight"/>
+		<property name="TakeDelay" value="3"/>
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<!-- *** cow skull *** -->
+	<append xpath="//block[@name='decoCowSkull']">
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<!-- *** piano *** -->
+	<append xpath="//block[@name='piano']">
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<!-- *** signs *** -->
+	<append xpath="//block[starts-with(@name,'signPoster') or (starts-with(@name,'signBread'))]">
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<!-- *** mannequins *** -->
+	<append xpath="//block[starts-with(@name,'deco') and (contains(@name,'Mannequin'))]">
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<!-- *** pool table(s) *** -->
+	<append xpath="//block[starts-with(@name,'decoPool')]">
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<!-- *** hoists *** -->
+	<append xpath="//block[starts-with(@name,'decoHoist')]">
+		<property name="CanPickup" value="true" param1="HoistVariantHelper"/>
+	</append>
+	
+	<!-- *** wine bottles *** -->
+	<append xpath="//block[starts-with(@name,'decoWine')]">
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<!-- *** animal/pet houses *** -->
+	<append xpath="//block[@name='decoReptileTerrarium']">
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<append xpath="//block[@name='decoClassicDogHouse']">
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<append xpath="//block[@name='decoLargePetCage']">
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<!-- *** radio *** -->
+	<append xpath="//block[@name='radioHam']">
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<!-- *** pictures *** -->
+	<append xpath="//block[starts-with(@name,'picture') and not (@name='pictureVariantHelper')]">
+		<property name="CanPickup" value="true" param1="pictureVariantHelper"/>
+	</append>
+	
+	<!-- *** flags *** -->
+	<append xpath="//block[starts-with(@name,'flag') and not (starts-with(@name,'flagPole')) and not (@name='flagBlockVariantHelper')]">
+		<property name="CanPickup" value="true" param1="flagBlockVariantHelper"/>
+	</append>
+	
+	<!-- *** adds craftable bath tubs to sink variant helper *** -->
+	<append xpath="//block[@name='sinksToiletsBlockVariantHelper']//property[@name='PlaceAltBlockValue']/@value">
+	,cntBathTubEmpty,decoClawFootBathTub
+	</append>
+	
+	<!-- *** wood burning stove is craftable *** -->
+	<append xpath="//block[@name='appliancesVariantHelper']//property[@name='PlaceAltBlockValue']/@value">
+	,playerWoodBurningStove
+	</append>
+	
+	<!-- *** bearskin rug *** -->
+	<append xpath="//block[@name='rugBear']">
+		<property name="CanPickup" value="true"/>
+	</append>
+	
+	<!-- *** flag variant helper *** -->
+	<append xpath="/blocks">
+		<block name="flagBlockVariantHelper">
+			<property name="Extends" value="flagWallHungUSA"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="flagWallHungUSA"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="flagVariantHelper"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="flagWallHungUSA,flagWallHungDuke,flagWallHungHonorDuty,flagWallHungValiant,flagWallHungTFP,flagWallHungGadsdenWhite,flagWallHungGadsdenBrown,flagWallHungGadsdenRed,flagWallHungGadsdenOrange,flagWallHungGadsdenYellow,flagWallHungGadsdenGreen,flagWallHungGadsdenBlue,flagWallHungGadsdenPurple,flagWallHungGadsdenGrey,flagWallHungGadsdenPink,flagWallHungGadsdenArmyGreen,flagTopWallHungUSA,flagTopWallHungDuke,flagTopWallHungHonorDuty,flagTopWallHungValiant,flagTopWallHungTFP,flagTopWallHungGadsdenWhite,flagTopWallHungGadsdenBrown,flagTopWallHungGadsdenRed,flagTopWallHungGadsdenOrange,flagTopWallHungGadsdenYellow,flagTopWallHungGadsdenGreen,flagTopWallHungGadsdenBlue,flagTopWallHungGadsdenPurple,flagTopWallHungGadsdenGrey,flagTopWallHungGadsdenPink,flagTopWallHungGadsdenArmyGreen,flagWallHungThick44Black,flagWallHungThick44Purple,flagTopWallHungThick44Purple,flagTopWallHungThick44Black"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+	<!-- *** jail doors/bars variant helper *** -->
+		<block name="JailVariantHelper">
+			<property name="Extends" value="jailDoorWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="jailDoorWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="jailBlockVariantHelper"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="jailDoorWhite,jailDoorBrown,jailDoorYellow,jailDoorGreen,jailDoorBlue,jailDoorGrey,jailDoorDoubleWhite,jailDoorDoubleBrown,jailDoorDoubleYellow,jailDoorDoubleGreen,jailDoorDoubleBlue,jailDoorDoubleGrey,jailBarsWhite,jailBarsBrown,jailBarsYellow,jailBarsGreen,jailBarsBlue,jailBarsGrey"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+	<!-- *** player craftable doors *** -->
+		<block name="playerDoorSingleVariantHelper">
+			<property name="Extends" value="exteriorHouseDoorWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="exteriorHouseDoorWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerDoorSingleVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="exteriorHouseDoorWhite,exteriorHouseDoorBrown,exteriorHouseDoorRed,exteriorHouseDoorOrange,exteriorHouseDoorYellow,exteriorHouseDoorGreen,exteriorHouseDoorBlue,exteriorHouseDoorPurple,exteriorHouseDoorGrey,exteriorHouseDoorPink,exteriorHouseDoorOak"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerDoorDoubleVariantHelper">
+			<property name="Extends" value="exteriorHouseDoorDoubleWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="exteriorHouseDoorDoubleWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerDoorDoubleVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="exteriorHouseDoorDoubleWhite,exteriorHouseDoorDoubleBrown,exteriorHouseDoorDoubleRed,exteriorHouseDoorDoubleOrange,exteriorHouseDoorDoubleYellow,exteriorHouseDoorDoubleGreen,exteriorHouseDoorDoubleBlue,exteriorHouseDoorDoublePurple,exteriorHouseDoorDoubleGrey,exteriorHouseDoorDoublePink,exteriorHouseDoorDoubleOak"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerDoorSideLightSingleVariantHelper">
+			<property name="Extends" value="exteriorHouseDoorSideLightSingleWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="exteriorHouseDoorSideLightSingleWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerDoorSideLightSingleVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="exteriorHouseDoorSideLightSingleWhite,exteriorHouseDoorSideLightSingleBrown,exteriorHouseDoorSideLightSingleRed,exteriorHouseDoorSideLightSingleOrange,exteriorHouseDoorSideLightSingleYellow,exteriorHouseDoorSideLightSingleGreen,exteriorHouseDoorSideLightSingleBlue,exteriorHouseDoorSideLightSinglePurple,exteriorHouseDoorSideLightSingleGrey,exteriorHouseDoorSideLightSinglePink,exteriorHouseDoorSideLightSingleOak"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerDoorSideLightVariantHelper">
+			<property name="Extends" value="exteriorHouseDoorSideLightWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="exteriorHouseDoorSideLightWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerDoorSideLightVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="exteriorHouseDoorSideLightWhite,exteriorHouseDoorSideLightBrown,exteriorHouseDoorSideLightRed,exteriorHouseDoorSideLightOrange,exteriorHouseDoorSideLightYellow,exteriorHouseDoorSideLightGreen,exteriorHouseDoorSideLightBlue,exteriorHouseDoorSideLightPurple,exteriorHouseDoorSideLightGrey,exteriorHouseDoorSideLightPink,exteriorHouseDoorSideLightOak"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerOldDoorSingleVariantHelper">
+			<property name="Extends" value="exteriorHouseDoorOldWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="exteriorHouseDoorOldWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerOldDoorSingleVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="exteriorHouseDoorOldWhite,exteriorHouseDoorOldBrown,exteriorHouseDoorOldRed,exteriorHouseDoorOldOrange,exteriorHouseDoorOldYellow,exteriorHouseDoorOldGreen,exteriorHouseDoorOldBlue,exteriorHouseDoorOldPurple,exteriorHouseDoorOldGrey,exteriorHouseDoorOldPink,exteriorHouseDoorOldOak"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerOldDoorDoubleVariantHelper">
+			<property name="Extends" value="exteriorHouseDoorDoubleOldWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="exteriorHouseDoorDoubleOldWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerOldDoorDoubleVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="exteriorHouseDoorDoubleOldWhite,exteriorHouseDoorDoubleOldBrown,exteriorHouseDoorDoubleOldRed,exteriorHouseDoorDoubleOldOrange,exteriorHouseDoorDoubleOldYellow,exteriorHouseDoorDoubleOldGreen,exteriorHouseDoorDoubleOldBlue,exteriorHouseDoorDoubleOldPurple,exteriorHouseDoorDoubleOldGrey,exteriorHouseDoorDoubleOldPink,exteriorHouseDoorDoubleOldOak"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerScreenDoorVariantHelper">
+			<property name="Extends" value="exteriorScreenDoor"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="exteriorScreenDoor"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerScreenDoorVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="exteriorScreenDoor,exteriorScreenDoornNoFrame"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerSlidingDoorVariantHelper">
+			<property name="Extends" value="houseSlidingDoorWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="houseSlidingDoorWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerSlidingDoorVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="houseSlidingDoorWhite,houseSlidingDoorBlack"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerFrenchDoorVariantHelper">
+			<property name="Extends" value="frenchDoorWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="frenchDoorWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerFrenchDoorVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="frenchDoorWhite,frenchDoorBrown,frenchDoorRed,frenchDoorOrange,frenchDoorYellow,frenchDoorGreen,frenchDoorBlue,frenchDoorPurple,frenchDoorGrey,frenchDoorPink,frenchDoorOak"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerFrenchDoorDoubleVariantHelper">
+			<property name="Extends" value="frenchDoorDoubleWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="frenchDoorDoubleWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerFrenchDoorDoubleVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="frenchDoorDoubleWhite,frenchDoorDoubleBrown,frenchDoorDoubleRed,frenchDoorDoubleOrange,frenchDoorDoubleYellow,frenchDoorDoubleGreen,frenchDoorDoubleBlue,frenchDoorDoublePurple,frenchDoorDoubleGrey,frenchDoorDoublePink,frenchDoorDoubleOak"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerInteriorHouseDoorVariantHelper">
+			<property name="Extends" value="interiorHouseDoorWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="interiorHouseDoorWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerInteriorHouseDoorVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="interiorHouseDoorWhite,interiorHouseDoorBrown,interiorHouseDoorRed,interiorHouseDoorOrange,interiorHouseDoorYellow,interiorHouseDoorGreen,interiorHouseDoorBlue,interiorHouseDoorPurple,interiorHouseDoorGrey,interiorHouseDoorPink,interiorHouseDoorOak"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerInteriorHouseDoorDoubleVariantHelper">
+			<property name="Extends" value="interiorHouseDoorDoubleWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="interiorHouseDoorDoubleWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerInteriorHouseDoorDoubleVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="interiorHouseDoorDoubleWhite,interiorHouseDoorDoubleBrown,interiorHouseDoorDoubleRed,interiorHouseDoorDoubleOrange,interiorHouseDoorDoubleYellow,interiorHouseDoorDoubleGreen,interiorHouseDoorDoubleBlue,interiorHouseDoorDoublePurple,interiorHouseDoorDoubleGrey,interiorHouseDoorDoublePink,interiorHouseDoorDoubleOak"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerClosetDoorVariantHelper">
+			<property name="Extends" value="closetDoorWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="closetDoorWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerClosetDoorVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="closetDoorWhite,closetDoorBrown,closetDoorRed,closetDoorOrange,closetDoorYellow,closetDoorGreen,closetDoorBlue,closetDoorPurple,closetDoorGrey,closetDoorPink"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerClosetDoorDoubleVariantHelper">
+			<property name="Extends" value="closetDoorDoubleWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="closetDoorDoubleWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerClosetDoorDoubleVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="closetDoorDoubleWhite,closetDoorDoubleBrown,closetDoorDoubleRed,closetDoorDoubleOrange,closetDoorDoubleYellow,closetDoorDoubleGreen,closetDoorDoubleBlue,closetDoorDoublePurple,closetDoorDoubleGrey,closetDoorDoublePink"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+		<block name="playerPantryDoorVariantHelper">
+			<property name="Extends" value="pantryDoorWhite"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="pantryDoorWhite"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="playerPantryDoorVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="pantryDoorWhite,pantryDoorBrown,pantryDoorRed,pantryDoorOrange,pantryDoorYellow,pantryDoorGreen,pantryDoorBlue,pantryDoorPurple,pantryDoorGrey,pantryDoorPink"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+	<!-- *** hoist variant helper *** -->
+		<block name="HoistVariantHelper">
+			<property name="Extends" value="decoHoistHook"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="decoHoistHook"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="decoHoistVariantHelper"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="decoHoistHook,decoHoistChain,decoHoistSpreader,decoHoistMagnet,decoHoistTopMount"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+	
+	<!-- *** barbed wire variant helper *** -->
+		<block name="barbedWireSpindleVariantHelper">
+			<property name="Extends" value="barbedWireSpindle1m"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="barbedWireSpindle1m"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="barbedWireSpindleVariantHelperBlock"/>
+			<property name="SelectAlternates" value="true"/>
+			<property name="PlaceAltBlockValue" value="barbedWireSpindle1m,barbedWireSheet,barbedWireSpindle,barbedWireSpindleDiagonal1m,barbedWireSpindle2,barbedWireSpindle3,barbedWireSpindle4"/>
+			<property name="SortOrder1" value="U200"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+		</block>
+		
+	<!-- *** medicine cabinet added to cabinet shape helper *** -->
+		<block name="cntMedicineCabinetPlayer">
+			<property name="CreativeMode" value="Player"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="playerStorage"/>
+			<property name="CustomIcon" value="cntPillCaseClosed"/>
+			<property name="DescriptionKey" value="furnitureGroupDesc"/>
+			<property name="Material" value="Mwood_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="@:Entities/LootContainers/pill_case_closedPrefab.prefab"/>
+			<property name="ImposterExchange" value="imposterBlock" param1="144"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="HandleFace" value="South"/>
+			<property name="Path" value="solid"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="EconomicValue" value="6"/>
+			<property class="RepairItems">
+				<property name="resourceWood" value="8"/>
+			</property>
+			<drop event="Destroy" name="resourceWood" count="1,2"/>
+			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
+			<property name="SortOrder1" value="B111"/>
+			<property name="SortOrder2" value="0200"/> 
+			<property name="FilterTags" value="MC_building,SC_loot"/>
+		</block>		
+	</append>
+	
+	<!-- *** adds medicine cabinet to cabinet shape helper *** -->
+	<append xpath="//block[@name='cntWoodFurnitureBlockVariantHelper2']//property[@name='PlaceAltBlockValue']/@value">,cntMedicineCabinetPlayer</append>
+	
+	<!-- *** upgrade path from cobblestone to brick *** -->
+	<set xpath="//block[@name='cobblestoneShapes']/property[@class='UpgradeBlock']//property[@name='ToBlock']/@value">brickShapes</set>
+	<set xpath="//block[@name='cobblestoneShapes']/property[@class='UpgradeBlock']//property[@name='Item']/@value">resourceBricks</set>
+	<set xpath="//block[@name='cobblestoneShapes']/property[@class='UpgradeBlock']//property[@name='ItemCount']/@value">12</set>
+	
+	<!-- *** upgrade path from brick to concrete *** -->
+	<set xpath="//block[@name='brickShapes']/property[@class='RepairItems']/property[@name='resourceCobblestones']/@name">resourceBricks</set>
+	<set xpath="//block[@name='brickShapes']/property[@class='UpgradeBlock']//property[@name='ToBlock']/@value">concreteShapes</set>
+	<set xpath="//block[@name='brickShapes']/property[@class='UpgradeBlock']//property[@name='Item']/@value">resourceConcreteMix</set>
+	<set xpath="//block[@name='brickShapes']/property[@class='UpgradeBlock']//property[@name='ItemCount']/@value">12</set>
+	
+	<!-- *** brick pallets and blocks give bricks *** -->
+	<set xpath="/blocks/block[@name='palletBricksBase']//drop[2]/@name">resourceBricks</set>
+	<set xpath="/blocks/block[@name='palletBricksBase']//drop[2]/@count">5,15</set>
+	<set xpath="/blocks/block[@name='bricksStack']//drop[1]/@name">resourceBricks</set>
+	<set xpath="/blocks/block[@name='bricksStack']//drop[1]/@count">5,15</set>
+	<set xpath="/blocks/block[@name='rubblePileBricks']//drop[2]/@name">resourceBricks</set>
+	<set xpath="/blocks/block[@name='rubblePileBricks']//drop[2]/@count">1,3</set>
+	<insertafter xpath="/blocks/block[@name='brickNoUpgradeMaster']//drop[@event='Harvest']">
+	<drop event="Harvest" name="resourceBricks" count="1,3" tag="allHarvest"/>
+	</insertafter>
+	<insertafter xpath="/blocks/block[@name='brickShapes']//drop[@event='Harvest']">
+	<drop event="Harvest" name="resourceBricks" count="1,3" tag="allHarvest"/>
+	</insertafter>
+	
+	<!-- *** wild crops can be picked up *** -->
+	<append xpath="//block[@name='mushroom01']">
+		<property name="CanPickup" value="true" param1="foodCropMushrooms"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedMushroom3Harvest']">
+		<property name="CanPickup" value="true" param1="foodCropMushrooms"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedYucca3Harvest']">
+		<property name="CanPickup" value="true" param1="foodCropYuccaFruit"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedCotton3Harvest']">
+		<property name="CanPickup" value="true" param1="resourceCropCottonPlant"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedGoldenrod3Harvest']">
+		<property name="CanPickup" value="true" param1="resourceCropGoldenrodPlant"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedAloe3Harvest']">
+		<property name="CanPickup" value="true" param1="resourceCropAloeLeaf"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedBlueberry3Harvest']">
+		<property name="CanPickup" value="true" param1="foodCropBlueberries"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedPotato3Harvest']">
+		<property name="CanPickup" value="true" param1="foodCropPotato"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedChrysanthemum3Harvest']">
+		<property name="CanPickup" value="true" param1="resourceCropChrysanthemumPlant"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedCorn3Harvest']">
+		<property name="CanPickup" value="true" param1="foodCropCorn"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedGraceCorn3Harvest']">
+		<property name="CanPickup" value="true" param1="foodCropGraceCorn"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedHop3Harvest']">
+		<property name="CanPickup" value="true" param1="resourceCropHopsFlower"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedPumpkin3Harvest']">
+		<property name="CanPickup" value="true" param1="foodCropPumpkin"/>
+	</append>
+	
+	<append xpath="//block[@name='plantedCoffee3Harvest']">
+		<property name="CanPickup" value="true" param1="resourceCropCoffeeBeans"/>
+	</append>
+	
+	<!-- *** POI farm plots not plantable *** -->
+	<set xpath="//block[starts-with(@name,'farmPlotBlock') and not (contains(@name,'Player'))]//property[@name='Material']/@value">Mdirt</set>
+	
+	<!-- *** upgrade POI farmplots to 'plantable' with a hoe & fertilizer *** -->
+	<append xpath="//block[@name='farmPlotBlock']">
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value="farmPlotBlockPlayer"/>
+			<property name="Item" value="resourceFertilizer"/>
+			<property name="ItemCount" value="20"/>
+			<property name="UpgradeHitCount" value="4"/>
+		</property>
+	</append>
+	
+	<append xpath="//block[@name='farmPlotBlockRaised']">
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value="farmPlotBlockPlayerRaised"/>
+			<property name="Item" value="resourceFertilizer"/>
+			<property name="ItemCount" value="20"/>
+			<property name="UpgradeHitCount" value="4"/>
+		</property>
+	</append>
+	
+	<append xpath="//block[@name='farmPlotBlockCornerRound']">
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value="farmPlotBlockPlayerCornerRound"/>
+			<property name="Item" value="resourceFertilizer"/>
+			<property name="ItemCount" value="20"/>
+			<property name="UpgradeHitCount" value="4"/>
+		</property>
+	</append>
+	
+	<!-- *** Player farm plots yield max crops *** -->
+	<!-- <set xpath="//block[starts-with(@name,'farmPlotBlock') and contains(@name,'Player')]//property[@name='Material']/@value">MfertilizedFarmland3</set> -->
+	<set xpath="//block[@name='farmPlotBlockPlayer']">
+		<property name="Extends" value="farmPlotBlock"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="Material" value="MfertilizedFarmland3"/>
+		<property name="CanMobsSpawnOn" value="false"/>
+		<property name="CustomIcon" value="farmPlotBlock"/>
+		<drop event="Harvest" name="resourceClayLump" count="0" tag="oreWoodHarvest"/>
+		<drop event="Harvest" name="resourcePotassiumNitratePowder" count="0" tag="oreWoodHarvest"/>
+		<drop event="Destroy" name="farmPlotBlockVariantHelper" count="1"/>
+		<property name="SortOrder1" value="B965"/>
+		<property name="SortOrder2" value="0001"/>
+		<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+	</set>
+	<set xpath="//block[@name='farmPlotBlockVariantHelper']">
+		<property name="Extends" value="farmPlotBlockPlayer"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="Material" value="MfertilizedFarmland3"/>
+		<property name="CustomIcon" value="farmPlotBlock"/>
+		<property name="ItemTypeIcon" value="all_blocks"/>
+		<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
+		<property name="SelectAlternates" value="true"/>
+		<property name="PlaceAltBlockValue" value="farmPlotBlockPlayer,farmPlotBlockPlayerCornerRound,farmPlotBlockPlayerRaised"/>
+		<property name="SortOrder1" value="U200"/>
+		<property name="SortOrder2" value="0000"/>
+		<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
+	</set>	
+	
+	<!-- *** adds tool slots to workbench *** -->
+	<set xpath="//block[@name='workbench']/property[2]//property[1]/@value">tools,output</set>
+	
+	<!-- *** adds fuel to cement mixer *** -->
+	<set xpath="//block[@name='cementMixer']/property[2]/property[@name='Modules']/@value">output,fuel</set>
+	<append xpath="//block[@name='cementMixer']">
+		<property name="Fuels" value="ammoGasCan,100"/>
+	</append>
+	
+	<append xpath="//block[@name='campfire']">
+		<property name="HasModifiers" value="true"/>
+		<property name="NumModifiersSlots" value="3"/>
+	</append>
+	
+	<!-- *** increased drop rate for honey from vanilla stumps *** -->
+	<set xpath="//block[@name='treeStump']//drop[2]/@prob">.4</set>
+	
+	<!-- *** adds honeybee harvest from trees with WastelandTreasures book *** -->
+	<insertafter xpath="//block[@name='treeMaster']//drop[@event='Harvest'][@name='foodHoney']">
+		<drop event="Harvest" name="honeyBee" prob=".05" count="1" tag="WasteTreasuresHoneyHarvest"/>
+	</insertafter>
+	
+	<!-- *** player crafted tablesaw *** -->
+	<insertbefore xpath="//block[@name='tableSaw']">
+		<block name="playerTableSaw">
+			<property name="CustomIcon" value="tableSaw"/>
+			<property name="Class" value="Workstation"/>
+			<property class="Workstation">
+				<property name="Modules" value="output"/>
+				<property name="CraftingAreaRecipes" value="playerTableSaw"/>
+			</property>
+			<property name="UnlockedBy" value="craftingWorkstations"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="DescriptionKey" value="tableSawDesc"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="WorkstationIcon" value="ui_game_symbol_table_saw"/>
+			<property name="WorkstationJournalTip" value="tablesawTip"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="Miron_scrap"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="Entities/Crafting/table_sawPrefab"/>
+			<property name="ModelOffset" value="0,.5,0"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Weight" value="0"/>
+			<property name="EconomicValue" value="2000"/>
+			<property name="TraderStageTemplate" value="midTier1"/>
+			<property name="MaxDamage" value="800"/>
+			<property name="HeatMapStrength" value="5"/>
+			<property name="HeatMapTime" value="5000"/>
+			<property name="HeatMapFrequency" value="1000"/>
+			<property name="OpenSound" value="open_workbench"/>
+			<property name="CloseSound" value="close_workbench"/>
+			<property name="CraftSound" value="tablesaw_start_click"/>
+			<property name="CraftCompleteSound" value="tablesaw_complete"/>
+			<property name="TakeDelay" value="15"/>
+			<property class="RepairItems">
+				<property name="resourceForgedIron" value="10"/>
+				<property name="resourceSpring" value="2"/>
+				<property name="resourceMechanicalParts" value="4"/>
+			</property>
+			<drop event="Harvest" name="resourceScrapIron" count="300" tag="allHarvest"/>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="resourceForgedIron" count="8" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceSpring" count="1" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceMechanicalParts" count="3" tag="salvageHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+			<property name="SortOrder1" value="B281"/>
+			<property name="SortOrder2" value="0300"/>
+			<property name="Group" value="Basics,Building,advBuilding"/>
+			<property name="Tags" value="workstationSkill,twitch_workstation"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+		</block>
+	</insertbefore>
+	
+	<!-- *** tablesaw can be picked up *** -->
+	<append xpath="//block[@name='tableSaw']">
+		<property name="CanPickup" value="true" param1="playerTableSaw"/>
+	</append>
+	
+	<!-- *** dew collector now replaced by advanced dew collector *** -->
+	<remove xpath="//block[@name='cntDewCollector']"/>
+	
+	<!-- *** properties for frameshapes adjusted *** -->
+	<insertafter xpath="//block[@name='frameShapes']//property[@name='Shape']">
+		<property name="Weight" value="100"/>
+	</insertafter>
+	<insertafter xpath="//block[@name='woodShapes']//property[@name='Shape']">
+		<property name="Weight" value="100"/>
+	</insertafter>
+	<insertafter xpath="//block[@name='cobblestoneShapes']//property[@name='Shape']">
+		<property name="Weight" value="100"/>
+	</insertafter>
+	<insertafter xpath="//block[@name='concreteShapes']//property[@name='Shape']">
+		<property name="Weight" value="100"/>
+	</insertafter>
+	<insertafter xpath="//block[@name='steelShapes']//property[@name='Shape']">
+		<property name="Weight" value="100"/>
+	</insertafter>
+	<set xpath="//block[@name='frameShapes']//property[@name='Material']/@value">MresourceWoodScraps</set>
+	<set xpath="//block[@name='frameShapes']//property[@name='FuelValue']/@value">20</set>
+	<set xpath="//block[@name='frameShapes']/property[@class='RepairItems']/property[@name='resourceWood']/@value">10</set>
+	<set xpath="//block[@name='frameShapes']/property[@class='RepairItems']/property[@name='resourceWood']/@name">resourceWoodScraps</set>
+	<set xpath="//block[@name='woodWeakNoUpgradeMaster']//property[@name='Material']/@value">MresourceWoodScraps</set>
+	
+	<!-- *** properties for wood logs adjusted *** -->
+	<set xpath="//block[@name='woodLogPillar100']//property[@name='FuelValue']/@value">300</set>
+	<insertafter xpath="//block[@name='woodLogPillar100']//property[@name='Shape']">
+		<property name="Material" value="MresourceWoodScraps"/>
+		<property name="Weight" value="750"/>
+		<property class="RepairItems">
+			<property name="resourceWood" value="6"/>
+		</property>
+		<drop event="Harvest" name="resourceWood" count="3,5" tag="oreWoodHarvest"/>
+		<drop event="Destroy" name="resourceWoodScraps" count="55" tag="oreWoodHarvest"/>
+	</insertafter>
+	<insertbefore xpath="//block[@name='woodLogPillar100']/property[@name='DescriptionKey']">
+		<property name="Tags" value="wood"/>
+	</insertbefore>
+	<setattribute xpath="//block[@name='woodLogPillar100']" name="Group">Basics,Building,advBuilding</setattribute>
+	
+	<!-- *** scrapping values 50% lower *** -->
+	<set xpath="//block/property[@name='Weight'][@value='7']/@value">4</set>
+	<set xpath="//block/property[@name='Weight'][@value='10']/@value">5</set>
+	<set xpath="//block/property[@name='Weight'][@value='16']/@value">8</set>
+	<set xpath="//block/property[@name='Weight'][@value='20']/@value">10</set>
+	<set xpath="//block/property[@name='Weight'][@value='23']/@value">11</set>
+	<set xpath="//block/property[@name='Weight'][@value='24']/@value">12</set>
+	<set xpath="//block/property[@name='Weight'][@value='40']/@value">20</set>
+	<set xpath="//block/property[@name='Weight'][@value='63']/@value">32</set>
+	<set xpath="//block/property[@name='Weight'][@value='70']/@value">35</set>
+	<set xpath="//block/property[@name='Weight'][@value='83']/@value">42</set>
+	<set xpath="//block/property[@name='Weight'][@value='90']/@value">45</set>
+	<set xpath="//block/property[@name='Weight'][@value='100']/@value">50</set>
+	<set xpath="//block/property[@name='Weight'][@value='125']/@value">60</set>
+	
+	<!-- *** upgrade costs increased *** -->
+	<set xpath="//block/property[@class='UpgradeBlock']//property[@name='ItemCount'][@value='10']/@value">12</set>
+	<set xpath="//block/property[@class='UpgradeBlock']//property[@name='ItemCount'][@value='8']/@value">10</set>
+	
+	<!-- *** battery bank/generator *** -->
+	<insertafter xpath="//block[contains(@name,'bank')]/property[@name='Material']">
+		<property name="Weight" value="50"/>
+	</insertafter>
+	<!-- *** traps/triggers *** -->
+	<insertafter xpath="//block[contains(@name,'Trap')]/property[@name='Material']">
+		<property name="Weight" value="50"/>
+	</insertafter>
+	<insertafter xpath="//block[contains(@name,'pressureplate')]/property[@name='Material']">
+		<property name="Weight" value="50"/>
+	</insertafter>
+	<!-- *** turrets *** -->
+	<insertafter xpath="//block[contains(@name,'autoTurret')]/property[@name='Material']">
+		<property name="Weight" value="50"/>
+	</insertafter>
+	<!-- *** steel hatches/doors *** -->
+	<insertafter xpath="//block[contains(@name,'vaultDoor')]/property[@name='Material']">
+		<property name="Weight" value="50"/>
+	</insertafter>
+	<!-- *** potted plant *** -->
+	<insertafter xpath="//block[contains(@name,'plantPotted')]/property[1]">
+		<property name="Weight" value="50"/>
+	</insertafter>
+	<!-- *** bedroll *** -->
+	<insertafter xpath="//block[@name='bedroll']/property[@name='Material']">
+		<property name="Weight" value="5"/>
+	</insertafter>
+	
+	<!-- *** wood replaced by wood scraps when harvesting blocks *** -->
+	<set xpath="//block[not (contains(@name,'woodPlanksStack'))]//drop[@event='Harvest' and @name='resourceWood']/@name">resourceWoodScraps</set>
+	<set xpath="//block[not (contains(@name,'woodPlanksStack'))]//drop[@event='Destroy' and @name='resourceWood']/@name">resourceWoodScraps</set>
+	<set xpath="//block[@name='woodChair1']//property[@name='CanPickup']/@value">false</set>
+	<set xpath="//block[@name='woodLogPillar100']/drop[@event='Harvest']/@name">resourceWood</set>
+	<set xpath="//block[@name='woodLogPillar100']/drop[@event='Harvest']/@count">5,8</set>
+	
+	<!-- *** wood plank stack harvests for wood, not scraps *** -->
+	<insertafter xpath="//block[@name='woodPlanksStack']//property[1]">
+		<property name="Material" value="Mwood"/>
+	</insertafter>
+	
+	<insertbefore xpath="//block[@name='woodPlanksStack']//property[6]">
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+		<drop event="Harvest" name="resourceWood" count="20" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
+	</insertbefore>
+	
+	<!-- *** shrubs harvest for branches, trees for logs, stumps for scraps *** -->
+	<set xpath="//block[@name='treePlainsTree']//drop[@event='Harvest']/@name">resourceBranch</set>
+	<set xpath="//block[@name='treeDeadPineLeaf']//drop[@event='Harvest']/@name">resourceBranch</set>
+	<set xpath="//block[@name='treeSnowyDeadBush']//drop[@event='Harvest']/@name">resourceBranch</set>
+	<set xpath="//block[@name='treeAzalea']//drop[@event='Harvest']/@name">resourceBranch</set>
+	<set xpath="//block[@name='plantHedge']//drop[@event='Harvest']/@name">resourceBranch</set>
+	<set xpath="//block[@name='treeDeadTree01']//drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treeDeadTree01']/drop[@event='Harvest']/@count">3</set>
+	<set xpath="//block[@name='treeDeadTree02']//drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treeDeadTree02']/drop[@event='Harvest']/@count">3</set>
+	<set xpath="//block[@name='treePlainsTree2']//drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treePlainsTree2']/drop[@event='Harvest']/@count">3</set>
+	<set xpath="//block[@name='treeMountainPineDry21m']//drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treeMountainPineDry21m']/drop[@event='Harvest']/@count">11</set>
+	<set xpath="//block[starts-with(@name,'treeOak')]/drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treeOakSml01']/drop[@event='Harvest']/@count">3</set>
+	<set xpath="//block[@name='treeOakMed01']/drop[@event='Harvest']/@count">7</set>
+	<set xpath="//block[@name='treeOakMed02']/drop[@event='Harvest']/@count">11</set>
+	<set xpath="//block[@name='treeOakLrg01']/drop[@event='Harvest']/@count">15</set>
+	<set xpath="//block[starts-with(@name,'treePlantedOak') and not(contains(@name,'treePlantedOak1m'))]/drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treePlantedOak08m']/drop[@event='Harvest']/@count">3</set>
+	<set xpath="//block[@name='treePlantedOak16m']/drop[@event='Harvest']/@count">7</set>
+	<set xpath="//block[@name='treePlantedOak27m']/drop[@event='Harvest']/@count">11</set>
+	<set xpath="//block[@name='treePlantedOak41m']/drop[@event='Harvest']/@count">15</set>
+	<set xpath="//block[@name='treeJuniper4m']//drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treeJuniper4m']/drop[@event='Harvest']/@count">3</set>
+	<set xpath="//block[starts-with(@name,'treeMountainPine')]/drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treeMountainPine12m']/drop[@event='Harvest']/@count">3</set>
+	<set xpath="//block[@name='treeMountainPine19m']/drop[@event='Harvest']/@count">7</set>
+	<set xpath="//block[@name='treeMountainPine27m']/drop[@event='Harvest']/@count">11</set>
+	<set xpath="//block[@name='treeMountainPine31m']/drop[@event='Harvest']/@count">11</set>
+	<set xpath="//block[@name='treeMountainPine41m']/drop[@event='Harvest']/@count">15</set>
+	<set xpath="//block[@name='treeMountainPine48m']/drop[@event='Harvest']/@count">15</set>
+	<set xpath="//block[@name='treeFirLrg01']//drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treeFirLrg01']/drop[@event='Harvest']/@count">15</set>
+	<set xpath="//block[starts-with(@name,'treePlantedMountainPine') and not(contains(@name,'treePlantedMountainPine1m'))]/drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treePlantedMountainPine12m']/drop[@event='Harvest']/@count">3</set>
+	<set xpath="//block[@name='treePlantedMountainPine19m']/drop[@event='Harvest']/@count">7</set>
+	<set xpath="//block[@name='treePlantedMountainPine27m']/drop[@event='Harvest']/@count">11</set>
+	<set xpath="//block[@name='treePlantedMountainPine41m']/drop[@event='Harvest']/@count">15</set>
+	<set xpath="//block[starts-with(@name,'treeWinter')]/drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treeWinterEverGreen']/drop[@event='Harvest']/@count">3</set>
+	<set xpath="//block[@name='treeWinterPine13m']/drop[@event='Harvest']/@count">7</set>
+	<set xpath="//block[@name='treeWinterPine19m']/drop[@event='Harvest']/@count">11</set>
+	<set xpath="//block[@name='treeWinterPine28m']/drop[@event='Harvest']/@count">15</set>
+	<set xpath="//block[starts-with(@name,'treePlantedWinter') and not(contains(@name,'treePlantedWinterPine1m'))]/drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treePlantedWinterPine6m']/drop[@event='Harvest']/@count">3</set>
+	<set xpath="//block[@name='treePlantedWinterPine13m']/drop[@event='Harvest']/@count">7</set>
+	<set xpath="//block[@name='treePlantedWinterPine19m']/drop[@event='Harvest']/@count">11</set>
+	<set xpath="//block[@name='treePlantedWinterPine28m']/drop[@event='Harvest']/@count">15</set>
+	<set xpath="//block[starts-with(@name,'treePineBurnt')]/drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treePineBurntLrg']/drop[@event='Harvest']/@count">15</set>
+	<set xpath="//block[@name='treePineBurntMed']/drop[@event='Harvest']/@count">11</set>
+	<set xpath="//block[@name='treePineBurntFullMed']/drop[@event='Harvest']/@count">11</set>
+	<set xpath="//block[starts-with(@name,'treeBurntMaple')]/drop[@event='Harvest']/@name">woodLogPillar100</set>
+	<set xpath="//block[@name='treeBurntMaple01']/drop[@event='Harvest']/@count">3</set>
+	<set xpath="//block[@name='treeBurntMaple02']/drop[@event='Harvest']/@count">11</set>
+	<set xpath="//block[@name='treeBurntMaple03']/drop[@event='Harvest']/@count">15</set>
+	<set xpath="//block[starts-with(@name,'treeStump')]/drop[@event='Harvest']/@name">resourceWoodScraps</set>
+	<set xpath="//block[starts-with(@name,'treeStump')]/drop[@event='Harvest']/@count">10,20</set>
+	<append xpath="//block[starts-with(@name,'treeDead') and not(contains(@name,'treeDeadPineLeaf'))]">
+		<drop event="Harvest" name="resourceWoodScraps" count="35,70" tag="allHarvest"/>
+		<drop event="Harvest" name="resourceBranch" count="5,10" tag="allHarvest"/>
+	</append>
+	<append xpath="//block[starts-with(@name,'treePlains')]">
+		<drop event="Harvest" name="resourceWoodScraps" count="35,70" tag="allHarvest"/>
+		<drop event="Harvest" name="resourceBranch" count="5,10" tag="allHarvest"/>
+	</append>
+	<append xpath="//block[starts-with(@name,'treeMountainPine')]">
+		<drop event="Harvest" name="resourceWoodScraps" count="35,70" tag="allHarvest"/>
+		<drop event="Harvest" name="resourceBranch" count="5,10" tag="allHarvest"/>
+	</append>
+	<append xpath="//block[starts-with(@name,'treeOak')]">
+		<drop event="Harvest" name="resourceWoodScraps" count="35,70" tag="allHarvest"/>
+		<drop event="Harvest" name="resourceBranch" count="5,10" tag="allHarvest"/>
+	</append>
+	<append xpath="//block[starts-with(@name,'treePlanted')]">
+		<drop event="Harvest" name="resourceWoodScraps" count="35,70" tag="allHarvest"/>
+		<drop event="Harvest" name="resourceBranch" count="5,10" tag="allHarvest"/>
+	</append>
+	<append xpath="//block[starts-with(@name,'treeJuniper')]">
+		<drop event="Harvest" name="resourceWoodScraps" count="35,70" tag="allHarvest"/>
+		<drop event="Harvest" name="resourceBranch" count="5,10" tag="allHarvest"/>
+	</append>
+	<append xpath="//block[starts-with(@name,'treeFir')]">
+		<drop event="Harvest" name="resourceWoodScraps" count="35,70" tag="allHarvest"/>
+		<drop event="Harvest" name="resourceBranch" count="5,10" tag="allHarvest"/>
+	</append>
+	<append xpath="//block[starts-with(@name,'treeWinter')]">
+		<drop event="Harvest" name="resourceWoodScraps" count="35,70" tag="allHarvest"/>
+		<drop event="Harvest" name="resourceBranch" count="5,10" tag="allHarvest"/>
+	</append>
+	<append xpath="//block[starts-with(@name,'treePine')]">
+		<drop event="Harvest" name="resourceWoodScraps" count="35,70" tag="allHarvest"/>
+		<drop event="Harvest" name="resourceBranch" count="5,10" tag="allHarvest"/>
+	</append>
+	<remove xpath="//block[@name='treePlainsTree']/drop[@event='Harvest'][@name='resourceWoodScraps']"/>
+	
+	<!-- *** harvest counts 50% lower *** -->
+	<set xpath="//block/drop[@event='Harvest' and @count='0,1']/@count">1</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='0,2']/@count">1</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='0,3']/@count">1</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='1,2']/@count">1</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='1,3']/@count">1</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='1,4']/@count">1,2</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='1,5']/@count">1,2</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='1,7']/@count">1,3</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='1,8']/@count">1,4</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='1,15']/@count">1,7</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='2,3']/@count">1,2</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='2,4']/@count">1,2</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='2,5']/@count">1,2</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='2,6']/@count">1,3</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='2,8']/@count">1,4</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='3,4']/@count">1,2</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='3,5']/@count">1,2</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='3,6']/@count">1,3</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='3,12']/@count">1,6</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='4,8']/@count">2,4</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='4,10']/@count">2,5</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='5,8']/@count">2,4</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='5,10']/@count">2,5</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='5,15']/@count">2,7</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='5,40']/@count">2,20</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='6,12']/@count">3,6</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='6,10']/@count">3,5</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='8,12']/@count">4,6</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='8,14']/@count">4,7</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='8,15']/@count">4,7</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='8,22']/@count">4,11</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='10,20']/@count">5,10</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='10,30']/@count">5,15</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='10,40']/@count">5,20</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='12,20']/@count">6,10</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='12,25']/@count">6,12</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='15,20']/@count">7,10</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='15,24']/@count">7,12</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='15,45']/@count">7,22</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='16,24']/@count">8,12</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='17,35']/@count">8,17</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='20,30']/@count">10,15</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='20,40']/@count">10,20</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='20,50']/@count">10,25</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='20,100']/@count">10,50</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='24,30']/@count">12,15</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='30,40']/@count">15,20</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='35,90']/@count">17,45</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='40,70']/@count">20,35</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='50,200']/@count">25,100</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='70,180']/@count">35,90</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='140,360']/@count">70,180</set>
+	<!-- <set xpath="//block/drop[@event='Harvest' and @count='150,250']/@count">75,125</set> -->
+	<!-- <set xpath="//block[not (contains(@name,'HarvestPlayer'))]/drop[@event='Harvest' and @count='2']/@count">1</set> -->
+	<set xpath="//block/drop[@event='Harvest' and @count='2']/@count">1</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='3']/@count">1</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='4']/@count">2</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='5']/@count">2</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='6']/@count">3</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='8']/@count">4</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='9']/@count">4</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='10']/@count">5</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='11']/@count">5</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='12']/@count">6</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='14']/@count">7</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='15']/@count">7</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='16']/@count">8</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='17']/@count">8</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='20']/@count">10</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='21']/@count">10</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='22']/@count">11</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='24']/@count">12</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='25']/@count">12</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='27']/@count">13</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='30']/@count">15</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='32']/@count">16</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='40']/@count">20</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='50']/@count">25</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='55']/@count">27</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='60']/@count">30</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='80']/@count">40</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='96']/@count">48</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='100']/@count">50</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='105']/@count">52</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='120']/@count">60</set>
+	<!-- <set xpath="//block/drop[@event='Harvest' and @count='150']/@count">75</set> -->
+	<set xpath="//block/drop[@event='Harvest' and @count='192']/@count">96</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='200']/@count">100</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='300']/@count">150</set>
+	<set xpath="//block/drop[@event='Harvest' and @count='400']/@count">200</set>
+	
+	<!-- *** adds Traders Red & Hells to the trader spawn block *** -->
+	<append xpath="//block[@name='spawnTrader']//property[@name='SpawnClass']/@value">,npcTraderRed,npcTraderHells</append>
+</configs>

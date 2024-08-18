@@ -1,0 +1,662 @@
+<Hells_Janitor>
+	<append xpath="/buffs">
+		<!-- *** Helmet water purifier *** -->
+		<buff name="buffHelmetPurifierActivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="helmetPurifierDurability" operation="GT" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHelmetPurifierActive"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="helmetPurifierDurability" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHelmetPurifierReload"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffWaterPurifier"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffHelmetPurifierDeactivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="helmetPurifierDurability" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffHelmetPurifierActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffWaterPurifier"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffHelmetPurifierActive" name_key="buffHelmetPurifierActive" description_key="buffHelmetPurifierActiveDesc" icon="ui_game_symbol_water" icon_color="0,255,255" showonhud="false">
+			<stack_type value="effect"/>
+			<duration value="0"/>
+			<update_rate value="2"/>
+			<display_value value="helmetPurifierDurability"/>
+			<display_value_key value="{0:0} uses"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfAction2End" action="ModifyCVar" cvar="helmetPurifierDurability" operation="subtract" value="1"/>
+				<requirement name="CVarCompare" cvar="helmetPurifierDurability" operation="GT" value="0"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="helmetPurifierDurability" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffHelmetPurifierDeactivate"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffWaterPurifier"/>				
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="helmetPurifierDurabilityDisplay" operation="set" value="@helmetPurifierDurability"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="helmetPurifierDurabilityDisplay" operation="divide" value="30"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="CVarCompare" cvar="helmetPurifierDurability" operation="GTE" value="1"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffDysenteryCatchDrink"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWaterPurifier"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffWaterPurifier"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="helmetfilterequipped" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="helmetfilterequipped" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffHelmetPurifierReload" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffHelmetPurifierActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffWaterPurifier"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeWaterFilter">
+					<requirement name="PlayerItemCount" item_name="resourceHelmetWaterFilter" operation="GT" value="0"/></triggered_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffHelmetPurifierReloadSuccess" name_key="buffHelmetPurifierReloadSuccess" icon="ui_game_symbol_thirst" icon_color="0,255,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="2"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="helmetPurifierDurability" operation="set" value="30"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffHelmetPurifierActive"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="helmetPurifierDurability" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffWaterPurifier"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** helmet light *** -->
+		<buff name="buffHelmetLightActivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryHelmetLight" operation="GT" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHelmetLightActive"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryHelmetLight" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHelmetLightReload"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffHelmetLightDeactivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffHelmetLightActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLight" active="false"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightCam" active="false"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffHelmetLightActive" name_key="buffHelmetLightActive" description_key="buffHelmetLightActiveDesc" icon="ui_game_symbol_electric_power" icon_color="0,255,0" showonhud="false">
+			<!-- hidden="true" -->
+			<stack_type value="effect"/>
+			<duration value="0"/>
+			<update_rate value="10"/>
+			<display_value value="batteryHelmetLight"/>
+			<display_value_key value="Helmet: {0:0}%"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHelmetLight"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLight" active="@!.IsFPV"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightCam" active="@.IsFPV"/> -->
+				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLight" active="true"/>
+				<!-- 100 = 100%, duration = 30 min, ticks every 10 seconds = 180 ticks; 0.556 per tick to be subtracted -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryHelmetLightTick" operation="set" value="0.556"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryHelmetLightEfficiency" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryHelmetLightTick" operation="multiply" value="@$batteryHelmetLightEfficiency"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryHelmetLight" operation="subtract" value="@$batteryHelmetLightTick"/>
+				
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHelmetLightReload">
+					<requirement name="CVarCompare" cvar="batteryHelmetLight" operation="LT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffHelmetLightReload">
+					<requirement name="CVarCompare" cvar="batteryHelmetLight" operation="LT" value="0"/>
+				</triggered_effect>
+				<!-- <triggered_effect trigger="onSelfBuffRemove" action="SetPartActive" part="HeadLight" active="false"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffRemove" action="SetPartActive" part="HeadLightCam" active="false"/> -->
+				<triggered_effect trigger="onSelfBuffRemove" action="SetPartActive" part="HeadLight" active="false"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffHelmetLight"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryHelmetLightDisplay" operation="set" value="@batteryHelmetLight"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryHelmetLightDisplay" operation="divide" value="100"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="helmetlightequipped" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="helmetlightequipped" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffHelmetLightReload" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffHelmetLightActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLight" active="false"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightCam" active="false"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeHelmetBattery">
+					<requirement name="PlayerItemCount" item_name="resourceNiCdBattery" operation="GT" value="0"/></triggered_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffHelmetLightReloadSuccess" name_key="buffHelmetLightReloadSuccess" icon="ui_game_symbol_electric_power" icon_color="0,255,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="2"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="batteryHelmetLight" operation="set" value="100"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffHelmetLightActive"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** weapon flashlight *** -->
+		<buff name="buffWeaponLightActivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryWeaponLight" operation="GT" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffWeaponLightActive"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryWeaponLight" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffWeaponLightReload"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffWeaponLightDeactivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffWeaponLightActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="Side" transform_path="lightSource"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="Gunjoint" transform_path="flashlight_lightSource"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffWeaponLightActive" name_key="buffWeaponLightActive" description_key="buffWeaponLightActiveDesc" icon="ui_game_symbol_electric_power" icon_color="255,165,0" showonhud="false">
+			<!-- hidden="true" -->
+			<stack_type value="effect"/>
+			<duration value="0"/>
+			<update_rate value="10"/>
+			<display_value value="batteryWeaponLight"/>
+			<display_value_key value="Weapon: {0:0}%"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffGunFlashlight"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="Side" transform_path="lightSource"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashlight"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="Gunjoint" transform_path="flashlight_lightSource"/> -->
+				<!-- 100 = 100%, duration = 30 min, ticks every 10 seconds = 180 ticks; 0.556 per tick to be subtracted -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryWeaponLightTick" operation="set" value="0.556"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryWeaponLightEfficiency" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryWeaponLightTick" operation="multiply" value="@$batteryWeaponLightEfficiency"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryWeaponLight" operation="subtract" value="@$batteryWeaponLightTick"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffWeaponLightReload">
+					<requirement name="CVarCompare" cvar="batteryWeaponLight" operation="LT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffWeaponLightReload">
+					<requirement name="CVarCompare" cvar="batteryWeaponLight" operation="LT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="SetTransformActive" active="false" parent_transform="Side" transform_path="lightSource"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffGunFlashlight"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryWeaponLightDisplay" operation="set" value="@batteryWeaponLight"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryWeaponLightDisplay" operation="divide" value="100"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="gunlightequipped" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="gunlightequipped" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffWeaponLightReload" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffWeaponLightActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="Side" transform_path="lightSource"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="Gunjoint" transform_path="flashlight_lightSource"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeWeaponBattery">
+					<requirement name="PlayerItemCount" item_name="resourceNiCdBattery" operation="GT" value="0"/></triggered_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffWeaponLightReloadSuccess" name_key="buffWeaponLightReloadSuccess" icon="ui_game_symbol_electric_power" icon_color="0,255,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="2"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="batteryWeaponLight" operation="set" value="100"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffWeaponLightActive"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** weapon laser sight *** -->
+		<buff name="buffLaserLightActivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryLaserLight" operation="GT" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffLaserLightActive"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryLaserLight" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffLaserLightReload"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffLaserLightDeactivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLaserLightActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformChildrenActive" active="false" parent_transform="Side" transform_path="gun_laser"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="gunlaser" transform_path="gunlaser"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffLaserLightActive" name_key="buffLaserLightActive" description_key="buffLaserLightActiveDesc" icon="ui_game_symbol_electric_power" icon_color="204,0,0" showonhud="false">
+			<!-- hidden="true" -->
+			<stack_type value="effect"/>
+			<duration value="0"/>
+			<update_rate value="10"/>
+			<display_value value="batteryLaserLight"/>
+			<display_value_key value="Laser: {0:0}%"/>
+			<effect_group>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Sides/side_attachment_laserPrefab.prefab" parent_transform="Attachments/Side" local_rotation="0,0,0"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="SetTransformChildrenActive" active="true" parent_transform="Side" transform_path="gun_laser"/> -->
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gunlaser"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="gunlaser" transform_path="gunlaser"/>
+				<!-- 100 = 100%, duration = 30 min, ticks every 10 seconds = 180 ticks; 0.556 per tick to be subtracted -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryLaserLightTick" operation="set" value="0.556"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryLaserLightEfficiency" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryLaserLightTick" operation="multiply" value="@$batteryLaserLightEfficiency"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryLaserLight" operation="subtract" value="@$batteryLaserLightTick"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffLaserLightReload">
+					<requirement name="CVarCompare" cvar="batteryLaserLight" operation="LT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffLaserLightReload">
+					<requirement name="CVarCompare" cvar="batteryLaserLight" operation="LT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="SetTransformChildrenActive" active="false" parent_transform="Side" transform_path="gun_laser"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="SetTransformActive" active="false" parent_transform="gunlaser" transform_path="gunlaser"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryLaserLightDisplay" operation="set" value="@batteryLaserLight"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryLaserLightDisplay" operation="divide" value="100"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="laserlightequipped" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="laserlightequipped" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffLaserLightReload" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLaserLightActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformChildrenActive" active="false" parent_transform="Side" transform_path="gun_laser"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="gunlaser" transform_path="gunlaser"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeLaserBattery">
+					<requirement name="PlayerItemCount" item_name="resourceNiCdBattery" operation="GT" value="0"/></triggered_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffLaserLightReloadSuccess" name_key="buffLaserLightReloadSuccess" icon="ui_game_symbol_electric_power" icon_color="0,255,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="2"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="batteryLaserLight" operation="set" value="100"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffLaserLightActive"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** flashlight *** -->
+		<buff name="buffFlashLightActivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryFlashLight" operation="GT" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffFlashLightActive"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryFlashLight" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffFlashLightReload"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffFlashLightDeactivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffFlashLightActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="lightSource"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffFlashLightActive" name_key="buffFlashLightActive" description_key="buffFlashLightActiveDesc" icon="ui_game_symbol_electric_power" icon_color="192,192,192" showonhud="false">
+			<!-- hidden="true" -->
+			<stack_type value="effect"/>
+			<duration value="0"/>
+			<update_rate value="10"/>
+			<display_value value="batteryFlashLight"/>
+			<display_value_key value="Held: {0:0}%"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHeldLight"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="lightSource"/>
+				<!-- 100 = 100%, duration = 30 min, ticks every 10 seconds = 180 ticks; 0.556 per tick to be subtracted -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryFlashLightTick" operation="set" value="0.556"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryFlashLightEfficiency" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryFlashLightTick" operation="multiply" value="@$batteryFlashLightEfficiency"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryFlashLight" operation="subtract" value="@$batteryFlashLightTick"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffFlashLightReload">
+					<requirement name="CVarCompare" cvar="batteryFlashLight" operation="LT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFlashLightReload">
+					<requirement name="CVarCompare" cvar="batteryFlashLight" operation="LT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="lightSource"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffHeldLight"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryFlashLightDisplay" operation="set" value="@batteryFlashLight"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryFlashLightDisplay" operation="divide" value="100"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="flashlightequipped" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="flashlightequipped" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffFlashLightReload" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffFlashLightActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="lightSource"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeFlashLightBattery">
+					<requirement name="PlayerItemCount" item_name="resourceNiCdBattery" operation="GT" value="0"/></triggered_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffFlashLightReloadSuccess" name_key="buffFlashLightReloadSuccess" icon="ui_game_symbol_electric_power" icon_color="0,255,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="2"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="batteryFlashLight" operation="set" value="100"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffFlashLightActive"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** NVG *** -->
+		<buff name="buffNVGActivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryNVG" operation="GT" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffNVGActive"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryNVG" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffNVGReload"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffNVGDeactivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffNVGActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Bright" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightTPV" active="false"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightFPV" active="false"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffNVGActive" name_key="buffNVGActive" description_key="buffNVGActiveDesc" icon="ui_game_symbol_electric_power" icon_color="255,99,71" showonhud="false">
+			<!-- hidden="true" -->
+			<stack_type value="effect"/>
+			<duration value="0"/>
+			<update_rate value="10"/>
+			<display_value value="batteryNVG"/>
+			<display_value_key value="NVG: {0:0}%"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffNightVision"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Bright" intensity="0.75" fade="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightTPV" active="@!.IsFPV"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightFPV" active="@.IsFPV"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="lightSource"/>
+				<!-- 100 = 100%, duration = 30 min, ticks every 10 seconds = 180 ticks; 0.556 per tick to be subtracted -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryNVGTick" operation="set" value="0.556"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryNVGEfficiency" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryNVGTick" operation="multiply" value="@$batteryNVGEfficiency"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryNVG" operation="subtract" value="@$batteryNVGTick"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffNVGReload">
+					<requirement name="CVarCompare" cvar="batteryNVG" operation="LT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffNVGReload">
+					<requirement name="CVarCompare" cvar="batteryNVG" operation="LT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Bright" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="SetPartActive" part="HeadLightTPV" active="false"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffNightVision"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryNVGDisplay" operation="set" value="@batteryNVG"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryNVGDisplay" operation="divide" value="100"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="nvgequipped" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="nvgequipped" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffNVGReload" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffNVGActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Bright" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightTPV" active="false"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightFPV" active="false"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeNVGBattery">
+					<requirement name="PlayerItemCount" item_name="resourceNiCdBattery" operation="GT" value="0"/></triggered_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffNVGReloadSuccess" name_key="buffNVGReloadSuccess" icon="ui_game_symbol_electric_power" icon_color="0,255,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="2"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="batteryNVG" operation="set" value="100"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffNVGActive"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** melee torch *** -->
+		<buff name="buffHandTorchActivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryHandTorch" operation="GT" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHandTorchActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHeldTorch"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryHandTorch" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHandTorchReload"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffHandTorchDeactivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffHeldTorch"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffHandTorchActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="torch02_firePrefab" parent_transform="TorchLight"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffHandTorchActive" name_key="buffHandTorchActive" description_key="buffHandTorchActiveDesc" icon="ui_game_symbol_fire" icon_color="255,69,0" showonhud="false">
+			<!-- hidden="true" -->
+			<stack_type value="effect"/>
+			<duration value="0"/>
+			<update_rate value="10"/>
+			<display_value value="batteryHandTorch"/>
+			<display_value_key value="Torch: {0:0}%"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="torch02_firePrefab" parent_transform="TorchLight"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHeldTorch"/>
+				
+				<!-- 100 = 100%, duration = 60 min, ticks every 10 seconds = 360 ticks; 0.278 per tick to be subtracted -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryHandTorchTick" operation="set" value="0.278"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryHandTorchEfficiency" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryHandTorchTick" operation="multiply" value="@$batteryHandTorchEfficiency"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryHandTorch" operation="subtract" value="@$batteryHandTorchTick"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHandTorchReload">
+					<requirement name="CVarCompare" cvar="batteryHandTorch" operation="LT" value="0"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffHandTorchReload">
+					<requirement name="CVarCompare" cvar="batteryHandTorch" operation="LT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="torch02_firePrefab" parent_transform="TorchLight"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryHandTorchDisplay" operation="set" value="@batteryHandTorch"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryHandTorchDisplay" operation="divide" value="100"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="torchequipped" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="torchequipped" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffHandTorchReload" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffHeldTorch"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffHandTorchActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="torch02_firePrefab" parent_transform="TorchLight"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeHandTorchBattery">
+					<requirement name="PlayerItemCount" item_name="ammoGasCan" operation="GTE" value="10"/></triggered_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffHandTorchReloadSuccess" name_key="buffHandTorchReloadSuccess" icon="ui_game_symbol_fire" icon_color="255,69,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="2"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="batteryHandTorch" operation="set" value="100"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffHandTorchActive"/>
+			</effect_group>
+		</buff>		
+		
+		<!-- *** burning shaft *** -->
+		<buff name="buffBurningShaftActivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryBurningShaft" operation="GT" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBurningShaftActive"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="batteryBurningShaft" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBurningShaftReload"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffBurningShaftDeactivate" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffBurningShaftActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemovePart" part="Flames"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffBurningShaftActive" name_key="buffBurningShaftActive" description_key="buffBurningShaftActiveDesc" icon="ui_game_symbol_fire" icon_color="204,85,0" showonhud="false">
+			<!-- hidden="true" -->
+			<stack_type value="effect"/>
+			<duration value="0"/>
+			<update_rate value="10"/>
+			<display_value value="batteryBurningShaft"/>
+			<display_value_key value="Shaft: {0:0}%"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddPart" part="Flames" prefab="property?FlameEffect" parentTransform="#HeldItemRoot"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToHeldItem" prefab="property?FlameEffect"/> -->
+				
+				<!-- 100 = 100%, duration = 30 min, ticks every 10 seconds = 180 ticks; 0.556 per tick to be subtracted -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryBurningShaftTick" operation="set" value="0.556"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryBurningShaftEfficiency" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryBurningShaftTick" operation="multiply" value="@$batteryBurningShaftEfficiency"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryBurningShaft" operation="subtract" value="@$batteryBurningShaftTick"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBurningShaftReload">
+					<requirement name="CVarCompare" cvar="batteryBurningShaft" operation="LT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBurningShaftReload">
+					<requirement name="CVarCompare" cvar="batteryBurningShaft" operation="LT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePart" part="Flames"/>
+				<!-- <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromHeldItem" prefab="property?FlameEffect"/> -->
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryBurningShaftDisplay" operation="set" value="@batteryBurningShaft"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="batteryBurningShaftDisplay" operation="divide" value="100"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="burningshaftequipped" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="burningshaftequipped" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffBurningShaftReload" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value=".1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffBurningShaftActive"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemovePart" part="Flames"/>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeBurningShaftBattery">
+					<requirement name="PlayerItemCount" item_name="ammoGasCan" operation="GTE" value="10"/></triggered_effect>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffBurningShaftReloadSuccess" name_key="buffBurningShaftReloadSuccess" icon="ui_game_symbol_fire" icon_color="204,85,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="2"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="batteryBurningShaft" operation="set" value="100"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffBurningShaftActive"/>
+			</effect_group>
+		</buff>
+	</append>
+</Hells_Janitor>

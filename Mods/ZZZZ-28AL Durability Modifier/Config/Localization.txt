@@ -1,0 +1,32 @@
+Key,English
+buffHelmetPurifierActive,Filter status:
+buffHelmetPurifierActiveDesc,"Your Helmet Purifier is currently working, so you can safely drink from any water source.\n\nThe filter has limited uses, and will need to be replaced eventually."
+buffHelmetPurifierReloadSuccess,"Reloading your Helmet Water Purifer."
+modArmorWaterPurifier,Water Filtration Unit
+modArmorWaterPurifierDesc,Requires a limited-use filter to allow safe consumption of murky water.
+resourceHelmetWaterFilterDesc,A home-made component used to recharge a Water Filtration Unit.\n\nDoesn't always work on the first sip of water ...
+resourceHelmetWaterFilter,Portable Water Filter
+resourceNiCdBattery,"9v D-cell Battery"
+resourceNiCdBatteryDesc,"A limited-use battery, required to operate various portable light sources."
+buffHelmetLightActive,Battery Status
+buffHelmetLightActiveDesc,"Your Helmet Light is currently powered.\n\nThe battery is being depleted, and when empty, requires replacing."
+buffWeaponLightActive,Battery Status
+buffWeaponLightActiveDesc,"Your Weapon Flashlight is currently powered.\n\nThe battery is being depleted, and when empty, requires replacing."
+buffLaserLightActive,Battery Status
+buffLaserLightActiveDesc,"Your Laser Sight is currently powered.\n\nThe battery is being depleted, and when empty, requires replacing."
+buffFlashLightActive,Battery Status
+buffFlashLightActiveDesc,"Your flashlight is currently powered.\n\nThe battery is being depleted, and when empty, requires replacing."
+buffNVGActive,Battery Status
+buffNVGActiveDesc,"Your Night Vision Goggles are currently powered.\n\nThe battery is being depleted, and when empty, requires replacing."
+buffHandTorchActive,Fuel Status
+buffHandTorchActiveDesc,"Your torch is currently fuelled.\n\nThe fuel is being depleted, and when used up, the torch will extinguish.\n\nRefuel the torch by having 10 gasoline in your inventory."
+buffBurningShaftActive,Fuel Status
+buffBurningShaftActiveDesc,"Your burning shaft mod is currently fuelled.\n\nThe fuel is being depleted, and when used up, the flame will extinguish.\n\nRefuel the mod by having 10 gasoline in your inventory."
+placedLitTorch1,Wall Torch
+placedLitTorch3Harvest,Spent Torch
+placedLitTorch3HarvestDesc,"This torch is spent and needs refuelling"
+placedUnlitLantern,Spent Lantern
+placedUnlitLanternDecs,"This lantern's battery is depleted and needs replacing."
+spentWallTorch,Spent Torch
+spentWallTorchDesc,"A spent torch. Can be reused to craft another wall torch"
+meleeToolTorchDesc,This torch can be used as a portable light source or weapon with a chance to catch enemies on fire.\n\nCan also be used to craft a placeable wall torch. Requires gas to ignite.

@@ -1,0 +1,6 @@
+<configs>
+	
+	<set xpath="//biome[@name='pine_forest']//spawn[@time='Day'][@notags='commercial,industrial,downtown']/@entitygroup">ZombiesWeakNoTough</set>
+	<set xpath="//biome[@name='pine_forest']//spawn[@time='Day'][@notags='downtown']/@entitygroup">ZombiesWeakAll</set>
+
+</configs>

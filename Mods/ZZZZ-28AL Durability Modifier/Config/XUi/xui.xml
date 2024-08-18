@@ -1,0 +1,7 @@
+<HellsJanitor>
+	<insertAfter xpath="//window_group/window[@name='HUDLeftStatBars']">
+		<window name="HUDCentreLeftStatBars" anchor="LeftTop"/>
+		<window name="HUDCentreRightStatBars"/>
+		<window name="HUDCenterStatDurabilityBars" anchor="CenterBottom"/>
+	</insertAfter>
+</HellsJanitor>

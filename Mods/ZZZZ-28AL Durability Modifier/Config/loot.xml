@@ -1,0 +1,17 @@
+<Hells_Janitor>
+	<append xpath="//lootgroup[@name='groupElectricalDevices']">
+		<item name="resourceNiCdBattery" count="1,2" loot_prob_template="med"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupMoPowerShelves']">
+		<item name="resourceNiCdBattery" count="1,2" loot_prob_template="med"/>
+	</append>
+	
+	<append xpath="//lootgroup[contains(@name,'Power01') or (contains(@name,'Power02')) or (contains(@name,'Power03')) or (contains(@name,'Power04'))]">
+		<item name="resourceNiCdBattery" count="1,2" loot_prob_template="med"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupMoPower01']">
+		<item name="resourceNiCdBattery" count="1,2" loot_prob_template="med"/>
+	</append>
+</Hells_Janitor>

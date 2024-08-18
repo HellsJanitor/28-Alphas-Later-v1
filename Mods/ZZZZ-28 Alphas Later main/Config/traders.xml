@@ -1,0 +1,151 @@
+<configs>
+	<!-- search find all *** for changes -->
+	
+	<!-- *** remove cooking pot & grill from trader stock *** -->
+	<remove xpath="//trader_items//item[@name='toolCookingPot']"/>
+	<remove xpath="//trader_items//item[@name='toolCookingGrill']"/>
+	
+	<!-- <remove xpath="/traders/trader_info/trader_items/item[@name='toolDewGatherer']"/> -->
+	<!-- <remove xpath="/traders/trader_info/trader_items/item[@name='toolDewTarp']"/>	 -->
+	<set xpath="/traders/trader_info/trader_items/item[@name='toolDewGatherer']/@name">adcBigBarrel</set>
+	<set xpath="/traders/trader_info/trader_items/item[@name='toolDewTarp']/@name">adcLargeCatcher</set>
+	<set xpath="/traders/trader_info/trader_items/item[@name='toolDewFilter']/@name">resourceWaterFilter</set>
+	
+	<!-- *** dew collector tools *** -->
+	<append xpath="/traders/trader_info[@id='1']">
+		<trader_items>
+			<item name="adcAdvancedFilter" count="1,1"/>
+			<!-- <item name="adcMineralInfuser" count="1,1"/> -->
+		</trader_items>
+	</append>
+	
+	<append xpath="/traders/trader_info[@id='2']">
+		<trader_items>
+			<item name="adcAdvancedFilter" count="1,1"/>
+			<!-- <item name="adcMineralInfuser" count="1,1"/> -->
+		</trader_items>
+	</append>
+	
+	<append xpath="/traders/trader_info[@id='7']">
+		<trader_items>
+			<item name="adcAdvancedFilter" count="1,1"/>
+			<!-- <item name="adcMineralInfuser" count="1,1"/> -->
+		</trader_items>
+	</append>
+	
+	<!-- *** iron hoe, schematic, and fertilzer added to trader stock *** -->
+	<append xpath="//trader_item_group[@name='perkBooks']">
+	    <item name="meleeToolFarmT2IronHoeSchematic"/>		
+	</append>
+    
+	<append xpath="//trader_item_group[@name='traderAlways']">
+	    <item name="meleeToolFarmT2IronHoeSchematic"/>		
+	</append>
+	
+	<append xpath="//trader_item_group[@name='seeds']">
+	    <item name="meleeToolFarmT2IronHoe" quality="1"/>
+		<item name="resourceFertilizer" count="50,100"/>
+	</append>	
+	
+	<append xpath="//trader_item_group[@name='traderGeneral']">
+	    <item name="meleeToolFarmT2IronHoe" quality="1"/>
+		<item name="resourceFertilizer" count="50,100"/>
+	</append>
+	
+	<!-- *** increased buy markup, decreased sell markup *** -->
+	<setattribute xpath="/traders" name="buy_markup">6</setattribute>
+	<setattribute xpath="/traders" name="sell_markdown">0.1</setattribute>
+	<removeattribute xpath="//trader_info[@id='4']/@override_buy_markup"/>
+	<removeattribute xpath="//trader_info[@id='10']/@override_buy_markup"/>	
+	
+	<!-- *** traders open dawn 'til dusk *** -->
+	<!-- <set xpath="/traders/trader_info[@id='1']/@open_time">4:05</set> -->
+	<!-- <set xpath="/traders/trader_info[@id='2']/@open_time">4:05</set> -->
+	<!-- <set xpath="/traders/trader_info[@id='6']/@open_time">4:05</set> -->
+	<!-- <set xpath="/traders/trader_info[@id='7']/@open_time">4:05</set> -->
+	<!-- <set xpath="/traders/trader_info[@id='8']/@open_time">4:05</set> -->
+	
+	<!-- *** add new food to trader stock *** -->
+	<append xpath="//trader_item_group[@name='preparedFood']">
+		<item name="foodChickenStew" count="1,2"/>
+		<item name="foodChickenMiso" count="1,2"/>
+		<item name="foodScrambledEggs" count="1,2"/>
+	</append>
+	
+	<insertbefore xpath="//trader_item_group[@name='cannedfood']//item[1]">
+	<item name="foodCanCarrots"/>
+	</insertbefore>
+	
+	<!-- *** add lavender seed *** -->
+	<append xpath="//trader_item_group[@name='seeds']">
+	<item name="plantedLavender1"/>
+	</append>
+	
+	<!-- *** add lavender flower *** -->
+	<append xpath="//trader_item_group[@name='traderGeneral']">
+	    <item name="resourceCropLavender" count="10,20"/>
+	</append>
+	
+	<!-- *** add tablesaw to trader stock *** -->
+	<append xpath="//trader_item_group[@name='tools']">
+		<item name="playerTableSaw" prob="0.7"/>
+		<item name="toolAmmoPress" prob="0.7"/>
+	</append>
+	
+	<!-- *** add new mods to trader stock *** -->
+	<append xpath="//trader_item_group[@name='groupMeleeMods']">
+		<item name="modGunMeleeBlessedMetal"/>
+		<item name="modGunMeleeNiCdBattery"/>
+		<item name="modGunMeleeFlammableOil"/>
+		<item name="modGunMeleeLiquidNitrogen"/>
+	</append>
+	
+	<append xpath="//trader_item_group[@name='groupRangedMods']">
+		<item name="modGunBrassCatcher"/>
+	</append>
+	
+	<!-- *** add new mod schematics to trader stock *** -->
+	<append xpath="//trader_item_group[@name='schematicsModsCommon']">		
+		<item name="modBicycleStaminaSaverSchematic"/>	
+		<!-- <item name="modGunBrassCatcherSchematic"/> -->
+	</append>
+	
+	<!-- *** add antivenom/St. John's wort to medical trader stock *** -->
+	<append xpath="//trader_item_group[@name='medicine']">
+	<item name="antivenom"/>
+	<item name="drugStJohnsWort" count="1"/>
+	</append>
+	
+	<!-- *** add lithium to rare medical trader stock *** -->
+	<append xpath="//trader_item_group[@name='rareMedicine']">
+	<item name="drugLithium" count="1"/>
+	</append>
+	
+	<!-- *** legendary paintbrush *** -->
+	<append xpath="//trader_item_group[@name='rareTools']">
+	<item name="meleeWpnBladeT666LegendaryPaintbrush" quality="6"/>
+	</append>
+	
+	<set xpath="//trader_item_group[@name='groupArmorMods']">
+	<!-- *** T1_Armor_Mods -->
+		<item name="modArmorHelmetLight"/>
+		<item name="modArmorInsulatedLiner"/>
+		<item name="modArmorCoolingMesh"/>
+		<item name="modArmorPlatingBasic"/>
+		<item name="modArmorStoragePocket"/>
+		<item name="modArmorImprovedFittings"/>
+	<!-- *** T2_Armor_Mods -->
+		<item name="modArmorWaterPurifier"/>
+		<item name="modArmorImpactBracing"/>
+		<item name="modArmorPlatingReinforced"/>
+		<item name="modArmorMuffledConnectors"/>
+		<item name="modArmorDoubleStoragePocket"/>
+		<item name="modArmorCustomizedFittings"/>		
+	<!-- *** T3_Armor_Mods -->
+		<item name="modArmorBandolier"/>
+		<item name="modArmorTripleStoragePocket"/>
+		<item name="modArmorAdvancedMuffledConnectors"/>
+	</set>
+	
+	<set xpath="//trader_item_group[@name='constructionSupplies']//item[@name='resourceConcreteMix']/@name">resourceCrushedSand</set>
+</configs>

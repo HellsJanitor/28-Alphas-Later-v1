@@ -1,0 +1,277 @@
+<configs>
+	<!-- <set xpath="/gameevents/action_sequence[@name='game_first_spawn']/action[@class='AddJournalTip']/property[@name='tip_name']/@value">HellsModSpawnText</set> -->
+	<append xpath="//action_sequence[@name='game_first_spawn']">
+		<action class="Delay">
+			<property name="time" value="2" />
+			<property name="phase" value="4" />
+		</action>
+		
+		<action class="SetItemSlots">
+			<property name="items_location" value="Toolbelt" />
+			<property name="items" value="drinkJarPureMineralWater,foodSteakAndPotato,medicalFirstAidBandage,meleeToolFlashlight02,resourceNiCdBattery" />
+			<property name="item_counts" value="2,2,2,1,1" />
+			<property name="slot_numbers" value="0,1,2,3,4" />
+		</action>
+	</append>
+	
+	<!-- *** prevents use of vehicles underwater *** -->
+	<append xpath="/gameevents">
+	<action_sequence name="buff_novehicle_submerged">
+		<property name="category" value="twitch_actions" />
+
+		<requirement class="HasBuff">
+			<property name="buff_name" value="buffNoVehicle" param1="hasbuff" />
+			<property name="invert" value="true" />
+		</requirement>
+		
+		<action class="AddPartyToGroup">
+			<property name="phase" value="0" />
+			<property name="group_name" value="party" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="sound" value="minibike_empty_" />
+			<property name="phase" value="1" />
+			<property name="inside_head" value="true" />
+			<property name="target_group" value="party" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="phase" value="1" />
+			<property name="sound" value="twitch_vehicle_overlay" />
+			<property name="inside_head" value="true" />
+			<property name="target_group" value="party" />
+			<property name="delay" value="1.6" />
+		</action>
+
+		<action class="EjectFromVehicle">
+			<property name="phase" value="1" />
+			<property name="target_group" value="party" />
+		</action>		
+
+		<action class="AddBuff">
+			<property name="phase" value="1" />
+			<property name="buff_name" value="buffNoVehicle" />
+			<property name="target_group" value="party" />
+		</action>
+	</action_sequence>
+
+	<!-- *** checks if TI is active before adding Despair *** -->
+	<action_sequence name="despair_trigger">
+		<property name="allow_user_trigger" value="false" />
+		<action class="AddBuff">
+			<property name="phase" value="1" />
+			<property name="buff_name" value="buffDespairMain" />
+			
+			<requirement class="IsTwitchActive">
+				<property name="invert" value="true" />
+			</requirement>
+		</action>
+		
+		<action class="RemoveBuff">
+			<property name="phase" value="2" />
+			<property name="buff_name" value="buffDespairMain" />
+			
+			<requirement class="IsTwitchActive"/>				
+		</action>
+	</action_sequence>
+	
+	<!-- *** random wandering horde spawner *** -->
+	<action_sequence name="random_horde_sequence">		
+	<property name="allow_user_trigger" value="true" />
+	<property name="category" value="twitch_actions" />		
+
+		<action class="SpawnEntity">
+			<property name="entity_group" value="SleeperGSList" />
+			<property name="spawn_count" value="11"  />
+			<property name="air_spawn" value="false" />
+			<property name="add_to_group" value="zombies" />
+			<property name="safe_spawn" value="true" />
+			<property name="min_distance" value="10" />
+			<property name="max_distance" value="20" />
+			<property name="spawn_type" value="WanderingHorde" />
+		</action>		
+		
+		<action class="AddEntitiesToGroup">
+			<property name="phase" value="0" />
+			<property name="group_name" value="zombies" />
+			<property name="max_distance" value="20" />
+		</action>
+
+		<action class="RageZombies">
+			<property name="time" value="30" />
+			<property name="speed_percent" value=".10" />
+			<property name="target_group" value="zombies" />
+		</action>		
+	</action_sequence>
+	
+	<!-- *** hordes called in from Boomer explosions *** -->
+	<action_sequence name="boomer_horde_sequence">		
+	<property name="allow_user_trigger" value="true" />
+	<property name="action_type" value="Game" />
+	<!-- <property name="category" value="twitch_actions" /> -->
+			
+		<action class="SetScreenEffect">
+			<property name="phase" value="2" />
+			<property name="screen_effect" value="Blur" />
+			<property name="intensity" value="1" />
+			<property name="fade_time" value="0.1" />
+		</action>
+		
+		<action class="Delay">
+			<property name="time" value=".5" />
+			<property name="phase" value="3" />
+		</action>
+		
+		<action class="SetScreenEffect">
+			<property name="phase" value="4" />
+			<property name="screen_effect" value="Blur" />
+			<property name="intensity" value="0" />
+			<property name="fade_time" value="10" />
+		</action>
+
+		<action class="SpawnEntity">			
+			<property name="entity_group" value="SleeperGSList" />
+			<property name="spawn_count" value="5" />
+			<property name="air_spawn" value="false" />
+			<property name="add_to_group" value="zombies" />
+			<property name="safe_spawn" value="true" />
+			<property name="min_distance" value="10" />
+			<property name="max_distance" value="20" />
+			<property name="spawn_type" value="WanderingHorde" />
+		</action>
+		
+		<action class="AddEntitiesToGroup">
+			<property name="phase" value="0" />
+			<property name="group_name" value="zombies" />
+			<property name="max_distance" value="20" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="sound" value="twitch_enrage" />
+		</action>
+
+		<action class="RageZombies">
+			<property name="time" value="30" />
+			<property name="speed_percent" value=".10" />
+			<property name="target_group" value="zombies" />
+		</action>
+		
+		<!-- <action class="CallGameEvent">
+			<property name="game_events" value="boomer_horde_normal" />
+		</action>	 -->
+	</action_sequence>
+
+	<action_sequence name="000_action_pull">
+		<property name="allow_user_trigger" value="true"/>
+		<property name="action_type" value="Game"/>
+		
+		<action class="AddEntitiesToGroup">
+			<property name="phase" value="0"/>
+			<property name="group_name" value="pulledEntities"/>
+			<property name="entity_tags" value="entity"/>
+			<property name="max_distance" value="150"/>
+			<property name="target_only" value="false"/>
+			<property name="y_height" value="5" />
+			<property name="exclude_target" value="true" />
+		</action>
+		
+		<action class="AddSpawnedEntitiesToGroup">
+			<property name="phase" value="0"/>
+			<property name="group_name" value="pulledEntities"/>
+			<property name="entity_tags" value="entity"/>
+			<property name="max_distance" value="150"/>
+			<property name="target_only" value="false"/>
+			<property name="y_height" value="5" />
+			<property name="exclude_target" value="true" />
+		</action>
+		
+		<action class="PlaySound">
+			<property name="phase" value="1"/>
+			<property name="sound" value="zombieferalalert"/>
+		</action>
+		
+        <action class="PullEntities">
+            <property name="phase" value="1"/>
+            <property name="target_group" value="pulledEntities"/>
+            <property name="pull_sound" value="twitch_pull"/>
+        </action>
+					
+		<action class="RageZombies">
+			<property name="phase" value="4"/>
+			<property name="time" value="30"/>
+			<property name="speed_percent" value=".25"/>
+			<property name="target_group" value="pulledEntities"/>
+		</action>
+		<action class="TwitchAddEntitiesToSpawned">
+			<property name="target_group" value="pulledEntities" />
+		</action>	
+        <action class="AddChatMessage">
+            <property name="text" value="[[6441a5]Twitch[-]] Land Claim Broken! [ff0000]Your safe zone has been removed![-]"/>
+            <property name="phase" value="2"/>
+        </action>
+    </action_sequence>
+	
+	<action_sequence name="boomer_horde_normal" template="vote_minor">
+		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
+		<variable name="spawncount" value="5" />
+		<variable name="alertsound" value="zombiemalealert" />	
+		<variable name="gamestage_extra1" value="25" />
+		<variable name="spawncount_extra1" value="5" />
+		<variable name="gamestage_extra2" value="50" />
+		<variable name="spawncount_extra2" value="5" />
+	</action_sequence>
+	
+	<action_sequence name="boomer_horde_feral" template="vote_minor">
+		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral" />
+		<variable name="spawncount" value="5" />
+		<variable name="alertsound" value="zombieferalalert" />
+		<variable name="gamestage_extra1" value="25" />
+		<variable name="spawncount_extra1" value="5" />
+		<variable name="gamestage_extra2" value="50" />
+		<variable name="spawncount_extra2" value="5" />
+	</action_sequence>
+	
+	<!-- <action_sequence name="action_boomerpull">
+		<property name="category" value="twitch_actions" />
+		
+		<requirement class="HasSpawnedEntities">
+			<property name="entity_tags" value="zombie" />
+			<property name="target_only" value="true" />
+		</requirement>
+
+		<action class="AddSpawnedEntitiesToGroup">
+			<property name="phase" value="0" />
+			<property name="group_name" value="pulledEntities" />
+			<property name="entity_tags" value="zombie" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="sound" value="twitch_bad_action" />
+			<property name="phase" value="1" />
+		</action>
+
+		<action class="PullEntities">
+			<property name="phase" value="1" />
+			<property name="target_group" value="pulledEntities" />
+			<property name="pull_sound" value="twitch_pull" />
+		</action>
+	</action_sequence> -->
+	
+	<!-- *** headshot only *** -->
+	<action_sequence name="buffAlwaysHeadShotsOnly" template="buff_template">
+		<variable name="addbuff" value="buffAlwaysHeadShotsOnly" />
+		<variable name="removebuff" value="" />
+		<!-- <variable name="twitch_negative" value="true" /> -->
+	</action_sequence>
+	
+	<!-- *** brass catcher *** -->
+	<action_sequence name="modBrassCatcher">
+	<property name="action_type" value="Game" />
+		<action class="AddItems">
+		<property name="added_items" value="resourceBulletCasing" />
+		<property name="added_item_counts" value="1" />
+		</action>
+	</action_sequence>
+	</append>
+</configs>

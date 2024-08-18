@@ -1,0 +1,7 @@
+Key,english
+statSmell,Inventory Count (smell)
+buffSmellTooltip,Nearby zombies are attracted to the smell of the food you're carrying.
+buffSmellName,"Alerted"
+buffSmellDesc,"The food you are carrying is attracting unwanted attention.\n\nAll nearby zombies are attracted to, and enraged by, the smell of the food - so put it away or eat it!"
+buffSmellJournalTip,"Carrying varying amounts of certain foods will attract and enrage nearby zombies.\n\nThe longer you have the food in your inventory, the more zombies will be attracted to it, and enraged by it.\n\nThe better the food, the less you can carry, so try to keep food in storage."
+buffSmellJournalTip_title,Smell

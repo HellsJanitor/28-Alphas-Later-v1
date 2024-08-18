@@ -1,0 +1,824 @@
+<configs>
+	<set xpath="//window[@name='craftingInfoPanel']//rect[@name='ingredients']">
+
+		<rect depth="2">
+			<sprite depth="1" size="65,34" pos="0,0" color="[darkGrey]" type="sliced"/>
+			<sprite depth="2" size="71,39" pos="-3,3" color="[black]" type="sliced" sprite="menu_empty3px" fillcenter="false"/>
+			<label depth="3" size="65,26" pos="32,-18" color="[labelColor]" pivot="center" justify="center" font_size="26" text_key="lblitem"/>
+		</rect>
+		<rect depth="2" pos="68,0">
+			<sprite depth="1" size="236,34" pos="0,0" color="[darkGrey]" type="sliced"/>
+			<sprite depth="2" size="242,39" pos="-3,3" color="[black]" type="sliced" sprite="menu_empty3px" fillcenter="false"/>
+			<label depth="3" size="230,26" pos="117,-18" color="[labelColor]" pivot="center" justify="center" font_size="26" text_key="mmTextName"/>
+		</rect>
+		<rect depth="2" pos="307,0">
+			<sprite depth="1" size="140,34" pos="0,0" color="[darkGrey]" type="sliced"/>
+			<sprite depth="2" size="146,39" pos="-3,3" color="[black]" type="sliced" sprite="menu_empty3px" fillcenter="false"/>
+			<label depth="3" size="64,26" pos="70,-18" color="[labelColor]" pivot="center" justify="center" font_size="26" text_key="lblContextCraftCount"/>
+		</rect>
+	
+		<grid pos="0,-35" rows="6" width="447" height="264" cell_height="44" cell_width="447" controller="IngredientList" arrangement="vertical">
+			<ingredient_row_narrow name="1"/>
+			<ingredient_row_narrow name="2"/>
+			<ingredient_row_narrow name="3"/>
+			<ingredient_row_narrow name="4"/>
+			<ingredient_row_narrow name="5"/>
+			<ingredient_row_narrow name="6"/>
+		</grid>
+	</set>
+	
+	<!-- <set xpath="//window[@name='windowResponses']/@height">400</set> -->
+	<!-- <setattribute xpath="//window[@name='windowQuestList']" name="pos">9999,0</setattribute> -->
+	<!-- <set xpath="//window[@name='windowQuestList']/rect[@name='content']/@pos">9999,0</set> -->
+	
+	<append xpath="/windows">
+		<!-- *** adds workbench tools *** -->
+		<window name="windowToolsWorkbench" width="228" height="121" panel="Right" cursor_area="true">
+			<!--#$-IGS END.-$#-->
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_wrench"/>
+				<label style="header.name" text="TOOLS" text_key="xuiTools"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true">
+
+				<grid name="inventory" rows="2" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationToolGrid" repeat_content="true"
+				      required_tools="meleeToolSalvageT1Wrench,meleeToolRepairT1ClawHammer,meleeToolSalvageT2Ratchet,meleeToolSalvageT3ImpactDriver,meleeToolRepairT3Nailgun,toolAmmoPress" required_tools_only="true"><!--,toolTablesaw,meleeWpnBladeT1HuntingKnife-->
+					<item_stack controller="IDC_Core.XUiC_RequiredItemStack,IDCCore" name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="windowWorkbenchOutput" width="228" height="198" anchor="CenterTop" panel="Right" cursor_area="true" controller="WorkstationOutputWindow">
+	
+			<panel style="header.panel" pos="0,-70">
+				<sprite style="header.icon" sprite="ui_game_symbol_loot_sack"/>
+				<label style="header.name" text="OUTPUT" text_key="xuiOutput"/>
+			
+				<rect pivot="topleft" pos="0,0" controller="ContainerStandardControls" createuiwidget="true" visible="{buttons_visible}">
+					<button depth="3" name="btnMoveAll" sprite="ui_game_symbol_store_all_up" tooltip="{take_all_tooltip}" pos="203, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]"/>
+				</rect>
+			</panel>
+
+
+			<rect name="content" depth="0" pos="0,-116" height="150" disablefallthrough="true" on_press="true">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" height="150" color="[black]" type="sliced" fillcenter="false" on_press="true"/>
+				<grid depth="10" name="inventory" rows="2" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationOutputGrid" repeat_content="true">
+					<item_stack name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+		<!-- *** adds fuel to cement mixer *** -->
+		<window name="windowMixerFuel" width="228" height="166" panel="Right" cursor_area="true">
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_fire"/>
+				<label style="header.name" text="FUEL" text_key="xuiFuel"/>
+				<label style="header.timer"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="79">
+				<rect disablefallthrough="true">
+					<grid rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationFuelGrid" repeat_content="true">
+						<item_stack name="0"/>
+					</grid>
+				</rect>
+				<grid name="slot_preview" depth="1" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="SlotPreview">
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="ammoGasCan" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="ammoGasCan" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="ammoGasCan" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+				</grid>
+			</rect>
+
+			<panel name="buttonContent" depth="5" pos="0, -121" height="40" backgroundcolor="[black]" bordercolor="[black]">
+				<sprite depth="5" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
+				<rect depth="1" pos="3,-3" width="225" height="34">
+					<button name="button" sprite="menu_empty" defaultcolor="[mediumGrey]" disabledcolor="[mediumGrey]" hoversprite="ui_game_select_row" hovercolor="[white]" type="sliced" width="222" hoverscale="1.0"/>
+					<sprite depth="2" name="flameIcon" style="icon32px" pos="5,0" sprite="ui_game_symbol_fire"/>
+					<label depth="2" name="onoff" pos="0,-6" justify="center" text="TURN ON" text_key="xuiTurnOn" font_size="26"/>
+				</rect>
+			</panel>
+		</window>
+	
+		<window name="windowOvenFuel" width="228" height="166" panel="Right" cursor_area="true">
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_fire"/>
+				<label style="header.name" text="FUEL" text_key="xuiFuel"/>
+				<label style="header.timer"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="79">
+				<rect disablefallthrough="true">
+					<grid rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationFuelGrid" repeat_content="true">
+						<item_stack name="0"/>
+					</grid>
+				</rect>
+				<grid name="slot_preview" depth="1" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="SlotPreview">
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="resourceWood" color="220,220,220,240" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="resourceWood" color="220,220,220,240" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="resourceWood" color="220,220,220,240" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+				</grid>
+			</rect>
+
+			<panel name="buttonContent" depth="5" pos="0, -121" height="40" backgroundcolor="[black]" bordercolor="[black]">
+				<sprite depth="5" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
+				<rect depth="1" pos="3,-3" width="225" height="34">
+					<button name="button" sprite="menu_empty" defaultcolor="[mediumGrey]" disabledcolor="[mediumGrey]" hoversprite="ui_game_select_row" hovercolor="[white]" type="sliced" width="222" hoverscale="1.0"/>
+					<sprite depth="2" name="flameIcon" style="icon32px" pos="5,0" sprite="ui_game_symbol_fire"/>
+					<label depth="2" name="onoff" pos="0,-6" justify="center" text="TURN ON" text_key="xuiTurnOn" font_size="26"/>
+				</rect>
+			</panel>
+		</window>
+	
+		<!-- *** tablesaw *** -->
+		<window name="windowTablesawOutput" width="228" height="198" anchor="CenterTop" panel="Right" cursor_area="true" controller="WorkstationOutputWindow">
+	
+			<panel style="header.panel" pos="0,0">
+				<sprite style="header.icon" sprite="ui_game_symbol_loot_sack"/>
+				<label style="header.name" text="OUTPUT" text_key="xuiOutput"/>
+			
+				<rect pivot="topleft" pos="0,0" controller="ContainerStandardControls" createuiwidget="true" visible="{buttons_visible}">
+					<button depth="3" name="btnMoveAll" sprite="ui_game_symbol_store_all_up" tooltip="{take_all_tooltip}" pos="203, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]"/>
+				</rect>
+			</panel>
+
+
+			<rect name="content" depth="0" pos="0,-47" height="150" disablefallthrough="true" on_press="true">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" height="150" color="[black]" type="sliced" fillcenter="false" on_press="true"/>
+				<grid depth="10" name="inventory" rows="2" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationOutputGrid" repeat_content="true">
+					<item_stack name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="windowTSCraftingList" width="397" height="688" controller="CraftingListInfo" panel="Left" cursor_area="true">
+
+			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+				<sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="Craft_Icon_Basics"/>
+				<label style="header.name" text="basics" text_key="xuiTSBasics"/>
+
+				<!-- <label pos="387, -6" depth="2" name="unlockedCount" width="64" height="32" text="0/65" font_size="32" color="[lightGrey]" justify="right" pivot="topright"/> -->
+				<!-- <sprite pos="328, -5" depth="2" name="unlockedIcon" style="icon32px" sprite="ui_game_symbol_book" color="[lightGrey]" pivot="topright"/> -->
+			</panel>
+
+			<panel name="content" width="100%" height="650" depth="1" pos="0,-43" on_scroll="true" disableautobackground="true">
+
+				<rect depth="2" name="categorySelector" width="390" height="44" pos="3,-6">
+					<sprite name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="396" height="49" color="[black]" type="sliced" fillcenter="false"/>
+					<sprite color="[mediumGrey]" type="sliced"/>
+					<grid name="categories" pos="23,-21" rows="1" cols="9" width="390" height="43" cell_width="43" cell_height="43" repeat_content="true" controller="CategoryList">
+						<category_icon/>
+					</grid>
+				</rect>
+
+				<rect depth="3" name="searchControls" width="390" height="44" pos="3,-52">
+					<sprite name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="396" height="49" color="[black]" type="sliced" fillcenter="false"/>
+					<sprite color="[darkGrey]" type="sliced"/>
+					<button depth="4" name="favorites" style="icon30px, press" pos="18,-22" sprite="server_favorite" pivot="center" sound="[paging_click]" tooltip="Favorites" tooltip_key="lblFavorites" collider_scale="1.5"/>
+
+					<panel pos="104,0" width="200" disableautobackground="true">
+						<sprite depth="4" name="searchIcon" style="icon30px" pos="0,-22" sprite="ui_game_symbol_search" pivot="center"/>
+						<textfield depth="5" name="searchInput" pos="22,-7" width="140" height="30" virtual_keyboard_prompt="vkPromptSearchTerm" search_field="true" close_group_on_tab="true" clear_button="true"/>
+					</panel>
+
+					<panel pos="286,0" width="104" height="43" disableautobackground="true">
+						<pager name="pager" pos="4,-6"/>
+					</panel>
+				</rect>
+
+				<grid name="recipes" rows="12" cols="1" pos="3,-98" width="390" height="552" cell_width="390" cell_height="46" controller="RecipeList" repeat_content="true" arrangement="vertical">
+					<recipe_entry name="0"/>
+				</grid>
+			</panel>
+		</window>
+	
+		<window name="windowToolsChickenCoop" width="76" height="121" panel="Right" cursor_area="true">
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_wrench"/>
+				<label style="header.name" text="MODIFIERS" text_key="idcXuiModifiers"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true">
+				<grid name="inventory" rows="1" cols="1" pos="3,-3" cell_width="75" cell_height="75" controller="IDC_Core.PassiveCollectorToolGrid, IDCCore" repeat_content="true"
+				      required_tools="fuelChicken" required_tools_only="true">
+					<item_stack controller="IDC_Core.XUiC_RequiredItemStack,IDCCore" name="0"/>
+				</grid>
+			</rect>
+
+		</window>
+	
+		<window name="windowChickenCoop" width="{windowWidth}" height="378" controller="IDC_Core.PassiveCollectorWindow, IDCCore" panel="Left" anchor_side="bottomright" visible="false" cursor_area="true">
+			<panel name="header" height="43" depth="0" disableautobackground="true" anchor_left="queue,0,-3" anchor_right="queue,1,0">
+				<sprite depth="1" name="headerbackground" sprite="ui_game_panel_header" anchor_left="queue,0,-3" anchor_right="queue,1,0"/>
+				<sprite depth="3" name="windowIcon" style="icon32px" pivot="center" pos="21,-21" sprite="ui_game_symbol_loot_sack"/>
+				<label depth="2" name="lootName" pos="39,-6" width="180" height="32" text_key="idcXuiAnimalSnare" font_size="32"/>
+			
+				<rect anchor_left="queue,1,-300" anchor_right="queue,1,0" pivot="topleft" pos="0,0" controller="ContainerStandardControls" createuiwidget="true" visible="false"/>
+			</panel>
+			<rect name="content" pos="3,-49">
+				<sprite depth="0" name="bg" color="255,255,255,1" type="sliced" sprite="menu_empty" anchor_left="queue,0,-3" anchor_bottom="queue,0,0" anchor_right="queue,1,0" anchor_top="queue,1,49" on_press="true"/>
+				<grid depth="12" name="queue" rows="1" cols="3" cell_width="75" cell_height="75" repeat_content="true" controller="IDC_Core.PassiveCollectorContainer, IDCCore" required_item="drinkJarEmpty">
+					<chickencoop_collector_stack controller="DewCollectorStack" override_stack_count="1" name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+		<!--#$-IGS BEGIN: Adding cursor area. -$#-->
+		<window name="idcWindowFuelChickenCoop" width="136" height="150" panel="Right" cursor_area="true">
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_tracking_chicken"/>
+				<label style="header.name" text="Chicken" text_key=""/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="79">
+				<rect disablefallthrough="true">
+					<grid rows="1" cols="1" pos="3,-3" cell_width="75" cell_height="75" controller="IDC_Core.PassiveCollectorFuelStackGrid, IDCCore" repeat_content="true">
+						<item_stack name="0"/>
+					</grid>
+				</rect>
+				<grid name="slot_preview" depth="1" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="SlotPreview">
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="animalChicken" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="windowToolsAdvancedDewCollector" width="230" height="121" panel="Right" cursor_area="true">
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_wrench"/>
+				<label style="header.name" text="MODIFIERS" text_key="adcXuiModifiers"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true">
+				<grid name="inventory" rows="2" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="IDC_Core.PassiveCollectorToolGrid, IDCCore" repeat_content="true"
+				      required_tools="adcAdvancedFilter,adcLargeCatcher,adcBigBarrel" required_tools_only="true">
+					<item_stack controller="IDC_Core.XUiC_RequiredItemStack,IDCCore" name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="windowAdvancedDewCollector" width="{windowWidth}" height="378" controller="IDC_Core.PassiveCollectorWindow, IDCCore" panel="Left" anchor_side="bottomright" visible="false" cursor_area="true">
+			<panel name="header" height="43" depth="0" disableautobackground="true" anchor_left="queue,0,-3" anchor_right="queue,1,0">
+				<sprite depth="1" name="headerbackground" sprite="ui_game_panel_header" anchor_left="queue,0,-3" anchor_right="queue,1,0"/>
+				<sprite depth="3" name="windowIcon" style="icon32px" pivot="center" pos="21,-21" sprite="ui_game_symbol_loot_sack"/>
+				<label depth="2" name="lootName" pos="39,-6" width="180" height="32" text_key="xuiDewCollector" font_size="32"/>
+			
+				<rect anchor_left="queue,1,-300" anchor_right="queue,1,0" pivot="topleft" pos="0,0" controller="ContainerStandardControls" createuiwidget="true" visible="false"/>
+			</panel>
+			<rect name="content" pos="3,-49">
+				<sprite depth="0" name="bg" color="255,255,255,1" type="sliced" sprite="menu_empty" anchor_left="queue,0,-3" anchor_bottom="queue,0,0" anchor_right="queue,1,0" anchor_top="queue,1,49" on_press="true"/>
+				<grid depth="12" name="queue" rows="3" cols="3" cell_width="75" cell_height="75" repeat_content="true" controller="IDC_Core.PassiveCollectorContainer, IDCCore" required_item="drinkJarEmpty">
+					<dewcollector_stack controller="DewCollectorStack" override_stack_count="1" name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="idcWindowFuelAdvCollector" width="125" height="166" panel="Right" cursor_area="true">
+			<panel style="header.panel" pos="0,-81">
+				<sprite style="header.icon" sprite="resourceWaterFilter"/>
+				<label style="header.name" text="FUEL" text_key="xuiFilter"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="79">
+				<rect disablefallthrough="true">
+					<grid rows="1" cols="1" pos="3,-83" cell_width="75" cell_height="75" controller="IDC_Core.PassiveCollectorFuelStackGrid, IDCCore" repeat_content="true">
+						<item_stack name="0"/>
+					</grid>
+				</rect>
+				<grid name="slot_preview" depth="1" rows="1" cols="3" pos="3,-83" cell_width="75" cell_height="75" controller="SlotPreview">
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="resourceWaterFilter" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="windowRainCollector" width="{windowWidth}" height="378" controller="IDC_Core.PassiveCollectorWindow, IDCCore" panel="Left" anchor_side="bottomright" visible="false" cursor_area="true">
+			<panel name="header" height="43" depth="0" disableautobackground="true" anchor_left="queue,0,-3" anchor_right="queue,1,0">
+				<sprite depth="1" name="headerbackground" sprite="ui_game_panel_header" anchor_left="queue,0,-3" anchor_right="queue,1,0"/>
+				<sprite depth="3" name="windowIcon" style="icon32px" pivot="center" pos="21,-21" sprite="ui_game_symbol_loot_sack"/>
+				<label depth="2" name="lootName" pos="39,-6" width="180" height="32" text_key="xuiRainCollector" font_size="32"/>
+			
+				<rect anchor_left="queue,1,-300" anchor_right="queue,1,0" pivot="topleft" pos="0,0" controller="ContainerStandardControls" createuiwidget="true" visible="false"/>
+			</panel>
+			<rect name="content" pos="3,-49">
+				<sprite depth="0" name="bg" color="255,255,255,1" type="sliced" sprite="menu_empty" anchor_left="queue,0,-3" anchor_bottom="queue,0,0" anchor_right="queue,1,0" anchor_top="queue,1,49" on_press="true"/>
+				<grid depth="12" name="queue" rows="3" cols="1" cell_width="75" cell_height="75" repeat_content="true" controller="IDC_Core.PassiveCollectorContainer, IDCCore" required_item="drinkJarEmpty">
+					<dewcollector_stack controller="DewCollectorStack" override_stack_count="1" name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="windowToolsRainCollector" width="230" height="121" panel="Right" cursor_area="true"/>
+	
+		<window name="idcWindowFuelRainCollector" width="125" height="166" panel="Right" cursor_area="true">
+			<panel style="header.panel" pos="0,130">
+				<sprite style="header.icon" sprite="bucketEmpty"/>
+				<label style="header.name" text="FUEL" text_key="xuiBucket"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,82" height="79">
+				<rect disablefallthrough="true">
+					<grid rows="1" cols="1" pos="3,-3" cell_width="75" cell_height="75" controller="IDC_Core.PassiveCollectorFuelStackGrid, IDCCore" repeat_content="true">
+						<item_stack name="0"/>
+					</grid>
+				</rect>
+				<grid name="slot_preview" depth="1" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="SlotPreview">
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="bucketEmpty" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="windowToolsAnimalSnare" width="156" height="121" panel="Right" cursor_area="true">
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_wrench"/>
+				<label style="header.name" text="MODIFIERS" text_key="idcXuiModifiers"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true">
+				<grid name="inventory" rows="1" cols="2" pos="3,-3" cell_width="75" cell_height="75" controller="IDC_Core.PassiveCollectorToolGrid, IDCCore" repeat_content="true"
+				      required_tools="idcUpgradedStorage,plantedGraceCorn1" required_tools_only="true">
+					<item_stack controller="IDC_Core.XUiC_RequiredItemStack,IDCCore" name="0"/>
+				</grid>
+			</rect>
+
+		</window>
+	
+		<window name="windowAnimalSnare" width="{windowWidth}" height="378" controller="IDC_Core.PassiveCollectorWindow, IDCCore" panel="Left" anchor_side="bottomright" visible="false" cursor_area="true">
+			<panel name="header" height="43" depth="0" disableautobackground="true" anchor_left="queue,0,-3" anchor_right="queue,1,0">
+				<sprite depth="1" name="headerbackground" sprite="ui_game_panel_header" anchor_left="queue,0,-3" anchor_right="queue,1,0"/>
+				<sprite depth="3" name="windowIcon" style="icon32px" pivot="center" pos="21,-21" sprite="ui_game_symbol_loot_sack"/>
+				<label depth="2" name="lootName" pos="39,-6" width="180" height="32" text_key="idcXuiAnimalSnare" font_size="32"/>
+			
+				<rect anchor_left="queue,1,-300" anchor_right="queue,1,0" pivot="topleft" pos="0,0" controller="ContainerStandardControls" createuiwidget="true" visible="false"/>
+			</panel>
+			<rect name="content" pos="3,-49">
+				<sprite depth="0" name="bg" color="255,255,255,1" type="sliced" sprite="menu_empty" anchor_left="queue,0,-3" anchor_bottom="queue,0,0" anchor_right="queue,1,0" anchor_top="queue,1,49" on_press="true"/>
+				<grid depth="12" name="queue" rows="5" cols="5" cell_width="75" cell_height="75" repeat_content="true" controller="IDC_Core.PassiveCollectorContainer, IDCCore" required_item="drinkJarEmpty">
+					<snarecollector_stack controller="DewCollectorStack" override_stack_count="1" name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="idcWindowSnareFuel" width="96" height="166" panel="Right" cursor_area="true">
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_animal_tracker"/>
+				<label style="header.name" text="BAIT" text_key="idcXuiBaitSnare"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="79">
+				<rect disablefallthrough="true">
+					<grid rows="1" cols="1" pos="3,-3" cell_width="75" cell_height="75" controller="IDC_Core.PassiveCollectorFuelStackGrid, IDCCore" repeat_content="true">
+						<item_stack name="0"/>
+					</grid>
+				</rect>
+				<grid name="slot_preview" depth="1" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="SlotPreview">
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="plantedCorn1" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="windowToolsBeehive" width="76" height="121" panel="Right" cursor_area="true">
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_wrench"/>
+				<label style="header.name" text="MODIFIERS" text_key="idcXuiModifiers"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true">
+				<grid name="inventory" rows="1" cols="1" pos="3,-3" cell_width="75" cell_height="75" controller="IDC_Core.PassiveCollectorToolGrid, IDCCore" repeat_content="true"
+				      required_tools="idcBetterAnimalBait" required_tools_only="true">
+					<item_stack controller="IDC_Core.XUiC_RequiredItemStack,IDCCore" name="0"/>
+				</grid>
+			</rect>
+
+		</window>
+	
+		<window name="windowBeehive" width="{windowWidth}" height="378" controller="IDC_Core.PassiveCollectorWindow, IDCCore" panel="Left" anchor_side="bottomright" visible="false" cursor_area="true">
+			<panel name="header" height="43" depth="0" disableautobackground="true" anchor_left="queue,0,-3" anchor_right="queue,1,0">
+				<sprite depth="1" name="headerbackground" sprite="ui_game_panel_header" anchor_left="queue,0,-3" anchor_right="queue,1,0"/>
+				<sprite depth="3" name="windowIcon" style="icon32px" pivot="center" pos="21,-21" sprite="ui_game_symbol_loot_sack"/>
+				<label depth="2" name="lootName" pos="39,-6" width="180" height="32" text_key="idcXuiAnimalSnare" font_size="32"/>
+			
+				<rect anchor_left="queue,1,-300" anchor_right="queue,1,0" pivot="topleft" pos="0,0" controller="ContainerStandardControls" createuiwidget="true" visible="false"/>
+			</panel>
+			<rect name="content" pos="3,-49">
+				<sprite depth="0" name="bg" color="255,255,255,1" type="sliced" sprite="menu_empty" anchor_left="queue,0,-3" anchor_bottom="queue,0,0" anchor_right="queue,1,0" anchor_top="queue,1,49" on_press="true"/>
+				<grid depth="12" name="queue" rows="5" cols="5" cell_width="75" cell_height="75" repeat_content="true" controller="IDC_Core.PassiveCollectorContainer, IDCCore" required_item="drinkJarEmpty">
+					<beehive_collector_stack controller="DewCollectorStack" override_stack_count="1" name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="idcWindowFuelBeehive" width="76" height="166" panel="Right" cursor_area="true">
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_fire"/>
+				<label style="header.name" text="FUEL" text_key="idcXuiBait"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="79">
+				<rect disablefallthrough="true">
+					<grid rows="1" cols="1" pos="3,-3" cell_width="75" cell_height="75" controller="IDC_Core.PassiveCollectorFuelStackGrid, IDCCore" repeat_content="true">
+						<item_stack name="0"/>
+					</grid>
+				</rect>
+				<grid name="slot_preview" depth="1" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="SlotPreview">
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="bee" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="windowToolsComposter" width="76" height="121" panel="Right" cursor_area="true"/>
+	
+		<window name="windowComposter" width="{windowWidth}" height="378" controller="IDC_Core.PassiveCollectorWindow, IDCCore" panel="Left" anchor_side="bottomright" visible="false" cursor_area="true">
+			<panel name="header" height="43" depth="0" disableautobackground="true" anchor_left="queue,0,-3" anchor_right="queue,1,0">
+				<sprite depth="1" name="headerbackground" sprite="ui_game_panel_header" anchor_left="queue,0,-3" anchor_right="queue,1,0"/>
+				<sprite depth="3" name="windowIcon" style="icon32px" pivot="center" pos="21,-21" sprite="ui_game_symbol_loot_sack"/>
+				<label depth="2" name="lootName" pos="39,-6" width="180" height="32" text_key="idcXuiAnimalSnare" font_size="32"/>
+			
+				<rect anchor_left="queue,1,-300" anchor_right="queue,1,0" pivot="topleft" pos="0,0" controller="ContainerStandardControls" createuiwidget="true" visible="false"/>
+			</panel>
+			<rect name="content" pos="3,-49">
+				<sprite depth="0" name="bg" color="255,255,255,1" type="sliced" sprite="menu_empty" anchor_left="queue,0,-3" anchor_bottom="queue,0,0" anchor_right="queue,1,0" anchor_top="queue,1,49" on_press="true"/>
+				<grid depth="12" name="queue" rows="5" cols="5" cell_width="75" cell_height="75" repeat_content="true" controller="IDC_Core.PassiveCollectorContainer, IDCCore" required_item="drinkJarEmpty">
+					<beehive_collector_stack controller="DewCollectorStack" override_stack_count="1" name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="idcWindowFuelComposter" width="76" height="166" panel="Right" cursor_area="true">
+			<panel style="header.panel" pos="0,130">
+				<sprite style="header.icon" sprite="resourceYuccaFibers"/>
+				<label style="header.name" text="FUEL" text_key="xuiFibers"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,82" height="79">
+				<rect disablefallthrough="true">
+					<grid rows="1" cols="1" pos="3,-3" cell_width="75" cell_height="75" controller="IDC_Core.PassiveCollectorFuelStackGrid, IDCCore" repeat_content="true">
+						<item_stack name="0"/>
+					</grid>
+				</rect>
+				<grid name="slot_preview" depth="1" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="SlotPreview">
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="resourceYuccaFibers" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+				</grid>
+			</rect>
+		</window>
+	</append>
+
+	<!-- *** HUD changes *** -->
+	<!-- allows the HP bar to work in all modes. Never,godmode,always -->
+	<set xpath="/windows/window[@name='windowTargetBar']/@visibility">godmode</set>
+	
+	<!-- removes zombie name from HP bar -->
+	<set xpath="//window[@name='windowTargetBar']/rect[@visible='{isnotboss}']/label[@depth='3']/@text">{currentwithmax}</set>
+	<set xpath="//window[@name='windowTargetBar']">
+		<rect pos="-200,-85" width="400" height="36" visible="{isnotboss}">
+			<sprite depth="1" name="border" color="0,0,0,210" type="sliced" width="400" globalopacity="false"/>
+			<filledsprite depth="2" name="BarContent" type="filled" color="200,0,0,180" width="400" fill="{fill}" globalopacity="false"/>
+			<label depth="3" name="TextContent" pos="9,-4" font_size="28" color="[white]" justify="center" pivot="topleft" text="{currentwithmax}" height="30"/>
+			<sprite depth="4" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
+		</rect>
+		
+		<rect pos="-267,-85" width="725" height="25" visible="{isboss}">
+			<sprite pos="60,-45" width="448" depth="1" name="border" color="0,0,0,255" type="sliced" globalopacity="false"/>
+			<filledsprite pos="60,-45" width="448" depth="2" name="BarContent" type="filled" fill="{fill}" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar_HP"/>
+			<sprite depth="3" name="Icon" size="84,84" pos="45,-42" pivot="center" sprite="{boss_sprite}" globalopacity="false"/>
+			<sprite depth="4" name="overlay" width="517" height="84" type="sliced" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar"/>
+			
+			<label depth="5" name="TextContent" pos="100,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="{name}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/>
+			<label depth="5" name="MinionCount" pos="482,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="x{minioncount}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/>
+		</rect>
+	</set>
+	
+	<!-- big health bars -->
+	<!-- <remove xpath="//window[@name='windowTargetBar']//rect[1]"/>
+	<set xpath="//window[@name='windowTargetBar']//rect[@visible='{isboss}']/@visible">{isnotboss}</set>
+	<remove xpath="//window[@name='windowTargetBar']/rect[@pos='-267,-85']//label[@name='MinionCount']"/>
+	<set xpath="//window[@name='windowTargetBar']/rect[@pos='-267,-85']//sprite[@name='Icon']/@sprite">ui_game_symbol_twitch_minion_overhead</set> -->
+	
+	<set xpath="/windows/window [@name='windowToolbelt']">
+		<rect>
+			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true"/>
+			
+			<rect pos="3,-3" controller="Toolbelt">
+				<grid depth="10" name="inventory" rows="1" cols="10" pos="0,0" cell_width="75" cell_height="75" repeat_content="true">
+					<item_stack name="0"/>
+				</grid>
+				<button depth="3" name="btnClearInventory1" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="800, -32" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{creativewindowopen}"/>
+				<grid depth="10" name="inventory2" rows="1" cols="10" pos="0,82" cell_width="75" cell_height="75" repeat_content="true" visible="{secondrow}">
+					<item_stack name="0"/>
+				</grid>
+				<button depth="3" name="btnClearInventory2" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="800, 50" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{# creativewindowopen and secondrow}"/>
+			</rect>
+
+			<sprite depth="1" pos="0,14" height="16" color="[mediumGrey]" sprite="menu_empty2px" globalopacity="false" type="sliced"/>
+			<sprite depth="9" pos="0,14" height="16" color="[black]" sprite="menu_empty2px" globalopacity="false" type="sliced" fillcenter="false"/>
+			<sprite depth="4" pos="0,14" height="16" width="750" color="{xpcolor}" globalopacity="false" type="filled" fill="{xp}"/>
+		</rect>
+	</set>
+	
+	<append xpath="/windows">
+		<window name="HUDCenterStatBars" anchor="BottomCenter" pos="-387,98">
+			<!-- HUD Stat Bars -->
+			<grid name="hudStatGridLeft" pos="-180,13" rows="2" cols="1" cell_height="46" arrangement="vertical">
+				<rect width="171" height="44" pos="352,31" controller="HUDStatBar" stat_type="Health" visible="{statvisible}">
+					<sprite depth="1" name="background" color="0,0,0,220" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="255,0,0,128" type="filled" fill="0"/>
+					<sprite depth="3" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{statcurrentwithmax}" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
+				</rect>
+	
+				<rect width="171" height="44" controller="HUDStatBar" stat_type="Stamina" visible="{statvisible}">
+					<sprite depth="1" name="background" color="0,0,0,220" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="255,255,0,128" type="filled" fill="0"/>
+					<sprite depth="3" name="Icon" atlas="{staticonatlas|once}" sprite="ui_game_symbol_agility" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{statcurrentwithmax}" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
+				</rect>
+			</grid>
+				
+			<grid name="hudStatGridRight" pos="760,13" rows="2" cols="1" cell_height="46" arrangement="vertical">
+				<rect width="171" height="44" controller="HUDStatBar" stat_type="Food" visible="{statvisible}">
+					<sprite depth="1" name="background" color="0,0,0,220" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="0,128,0,128" type="filled" fill="0"/>
+					<sprite depth="3" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{statcurrent}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/>
+				</rect>
+	
+				<rect width="171" height="44" controller="HUDStatBar" stat_type="Water" visible="{statvisible}">
+					<sprite depth="1" name="background" color="0,0,0,220" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="64,164,223,150" type="filled" fill="0"/>
+					<sprite depth="3" name="Icon" atlas="{staticonatlas|once}" sprite="ui_game_symbol_water" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{statcurrent}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/>
+				</rect>
+			</grid>
+			
+			<!-- Big Vehicle Bars -->
+			<rect name="hud" pos="0,13" rows="2" cols="1" width="168" side="right">
+				<rect width="752" height="44" controller="HUDStatBar" stat_type="VehicleFuel" visible="{statvisible}">
+					<sprite depth="1" name="border" color="0,0,0,240" type="sliced"/>
+					<sprite depth="2" name="background" color="0,0,0,220" type="sliced"/>
+					<sprite depth="2" pos="3,-3" name="background" height="40" width="746" color="64,64,64,100" type="sliced"/>
+					<filledsprite depth="5" name="BarContent" pos="2,-2" color="0,54,255,128" width="753" height="40" type="filled" fill="0" flip="Horizontally"/>
+					<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="35,35" pos="700,-24" pivot="center" foregroundlayer="true"/>
+					<label depth="6" name="TextContent" pos="125,-24" font_size="32" color="[white]" justify="center" pivot="right" text="{statcurrentwithmax}" width="120" height="35"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/>
+				</rect>
+				<rect width="752" height="44" pos="0,-46" controller="HUDStatBar" stat_type="VehicleHealth" visible="{statvisible}">
+					<sprite depth="1" name="border" color="0,0,0,240" type="sliced"/>
+					<sprite depth="2" name="background" color="0,0,0,220" type="sliced"/>
+					<sprite depth="2" pos="3,-3" name="background" height="40" width="746" color="64,64,64,100" type="sliced"/>
+					<filledsprite depth="5" name="BarContent" pos="2,-2" color="255,0,0,128" width="753" height="40" type="filled" fill="0" flip="Horizontally"/>
+					<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="35,35" pos="700,-24" pivot="center" foregroundlayer="true"/>
+					<label depth="6" name="TextContent" pos="125,-24" font_size="28" color="[white]" justify="center" pivot="right" text="{statcurrentwithmax}" width="120" height="35"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/>
+				</rect>
+			</rect>
+		</window>
+
+		<!-- icons appear/fade depending on conditions met -->
+		<window name="HUDTopLeftStatBars" anchor="LeftTop" pos="20,-16" visible="{# cvar('warm') > 0}">
+			<grid name="HUDInfoLeft" cols="3" cell_width="120" arrangement="horizontal">
+				<rect name="hudWarmth" width="32" height="32" controller="MapStats" visible="{# cvar('warmAlpha') > 1}"><!--visible="{# cvar('warmAlpha') > 1}"-->
+					<sprite depth="1" name="background" color="0,0,0,{cvar(warmAlpha)}" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="29" height="29" color="{# cvar('warm') > 0 ? '0,128,0' : '255,0,0' },{cvar(warmAlpha)}" type="filled" fill="1" flip="Horizontally"/>
+					<sprite depth="3" name="Icon" sprite="{# cvar('warm') > 0 ? 'ui_game_symbol_check' : 'ui_game_symbol_x' }" color="{# cvar('warm') > 0 ? '255,255,255' : '255,255,255' },{cvar(warmAlpha)}" size="24,24" pos="16,-16" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="8,-16" font_size="24" color="255,255,255,{cvar(warmAlpha)}" justify="center" pivot="left" text="Warmth" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,{cvar(warmAlpha)}" type="sliced"/>
+				</rect>
+			
+				<rect name="hudShelter" width="32" height="32" controller="MapStats" visible="{# cvar('shelterAlpha') > 1}"><!--visible="{# cvar('shelterAlpha') > 1}"-->
+					<sprite depth="1" name="background" color="0,0,0,{cvar(shelterAlpha)}" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="29" height="29" color="{# cvar('shelter') > 0 ? '0,128,0' : '255,0,0' },{cvar(shelterAlpha)}" type="filled" fill="1" flip="Horizontally"/>
+					<sprite depth="3" name="Icon" sprite="{# cvar('shelter') > 0 ? 'ui_game_symbol_check' : 'ui_game_symbol_x' }" color="{# cvar('shelter') > 0 ? '255,255,255' : '255,255,255' },{cvar(shelterAlpha)}" size="24,24" pos="16,-16" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="8,-16" font_size="24" color="255,255,255,{cvar(shelterAlpha)}" justify="center" pivot="left" text="Shelter" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,{cvar(shelterAlpha)}" type="sliced"/>
+				</rect>
+			
+				<rect name="hudComfort" width="32" height="32" controller="MapStats" visible="{# cvar('welllitAlpha') > 1}"><!--visible="{# cvar('welllitAlpha') > 1}"-->
+					<sprite depth="1" name="background" color="0,0,0,{cvar(welllitAlpha)}" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="29" height="29" color="{# cvar('comfort') > 0 ? '0,128,0' : '255,0,0' },{cvar(welllitAlpha)}" type="filled" fill="1" flip="Horizontally"/>
+					<sprite depth="3" name="Icon" sprite="{# cvar('comfort') > 0 ? 'ui_game_symbol_check' : 'ui_game_symbol_x' }" color="{# cvar('shelter') > 0 ? '255,255,255' : '255,255,255' },{cvar(welllitAlpha)}" size="24,24" pos="16,-16" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="8,-16" font_size="24" color="255,255,255,{cvar(welllitAlpha)}" justify="center" pivot="left" text="Well Lit" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,{cvar(welllitAlpha)}" type="sliced"/>
+				</rect>
+			</grid>
+		</window>
+	
+		<!-- always visible, true/false conditions change colour and icon -->
+		<!-- <window name="HUDTopLeftStatBars" anchor="LeftTop" pos="20,-20">
+		<grid name="HUDInfoLeft" cols="3" cell_width="120" arrangement="horizontal">
+			<rect name="hudWarmth" width="32" height="32" controller="HUDStatBar">
+				<sprite depth="1" name="background" color="0,0,0,220" type="sliced"/>
+				<filledsprite depth="2" name="BarContent" pos="2,-2" width="29" height="29" color="{# cvar('warm') > 0 ? '0,255,0,100' : '255,0,0,100' }" />
+				<sprite depth="3" name="Icon" sprite="{# cvar('warm') > 0 ? 'ui_game_symbol_check' : 'ui_game_symbol_x' }" size="24,24" pos="16,-16" pivot="center" foregroundlayer="true"/>
+				<label depth="4" name="TextContent" pos="8,-16" font_size="24" color="[white]" justify="center" pivot="left" text="Warmth" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+				<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced" />
+			</rect>
+			
+			<rect name="hudShelter" width="32" height="32" controller="HUDStatBar">
+				<sprite depth="1" name="background" color="0,0,0,220" type="sliced"/>
+				<filledsprite depth="2" name="BarContent" pos="2,-2" width="29" height="29" color="{# cvar('shelter') > 0 ? '0,255,0,100' : '255,0,0,100' }" />
+				<sprite depth="3" name="Icon" sprite="{# cvar('shelter') > 0 ? 'ui_game_symbol_check' : 'ui_game_symbol_x' }" size="24,24" pos="16,-16" pivot="center" foregroundlayer="true"/>
+				<label depth="4" name="TextContent" pos="8,-16" font_size="24" color="[white]" justify="center" pivot="left" text="Shelter" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+				<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced" />
+			</rect>
+			
+			<rect name="hudComfort" width="32" height="32" controller="HUDStatBar">
+				<sprite depth="1" name="background" color="0,0,0,220" type="sliced"/>
+				<filledsprite depth="2" name="BarContent" pos="2,-2" width="29" height="29" color="{# cvar('comfort') > 0 ? '0,255,0,100' : '255,0,0,100' }" />
+				<sprite depth="3" name="Icon" sprite="{# cvar('comfort') > 0 ? 'ui_game_symbol_check' : 'ui_game_symbol_x' }" size="24,24" pos="16,-16" pivot="center" foregroundlayer="true"/>
+				<label depth="4" name="TextContent" pos="8,-16" font_size="24" color="[white]" justify="center" pivot="left" text="Well Lit" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+				<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced" />
+			</rect>
+		</grid>
+	</window> -->
+	</append>
+	<!-- ### -->
+
+	<set xpath="/windows/window[@name='HUDLeftStatBars']">
+		<rect name="hud" pos="9,65" rows="2" cols="1" width="168" cell_width="46" side="right">
+			<rect width="171" height="44" controller="HUDStatBar" stat_type="Stealth" visible="{statvisible}">
+				<!-- <sprite depth="1" name="border" color="0,0,0,150" height="46" type="sliced"/> -->
+				<!-- <sprite depth="2" name="background" color="0,0,0,140" type="sliced"/> -->
+
+				<!-- <filledsprite depth="3" name="background" color="110,110,110,128" type="filled" fill="1"/> -->
+
+				<!-- <filledsprite depth="4" name="BarContent" color="{stealthcolor}" type="filled" fill="0"/> -->
+				<!-- <sprite depth="5" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="35,35" pos="26,-24" pivot="center" foregroundlayer="true"/> -->
+				<label depth="6" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{statcurrent}" width="125" height="35"/>
+				
+				<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" atlas="{staticonatlas|once}" sprite="{staticon|once}" color="115,115,115" globalopacitymod="1.4" />
+				<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" atlas="{staticonatlas|once}" sprite="{staticon|once}" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="vertical" color="{stealthcolor}" globalopacitymod="1.8" tooltip_key="" />
+
+				<!-- <sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/> -->
+				<!-- <filledsprite depth="8" name="background" color="0,0,0,255" width="171" fillcenter="false" type="filled" fill="1"/> -->
+				<!-- <filledsprite depth="3" name="background" color="0,0,0,255" width="170" fillcenter="false" type="filled" fill="1"/> -->
+			</rect>			
+		</rect>
+
+		<rect name="hud" pos="90,40" side="left" controller="BuffPopoutList" pivot="BottomLeft">
+			<panel width="168" height="22" name="item" visible="false" pivot="right" disableautobackground="true" pos="70, 0" style="press" sound="[recipe_click]" on_hover="true">
+				<sprite depth="3" pos="0,0" name="Background" sprite="ui_game_popup" height="22" width="162" pivot="center" flip="Horizontally" color="[transparent]"/>
+				<sprite depth="4" name="Icon" size="20,20" pos="-54,0" pivot="center" color="[transparent]"/>
+				<label depth="6" name="TextContent" pos="-37,0" font_size="28" color="[white]" justify="center" width="118" height="20" pivot="left"/>
+			</panel>
+		</rect>
+	</set>
+	
+	<append xpath="/windows">
+		<window name="HUDBottomLeftStatBars">
+			<rect name="HUDEnvironment" pos="182,165" >
+				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayHUD') &gt; 0 and cvar('.DespairDisplayHUD') &lt; 0.3}">
+					<!-- <sprite depth="1" name="background" color="0,0,0,220" type="sliced"/> -->
+					<!-- <filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="255,244,79,128" type="filled" fill="{cvar(.DespairDisplayHUD)}"/> -->
+					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_intellect" color="0,255,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
+					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_intellect" color="115,115,115" pivot="center" globalopacity="false"/> -->					
+					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_intellect" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
+					
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_intellect" color="8,8,8" globalopacitymod="1.4" />
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" color="192,192,192" globalopacitymod="1.4" />
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="vertical" color="255,225,53,250" globalopacitymod="1.8" tooltip_key="" />
+					
+					
+					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayHUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<!-- <sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/> -->
+				</rect>
+				
+				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayHUD') &gt; 0.3 and cvar('.DespairDisplayHUD') &lt; 0.65}">
+					<!-- <sprite depth="1" name="background" color="0,0,0,220" type="sliced"/> -->
+					<!-- <filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="255,128,0,128" type="filled" fill="{cvar(.DespairDisplayHUD)}"/> -->
+					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_intellect" color="255,128,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
+					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_intellect" color="169,169,169" pivot="center" globalopacity="false"/> -->
+					
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_intellect" color="8,8,8" globalopacitymod="1.4" />
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" color="192,192,192" globalopacitymod="1.4" />
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="vertical" color="255,128,0,250" globalopacitymod="1.8" tooltip_key="" />
+					
+					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_intellect" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
+					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayHUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<!-- <sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/> -->
+				</rect>
+				
+				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayHUD') &gt; 0.65}">
+					<!-- <sprite depth="1" name="background" color="0,0,0,220" type="sliced"/> -->
+					<!-- <filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="255,0,0,128" type="filled" fill="{cvar(.DespairDisplayHUD)}"/> -->
+					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_intellect" color="255,0,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
+					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_intellect" color="115,115,115" pivot="center" globalopacity="false"/> -->
+					
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_intellect" color="8,8,8" globalopacitymod="1.4" />
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" color="192,192,192" globalopacitymod="1.4" />
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="vertical" color="255,0,0,250" globalopacitymod="1.8" tooltip_key="" />
+					
+					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_intellect" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
+					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayHUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<!-- <sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/> -->
+				</rect>
+		
+				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayHUD') &lt; 0 and cvar('.DespairDisplayPositive01HUD') &lt; 0.3}">
+					<!-- <sprite depth="1" name="background" color="0,0,0,220" type="sliced"/> -->
+					<!-- <filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="255,165,0,128" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}"/> -->
+					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_muscle" color="255,165,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
+					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_muscle" color="115,115,115" pivot="center" globalopacity="false"/> -->
+					
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_muscle" color="8,8,8" globalopacitymod="1.4" />
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" color="192,192,192" globalopacitymod="1.4" />
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="255,165,0,250" globalopacitymod="1.8" tooltip_key="" />
+					
+					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_muscle" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
+					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayPositive01HUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<!-- <sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/> -->
+				</rect>
+				
+				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayPositive01HUD') &gt; 0.3 and cvar('.DespairDisplayPositive01HUD') &lt; 0.65}">
+					<!-- <sprite depth="1" name="background" color="0,0,0,220" type="sliced"/> -->
+					<!-- <filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="255,255,0,128" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}"/> -->
+					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_muscle" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
+					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_muscle" color="255,255,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
+					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_muscle" color="115,115,115" pivot="center" globalopacity="false"/> -->
+					
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_muscle" color="8,8,8" globalopacitymod="1.4" />
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" color="192,192,192" globalopacitymod="1.4" />
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="255,255,0,250" globalopacitymod="1.8" tooltip_key="" />
+					
+					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayPositive01HUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<!-- <sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/> -->
+				</rect>
+				
+				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayPositive01HUD') &gt; 0.65}">
+					<!-- <sprite depth="1" name="background" color="0,0,0,220" type="sliced"/> -->
+					<!-- <filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="50,205,50,128" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}"/> -->
+					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_muscle" color="50,205,50,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
+					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_muscle" color="115,115,115" pivot="center" globalopacity="false"/> -->
+					
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_muscle" color="8,8,8" globalopacitymod="1.4" />
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" color="192,192,192" globalopacitymod="1.4" />
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="50,205,50,250" globalopacitymod="1.8" tooltip_key="" />
+					
+					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_muscle" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
+					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayPositive01HUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<!-- <sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/> -->
+				</rect>
+			
+				<rect width="171" height="44" pos="0,-100" controller="HUDStatBar" visible="{# cvar('wellrestedHUD') &gt; 0}">
+					<!-- <sprite depth="1" name="background" color="0,0,0,220" type="sliced"/> -->
+					<!-- <filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="50,205,50,128" type="filled" fill="{cvar(wellrestedHUD)}"/> -->
+					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_map_bed" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
+					
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_map_bed" color="8,8,8" globalopacitymod="1.4" />
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_map_bed" color="192,192,192" globalopacitymod="1.4" />
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_map_bed" type="filled" fill="{cvar(wellrestedHUD)}" filldirection="vertical" color="50,205,50,250" globalopacitymod="1.8" tooltip_key="" />
+					
+					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="Rested: {# round(cvar('wellrestedHUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<!-- <sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/> -->
+				</rect>
+			</rect>
+		</window>
+	</append>
+	
+	<set xpath="/windows/window[@name='windowToolbelt']/@pos">-388, 98</set>
+	
+	<set xpath="/windows/window[@name='HUDRightStatBars']">
+		<rect name="hud" pos="-90,32" side="right" controller="CollectedItemList" pivot="BottomLeft">
+			<panel width="168" height="46" name="item" visible="false" pivot="right" disableautobackground="true" pos="70, 0">
+				<sprite depth="3" pos="0,0" name="Background" sprite="ui_game_popup" height="44" width="162" pivot="center"/>
+				<sprite depth="4" name="Icon" atlas="ItemIconAtlas" size="38,38" pos="50,0" pivot="center" foregroundlayer="true"/>
+				<label depth="6" pos="12,0" name="TextContent" font_size="30" color="[white]" justify="right" height="32" pivot="right"/>
+				<sprite depth="6" pos="0,16" width="36" height="36" name="Negative" sprite="ui_game_symbol_x" color="[red]"/>
+			</panel>
+		</rect>
+
+		<grid name="hud" pos="-194,55" rows="2" cols="1" width="168" cell_width="168" cell_height="46" repeat_content="false" side="right">
+			<rect width="188" height="46" controller="HUDStatBar" stat_type="ActiveItem" visible="{statvisible}">
+				<sprite depth="3" pos="3,0" name="BarContent" sprite="{statimage|once}" height="46" width="182"/>
+				<sprite depth="4" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon}" size="39,35" pos="130,-6" color="{staticoncolor}" foregroundlayer="true"/>
+				<label depth="6" name="TextContent" pos="115,-26" font_size="28" color="[white]" justify="right" pivot="right" text="{statcurrentwithmax}" width="250" height="30"/>
+			</rect>
+		</grid>
+	</set>
+	
+	
+</configs>

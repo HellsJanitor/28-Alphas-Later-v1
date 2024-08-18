@@ -1,0 +1,147 @@
+<configs>
+	<!-- search find all *** for changes -->
+	
+	<!-- *** removes starter quests *** -->
+	<!-- <remove xpath="//quest[@id='quest_BasicSurvival1']//objective[@type='FetchKeep']"/> -->
+	<!-- <remove xpath="//quest[@id='quest_BasicSurvival1']//objective[@type='Craft']"/> -->
+	<!-- <set xpath="//quest[@id='quest_BasicSurvival1']//objective[@type='BlockPlace']/@phase">1</set> -->
+	<!-- <set xpath="//quest[@id='quest_BasicSurvival1']//reward[@type='Quest']/@id">quest_whiteRiverCitizen1</set> -->
+	<!-- <append xpath="//quest[@id='quest_BasicSurvival1']"> -->
+	<!-- <reward type="SkillPoints" value="4" chainreward="true"/> -->
+	<!-- </append> -->
+	
+	<!-- *** starter weapon offer *** -->
+	<insertAfter xpath="/quests/quest[@id='quest_whiteRiverCitizen1']">
+	<quest id="quest_WeaponSpear">
+		<property name="name" value="Your Stone Spear"/>
+		<property name="subtitle" value="Stone Spear"/>
+		<property name="description" value="Your Favourite Weapon Class"/>
+		<property name="icon" value="ui_game_symbol_spear"/>
+		<property name="offer" value="My favourite weapon of choice!"/>
+		<property name="category" value="Weapon"/>
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false"/>
+
+		<reward type="Item" id="meleeWpnSpearT0StoneSpear" value="1"/>
+	</quest>
+
+	<!-- <quest id="quest_WeaponClub"> -->
+		<!-- <property name="name" value="Your Wooden Club"/> -->
+		<!-- <property name="subtitle" value="Wooden Club"/> -->
+		<!-- <property name="description" value="Your Favourite Weapon Class"/> -->
+		<!-- <property name="icon" value="ui_game_symbol_stunned"/> -->
+		<!-- <property name="offer" value="My favourite weapon of choice!"/> -->
+		<!-- <property name="category" value="Weapon"/> -->
+		<!-- <property name="difficulty" value="veryeasy"/> -->
+		<!-- <property name="shareable" value="false"/> -->
+
+		<!-- <reward type="Item" id="meleeWpnClubT0WoodenClub" value="4"/> -->
+	<!-- </quest> -->
+
+	<quest id="quest_WeaponSledge">
+		<property name="name" value="Your Stone Sledge"/>
+		<property name="subtitle" value="Stone Sledge"/>
+		<property name="description" value="Your Favourite Weapon Class"/>
+		<property name="icon" value="ui_game_symbol_sledge"/>
+		<property name="offer" value="My favourite weapon of choice!"/>
+		<property name="category" value="Weapon"/>
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false"/>
+
+		<reward type="Item" id="meleeWpnSledgeT0StoneSledgehammer" value="1"/>
+	</quest>
+
+	<quest id="quest_WeaponKnuckle">
+		<property name="name" value="Your Leather Wraps"/>
+		<property name="subtitle" value="Knuckle Wraps"/>
+		<property name="description" value="Your Favourite Weapon Class"/>
+		<property name="icon" value="ui_game_symbol_boxer"/>
+		<property name="offer" value="My favourite weapon of choice!"/>
+		<property name="category" value="Weapon"/>
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false"/>
+
+		<reward type="Item" id="meleeWpnKnucklesT0LeatherKnuckles" value="1"/>
+	</quest>
+
+	<quest id="quest_WeaponKnife">
+		<property name="name" value="Your Bone Knife"/>
+		<property name="subtitle" value="Bone Knife"/>
+		<property name="description" value="Your Favourite Weapon Class"/>
+		<property name="icon" value="ui_game_symbol_knife"/>
+		<property name="offer" value="My favourite weapon of choice!"/>
+		<property name="category" value="Weapon"/>
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false"/>
+
+		<reward type="Item" id="meleeWpnBladeT0BoneKnife" value="1"/>		
+	</quest>
+
+	<!-- <quest id="quest_WeaponBow"> -->
+		<!-- <property name="name" value="Your Primitive Bow"/> -->
+		<!-- <property name="subtitle" value="Primitive Bow"/> -->
+		<!-- <property name="description" value="Your Favourite Weapon Class"/> -->
+		<!-- <property name="icon" value="ui_game_symbol_archery"/> -->
+		<!-- <property name="offer" value="My favourite weapon of choice!"/> -->
+		<!-- <property name="category" value="Weapon"/> -->
+		<!-- <property name="difficulty" value="veryeasy"/> -->
+		<!-- <property name="shareable" value="false"/> -->
+
+		<!-- <reward type="Item" id="gunBowT0PrimitiveBow" value="4"/> -->
+		<!-- <reward type="Item" id="ammoArrowStone" value="10"/>		 -->
+	<!-- </quest> -->
+
+	<quest id="quest_WeaponBaton">
+		<property name="name" value="Your Pipe Baton"/>
+		<property name="subtitle" value="Pipe Baton"/>
+		<property name="description" value="Your Favourite Weapon Class"/>
+		<property name="icon" value="ui_game_symbol_stunned"/>
+		<property name="offer" value="My favourite weapon of choice!"/>
+		<property name="category" value="Weapon"/>
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false"/>
+		<reward type="Item" id="meleeWpnBatonT0PipeBaton" value="1"/>		
+	</quest>
+	</insertAfter>
+	
+	<!-- *** trader quests per tier increased to 10 *** -->
+	<setattribute xpath="/quests" name="quests_per_tier">10</setattribute>
+	
+	<!-- *** bartering sauce gives passive buff, reward for each tier completed *** -->
+	<insertafter xpath="//quest[@id='quest_tier1complete']//reward[1]">
+	<reward type="Item" id="BarteringSauceOne" value="1"/>
+	</insertafter>	
+	<insertafter xpath="//quest[@id='quest_tier2complete']//reward[1]">
+	<reward type="Item" id="BarteringSauceTwo" value="1"/>
+	</insertafter>	
+	<insertafter xpath="//quest[@id='quest_tier3complete']//reward[1]">
+	<reward type="Item" id="BarteringSauceThree" value="1"/>
+	</insertafter>	
+	<insertafter xpath="//quest[@id='quest_tier4complete']//reward[1]">
+	<reward type="Item" id="BarteringSauceFour" value="1"/>
+	</insertafter>	
+	<insertafter xpath="//quest[@id='quest_tier5complete']//reward[1]">
+	<reward type="Item" id="BarteringSauceFive" value="1"/>
+	</insertafter>
+	
+	<!-- *** removes night quests except tier 4 *** -->
+    <remove xpath="//quest_list[starts-with(@id,'trader')]//quest[@id='tier2_restore_power']" />
+    <remove xpath="//quest_list[starts-with(@id,'trader')]//quest[@id='tier3_restore_power']" />
+
+	<!-- *** reduced Dukes by 1/3 from quest rewards *** -->
+	<set xpath="//quest//reward[@value='100']/@value">66</set>
+	<set xpath="//quest//reward[@value='200']/@value">132</set>
+	<set xpath="//quest//reward[@value='250']/@value">165</set>
+	<set xpath="//quest//reward[@value='300']/@value">200</set>
+	<set xpath="//quest//reward[@value='350']/@value">233</set>	
+	<set xpath="//quest//reward[@value='500']/@value">330</set>
+	<set xpath="//quest//reward[@value='700']/@value">460</set>
+	<set xpath="//quest//reward[@value='800']/@value">530</set>
+	<set xpath="//quest//reward[@value='1000']/@value">660</set>
+	<set xpath="//quest//reward[@value='1500']/@value">990</set>
+	<set xpath="//quest//reward[@value='2000']/@value">1320</set>
+	<set xpath="//quest//reward[@value='3000']/@value">2000</set>
+	<set xpath="//quest//reward[@value='4000']/@value">2640</set>
+	<set xpath="//quest//reward[@value='5000']/@value">3300</set>
+	<set xpath="//quest//reward[@value='6000']/@value">4000</set>		
+</configs>

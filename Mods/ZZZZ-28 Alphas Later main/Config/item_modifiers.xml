@@ -1,0 +1,287 @@
+<HellsJanitor>
+	<append xpath="//item_modifier[@name='modArmorHelmetLight']">
+	<effect_group>
+		<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffHelmetLight"/>
+	</effect_group>
+	<effect_group>
+		<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffHelmetLight"/>
+		<requirement name="CVarCompare" cvar="batteryHelmetLight" operation="GT" value="0.5"/>
+	</effect_group>
+	<effect_group>
+		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHelmetLight"/>
+		<requirement name="CVarCompare" cvar="batteryHelmetLight" operation="GT" value="0.5"/>
+	</effect_group>
+	<effect_group>		
+		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHelmetLight"/>
+		<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffHelmetLight"/>
+	</effect_group>
+	</append>
+	
+	<append xpath="//item_modifier[@name='modGunFlashlight']">
+	<effect_group>
+		<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffGunFlashlight"/>
+	</effect_group>
+	<effect_group>
+		<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffGunFlashlight"/>
+		<requirement name="CVarCompare" cvar="batteryWeaponLight" operation="GT" value="0.5"/>
+	</effect_group>
+	<effect_group>
+		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGunFlashlight"/>
+		<requirement name="CVarCompare" cvar="batteryWeaponLight" operation="GT" value="0.5"/>
+	</effect_group>
+	<effect_group>			
+		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGunFlashlight"/>
+		<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffGunFlashlight"/>	
+	</effect_group>
+	</append>
+	
+	<append xpath="//item_modifier[@name='modMeleeClubBurningShaft']">
+	<effect_group>
+		<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffBurningShaft"/>
+		<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffBurningShaft">
+		<requirement name="CVarCompare" cvar="batteryBurningShaft" operation="GT" value="0.5"/></triggered_effect>
+		<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffBurningShaft"/>
+		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffBurningShaft">
+		<requirement name="CVarCompare" cvar="batteryBurningShaft" operation="GT" value="0.5"/></triggered_effect>
+		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffBurningShaft"/>
+	</effect_group>
+	</append>
+	
+	<!-- *** adds flat sell/scrap value for all mods (except dye. Changing the recipe makes it unscrappable??) *** -->
+	<insertafter xpath="//item_modifier[starts-with (@name,'modDye')]//property[@name='Weight']">
+	<property name="EconomicValue" value="50"/>
+	</insertafter>
+	
+	<insertafter xpath="//item_modifier[starts-with (@name,'mod') and not (@name='modGeneralMaster')  and not (@name='modArmorHelmetLight') and not (@name='modGunFlashlight') and not (contains(@name,'modDye'))]/property[1]">
+	<property name="EconomicValue" value="750"/>
+	<property name="Weight" value="20"/>
+	</insertafter>
+	
+	<!-- *** bicycle stamina saver *** -->
+	<insertafter xpath="//item_modifier[@name='modVehicleMega']">	
+	<item_modifier name="modBicycleStaminaSaver" installable_tags="legs" modifier_tags="misc" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modBicycleStaminaSaverSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="CustomIcon" value="modCyclingShorts"/>
+		<property name="DescriptionKey" value="modBicycleStaminaSaverDesc"/>
+		<property name="EconomicValue" value="750"/>
+		<property name="Group" value="Mods,Tool/Weapon Mods,clothing"/>
+		<effect_group tiered="false">
+		<requirement name="IsAttachedToEntity"/>			
+			<passive_effect name="StaminaChangeOT" operation="perc_add" value=".25"/>
+			<display_value name="dStaminaChangeOT" value=".25"/>				
+		</effect_group>
+	</item_modifier>
+	</insertafter>
+	
+	<!-- *** serrated blade can be added to spears and knuckles ONLY, 100% bleed proc *** -->
+	<set xpath="//item_modifier[@name='modMeleeSerratedBlade']/@installable_tags">perkBrawler,perkJavelinMaster</set>
+	<set xpath="/item_modifiers/item_modifier[@name='modMeleeSerratedBlade']/effect_group[1]//requirement[1]/@value">100</set>
+
+	<!-- *** rad remover only works on radiated zombies *** -->
+	<set xpath="//item_modifier[@name='modGunMeleeRadRemover']">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="UnlockedBy" value="modGunMeleeRadRemoverSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		
+		<!-- Increases damage against irradiated enemies, all melee only -->
+		<effect_group tiered="false">
+			<requirement name="EntityTagCompare" target="other" tags="radiated"/>
+			<requirement name="!EntityTagCompare" target="other" tags="mutated"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+		</effect_group>
+	</set>	
+	
+	<!-- *** NVG screen effect changes *** -->
+	<set xpath="//item_modifier[@name='modArmorNightVision']/effect_group">
+		<requirement name="IsLocalPlayer"/>
+		<triggered_effect trigger="onSelfItemActivate" action="ModifyScreenEffect" effect_name="Bright" intensity="0.75" fade="0"/>
+		<triggered_effect trigger="onSelfItemDeactivate" action="ModifyScreenEffect" effect_name="Bright" intensity="0" fade="0"/>
+		<triggered_effect trigger="onSelfEquipStop" action="ModifyScreenEffect" effect_name="Bright" intensity="0" fade="0"/>
+
+		<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="HeadLightTPV" prefab="ScreenEffects/DeferredNV/NVGLight" parentTransform="Spotlight" localPos="0,0,0" localRot="90,0,0"/>
+		<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="HeadLightFPV" prefab="ScreenEffects/DeferredNV/NVGLight" parentTransform="CameraNode" localPos="0,0,.1" localRot="-90,0,0"/>
+		<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLightTPV"/>
+		<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLightFPV"/>
+		<triggered_effect trigger="onSelfItemActivate" action="SetPartActive" part="HeadLightTPV" active="@!.IsFPV"/>
+		<triggered_effect trigger="onSelfItemActivate" action="SetPartActive" part="HeadLightFPV" active="@.IsFPV"/>
+		<triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLightTPV" active="false"/>
+		<triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLightFPV" active="false"/>
+		<triggered_effect trigger="onSelfChangedView" action="SetPartActive" part="HeadLightTPV" active="@!.IsFPV"/>
+		<triggered_effect trigger="onSelfChangedView" action="SetPartActive" part="HeadLightFPV" active="@.IsFPV"/>
+	</set>
+	
+	<!-- *** adds Blessed Metal back to the game *** -->
+	<append xpath="/item_modifiers">
+	<item_modifier name="modGunMeleeBlessedMetal" installable_tags="weapon,tool,bow,turretMelee,turretRanged" modifier_tags="blessedmetal" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>	
+		<property name="DescriptionKey" value="modGunMeleeBlessedMetalDesc"/>		
+		<property name="CustomIcon" value="modGunMeleeBlessedMetal"/>		
+		<property name="Material" value="Mmetal"/>
+		<property name="EconomicValue" value="750"/>
+		<property name="Weight" value="20"/>		
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		
+		<effect_group tiered="false">
+			<passive_effect name="EntityDamage" operation="perc_add" value=".30"/>			
+			<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock">
+				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated,mutant"/></triggered_effect>
+		</effect_group>		
+	</item_modifier>
+	
+	<!-- *** hazmat armour mods *** -->
+	
+	<item_modifier name="modHazmatBoots" installable_tags="armorFeet" modifier_tags="misc,modHazmatBoots" blocked_tags="noMods,clothing" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="DescriptionKey" value="modHazmatBootsDesc"/>
+		<property name="CustomIcon" value="apparelHazmatBoots"/>
+		<property name="Material" value="MresourceScrapLeadSmall"/>
+		<property name="Weight" value="1"/>		
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		
+		<effect_group tiered="false">			
+			<passive_effect name="HypothermalResist" operation="base_add" value="2.8,5.2"/>
+			<passive_effect name="HyperthermalResist" operation="base_add" value="1"/>
+			<passive_effect name="ElementalDamageResist" operation="base_add" value="5" tags="lowerbody,feet,radiation,toxic" match_all_tags="true"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitBoots"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitBoots"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/>
+		</effect_group>
+	</item_modifier>
+	
+	<item_modifier name="modHazmatGloves" installable_tags="armorHands" modifier_tags="misc,modHazmatGloves" blocked_tags="noMods,clothing" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="DescriptionKey" value="modHazmatGlovesDesc"/>
+		<property name="CustomIcon" value="apparelHazmatGloves"/>
+		<property name="Material" value="MresourceScrapLeadSmall"/>
+		<property name="Weight" value="1"/>		
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		
+		<effect_group tiered="false">			
+			<passive_effect name="HypothermalResist" operation="base_add" value="2.8,5.2"/>
+			<passive_effect name="HyperthermalResist" operation="base_add" value="1"/>
+			<passive_effect name="ElementalDamageResist" operation="base_add" value="10" tags="upperbody,hands,radiation,toxic" match_all_tags="true"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitGloves"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitGloves"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/>
+		</effect_group>
+	</item_modifier>
+	
+	<item_modifier name="modHazmatOutfit" installable_tags="armorChest" modifier_tags="misc,modHazmatJacket" blocked_tags="noMods,clothing" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="DescriptionKey" value="modHazmatJacketDesc"/>
+		<property name="CustomIcon" value="apparelHazmatJacket"/>
+		<property name="Material" value="MresourceScrapLeadSmall"/>
+		<property name="Weight" value="1"/>		
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		
+		<effect_group tiered="false">
+			<passive_effect name="HypothermalResist" operation="base_add" value="6.5,9.5"/>
+			<passive_effect name="HyperthermalResist" operation="base_add" value="1"/>
+			<passive_effect name="ElementalDamageResist" operation="base_add" value="5" tags="upperbody,chest,radiation,toxic" match_all_tags="true"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitOutfit"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitOutfit"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/>
+		</effect_group>
+	</item_modifier>
+	
+	<item_modifier name="modHazmatHelmet" installable_tags="armorHead" modifier_tags="modHazmatMask" blocked_tags="noMods,clothing" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="DescriptionKey" value="modHazmatMaskDesc"/>
+		<property name="CustomIcon" value="apparelHazmatMask"/>
+		<property name="Material" value="MresourceScrapLeadSmall"/>
+		<property name="Weight" value="1"/>		
+		<property name="TraderStageTemplate" value="modsTier3"/>		
+		
+		<effect_group tiered="false">
+			<passive_effect name="HypothermalResist" operation="base_add" value="6.5,9.5"/>
+			<passive_effect name="HyperthermalResist" operation="base_add" value="1"/>
+			<passive_effect name="ElementalDamageResist" operation="base_add" value="6" tags="head,radiation" match_all_tags="true"/>
+			<passive_effect name="ElementalDamageResist" operation="base_add" value="15" tags="head,toxic" match_all_tags="true"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitHelmet"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitHelmet"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/>
+		</effect_group>
+	</item_modifier>
+	
+	<item_modifier name="modGunMeleeNiCdBattery" installable_tags="tool,weapon" blocked_tags="stunBaton,noMods" modifier_tags="elemental" type="attachment" rarity="0.5">
+		<!-- <property name="UnlockedBy" value="modGunMeleeNiCdBatterySchematic"/> -->
+		<property name="CustomIcon" value="modGunMeleeNiCdBattery"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="EconomicValue" value="750"/>
+		<property name="Stacknumber" value="1"/>
+
+		<effect_group tiered="false">
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="15"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffShocked"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="10" buff="buffShocked">
+					<requirement name="HoldingItemHasTags" tags="rocketLauncher"/>
+				</triggered_effect>
+		</effect_group>		
+	</item_modifier>
+	
+	<item_modifier name="modGunMeleeFlammableOil" installable_tags="tool,weapon" blocked_tags="stunBaton,noMods" modifier_tags="elemental" type="attachment" rarity="0.5">
+			<!-- <property name="UnlockedBy" value="modGunMeleeFlammableOilSchematic"/> -->
+			<property name="CustomIcon" value="modGunMeleeFlammableOil"/>
+			<property name="TraderStageTemplate" value="modsTier3"/>
+			<property name="EconomicValue" value="750"/>
+			<property name="Stacknumber" value="1"/>
+			
+			<effect_group tiered="false">
+				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".93"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="15"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningElement"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="10">
+						<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="0"/></triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="11">
+						<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="1"/></triggered_effect>
+			</effect_group>
+
+			<effect_group tiered="false">
+				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".93"/>
+				<requirement name="HasBuff" target="other" buff="buffBurningElement"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningElement"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="11">
+						<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="1"/></triggered_effect>
+			</effect_group>			
+		</item_modifier>
+
+		<item_modifier name="modGunMeleeLiquidNitrogen" installable_tags="tool,weapon" blocked_tags="stunBaton,noMods" modifier_tags="elemental" type="attachment" rarity="0.5">
+			<!-- <property name="UnlockedBy" value="modGunMeleeLiquidNitrogenSchematic"/> -->
+			<property name="CustomIcon" value="modGunMeleeLiquidNitrogen"/>
+			<property name="TraderStageTemplate" value="modsTier3"/>
+			<property name="EconomicValue" value="750"/>
+			<property name="Stacknumber" value="1"/>
+
+			<effect_group tiered="false">
+				<requirement name="!EntityTagCompare" target="other" tags="frozen"/>			
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>				
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryFrozen"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="10" buff="buffInjuryFrozen">
+					<requirement name="HoldingItemHasTags" tags="rocketLauncher"/>
+				</triggered_effect>
+			</effect_group>			
+		</item_modifier>
+		
+	<!-- *** brass catcher *** -->
+		<item_modifier name="modGunBrassCatcher" installable_tags="weapon" blocked_tags="shotgun,melee,perkArchery,turretMelee,turretRanged,noMods" modifier_tags="sideAttachment" type="attachment">
+			<property name="CustomIcon" value="resourceBulletCasing" />
+			<property name="DescriptionKey" value="modGunBrassCatcherDesc"/>
+			<property name="TraderStageTemplate" value="modsTier3"/>
+			<property name="EconomicValue" value="750"/>
+			<property name="Stacknumber" value="1"/>			
+			<property name="UnlockedBy" value="perkUrbanCombatCigar"/>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<requirement name="RoundsInMagazine" operation="GTE" value="1"/>
+				<requirement name="!HoldingItemBroken"/>
+					<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffReclaimBrass"/>
+					<triggered_effect trigger="onSelfRangedBurstShotEnd" action="AddBuff" target="self" buff="buffReclaimBrass"/>
+			</effect_group>	
+			<effect_group>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.15"/>
+			</effect_group>
+		</item_modifier>
+	</append>
+</HellsJanitor>

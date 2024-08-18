@@ -1,0 +1,78 @@
+<Hells_Janitor>
+	<append xpath="/buffs">
+		<!-- *** food smell *** -->
+		<buff name="buffAddHeatTrigger" hidden="true">
+			<duration value="0"/>
+			<effect_group compare_type="or">
+				<!-- <requirement name="PlayerItemCount" item_name="foodRottingFlesh" operation="GTE" value="1"/> -->
+				<!-- <requirement name="PlayerItemCount" item_name="foodCornBread" operation="GTE" value="5"/> -->
+				<!-- <requirement name="PlayerItemCount" item_name="foodShamSandwich" operation="GTE" value="5"/> -->
+				<requirement name="PlayerItemCount" item_name="foodCharredMeat" operation="GTE" value="5"/>
+				<requirement name="PlayerItemCount" item_name="foodGrilledMeat" operation="GTE" value="5"/>
+				<requirement name="PlayerItemCount" item_name="foodBoiledMeat" operation="GTE" value="5"/>
+				<requirement name="PlayerItemCount" item_name="foodMeatStew" operation="GTE" value="4"/>
+				<requirement name="PlayerItemCount" item_name="foodSteakAndPotato" operation="GTE" value="4"/>
+				<requirement name="PlayerItemCount" item_name="foodShamChowder" operation="GTE" value="3"/>
+				<requirement name="PlayerItemCount" item_name="foodHoboStew" operation="GTE" value="3"/>
+				<requirement name="PlayerItemCount" item_name="foodFishTacos" operation="GTE" value="3"/>
+				<requirement name="PlayerItemCount" item_name="foodChiliDog" operation="GTE" value="3"/>
+				<!-- <requirement name="PlayerItemCount" item_name="foodBakedPotato" operation="GTE" value="5"/> -->
+				<requirement name="PlayerItemCount" item_name="foodBlueberryPie" operation="GTE" value="4"/>
+				<requirement name="PlayerItemCount" item_name="foodPumpkinPie" operation="GTE" value="4"/>
+				<requirement name="PlayerItemCount" item_name="foodPumpkinCheesecake" operation="GTE" value="4"/>
+				<requirement name="PlayerItemCount" item_name="foodPumpkinBread" operation="GTE" value="4"/>
+				<requirement name="PlayerItemCount" item_name="foodGumboStew" operation="GTE" value="2"/>
+				<requirement name="PlayerItemCount" item_name="foodShepardsPie" operation="GTE" value="2"/>
+				<requirement name="PlayerItemCount" item_name="foodSpaghetti" operation="GTE" value="2"/>
+				<requirement name="PlayerItemCount" item_name="foodTunaFishGravyToast" operation="GTE" value="2"/>
+				<!-- <requirement name="PlayerItemCount" item_name="foodEggBoiled" operation="GTE" value="5"/> -->
+				<requirement name="PlayerItemCount" item_name="foodBaconAndEggs" operation="GTE" value="4"/>
+				<requirement name="PlayerItemCount" item_name="foodVegetableStew" operation="GTE" value="3"/>
+				<requirement name="PlayerItemCount" item_name="foodRawMeat" operation="GTE" value="10"/>
+				<requirement name="PlayerItemCount" item_name="foodChickenStew" operation="GTE" value="3"/>
+				<requirement name="PlayerItemCount" item_name="foodChickenMiso" operation="GTE" value="3"/>
+				<requirement name="PlayerItemCount" item_name="foodScrambledEggs" operation="GTE" value="5"/>
+				<requirement name="PlayerItemCount" item_name="foodTrampStew" operation="GTE" value="5"/>
+				<requirement name="PlayerItemCount" item_name="foodVagabondStew" operation="GTE" value="5"/>
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSmell"/> -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="fresh_meat" allow_client_call="true"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffSmell" name_key="buffSmellName" description_key="buffSmellDesc" tooltip_key="buffSmellTooltip" remove_on_death="true" icon="ui_game_symbol_smell" icon_color="192,192,192">
+			<duration value="15"/>
+			<stack_type value="effect"/>
+			<display_value value="smell"/>
+			<display_value_format value="time"/>
+			<display_value_key value="{0:0}"/>
+			<update_rate value="1"/>
+			
+			<!-- <effect_group> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AddJournalEntry" journal="buffSmellJournalTip"/> -->
+			<!-- </effect_group> -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="smell" operation="set" value="15"/>
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="crawler_roam" play_in_head="true"/> -->
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="smell" operation="add" value="-1"/>
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="fresh_meat" allow_client_call="true"/> -->
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="smell" operation="set" value="15"/>
+				<requirement name="CVarCompare" cvar="smell" operation="LTE" value="0"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="smell" operation="set" value="15"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="smell" operation="set" value="15"/>
+				
+			</effect_group>
+		</buff>
+	</append>
+	
+	<append xpath="//buff[@name='buffStatusCheck01']/effect_group">
+		<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" target="self" buff="buffAddHeatTrigger"/>
+		<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffAddHeatTrigger"/>
+		<triggered_effect trigger="onSelfRespawn" action="AddBuff" target="self" buff="buffAddHeatTrigger"/>
+	</append>
+</Hells_Janitor>

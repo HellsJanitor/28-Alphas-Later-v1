@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="ModDurabilty" /> 
+    <DisplayName value="ModDurabilty" />
+    <Version value="1.0.0.0" /> 
+    <Description value="Adds durability property for the helmet purifier mod, and batteries are required for portable lights" /> 
+    <Author value="HellsJanitor" /> 
+    <Website value="" /> 
+</xml>

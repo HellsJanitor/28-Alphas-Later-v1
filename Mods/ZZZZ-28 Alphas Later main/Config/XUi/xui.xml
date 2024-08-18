@@ -1,0 +1,94 @@
+<configs>
+	<!-- *** adds tools to workbench *** -->
+	<insertafter xpath="//window_group[@name='workstation_workbench']//window[@name='windowCraftingQueue']">
+	<window name="windowToolsWorkbench" />
+	</insertafter>
+	<set xpath="//window_group[@name='workstation_workbench']//window[@name='windowOutput']/@name">windowWorkbenchOutput</set>
+	
+	<!-- *** adds fuel requirement for cement mixer *** -->
+	<insertafter xpath="//window_group[@name='workstation_cementMixer']//window[@name='windowCraftingQueue']">
+	<window name="windowMixerFuel" />
+	</insertafter>
+	
+	<!-- *** forge no longer needs smelted items *** -->
+	<remove xpath="//window_group[@name='workstation_forge']//window[@name='windowForgeInput']"/>
+	
+	<!-- *** tablesaw *** -->
+	<insertafter xpath="//window_group[@name='workstation_workbench']">
+	<window_group name="workstation_playerTableSaw" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
+		<window name="windowTSCraftingList"/>
+		<window name="craftingInfoPanel"/>
+		<window name="windowCraftingQueue"/>
+		<window name="windowTablesawOutput" />
+		<window name="windowNonPagingHeader" />		
+	</window_group>	
+	</insertafter>
+	
+	<insertafter xpath="//window_group[@name='workstation_campfire']">
+	<window_group name="workstation_playerWoodBurningStove" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
+		<window name="windowCraftingList"/>
+		<window name="craftingInfoPanel"/>
+		<window name="windowCraftingQueue"/>
+		<window name="windowToolsCampfire" />
+		<window name="windowOvenFuel" />
+		<window name="windowOutput" />
+		<window name="windowNonPagingHeader" />
+	</window_group>	
+	</insertafter>
+	
+	<!-- *** HUD *** -->
+	<!-- *** zombie HP bar *** -->
+	<append xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
+		<window name="windowTargetBar" anchor="CenterTop" />
+	</append>
+	
+	<!-- *** stat bar positions *** -->
+	<insertAfter xpath="//window_group/window[@name='HUDLeftStatBars']">
+		<window name="HUDCenterStatBars" anchor="CenterBottom"/>
+		<window name="HUDTopLeftStatBars"/>
+		<window name="HUDBottomLeftStatBars" anchor="LeftBottom"/>
+		<window name="HUDCentreRightStatBars"/>
+	</insertAfter>
+	
+	<append xpath="/xui/ruleset">
+		<window_group name="passive_collector_ctnChickenCoop" left_panel_valign_top="false" controller="IDC_Core.XUiC_PassiveCollectorWindowGroup, IDCCore" close_compass_on_open="true">
+			<window name="windowChickenCoop"/>
+			<window name="idcWindowFuelChickenCoop"/>
+			<window name="windowNonPagingHeader" />
+		</window_group>
+		
+		<window_group name="passive_collector_cntAdvancedDewCollector" left_panel_valign_top="false" controller="IDC_Core.XUiC_PassiveCollectorWindowGroup, IDCCore" close_compass_on_open="true">
+			<window name="windowAdvancedDewCollector"/>
+			<window name="windowToolsAdvancedDewCollector"/>
+			<window name="idcWindowFuelAdvCollector"/>
+			<window name="windowNonPagingHeader" />
+		</window_group>
+		
+		<window_group name="passive_collector_cntRainCollector" left_panel_valign_top="false" controller="IDC_Core.XUiC_PassiveCollectorWindowGroup, IDCCore" close_compass_on_open="true">
+			<window name="windowRainCollector"/>
+			<window name="windowToolsRainCollector"/>
+			<window name="idcWindowFuelRainCollector"/>
+			<window name="windowNonPagingHeader" />
+		</window_group>
+		
+		<window_group name="passive_collector_cntIDCAnimalSnare" left_panel_valign_top="false" controller="IDC_Core.XUiC_PassiveCollectorWindowGroup, IDCCore" close_compass_on_open="true">
+			<window name="windowAnimalSnare"/>
+			<window name="windowToolsAnimalSnare"/>
+			<window name="idcWindowSnareFuel"/>
+			<window name="windowNonPagingHeader" />
+		</window_group>
+		
+		<window_group name="passive_collector_ctnIDCBeehive" left_panel_valign_top="false" controller="IDC_Core.XUiC_PassiveCollectorWindowGroup, IDCCore" close_compass_on_open="true">
+			<window name="windowBeehive"/>
+			<window name="idcWindowFuelBeehive"/>
+			<window name="windowNonPagingHeader" />
+		</window_group>
+		
+		<window_group name="passive_collector_cntCompostBin" left_panel_valign_top="false" controller="IDC_Core.XUiC_PassiveCollectorWindowGroup, IDCCore" close_compass_on_open="true">
+			<window name="windowComposter"/>
+			<window name="windowToolsComposter"/>
+			<window name="idcWindowFuelComposter"/>
+			<window name="windowNonPagingHeader" />
+		</window_group>
+	</append>
+</configs>

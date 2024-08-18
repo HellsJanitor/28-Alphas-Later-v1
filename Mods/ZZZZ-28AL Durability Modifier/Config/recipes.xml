@@ -1,0 +1,54 @@
+<Hells_Janitor>	
+	
+	<set xpath="//recipe[@name='meleeToolTorch']">
+		<ingredient name="ammoGasCan" count="10"/>
+		<ingredient name="resourceCloth" count="5"/>
+		<ingredient name="resourceBranch" count="4"/>
+	</set>
+	
+	<append xpath="/recipes">
+		<recipe name="resourceNiCdBattery" count="10" craft_area="chemistryStation" tags="chemStationCrafting">
+			<ingredient name="resourceScrapLead" count="180"/>
+			<ingredient name="resourceAcid" count="1"/>
+			<ingredient name="resourceScrapPolymers" count="10"/>			
+		</recipe>
+		
+		<recipe name="resourceHelmetWaterFilter" count="1" craft_time="360" tags="workbenchCrafting">
+			<ingredient name="resourceCoal" count="50"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+			<ingredient name="resourceCrushedSand" count="200"/>		
+			<ingredient name="resourceScrapPolymers" count="50"/>
+			<ingredient name="resourceCloth" count="5"/>
+			<ingredient name="resourcePaper" count="5"/>
+		</recipe>
+		
+		<recipe name="wallTorchLightPlayer" count="1">
+			<ingredient name="spentWallTorch" count="1"/>
+			<ingredient name="ammoGasCan" count="10"/>
+		</recipe>
+		
+		<recipe name="wallTorchLightPlayer" count="1">
+			<ingredient name="meleeToolTorch" count="1"/>
+		</recipe>
+
+		<recipe name="meleeToolTorch" count="1">
+			<ingredient name="spentWallTorch" count="1"/>
+			<ingredient name="ammoGasCan" count="10"/>
+		</recipe>
+		
+		<recipe name="lanternDecorLightWhite_player" count="1" craft_area="workbench" tags="workbenchCrafting">
+			<ingredient name="resourceForgedIron" count="5"/>
+			<ingredient name="resourceHeadlight" count="1"/>
+			<ingredient name="resourceElectricParts" count="3"/>
+			<ingredient name="resourceDuctTape" count="4"/>
+			<ingredient name="resourceNiCdBattery" count="1"/>
+		</recipe>
+		
+		<recipe name="lanternDecorLightWhite_player" count="1" tags="workbenchCrafting">
+			<ingredient name="placedUnlitLantern" count="1"/>
+			<ingredient name="resourceNiCdBattery" count="1"/>
+		</recipe>
+	</append>
+
+	<remove xpath="//recipe[@name='lanternDecorLightBlockVariantHelper']"/>
+</Hells_Janitor>

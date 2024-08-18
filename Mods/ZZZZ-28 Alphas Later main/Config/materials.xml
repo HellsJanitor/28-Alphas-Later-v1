@@ -1,0 +1,60 @@
+<config>
+	<!-- search find all *** for changes -->
+	
+	<!--***  new material *** -->
+	<append xpath="/materials">
+	<material id="MresourceWoodScraps">
+		<property name="damage_category" value="wood"/>
+		<property name="surface_category" value="wood"/>
+		<property name="forge_category" value="wood_scraps"/>
+		<property name="Hardness" type="float" value="1"/>
+		<property name="stepsound" value="wood"/>
+		<property name="stability_glue" value="40"/>
+		<property name="Mass" type="int" value="5"/>
+		<property name="MaxDamage" value="200"/>
+		<property name="Experience" value="1.5"/>
+	</material>
+	
+	<material id="MfertilizedFarmland3">
+		<property name="damage_category" value="earth"/>
+		<property name="surface_category" value="earth"/>
+		<property name="Hardness" type="float" value="1"/>
+		<property name="stepsound" value="dirt"/>
+		<property name="fertile_level" value="68"/>
+		<property name="stability_glue" value="20"/>
+		<property name="Mass" type="int" value="10"/>
+		<property name="MaxDamage" value="250"/>
+		<property name="Experience" value="2"/>
+	</material>
+	
+	<material id="MresourceFertilizer">
+		<property name="damage_category" value="organic"/>
+		<property name="surface_category" value="organic"/>
+		<property name="Experience" value="2"/>
+	</material>
+	
+	<material id="MresourceBricks">
+		<property name="damage_category" value="stone"/>
+		<property name="surface_category" value="stone"/>
+		<property name="forge_category" value="stone"/>
+		<property name="Experience" value="4"/>
+	</material>
+	
+	<!-- <material id="Mbrick_shapesPlayer">
+		<property name="damage_category" value="stone"/>
+		<property name="surface_category" value="stone"/>
+		<property name="forge_category" value="stone"/>
+		<property name="Hardness" type="float" value="1"/>
+		<property name="stepsound" value="stone"/>
+		<property name="stability_glue" value="120"/>
+		<property name="Mass" type="int" value="10"/>
+		<property name="MaxDamage" value="2500"/>
+		<property name="Experience" value="2"/>
+	</material> -->
+	</append>	
+	
+	<set xpath="//material[@id='Mcobblestone']//property[@name='MaxDamage']/@value">1000</set>
+	<set xpath="//material[@id='Mcobblestone_shapes']//property[@name='MaxDamage']/@value">1000</set>
+	<set xpath="//material[@id='Mbrick']//property[@name='MaxDamage']/@value">1500</set>
+	<set xpath="//material[@id='Mbrick_shapes']//property[@name='MaxDamage']/@value">1500</set>
+</config>

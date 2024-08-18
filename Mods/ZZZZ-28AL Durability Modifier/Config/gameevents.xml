@@ -1,0 +1,131 @@
+<Hells_Janitor>
+	<append xpath="/gameevents">
+		<action_sequence name="removeWaterFilter">
+			<property name="category" value="twitch_actions"/>
+			<property name="target_type" value="Block"/>
+			
+			<action class="RemoveItems">
+				<property name="items_location" value="Toolbelt,Backpack,Held"/>
+				<property name="items_tags" value="filter"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="1"/>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="buff_name" value="buffHelmetPurifierReloadSuccess"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="removeHelmetBattery">
+			<property name="category" value="twitch_actions"/>
+			<property name="target_type" value="Block"/>
+			
+			<action class="RemoveItems">
+				<property name="items_location" value="Toolbelt,Backpack,Held"/>
+				<property name="items_tags" value="battery"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="1"/>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="buff_name" value="buffHelmetLightReloadSuccess"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="removeWeaponBattery">
+			<property name="category" value="twitch_actions"/>
+			<property name="target_type" value="Block"/>
+			
+			<action class="RemoveItems">
+				<property name="items_location" value="Toolbelt,Backpack,Held"/>
+				<property name="items_tags" value="battery"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="1"/>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="buff_name" value="buffWeaponLightReloadSuccess"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="removeLaserBattery">
+			<property name="category" value="twitch_actions"/>
+			<property name="target_type" value="Block"/>
+			
+			<action class="RemoveItems">
+				<property name="items_location" value="Toolbelt,Backpack,Held"/>
+				<property name="items_tags" value="battery"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="1"/>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="buff_name" value="buffLaserLightReloadSuccess"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="removeFlashLightBattery">
+			<property name="category" value="twitch_actions"/>
+			<property name="target_type" value="Block"/>
+			
+			<action class="RemoveItems">
+				<property name="items_location" value="Toolbelt,Backpack,Held"/>
+				<property name="items_tags" value="battery"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="1"/>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="buff_name" value="buffFlashLightReloadSuccess"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="removeNVGBattery">
+			<property name="category" value="twitch_actions"/>
+			<property name="target_type" value="Block"/>
+			
+			<action class="RemoveItems">
+				<property name="items_location" value="Toolbelt,Backpack,Held"/>
+				<property name="items_tags" value="battery"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="1"/>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="buff_name" value="buffNVGReloadSuccess"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="removeHandTorchBattery">
+			<property name="category" value="twitch_actions"/>
+			<property name="target_type" value="Block"/>
+			
+			<action class="RemoveItems">
+				<property name="items_location" value="Toolbelt,Backpack,Held"/>
+				<property name="items_tags" value="gasoline"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="10"/>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="buff_name" value="buffHandTorchReloadSuccess"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="removeBurningShaftBattery">
+			<property name="category" value="twitch_actions"/>
+			<property name="target_type" value="Block"/>
+			
+			<action class="RemoveItems">
+				<property name="items_location" value="Toolbelt,Backpack,Held"/>
+				<property name="items_tags" value="gasoline"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="10"/>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="buff_name" value="buffBurningShaftReloadSuccess"/>
+			</action>
+		</action_sequence>
+	</append>
+</Hells_Janitor>

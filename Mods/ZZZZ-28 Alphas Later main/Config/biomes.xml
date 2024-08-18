@@ -1,0 +1,33 @@
+<configs>
+
+	<!-- *** reduce rain in pine forest *** -->
+	<set xpath="//biome[@name='pine_forest']/weather[@name='rain']/Precipitation[@min='30']/@min">25</set>
+	<set xpath="//biome[@name='pine_forest']/weather[@name='rain']/Precipitation[@min='25']/@max">55</set>	
+	
+	<!-- *** add new lavender block to main biome *** -->
+	<append xpath="//biome[@name='pine_forest']/subbiome[@prob='0.31']/decorations">
+	<decoration type="block" blockname="forestFlower" prob=".06" rotatemax="7"/>
+	</append>
+	<append xpath="//biome[@name='pine_forest']/subbiome[@prob='0.392']/decorations">
+	<decoration type="block" blockname="forestFlower" prob=".001" rotatemax="7"/>
+	</append>
+	<append xpath="//biome[@name='pine_forest']/subbiome[@prob='0.412']/decorations">
+	<decoration type="block" blockname="forestFlower" prob=".001" rotatemax="7"/>
+	</append>
+	<append xpath="//biome[@name='pine_forest']/decorations">
+	<decoration type="block" blockname="forestFlower" prob=".001" rotatemax="7"/>
+	</append>
+	
+	<!-- *** beehive stumps *** -->
+	<append xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations">
+		<decoration type="block" blockname="beehiveTreeStump" prob=".002" rotatemax="7"/>
+	</append>
+	
+	<!-- *** wasteland boulder decorations *** -->
+	<set xpath="//biome[@name='wasteland']//decorations//decoration[@blockname='resourceRock01']/@blockname">rockWastelandRockResource</set>
+	<set xpath="//biome[@name='wasteland']//decorations//decoration[@blockname='resourceRock02']/@blockname">rockWastelandRockResource02</set>
+	<set xpath="//biome[@name='wasteland']//decorations//decoration[@prob='.00033']/@prob">.001</set>
+	<set xpath="//biome[@name='wasteland']//layers//layer[@blockname='terrDestroyedStone']/@blockname">terrWastelandDestroyedStone</set>
+	<setattribute xpath="//biome[@name='wasteland']" name="topsoil_block">terrWastelandDestroyedStone</setattribute>
+	
+</configs>

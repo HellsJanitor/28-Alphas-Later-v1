@@ -1,0 +1,44 @@
+<Hells_Janitor>
+	<append xpath="/gameevents">
+		<action_sequence name="fresh_meat">
+		<property name="action_type" value="Game" />
+		
+			<requirement class="NearbyEntities">
+				<property name="max_distance" value="150"/>
+			</requirement>
+			
+			<requirement class="InSafeZone">
+				<property name="invert" value="true" />
+			</requirement>
+			
+			<action class="AddBuff">
+				<property name="phase" value="0" />
+				<property name="buff_name" value="buffSmell" />
+			</action>			
+			
+			<action class="AddSpawnedEntitiesToGroup">
+				<property name="phase" value="1"/>
+				<property name="group_name" value="zombies"/>
+				<property name="entity_tags" value="entity"/>
+				<property name="max_distance" value="150"/>
+				<property name="target_only" value="false"/>
+			</action>
+			<action class="AddEntitiesToGroup">
+				<property name="phase" value="2"/>
+				<property name="group_name" value="zombies"/>
+				<property name="entity_tags" value="entity"/>
+				<property name="max_distance" value="150"/>
+				<property name="target_only" value="false"/>
+			</action>
+			<action class="RageZombies">
+				<property name="phase" value="4"/>
+				<property name="time" value="30"/>
+				<property name="speed_percent" value=".25"/>
+				<property name="target_group" value="zombies"/>
+			</action>
+			<action class="TwitchAddEntitiesToSpawned">
+				<property name="target_group" value="zombies"/>
+			</action>
+		</action_sequence>
+	</append>
+</Hells_Janitor>

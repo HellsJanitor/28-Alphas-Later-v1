@@ -1,0 +1,7 @@
+C:\Users\Blake\Profile\7d\7 Days To Die\Mods\28AL_ItemOffsets\obj\Release\net48\ItemOffsets.csproj.AssemblyReference.cache
+C:\Users\Blake\Profile\7d\7 Days To Die\Mods\28AL_ItemOffsets\obj\Release\net48\ItemOffsets.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Blake\Profile\7d\7 Days To Die\Mods\28AL_ItemOffsets\obj\Release\net48\ItemOffsets.csproj.CoreCompileInputs.cache
+C:\Users\Blake\Profile\7d\7 Days To Die\Mods\28AL_ItemOffsets\obj\Release\net48\ItemOffsets.dll
+C:\Users\Blake\Profile\7d\7 Days To Die\Mods\28AL_ItemOffsets\obj\Release\net48\ItemOffsets.pdb
+C:\Users\Blake\Profile\7d\7 Days To Die\Mods\28AL_ItemOffsets\ItemOffsets.dll
+C:\Users\Blake\Profile\7d\7 Days To Die\Mods\28AL_ItemOffsets\ItemOffsets.pdb

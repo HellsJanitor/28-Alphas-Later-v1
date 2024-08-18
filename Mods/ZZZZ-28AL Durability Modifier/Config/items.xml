@@ -1,0 +1,136 @@
+<Hells_Janitor>
+	<append xpath="//item[@name='drinkJarRiverWater']//effect_group[@name='Drink Tier 0']">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="helmetPurifierDurability" operation="subtract" value="1">
+			<requirement name="CVarCompare" cvar="helmetPurifierDurability" operation="GT" value="0"/>
+			<requirement name="HasBuff" buff="buffHelmetPurifierActive"/>
+		</triggered_effect>
+	</append>
+	
+	<append xpath="//item[@name='resourceWaterFilter']">
+		<property name="Tags" value="filter"/>
+	</append>
+	
+	<append xpath="/items">
+		<!-- *** spent wall torch *** -->
+		<item name="spentWallTorch">
+			<property name="Tags" value="blunt,melee,tool,weapon,meleeWeapon"/>
+			<property name="DescriptionKey" value="spentWallTorchDesc"/>
+			<property name="CustomIcon" value="spentWallTorch"/>
+			<property name="DisplayType" value="meleeTorch"/>
+			<property name="Class" value="ItemClassTorch"/>
+			<property name="HoldType" value="12"/>
+			<property name="Meshfile" value="@:Other/Items/Tools/torch02_unlitPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Tools/torch02_droppedPrefab.prefab"/>
+			<!-- alternative hold mesh and type -->
+			<!-- <property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/> -->
+			
+			<property name="DropScale" value=".6"/>
+			<property name="Material" value="MresourceWoodScraps"/>
+			<property name="Stacknumber" value="50"/> <!-- STK torch -->
+			<property name="EconomicValue" value="0"/>		
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+			<property name="Group" value="Basics,Building,advBuilding"/>
+		</item>	
+		<!-- *** battery *** -->
+		<item name="resourceNiCdBattery">
+			<property name="CustomIcon" value="resourceBattery"/>
+			<property name="DescriptionKey" value="resourceNiCdBatteryDesc"/>
+			<property name="Tags" value="battery"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mlead_scrap"/>
+			<property name="Stacknumber" value="5"/><!-- STK resource -->
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="electricTier2"/>
+			<property name="Group" value="Resources"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources,Chemicals"/>
+		</item>
+		<!-- *** helmet filter *** -->
+		<item name="resourceHelmetWaterFilter">
+			<property name="Tags" value="filter"/>
+			<property name="CustomIcon" value="resourceWaterFilter"/>
+			<property name="DescriptionKey" value="resourceHelmetWaterFilterDesc"/>
+			<property name="CustomIconTint" value="00ffff"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourceScrapPolymers"/>
+			<property name="Stacknumber" value="50"/><!-- STK resource -->
+			<property name="EconomicValue" value="5"/>
+			<property name="Group" value="Resources"/>
+		</item>
+	</append>
+	
+	<remove xpath="//item[@name='meleeToolFlashlight02']/effect_group[@name='meleeToolFlashlight02']//triggered_effect[@trigger='onSelfItemActivate']"/>
+	<remove xpath="//item[@name='meleeToolFlashlight02']/effect_group[@name='meleeToolFlashlight02']//triggered_effect[@trigger='onSelfItemDeactivate']"/>
+	
+	<append xpath="//item[@name='meleeToolFlashlight02']/effect_group[@name='meleeToolFlashlight02']">
+		<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffFlashLightActive"/>
+		<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffFlashLightDeactivate"/>
+		<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffFlashLightActivate"/>
+		<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffFlashLightActive"/>
+		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffFlashLightActive"/>		
+	</append>
+	
+	<set xpath="//item[@name='meleeToolTorch']//property[@class='Action1']">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sound_start" value="torch_swoosh"/>
+		<property name="Sphere" value=".15"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+		<property name="UseGrazingHits" value="true"/>
+		<property name="IsHorizontalSwing" value="true"/>
+		<property name="GrazeStart" value=".25"/>
+		<property name="GrazeEnd" value=".32"/>
+		<property name="SwingDegrees" value="120"/>
+		<property name="SwingAngle" value="90"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="woodhitorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="woodgrazeorganic"/>
+		</property>
+	</set>
+	
+	<set xpath="//item[@name='meleeToolTorch']/effect_group[@name='meleeToolTorch']//passive_effect[@name='StaminaLoss']/@value">15</set>
+	
+	<insertafter xpath="//item[@name='meleeToolTorch']//effect_group[@name='meleeToolTorch']">
+	<effect_group name="Power Attack" tiered="false">
+		<passive_effect name="EntityDamage" operation="base_add" value="6.05" tags="secondary"/>
+		<passive_effect name="EntityDamage" operation="perc_add" value=".334" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="base_add" value="4.05" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value=".334" tags="secondary"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="2" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="22" tags="secondary"/>
+	</effect_group>
+	</insertafter>
+	
+	<set xpath="//item[@name='meleeToolTorch']//effect_group[@name='light/douse torch flame']">
+		<triggered_effect trigger="onSelfWaterSubmerge" action="RemoveParticleEffectFromEntity" particle="torch02_firePrefab" parent_transform="TorchLight"/>
+		<triggered_effect trigger="onSelfWaterSurface" action="AttachParticleEffectToEntity" particle="torch02_firePrefab" parent_transform="TorchLight">
+			<requirement name="CVarCompare" cvar="batteryHandTorch" operation="GT" value="0"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfEquipStart" action="AttachParticleEffectToEntity" particle="torch02_firePrefab" parent_transform="TorchLight">
+			<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
+			<requirement name="CVarCompare" cvar="batteryHandTorch" operation="GT" value="0"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfEquipStart" action="RemoveParticleEffectFromEntity" particle="torch02_firePrefab" parent_transform="TorchLight">
+			<requirement name="CVarCompare" cvar="_underwater" operation="GTE" value="1"/>
+			<requirement name="CVarCompare" cvar="batteryHandTorch" operation="LTE" value="0"/>
+		</triggered_effect>
+	</set>
+	
+	<append xpath="//item[@name='meleeToolTorch']">
+		<effect_group name="add or remove flames/fuel check" tiered="false">
+			<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffHandTorchActive"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffHandTorchDeactivate"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHandTorchActivate"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHandTorchActive"/>			
+		</effect_group>
+	</append>
+</Hells_Janitor>

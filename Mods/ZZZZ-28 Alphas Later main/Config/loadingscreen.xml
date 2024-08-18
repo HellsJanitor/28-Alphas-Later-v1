@@ -1,0 +1,7 @@
+<configs>
+	<append xpath="/doc/tips">
+	<tip key="loadingTipHeadShotsOnly" />
+	<tip key="loadingTipBleedingArrows" />
+	<tip key="loadingTipPermanentInfection" />
+	</append>
+</configs>

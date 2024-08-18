@@ -1,0 +1,6 @@
+<xml>
+	<append xpath="//environment">
+		<property name="BigHeadsSize" value="10"/>
+		<property name="MutatedHeadScale" value="2"/>
+	</append>
+</xml>

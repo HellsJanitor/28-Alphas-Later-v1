@@ -1,0 +1,246 @@
+<Hells_Janitor>
+	<append xpath="/windows">		
+		<window name="HUDCenterStatDurabilityBars" anchor="CenterBottom" pos="-287,162" >pos="380,-12" pos="20,-75"
+			<grid name="HUDNewStats" pos="0,0" cols="4" cell_width="140" arrangement="horizontal">
+				<!-- <rect pos="174,46" width="84" height="42" controller="HUDStatBar" visible="{# cvar('helmetlightequipped') &gt; 0}"> -->
+				<rect pos="174,46" width="48" height="48" controller="HUDStatBar" visible="{# cvar('helmetlightequipped') &gt; 0}">
+					<!-- <sprite depth="1" name="border" color="0,0,0,120" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,190" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="0,-6" width="32" height="32" sprite="modArmorHelmetLight" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="40" pivot="center" justify="center" text="{cvar(batteryHelmetLightDisplay:P1)}" color="0,255,0,250" font_size="24"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/> -->
+					
+					<!-- <sprite depth="8" height="50" width="50"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>			
+					<sprite depth="10" height="42" width="42"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>				
+					<sprite depth="11" height="42" width="42" name="background" sprite="ui_game_filled_circle" color="0,255,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(batteryHelmetLightDisplay)}" filldirection="radial360"/>
+					<sprite depth="12" width="28" height="28" name="center" sprite="ui_game_filled_circle" color="115,115,115" pivot="center" globalopacity="false"/>
+					<sprite depth="12" width="28" height="28" name="center" sprite="modArmorHelmetLight" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
+					
+					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="0,255,0,250" type="filled" fill="{cvar(batteryHelmetLightDisplay)}" flip="Horizontally"/>
+					<sprite depth="3" name="Icon" sprite="modArmorHelmetLight" atlas="ItemIconAtlas" color="[iconColor]" size="40,40" pos="24,-24" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryHelmetLightDisplay') &gt; 0 ? round(cvar('batteryHelmetLightDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
+				</rect>	
+
+				<!-- <rect pos="260,46" width="84" height="42" controller="HUDStatBar" visible="{# cvar('nvgequipped') &gt; 0}"> -->
+				<rect pos="260,46" width="48" height="48" controller="HUDStatBar" visible="{# cvar('nvgequipped') &gt; 0}">
+					<!-- <sprite depth="1" name="border" color="0,0,0,120" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,190" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="3,-8" width="26" height="26" sprite="apparelNightvisionGoggles" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="40" pivot="center" justify="center" text="{cvar(batteryNVGDisplay:P1)}" color="255,99,71,250" font_size="24"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/> -->
+					
+					<!-- <sprite depth="8" height="50" width="50"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>			
+					<sprite depth="10" height="42" width="42"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>				
+					<sprite depth="11" height="42" width="42" name="background" sprite="ui_game_filled_circle" color="255,99,71,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(batteryNVGDisplay)}" filldirection="radial360"/>
+					<sprite depth="12" width="28" height="28" name="center" sprite="ui_game_filled_circle" color="115,115,115" pivot="center" globalopacity="false"/>
+					<sprite depth="12" width="24" height="24" name="center" sprite="apparelNightvisionGoggles" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
+					
+					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="255,99,71,250" type="filled" fill="{cvar(batteryNVGDisplay)}" flip="Horizontally"/>
+					<sprite depth="3" name="Icon" sprite="modArmorNightVision" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryNVGDisplay') &gt; 0 ? round(cvar('batteryNVGDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
+				</rect>
+				
+				<!-- <rect pos="88,46" rows="1" cols="1" width="84" height="42" controller="HUDStatBar" visible="{# cvar('gunlightequipped') &gt; 0}"> -->
+				<rect pos="88,46" rows="1" cols="1" width="48" height="48" controller="HUDStatBar" visible="{# cvar('gunlightequipped') &gt; 0}">
+					<!-- <sprite depth="1" name="border" color="0,0,0,120" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,190" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="3,-8" width="26" height="26" sprite="modGunFlashlight" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="40" pivot="center" justify="center" text="{cvar(batteryWeaponLightDisplay:P1)}" color="255,165,0,250" font_size="24"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/> -->
+					
+					<!-- <sprite depth="8" height="50" width="50"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>			
+					<sprite depth="10" height="42" width="42"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>				
+					<sprite depth="11" height="42" width="42" name="background" sprite="ui_game_filled_circle" color="255,165,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(batteryWeaponLightDisplay)}" filldirection="radial360"/>
+					<sprite depth="12" width="28" height="28" name="center" sprite="ui_game_filled_circle" color="115,115,115" pivot="center" globalopacity="false"/>
+					<sprite depth="12" width="24" height="24" name="center" sprite="modGunFlashlight" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
+					
+					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="255,165,0,250" type="filled" fill="{cvar(batteryWeaponLightDisplay)}" flip="Horizontally"/>
+					<sprite depth="3" name="Icon" sprite="modGunFlashlight" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryWeaponLightDisplay') &gt; 0 ? round(cvar('batteryWeaponLightDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
+				</rect>	
+				
+				<!-- <rect pos="88,46" rows="1" cols="1" width="84" height="42" controller="HUDStatBar" visible="{# cvar('laserlightequipped') &gt; 0}"> -->
+				<rect pos="88,46" rows="1" cols="1" width="48" height="48" controller="HUDStatBar" visible="{# cvar('laserlightequipped') &gt; 0}">
+					<!-- <sprite depth="1" name="border" color="0,0,0,120" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,190" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="3,-6" width="26" height="26" sprite="modGunLaserSight" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="40" pivot="center" justify="center" text="{cvar(batteryLaserLightDisplay:P1)}" color="204,0,0,250" font_size="24"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/> -->
+					
+					<!-- <sprite depth="8" height="50" width="50"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>			
+					<sprite depth="10" height="42" width="42"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>				
+					<sprite depth="11" height="42" width="42" name="background" sprite="ui_game_filled_circle" color="204,0,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(batteryLaserLightDisplay)}" filldirection="radial360"/>
+					<sprite depth="12" width="28" height="28" name="center" sprite="ui_game_filled_circle" color="115,115,115" pivot="center" globalopacity="false"/>
+					<sprite depth="12" width="24" height="24" name="center" sprite="modGunLaserSight" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
+					
+					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="204,0,0,250" type="filled" fill="{cvar(batteryLaserLightDisplay)}" flip="Horizontally"/>
+					<sprite depth="3" name="Icon" sprite="modGunLaserSight" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryLaserLightDisplay') &gt; 0 ? round(cvar('batteryLaserLightDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
+				</rect>
+
+				<!-- <rect pos="88,46" rows="1" cols="1" width="84" height="42" controller="HUDStatBar" visible="{# cvar('flashlightequipped') &gt; 0}"> -->
+				<rect pos="88,46" rows="1" cols="1" width="48" height="48" controller="HUDStatBar" visible="{# cvar('flashlightequipped') &gt; 0}">
+					<!-- <sprite depth="1" name="border" color="0,0,0,120" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,190" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="3,-6" width="26" height="26" sprite="meleeToolFlashlight02" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="40" pivot="center" justify="center" text="{cvar(batteryFlashLightDisplay:P1)}" color="192,192,192,250" font_size="24"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/> -->
+					
+					<!-- <sprite depth="8" height="50" width="50"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>			
+					<sprite depth="10" height="42" width="42"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>				
+					<sprite depth="11" height="42" width="42" name="background" sprite="ui_game_filled_circle" color="192,192,192,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(batteryFlashLightDisplay)}" filldirection="radial360"/>
+					<sprite depth="12" width="28" height="28" name="center" sprite="ui_game_filled_circle" color="115,115,115" pivot="center" globalopacity="false"/>
+					<sprite depth="12" width="24" height="24" name="center" sprite="meleeToolFlashlight02" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
+					
+					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="192,192,192,250" type="filled" fill="{cvar(batteryFlashLightDisplay)}" flip="Horizontally"/>
+					<sprite depth="3" name="Icon" sprite="meleeToolFlashlight02" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryFlashLightDisplay') &gt; 0 ? round(cvar('batteryFlashLightDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
+				</rect>	
+
+				<!-- <rect pos="88,46" rows="1" cols="1" width="84" height="42" controller="HUDStatBar" visible="{# cvar('torchequipped') &gt; 0}"> -->
+				<rect pos="88,46" rows="1" cols="1" width="48" height="48" controller="HUDStatBar" visible="{# cvar('torchequipped') &gt; 0}">
+					<!-- <sprite depth="1" name="border" color="0,0,0,120" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,190" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="4,-8" width="26" height="26" sprite="meleeToolTorch" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="40" pivot="center" justify="center" text="{cvar(batteryHandTorchDisplay:P1)}" color="255,69,0,250" font_size="24"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/> -->
+					
+					<!-- <sprite depth="8" height="50" width="50"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>			
+					<sprite depth="10" height="42" width="42"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>				
+					<sprite depth="11" height="42" width="42" name="background" sprite="ui_game_filled_circle" color="255,69,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(batteryHandTorchDisplay)}" filldirection="radial360"/>
+					<sprite depth="12" width="28" height="28" name="center" sprite="ui_game_filled_circle" color="115,115,115" pivot="center" globalopacity="false"/>
+					<sprite depth="12" width="24" height="24" name="center" sprite="meleeToolTorch" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
+					
+					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="255,69,0,250" type="filled" fill="{cvar(batteryHandTorchDisplay)}" flip="Horizontally"/>
+					<sprite depth="3" name="Icon" sprite="meleeToolTorch" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryHandTorchDisplay') &gt; 0 ? round(cvar('batteryHandTorchDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
+				</rect>
+
+				<!-- <rect pos="88,46" rows="1" cols="1" width="84" height="42" controller="HUDStatBar" visible="{# cvar('burningshaftequipped') &gt; 0}"> -->
+				<rect pos="88,46" rows="1" cols="1" width="48" height="48" controller="HUDStatBar" visible="{# cvar('burningshaftequipped') &gt; 0}">
+					<!-- <sprite depth="1" name="border" color="0,0,0,120" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,190" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="4,-6" width="26" height="26" sprite="modMeleeClubBurningShaft" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="40" pivot="center" justify="center" text="{cvar(batteryBurningShaftDisplay:P1)}" color="255,69,0,250" font_size="24"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/> -->
+					
+					<!-- <sprite depth="8" height="50" width="50"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>			
+					<sprite depth="10" height="42" width="42"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>				
+					<sprite depth="11" height="42" width="42" name="background" sprite="ui_game_filled_circle" color="255,69,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(batteryBurningShaftDisplay)}" filldirection="radial360"/>
+					<sprite depth="12" width="28" height="28" name="center" sprite="ui_game_filled_circle" color="115,115,115" pivot="center" globalopacity="false"/>
+					<sprite depth="12" width="24" height="24" name="center" sprite="modMeleeClubBurningShaft" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
+					
+					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="255,69,0,250" type="filled" fill="{cvar(batteryBurningShaftDisplay)}" flip="Horizontally"/>
+					<sprite depth="3" name="Icon" sprite="modMeleeClubBurningShaft" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryBurningShaftDisplay') &gt; 0 ? round(cvar('batteryBurningShaftDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
+				</rect>
+				
+				<!-- <rect pos="2,46" rows="1" cols="1" width="84" height="42" controller="HUDStatBar" visible="{# cvar('helmetfilterequipped') &gt; 0}"> -->
+				<rect pos="2,46" rows="1" cols="1" width="48" height="48" controller="HUDStatBar" visible="{# cvar('helmetfilterequipped') &gt; 0}">
+					<!-- <sprite depth="1" name="border" color="0,0,0,120" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,190" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="0,-6" width="32" height="32" sprite="resourceWaterFilter" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="53,-24" width="54" height="54" pivot="center" justify="center" text="{cvar(helmetPurifierDurability)} uses" color="0,255,255,250" font_size="20"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/> -->
+					
+					<!-- <sprite depth="8" height="50" width="50"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>			
+					<sprite depth="10" height="42" width="42"  name="border" sprite="ui_game_filled_circle" color="0,0,0,190" pivot="center" globalopacity="false"/>				
+					<sprite depth="11" height="42" width="42" name="background" sprite="ui_game_filled_circle" color="0,255,255,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(helmetPurifierDurabilityDisplay)}" filldirection="radial360"/>
+					<sprite depth="12" width="28" height="28" name="center" sprite="ui_game_filled_circle" color="115,115,115" pivot="center" globalopacity="false"/>
+					<sprite depth="12" width="24" height="24" name="center" sprite="resourceWaterFilter" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
+					
+					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="0,255,255,250" type="filled" fill="{cvar(helmetPurifierDurabilityDisplay)}" flip="Horizontally"/>
+					<sprite depth="3" name="Icon" sprite="resourceWaterFilter" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{cvar(helmetPurifierDurability)} uses" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
+				</rect>
+			</grid>
+		</window>
+	</append>
+
+	<set xpath="/windows/window[@name='toolTipPopups']/@pos">0,160</set>
+	
+	<append xpath="/windows/window[@name='HUDLeftStatBars']">
+			<!-- <grid name="HUDHeadLights" pos="178,108" cols="2" cell_width="86" arrangement="horizontal" >
+				<rect pos="2,46" width="84" height="42" controller="HUDStatBar" visible="{# cvar('helmetlightequipped') &gt; 0}">
+					<sprite depth="1" name="border" color="0,0,0,240" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,220" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="0,-6" width="32" height="32" sprite="modArmorHelmetLight" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="54" pivot="center" justify="center" text="{# round(cvar('batteryHelmetLightDisplay') * 100, 1)}%" color="0,255,0,250" font_size="30"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/>
+				</rect>	
+
+				<rect pos="88,46" width="84" height="42" controller="HUDStatBar" visible="{# cvar('nvgequipped') &gt; 0}">
+					<sprite depth="1" name="border" color="0,0,0,240" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,220" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="3,-8" width="26" height="26" sprite="apparelNightvisionGoggles" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="54" pivot="center" justify="center" text="{# round(cvar('batteryNVGDisplay') * 100, 1)}%" color="255,99,71,250" font_size="30"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/>
+				</rect>
+			</grid>
+			<grid name="HUDHeldLights" pos="178,64" cols="4" cell_width="86" arrangement="horizontal" >
+				<rect pos="88,0" rows="1" cols="1" width="84" height="42" controller="HUDStatBar" visible="{# cvar('gunlightequipped') &gt; 0}">
+					<sprite depth="1" name="border" color="0,0,0,240" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,220" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="3,-8" width="26" height="26" sprite="modGunFlashlight" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="54" pivot="center" justify="center" text="{# round(cvar('batteryWeaponLightDisplay') * 100, 1)}%" color="255,165,0,250" font_size="30"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/>
+				</rect>	
+				
+				<rect pos="88,0" rows="1" cols="1" width="84" height="42" controller="HUDStatBar" visible="{# cvar('laserlightequipped') &gt; 0}">
+					<sprite depth="1" name="border" color="0,0,0,240" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,220" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="3,-6" width="26" height="26" sprite="modGunLaserSight" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="54" pivot="center" justify="center" text="{# round(cvar('batteryLaserLightDisplay') * 100, 1)}%" color="204,0,0,250" font_size="30"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/>
+				</rect>
+
+				<rect pos="88,0" rows="1" cols="1" width="84" height="42" controller="HUDStatBar" visible="{# cvar('flashlightequipped') &gt; 0}">
+					<sprite depth="1" name="border" color="0,0,0,240" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,220" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="3,-6" width="26" height="26" sprite="meleeToolFlashlight02" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="54" pivot="center" justify="center" text="{# round(cvar('batteryFlashLightDisplay') * 100, 1)}%" color="192,192,192,250" font_size="30"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/>
+				</rect>	
+
+				<rect pos="88,0" rows="1" cols="1" width="84" height="42" controller="HUDStatBar" visible="{# cvar('torchequipped') &gt; 0}">
+					<sprite depth="1" name="border" color="0,0,0,240" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,220" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="4,-8" width="26" height="26" sprite="meleeToolTorch" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="54" pivot="center" justify="center" text="{# round(cvar('batteryHandTorchDisplay') * 100, 1)}%" color="255,69,0,250" font_size="30"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/>
+				</rect>
+
+				<rect pos="88,0" rows="1" cols="1" width="84" height="42" controller="HUDStatBar" visible="{# cvar('burningshaftequipped') &gt; 0}">
+					<sprite depth="1" name="border" color="0,0,0,240" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,220" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="4,-6" width="26" height="26" sprite="modMeleeClubBurningShaft" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="55,-24" width="54" height="54" pivot="center" justify="center" text="{# round(cvar('batteryBurningShaftDisplay') * 100, 1)}%" color="255,69,0,250" font_size="30"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/>
+				</rect>
+				
+				<rect pos="88,46" rows="1" cols="1" width="84" height="42" controller="HUDStatBar" visible="{# cvar('helmetfilterequipped') &gt; 0}">
+					<sprite depth="1" name="border" color="0,0,0,240" type="sliced"/>
+					<sprite depth="2" name="background" pos="0,0" width="84" height="42" color="0,0,0,220" type="sliced" />
+					<sprite depth="2" name="windowIcon" pos="0,-6" width="32" height="32" sprite="resourceWaterFilter" atlas="ItemIconAtlas" color="[iconColor]" foregroundlayer="true" justify="center"/>
+					<label depth="15" name="LevelNumber"  pos="53,-24" width="54" height="54" pivot="center" justify="center" text="{cvar(helmetPurifierDurability)} uses" color="0,255,255,250" font_size="20"/>
+					<sprite depth="8" name="border" sprite="menu_empty3px" color="0,0,0,255" type="sliced" fillcenter="false"/>
+				</rect>
+			</grid> -->
+	</append>
+</Hells_Janitor>
