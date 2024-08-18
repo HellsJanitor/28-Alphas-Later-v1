@@ -5,9 +5,9 @@ The idea behind this mod is to slow progression, make traders less powerful, and
 
 16/08/24 - mod version 2.0.0, Updated for v1 of 7 Days to Die
 
-*** FEATURES *** 
+# FEATURES 
 
-*** GENERAL GAMEPLAY ***
+## GENERAL GAMEPLAY
 
 Player starts with a new debuff - Despair. Despair is dynamically affected by various different factors, including:
 
@@ -47,7 +47,7 @@ Dismember chance lowered to 1% per attribute level, max at 10%.
 Knife base damage rebalanced.
 
 
-*** AMMO, WEAPONS, MODS AND ARMOUR ***
+## AMMO, WEAPONS, MODS AND ARMOUR
 
 All arrows and bolts have a 25% chance of causing bleeding on a living target. Shame it doesn't work on the undead …
 
@@ -62,7 +62,7 @@ New mods - blessed metal for stopping mutated regen. NiCd is back, as is Flaming
 New clothing mod - cycling shorts. Install them in your leg armour/clothing and save 25% stamina when cycling.
 
 
-*** BLOCKS/WORKSTATIONS ***
+## BLOCKS/WORKSTATIONS
 
 The beehive. Find bees (and honey) in specific tree stumps (beehives) in the world, and use them to produce honey. Normal wild tree stumps have a higher chance of giving honey too.
 
@@ -84,7 +84,7 @@ The cement mixer now requires gasoline to work.
 The forge no longer requires you to smelt items. You can use the items directly from your inventory.
 
 
-*** BUFFS/DEBUFFS ***
+## BUFFS/DEBUFFS
 
 Snakes and Spider zombies will envenom you when they attack. Kill snakes to extract their venom, which can be used to make antivenom. Antivenom crafting is unlocked after reading 10 medical magazines, and it can appear in loot and trader stock.
 
@@ -99,7 +99,7 @@ Honey infection treatment reduced to 3% from 5%.
 Despair medication (Lavender, St. John’s Wort and Lithium) can be found in medical loot, and in trader stock. Lavender oil can be crafted from lavender flowers and used to treat despair.
 
 
-*** ZOMBIES/ENEMIES ***
+## ZOMBIES/ENEMIES
 
 Bears and wolves are back in the forest.
 
@@ -122,7 +122,7 @@ During bloodmoons, ‘some’ zombies have a 10% chance to respawn after death, 
 All “Fat” zombies (Cop,Big Mama and Tourist) are filled with a substance that’s irresistible to all zombies. If you are within range when they explode, they’ll cover you in this stuff - and attract other zombies ….
 
 
-*** FOOD/FARMING ***
+## FOOD/FARMING
 
 All canned food found in loot, vending machines, and trader stock is "uncooked". Cook it to make it safe to eat, or eat it and run the risk of food poisoning ...
 
@@ -149,7 +149,7 @@ Wild plants can be picked up - press ‘E’ by default to pick them up. Wild pl
 New plant - lavender. Purple flower found growing in the wild and in some POIs. Seeds crafted from lavender flowers, no unlock required. Lavender flowers can be found in loot and trader stock, and Lavender seeds in trader stock.
 
 
-*** PROGRESSION ***
+## PROGRESSION
 
 There is no more Daring Adventurer or Better Barter. Traders will give a drink after every quest tier, which will increase bartering by 5% and trader level by one for each tier of quests completed. MAKE SURE YOU HAVE SPACE IN YOUR INVENTORY FOR IT!!
 
@@ -158,7 +158,7 @@ There is a new perk, Survival Instinct. It's a "single-player" version of Charis
 Living off the Land now offers a discount to crops needed to make seeds, level 2 costs 4 crops per seed, level 3 costs 3 crops per seed.
 
 
-*** RESOURCES ***
+## RESOURCES
 
 Trees no longer give wood, they give wood logs, scraps, and branches. Logs can be placed and then chopped with an axe for wood, or use the table saw to do it quicker and better.
 
@@ -173,14 +173,14 @@ Most ammo can be dismantled into its component parts. Check ammo for recipes, an
 Repair kits are more expensive, and top tier weapons/armour/tools now require a specific repair kit.
 
 
-*** VEHICLES ***
+## VEHICLES
 
 All vehicles EXCEPT the bicycle are too heavy for you to carry. Crafted vehicles come in a crate for you to carry to their deploy position.
 
 Vehicles CANNOT be used underwater.
 
 
-Contributors:
+# Contributors:
 
 Particle systems/Unity edits 			- Author: redbeardt
 
