@@ -194,12 +194,6 @@ Original Chicken Coop model 			- Author: DocRabbit
 
 HJPlayerItemCount						- Author: w00kien00kie
 
-IDCAdvancedDewCollector 				- Author: I Don't Care
-
-IDCAnimalSnare							- Author: I Don't Care
-
-IDCBeehive								- Author: I Don't Care
-
 IDCCore									- Author: I Don't Care
 
 NVG changes (xml code)					- Author: Khaine
@@ -213,8 +207,6 @@ Material Modifier 						- Author: Zilox
 ColoredContainerStates					- Author: Scomar
 
 WMMTraderQuestMap						- Author: w00kien00kie
-
-Trader Quest addendum					- Author: CautiousPancake
 
 Radiated Wasteland (xml code)			- Author: gemini
 						
