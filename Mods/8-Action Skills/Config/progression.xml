@@ -790,7 +790,7 @@
 		</perk>
 		<!-- end gunslinger Learn By Use (lbu)-->
 		
-		<!-- begin Deap Cuts Learn By Use (lbu)-->
+		<!-- begin Deep Cuts Learn By Use (lbu)-->
 		<perk name="lbu_DeepCuts" max_level="50" parent="lbu_AgilitySkills" base_skill_point_cost="0" name_key="lbu_DeepCutsName" desc_key="lbu_DeepCutsDesc" long_desc_key="lbu_DeepCutsDesc" icon="ui_game_symbol_deep_cuts">
 			
 			<!--BCK verify ProgressionLevel, backup var should always be equal to ProgessionLevel-->
@@ -811,7 +811,7 @@
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="-0.01,-0.50" level="1,50" tags="perkDeepCuts">
 						<requirement name="CVarCompare" cvar="lbu_Degradation" operation="GTE" value="1"/>
 					</passive_effect>
-					<!--Kills return Stamina: +0.3% stamina for each level up to max of 15 at level 50 (half of Deap Cuts lvl 5)--> 
+					<!--Kills return Stamina: +0.3% stamina for each level up to max of 15 at level 50 (half of Deep Cuts lvl 5)--> 
 					<triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="@lbu_DCuts_StamIncrement" delay="1.0"/>
 			</effect_group>
 	
@@ -838,18 +838,18 @@
 					<triggered_effect trigger="onSelfDamagedOther" action="AddProgressionLevel" progression_name="lbu_DeepCuts" level="1"/>
 					<!--Upadate BCK var in line with ProgressionLevel progress-->
 					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" cvar="lbu_DeepCuts_Lvl" operation="add" value="1"/> 
-					<!--Kills return Stamina: +0.3% stamina for each level up to max of 15 at level 50 (half of Deap Cuts lvl 5)--> 
+					<!--Kills return Stamina: +0.3% stamina for each level up to max of 15 at level 50 (half of Deep Cuts lvl 5)--> 
 					<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" cvar="lbu_DCuts_StamIncrement" operation="add" value="0.3">
 							<requirement name="CVarCompare" cvar="@lbu_DCuts_StamIncrement" operation="LTE" value="15" />
 					</triggered_effect>		
-					<triggered_effect trigger="onSelfDamagedOther" action="ShowToolbeltMessage" message="Deap Cuts Skill Increased!"/>
+					<triggered_effect trigger="onSelfDamagedOther" action="ShowToolbeltMessage" message="Deep Cuts Skill Increased!"/>
 					<!--if max level then give free Skill Point-->
 					<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" buff="buffLBU_GiveProgressSkillPoint">
 						<requirement name="ProgressionLevel" progression_name="lbu_DeepCuts" operation="EQ" value="50"/>
 					</triggered_effect>
 			</effect_group>
 		</perk>
-		<!-- end Deap Cuts Learn By Use (lbu)-->
+		<!-- end Deep Cuts Learn By Use (lbu)-->
 		
 		
 		<!-- begin HiddenStrike Learn By Use (lbu)-->

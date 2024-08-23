@@ -680,11 +680,19 @@
 			</rect>			
 		</rect>
 
-		<rect name="hud" pos="90,40" side="left" controller="BuffPopoutList" pivot="BottomLeft">
-			<panel width="168" height="22" name="item" visible="false" pivot="right" disableautobackground="true" pos="70, 0" style="press" sound="[recipe_click]" on_hover="true">
-				<sprite depth="3" pos="0,0" name="Background" sprite="ui_game_popup" height="22" width="162" pivot="center" flip="Horizontally" color="[transparent]"/>
-				<sprite depth="4" name="Icon" size="20,20" pos="-54,0" pivot="center" color="[transparent]"/>
-				<label depth="6" name="TextContent" pos="-37,0" font_size="28" color="[white]" justify="center" width="118" height="20" pivot="left"/>
+		<!-- <rect name="hud" pos="90,40" side="left" controller="BuffPopoutList" pivot="BottomLeft"> -->
+			<!-- <panel width="168" height="22" name="item" visible="false" pivot="right" disableautobackground="true" pos="70, 0" style="press" sound="[recipe_click]" on_hover="true"> -->
+				<!-- <sprite depth="3" pos="0,0" name="Background" sprite="ui_game_popup" height="22" width="162" pivot="center" flip="Horizontally" color="[transparent]"/> -->
+				<!-- <sprite depth="4" name="Icon" size="20,20" pos="-54,0" pivot="center" color="[transparent]"/> -->
+				<!-- <label depth="6" name="TextContent" pos="-37,0" font_size="28" color="[white]" justify="center" width="118" height="20" pivot="left"/> -->
+			<!-- </panel> -->
+		<!-- </rect> -->
+		
+		<rect name="hud" pos="90,132" side="left" controller="BuffPopoutList" pivot="BottomLeft" >
+			<panel width="168" height="46" name="item" visible="false" pivot="right" disableautobackground="true" pos="70, 0" style="press" sound="[recipe_click]" on_hover="true" >
+				<sprite depth="3" pos="0,0"  name="Background" sprite="ui_game_popup" height="46" width="162" pivot="center" flip="Horizontally" color="[transparent]" />
+				<sprite depth="4" name="Icon" size="40,40" pos="-54,0" pivot="center" color="[transparent]"/>
+				<label depth="6" name="TextContent" pos="-37,0" font_size="28" color="[white]" justify="center" width="118" height="40" pivot="left"/>
 			</panel>
 		</rect>
 	</set>
