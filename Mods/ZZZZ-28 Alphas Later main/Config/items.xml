@@ -955,7 +955,7 @@
 	<!-- <set xpath="//item[not(contains(@name,'resource'))]/property[@name='Weight'][@value='200']/@value">100</set> -->
 	<!-- <set xpath="//item[not(contains(@name,'resource'))]/property[@name='Weight'][@value='250']/@value">125</set> -->
 	<!-- *** bandages and first aid kit *** -->
-	<set xpath="//item[@name='medicalBandage']//property[@name='Weight']/@value">40</set>
+	<!-- <set xpath="//item[@name='medicalBandage']//property[@name='Weight']/@value">40</set> -->
 	<!-- *** pipe weapons *** -->
 	<insertafter xpath="//item[contains(@name,'T0Pipe')]/property[@name='Material']">
 		<property name="Weight" value="25"/>
