@@ -2,6 +2,25 @@
 	<!-- search find all *** for changes -->
 
 	<append xpath="/items">
+		<!-- *** The Hornet *** -->
+		<!-- <item name="vehicleTheHornetPlaceable"> -->
+			<!-- <property name="Extends" value="vehicleMinibikePlaceable"/> -->
+			<!-- <property name="CustomIcon" value="vehicleTheHornetPlaceable"/> -->
+			<!-- <property name="Tags" value="vehicle,vengine,vfuel,vlight,canHaveCosmetic"/> -->
+			<!-- <property name="Meshfile" value="#@modfolder:Resources/HellsHornet.unity3d?The_Hornet"/> -->
+			<!-- <property name="EconomicValue" value="30000"/> -->
+			<!-- <property name="TraderStageTemplate" value="vehicleTier4"/>-->
+			<!-- <property class="Action1"> -->
+				<!-- <property name="Vehicle" value="vehicleTheHornet"/> -->
+				<!-- <property name="VehicleSize" value="4.5, 3.1, 7"/> -->
+			<!-- </property> -->
+			<!-- <effect_group name="main" tiered="false"> -->
+				<!-- <passive_effect name="ModSlots" operation="base_set" value="5"/> -->
+				<!-- <passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/> -->
+				<!-- <passive_effect name="DegradationMax" operation="base_set" value="8000"/> -->
+			<!-- </effect_group> -->
+		<!-- </item> -->
+		
 		<!-- *** fertilizer *** -->
 		<item name="resourceFertilizer">
 			<property name="HoldType" value="45"/>
@@ -18,6 +37,8 @@
 			<property name="Group" value="Resources,Chemicals,CFChemicals"/>
 			<property name="EconomicValue" value="30"/>
 			<property name="CraftingIngredientTime" value=".5"/>
+			<property name="SoundPickup" value="clay_grab"/>
+			<property name="SoundPlace" value="clay_place"/>
 		</item>
 	
 		<!-- *** feldspar *** -->
@@ -35,6 +56,8 @@
 			<property name="EconomicValue" value="50"/>
 			<property name="EconomicBundleSize" value="50"/>
 			<property name="Group" value="Resources"/>
+			<property name="SoundPickup" value="cement_grab"/>
+			<property name="SoundPlace" value="cement_place"/>
 		</item>
 		
 		<!-- *** bricks *** -->
@@ -50,6 +73,8 @@
 			<property name="EconomicBundleSize" value="100"/>
 			<property name="Group" value="Resources"/>
 			<property name="CraftingIngredientTime" value=".25"/>
+			<property name="SoundPickup" value="cobblestones_grab"/>
+			<property name="SoundPlace" value="cobblestones_place"/>
 		</item>
 		
 		<!-- *** Hoe and Schematic *** -->
@@ -58,6 +83,8 @@
 			<property name="CreativeMode" value="Player"/>
 			<property name="CustomIcon" value="meleeToolFarmT2IronHoe"/>
 			<property name="Unlocks" value="meleeToolFarmT2IronHoe"/>
+			<property name="SoundPickup" value="paper_grab"/>
+			<property name="SoundPlace" value="paper_place"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="meleeToolFarmT2IronHoe" operation="set" value="1"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
@@ -80,6 +107,10 @@
 			<property name="EconomicValue" value="120"/>
 			<property name="UnlockedBy" value="meleeToolFarmT2IronHoeSchematic"/>
 			<property name="ShowQuality" value="true"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+			<property name="SoundPickup" value="axe_iron_grab"/>
+			<property name="SoundPlace" value="axe_iron_place"/>
 			<property class="Action0">
 				<property name="Class" value="DynamicMelee"/>
 				<property name="Sphere" value=".15"/>
@@ -143,6 +174,8 @@
 			<!-- <property name="EconomicBundleSize" value="5"/> -->
 			<property name="CraftingIngredientTime" value="5"/>
 			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+			<property name="SoundPickup" value="plantfibers_grab"/>
+			<property name="SoundPlace" value="plantfibers_place"/>
 		</item>
 		<!-- *** chicken coop "fuel" *** -->
 		<item name="fuelChicken">
@@ -159,6 +192,8 @@
 			<property name="Group" value="Resources,Chemicals"/>
 			<property name="DegradationBreaksAfter" value="true"/>
 			<property name="ShowQuality" value="true"/>
+			<property name="SoundPickup" value="meat_charred_grab"/>
+			<property name="SoundPlace" value="meat_charred_place"/>
 		
 			<property class="Attributes">
 				<property name="DegradationMax" value="10"/>
@@ -265,6 +300,8 @@
 			<property name="Group" value="Resources,Chemicals"/>
 			<property name="DegradationBreaksAfter" value="true"/>
 			<property name="ShowQuality" value="true"/>
+			<property name="SoundPickup" value="BeehiveProduce"/>
+			<property name="SoundPlace" value="BeehiveProduce"/>
 		
 			<property class="Attributes">
 				<property name="DegradationMax" value="10"/>
@@ -298,6 +335,8 @@
 			<property name="SoundHolster" value="weapon_holster"/>
 			<property name="SoundJammed" value="ItemNeedsRepair"/>
 			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundPickup" value="machete_grab"/>
+			<property name="SoundPlace" value="machete_place"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="Tags" value="machete,melee,grunting,light,longShaft,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,perkTheHuntsman,canHaveCosmetic,bladeSkill,corpseRemoval"/>
 			<property name="TintColor" value="255,0,0"/>
@@ -426,6 +465,8 @@
 			<property name="Stacknumber" value="1"/><!-- STK book -->
 			<property name="EconomicValue" value="0"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="SoundPickup" value="paper_grab"/>
+			<property name="SoundPlace" value="paper_place"/>
 			<property class="Action0">
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_WeaponSpear"/>
@@ -450,6 +491,8 @@
 			<property name="Stacknumber" value="1"/><!-- STK book -->
 			<property name="EconomicValue" value="0"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="SoundPickup" value="paper_grab"/>
+			<property name="SoundPlace" value="paper_place"/>
 			<property class="Action0">
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_WeaponClub"/>
@@ -474,6 +517,8 @@
 			<property name="Stacknumber" value="1"/><!-- STK book -->
 			<property name="EconomicValue" value="0"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="SoundPickup" value="paper_grab"/>
+			<property name="SoundPlace" value="paper_place"/>
 			<property class="Action0">
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_WeaponSledge"/>
@@ -498,6 +543,8 @@
 			<property name="Stacknumber" value="1"/><!-- STK book -->
 			<property name="EconomicValue" value="0"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="SoundPickup" value="paper_grab"/>
+			<property name="SoundPlace" value="paper_place"/>
 			<property class="Action0">
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_WeaponKnuckle"/>
@@ -522,6 +569,8 @@
 			<property name="Stacknumber" value="1"/><!-- STK book -->
 			<property name="EconomicValue" value="0"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="SoundPickup" value="paper_grab"/>
+			<property name="SoundPlace" value="paper_place"/>
 			<property class="Action0">
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_WeaponKnife"/>
@@ -546,6 +595,8 @@
 			<property name="Stacknumber" value="1"/><!-- STK book -->
 			<property name="EconomicValue" value="0"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="SoundPickup" value="paper_grab"/>
+			<property name="SoundPlace" value="paper_place"/>
 			<property class="Action0">
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_WeaponBow"/>
@@ -570,6 +621,8 @@
 			<property name="Stacknumber" value="1"/><!-- STK book -->
 			<property name="EconomicValue" value="0"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="SoundPickup" value="paper_grab"/>
+			<property name="SoundPlace" value="paper_place"/>
 			<property class="Action0">
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_WeaponBaton"/>
@@ -618,6 +671,8 @@
 			<property name="Candrop" value="false"/>
 			<property name="DisplayType" value="cureInfection"/>
 			<property name="Group" value="Science,CFChemicals,Medical"/>
+			<property name="SoundPickup" value="steroids_grab"/>
+			<property name="SoundPlace" value="steroids_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -651,6 +706,8 @@
 			<property name="CustomIconTint" value="FFFFFF"/>
 			<property name="ItemTypeIcon" value="bundle"/>
 			<property name="DescriptionKey" value="MinibikeBundleDesc"/>
+			<property name="SoundPickup" value="club_wood_grab"/>
+			<property name="SoundPlace" value="club_wood_place"/>
 			<property class="Action0">
 				<property name="Create_item" value="vehicleMinibikePlaceable"/>
 				<property name="Create_item_count" value="1"/>
@@ -664,6 +721,8 @@
 			<property name="CustomIconTint" value="FFFFFF"/>
 			<property name="ItemTypeIcon" value="bundle"/>
 			<property name="DescriptionKey" value="MotorcycleBundleDesc"/>
+			<property name="SoundPickup" value="club_wood_grab"/>
+			<property name="SoundPlace" value="club_wood_place"/>
 			<property class="Action0">
 				<property name="Create_item" value="vehicleMotorcyclePlaceable"/>
 				<property name="Create_item_count" value="1"/>
@@ -676,7 +735,9 @@
 			<property name="CustomIcon" value="bundleVehicle4x4"/>
 			<property name="CustomIconTint" value="FFFFFF"/>
 			<property name="ItemTypeIcon" value="bundle"/>
-			<property name="DescriptionKey" value="4x4BundleDesc"/>
+			<property name="DescriptionKey" value="4x4BundleDesc"/>	
+			<property name="SoundPickup" value="club_wood_grab"/>
+			<property name="SoundPlace" value="club_wood_place"/>			
 			<property class="Action0">
 				<property name="Create_item" value="vehicle4x4TruckPlaceable"/>
 				<property name="Create_item_count" value="1"/>
@@ -690,6 +751,8 @@
 			<property name="CustomIconTint" value="FFFFFF"/>
 			<property name="ItemTypeIcon" value="bundle"/>
 			<property name="DescriptionKey" value="GyroBundleDesc"/>
+			<property name="SoundPickup" value="club_wood_grab"/>
+			<property name="SoundPlace" value="club_wood_place"/>
 			<property class="Action0">
 				<property name="Create_item" value="vehicleGyrocopterPlaceable"/>
 				<property name="Create_item_count" value="1"/>
@@ -702,6 +765,8 @@
 			<property name="CreativeMode" value="Player"/>
 			<property name="CustomIcon" value="modCyclingShorts"/>
 			<property name="Unlocks" value="modBicycleStaminaSaver"/>
+			<property name="SoundPickup" value="paper_grab"/>
+			<property name="SoundPlace" value="paper_place"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="modBicycleStaminaSaver" operation="set" value="1"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
@@ -733,6 +798,8 @@
 			<property name="EconomicValue" value="140"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="Group" value="Resources,Chemicals"/>
+			<property name="SoundPickup" value="bottle_acid_grab"/>
+			<property name="SoundPlace" value="bottle_acid_place"/>
 		</item>
 	
 		<!-- *** anti-rad throwables *** -->
@@ -740,8 +807,10 @@
 			<property name="Extends" value="thrownAmmoPipeBomb"/>
 			<property name="Tags" value="ammo,weapon,attPerception,perkDemolitionsExpert,explosivesSkill"/>
 			<property name="CustomIcon" value="thrownAmmoAntiRadPipeBomb"/>
-			<property name="DescriptionKey" value="thrownAmmoAntiRadPipeBombDesc"/>
+			<property name="DescriptionKey" value="thrownAmmoAntiRadPipeBombDesc"/>			
 			<property name="Stacknumber" value="20"/>
+			<property name="SoundPickup" value="pipebomb_grab"/>
+			<property name="SoundPlace" value="pipebomb_place"/>
 		
 			<effect_group tiered="false">
 				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated,mutant"/>
@@ -755,6 +824,8 @@
 			<property name="CustomIcon" value="thrownGrenadeAntiRadContact"/>
 			<property name="DescriptionKey" value="thrownGrenadeAntiRadContactDesc"/>
 			<property name="Stacknumber" value="25"/>
+			<property name="SoundPickup" value="grenade_grab"/>
+			<property name="SoundPlace" value="grenade_place"/>
 		
 			<effect_group tiered="false">
 				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated,mutant"/>
@@ -768,6 +839,8 @@
 			<property name="CustomIcon" value="thrownGrenadeAntiRadContact"/>
 			<property name="DescriptionKey" value="thrownAntiRadGrenadeDesc"/>
 			<property name="Stacknumber" value="25"/>
+			<property name="SoundPickup" value="grenade_grab"/>
+			<property name="SoundPlace" value="grenade_place"/>
 		
 			<effect_group tiered="false">
 				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated,mutant"/>
@@ -781,6 +854,8 @@
 			<property name="CustomIcon" value="thrownAmmoAntiRadMolotovCocktail"/>
 			<property name="DescriptionKey" value="thrownAmmoAntiRadMolotovCocktailDesc"/>
 			<property name="Stacknumber" value="20"/>
+			<property name="SoundPickup" value="molotov_grab"/>
+			<property name="SoundPlace" value="molotov_place"/>
 		
 			<effect_group tiered="false">
 				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated,mutant"/>
@@ -812,7 +887,9 @@
 		<display_value name="dCraftingTime" value=".25"/>
 	</set>
 	
-	<!-- *** nerf honey to 3% cure for infection *** -->
+	<!-- *** nerf honey to 3% cure for infection (and change sound pickup and place)*** -->
+	<set xpath="//item[@name='foodHoney']/property[@name='SoundPickup']/@value">aloe_grab</set>
+	<set xpath="//item[@name='foodHoney']/property[@name='SoundPlace']/@value">aloe_place</set>
 	<set xpath="//item[@name='foodHoney']/effect_group[@tiered='false']/display_value[@name='dCureInfection']/@value">.03</set>
 	<set xpath="//item[@name='foodHoney']/effect_group[@tiered='false']//triggered_effect[@cvar='$buffInfectionAddCurePerc']/@value">3</set>
 	
@@ -1093,6 +1170,8 @@
 		<property name="EconomicValue" value="500" />
 		<property name="SellableToTrader" value="false" />
 		<property name="ItemTypeIcon" value="workbench" />
+		<property name="SoundPickup" value="crucible_grab"/>
+		<property name="SoundPlace" value="crucible_place"/>
 	  </item>
 	</append>
 	
@@ -1375,6 +1454,8 @@
 			<property name="EconomicValue" value="0"/>
 			<property name="Stacknumber" value="5"/>
 			<property name="Group" value="Science,CFChemicals,Medical,Basics"/>
+			<property name="SoundPickup" value="steroids_grab"/>
+			<property name="SoundPlace" value="steroids_place"/>
 		</item>
 	
 		<!-- *** antivenom *** -->
@@ -1392,6 +1473,8 @@
 			<property name="Stacknumber" value="5"/>
 			<property name="UnlockedBy" value="craftingMedical"/>
 			<property name="Group" value="Science,CFChemicals,Medical,TCMedical,Basics"/>
+			<property name="SoundPickup" value="drug_painkillers_grab"/>
+			<property name="SoundPlace" value="drug_painkillers_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -1487,6 +1570,8 @@
 			<property name="EconomicValue" value="0"/>
 			<property name="DisplayType" value="waterGrandpasAwesomeSauce"/>
 			<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+			<property name="SoundPickup" value="grandpas_awesome_grab"/>
+			<property name="SoundPlace" value="grandpas_awesome_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1"/>
@@ -1519,6 +1604,8 @@
 			<property name="EconomicValue" value="0"/>
 			<property name="DisplayType" value="waterGrandpasAwesomeSauce"/>
 			<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+			<property name="SoundPickup" value="grandpas_awesome_grab"/>
+			<property name="SoundPlace" value="grandpas_awesome_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1"/>
@@ -1551,6 +1638,8 @@
 			<property name="EconomicValue" value="0"/>
 			<property name="DisplayType" value="waterGrandpasAwesomeSauce"/>
 			<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+			<property name="SoundPickup" value="grandpas_awesome_grab"/>
+			<property name="SoundPlace" value="grandpas_awesome_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1"/>
@@ -1583,6 +1672,8 @@
 			<property name="EconomicValue" value="0"/>
 			<property name="DisplayType" value="waterGrandpasAwesomeSauce"/>
 			<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+			<property name="SoundPickup" value="grandpas_awesome_grab"/>
+			<property name="SoundPlace" value="grandpas_awesome_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1"/>
@@ -1615,6 +1706,8 @@
 			<property name="EconomicValue" value="0"/>
 			<property name="DisplayType" value="waterGrandpasAwesomeSauce"/>
 			<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+			<property name="SoundPickup" value="grandpas_awesome_grab"/>
+			<property name="SoundPlace" value="grandpas_awesome_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1"/>
@@ -1681,6 +1774,8 @@
 			<property name="RepairAmount" value="100"/>
 			<property name="LootExpValue" value="1"/>
 			<property name="CraftingIngredientTime" value=".2"/>
+			<property name="SoundPickup" value="plantfibers_grab"/>
+			<property name="SoundPlace" value="plantfibers_place"/>
 		</item>
 		
 		<!-- *** branches to replace wood from shrubbery *** -->
@@ -1701,6 +1796,8 @@
 			<property name="RepairAmount" value="100"/>
 			<property name="LootExpValue" value="1"/>
 			<property name="CraftingIngredientTime" value=".2"/>
+			<property name="SoundPickup" value="oil_grab"/>
+			<property name="SoundPlace" value="oil_place"/>
 		</item>
 		
 		<!-- *** mod schematics *** -->
@@ -2144,6 +2241,8 @@
 			<property name="Extends" value="foodCanMiso"/>
 			<property name="CustomIcon" value="foodCanCarrotsrusty"/>
 			<property name="EconomicValue" value="20"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="10"/><display_value name="dDysenteryRisk" value=".10"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
@@ -2172,6 +2271,8 @@
 			<property name="Weight" value="0"/>
 			<property name="EconomicValue" value="60"/>
 			<property name="Stacknumber" value="10"/><!-- STK food -->
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -2190,6 +2291,8 @@
 		<item name="foodCanChickencooked">
 			<property name="CustomIcon" value="foodCanChicken"/>
 			<property name="Extends" value="foodCanBeefcooked"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
@@ -2200,6 +2303,8 @@
 		<item name="foodCanLambcooked">
 			<property name="CustomIcon" value="foodCanLamb"/>
 			<property name="Extends" value="foodCanBeefcooked"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
@@ -2210,6 +2315,8 @@
 		<item name="foodCanChilicooked">
 			<property name="CustomIcon" value="foodCanChili"/>
 			<property name="Extends" value="foodCanBeefcooked"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
@@ -2220,6 +2327,8 @@
 		<item name="foodCanTunacooked">
 			<property name="CustomIcon" value="foodCanTuna"/>
 			<property name="Extends" value="foodCanBeefcooked"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<property name="EconomicValue" value="20"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
@@ -2232,6 +2341,8 @@
 			<property name="CustomIcon" value="foodCanSham"/>
 			<property name="Extends" value="foodCanBeefcooked"/>
 			<property name="UnlockedBy" value="foodCanShamSchematic"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
@@ -2242,6 +2353,8 @@
 		<item name="foodCanPastacooked">
 			<property name="CustomIcon" value="foodCanPasta"/>
 			<property name="Extends" value="foodCanBeefcooked"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
@@ -2252,6 +2365,8 @@
 		<item name="foodCanSalmoncooked">
 			<property name="CustomIcon" value="foodCanSalmon"/>
 			<property name="Extends" value="foodCanBeefcooked"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
@@ -2263,6 +2378,8 @@
 			<property name="CustomIcon" value="foodCanMiso"/>
 			<property name="Extends" value="foodCanBeefcooked"/>
 			<property name="DisplayType" value="foodWaterRaw"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
@@ -2275,6 +2392,8 @@
 			<property name="CustomIcon" value="foodCanPeas"/>
 			<property name="Extends" value="foodCanMisocooked"/>
 			<property name="EconomicValue" value="20"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
@@ -2286,6 +2405,8 @@
 		<item name="foodCanPearscooked">
 			<property name="CustomIcon" value="foodCanPears"/>
 			<property name="Extends" value="foodCanMisocooked"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
@@ -2297,6 +2418,8 @@
 		<item name="foodCanSoupcooked">
 			<property name="CustomIcon" value="foodCanSoup"/>
 			<property name="Extends" value="foodCanMisocooked"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<property name="EconomicValue" value="40"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
@@ -2309,6 +2432,8 @@
 		<item name="foodCanStockcooked">
 			<property name="CustomIcon" value="foodCanStock"/>
 			<property name="Extends" value="foodCanMisocooked"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<property name="EconomicValue" value="40"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
@@ -2321,6 +2446,8 @@
 		<item name="foodCanCarrotscooked">
 			<property name="CustomIcon" value="foodCanCarrots"/>
 			<property name="Extends" value="foodCanMisocooked"/>
+			<property name="SoundPickup" value="canfood_grab"/>
+			<property name="SoundPlace" value="canfood_place"/>
 			<property name="EconomicValue" value="20"/>
 			<effect_group tiered="false" name="Food Tier 0">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
@@ -2343,6 +2470,8 @@
 			<property name="Stacknumber" value="10"/><!-- STK food -->
 			<property name="EconomicValue" value="140"/>
 			<property name="UnlockedBy" value="craftingFood"/>
+			<property name="SoundPickup" value="food_bowl1_grab"/>
+			<property name="SoundPlace" value="food_bowl1_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -2372,6 +2501,8 @@
 			<property name="Stacknumber" value="10"/><!-- STK food -->
 			<property name="EconomicValue" value="140"/>
 			<property name="UnlockedBy" value="craftingFood"/>
+			<property name="SoundPickup" value="food_bowl1_grab"/>
+			<property name="SoundPlace" value="food_bowl1_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -2401,6 +2532,8 @@
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="10"/><!-- STK food -->
 			<property name="EconomicValue" value="25"/>
+			<property name="SoundPickup" value="food_bowl1_grab"/>
+			<property name="SoundPlace" value="food_bowl1_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="2.0"/>
@@ -2428,6 +2561,8 @@
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="10"/><!-- STK food -->
 			<property name="EconomicValue" value="25"/>
+			<property name="SoundPickup" value="food_bowl1_grab"/>
+			<property name="SoundPlace" value="food_bowl1_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="2.0"/>
@@ -2455,6 +2590,8 @@
 			<property name="Material" value="Morganic"/>
 			<property name="Stacknumber" value="10"/><!-- STK food -->
 			<property name="EconomicValue" value="25"/>
+			<property name="SoundPickup" value="food_bowl1_grab"/>
+			<property name="SoundPlace" value="food_bowl1_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="2.0"/>
@@ -2479,6 +2616,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="400"/>
 			<property name="CustomIcon" value="HandgunRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2489,6 +2628,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="400"/>
 			<property name="CustomIcon" value="ShotgunRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2499,6 +2640,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="400"/>
 			<property name="CustomIcon" value="MachinegunRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2509,6 +2652,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="400"/>
 			<property name="CustomIcon" value="RifleRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2519,6 +2664,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="400"/>
 			<property name="CustomIcon" value="RobotRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2529,6 +2676,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="400"/>
 			<property name="CustomIcon" value="BowRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2539,6 +2688,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="400"/>
 			<property name="CustomIcon" value="StunBatonRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2549,6 +2700,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="450"/>
 			<property name="CustomIcon" value="KnucklesRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2559,6 +2712,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="450"/>
 			<property name="CustomIcon" value="ClubRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2569,6 +2724,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="450"/>
 			<property name="CustomIcon" value="SledgehammerRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2579,6 +2736,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="450"/>
 			<property name="CustomIcon" value="MacheteRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2589,6 +2748,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="450"/>
 			<property name="CustomIcon" value="SpearRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2599,6 +2760,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="450"/>
 			<property name="CustomIcon" value="RocketLauncherRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2609,6 +2772,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="450"/>
 			<property name="CustomIcon" value="SteelToolRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2619,6 +2784,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="450"/>
 			<property name="CustomIcon" value="MotorToolRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2629,6 +2796,8 @@
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="450"/>
 			<property name="CustomIcon" value="SteelArmourRepairKit"/>
+			<property name="SoundPickup" value="repairkits_grab"/>
+			<property name="SoundPlace" value="repairkits_place"/>
 			<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		</item>
 
@@ -2827,6 +2996,8 @@
 			<property name="UnlockedBy" value="craftingMedical"/><!-- perkPhysician,drugAntibioticsSchematic, -->
 			<property name="DisplayType" value="cureDespair"/>
 			<property name="Group" value="Science,CFChemicals,Medical,TCMedical"/>
+			<property name="SoundPickup" value="drug_antibiotics_grab"/>
+			<property name="SoundPlace" value="drug_antibiotics_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -2858,7 +3029,8 @@
 			<property name="DisplayType" value="cureDespair"/>
 			<property name="TintColor" value="120,255,120"/>
 			<property name="Group" value="Science,CFChemicals,Medical,TCMedical"/>
-
+			<property name="SoundPickup" value="drug_painkillers_grab"/>
+			<property name="SoundPlace" value="drug_painkillers_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -2890,7 +3062,8 @@
 			<property name="DisplayType" value="cureDespair"/>
 			<property name="TintColor" value="221,160,221"/>
 			<property name="Group" value="Science,CFChemicals,Medical,TCMedical"/>
-
+			<property name="SoundPickup" value="grandpas_fergitn_grab"/>
+			<property name="SoundPlace" value="grandpas_fergitn_place"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>

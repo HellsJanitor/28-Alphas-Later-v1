@@ -33,6 +33,8 @@
 			<property name="SoundUnholster" value="weapon_unholster"/>
 			<property name="SoundHolster" value="weapon_holster"/>
 			<property name="Group" value="Basics,Building,advBuilding"/>
+			<property name="SoundPickup" value="torch_grab"/>
+			<property name="SoundPlace" value="torch_place"/>
 		</item>	
 		<!-- *** battery *** -->
 		<item name="resourceNiCdBattery">
@@ -49,6 +51,8 @@
 			<property name="Group" value="Resources"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,Chemicals"/>
+			<property name="SoundPickup" value="bullettips_grab"/>
+			<property name="SoundPlace" value="bullettips_place"/>
 		</item>
 		<!-- *** helmet filter *** -->
 		<item name="resourceHelmetWaterFilter">
