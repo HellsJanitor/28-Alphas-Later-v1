@@ -3795,6 +3795,28 @@
 			<property name="RootMotion" value="true"/>
 			<property name="LookAtAngle" value="0"/>
 		</entity_class>
+		
+		<!-- *** The Hornet *** -->
+		<entity_class name="vehicleTheHornet">
+			<property name="Class" value="EntityVJeep"/>
+			<property name="Tags" value="vehicle,usesGas"/>
+			<property name="Parent" value="Cars"/>
+			<property name="Prefab" value="#@modfolder:Resources/HellsHornet.unity3d?The_Hornet"/>
+			<property name="ModelType" value="Standard"/>
+			<property name="SurfaceCategory" value="metal"/>
+			<property name="IgnoreTrigger" value="true"/>
+			<property name="LootListAlive" value="vehicle4x4Truck"/>
+			<property name="IsEnemyEntity" value="false"/>
+			<property name="Explosion.ParticleIndex" value="29"/>
+			<property name="Explosion.RadiusBlocks" value="5"/>
+			<property name="Explosion.RadiusEntities" value="5"/>
+			<property name="Explosion.BlockDamage" value="100"/>
+			<property name="Explosion.EntityDamage" value="100"/>
+			<property name="RotateToGround" value="true"/>
+			<property name="Faction" value="none"/>
+			<property name="MapIcon" value="ui_game_symbol_4x4"/>
+			<property name="NavObject" value="4x4"/>
+		</entity_class>
 	</append>
 	
 	<!-- *** AOE Despair *** -->
@@ -3902,11 +3924,11 @@
 	<!-- <set xpath="//entity_class[starts-with(@name,'zombieMutated')]//property[@name='LootDropProb']/@value">.03</set>	 -->
 	
 	<!-- *** buff for random zombie walk type *** -->
-	<append xpath="//entity_class[starts-with(@name,'zombie') or (starts-with(@name,'hellsZombie')) and not (@name='zombieTemplateMale') and not (contains(@name,'Spider')) and not (contains(@name,'Crawler'))]">
-		<effect_group>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffRandomWalk"/>
-		</effect_group>
-	</append>
+	<!-- <append xpath="//entity_class[starts-with(@name,'zombie') or (starts-with(@name,'hellsZombie'))][not (starts-with(@name,'zombieTemplate')) and not (starts-with(@name,'zombieSpider')) and not (starts-with(@name,'zombieSteveCrawler'))]"> -->
+		<!-- <effect_group> -->
+			<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffRandomWalk"/> -->
+		<!-- </effect_group> -->
+	<!-- </append>		 -->
 </configs>
 <!-- *** potential particle effects for zombies *** -->
 <!--use1 with name="TintShaderProperties" value="_TintColor"-->
