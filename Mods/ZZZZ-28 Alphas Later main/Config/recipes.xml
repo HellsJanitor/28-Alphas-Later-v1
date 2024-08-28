@@ -586,17 +586,17 @@
 	</insertafter> -->
 	
 	<!-- *** tools required for crafting *** -->
-	<setattribute xpath="//recipe[contains(@name,'Farmer')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
-	<setattribute xpath="//recipe[contains(@name,'Biker')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
-	<setattribute xpath="//recipe[contains(@name,'Scavenger')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
-	<setattribute xpath="//recipe[contains(@name,'Ranger')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
-	<setattribute xpath="//recipe[contains(@name,'Commando')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
-	<setattribute xpath="//recipe[contains(@name,'Assassin')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
+	<setattribute xpath="//recipe[contains(@name,'armorFarmer')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
+	<setattribute xpath="//recipe[contains(@name,'armorBiker')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
+	<setattribute xpath="//recipe[contains(@name,'armorScavenger')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
+	<setattribute xpath="//recipe[contains(@name,'armorRanger')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
+	<setattribute xpath="//recipe[contains(@name,'armorCommando')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
+	<setattribute xpath="//recipe[contains(@name,'armorAssassin')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
 	
-	<setattribute xpath="//recipe[contains(@name,'Miner')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
-	<setattribute xpath="//recipe[contains(@name,'Nomad')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
-	<setattribute xpath="//recipe[contains(@name,'Nerd')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
-	<setattribute xpath="//recipe[contains(@name,'Raider')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
+	<setattribute xpath="//recipe[contains(@name,'armorMiner')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
+	<setattribute xpath="//recipe[contains(@name,'armorNomad')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
+	<setattribute xpath="//recipe[contains(@name,'armorNerd')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
+	<setattribute xpath="//recipe[contains(@name,'armorRaider')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
 	
 	<setattribute xpath="//recipe[@name='autoTurret']" name="craft_tool">meleeToolSalvageT2Ratchet</setattribute>
 	<setattribute xpath="//recipe[@name='batterybank']" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
@@ -1327,7 +1327,7 @@
 		<ingredient name="drinkJarBoiledWater" count="1"/>
 		<ingredient name="resourceCloth" count="1"/>
 		<effect_group>
-			<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="resourceCropLavender"/>
+			<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-2,-4" tags="resourceCropLavender"/>
 		</effect_group>
 	</recipe>
 	

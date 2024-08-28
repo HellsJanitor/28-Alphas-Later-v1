@@ -87,7 +87,6 @@ idcXuiBait,Bee
 beehiveTreeStump,Beehive
 honeyBeeDesc,A wild honey bee. Will produce up to 20 honey when placed in a bee hive.
 honeyBee,Bee						 
-goDifficultyDesc,"Choose from 6 Difficulty settings.\n\n1. Scavenger: [FFC800]Enemies deal 100% damage[-]\n[FF4500]Enemies have no health bonus[-]\n2. Adventurer: [FFC800]Enemies deal 25% more damage[-] \n[FF4500]Enemies have 10% more health[-]\n3. Nomad: [FFC800]Enemies deal 50% more damage[-] \n[FF4500]Enemies have 20% more health[-]\n4. Warrior: [FFC800]Enemies deal 75% more damage[-] \n[FF4500]Enemies have 30% more health[-]\n5. Survivalist: [FFC800]Enemies deal 100% more damage[-] \n[FF4500]Enemies have 40% more health[-]\n6. Insane: [FFC800]Enemies deal 150% more damage[-] \n[FF4500]Enemies have 50% more health[-]"
 goLootAbundanceDesc,The percentage of loot to spawn in containers and on zombies. 100% [FFC800]MINIMUM[-] is [FFC800]HIGHLY[-] recommended.
 HellsModSpawnText,"This mod will challenge you in ways that the vanilla game doesn't,\nwhile keeping the familiar vanilla look & feel.\n\n[00FF00]Important Points![-]\nZombies only take MAXIMUM damage with [FFC800]headshots[-],[FFC800] fire[-], & [FFC800]explosives[-]!\nZombies[FF4500] DO NOT [-]bleed!\nThe Wasteland biome is [00FF00]IRRADIATED[-]! (a Hazmat suit is required)\n\nLoot is reduced, harvest counts are reduced, crafting costs more resources, and traders are more expensive.\n\nHave fun!!"
 HellsModSpawnText_title,"Welcome to [FFC800]28 ALPHAS LATER[-]!"
@@ -532,19 +531,19 @@ SteelToolRepairKitDesc,"This Repair Kit is used to repair steel axes, picks, and
 StunBatonRepairKit,Stun Baton Repair Kit
 StunBatonRepairKitDesc,This Repair Kit is used to repair stun batons.
 startermeleeWpnSpearT0StoneSpear,Stone spear
-startermeleeWpnSpearT0StoneSpearDesc,Read this to receive a Q4 stone spear.
+startermeleeWpnSpearT0StoneSpearDesc,Read this to receive a Q1 stone spear.
 startermeleeWpnClubT0WoodenClub,Wooden club
-startermeleeWpnClubT0WoodenClubDesc,Read this to receive a Q4 wooden club.
+startermeleeWpnClubT0WoodenClubDesc,Read this to receive a Q1 wooden club.
 startermeleeWpnSledgeT0StoneSledgehammer,Stone sledgehammer
-startermeleeWpnSledgeT0StoneSledgehammerDesc,Read this to receive a Q4 stone sledgehammer.
+startermeleeWpnSledgeT0StoneSledgehammerDesc,Read this to receive a Q1 stone sledgehammer.
 startermeleeWpnKnucklesT0LeatherKnuckles,Knuckle wraps
-startermeleeWpnKnucklesT0LeatherKnucklesDesc,Read this to receive Q4 knuckle wraps.
+startermeleeWpnKnucklesT0LeatherKnucklesDesc,Read this to receive Q1 knuckle wraps.
 startermeleeWpnBladeT0BoneKnife,Bone knife
-startermeleeWpnBladeT0BoneKnifeDesc,Read this to receive a Q4 bone knife.
+startermeleeWpnBladeT0BoneKnifeDesc,Read this to receive a Q1 bone knife.
 startergunBowT0PrimitiveBow,Primitive bow
-startergunBowT0PrimitiveBowDesc,Read this to receive a Q4 primitive bow\nand 10 stone arrows.
+startergunBowT0PrimitiveBowDesc,Read this to receive a Q1 primitive bow\nand 10 stone arrows.
 startermeleeWpnBatonT0PipeBaton,Pipe baton
-startermeleeWpnBatonT0PipeBatonDesc,Read this to receive a Q4 pipe baton.
+startermeleeWpnBatonT0PipeBatonDesc,Read this to receive a Q1 pipe baton.
 tableSawDesc,"A workstation for turning logs into wood planks more quickly and effeciently."
 tablesawTip,"The Tablesaw unlocks the ability to turn wood logs into wood more quickly & effeciently. Inside your land claim area all workstations can be picked up by holding ''E'' and selecting ''TAKE'' from the radial menu."
 tablesawTip_title,Tablesaw
