@@ -258,6 +258,7 @@
 				<!-- <triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="despair_trigger" allow_client_call="true"/> -->
 				<!-- <triggered_effect trigger="onSelfRespawn" action="CallGameEvent" event="despair_trigger" allow_client_call="true"/> -->
 				<!-- <triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="despair_trigger" allow_client_call="true"/> -->
+				<!-- <requirement name="NotHasBuff" buff="buffDespairTICheck"/> -->
 			</effect_group>
 			<!-- well fed -->
 			<effect_group>
@@ -325,7 +326,7 @@
 			<effect_group>
 				<requirement name="HitLocation" body_parts="Head"/>
 				<requirement name="EntityTagCompare" target="other" tags="zombie,feral,radiated,hazmat,mutated,mutant"/>
-				<requirement name="IsAlive" target="other" tags="zombie,mutated,mutant"/>
+				<requirement name="IsAlive" target="other" tags="zombie,feral,radiated,hazmat,mutated,mutant"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value=".50"/>
 			</effect_group>
 			<!-- trigger for moving vehicle crates -->
@@ -744,7 +745,7 @@
 			</effect_group>
 			
 			<effect_group>
-				<triggered_effect name="onDismember" target="self" action="RemoveBuff" buff="buffRandomWalk"/>
+				<triggered_effect trigger="onDismember" target="self" action="RemoveBuff" buff="buffRandomWalk"/>
 			</effect_group>
 		</buff>
 
@@ -815,6 +816,12 @@
 				<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 				<requirement name="HasBuff" buff="buffWallTorch"/>
 			</effect_group>
+		</buff>
+		
+		<!-- *** dummy buff to check if TI is active *** -->
+		
+		<buff name="buffDespairTICheck" hidden="true">	
+		
 		</buff>
 	
 		<!-- *** Despair *** -->
