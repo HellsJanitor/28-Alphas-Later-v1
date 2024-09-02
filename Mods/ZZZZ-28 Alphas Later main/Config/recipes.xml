@@ -1206,19 +1206,19 @@
 		<recipe name="foodScrambledEggs" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
 			<ingredient name="foodEgg" count="3"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodEgg"/>
+				<passive_effect name="CraftingIngredientCount" level="1,2,3" operation="base_add" value="-1,-1,-2" tags="foodEgg"/>
 			</effect_group>
 		</recipe>
 		<recipe name="foodTrampStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
 			<ingredient name="foodCanCatfood" count="3"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodCanCatfood"/>
+				<passive_effect name="CraftingIngredientCount" level="1,2,3" operation="base_add" value="-1,-1,-2" tags="foodCanCatfood"/>
 			</effect_group>
 		</recipe>
 		<recipe name="foodVagabondStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
 			<ingredient name="foodCanDogfood" count="3"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodCanDogfood"/>
+				<passive_effect name="CraftingIngredientCount" level="1,2,3" operation="base_add" value="-1,-1,-2" tags="foodCanDogfood"/>
 			</effect_group>
 		</recipe>
 		<recipe name="foodShamChowder" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
