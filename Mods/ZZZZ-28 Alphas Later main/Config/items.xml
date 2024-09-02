@@ -1,25 +1,92 @@
 <configs>
 	<!-- search find all *** for changes -->
-
+	
+	<!-- *** remove unlock requirement for the bicycle *** -->
+	<!-- <remove xpath="/items/item[@name='vehicleBicycleChassis']/property/[@name='UnlockedBy']"/> -->
+	<!-- <remove xpath="/items/item[@name='vehicleBicycleHandlebars']/property/[@name='UnlockedBy']"/> -->
+	
 	<append xpath="/items">
+		<!-- *** Dirt Bike *** -->
+		<item name="vehicleRuinRipperChassis">
+			<property name="Extends" value="vehicleWheels"/>
+			<property name="CustomIcon" value="vehicleRuinRipperChassis"/>
+			<property name="Tags" value="vehiclesSkill"/>
+			<property name="EconomicValue" value="3000"/>
+			<property name="TraderStageTemplate" value="vehicleTier1"/>
+			<property name="UnlockedBy" value="craftingVehicles"/><!-- perkGreaseMonkey,vehicleMotorcycleChassisSchematic, -->
+			<property name="SoundPickup" value="chassis_grab"/>
+			<property name="SoundPlace" value="chassis_place"/>
+		</item>
+
+		<item name="vehicleRuinRipperHandlebars">
+			<property name="Extends" value="vehicleWheels"/>
+			<property name="CustomIcon" value="vehicleRuinRipperHandlebars"/>
+			<property name="Tags" value="vehiclesSkill"/>
+			<property name="EconomicValue" value="3000"/>
+			<property name="TraderStageTemplate" value="vehicleTier1"/>
+			<property name="UnlockedBy" value="craftingVehicles"/><!-- perkGreaseMonkey,vehicleMotorcycleHandlebarsSchematic, -->
+			<property name="SoundPickup" value="handlebars_grab"/>
+			<property name="SoundPlace" value="handlebars_place"/>
+		</item>
+
+		<item name="vehicleRuinRipperPlaceable">
+			<property name="Extends" value="vehicleMinibikePlaceable"/>
+			<property name="CustomIcon" value="vehicleRuinRipperPlaceable"/>
+			<property name="Tags" value="vehicle,vengine,vfuel,vlight,canHaveCosmetic"/>
+			<property name="Meshfile" value="#@modfolder:Resources/DirtBike.unity3d?Ruin_Runner"/>
+			<property name="EconomicValue" value="10000"/>
+			<property name="TraderStageTemplate" value="vehicleTier2"/>
+			<property name="SoundPickup" value="motorcycle_grab"/>
+			<property name="SoundPlace" value="motorcycle_place"/>
+			<property class="Action1">
+				<property name="Vehicle" value="vehicleRuinRipper"/>
+				<property name="VehicleSize" value="1.3, 1.9, 3"/>
+			</property>
+			<effect_group name="main" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="4"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="4000"/>
+			</effect_group>
+		</item>
+		
 		<!-- *** The Hornet *** -->
-		<!-- <item name="vehicleTheHornetPlaceable"> -->
-			<!-- <property name="Extends" value="vehicleMinibikePlaceable"/> -->
-			<!-- <property name="CustomIcon" value="vehicleTheHornetPlaceable"/> -->
-			<!-- <property name="Tags" value="vehicle,vengine,vfuel,vlight,canHaveCosmetic"/> -->
-			<!-- <property name="Meshfile" value="#@modfolder:Resources/HellsHornet.unity3d?The_Hornet"/> -->
-			<!-- <property name="EconomicValue" value="30000"/> -->
-			<!-- <property name="TraderStageTemplate" value="vehicleTier4"/>-->
-			<!-- <property class="Action1"> -->
-				<!-- <property name="Vehicle" value="vehicleTheHornet"/> -->
-				<!-- <property name="VehicleSize" value="4.5, 3.1, 7"/> -->
-			<!-- </property> -->
-			<!-- <effect_group name="main" tiered="false"> -->
-				<!-- <passive_effect name="ModSlots" operation="base_set" value="5"/> -->
-				<!-- <passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/> -->
-				<!-- <passive_effect name="DegradationMax" operation="base_set" value="8000"/> -->
-			<!-- </effect_group> -->
-		<!-- </item> -->
+		<item name="vehicleTheHornetChassis">
+			<property name="Extends" value="vehicleWheels"/>
+			<property name="CustomIcon" value="vehicleTheHornetChassis"/>
+			<property name="Tags" value="vehiclesSkill"/>
+			<property name="EconomicValue" value="9000"/>
+			<property name="TraderStageTemplate" value="vehicleTier2"/>
+			<property name="UnlockedBy" value="craftingVehicles"/><!-- perkGreaseMonkey -->
+			<property name="SoundPickup" value="chassis_grab"/>
+			<property name="SoundPlace" value="chassis_place"/>
+		</item>
+
+		<item name="vehicleTheHornetAccessories">
+			<property name="Extends" value="vehicleBicycleHandlebars"/>
+			<property name="CustomIcon" value="vehicleTheHornetAccessories"/>
+			<property name="Tags" value="vehiclesSkill"/>
+			<property name="EconomicValue" value="9000"/>
+			<property name="TraderStageTemplate" value="vehicleTier2"/>
+			<property name="UnlockedBy" value="craftingVehicles"/><!-- perkGreaseMonkey -->
+		</item>
+		
+		<item name="vehicleTheHornetPlaceable">
+			<property name="Extends" value="vehicleMinibikePlaceable"/>
+			<property name="CustomIcon" value="vehicleTheHornetPlaceable"/>
+			<property name="Tags" value="vehicle,vengine,vfuel,vlight,canHaveCosmetic"/>
+			<property name="Meshfile" value="#@modfolder:Resources/HornetMKII.unity3d?The_Hornet_Mark_2"/>
+			<property name="EconomicValue" value="30000"/>
+			<property name="TraderStageTemplate" value="vehicleTier3"/>
+			<property class="Action1">
+				<property name="Vehicle" value="vehicleTheHornet"/>
+				<property name="VehicleSize" value="4.5, 3.1, 7"/>
+			</property>
+			<effect_group name="main" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="5"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="8000"/>
+			</effect_group>
+		</item>		
 		
 		<!-- *** fertilizer *** -->
 		<item name="resourceFertilizer">
@@ -420,7 +487,7 @@
 				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated"/>
 				<passive_effect name="EntityDamage" operation="perc_add" value=".30"/>
 			</effect_group>
-		</item>	
+		</item>
 	</append>
 	
 	<!-- *** allowed upgrade items for repair tools *** -->
@@ -634,27 +701,27 @@
 			<property name="Weight" value="0"/>
 			<property name="Group" value="Special Items,Mods"/>
 		</item>
-	</insertAfter>	
+	</insertAfter>
 	
 	<append xpath="/items">
 		<!-- *** starter backpack *** -->
 		<!-- <item name="Backpack"> -->
-			<!-- <property name="CustomIcon" value="backpackMedium"/> -->
-			<!-- <property name="ItemTypeIcon" value="bundle"/> -->
-			<!-- <property name="HoldType" value="45"/> -->
-			<!-- <property name="Meshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/> -->
-			<!-- <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/> -->
-			<!-- <property name="Material" value="Mmetal"/> -->
-			<!-- <property name="Stacknumber" value="1"/> STK ammobundle high -->
-			<!-- <property name="EconomicValue" value="0"/> -->
-			<!-- <property class="Action0"> -->
-				<!-- <property name="Class" value="OpenBundle"/> -->
-				<!-- <property name="Delay" value="0"/> -->
-				<!-- <property name="Use_time" value="0"/> -->
-				<!-- <property name="Sound_start" value="UseActions/open_backpack"/> -->
-				<!-- <property name="Create_item" value="drinkJarPureMineralWater,foodSteakAndPotato,medicalFirstAidBandage,meleeToolFlashlight02,resourceNiCdBattery"/> -->
-				<!-- <property name="Create_item_count" value="2,2,2,1,1"/> -->
-			<!-- </property> -->
+		<!-- <property name="CustomIcon" value="backpackMedium"/> -->
+		<!-- <property name="ItemTypeIcon" value="bundle"/> -->
+		<!-- <property name="HoldType" value="45"/> -->
+		<!-- <property name="Meshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/> -->
+		<!-- <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/> -->
+		<!-- <property name="Material" value="Mmetal"/> -->
+		<!-- <property name="Stacknumber" value="1"/> STK ammobundle high -->
+		<!-- <property name="EconomicValue" value="0"/> -->
+		<!-- <property class="Action0"> -->
+		<!-- <property name="Class" value="OpenBundle"/> -->
+		<!-- <property name="Delay" value="0"/> -->
+		<!-- <property name="Use_time" value="0"/> -->
+		<!-- <property name="Sound_start" value="UseActions/open_backpack"/> -->
+		<!-- <property name="Create_item" value="drinkJarPureMineralWater,foodSteakAndPotato,medicalFirstAidBandage,meleeToolFlashlight02,resourceNiCdBattery"/> -->
+		<!-- <property name="Create_item_count" value="2,2,2,1,1"/> -->
+		<!-- </property> -->
 		<!-- </item> -->
 	
 		<!-- *** cure infection, permanently *** -->
@@ -713,6 +780,21 @@
 				<property name="Create_item_count" value="1"/>
 			</property>
 		</item>
+		
+		<item name="RuinRipperBundle">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleVehicleRuinRipper"/>
+			<property name="CustomIconTint" value="FFFFFF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="RuinRipperBundleDesc"/>
+			<property name="SoundPickup" value="club_wood_grab"/>
+			<property name="SoundPlace" value="club_wood_place"/>
+			<property class="Action0">
+				<property name="Create_item" value="vehicleRuinRipperPlaceable"/>
+				<property name="Create_item_count" value="1"/>
+			</property>
+		</item>
 	
 		<item name="MotorcycleBundle">
 			<property name="Extends" value="questRewardBundleMaster"/>
@@ -728,6 +810,21 @@
 				<property name="Create_item_count" value="1"/>
 			</property>
 		</item>
+		
+		<item name="TheHornetBundle">
+			<property name="Extends" value="questRewardBundleMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="bundleVehicleTheHornet"/>
+			<property name="CustomIconTint" value="FFFFFF"/>
+			<property name="ItemTypeIcon" value="bundle"/>
+			<property name="DescriptionKey" value="TheHornetBundleDesc"/>
+			<property name="SoundPickup" value="club_wood_grab"/>
+			<property name="SoundPlace" value="club_wood_place"/>
+			<property class="Action0">
+				<property name="Create_item" value="vehicleTheHornetPlaceable"/>
+				<property name="Create_item_count" value="1"/>
+			</property>
+		</item>
 	
 		<item name="4x4Bundle">
 			<property name="Extends" value="questRewardBundleMaster"/>
@@ -735,9 +832,9 @@
 			<property name="CustomIcon" value="bundleVehicle4x4"/>
 			<property name="CustomIconTint" value="FFFFFF"/>
 			<property name="ItemTypeIcon" value="bundle"/>
-			<property name="DescriptionKey" value="4x4BundleDesc"/>	
+			<property name="DescriptionKey" value="4x4BundleDesc"/>
 			<property name="SoundPickup" value="club_wood_grab"/>
-			<property name="SoundPlace" value="club_wood_place"/>			
+			<property name="SoundPlace" value="club_wood_place"/>
 			<property class="Action0">
 				<property name="Create_item" value="vehicle4x4TruckPlaceable"/>
 				<property name="Create_item_count" value="1"/>
@@ -807,7 +904,7 @@
 			<property name="Extends" value="thrownAmmoPipeBomb"/>
 			<property name="Tags" value="ammo,weapon,attPerception,perkDemolitionsExpert,explosivesSkill"/>
 			<property name="CustomIcon" value="thrownAmmoAntiRadPipeBomb"/>
-			<property name="DescriptionKey" value="thrownAmmoAntiRadPipeBombDesc"/>			
+			<property name="DescriptionKey" value="thrownAmmoAntiRadPipeBombDesc"/>
 			<property name="Stacknumber" value="20"/>
 			<property name="SoundPickup" value="pipebomb_grab"/>
 			<property name="SoundPlace" value="pipebomb_place"/>
@@ -916,86 +1013,86 @@
 	
 	<!-- *** new wood arrow/bolt. No feathers, no stone, low damage, always breaks *** -->
 	<!-- <append xpath="/items"> -->
-		<!-- <item name="ammoArrowWood"> -->
-			<!-- <property name="CustomIcon" value="ammoArrowWood"/> -->
-			<!-- <property name="CustomIconTint" value="654321"/> -->
-			<!-- <property name="DescriptionKey" value="ammoArrowWoodDesc"/> -->
-			<!-- <property name="DisplayType" value="ammoArrow"/> -->
-			<!-- <property name="Tags" value="ammo,ranged,attAgility,perkArchery,perkPenetrator"/> -->
-			<!-- <property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Bows/Arrows/arrow_stonePrefab.prefab"/> -->
-			<!-- <property name="HoldType" value="45"/> -->
-			<!-- <property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/> -->
-			<!-- <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/> -->
-			<!-- <property name="IsSticky" value="false"/> -->
-			<!-- <property name="StickyOffset" value=".25"/> -->
-			<!-- <property name="StickyColliderUp" value="2"/> -->
-			<!-- <property name="StickyColliderRadius" value=".05"/> -->
-			<!-- <property name="StickyColliderLength" value="1"/> -->
-			<!-- <property name="Material" value="MresourceWoodScraps"/> -->
-			<!-- <property name="Stacknumber" value="150"/> STK ammo low -->
-			<!-- <property name="Weight" value="10"/> -->
-			<!-- <property name="EconomicValue" value="1"/> -->
-			<!-- <property name="TraderStageTemplate" value="arrowsTier0"/> -->
-			<!-- <property name="EconomicBundleSize" value="5"/> -->
-			<!-- <property name="Group" value="Ammo/Weapons,Basics,Ammo,Ranged Weapons"/> -->
-			<!-- <property class="Action1"> -->
-				<!-- <property name="Class" value="Projectile"/> -->
-				<!-- <property name="Explosion.ParticleIndex" value="0"/> no expl. -->
-				<!-- <property name="FlyTime" value="0"/> -->
-				<!-- <property name="Gravity" value="-5"/> -->
-				<!-- <property name="LifeTime" value="14"/> -->
-			<!-- </property> -->
+	<!-- <item name="ammoArrowWood"> -->
+	<!-- <property name="CustomIcon" value="ammoArrowWood"/> -->
+	<!-- <property name="CustomIconTint" value="654321"/> -->
+	<!-- <property name="DescriptionKey" value="ammoArrowWoodDesc"/> -->
+	<!-- <property name="DisplayType" value="ammoArrow"/> -->
+	<!-- <property name="Tags" value="ammo,ranged,attAgility,perkArchery,perkPenetrator"/> -->
+	<!-- <property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Bows/Arrows/arrow_stonePrefab.prefab"/> -->
+	<!-- <property name="HoldType" value="45"/> -->
+	<!-- <property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/> -->
+	<!-- <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/> -->
+	<!-- <property name="IsSticky" value="false"/> -->
+	<!-- <property name="StickyOffset" value=".25"/> -->
+	<!-- <property name="StickyColliderUp" value="2"/> -->
+	<!-- <property name="StickyColliderRadius" value=".05"/> -->
+	<!-- <property name="StickyColliderLength" value="1"/> -->
+	<!-- <property name="Material" value="MresourceWoodScraps"/> -->
+	<!-- <property name="Stacknumber" value="150"/> STK ammo low -->
+	<!-- <property name="Weight" value="10"/> -->
+	<!-- <property name="EconomicValue" value="1"/> -->
+	<!-- <property name="TraderStageTemplate" value="arrowsTier0"/> -->
+	<!-- <property name="EconomicBundleSize" value="5"/> -->
+	<!-- <property name="Group" value="Ammo/Weapons,Basics,Ammo,Ranged Weapons"/> -->
+	<!-- <property class="Action1"> -->
+	<!-- <property name="Class" value="Projectile"/> -->
+	<!-- <property name="Explosion.ParticleIndex" value="0"/> no expl. -->
+	<!-- <property name="FlyTime" value="0"/> -->
+	<!-- <property name="Gravity" value="-5"/> -->
+	<!-- <property name="LifeTime" value="14"/> -->
+	<!-- </property> -->
 
-			<!-- <effect_group name="ammoArrowWood" tiered="false"> -->
-				<!-- <passive_effect name="EntityDamage" operation="base_set" value="25" tags="perkArchery"/> -->
-				<!-- <passive_effect name="BlockDamage" operation="base_set" value="1" tags="perkArchery"/> -->
-				<!-- <passive_effect name="DamageModifier" operation="perc_set" value=".1" tags="wood"/> -->
-				<!-- <passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth"/> -->
-				<!-- <passive_effect name="ProjectileVelocity" operation="base_set" value="35" tags="perkArchery"/> -->
-			<!-- </effect_group> -->
-		<!-- </item> -->
+	<!-- <effect_group name="ammoArrowWood" tiered="false"> -->
+	<!-- <passive_effect name="EntityDamage" operation="base_set" value="25" tags="perkArchery"/> -->
+	<!-- <passive_effect name="BlockDamage" operation="base_set" value="1" tags="perkArchery"/> -->
+	<!-- <passive_effect name="DamageModifier" operation="perc_set" value=".1" tags="wood"/> -->
+	<!-- <passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth"/> -->
+	<!-- <passive_effect name="ProjectileVelocity" operation="base_set" value="35" tags="perkArchery"/> -->
+	<!-- </effect_group> -->
+	<!-- </item> -->
 	
-		<!-- <item name="ammoCrossbowBoltWood"> -->
-			<!-- <property name="Tags" value="ammo,ranged,attAgility,perkArchery,perkPenetrator"/> -->
-			<!-- <property name="DisplayType" value="ammoArrow"/> -->
-			<!-- <property name="CustomIcon" value="ammoArrowWood"/> -->
-			<!-- <property name="CustomIconTint" value="654321"/> -->
-			<!-- <property name="DescriptionKey" value="ammoCrossbowBoltWoodDesc"/> -->
-			<!-- <property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Bows/Arrows/bolt_stonePrefab.prefab"/> -->
-			<!-- <property name="HoldType" value="45"/> -->
-			<!-- <property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/> -->
-			<!-- <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/> -->
-			<!-- <property name="Material" value="MresourceWoodScraps"/> -->
-			<!-- <property name="IsSticky" value="false"/> -->
-			<!-- <property name="StickyOffset" value=".12"/> -->
-			<!-- <property name="StickyColliderUp" value="2"/> -->
-			<!-- <property name="StickyColliderRadius" value=".05"/> -->
-			<!-- <property name="StickyColliderLength" value=".75"/> -->
-			<!-- <property name="Stacknumber" value="150"/> STK ammo low -->
-			<!-- <property name="Weight" value="10"/> -->
-			<!-- <property name="EconomicValue" value="1"/> -->
-			<!-- <property name="TraderStageTemplate" value="arrowsTier0"/> -->
-			<!-- <property name="EconomicBundleSize" value="5"/> -->
-			<!-- <property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/> -->
+	<!-- <item name="ammoCrossbowBoltWood"> -->
+	<!-- <property name="Tags" value="ammo,ranged,attAgility,perkArchery,perkPenetrator"/> -->
+	<!-- <property name="DisplayType" value="ammoArrow"/> -->
+	<!-- <property name="CustomIcon" value="ammoArrowWood"/> -->
+	<!-- <property name="CustomIconTint" value="654321"/> -->
+	<!-- <property name="DescriptionKey" value="ammoCrossbowBoltWoodDesc"/> -->
+	<!-- <property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Bows/Arrows/bolt_stonePrefab.prefab"/> -->
+	<!-- <property name="HoldType" value="45"/> -->
+	<!-- <property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/> -->
+	<!-- <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/> -->
+	<!-- <property name="Material" value="MresourceWoodScraps"/> -->
+	<!-- <property name="IsSticky" value="false"/> -->
+	<!-- <property name="StickyOffset" value=".12"/> -->
+	<!-- <property name="StickyColliderUp" value="2"/> -->
+	<!-- <property name="StickyColliderRadius" value=".05"/> -->
+	<!-- <property name="StickyColliderLength" value=".75"/> -->
+	<!-- <property name="Stacknumber" value="150"/> STK ammo low -->
+	<!-- <property name="Weight" value="10"/> -->
+	<!-- <property name="EconomicValue" value="1"/> -->
+	<!-- <property name="TraderStageTemplate" value="arrowsTier0"/> -->
+	<!-- <property name="EconomicBundleSize" value="5"/> -->
+	<!-- <property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/> -->
 		
-			<!-- <property class="Action1"> -->
-				<!-- <property name="Class" value="Projectile"/> -->
-				<!-- <property name="Explosion.ParticleIndex" value="0"/> -->
-				<!-- <property name="Gravity" value="-3"/> -->
-				<!-- <property name="FlyTime" value="0"/> -->
-				<!-- <property name="LifeTime" value="14"/> -->
-				<!-- <property name="DamageBonus.earth" value="0"/>
+	<!-- <property class="Action1"> -->
+	<!-- <property name="Class" value="Projectile"/> -->
+	<!-- <property name="Explosion.ParticleIndex" value="0"/> -->
+	<!-- <property name="Gravity" value="-3"/> -->
+	<!-- <property name="FlyTime" value="0"/> -->
+	<!-- <property name="LifeTime" value="14"/> -->
+	<!-- <property name="DamageBonus.earth" value="0"/>
 			<property name="DamageBonus.metal" value="0"/>
 			<property name="DamageBonus.cloth" value="0"/> -->
-			<!-- </property> -->
-			<!-- <effect_group name="ammoCrossbowBoltWood" tiered="false"> -->
-				<!-- <passive_effect name="EntityDamage" operation="base_set" value="35" tags="perkArchery"/> -->
-				<!-- <passive_effect name="BlockDamage" operation="base_set" value="1" tags="perkArchery"/> -->
-				<!-- <passive_effect name="DamageModifier" operation="perc_set" value=".1" tags="wood"/> -->
-				<!-- <passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth"/> -->
-				<!-- <passive_effect name="ProjectileVelocity" operation="base_set" value="57.5" tags="perkArchery"/> -->
-			<!-- </effect_group> -->
-		<!-- </item> -->
+	<!-- </property> -->
+	<!-- <effect_group name="ammoCrossbowBoltWood" tiered="false"> -->
+	<!-- <passive_effect name="EntityDamage" operation="base_set" value="35" tags="perkArchery"/> -->
+	<!-- <passive_effect name="BlockDamage" operation="base_set" value="1" tags="perkArchery"/> -->
+	<!-- <passive_effect name="DamageModifier" operation="perc_set" value=".1" tags="wood"/> -->
+	<!-- <passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth"/> -->
+	<!-- <passive_effect name="ProjectileVelocity" operation="base_set" value="57.5" tags="perkArchery"/> -->
+	<!-- </effect_group> -->
+	<!-- </item> -->
 	<!-- </append> -->
 	
 	<!-- *** iron/steel arrows/bolts increased stick chance *** -->
@@ -1157,22 +1254,22 @@
 	
 	<!-- *** ammo press is a workbench tool *** -->
 	<append xpath="/items">
-	<item name="toolAmmoPress">
-		<property name="CustomIcon" value="toolAmmoPress"/>
-		<property name="DescriptionKey" value="toolAmmoPressDesc"/>
-		<property name="Tags" value="workstationSkill" />
-		<property name="HoldType" value="45" />
-		<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab" />
-		<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
-		<property name="Material" value="Mmetal" />
-		<property name="Stacknumber" value="1" />
-		<property name="Group" value="Tools/Traps" />
-		<property name="EconomicValue" value="500" />
-		<property name="SellableToTrader" value="false" />
-		<property name="ItemTypeIcon" value="workbench" />
-		<property name="SoundPickup" value="crucible_grab"/>
-		<property name="SoundPlace" value="crucible_place"/>
-	  </item>
+		<item name="toolAmmoPress">
+			<property name="CustomIcon" value="toolAmmoPress"/>
+			<property name="DescriptionKey" value="toolAmmoPressDesc"/>
+			<property name="Tags" value="workstationSkill"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Group" value="Tools/Traps"/>
+			<property name="EconomicValue" value="500"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="ItemTypeIcon" value="workbench"/>
+			<property name="SoundPickup" value="crucible_grab"/>
+			<property name="SoundPlace" value="crucible_place"/>
+		</item>
 	</append>
 	
 	<!-- *** spider zombies cause poison *** -->
@@ -1400,7 +1497,7 @@
 					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
 			</effect_group>
-		</item>		
+		</item>
 		
 		<item name="meleeHandZombieMutantLongArms">
 			<property name="Extends" value="meleeHandZombie01"/>
@@ -1413,8 +1510,8 @@
 			<effect_group name="meleeHandZombieFeral" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
-					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
-					weights=".11,.07,.07,.05,.29,.36,.11"/>
+				                  buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+				                  weights=".11,.07,.07,.05,.29,.36,.11"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="15"><!--InfectionFeral-->
 					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
@@ -1501,7 +1598,7 @@
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
 				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
-								  buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffPoisoned"
+				                  buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffPoisoned"
 				                  weights=".11,.07,.07,.05,.29,.36,.11,1"/>
 			</effect_group>
 		</item>
@@ -1513,37 +1610,37 @@
 	<!-- *** hazmat removes radiation *** -->
 	<!-- <append xpath="/items/item[@name='apparelHazmatMask']/effect_group"> -->
 	
-		<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitMask"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitMask"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitMask"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitMask"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/> -->
 
 	<!-- </append> -->
 	<!-- <append xpath="/items/item[@name='apparelHazmatJacket']/effect_group"> -->
 	
-		<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitChest"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitChest"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitChest"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitChest"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/> -->
 
 	<!-- </append> -->
 	<!-- <append xpath="/items/item[@name='apparelHazmatGloves']/effect_group"> -->
 	
-		<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitGloves"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitGloves"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitGloves"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitGloves"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/> -->
 
 	<!-- </append> -->
 	<!-- <append xpath="/items/item[@name='apparelHazmatPants']/effect_group"> -->
 	
-		<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitLegs"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitLegs"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitLegs"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitLegs"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/> -->
 
 	<!-- </append> -->
 	<!-- <append xpath="/items/item[@name='apparelHazmatBoots']/effect_group"> -->
 	
-		<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitBoots"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitBoots"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffRadSuitBoots"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuitBoots"/> -->
+	<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffRadSuit"/> -->
 
 	<!-- </append> -->
 	
@@ -2609,6 +2706,19 @@
 		</item>
 	
 		<!-- *** weapon/armour specific repair kits *** -->
+		<item name="PrimitiveRepairKit">
+			<property name="DescriptionKey" value="PrimitiveRepairKitDesc"/>
+			<property name="Extends" value="resourceRepairKit"/>
+			<property name="Material" value="Mwood"/>
+			<property name="Weight" value="1"/>
+			<property name="EconomicValue" value="0"/>
+			<property name="CustomIcon" value="PrimitiveRepairKit"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="SoundPickup" value="club_wood_grab"/>
+			<property name="SoundPlace" value="club_wood_place"/>
+			<!-- <property name="CustomIconTint" value="da2c43"/> -->
+		</item>
+		
 		<item name="HandgunRepairKit">
 			<property name="DescriptionKey" value="HandgunRepairKitDesc"/>
 			<property name="Extends" value="resourceRepairKit"/>
@@ -2802,13 +2912,13 @@
 		</item>
 
 		<!-- <item name="SteelArmourRepairKit"> -->
-			<!-- <property name="DescriptionKey" value="SteelArmourRepairKitDesc"/> -->
-			<!-- <property name="Extends" value="resourceRepairKit"/> -->
-			<!-- <property name="Material" value="MarmorHeavy"/> -->
-			<!-- <property name="Weight" value="1"/> -->
-			<!-- <property name="EconomicValue" value="450"/> -->
-			<!-- <property name="CustomIcon" value="SteelArmourRepairKit"/> -->
-			<!-- <property name="CustomIconTint" value="da2c43"/> -->
+		<!-- <property name="DescriptionKey" value="SteelArmourRepairKitDesc"/> -->
+		<!-- <property name="Extends" value="resourceRepairKit"/> -->
+		<!-- <property name="Material" value="MarmorHeavy"/> -->
+		<!-- <property name="Weight" value="1"/> -->
+		<!-- <property name="EconomicValue" value="450"/> -->
+		<!-- <property name="CustomIcon" value="SteelArmourRepairKit"/> -->
+		<!-- <property name="CustomIconTint" value="da2c43"/> -->
 		<!-- </item> -->
 	</append>
 	
@@ -3002,11 +3112,11 @@
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
 				<property name="Sound_start" value="player_painkillers"/>
-				<requirement name="NotHasBuff" buff="buffLithiumBlocker" />
-				<requirement name="NotHasBuff" buff="buffStJohnsWortBlocker" />
+				<requirement name="NotHasBuff" buff="buffLithiumBlocker"/>
+				<requirement name="NotHasBuff" buff="buffStJohnsWortBlocker"/>
 			</property>
 			<effect_group tiered="false">
-				<display_value name="dCureDespair" value=".25"/>				
+				<display_value name="dCureDespair" value=".25"/>
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffDespairAddCurePerc" operation="add" value="25"/>
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffDespairAddCurePerc" operation="subtract" value="@lithiumrescount"/>
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffDespairAddCure"/>
@@ -3035,8 +3145,8 @@
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
 				<property name="Sound_start" value="player_painkillers"/>
-				<requirement name="NotHasBuff" buff="buffStJohnsWortBlocker" />
-				<requirement name="NotHasBuff" buff="buffLithiumBlocker" />
+				<requirement name="NotHasBuff" buff="buffStJohnsWortBlocker"/>
+				<requirement name="NotHasBuff" buff="buffLithiumBlocker"/>
 			</property>
 			<effect_group tiered="false">
 				<display_value name="dCureDespair" value=".1"/>
@@ -3086,6 +3196,7 @@
 	<set xpath="//item[@name='medicalFirstAidBandage']//property[@name='Stacknumber']/@value">10</set>
 	
 	<!-- *** pairs custom repair kits to respective item *** -->
+	<set xpath="/items/item[@name='armorPrimitiveMaster']/property[@name='RepairTools']/@value">PrimitiveRepairKit</set>
 	<setattribute xpath="/items/item[@name='meleeToolPickT2SteelPickaxe']//property[@name='RepairTools']" name="value">SteelToolRepairKit</setattribute>
 	<setattribute xpath="/items/item[@name='meleeToolShovelT2SteelShovel']//property[@name='RepairTools']" name="value">SteelToolRepairKit</setattribute>
 	<insertafter xpath="//item[@name='meleeToolAxeT2SteelAxe']//property[2]">
@@ -3173,7 +3284,7 @@
 		</effect_group>
 		<effect_group tiered="false">
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHeldTorch">
-			<requirement name="CVarCompare" cvar="batteryHandTorch" operation="GT" value="0.5"/></triggered_effect>
+				<requirement name="CVarCompare" cvar="batteryHandTorch" operation="GT" value="0.5"/></triggered_effect>
 			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHeldTorch"/>
 		</effect_group>
 	</append>

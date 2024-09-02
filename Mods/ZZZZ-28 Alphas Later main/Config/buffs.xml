@@ -654,13 +654,7 @@
 	
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="walktype" operation="set" value="randomint(1,20)"/>
-			</effect_group>
-			<effect_group>
-				<triggered_effect trigger="onDismember" action="ModifyCVar" cvar="walktype" operation="set" value="21"/>
-				<triggered_effect trigger="onDismember" action="RemoveBuff" buff="buffRandomWalk"/>
-				<!-- <triggered_effect trigger="onDismember" action="SetWalkType,IDCCore" value="21"/> -->
-				<!-- <requirement name="HitLocation" body_parts="LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/> -->
-			</effect_group>
+			</effect_group>			
 			<effect_group>
 				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="1"/>
@@ -740,11 +734,7 @@
 			<effect_group>
 				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="20"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="7"/>
-			</effect_group>	
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="21"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="21"/>
-			</effect_group>				
+			</effect_group>							
 		</buff>		
 		
 
@@ -2650,14 +2640,18 @@
 			<effect_group compare_type="or">
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffVehicleCrate"/>
 				<requirement name="PlayerItemCount" item_name="MinibikeBundle" operation="GTE" value="1"/>
+				<requirement name="PlayerItemCount" item_name="RuinRipperBundle" operation="GTE" value="1"/>
 				<requirement name="PlayerItemCount" item_name="MotorcycleBundle" operation="GTE" value="1"/>
+				<requirement name="PlayerItemCount" item_name="TheHornetBundle" operation="GTE" value="1"/>
 				<requirement name="PlayerItemCount" item_name="4x4Bundle" operation="GTE" value="1"/>
 				<requirement name="PlayerItemCount" item_name="GyroBundle" operation="GTE" value="1"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffVehicleCrate"/>
 				<requirement name="PlayerItemCount" item_name="MinibikeBundle" operation="equals" value="0"/>
+				<requirement name="PlayerItemCount" item_name="RuinRipperBundle" operation="equals" value="0"/>
 				<requirement name="PlayerItemCount" item_name="MotorcycleBundle" operation="equals" value="0"/>
+				<requirement name="PlayerItemCount" item_name="TheHornetBundle" operation="equals" value="0"/>
 				<requirement name="PlayerItemCount" item_name="4x4Bundle" operation="equals" value="0"/>
 				<requirement name="PlayerItemCount" item_name="GyroBundle" operation="equals" value="0"/>
 			</effect_group>
@@ -2671,7 +2665,9 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffImmobilized"/>
 				<requirements compare_type="or">
 					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleMinibikePlaceable" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleRuinRipperPlaceable" operation="GTE" value="1"/>
 					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleMotorcyclePlaceable" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleTheHornetPlaceable" operation="GTE" value="1"/>
 					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleTruck4x4Placeable" operation="GTE" value="1"/>
 					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleGyrocopterPlaceable" operation="GTE" value="1"/>
 				</requirements>
@@ -2679,7 +2675,9 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffImmobilized"/>
 				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleMinibikePlaceable" operation="equals" value="0"/>
+				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleRuinRipperPlaceable" operation="equals" value="0"/>
 				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleMotorcyclePlaceable" operation="equals" value="0"/>
+				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleTheHornetPlaceable" operation="equals" value="0"/>
 				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleTruck4x4Placeable" operation="equals" value="0"/>
 				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleGyrocopterPlaceable" operation="equals" value="0"/>
 			</effect_group>

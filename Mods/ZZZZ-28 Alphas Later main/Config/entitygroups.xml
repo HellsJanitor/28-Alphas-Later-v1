@@ -239,6 +239,7 @@
 		hellsZombieMutantBoomer, .05
 		hellsZombieMutantReaper, .05
 		hellsZombieWendigo1, .01
+		hellsZombieWendigo2, .01
 	</csv>
 	
 	<csv xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight']/text()" delim="\n" op="add" >
@@ -284,6 +285,7 @@
 		hellsZombieMutantBoomer
 		hellsZombieMutantReaper
 		hellsZombieWendigo1
+		hellsZombieWendigo2
 	</csv>
 	
 	<csv xpath="/entitygroups/entitygroup[@name='ZombiesWastelandDowntown']/text()" delim="\n" op="add" >
@@ -329,6 +331,7 @@
 		hellsZombieMutantBoomer, .05
 		hellsZombieMutantReaper, .05
 		hellsZombieWendigo1, .01
+		hellsZombieWendigo2, .01
 	</csv>
 	
 	<csv xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNightNoBears']/text()" delim="\n" op="add" >
@@ -421,6 +424,7 @@
 		hellsZombieMutantBoomer, .05
 		hellsZombieMutantReaper, .05
 		hellsZombieWendigo1, .05
+		hellsZombieWendigo2, .05
 	</csv>
 	
 	<csv xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight2NoBears']/text()" delim="\n" op="add" >
@@ -467,6 +471,7 @@
 		hellsZombieMutantBoomer, .05
 		hellsZombieMutantReaper, .05
 		hellsZombieWendigo1, .05
+		hellsZombieWendigo2, .05
 	</csv>
 	
 	<csv xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']/text()" delim="\n" op="remove" >
@@ -525,6 +530,7 @@
 		hellsZombieMutantBoomer
 		hellsZombieMutantReaper
 		hellsZombieWendigo1
+		hellsZombieWendigo2
 	</csv>
 	<csv xpath="/entitygroups/entitygroup[@name='SnowZombies']/text()" delim="\n" op="add" >
 		zombieArleneFrozen
@@ -958,6 +964,7 @@
 	zombieWightMutated, .2
 	hellsZombieMutantBoomer, .2
 	hellsZombieWendigo1, .2
+	hellsZombieWendigo2, .2
 	</csv>
 	<csv xpath="/entitygroups/entitygroup[@name='ZombieSpecialInfectedGroupGS200']/text()" delim="\n" op="add" >
 	zombieSpiderMutated, .3
@@ -965,6 +972,7 @@
 	zombieWightMutated, .3
 	hellsZombieMutantBoomer, .3
 	hellsZombieWendigo1, .3
+	hellsZombieWendigo2, .3
 	</csv>
 	<csv xpath="/entitygroups/entitygroup[@name='ZombieSpecialInfectedGroupGS400']/text()" delim="\n" op="add" >
 	zombieSpiderMutated, .4
@@ -972,6 +980,7 @@
 	zombieWightMutated, .4
 	hellsZombieMutantBoomer, .4
 	hellsZombieWendigo1, .4
+	hellsZombieWendigo2, .4
 	</csv>
 	<csv xpath="/entitygroups/entitygroup[@name='ZombieSpecialInfectedGroupGS800']/text()" delim="\n" op="add" >
 	zombieSpiderMutated, .5
@@ -979,6 +988,7 @@
 	zombieWightMutated, .5
 	hellsZombieMutantBoomer, .5
 	hellsZombieWendigo1, .5
+	hellsZombieWendigo2, .5
 	</csv>	
 	
 	<remove xpath="//entitygroup[starts-with(@name,'sleeperHordeStage')]" />
@@ -48882,6 +48892,7 @@
 		hellsZombieMutantBoomer
 		hellsZombieMutantReaper
 		hellsZombieWendigo1
+		hellsZombieWendigo2
 	</csv>	
 
 	<csv xpath="/entitygroups/entitygroup[substring-after(@name, 'sleeperHordeStageGS') &gt; 99]/text()" delim="\n" op="add" >
@@ -48932,6 +48943,7 @@
 		hellsZombieMutantBoomer
 		hellsZombieMutantReaper
 		hellsZombieWendigo1
+		hellsZombieWendigo2
 	</csv>
 	
 	<csv xpath="/entitygroups/entitygroup[substring-after(@name, 'scoutHordeStageGS') &gt; 99]/text()" delim="\n" op="add" >
@@ -48982,6 +48994,7 @@
 		hellsZombieMutantBoomer
 		hellsZombieMutantReaper
 		hellsZombieWendigo1
+		hellsZombieWendigo2
 	</csv>	
 	
 	<csv xpath="/entitygroups/entitygroup[substring-after(@name, 'defenseHordeStageGS') &gt; 299]/text()" delim="\n" op="add" >
@@ -49027,6 +49040,7 @@
 		hellsZombieMutantBoomer
 		hellsZombieMutantReaper
 		hellsZombieWendigo1
+		hellsZombieWendigo2
 	</csv>	
 	
 	<csv xpath="/entitygroups/entitygroup[substring-after(@name, 'policeCarHordeStageGS') &gt; 99]/text()" delim="\n" op="add" >
@@ -49072,6 +49086,7 @@
 		hellsZombieMutantBoomer, .05
 		hellsZombieMutantReaper, .05
 		hellsZombieWendigo1, .01
+		hellsZombieWendigo2, .01
 	</csv>	
 	
 </configs>

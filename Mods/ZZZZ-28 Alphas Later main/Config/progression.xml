@@ -21,12 +21,6 @@
 	<set xpath="//crafting_skill[@name='craftingExplosives']/effect_group//passive_effect[@tags='thrownGrenade']/@tags">thrownGrenade,thrownAntiRadGrenade</set>
 	<set xpath="//crafting_skill[@name='craftingExplosives']/effect_group//passive_effect[@tags='thrownGrenadeContact']/@tags">thrownGrenadeContact,thrownGrenadeAntiRadContact</set>
 	
-	<!-- *** vehicle bundle unlocks *** -->
-	<set xpath="//crafting_skill[@name='craftingVehicles']/effect_group//passive_effect[2]/@tags">vehicleMinibikeChassis,vehicleMinibikeHandlebars,carBattery,resourceOil,ammoGasCan,MinibikeBundle</set>
-	<set xpath="//crafting_skill[@name='craftingVehicles']/effect_group//passive_effect[3]/@tags">vehicleMotorcycleChassis,vehicleMotorcycleHandlebars,ammoGasCanBundle,MotorcycleBundle</set>
-	<set xpath="//crafting_skill[@name='craftingVehicles']/effect_group//passive_effect[4]/@tags">vehicle4x4TruckChassis,vehicle4x4TruckAccessories,4x4Bundle</set>
-	<set xpath="//crafting_skill[@name='craftingVehicles']/effect_group//passive_effect[5]/@tags">vehicleGyroCopterChassis,vehicleGyroCopterAccessories,GyroBundle</set>
-	
 	<!-- *** Urban Combat Vol. 2 unlocks *** -->
 	<set xpath="/progression/perks/book[@name='perkUrbanCombatCigar']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">modGunBrassCatcher</set>
 	
@@ -64,6 +58,40 @@
 			<effect_description level="5" desc_key="perkLivingOffTheLandRank5Desc" long_desc_key="perkLivingOffTheLandRank5LongDesc"/>
 		</effect_group>	
 	</set>
+	
+	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingVehicles']">
+	<display_entry icon="vehicleBicyclePlaceable" name_key="vehiclesT1" has_quality="false" unlock_level="5" >
+			<unlock_entry item="vehicleBicycleChassis,vehicleBicycleHandlebars,vehicleWheels" unlock_tier="1" />
+		</display_entry>
+		
+		<display_entry icon="vehicleMinibikePlaceable" name_key="vehiclesT2" has_quality="false" unlock_level="20,30" >
+			<unlock_entry item="vehicleMinibikeChassis,vehicleMinibikeHandlebars,resourceOil,ammoGasCan,vehicleWheels" unlock_tier="1" />
+			<unlock_entry item="vehicleRuinRipperChassis,vehicleRuinRipperHandlebars" unlock_tier="2" />
+		</display_entry>
+		
+		<display_entry icon="vehicleMotorcyclePlaceable" name_key="vehiclesT3" has_quality="false" unlock_level="45,55" >
+			<unlock_entry item="vehicleMotorcycleChassis,vehicleMotorcycleHandlebars,ammoGasCanBundle" unlock_tier="1" />
+			<unlock_entry item="vehicleTheHornetChassis,vehicleTheHornetAccessories" unlock_tier="2" />
+		</display_entry>
+		
+		<display_entry icon="vehicleTruck4x4Placeable" name_key="vehiclesT4" has_quality="false" unlock_level="70" >
+			<unlock_entry item="vehicleTruck4x4Chassis,vehicleTruck4x4Accessories" unlock_tier="1" />
+		</display_entry>
+		
+		<display_entry icon="vehicleGyrocopterPlaceable" name_key="vehiclesT5" has_quality="false" unlock_level="100" >
+			<unlock_entry item="vehicleGyroCopterChassis,vehicleGyroCopterAccessories" unlock_tier="1" />
+		</display_entry>
+
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="vehicleBicycleChassis,vehicleBicycleHandlebars,vehicleWheels"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="vehicleMinibikeChassis,vehicleMinibikeHandlebars,resourceOil,ammoGasCan,MinibikeBundle"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="vehicleRuinRipperChassis,vehicleRuinRipperHandlebars,RuinRipperBundle"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="vehicleMotorcycleChassis,vehicleMotorcycleHandlebars,ammoGasCanBundle,MotorcycleBundle"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,100" value="1" tags="vehicleTheHornetChassis,vehicleTheHornetAccessories,TheHornetBundle"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="70,100" value="1" tags="vehicleTruck4x4Chassis,vehicleTruck4x4Accessories,4x4Bundle"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1" tags="vehicleGyroCopterChassis,vehicleGyroCopterAccessories,GyroBundle"/>
+		</effect_group>
+	</set>	
 	
 	<!-- *** reduce lockpick break chance *** -->
 	<set xpath="//perk[@name='perkLockPicking']/effect_group//passive_effect[@name='LockPickBreakChance']/@value">.3,.5</set>
@@ -108,30 +136,44 @@
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1" tags="TheCure"/>
 		</effect_group>
 	</crafting_skill>
-	</insertafter>
-	<!-- <set xpath="//crafting_skill[@name='craftingMedical']//display_entry[1]/@icon">medicalFirstAidBandage,drugFortBites,antivenom</set>
-	<set xpath="//crafting_skill[@name='craftingMedical']/display_entry[1]//unlock_entry[2]/@item">antivenom</set>
-	<insertafter xpath="//crafting_skill[@name='craftingMedical']/display_entry[1]//unlock_entry[2]">
-		<unlock_entry item="drugFortBites" unlock_tier="3" />
-	</insertafter>
-	<set xpath="//crafting_skill[@name='craftingMedical']/effect_group//passive_effect[2]/@tags">antivenom</set>
-	<insertafter xpath="//crafting_skill[@name='craftingMedical']/effect_group//passive_effect[2]">
-		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="15,100" value="1" tags="drugFortBites"/>
-	</insertafter> -->
-	
-	<!-- *** remove dew collector from crafting progresion *** -->	
-	<remove xpath="//crafting_skill[@name='craftingWorkstations']/display_entry[1]//unlock_entry[1]"/>
-	<remove xpath="//crafting_skill[@name='craftingWorkstations']/effect_group//passive_effect[1]"/>
+	</insertafter>	
 	
 	<!-- *** new dew & rain collector *** -->
-	<insertbefore xpath="/progression//crafting_skill[@name='craftingWorkstations']/display_entry[1]//unlock_entry[@item='forge']">
-		<unlock_entry item="cntAdvancedDewCollector" unlock_tier="1" />
-		<unlock_entry item="cntRainCollector" unlock_tier="1" />
-	</insertbefore>
-	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/effect_group">
-		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="cntAdvancedDewCollector"/>
-		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="cntRainCollector"/>
-	</append>
+	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']">
+		<display_entry icon="cntDewCollector,forge" name_key="workstationsT1-1,workstationsT1-2" has_quality="false" unlock_level="2,5" >
+			<!-- <unlock_entry item="cntAdvancedDewCollector,cntRainCollector" unlock_tier="1" /> -->
+			<unlock_entry item="cntDewCollector,cntRainCollector" unlock_tier="1" />
+			<unlock_entry item="forge" unlock_tier="2" />
+		</display_entry>
+		<display_entry icon="workbench,resourceLockPick,toolBellows,toolAnvil" name_key="workstationsT2-1,workstationsT2-2,workstationsT2-3,workstationsT2-4" has_quality="false" unlock_level="10,15,20,25" >
+			<unlock_entry item="workbench" unlock_tier="1" />
+			<unlock_entry item="resourceLockPick" unlock_tier="2" />
+			<unlock_entry item="toolBellows" unlock_tier="3" />
+			<unlock_entry item="toolAnvil" unlock_tier="4" />
+		</display_entry>
+		<display_entry icon="cementMixer" name_key="workstationsT3-1" has_quality="false" unlock_level="30" >
+			<unlock_entry item="cementMixer" unlock_tier="1" />
+		</display_entry>
+		<display_entry icon="chemistryStation" name_key="workstationsT4" has_quality="false" unlock_level="50" >
+			<unlock_entry item="chemistryStation" unlock_tier="1" />
+		</display_entry>
+		<display_entry icon="toolForgeCrucible" name_key="workstationsT5" has_quality="false" unlock_level="75" >
+			<unlock_entry item="toolForgeCrucible" unlock_tier="1" />
+		</display_entry>
+
+		<effect_group>
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="cntAdvancedDewCollector,cntRainCollector"/> -->
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="cntDewCollector,cntRainCollector"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="forge"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="workbench"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="15,100" value="1" tags="resourceLockPick"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="toolBellows"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="toolAnvil"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="cementMixer"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="chemistryStation"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="toolForgeCrucible"/>
+		</effect_group>
+	</set>
 	
 	<!-- *** Better Barter & Daring Adventurer removed from skill tree - now a "passive" unlock *** -->	
 	<remove xpath="//perk[@name='perkBetterBarter']"/>

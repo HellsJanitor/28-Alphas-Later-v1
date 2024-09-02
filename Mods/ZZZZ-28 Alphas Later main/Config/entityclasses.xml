@@ -536,7 +536,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZArlene.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -551,7 +551,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMarlene.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -566,7 +566,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCocktailWaitress.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -581,7 +581,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZNurse.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -596,7 +596,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZJoe.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -611,7 +611,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSteve.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -626,7 +626,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZTomClark.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -641,7 +641,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSuit.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -656,7 +656,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -672,7 +672,7 @@
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSpider.prefab"/>
 			<property name="HandItem" value="meleeHandZombieSpider"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -687,7 +687,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBoe.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -702,7 +702,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,hazmat"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHazmat.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -717,7 +717,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMechanic.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -732,7 +732,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZInmate.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -747,7 +747,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMoe.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -762,7 +762,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLab.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -777,7 +777,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZDarlene.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -792,7 +792,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZYo.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -807,7 +807,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWorker.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -822,7 +822,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBiker.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="450"/>
@@ -837,7 +837,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLumberjack.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="450"/>
@@ -853,7 +853,7 @@
 			<property name="Class" value="EntityZombieCop"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBigMama.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
 			<property name="Explosion.ParticleIndex" value="8"/>
@@ -879,7 +879,7 @@
 			<property name="Class" value="EntityZombieCop"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHawaiian.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
 			<property name="Explosion.ParticleIndex" value="8"/>
@@ -905,7 +905,7 @@
 			<property name="Class" value="EntityZombieCop"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBowler.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
 			<property name="Explosion.ParticleIndex" value="8"/>
@@ -930,7 +930,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZThug.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="350"/>
@@ -945,7 +945,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSoldier.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="450"/>
@@ -960,7 +960,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,crawler"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCrawler.prefab"/>
-			<property name="TintColor" value="#232b2b"/>
+			<property name="TintColor" value="#321414"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieRotten -->
 			<property name="ExperienceGain" value="300"/>
@@ -3550,7 +3550,7 @@
 		
 		<entity_class name="hellsZombieWendigo2" extends="zombieTemplateMale">
 			<property name="SizeScale" value=".85"/>
-			<property name="Mesh" value="#@modfolder:Resources/wendigo2.unity3d?WendigoSKin2"/>
+			<property name="Mesh" value="#@modfolder:Resources/wendigo2.unity3d?WendigoSkin2"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
 			<property name="UserSpawnType" value="Menu"/>
@@ -3801,11 +3801,11 @@
 			<property name="Class" value="EntityVJeep"/>
 			<property name="Tags" value="vehicle,usesGas"/>
 			<property name="Parent" value="Cars"/>
-			<property name="Prefab" value="#@modfolder:Resources/HellsHornet.unity3d?The_Hornet"/>
+			<property name="Prefab" value="#@modfolder:Resources/HornetMKII.unity3d?The_Hornet_Mark_2"/>
 			<property name="ModelType" value="Standard"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="IgnoreTrigger" value="true"/>
-			<property name="LootListAlive" value="vehicle4x4Truck"/>
+			<property name="LootListAlive" value="vehicleGyrocopter"/>
 			<property name="IsEnemyEntity" value="false"/>
 			<property name="Explosion.ParticleIndex" value="29"/>
 			<property name="Explosion.RadiusBlocks" value="5"/>
@@ -3814,8 +3814,29 @@
 			<property name="Explosion.EntityDamage" value="100"/>
 			<property name="RotateToGround" value="true"/>
 			<property name="Faction" value="none"/>
-			<property name="MapIcon" value="ui_game_symbol_4x4"/>
-			<property name="NavObject" value="4x4"/>
+			<property name="MapIcon" value="ui_game_symbol_buggy"/>
+			<property name="NavObject" value="buggy"/>
+		</entity_class>
+		
+		<entity_class name="vehicleRuinRipper">
+			<property name="Class" value="EntityMotorcycle"/>
+			<property name="Tags" value="vehicle,usesGas,bikerSetBonus"/>
+			<property name="Parent" value="Cars"/>
+			<property name="Prefab" value="#@modfolder:Resources/DirtBike.unity3d?Ruin_Runner"/>
+			<property name="ModelType" value="Standard"/>
+			<property name="SurfaceCategory" value="metal"/>
+			<property name="IgnoreTrigger" value="true"/>
+			<property name="LootListAlive" value="vehicleMinibike"/>
+			<property name="IsEnemyEntity" value="false"/>
+			<property name="Explosion.ParticleIndex" value="27"/>
+			<property name="Explosion.RadiusBlocks" value="4"/>
+			<property name="Explosion.RadiusEntities" value="4"/>
+			<property name="Explosion.BlockDamage" value="50"/>
+			<property name="Explosion.EntityDamage" value="50"/>
+			<property name="RotateToGround" value="true"/>
+			<property name="Faction" value="none"/>
+			<property name="MapIcon" value="ui_game_symbol_dirtbike"/>
+			<property name="NavObject" value="dirtbike" />
 		</entity_class>
 	</append>
 	
@@ -3924,18 +3945,18 @@
 	<!-- <set xpath="//entity_class[starts-with(@name,'zombieMutated')]//property[@name='LootDropProb']/@value">.03</set>	 -->
 	
 	<!-- *** buff for random zombie walk type *** -->
-	<!-- <append xpath="//entity_class[starts-with(@name,'zombie') or (starts-with(@name,'hellsZombie'))][not (starts-with(@name,'zombieTemplate')) and not (starts-with(@name,'zombieSpider')) and not (starts-with(@name,'zombieSteveCrawler'))]"> -->
-		<!-- <effect_group> -->
-			<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffRandomWalk"/> -->
-		<!-- </effect_group> -->
-	<!-- </append>		 -->
+	<append xpath="//entity_class[starts-with(@name,'zombie') or (starts-with(@name,'hellsZombie'))][not (starts-with(@name,'zombieTemplate')) and not (starts-with(@name,'zombieSpider')) and not (starts-with(@name,'zombieSteveCrawler'))]">
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffRandomWalk"/>
+		</effect_group>
+	</append>		
 </configs>
 <!-- *** potential particle effects for zombies *** -->
 <!--use1 with name="TintShaderProperties" value="_TintColor"-->
 <!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh6"/> -->
-<!-- <property name="TintColor" value="#232b2b"/> -->
+<!-- <property name="TintColor" value="#321414"/> -->
 <!--use2 with name="TintShaderProperties" value="_Color"-->
 <!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh5"/> -->
-<!-- <property name="TintColor" value="#232b2b"/>-->
+<!-- <property name="TintColor" value="#321414"/>-->
 <!--default for material modifier, _EmissiveColor-->
 <!-- <property name="TintShaderProperties" value="_EmissiveColor"/>	 -->

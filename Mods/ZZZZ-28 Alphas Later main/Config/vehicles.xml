@@ -1,0 +1,298 @@
+<HellsJanitor>
+	<append xpath="/vehicles">
+		<vehicle name="vehicleTheHornet">
+			<property name="cameraDistance" value="5.5, 7"/>
+			<property name="cameraTurnRate" value=".2, .35"/>
+			<property name="upAngleMax" value="70"/>
+			<property name="upForce" value="1"/>
+			<property name="steerAngleMax" value="32"/>
+			<property name="steerRate" value="130"/>
+			<property name="steerCenteringRate" value="90"/>
+			<property name="tiltAngleMax" value="80"/>
+			<property name="tiltThreshold" value="3"/>
+			<property name="tiltDampening" value=".22"/>
+			<property name="tiltDampenThreshold" value="8"/>
+			<property name="tiltUpForce" value="0"/>
+
+			<property name="motorTorque_turbo" value="3500, 1500, 4500, 2000"/>
+			<property name="velocityMax_turbo" value="10, 8, 14, 10"/>
+			<property name="brakeTorque" value="6000"/>
+			<property name="unstickForce" value="1"/>
+			<property name="waterDrag_y_velScale_velMaxScale" value="1.8, .9, .1"/>
+			<property name="wheelPtlScale" value="1"/>
+
+			<property name="hornSound" value="buggy_horn"/>
+
+			<property name="recipeName" value="vehicleTheHornetPlaceable"/>
+
+			<property class="chassis">
+				<property name="class" value="Chassis"/>
+				<property name="display_name" value="chassis"/>
+				<property name="slot_type" value="chassis"/>
+				<property name="mesh" value="chassis"/>
+				<property name="transform" value="Origin"/>
+				<property name="paint" value="car_mesh"/>
+			</property>
+
+			<property class="engine">
+				<property name="class" value="Engine"/>
+				<property name="slot_type" value="engine"/>
+				<property name="mesh" value="engine_small"/>
+				<property name="transform" value="engine_small"/>
+				<property name="particle_transform" value="engine_small/MinibikeParticles/p_engine_fire"/>
+				<property name="fuelKmPerL" value=".1"/>
+				<property name="foodDrain" value=".002,.00811"/><!-- driving/turbo, truck -->
+				<property name="gear1" value="
+								500,2500, -1400,800,0, 700,2200,900,
+								Vehicles/Suv/suv_accel1,
+								Vehicles/Suv/suv_decel1,
+								0, .7, 1, .1, -9, .12, .1, Vehicles/Suv/suv_idle_lp,
+								-.4, -.02, .7, .7, -.2, 9, .2, Vehicles/Suv/suv_max_speed_lp
+								"/>
+				<property name="gear2" value="
+								500,2500, -2000,1000,2000, 600,2200,800,
+								Vehicles/Suv/suv_accel2,
+								Vehicles/Suv/suv_decel1,
+								-.25, -.05, .2, .4, -1, 1, .1, Vehicles/Suv/suv_max_speed_lp
+								"/>
+				<property name="gear3" value="
+								500,2500, -2000,1000,2000, 500,2200,1000,
+								Vehicles/Suv/suv_accel3,
+								Vehicles/Suv/suv_decel2,
+								-.28, -.07, .3, .6, -1, 1, .1, Vehicles/Suv/suv_max_speed_lp
+								"/>
+				<property name="gear4" value="
+								500,2500, -2000,1000,2000, 500,9999,9999,
+								,
+								Vehicles/Suv/suv_decel2,
+								-.31, -.08, .6, .9, -1, 1, .1, Vehicles/Suv/suv_max_speed_lp
+								"/>
+				<property name="sound_start" value="Vehicles/Suv/suv_startup"/>
+				<property name="sound_shut_off" value="Vehicles/Suv/suv_shutoff"/>
+				<property name="sound_no_fuel_shut_off" value="Vehicles/Motorbike/motorbike_empty"/>
+			</property>
+
+			<property class="fuelTank">
+				<property name="class" value="FuelTank"/>
+				<property name="capacity" value="400"/>
+			</property>
+
+			<property class="handlebars">
+				<property name="class" value="Steering"/>
+				<property name="slot_type" value="handlebars"/>
+				<property name="transform" value="Origin/steering_joint"/>
+				<property name="steerMaxAngle" value="60"/>
+				<property name="IKHandLPosition" value="-0.168, -2, 0.552"/>
+				<property name="IKHandLRotation" value="316.6, 321.6, 141.6"/>
+				<property name="IKHandRPosition" value="0.396, -1.930, 0.276"/>
+				<property name="IKHandRRotation" value="65.1, 173.8, 282.4"/>
+			</property>
+
+			<property class="seat0">
+				<property name="class" value="Seat"/>
+				<property name="pose" value="40"/>
+				<property name="position" value="-.359, -0.125, -0.477"/>
+				<property name="rotation" value="0, 0, 0"/>
+				<property name="exit" value="-1.6,0,0 ~ 1.6,0,-1 ~ -.4,0,-2.8 ~ -.4,0,2.6 ~ -.4,2.1,0"/>
+			</property>
+
+			<property class="seat1">
+				<property name="class" value="Seat"/>
+				<property name="pose" value="40"/>
+				<property name="position" value=".359, -0.125, -0.477"/>
+				<property name="rotation" value="0, 0, 0"/>
+				<property name="exit" value="1.6,0,0 ~ -1.6,0,-1 ~ .4,0,-2.8 ~ .4,0,2.6 ~ .4,2.1,0"/>
+			</property>
+
+			<property class="wheel0">
+				<property name="steerTransform" value="Origin/frontLeftWheelStear_joint"/>
+				<property name="tireTransform" value="Origin/frontLeftWheelStear_joint/frontLeftWheel_joint"/>
+				<property name="tireSuspensionPercent" value="1"/>
+				<property name="torqueScale_motor_brake" value="1, .8"/>
+			</property>
+
+			<property class="wheel1">
+				<property name="steerTransform" value="Origin/frontRightWheelStear_joint"/>
+				<property name="tireTransform" value="Origin/frontRightWheelStear_joint/frontRightWheel_joint"/>
+				<property name="tireSuspensionPercent" value="1"/>
+				<property name="torqueScale_motor_brake" value="1, .8"/>
+			</property>
+
+			<property class="wheel2">
+				<property name="tireTransform" value="Origin/backLeftWheelJoint"/>
+				<property name="tireSuspensionPercent" value="1"/>
+				<property name="torqueScale_motor_brake" value="1, 1"/>
+			</property>
+
+			<property class="wheel3">
+				<property name="tireTransform" value="Origin/backRightWheelJoint"/>
+				<property name="tireSuspensionPercent" value="1"/>
+				<property name="torqueScale_motor_brake" value="1, 1"/>
+			</property>
+
+			<property class="headlight">
+				<property name="class" value="Headlight"/>
+				<property name="transform" value="Origin/headlight"/>
+				<property name="bright" value=".75"/>
+				
+				<property name="tailEmissive" value="c0c0c0"/>
+			</property>
+
+			<property class="storage">
+				<property name="class" value="Storage"/>
+				<property name="display_name" value="basket"/>
+				<property name="slot_type" value="basket"/>
+				<property name="mesh" value="basket"/>
+				<property name="transform" value="basket"/>
+			</property>
+		</vehicle>
+		
+		<vehicle name="vehicleRuinRipper">
+
+			<property name="cameraDistance" value="3.1, 4.3"/>
+			<property name="cameraTurnRate" value=".2, .35"/>
+			<property name="upAngleMax" value="70"/>
+			<property name="upForce" value="1"/>
+			<property name="steerRate" value="330"/>
+			<property name="steerCenteringRate" value="100"/>
+
+			<property name="tiltAngleMax" value="42"/>
+			<property name="tiltThreshold" value="0.06"/>
+			<property name="tiltDampening" value=".77"/>
+			<property name="tiltDampenThreshold" value="39"/>
+			<property name="tiltUpForce" value="2"/>
+			
+			<property name="motorTorque_turbo" value="2800, 900, 4500, 950"/>
+			<property name="velocityMax_turbo" value="15.8, 2, 22, 4"/>
+			<property name="brakeTorque" value="4500"/>
+			<property name="hopForce" value="1, .1"/>
+			
+			<property name="unstickForce" value="1"/>
+			<property name="waterDrag_y_velScale_velMaxScale" value="1.7, .9, .1"/>
+			<property name="wheelPtlScale" value=".5"/>
+
+			<property name="hornSound" value="motorbike_horn"/>
+		
+			<property name="recipeName" value="vehicleRuinRipperPlaceable"/>
+
+			<property class="chassis">
+				<property name="class" value="Chassis"/>
+				<property name="paint" value="M"/>
+			</property>
+
+			<property class="engine">
+				<property name="class" value="Engine"/>
+				<property name="particleOn" value="Particles/p_on"/>
+				<property name="particleDamaged" value="Particles/p_damaged"/>
+				<property name="particleBroken" value="Particles/p_broken"/>
+				<property name="fuelKmPerL" value=".2"/>
+				<property name="foodDrain" value=".002,.0101"/><!-- driving/turbo, motorcycle -->
+
+				<property name="gear1" value="
+								500,2500, -1400,800,0, 700,2000,900,
+								Vehicles/Motorbike/motorbike_accel_1,
+								,
+								0, .7, 1, .1, -9, .15, .1, Vehicles/Motorbike/motorbike_idle_lp,
+								-.3, .1, .1, .4, -.05, 9, .2, Vehicles/Motorbike/motorbike_run_lp
+								"/>
+				<property name="gear2" value="
+								500,2500, -2000,1000,2000, 620,2200,800,
+								Vehicles/Motorbike/motorbike_accel_2,
+								Vehicles/Motorbike/motorbike_decel,
+								-.2, -.02, .1, .2, -1, 1, .1, Vehicles/Motorbike/motorbike_run_lp
+								"/>
+				<property name="gear3" value="
+								500,2500, -2000,1000,2000, 570,2200,1000,
+								Vehicles/Motorbike/motorbike_accel_3,
+								Vehicles/Motorbike/motorbike_decel,
+								-.21, -.05, .1, .2, -1, 1, .1, Vehicles/Motorbike/motorbike_run_lp
+								"/>
+				<property name="gear4" value="
+								500,2500, -2000,1000,2000, 500,9999,9999,
+								,
+								Vehicles/Motorbike/motorbike_decel,
+								-.25, -.08, .55, .55, -1, 1, .1, Vehicles/Motorbike/motorbike_run_lp
+								"/>
+
+				<property name="sound_start" value="Vehicles/Motorbike/minibike_start_"/>
+				<property name="sound_shut_off" value="Vehicles/Motorbike/minibike_shutoff_"/>
+				<property name="sound_no_fuel_shut_off" value="Vehicles/Motorbike/motorbike_empty"/>
+			</property>
+
+			<property class="fuelTank">
+				<property name="class" value="FuelTank"/>
+				<property name="capacity" value="120"/>
+				<property name="mod" value="fueltank"/>
+				<property name="modT" value="M/Fuel"/>
+			</property>
+
+			<property class="handlebars">
+				<property name="class" value="Steering"/>
+				<property name="transform" value="M/Forks"/>
+				<property name="steerAngle" value="0, 30, 0"/>
+				<property name="IKHandLPosition" value="-2, -2, 1.552"/>
+				<property name="IKHandLRotation" value="0, 84.9, 37.2"/>
+				<property name="IKHandRPosition" value="2, -2, 1.630"/>
+				<property name="IKHandRRotation" value="0, 86.9, 235.9"/>
+				<property name="paint" value="handlebar"/>
+			</property>
+
+			<property class="seat0">
+				<property name="class" value="Seat"/>
+				<property name="pose" value="20"/>
+				<property name="position" value="0, .279, -.082"/>
+				<property name="rotation" value="0, 0, 0"/>
+				<property name="exit" value="-.9,0,0 ~ .9,0,0 ~ 0,0,-1.5 ~ 0,0,1.6 ~ 0,1.5,0"/>
+			</property>
+
+			<property class="seat1">
+				<property name="class" value="Seat"/>
+				<property name="pose" value="31"/>
+				<property name="position" value="0, 0, 0"/>
+				<property name="rotation" value="0, 0, 0"/>
+				<property name="exit" value="-.9,0,-.7 ~ .9,0,-.7 ~ -.6,0,-1.5 ~ -.6,0,1.6 ~ 0,1.5,-.6"/>
+				<property name="mod" value="seat"/>
+				<property name="modT" value="M/Seat"/>
+			</property>
+
+			<property class="wheel0">
+				<property name="tireTransform" value="M/Forks/Wheel0"/>
+				<property name="torqueScale_motor_brake" value=".15, .5"/>
+			</property>
+
+			<property class="wheel1">
+				<property name="tireTransform" value="Wheel1"/>
+				<property name="torqueScale_motor_brake" value="1, 1"/>
+			</property>
+
+			<property class="headlight">
+				<property name="class" value="Headlight"/>
+				<property name="bright" value=".9"/>
+
+				<property name="transform" value="M/Forks/HeadLights/Lights"/>
+				<property name="matT" value="M/Forks/HeadLights"/>
+				<property name="matEmissive" value="808080"/>
+
+				<property name="mod" value="light"/>
+				<property name="modT" value="M/Forks/LightMod"/>
+				<property name="modOnT" value="M/Forks/LightMod/Lights"/>
+				<property name="modMatEmissive" value="909090"/>
+
+				<property name="tailEmissive" value="c0c0c0"/>
+			</property>
+
+			<property class="armor">
+				<property name="class" value="VehiclePart"/>
+				<property name="mod" value="armor"/>
+				<property name="modT" value="M/Forks/Armor"/>
+				<property name="modRBT" value="Armor"/>
+			</property>
+
+			<property class="storage">
+				<property name="class" value="Storage"/>
+				<property name="mesh" value="M/Storage"/>
+			</property>
+
+		</vehicle>
+	</append>
+</HellsJanitor>

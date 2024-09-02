@@ -1,15 +1,15 @@
 <config>
 	<append xpath="/Sounds">
-		<SoundDataNode name="BeehiveOpen"> <AudioSource name="Sounds/AudioSource_Interact"/>
+		<SoundDataNode name="BeehiveOpen"><AudioSource name="Sounds/AudioSource_Interact"/>
 			<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-			<AudioClip ClipName="#@modfolder:Assets/idc_beehive.unity3d?BeehiveSoundOpen.wav" />
-			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> 
+			<AudioClip ClipName="#@modfolder:Assets/idc_beehive.unity3d?BeehiveSoundOpen.wav"/>
+			<LocalCrouchVolumeScale value="0.5"/><CrouchNoiseScale value="0.5"/><NoiseScale value="1"/><MaxVoices value="10"/><MaxRepeatRate value="0.01"/>
 		</SoundDataNode>
 		
-		<SoundDataNode name="BeehiveProduce"> <AudioSource name="Sounds/AudioSource_VO"/>
+		<SoundDataNode name="BeehiveProduce"><AudioSource name="Sounds/AudioSource_VO"/>
 			<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-			<AudioClip ClipName="#@modfolder:Assets/idc_beehive.unity3d?BeehiveSoundProduction.wav" />
-			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> 
+			<AudioClip ClipName="#@modfolder:Assets/idc_beehive.unity3d?BeehiveSoundProduction.wav"/>
+			<LocalCrouchVolumeScale value="0.5"/><CrouchNoiseScale value="0.5"/><NoiseScale value="1"/><MaxVoices value="10"/><MaxRepeatRate value="0.01"/>
 		</SoundDataNode>
 
 		<SoundDataNode name="tablesaw_start_click">
@@ -21,9 +21,9 @@
 			<MaxVoices value="10"/>
 			<MaxEntities name="30"/>
 			<MaxRepeatRate value="0.01"/>
-			</SoundDataNode>
+		</SoundDataNode>
 			
-		<SoundDataNode name="tablesaw_lp">			
+		<SoundDataNode name="tablesaw_lp">
 			<AudioSource name="Sounds/AudioSource_Interact"/>
 			<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 			<AudioClip ClipName="#@modfolder:Resources/Tablesaw.unity3d?Tablesaw_Run.wav" Loop="true"/>
@@ -33,7 +33,7 @@
 			<MaxVoices value="10"/>
 			<MaxEntities name="30"/>
 			<MaxRepeatRate value="0.01"/>
-		</SoundDataNode>			
+		</SoundDataNode>
 
 		<SoundDataNode name="tablesaw_complete">
 			<AudioSource name="Sounds/AudioSource_Interact"/>
@@ -44,7 +44,19 @@
 			<MaxVoices value="10"/>
 			<MaxEntities name="30"/>
 			<MaxRepeatRate value="0.01"/>
-			</SoundDataNode>
+		</SoundDataNode>
+		
+		<SoundDataNode name="buggy_horn"><AudioSource name="Sounds/AudioSource_SmallHorn"/>
+			<Noise ID="4" noise="60" time="3" heat_map_strength="0.2" heat_map_time="90"/>
+			<AudioClip ClipName="#@modfolder:Resources/4x4hornnew.unity3d?la-cucaracha"/>
+			<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_horn" AltSound="true"/>
+			<LocalCrouchVolumeScale value="1.0"/>
+			<CrouchNoiseScale value="1"/>
+			<NoiseScale value="1"/>
+			<MaxVoices value="3"/>
+			<MaxEntities name="6"/>
+			<MaxRepeatRate value="0.01"/>
+		</SoundDataNode>
 	</append>
 	
 	<set xpath="//SoundDataNode[@name='suv_horn']//AudioClip[@ClipName='Sounds/Vehicles/Suv/truck_horn']/@ClipName">#@modfolder:Resources/4x4horn.unity3d?truckHorn</set>

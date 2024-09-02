@@ -59,7 +59,7 @@
 	
 	<!-- *** bicycle stamina saver *** -->
 	<insertafter xpath="//item_modifier[@name='modVehicleMega']">	
-	<item_modifier name="modBicycleStaminaSaver" installable_tags="legs" modifier_tags="misc" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modBicycleStaminaSaver" installable_tags="armorChest,armorLegs" modifier_tags="misc" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modBicycleStaminaSaverSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
@@ -139,6 +139,7 @@
 		<property name="Material" value="MresourceScrapLeadSmall"/>
 		<property name="Weight" value="1"/>		
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="EconomicValue" value="850"/>
 		
 		<effect_group tiered="false">			
 			<passive_effect name="HypothermalResist" operation="base_add" value="2.8,5.2"/>
@@ -157,6 +158,7 @@
 		<property name="Material" value="MresourceScrapLeadSmall"/>
 		<property name="Weight" value="1"/>		
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="EconomicValue" value="850"/>
 		
 		<effect_group tiered="false">			
 			<passive_effect name="HypothermalResist" operation="base_add" value="2.8,5.2"/>
@@ -175,6 +177,7 @@
 		<property name="Material" value="MresourceScrapLeadSmall"/>
 		<property name="Weight" value="1"/>		
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="EconomicValue" value="850"/>
 		
 		<effect_group tiered="false">
 			<passive_effect name="HypothermalResist" operation="base_add" value="6.5,9.5"/>
@@ -192,7 +195,8 @@
 		<property name="CustomIcon" value="apparelHazmatMask"/>
 		<property name="Material" value="MresourceScrapLeadSmall"/>
 		<property name="Weight" value="1"/>		
-		<property name="TraderStageTemplate" value="modsTier3"/>		
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="EconomicValue" value="850"/>		
 		
 		<effect_group tiered="false">
 			<passive_effect name="HypothermalResist" operation="base_add" value="6.5,9.5"/>

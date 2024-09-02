@@ -14,8 +14,37 @@
 		</action>
 	</append>
 	
-	<!-- *** prevents use of vehicles underwater *** -->
 	<append xpath="/gameevents">
+	<!-- *** dismembered zombies crawl *** -->
+	<action_sequence name="action_cripple_me_only">
+		<property name="category" value="twitch_actions" />
+		<requirement class="NearbyEntities">
+			<property name="entity_tags" value="entity" />
+			<property name="max_distance" value="40" />
+		</requirement>
+
+		<action class="AddEntitiesToGroup">
+			<property name="phase" value="0" />
+			<property name="entity_tags" value="entity" />
+			<property name="group_name" value="zombies" />
+			<property name="max_distance" value="40" />
+		</action>
+		
+		<action class="PlaySound">
+			<property name="sound" value="twitch_bad_action" />
+			<property name="phase" value="1" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="sound" value="twitch_cripple_zombies" />
+		</action>
+
+		<action class="EnemyToCrawler">
+			<property name="target_group" value="zombies" />
+		</action>
+
+	</action_sequence>
+	<!-- *** prevents use of vehicles underwater *** -->	
 	<action_sequence name="buff_novehicle_submerged">
 		<property name="category" value="twitch_actions" />
 
@@ -61,18 +90,20 @@
 		<property name="allow_user_trigger" value="false" />
 		<action class="AddBuff">
 			<property name="phase" value="1" />
-			<property name="buff_name" value="buffDespairMain" />
+			<property name="buff_name" value="buffDespairTICheck" />
 			
 			<requirement class="IsTwitchActive">
 				<property name="invert" value="true" />
 			</requirement>
 		</action>
 		
-		<action class="RemoveBuff">
+		<action class="AddBuff">
 			<property name="phase" value="2" />
 			<property name="buff_name" value="buffDespairMain" />
 			
-			<requirement class="IsTwitchActive"/>				
+			<requirement class="IsTwitchActive">
+				<property name="invert" value="true" />
+			</requirement>				
 		</action>
 	</action_sequence>
 	

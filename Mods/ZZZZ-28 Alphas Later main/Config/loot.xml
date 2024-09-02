@@ -320,58 +320,51 @@
 	<!-- *** remove resourceWood from trash piles *** -->
 	<set xpath="//lootgroup[@name='groupBuildingCommon']//item[@name='resourceWood']/@name">resourceWoodScraps</set>
 	
-	<set xpath="//lootgroup//item[starts-with(@name,'drinkJarBeer')]">resourceCropHopsFlower</set>
-	
-	<!-- *** add hazmat gear to zombie strong and boss loot bags *** -->
-	<!-- <remove xpath="//lootgroup[@name='groupApparelHazmat']//item[@name='resourceMilitaryFiber']"/> -->
-	<!-- <append xpath="//lootgroup[@name='groupZpackStrong02']"> -->
-	<!-- <item group="groupApparelHazmat" loot_prob_template="med" force_prob="true"/> -->
-	<!-- </append> -->
-	<!-- <append xpath="//lootgroup[@name='groupZpackBoss02']"> -->
-	<!-- <item group="groupApparelHazmat" loot_prob_template="medHigh" force_prob="true"/> -->
-	<!-- </append> -->
-	
-	<!-- *** remove all eye/face wear EXCEPT looting goggles & bandanna *** -->
-	<!-- <set xpath="//lootgroup[@name='groupApparelFaceCover']"> -->
-	<!-- <item name="apparelBandana" mods="dye" mod_chance="0"/> -->
-	<!-- <item name="apparelAviatorGoggles"  loot_prob_template="high"/> -->
-	<!-- </set> -->
-	
-	<!-- <remove xpath="//lootgroup//item[@name='apparelCigar']"/> -->
-	
-	<!-- *** adds new eye/face wear mods to loot *** -->
-	<!-- <append xpath="//lootgroup[@name='modArmorT1']"> -->
-	<!-- <item name="modGlassesPerception"/> -->
-	<!-- <item name="modGlassesStrength"/> -->
-	<!-- <item name="modGlassesFortitude"/> -->
-	<!-- <item name="modGlassesAgility"/> -->
-	<!-- <item name="modGlassesIntellect"/> -->
-	<!-- </append> -->
+	<set xpath="//lootgroup//item[starts-with(@name,'drinkJarBeer')]">resourceCropHopsFlower</set>	
 	
 	<!-- *** hazmat zombies guaranteed hazmat gear when loot drops *** -->
-	<insertbefore xpath="//lootcontainer[@name='playerWoodWritableStorage']">
+	<insertbefore xpath="//lootgroup[@name='groupZpackReg01']">		
+	<lootgroup name="groupApparelHazmat">
+		<item name="modHazmatBoots"/>
+		<item name="modHazmatGloves"/>
+		<item name="modHazmatOutfit"/>
+		<item name="modHazmatHelmet"/>
+	</lootgroup>
+	</insertbefore>
+	
+	<insertbefore xpath="//lootgroup[@name='groupBuriedTreasure']">
 	<lootgroup name="groupHazmat" count="all">
-		<!-- <item group="groupApparelHazmat" loot_prob_template="guaranteed" force_prob="true"/> -->
+		<item group="groupApparelHazmat" loot_prob_template="guaranteed" force_prob="true"/>
 		<item group="groupAmmoMedium" count="1"/>
 		<item group="groupZpackReg01" count="2"/>
 		<item group="groupZpackReg02" loot_prob_template="med" force_prob="true"/>
 		<item group="groupZpackReg03" loot_prob_template="low" force_prob="true"/>
 	</lootgroup>
 	<lootgroup name="groupHazmatFeral" count="all">
-		<!-- <item group="groupApparelHazmat" loot_prob_template="guaranteed" force_prob="true"/> -->
+		<item group="groupApparelHazmat" loot_prob_template="guaranteed" force_prob="true"/>
 		<item group="groupAmmoLarge" count="1"/>
 		<item group="groupZpackStrong01" count="2"/>
 		<item group="groupZpackStrong02" count="1"/>
 		<item group="groupZpackStrong03" loot_prob_template="low" force_prob="true"/>
 	</lootgroup>
 	<lootgroup name="groupHazmatMutated" count="all">
-		<!-- <item group="groupApparelHazmat" loot_prob_template="guaranteed" force_prob="true"/> -->
+		<item group="groupApparelHazmat" loot_prob_template="guaranteed" force_prob="true"/>
 		<item group="groupAmmoLarge" count="2"/>
 		<item group="groupZpackBoss01" count="2"/>
 		<item group="groupZpackBoss02" count="1"/>
 		<item group="groupZpackBoss03" loot_prob_template="med" force_prob="true"/>
 	</lootgroup>	
+	</insertbefore>
 	
+	<!-- *** add hazmat gear to zombie strong and boss loot bags *** -->
+	<append xpath="//lootgroup[@name='groupZpackStrong02']">
+	<item group="groupApparelHazmat" loot_prob_template="med" force_prob="true"/>
+	</append>
+	<append xpath="//lootgroup[@name='groupZpackBoss02']">
+	<item group="groupApparelHazmat" loot_prob_template="medHigh" force_prob="true"/>
+	</append>
+	
+	<insertbefore xpath="//lootcontainer[@name='playerWoodWritableStorage']">
 	<lootcontainer name="zombieMaleHazmatLoot" count="1" size="6,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">	
 	<item group="groupHazmat" />	
 	</lootcontainer>	
@@ -392,7 +385,33 @@
 	<lootcontainer name="cardboardboxloot" count="0,1" size="6,2" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="qualBaseTemplate">
 		<item group="groupJunk"/>
 	</lootcontainer>
-	</insertbefore>
+	</insertbefore>	
+	
+	<!-- *** new vehicle parts *** -->
+	<insertafter xpath="//lootgroup[@name='minibikeParts']">
+	<lootgroup name="dirtbikeParts">
+		<item name="vehicleRuinRipperChassis"/>
+		<item name="vehicleRuinRipperHandlebars"/>
+		<item name="vehicleWheels"/>
+		<item name="smallEngine"/>
+		<item name="carBattery"/>
+	</lootgroup>	
+	</insertafter>
+	
+	<insertafter xpath="//lootgroup[@name='motorcycleParts']">
+	<lootgroup name="buggyParts">
+		<item name="vehicleTheHornetChassis"/>
+		<item name="vehicleTheHornetAccessories"/>
+		<item name="vehicleWheels"/>
+		<item name="smallEngine"/>
+		<item name="carBattery"/>
+	</lootgroup>
+	</insertafter>
+	
+	<append xpath="//lootgroup[@name='vehiclePartsTiered']">
+		<item group="dirtbikeParts"  loot_prob_template="ProbT1Cap"/>
+		<item group="buggyParts" loot_prob_template="ProbT2Cap"/>
+	</append>
 
 	<!-- *** remove triple & quad pocket mod schematic from loot *** -->
 	<remove xpath="//lootgroup[@name='schematicsModsAndGeneralT2']//item[@name='modArmorTripleStoragePocketSchematic']"/>

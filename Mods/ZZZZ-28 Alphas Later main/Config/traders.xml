@@ -35,20 +35,20 @@
 	
 	<!-- *** iron hoe, schematic, and fertilzer added to trader stock *** -->
 	<append xpath="//trader_item_group[@name='perkBooks']">
-	    <item name="meleeToolFarmT2IronHoeSchematic"/>		
+		<item name="meleeToolFarmT2IronHoeSchematic"/>
 	</append>
     
 	<append xpath="//trader_item_group[@name='traderAlways']">
-	    <item name="meleeToolFarmT2IronHoeSchematic"/>		
+		<item name="meleeToolFarmT2IronHoeSchematic"/>
 	</append>
 	
 	<append xpath="//trader_item_group[@name='seeds']">
-	    <item name="meleeToolFarmT2IronHoe" quality="1"/>
+		<item name="meleeToolFarmT2IronHoe" quality="1"/>
 		<item name="resourceFertilizer" count="50,100"/>
-	</append>	
+	</append>
 	
 	<append xpath="//trader_item_group[@name='traderGeneral']">
-	    <item name="meleeToolFarmT2IronHoe" quality="1"/>
+		<item name="meleeToolFarmT2IronHoe" quality="1"/>
 		<item name="resourceFertilizer" count="50,100"/>
 	</append>
 	
@@ -56,14 +56,7 @@
 	<setattribute xpath="/traders" name="buy_markup">6</setattribute>
 	<setattribute xpath="/traders" name="sell_markdown">0.1</setattribute>
 	<removeattribute xpath="//trader_info[@id='4']/@override_buy_markup"/>
-	<removeattribute xpath="//trader_info[@id='10']/@override_buy_markup"/>	
-	
-	<!-- *** traders open dawn 'til dusk *** -->
-	<!-- <set xpath="/traders/trader_info[@id='1']/@open_time">4:05</set> -->
-	<!-- <set xpath="/traders/trader_info[@id='2']/@open_time">4:05</set> -->
-	<!-- <set xpath="/traders/trader_info[@id='6']/@open_time">4:05</set> -->
-	<!-- <set xpath="/traders/trader_info[@id='7']/@open_time">4:05</set> -->
-	<!-- <set xpath="/traders/trader_info[@id='8']/@open_time">4:05</set> -->
+	<removeattribute xpath="//trader_info[@id='10']/@override_buy_markup"/>
 	
 	<!-- *** add new food to trader stock *** -->
 	<append xpath="//trader_item_group[@name='preparedFood']">
@@ -73,17 +66,17 @@
 	</append>
 	
 	<insertbefore xpath="//trader_item_group[@name='cannedfood']//item[1]">
-	<item name="foodCanCarrots"/>
+		<item name="foodCanCarrots"/>
 	</insertbefore>
 	
 	<!-- *** add lavender seed *** -->
 	<append xpath="//trader_item_group[@name='seeds']">
-	<item name="plantedLavender1"/>
+		<item name="plantedLavender1"/>
 	</append>
 	
 	<!-- *** add lavender flower *** -->
 	<append xpath="//trader_item_group[@name='traderGeneral']">
-	    <item name="resourceCropLavender" count="10,20"/>
+		<item name="resourceCropLavender" count="10,20"/>
 	</append>
 	
 	<!-- *** add tablesaw to trader stock *** -->
@@ -105,47 +98,63 @@
 	</append>
 	
 	<!-- *** add new mod schematics to trader stock *** -->
-	<append xpath="//trader_item_group[@name='schematicsModsCommon']">		
-		<item name="modBicycleStaminaSaverSchematic"/>	
+	<append xpath="//trader_item_group[@name='schematicsModsCommon']">
+		<item name="modBicycleStaminaSaverSchematic"/>
 		<!-- <item name="modGunBrassCatcherSchematic"/> -->
 	</append>
 	
 	<!-- *** add antivenom/St. John's wort to medical trader stock *** -->
 	<append xpath="//trader_item_group[@name='medicine']">
-	<item name="antivenom"/>
-	<item name="drugStJohnsWort" count="1"/>
+		<item name="antivenom"/>
+		<item name="drugStJohnsWort" count="1"/>
 	</append>
 	
 	<!-- *** add lithium to rare medical trader stock *** -->
 	<append xpath="//trader_item_group[@name='rareMedicine']">
-	<item name="drugLithium" count="1"/>
+		<item name="drugLithium" count="1"/>
 	</append>
 	
 	<!-- *** legendary paintbrush *** -->
 	<append xpath="//trader_item_group[@name='rareTools']">
-	<item name="meleeWpnBladeT666LegendaryPaintbrush" quality="6"/>
+		<item name="meleeWpnBladeT666LegendaryPaintbrush" quality="6"/>
 	</append>
 	
 	<set xpath="//trader_item_group[@name='groupArmorMods']">
-	<!-- *** T1_Armor_Mods -->
+		<!-- *** T1_Armor_Mods -->
 		<item name="modArmorHelmetLight"/>
 		<item name="modArmorInsulatedLiner"/>
 		<item name="modArmorCoolingMesh"/>
 		<item name="modArmorPlatingBasic"/>
 		<item name="modArmorStoragePocket"/>
 		<item name="modArmorImprovedFittings"/>
-	<!-- *** T2_Armor_Mods -->
+		<!-- *** T2_Armor_Mods -->
 		<item name="modArmorWaterPurifier"/>
 		<item name="modArmorImpactBracing"/>
 		<item name="modArmorPlatingReinforced"/>
 		<item name="modArmorMuffledConnectors"/>
 		<item name="modArmorDoubleStoragePocket"/>
-		<item name="modArmorCustomizedFittings"/>		
-	<!-- *** T3_Armor_Mods -->
+		<item name="modArmorCustomizedFittings"/>
+		<!-- *** T3_Armor_Mods -->
 		<item name="modArmorBandolier"/>
 		<item name="modArmorTripleStoragePocket"/>
 		<item name="modArmorAdvancedMuffledConnectors"/>
+		
+		<item name="modHazmatBoots"/>
+		<item name="modHazmatGloves"/>
+		<item name="modHazmatOutfit"/>
+		<item name="modHazmatHelmet"/>
 	</set>
+	
+	<!-- *** new vehicle parts *** -->
+	<append xpath="//trader_item_group[@name='groupVehicles']">
+		<item name="vehicleRuinRipperChassis"/>
+		<item name="vehicleRuinRipperHandlebars"/>
+		<item name="vehicleRuinRipperPlaceable"/>
+			
+		<item name="vehicleTheHornetChassis"/>
+		<item name="vehicleTheHornetAccessories"/>
+		<item name="vehicleTheHornetPlaceable"/>
+	</append>
 	
 	<set xpath="//trader_item_group[@name='constructionSupplies']//item[@name='resourceConcreteMix']/@name">resourceCrushedSand</set>
 </configs>
