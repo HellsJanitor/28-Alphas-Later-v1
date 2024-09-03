@@ -9,6 +9,18 @@
 	</append>
 	
 	<!-- *** visible backpack *** -->
+	<append xpath="//entity_class[@name='animalZombieBear']">
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//entity_class[@name='animalDireWolf']">
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
+		</effect_group>
+	</append>
+	
 	<append xpath="//entity_class[starts-with(@name,'zombieArlene')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
@@ -3922,6 +3934,30 @@
 		<property name="HandItem" value="meleeHandZombieCop"/>
 	</insertafter>
 	<insertafter xpath="//entity_class[@name='zombieFatHawaiian']//property[@name='HasDeathAnim']">
+		<property name="AITask" value="
+		BreakBlock|
+		ApproachDistraction|
+		RangedAttackTarget itemType=1;cooldown=4;duration=5|
+		ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
+		ApproachSpot|
+		Look|
+		Wander|
+		"/>
+		
+		<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
+		<property name="Explosion.ParticleIndex" value="8"/>
+		<property name="Explosion.RadiusBlocks" value="5"/>
+		<property name="Explosion.RadiusEntities" value="6"/>
+		<property name="Explosion.BlockDamage" value="500"/>
+		<property name="Explosion.EntityDamage" value="150"/>
+		<property name="Explosion.DamageBonus.earth" value="0"/>
+	</insertafter>
+	
+	<insertafter xpath="//entity_class[@name='zombieBowler']//property[@name='Tags']">
+		<property name="Class" value="EntityZombieCop"/>
+		<property name="HandItem" value="meleeHandZombieCop"/>
+	</insertafter>
+	<insertafter xpath="//entity_class[@name='zombieBowler']//property[@name='HasDeathAnim']">
 		<property name="AITask" value="
 		BreakBlock|
 		ApproachDistraction|

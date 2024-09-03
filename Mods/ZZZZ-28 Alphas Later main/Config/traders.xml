@@ -7,31 +7,31 @@
 	
 	<!-- <remove xpath="/traders/trader_info/trader_items/item[@name='toolDewGatherer']"/> -->
 	<!-- <remove xpath="/traders/trader_info/trader_items/item[@name='toolDewTarp']"/>	 -->
-	<set xpath="/traders/trader_info/trader_items/item[@name='toolDewGatherer']/@name">adcBigBarrel</set>
-	<set xpath="/traders/trader_info/trader_items/item[@name='toolDewTarp']/@name">adcLargeCatcher</set>
-	<set xpath="/traders/trader_info/trader_items/item[@name='toolDewFilter']/@name">resourceWaterFilter</set>
+	<!-- <set xpath="/traders/trader_info/trader_items/item[@name='toolDewGatherer']/@name">adcBigBarrel</set> -->
+	<!-- <set xpath="/traders/trader_info/trader_items/item[@name='toolDewTarp']/@name">adcLargeCatcher</set> -->
+	<!-- <set xpath="/traders/trader_info/trader_items/item[@name='toolDewFilter']/@name">resourceWaterFilter</set> -->
 	
 	<!-- *** dew collector tools *** -->
-	<append xpath="/traders/trader_info[@id='1']">
-		<trader_items>
-			<item name="adcAdvancedFilter" count="1,1"/>
+	<!-- <append xpath="/traders/trader_info[@id='1']"> -->
+		<!-- <trader_items> -->
+			<!-- <item name="adcAdvancedFilter" count="1,1"/> -->
 			<!-- <item name="adcMineralInfuser" count="1,1"/> -->
-		</trader_items>
-	</append>
+		<!-- </trader_items> -->
+	<!-- </append> -->
 	
-	<append xpath="/traders/trader_info[@id='2']">
-		<trader_items>
-			<item name="adcAdvancedFilter" count="1,1"/>
+	<!-- <append xpath="/traders/trader_info[@id='2']"> -->
+		<!-- <trader_items> -->
+			<!-- <item name="adcAdvancedFilter" count="1,1"/> -->
 			<!-- <item name="adcMineralInfuser" count="1,1"/> -->
-		</trader_items>
-	</append>
+		<!-- </trader_items> -->
+	<!-- </append> -->
 	
-	<append xpath="/traders/trader_info[@id='7']">
-		<trader_items>
-			<item name="adcAdvancedFilter" count="1,1"/>
+	<!-- <append xpath="/traders/trader_info[@id='7']"> -->
+		<!-- <trader_items> -->
+			<!-- <item name="adcAdvancedFilter" count="1,1"/> -->
 			<!-- <item name="adcMineralInfuser" count="1,1"/> -->
-		</trader_items>
-	</append>
+		<!-- </trader_items> -->
+	<!-- </append> -->
 	
 	<!-- *** iron hoe, schematic, and fertilzer added to trader stock *** -->
 	<append xpath="//trader_item_group[@name='perkBooks']">

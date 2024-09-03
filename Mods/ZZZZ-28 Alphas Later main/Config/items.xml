@@ -1604,6 +1604,36 @@
 		</item>
 	</append>
 	
+	<set xpath="/items/item[@name='ammoProjectileZombieVomit']">
+		<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+		<property name="Material" value="Morganic"/>
+		<property name="CreativeMode" value="None"/>
+		<property name="CustomIcon" value="missingIcon"/>
+		<property class="Action1">
+			<property name="Class" value="Projectile"/>
+			<property name="DamageEntity" value="10"/>
+			<property name="DamageBlock" value="120"/>
+			<property name="Velocity" value="18"/>
+			<property name="FlyTime" value="2"/>
+			<property name="LifeTime" value="4"/>
+			<property name="Explosion.ParticleIndex" value="7"/>
+			<property name="Explosion.RadiusBlocks" value="2"/>
+			<property name="Explosion.RadiusEntities" value="1"/>
+			<property name="Explosion.DamageBonus.water" value="0"/>
+			<property name="Explosion.DamageBonus.earth" value="0"/>
+		</property>
+		<effect_group name="ammoProjectileZombieVomit" tiered="false">
+			<passive_effect name="ModSlots" operation="base_set" value="0"/>
+			<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+			<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+			<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+			<passive_effect name="BuffProcChance" operation="base_set" value=".30" tags="buffInfectionCatch"/>
+			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+				<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+		</effect_group>
+	</set>
+	
 	<!-- *** reduced zombie melee range *** -->
 	<!-- <set xpath="//item[starts-with(@name,'meleeHandZombie') and not (contains(@name,'Animal'))]//property[@name='Range']/@value">1.4</set> -->
 	

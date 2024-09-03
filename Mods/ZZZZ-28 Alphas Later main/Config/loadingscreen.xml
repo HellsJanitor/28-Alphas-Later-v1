@@ -4,4 +4,13 @@
 	<tip key="loadingTipBleedingArrows" />
 	<tip key="loadingTipPermanentInfection" />
 	</append>
+	
+	<set xpath="doc/backgrounds">
+		<tex file="@modfolder:/Config/backgrounds/bg1.jpg"/>
+		<tex file="@modfolder:/Config/backgrounds/bg2.jpg"/>
+		<tex file="@modfolder:/Config/backgrounds/bg3.jpg"/>   
+		<!-- <tex file="@modfolder:/Config/backgrounds/bg4.png"/> -->
+		<!-- <tex file="@modfolder:/Config/backgrounds/bg5.png"/> -->
+		<!-- <tex file="@modfolder:/Config/backgrounds/bg6.png"/>  -->
+	</set>
 </configs>
