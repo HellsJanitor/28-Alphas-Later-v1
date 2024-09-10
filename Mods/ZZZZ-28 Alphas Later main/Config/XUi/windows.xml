@@ -487,28 +487,28 @@
 
 	<!-- *** HUD changes *** -->
 	<!-- allows the HP bar to work in all modes. Never,godmode,always -->
-	<set xpath="/windows/window[@name='windowTargetBar']/@visibility">godmode</set>
+	<!-- <set xpath="/windows/window[@name='windowTargetBar']/@visibility">godmode</set> -->
 	
 	<!-- removes zombie name from HP bar -->
-	<set xpath="//window[@name='windowTargetBar']/rect[@visible='{isnotboss}']/label[@depth='3']/@text">{currentwithmax}</set>
-	<set xpath="//window[@name='windowTargetBar']">
-		<rect pos="-200,-85" width="400" height="36" visible="{isnotboss}">
-			<sprite depth="1" name="border" color="0,0,0,210" type="sliced" width="400" globalopacity="false"/>
-			<filledsprite depth="2" name="BarContent" type="filled" color="200,0,0,180" width="400" fill="{fill}" globalopacity="false"/>
-			<label depth="3" name="TextContent" pos="9,-4" font_size="28" color="[white]" justify="center" pivot="topleft" text="{currentwithmax}" height="30"/>
-			<sprite depth="4" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
-		</rect>
+	<!-- <set xpath="//window[@name='windowTargetBar']/rect[@visible='{isnotboss}']/label[@depth='3']/@text">{currentwithmax}</set> -->
+	<!-- <set xpath="//window[@name='windowTargetBar']"> -->
+		<!-- <rect pos="-200,-85" width="400" height="36" visible="{isnotboss}"> -->
+			<!-- <sprite depth="1" name="border" color="0,0,0,210" type="sliced" width="400" globalopacity="false"/> -->
+			<!-- <filledsprite depth="2" name="BarContent" type="filled" color="200,0,0,180" width="400" fill="{fill}" globalopacity="false"/> -->
+			<!-- <label depth="3" name="TextContent" pos="9,-4" font_size="28" color="[white]" justify="center" pivot="topleft" text="{currentwithmax}" height="30"/> -->
+			<!-- <sprite depth="4" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/> -->
+		<!-- </rect> -->
 		
-		<rect pos="-267,-85" width="725" height="25" visible="{isboss}">
-			<sprite pos="60,-45" width="448" depth="1" name="border" color="0,0,0,255" type="sliced" globalopacity="false"/>
-			<filledsprite pos="60,-45" width="448" depth="2" name="BarContent" type="filled" fill="{fill}" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar_HP"/>
-			<sprite depth="3" name="Icon" size="84,84" pos="45,-42" pivot="center" sprite="{boss_sprite}" globalopacity="false"/>
-			<sprite depth="4" name="overlay" width="517" height="84" type="sliced" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar"/>
+		<!-- <rect pos="-267,-85" width="725" height="25" visible="{isboss}"> -->
+			<!-- <sprite pos="60,-45" width="448" depth="1" name="border" color="0,0,0,255" type="sliced" globalopacity="false"/> -->
+			<!-- <filledsprite pos="60,-45" width="448" depth="2" name="BarContent" type="filled" fill="{fill}" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar_HP"/> -->
+			<!-- <sprite depth="3" name="Icon" size="84,84" pos="45,-42" pivot="center" sprite="{boss_sprite}" globalopacity="false"/> -->
+			<!-- <sprite depth="4" name="overlay" width="517" height="84" type="sliced" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar"/> -->
 			
-			<label depth="5" name="TextContent" pos="100,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="{name}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/>
-			<label depth="5" name="MinionCount" pos="482,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="x{minioncount}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/>
-		</rect>
-	</set>
+			<!-- <label depth="5" name="TextContent" pos="100,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="{name}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/> -->
+			<!-- <label depth="5" name="MinionCount" pos="482,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="x{minioncount}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/> -->
+		<!-- </rect> -->
+	<!-- </set> -->
 	
 	<!-- big health bars -->
 	<!-- <remove xpath="//window[@name='windowTargetBar']//rect[1]"/>

@@ -148,7 +148,7 @@
 		<item name="meleeToolFarmT2IronHoeSchematic">
 			<property name="Extends" value="schematicNoQualityMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="CustomIcon" value="meleeToolFarmT2IronHoe"/>
+			<property name="CustomIcon" value="meleeToolFarmT0IronHoe"/>
 			<property name="Unlocks" value="meleeToolFarmT2IronHoe"/>
 			<property name="SoundPickup" value="paper_grab"/>
 			<property name="SoundPlace" value="paper_place"/>
@@ -162,9 +162,9 @@
 			<property name="Tags" value="melee,medium,tool,repairTool,attFortitude,perkLivingOffTheLand,canHaveCosmetic"/>
 			<property name="DisplayType" value="meleeRepairTool"/><property name="CreativeMode" value="Player"/>
 			<property name="DescriptionKey" value="meleeToolFarmT2IronHoeDesc"/>
-			<property name="CustomIcon" value="meleeToolFarmT2IronHoe"/>
-			<property name="HoldType" value="50"/>
-			<property name="Meshfile" value="@:Other/Items/Tools/hoe_ironPrefab.prefab"/>
+			<property name="CustomIcon" value="meleeToolFarmT0IronHoe"/>
+			<property name="HoldType" value="34"/>
+			<property name="Meshfile" value="@:Other/Items/Crafting/Metal/IronBucketEmptyPrefab.prefab"/>
 			<property name="Material" value="Mmetal"/>
 			<property name="RepairTools" value="resourceRepairKit"/>
 			<property name="DegradationBreaksAfter" value="false"/>

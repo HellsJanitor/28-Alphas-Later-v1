@@ -14,36 +14,7 @@
 		</action>
 	</append>
 	
-	<append xpath="/gameevents">
-	<!-- *** dismembered zombies crawl *** -->
-	<action_sequence name="action_cripple_me_only">
-		<property name="category" value="twitch_actions" />
-		<requirement class="NearbyEntities">
-			<property name="entity_tags" value="entity" />
-			<property name="max_distance" value="40" />
-		</requirement>
-
-		<action class="AddEntitiesToGroup">
-			<property name="phase" value="0" />
-			<property name="entity_tags" value="entity" />
-			<property name="group_name" value="zombies" />
-			<property name="max_distance" value="40" />
-		</action>
-		
-		<action class="PlaySound">
-			<property name="sound" value="twitch_bad_action" />
-			<property name="phase" value="1" />
-		</action>
-
-		<action class="PlaySound">
-			<property name="sound" value="twitch_cripple_zombies" />
-		</action>
-
-		<action class="EnemyToCrawler">
-			<property name="target_group" value="zombies" />
-		</action>
-
-	</action_sequence>
+	<append xpath="/gameevents">	
 	<!-- *** prevents use of vehicles underwater *** -->	
 	<action_sequence name="buff_novehicle_submerged">
 		<property name="category" value="twitch_actions" />
@@ -178,9 +149,9 @@
 			<property name="max_distance" value="20" />
 		</action>
 
-		<action class="PlaySound">
-			<property name="sound" value="twitch_enrage" />
-		</action>
+		<!-- <action class="PlaySound"> -->
+			<!-- <property name="sound" value="twitch_enrage" /> -->
+		<!-- </action> -->
 
 		<action class="RageZombies">
 			<property name="time" value="30" />

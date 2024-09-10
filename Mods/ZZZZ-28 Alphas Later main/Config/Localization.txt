@@ -87,10 +87,10 @@ idcXuiBait,Bee
 beehiveTreeStump,Beehive
 honeyBeeDesc,A wild honey bee. Will produce up to 20 honey when placed in a bee hive.
 honeyBee,Bee						 
-goDifficultyDesc,"Choose from 6 Difficulty settings.\n\n1. Scavenger: [FFC800]Enemies deal 100% damage[-]\n[FF4500]Enemies have no health bonus[-]\n2. Adventurer: [FFC800]Enemies deal 25% more damage[-] \n[FF4500]Enemies have 10% more health[-]\n3. Nomad: [FFC800]Enemies deal 50% more damage[-] \n[FF4500]Enemies have 20% more health[-]\n4. Warrior: [FFC800]Enemies deal 75% more damage[-] \n[FF4500]Enemies have 30% more health[-]\n5. Survivalist: [FFC800]Enemies deal 100% more damage[-] \n[FF4500]Enemies have 40% more health[-]\n6. Insane: [FFC800]Enemies deal 150% more damage[-] \n[FF4500]Enemies have 50% more health[-]"
 goLootAbundanceDesc,The percentage of loot to spawn in containers and on zombies. 100% [FFC800]MINIMUM[-] is [FFC800]HIGHLY[-] recommended.
-HellsModSpawnText,"This mod will challenge you in ways that the vanilla game doesn't,\nwhile keeping the familiar vanilla look & feel.\n\n[00FF00]Important Points![-]\nZombies only take MAXIMUM damage with [FFC800]headshots[-],[FFC800] fire[-], & [FFC800]explosives[-]!\nZombies[FF4500] DO NOT [-]bleed!\nThe Wasteland biome is [00FF00]IRRADIATED[-]! (a Hazmat suit is required)\n\nLoot is reduced, harvest counts are reduced, crafting costs more resources, and traders are more expensive.\n\nHave fun!!"
-HellsModSpawnText_title,"Welcome to [FFC800]28 ALPHAS LATER[-]!"
+quest_WhiteRiverCitizen1_description,"This mod will challenge you in ways that the vanilla game doesn't,\nwhile keeping the familiar vanilla look & feel.\n\n[00FF00]Important Points![-]\nZombies only take MAXIMUM damage with [FFC800]headshots[-],[FFC800] fire[-], & [FFC800]explosives[-]!\nZombies[FF4500] DO NOT [-]bleed!\nThe Wasteland biome is [00FF00]IRRADIATED[-]! (a Hazmat suit is required)\n\nLoot is reduced, harvest counts are reduced, crafting costs more resources, and traders are more expensive.\n\nHave fun!!"
+quest_WhiteRiverCitizen1,"Welcome to [FFC800]28 ALPHAS LATER[-]!"
+quest_WhiteRiverCitizen1_description_title,28 Alphas Later
 4x4Bundle,4x4
 4x4BundleDesc,Take this bundle to where you want to place your 4x4 [FFC800]BEFORE[-] you open it!
 ammoArrowWood,Wooden arrow
@@ -201,6 +201,8 @@ buffLithiumBlockerName,"Lithium"
 buffStJohnsWortBlockerName,"St. John's Wort"
 buffLithiumBlockerTooltip,"The treatment from Lithium and St. John's Wort must expire before the drug can be taken again."
 buffLithiumBlockerDesc,"Lithim and St. John's Wort are not candy!\n\nIt makes you thirsty, and you'll need to wait until the medication wears off before you can use it again."
+buff_NoVehicle,Vehicle Subemerged
+buff_NoVehicleDesc,Internal combustion engines don't work underwater!!\n\nYou'll have to put your vehicle back on dry land before it can be driven again.
 buffResurrectName,Double Tap!
 buffResurrectDesc,"You might wanna double check that these guys are actually dead ...\n\nDuring horde night, [FFC800]most[-] zombies have a 10% chance to respawn. Kill them with [CC5500]fire[-] damage or [CC5500]explosives[-] to ensure they stay dead."
 buffCampfireAOEEffectDesc,"You are warmed by the fire.\n\nCold Resist +15\n\nThis warming effect, combined with shelter and light, can slowly reduce your despair."
@@ -385,9 +387,9 @@ FertilizerDesc,Fertilizer is made in a Chemistry Station or Cement Mixer. Use a 
 resourceFeldspar,Feldspar
 resourceFeldsparDesc,"Feldspar is a crucial ingredient for concrete mix, allowing for fast-hardening while maintaining good workability during the setting process.\n\nFound exclusively in the Wasteland biome, in small quantities from surface terrain & boulders."
 medicalT3-4,Tier 3: The T-Virus Cure
-meleeToolFarmT2IronHoe,Iron Hoe
-meleeToolFarmT2IronHoeDesc,Required tool for tilling terrain.
-meleeToolFarmT2IronHoeSchematic,Iron Hoe Schematic
+meleeToolFarmT2IronHoe,Fertilizer Bucket
+meleeToolFarmT2IronHoeDesc,"Required for fertilizing terrain, and farmplots found in the world.\n\nNot required for crafted farm plots.\n\nRequires you to have fertilizer in your inventory.\nUse your secondary action[FFB400][action:local:Secondary][-] to use the fertilizer."
+meleeToolFarmT2IronHoeSchematic,Fertilzer Bucket Schematic
 meleeToolAxeT2SteelAxeDesc,"The steel axe has a durable blade and is great for harvesting wood.\n\nRepair with a Steel Tools Repair Kit.\nScrap to Steel Tool parts."
 meleeToolAxeT3ChainsawDesc,"Chop down the biggest trees or zombies faster than Paul Bunyan with this great chainsaw that uses gasoline for fuel.\n\nRepair with a Motor Tools Repair Kit.\nScrap to Motor Tool Parts."
 meleeToolPickT2SteelPickaxeDesc,"The steel pickaxe is best for breaking stone and harvesting minerals.\n\nRepair with a Steel Tools Repair Kit.\nScrap to Steel Tool parts."

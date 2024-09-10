@@ -1,9 +1,193 @@
 <configs>
-
-<append xpath="/blockplaceholders">
-	<placeholder name="decoCookingPot">
-		<block name="cntFoodPileLarge" prob="1.0" randomrotation="true"/>
-	</placeholder>	
-</append>
-
+	<remove xpath="/blockplaceholders/placeholder[@name='plantedCornHarvestRandomHelper']"/>
+	<remove xpath="/blockplaceholders/placeholder[@name='plantedYucca3HarvestRandomHelper']"/>
+	<remove xpath="/blockplaceholders/placeholder[@name='plantedCottonHarvestRandomHelper']"/>
+	<remove xpath="/blockplaceholders/placeholder[@name='plantedCoffeeHarvestRandomHelper']"/>
+	<remove xpath="/blockplaceholders/placeholder[@name='plantedGoldenrodHarvestRandomHelper']"/>
+	<remove xpath="/blockplaceholders/placeholder[@name='plantedAloeHarvestRandomHelper']"/>
+	<remove xpath="/blockplaceholders/placeholder[@name='plantedBlueberryHarvestRandomHelper']"/>
+	<remove xpath="/blockplaceholders/placeholder[@name='plantedPotatoHarvestRandomHelper']"/>
+	<remove xpath="/blockplaceholders/placeholder[@name='plantedChrysanthemumHarvestRandomHelper']"/>
+	<remove xpath="/blockplaceholders/placeholder[@name='plantedHopHarvestRandomHelper']"/>
+	<remove xpath="/blockplaceholders/placeholder[@name='plantedPumpkin3HarvestRandomHelper']"/>
+	
+	<append xpath="/blockplaceholders">
+		<placeholder name="plantedCornHarvestRandomHelper">
+			<block name="plantedCornDead" prob=".16" randomrotation="true"/>
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedCorn3Harvest">
+			<block name="plantedCornDead" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedCorn2Deco">
+			<block name="plantedCornDead" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedYucca3HarvestRandomHelper">
+			<block name="plantedYuccaDead" prob=".16" randomrotation="true"/>
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedYucca3Harvest">
+			<block name="plantedYuccaDead" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedCottonHarvestRandomHelper">
+			<block name="plantedCottonDead" prob=".16" randomrotation="true"/>
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedCotton3Harvest">
+			<block name="plantedCottonDead" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedCoffeeHarvestRandomHelper">
+			<block name="plantedCoffeeDead" prob=".16" randomrotation="true"/>
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedCoffee3Harvest">
+			<block name="plantedCoffeeDead" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedGoldenrodHarvestRandomHelper">
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedGoldenrod3Harvest">
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedAloeHarvestRandomHelper">
+			<block name="plantedAloeDead" prob=".16" randomrotation="true"/>
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedAloe3Harvest">
+			<block name="plantedAloeDead" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedBlueberryHarvestRandomHelper">
+			<block name="plantedBlueberryDead" prob=".16" randomrotation="true"/>
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedBlueberry3Harvest">
+			<block name="plantedBlueberryDead" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedPotatoHarvestRandomHelper">
+			<block name="plantedPotatoDead" prob=".16" randomrotation="true"/>
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedPotato3Harvest">
+			<block name="plantedPotatoDead" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedChrysanthemumHarvestRandomHelper">
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedChrysanthemum3Harvest">
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedHopHarvestRandomHelper">
+			<block name="plantedHopDead" prob=".16" randomrotation="true"/>
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedHop3Harvest">
+			<block name="plantedHopDead" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedPumpkin3HarvestRandomHelper">
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedPumpkin3Harvest">
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="mushroom01">
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="mushroom02">
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+		<placeholder name="plantedMushroom3Harvest">
+			<block name="treeSnowyGrassDiagonal" biome="snow" randomrotation="true"/>
+			<block name="treeTallGrassDiagonal" biome="pine_forest" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="desert" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="water" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="wasteland" randomrotation="true"/>
+			<block name="treeBrownGrassDiagonal" biome="burnt_forest" randomrotation="true"/>
+		</placeholder>
+	</append>
+	
+	<append xpath="/blockplaceholders">
+		<placeholder name="decoCookingPot">
+			<block name="cntFoodPileLarge" prob="1.0" randomrotation="true"/>
+		</placeholder>
+	</append>
 </configs>

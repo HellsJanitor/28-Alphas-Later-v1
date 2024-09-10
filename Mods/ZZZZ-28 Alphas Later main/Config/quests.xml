@@ -1,14 +1,7 @@
 <configs>
 	<!-- search find all *** for changes -->
 	
-	<!-- *** removes starter quests *** -->
-	<!-- <remove xpath="//quest[@id='quest_BasicSurvival1']//objective[@type='FetchKeep']"/> -->
-	<!-- <remove xpath="//quest[@id='quest_BasicSurvival1']//objective[@type='Craft']"/> -->
-	<!-- <set xpath="//quest[@id='quest_BasicSurvival1']//objective[@type='BlockPlace']/@phase">1</set> -->
-	<!-- <set xpath="//quest[@id='quest_BasicSurvival1']//reward[@type='Quest']/@id">quest_whiteRiverCitizen1</set> -->
-	<!-- <append xpath="//quest[@id='quest_BasicSurvival1']"> -->
-	<!-- <reward type="SkillPoints" value="4" chainreward="true"/> -->
-	<!-- </append> -->
+	
 	
 	<!-- *** starter weapon offer *** -->
 	<insertAfter xpath="/quests/quest[@id='quest_whiteRiverCitizen1']">
@@ -23,20 +16,7 @@
 		<property name="shareable" value="false"/>
 
 		<reward type="Item" id="meleeWpnSpearT0StoneSpear" value="1"/>
-	</quest>
-
-	<!-- <quest id="quest_WeaponClub"> -->
-		<!-- <property name="name" value="Your Wooden Club"/> -->
-		<!-- <property name="subtitle" value="Wooden Club"/> -->
-		<!-- <property name="description" value="Your Favourite Weapon Class"/> -->
-		<!-- <property name="icon" value="ui_game_symbol_stunned"/> -->
-		<!-- <property name="offer" value="My favourite weapon of choice!"/> -->
-		<!-- <property name="category" value="Weapon"/> -->
-		<!-- <property name="difficulty" value="veryeasy"/> -->
-		<!-- <property name="shareable" value="false"/> -->
-
-		<!-- <reward type="Item" id="meleeWpnClubT0WoodenClub" value="4"/> -->
-	<!-- </quest> -->
+	</quest>	
 
 	<quest id="quest_WeaponSledge">
 		<property name="name" value="Your Stone Sledge"/>
@@ -76,20 +56,6 @@
 
 		<reward type="Item" id="meleeWpnBladeT0BoneKnife" value="1"/>		
 	</quest>
-
-	<!-- <quest id="quest_WeaponBow"> -->
-		<!-- <property name="name" value="Your Primitive Bow"/> -->
-		<!-- <property name="subtitle" value="Primitive Bow"/> -->
-		<!-- <property name="description" value="Your Favourite Weapon Class"/> -->
-		<!-- <property name="icon" value="ui_game_symbol_archery"/> -->
-		<!-- <property name="offer" value="My favourite weapon of choice!"/> -->
-		<!-- <property name="category" value="Weapon"/> -->
-		<!-- <property name="difficulty" value="veryeasy"/> -->
-		<!-- <property name="shareable" value="false"/> -->
-
-		<!-- <reward type="Item" id="gunBowT0PrimitiveBow" value="4"/> -->
-		<!-- <reward type="Item" id="ammoArrowStone" value="10"/>		 -->
-	<!-- </quest> -->
 
 	<quest id="quest_WeaponBaton">
 		<property name="name" value="Your Pipe Baton"/>
@@ -143,5 +109,25 @@
 	<set xpath="//quest//reward[@value='3000']/@value">2000</set>
 	<set xpath="//quest//reward[@value='4000']/@value">2640</set>
 	<set xpath="//quest//reward[@value='5000']/@value">3300</set>
-	<set xpath="//quest//reward[@value='6000']/@value">4000</set>		
+	<set xpath="//quest//reward[@value='6000']/@value">4000</set>	
+	
+	<!-- *** fixes for trader biome progression *** -->
+	<set xpath="//quest[contains(@id, 'nexttrader') and not(contains(@id, 'test'))]/objective[@type='Goto']/property[@name='location_name']/@value">xuiTrader</set>	
+	<set xpath="//quest[contains(@id, 'nexttrader') and not(contains(@id, 'test'))]/objective[@type='Goto']/property[@name='location_tag']/@value">trader</set>
+	
+	<set xpath="//quest[contains(@id, 'nexttrader') and not(contains(@id, 'test'))]/objective[@type='Goto']/property[@name='biome_filter_type']/@value">OnlyBiome</set>
+    <removeattribute xpath="//quest[contains(@id, 'nexttrader') and not(contains(@id, 'test'))]/objective[@type='Goto']/property[@name='biome_filter_type']/@param1" />
+
+    <append xpath="//quest[@id='tier2_nexttrader']/objective[@type='Goto']">
+        <property name="biome_filter" value="burnt_forest" />
+    </append>
+    <append xpath="//quest[@id='tier3_nexttrader']/objective[@type='Goto']">
+        <property name="biome_filter" value="desert" />
+    </append>
+    <append xpath="//quest[@id='tier4_nexttrader']/objective[@type='Goto']">
+        <property name="biome_filter" value="snow" />
+    </append>
+    <append xpath="//quest[@id='tier5_nexttrader']/objective[@type='Goto']">
+        <property name="biome_filter" value="wasteland" />
+    </append>
 </configs>

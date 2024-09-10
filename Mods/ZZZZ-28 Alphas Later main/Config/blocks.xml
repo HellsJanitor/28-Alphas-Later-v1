@@ -468,6 +468,51 @@
 			<property name="Tags" value="wood"/>
 			<property name="FilterTags" value="MC_outdoor,SC_trees"/>
 		</block>
+		
+	<!-- *** treestump downgrade blocks *** -->
+		<block name="treeStumpPine">
+			<property name="Material" value="MtreeWoodSmall"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="IsPlant" value="true"/> <!-- it shall never be placed on rocks -->
+			<property name="IndexName" value="challenge_stump"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#Entities/Trees?Prefabs/Stump.prefab"/>
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="Path" value="solid"/>
+			<property name="BigDecorationRadius" value="3"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<drop event="Harvest" name="resourceWood" count="20,30" tag="oreWoodHarvest,lumberjackHarvest"/>
+			<drop event="Destroy" name="treePlantedMountainPine1m" count="1" prob=".2"/>
+			<property name="SortOrder1" value="B907"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Tags" value="wood"/>
+			<property name="FilterTags" value="MC_outdoor,SC_trees"/>
+		</block>
+		
+		<block name="treeStumpOak">
+			<property name="Material" value="MtreeWoodSmall"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="IsPlant" value="true"/> <!-- it shall never be placed on rocks -->
+			<property name="IndexName" value="challenge_stump"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#Entities/Trees?Prefabs/Stump.prefab"/>
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="Path" value="solid"/>
+			<property name="BigDecorationRadius" value="3"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="StabilitySupport" value="false"/>
+			<drop event="Harvest" name="resourceWood" count="20,30" tag="oreWoodHarvest,lumberjackHarvest"/>
+			<drop event="Destroy" name="treePlantedOak1m" count="1" prob=".2"/>
+			<property name="SortOrder1" value="B907"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Tags" value="wood"/>
+			<property name="FilterTags" value="MC_outdoor,SC_trees"/>
+		</block>
 
 	<!-- *** player wood burning stove *** -->
 		<block name="playerWoodBurningStove">
@@ -1583,10 +1628,12 @@
 	<append xpath="//block[starts-with(@name,'treeMountainPine')]">
 		<drop event="Harvest" name="resourceWoodScraps" count="35,70" tag="allHarvest"/>
 		<drop event="Harvest" name="resourceBranch" count="5,10" tag="allHarvest"/>
+		<!-- <property name="DowngradeBlock" value="treeStumpPine"/> -->
 	</append>
 	<append xpath="//block[starts-with(@name,'treeOak')]">
 		<drop event="Harvest" name="resourceWoodScraps" count="35,70" tag="allHarvest"/>
 		<drop event="Harvest" name="resourceBranch" count="5,10" tag="allHarvest"/>
+		<!-- <property name="DowngradeBlock" value="treeStumpOak"/> -->
 	</append>
 	<append xpath="//block[starts-with(@name,'treePlanted')]">
 		<drop event="Harvest" name="resourceWoodScraps" count="35,70" tag="allHarvest"/>
@@ -1609,6 +1656,8 @@
 		<drop event="Harvest" name="resourceBranch" count="5,10" tag="allHarvest"/>
 	</append>
 	<remove xpath="//block[@name='treePlainsTree']/drop[@event='Harvest'][@name='resourceWoodScraps']"/>
+	
+	<setattribute xpath="//block/drop[starts-with(@name,'treePlanted')]" name="prob">.2</setattribute>
 	
 	<!-- *** harvest counts 50% lower *** -->
 	<set xpath="//block/drop[@event='Harvest' and @count='0,1']/@count">1</set>

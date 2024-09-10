@@ -45,6 +45,7 @@
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Mlead_scrap"/>
+			<property name="Weight" value="15"/>
 			<property name="Stacknumber" value="5"/><!-- STK resource -->
 			<property name="EconomicValue" value="100"/>
 			<property name="TraderStageTemplate" value="electricTier2"/>

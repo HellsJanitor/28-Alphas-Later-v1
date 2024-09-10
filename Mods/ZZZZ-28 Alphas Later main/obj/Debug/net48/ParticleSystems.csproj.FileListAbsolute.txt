@@ -1,0 +1,3 @@
+D:\7D2D\v1\28_Alphas_Later\28_Alphas_Later\Mods\ZZZZ-28 Alphas Later main\obj\Debug\net48\ParticleSystems.csproj.AssemblyReference.cache
+D:\7D2D\v1\28_Alphas_Later\28_Alphas_Later\Mods\ZZZZ-28 Alphas Later main\obj\Debug\net48\ParticleSystems.GeneratedMSBuildEditorConfig.editorconfig
+D:\7D2D\v1\28_Alphas_Later\28_Alphas_Later\Mods\ZZZZ-28 Alphas Later main\obj\Debug\net48\ParticleSystems.csproj.CoreCompileInputs.cache

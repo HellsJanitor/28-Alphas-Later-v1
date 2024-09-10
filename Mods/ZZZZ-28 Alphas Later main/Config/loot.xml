@@ -271,10 +271,19 @@
 	<item name="resourceCropLavender" count="5,10"/>
 	</append>
 	
+	<!-- *** cotton seeds added to loot *** -->
+	<append xpath="//lootgroup[@name='seeds']">
+	<item name="plantedCotton1"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='seedsNoFlowers']">
+	<item name="plantedCotton1"/>
+	</append>
+	
 	<!-- *** food/drinks in loot *** -->
-	<insertbefore xpath="//lootgroup[@name='cannedfood']//item[1]">
+	<insertafter xpath="//lootgroup//item[@name='foodCanPeas']">
 	<item name="foodCanCarrots"/>
-	</insertbefore>
+	</insertafter>
 	<remove xpath="//lootgroup[@name='groupDrinksUncommon']"/>
 	<remove xpath="//lootgroup[@name='groupDrinksRare']"/>
 	<remove xpath="//lootgroup[@name='rareFoodDrink']"/>

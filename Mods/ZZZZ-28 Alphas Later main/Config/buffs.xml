@@ -320,7 +320,7 @@
 			<effect_group>
 				<requirement name="HitLocation" body_parts="Torso,LeftUpperArm,RightUpperArm,LeftLowerArm,RightLowerArm,LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
 				<requirement name="EntityTagCompare" target="other" tags="zombie,feral,radiated,hazmat,mutated,mutant"/>
-				<requirement name="IsAlive" target="other" tags="zombie,mutated,mutant"/>
+				<requirement name="IsAlive" target="other" tags="zombie,feral,radiated,hazmat,mutated,mutant"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.90"/>
 			</effect_group>
 			<effect_group>
@@ -644,7 +644,24 @@
 				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="wellrestedHUD" operation="multiply" value="100"/> -->
 			</effect_group>
 			<effect_group>
+				<requirement name="CVarCompare" cvar="wellrested" operation="LTE" value="600"/>
+				<requirement name="CVarCompare" cvar="wellrested" operation="GTE" value="450"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".2"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="wellrested" operation="LTE" value="450"/>
+				<requirement name="CVarCompare" cvar="wellrested" operation="GTE" value="300"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".15"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="wellrested" operation="LTE" value="300"/>
+				<requirement name="CVarCompare" cvar="wellrested" operation="GTE" value="150"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".1"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="wellrested" operation="LTE" value="0"/>
+				<requirement name="CVarCompare" cvar="wellrested" operation="GTE" value="150"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".05"/>
 			</effect_group>
 		</buff>
 		
@@ -709,7 +726,7 @@
 			</effect_group>
 			<effect_group>
 				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="14"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="7"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="1"/>
 			</effect_group>
 			<effect_group>
 				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="15"/>
@@ -733,7 +750,7 @@
 			</effect_group>
 			<effect_group>
 				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="20"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="7"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="1"/>
 			</effect_group>							
 		</buff>		
 		
@@ -1106,7 +1123,7 @@
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -1117,6 +1134,23 @@
 				<requirement name="!HasBuff" target="self" buff="buffNightVision"/>
 				<requirement name="!HasBuff" target="self" buff="buffBurningShaft"/>
 				<requirement name="!HasBuff" target="self" buff="buffWallTorch"/>
+				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
+				<requirement name="BlockStandingOn" tags="bedroll"/>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.25"/>
+				<requirement name="IsIndoors"/>
+				<requirement name="IsNight"/>
+				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
+				<requirement name="!HasBuff" target="self" buff="buffHeldTorch"/>
+				<requirement name="!HasBuff" target="self" buff="buffHeldLight"/>
+				<requirement name="!HasBuff" target="self" buff="buffHelmetLight"/>
+				<requirement name="!HasBuff" target="self" buff="buffGunFlashlight"/>
+				<requirement name="!HasBuff" target="self" buff="buffNightVision"/>
+				<requirement name="!HasBuff" target="self" buff="buffBurningShaft"/>
+				<requirement name="!HasBuff" target="self" buff="buffWallTorch"/>
+				<requirement name="!BlockStandingOn" tags="bedroll"/>
 				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
 			</effect_group>
 		
@@ -1963,7 +1997,7 @@
 		<buff name="buffInjuryFrozen" name_key="buff Injury Stunned 01 Shotgun" hidden="true" icon="ui_game_symbol_cold" icon_color="255,128,0">
 			<damage_type value="stun"/>
 			<stack_type value="replace"/>
-			<duration value="4"/>
+			<duration value="6"/>
 
 			<effect_group>
 				<!-- Blinks the display -->
@@ -1981,16 +2015,16 @@
 			<effect_group>
 				<!-- If not a player, reduce the walk and run speed -->
 				<requirement name="!EntityTagCompare" tags="player"/>
-				<passive_effect name="RunSpeed" operation="base_set" value="0.25"/>
-				<passive_effect name="WalkSpeed" operation="base_set" value="0.25"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8,.2" duration="0,6"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.8,.2" duration="0,6"/>
 				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5"/>
-				<triggered_effect trigger="onSelfBuffStart" action="_28AL.ParticleSystems.Attach,ParticleSystems" particle="#@modfolder:Assets/28al_ps_frosty.unity3d?PS_Frosty_Prefab" shape_to_mesh="true"/>
-				<triggered_effect trigger="onSelfEnteredGame" action="_28AL.ParticleSystems.Attach,ParticleSystems" particle="#@modfolder:Assets/28al_ps_frosty.unity3d?PS_Frosty_Prefab" shape_to_mesh="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Assets/28al_ps_frosty.unity3d?PS_Frosty_Prefab" local_offset="0,0,0" local_scale="1,1,1" parent_transform="Spine1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachPrefabToEntity" prefab="#@modfolder:Assets/28al_ps_frosty.unity3d?PS_Frosty_Prefab" local_offset="0,0,0" local_scale="1,1,1" parent_transform="Spine1"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="buff_burn_extinguish"/>
 
-				<triggered_effect trigger="onSelfDied" action="_28AL.ParticleSystems.Detach,ParticleSystems" particle="PS_Frosty_Prefab"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="_28AL.ParticleSystems.Detach,ParticleSystems" particle="PS_Frosty_Prefab"/>
-				<triggered_effect trigger="onSelfBuffFinish" action="_28AL.ParticleSystems.Detach,ParticleSystems" particle="PS_Frosty_Prefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" prefab="PS_Frosty_Prefab"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="PS_Frosty_Prefab"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="PS_Frosty_Prefab"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="buff_burn_extinguish"/>
 				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="buff_burn_extinguish"/>
 			</effect_group>
@@ -2712,7 +2746,7 @@
 			</effect_group>
 		</buff>
 
-		<buff name="buffNoVehicle" name_key="TwitchBuff_NoVehicle" description_key="TwitchBuff_NoVehicleDesc" icon="ui_game_symbol_twitch_no_vehicle" icon_color="255,175,175">
+		<buff name="buffNoVehicle" name_key="buff_NoVehicle" description_key="buff_NoVehicleDesc" icon="ui_game_symbol_twitch_no_vehicle" icon_color="255,175,175">
 			<stack_type value="replace"/>
 			<duration value="0"/>
 
