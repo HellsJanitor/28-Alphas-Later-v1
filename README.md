@@ -10,11 +10,17 @@ The idea behind this mod is to slow progression, make traders less powerful, and
 ## GENERAL GAMEPLAY
 
 Player starts with a new debuff - Despair.
+
 As your despair increases, so your abilities will be negatively affected. If despair reaches 100%, you'll be seconds from death.
+
 Conversely, if you can manage your despair well, you'll receive buffs for remaining positive.
+
 The despair indicator on the HUD will fill as your despair grows, and will change colour to indicate the level of your despair.
+
 If you're able to manage your despair and have a more positive outlook, the icon on the HUD will change, as will the fill colour to indicate your levels of positivity.
+
 Despair can also be checked from the player information screen.
+
 
 Despair is dynamically affected by various different factors, including:
 
