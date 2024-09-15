@@ -239,4 +239,8 @@
 	</append>
 	
 	<set xpath="//trader_item_group[@name='constructionSupplies']//item[@name='resourceConcreteMix']/@name">resourceCrushedSand</set>
+	
+	<!-- *** traders open 24/7 *** -->
+	<removeattribute xpath="/traders/trader_info/@open_time"/>
+	<removeattribute xpath="/traders/trader_info/@close_time"/>
 </configs>
