@@ -100,7 +100,7 @@
 			<ingredient name="resourceSpring" count="4"/>
 			<ingredient name="resourceMechanicalParts" count="10"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,3" value=".5,.5" tags="resourceMechanicalParts,resourceMetalPipe,resourceElectricParts,resourceSpring"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,2" value=".5,.5" tags="resourceMechanicalParts,resourceMetalPipe,resourceElectricParts,resourceSpring"/>
 			</effect_group>
 		</recipe>
 
@@ -111,7 +111,7 @@
 			<ingredient name="resourceLeather" count="20"/>
 			<ingredient name="resourceElectricParts" count="10"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,3" value=".5,.5" tags="resourceForgedSteel,resourceMechanicalParts,resourceDuctTape,resourceLeather,resourceElectricParts"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,2" value=".5,.5" tags="resourceForgedSteel,resourceMechanicalParts,resourceDuctTape,resourceLeather,resourceElectricParts"/>
 			</effect_group>
 		</recipe>
 
@@ -130,7 +130,7 @@
 			<ingredient name="resourceLeather" count="10"/>
 			<ingredient name="resourceElectricParts" count="3"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,2" value=".5,.5" tags="resourceForgedIron,resourceMechanicalParts,resourceDuctTape,resourceLeather,resourceElectricParts"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1" value=".5,.5" tags="resourceForgedIron,resourceMechanicalParts,resourceDuctTape,resourceLeather,resourceElectricParts"/>
 			</effect_group>
 		</recipe>
 
@@ -141,7 +141,7 @@
 			<ingredient name="resourceElectricParts" count="6"/>
 			<ingredient name="resourceForgedIron" count="5"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,2" value=".5,.5" tags="resourceMechanicalParts,resourceDuctTape,resourceElectricParts,resourceForgedIron"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1" value=".5,.5" tags="resourceMechanicalParts,resourceDuctTape,resourceElectricParts,resourceForgedIron"/>
 			</effect_group>
 		</recipe>
 
@@ -208,7 +208,7 @@
 			<wildcard_forge_category/>
 		</recipe>
 		
-		<!-- *** antivenom *** -->
+	<!-- *** antivenom *** -->
 		<recipe name="antivenom" count="1" craft_area="chemistryStation" tags="learnable,chemStationCrafting">
 			<ingredient name="venom" count="1"/>
 			<ingredient name="drinkJarBoiledWater" count="1"/>
@@ -219,7 +219,7 @@
 			<ingredient name="drinkJarBoiledWater" count="2"/>
 		</recipe>
 		
-		<!-- *** The Cure *** -->
+	<!-- *** The Cure *** -->
 		<recipe name="TheCure" count="1" craft_area="chemistryStation" tags="learnable,chemStationCrafting">
 			<ingredient name="drugAntibiotics" count="4"/>
 			<ingredient name="drugVitamins" count="4"/>
@@ -228,7 +228,7 @@
 			<ingredient name="drinkJarGrandpasMoonshine" count="2"/>
 		</recipe>
 		
-		<!-- *** hazmat armour mods *** -->
+	<!-- *** hazmat armour mods *** -->
 		<recipe name="modHazmatBoots" count="1" craft_area="workbench">
 			<ingredient name="resourceScrapLead" count="1500"/>
 			<ingredient name="resourceSilverNugget" count="2"/>
@@ -262,7 +262,7 @@
 			<ingredient name="resourceSewingKit" count="1"/>
 		</recipe>
 
-		<!-- *** recipes for new mods *** -->
+	<!-- *** recipes for new mods *** -->
 		<recipe name="modBicycleStaminaSaver" count="1" tags="learnable">
 			<ingredient name="resourceCloth" count="50"/>
 			<ingredient name="resourceScrapPolymers" count="25"/>
@@ -270,7 +270,7 @@
 			<ingredient name="resourceSewingKit" count="2"/>
 		</recipe>
 
-		<!-- *** player king-size bed *** -->
+	<!-- *** player king-size bed *** -->
 		<recipe name="bedPlayer" count="1">
 			<ingredient name="resourceCloth" count="100"/>
 			<ingredient name="resourceCropCottonPlant" count="40"/>
@@ -279,7 +279,7 @@
 			<ingredient name="resourceMetalPipe" count="10"/>
 		</recipe>
 	
-		<!-- *** Iron Hoe *** -->
+	<!-- *** Iron Hoe *** -->
 		<recipe name="meleeToolFarmT2IronHoe" count="1" craft_area="workbench" craft_tool="meleeToolRepairT1ClawHammer" tags="learnable,perkLivingOffTheLand">
 			<ingredient name="resourceForgedIron" count="16"/>
 			<ingredient name="resourceWood" count="12"/>
@@ -287,7 +287,7 @@
 			<ingredient name="resourceDuctTape" count="2"/>
 		</recipe>
 	
-		<!-- *** fertilizer *** -->
+	<!-- *** fertilizer *** -->
 		<recipe name="resourceFertilizer" count="1" craft_time="10" craft_area="chemistryStation" tags="chemStationCrafting">
 			<ingredient name="foodRottingFlesh" count="1"/>
 			<ingredient name="resourceClayLump" count="5"/>
@@ -300,20 +300,20 @@
 			<ingredient name="resourcePotassiumNitratePowder" count="3"/>
 		</recipe>
 	
-		<!-- *** chicken coop *** -->
+	<!-- *** chicken coop *** -->
 		<recipe name="ctnChickenCoop" count="1" craft_time="120" craft_exp_gain="500" tags="learnable">
 			<ingredient name="resourceWood" count="200"/>
 			<ingredient name="resourceForgedIron" count="10"/>
 			<ingredient name="resourceNail" count="20"/>
 		</recipe>
 	
-		<!-- *** composter *** -->
+	<!-- *** composter *** -->
 		<recipe name="cntCompostBin" count="1" craft_time="120" craft_exp_gain="500" tags="learnable">
 			<ingredient name="resourceWood" count="200"/>
 			<ingredient name="resourceNail" count="20"/>
 		</recipe>
 	
-		<!-- *** dew collector & tools *** -->
+	<!-- *** dew collector & tools *** -->
 		<!-- <recipe name="cntAdvancedDewCollector" count="1" craft_time="45" craft_exp_gain="500" tags="learnable,workbenchCrafting"> -->
 			<!-- <ingredient name="resourceScrapPolymers" count="100"/> -->
 			<!-- <ingredient name="resourceMetalPipe" count="4"/> -->
@@ -336,7 +336,7 @@
 			<!-- <ingredient name="resourceDuctTape" count="30"/> -->
 		<!-- </recipe> -->
 	
-		<!-- *** rain catcher *** -->
+	<!-- *** rain catcher *** -->
 		<recipe name="cntRainCollector" count="1" craft_time="45" craft_exp_gain="500" tags="learnable,workbenchCrafting">
 			<ingredient name="resourceScrapPolymers" count="100"/>
 			<ingredient name="resourceMetalPipe" count="4"/>
@@ -349,7 +349,7 @@
 			<ingredient name="resourceDuctTape" count="3"/>
 		</recipe>
 	
-		<!-- *** chicken trap *** -->
+	<!-- *** chicken trap *** -->
 		<recipe name="cntIDCAnimalSnare" count="1" craft_time="60" craft_exp_gain="500">
 			<ingredient name="resourceScrapIron" count="50"/>
 			<ingredient name="resourceDuctTape" count="5"/>
@@ -360,25 +360,25 @@
 			<ingredient name="resourceForgedIron" count="15"/>
 		</recipe>
 	
-		<!-- *** beehive *** -->
+	<!-- *** beehive *** -->
 		<recipe name="ctnIDCBeehive" count="1" craft_time="120" craft_exp_gain="500" tags="learnable">
 			<ingredient name="resourceWood" count="200"/>
 			<ingredient name="resourceForgedIron" count="10"/>
 			<ingredient name="resourceNail" count="20"/>
 		</recipe>
 
-		<!-- *** flags *** -->
+	<!-- *** flags *** -->
 		<recipe name="flagBlockVariantHelper" count="1">
 			<ingredient name="resourceCloth" count="44"/>
 		</recipe>
 	
-		<!-- *** jail doors *** -->
+	<!-- *** jail doors *** -->
 		<recipe name="JailVariantHelper" count="1" craft_area="workbench" tags="workbenchCrafting">
 			<ingredient name="resourceForgedSteel" count="20"/>
 			<ingredient name="resourceMechanicalParts" count="10"/>
 		</recipe>
 	
-		<!-- *** player crafted doors *** -->
+	<!-- *** player crafted doors *** -->
 		<recipe name="playerDoorSingleVariantHelper" count="1" craft_area="workbench" tags="workbenchCrafting">
 			<ingredient name="resourceWood" count="20"/>
 			<ingredient name="resourceScrapBrass" count="50"/>
@@ -456,18 +456,18 @@
 			<!-- <ingredient name="resourceScrapBrass" count="50"/> -->
 		</recipe>
 	
-		<!-- *** barbed wire *** -->
+	<!-- *** barbed wire *** -->
 		<recipe name="barbedWireSpindleVariantHelper" count="1">
 			<ingredient name="resourceScrapIron" count="25"/>
 		</recipe>
 	
-		<!-- *** hoist *** -->
+	<!-- *** hoist *** -->
 		<recipe name="HoistVariantHelper" count="1" craft_area="workbench" tags="workbenchCrafting">
 			<ingredient name="resourceForgedIron" count="10"/>
 			<ingredient name="resourceMechanicalParts" count="5"/>
 		</recipe>
 
-		<!-- *** craft existing ammo into stacks *** -->
+	<!-- *** craft existing ammo into stacks *** -->
 		<recipe name="ammoBundle9mmBulletBall" count="1" craft_time="240" craft_area="workbench" tags="learnable,workbenchCrafting">
 			<ingredient name="ammo9mmBulletBall" count="100"/>
 		</recipe>
@@ -623,7 +623,7 @@
 			<ingredient name="resourceRockSmall" count="1"/>
 		</recipe>
 	
-		<!-- *** bricks *** -->
+	<!-- *** bricks *** -->
 		<recipe name="resourceBricks" count="1" craft_area="forge" tags="perkAdvancedEngineering">
 			<ingredient name="resourceClayLump" count="2"/>
 			<ingredient name="resourceRockSmall" count="2"/>
@@ -942,7 +942,7 @@
 	</set>
 		
 	<append xpath="/recipes">
-		<!-- *** arrows/bolts dismantle to component parts *** -->
+	<!-- *** arrows/bolts dismantle to component parts *** -->
 		<!-- arrows -->
 		<recipe name="resourceRockSmall" count="1">
 			<secondary_output name="resourceBranch" count="1"/>
@@ -1005,7 +1005,7 @@
 			<ingredient name="ammoCrossbowBoltExploding" count="1"/>
 		</recipe>
 	
-		<!-- *** bullets/shells dismantle to component parts (70% return) *** -->
+	<!-- *** bullets/shells dismantle to component parts (70% return) *** -->
 		<!-- 9mm -->
 		<recipe name="resourceBulletTip" count="7" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
 			<secondary_output name="resourceGunPowder" count="7"/>
@@ -1083,7 +1083,7 @@
 			<ingredient name="ammoShotgunBreachingSlug" count="10"/>
 		</recipe>
 
-		<!-- *** rockets can be dismantled into component parts (50% gasoline return) *** -->
+	<!-- *** rockets can be dismantled into component parts (50% gasoline return) *** -->
 		<recipe name="resourceRocketCasing" count="1" craft_area="workbench" tags="workbenchCrafting" craft_tool="toolAmmoPress">
 			<secondary_output name="resourceGunPowder" count="11"/>
 			<secondary_output name="ammoGasCan" count="250"/>
@@ -1098,7 +1098,7 @@
 			<ingredient name="ammoRocketHE" count="1"/>
 		</recipe>
 	
-		<!-- *** recipe for "spent" chicken *** -->
+	<!-- *** recipe for "spent" chicken *** -->
 		<!-- <recipe name="foodRawMeat" count="3" craft_area="workbench" tags="workbenchCrafting" craft_tool="meleeWpnBladeT1HuntingKnife">
 		<secondary_output name="resourceBone" count="5"/>
 		<secondary_output name="resourceFeather" count="10"/>
@@ -1111,7 +1111,7 @@
 			<ingredient name="fuelChicken" count="1"/>
 		</recipe>
 	
-		<!-- *** starter weapons *** -->
+	<!-- *** starter weapons *** -->
 		<recipe name="startermeleeWpnSpearT0StoneSpear" count="1" tags="perkJavelinMaster,craftingSpears">
 			<ingredient name="noteDuke01" count="1"/>
 		</recipe>
@@ -1128,7 +1128,7 @@
 			<ingredient name="noteDuke01" count="1"/>
 		</recipe>
 	
-		<!-- *** cooked canned food *** -->
+	<!-- *** cooked canned food *** -->
 		<recipe name="foodCanBeefcooked" count="1" craft_area="campfire" craft_time="12" tags="perkMasterChef">
 			<ingredient name="foodCanBeef" count="1"/>
 		</recipe>
@@ -1172,7 +1172,7 @@
 			<ingredient name="foodCanCarrots" count="1"/>
 		</recipe>
 	
-		<!-- *** new food recipes *** -->
+	<!-- *** new food recipes *** -->
 		<recipe name="foodChickenStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
 			<ingredient name="foodCanChicken" count="2"/>
 			<ingredient name="foodCanSoup" count="1"/>
@@ -1247,7 +1247,7 @@
 			<ingredient name="foodCanStock" count="1"/>
 		</recipe>
 
-		<!-- *** MegaCrush recipe *** -->
+	<!-- *** MegaCrush recipe *** -->
 		<recipe name="drinkCanMegaCrush" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="60" tags="perkMasterChef,learnable">
 			<ingredient name="drinkJarPureMineralWater" count="1"/>
 			<ingredient name="foodHoney" count="5"/>
@@ -1259,12 +1259,12 @@
 			<ingredient name="drugSteroids" count="1"/>
 		</recipe>
 	
-		<!-- *** acid can be stripped from batteries in a workbench *** -->
+	<!-- *** acid can be stripped from batteries in a workbench *** -->
 		<recipe name="resourceAcid" count="1" craft_area="workbench" tags="perkAdvancedEngineering,learnable,workbenchCrafting" craft_time="800">
 			<ingredient name="carBattery" count="1"/>
 		</recipe>
 	
-		<!-- *** acid is craftable *** -->
+	<!-- *** acid is craftable *** -->
 		<recipe name="resourceAcid" count="1" craft_area="chemistryStation" craft_time="200" tags="perkGreaseMonkey,learnable,chemStationCrafting">
 			<ingredient name="drinkJarBoiledWater" count="3"/>
 			<ingredient name="resourceCoal" count="75"/>
@@ -1272,14 +1272,14 @@
 			<ingredient name="resourceScrapBrass" count="25"/>
 		</recipe>
 	
-		<!-- *** anti-rad ingredient for thrown explosives *** -->
+	<!-- *** anti-rad ingredient for thrown explosives *** -->
 		<recipe name="resourceLiquidLead" count="100" craft_area="chemistryStation" tags="chemStationCrafting">
 			<ingredient name="drinkJarBoiledWater" count="4"/>
 			<ingredient name="resourceAcid" count="1"/>
 			<ingredient name="resourceScrapLead" count="100"/>
 		</recipe>
 	
-		<!-- *** anti-rad throwables *** -->
+	<!-- *** anti-rad throwables *** -->
 		<recipe name="thrownAmmoAntiRadMolotovCocktail" count="1" craft_time="12">
 			<ingredient name="resourceCloth" count="5"/>
 			<ingredient name="ammoGasCan" count="300"/>
@@ -1310,7 +1310,7 @@
 			<ingredient name="resourceLiquidLead" count="10"/>
 		</recipe>
 	
-		<!-- *** weapon/tool/armour specific repair kits *** -->
+	<!-- *** weapon/tool/armour specific repair kits *** -->
 		<recipe name="PrimitiveRepairKit" count="1">
 			<ingredient name="resourceBranch" count="2"/>
 			<ingredient name="resourceYuccaFibers" count="2"/>
@@ -1385,7 +1385,7 @@
 		<!-- <ingredient name="resourceRepairKit" count="1"/> -->
 		<!-- </recipe> -->
 	
-		<!-- *** lavender oil *** -->
+	<!-- *** lavender oil *** -->
 		<recipe name="drugLavenderOil" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
 			<ingredient name="resourceCropLavender" count="8"/>
 			<ingredient name="drinkJarBoiledWater" count="1"/>
@@ -1395,7 +1395,7 @@
 			</effect_group>
 		</recipe>
 	
-		<!-- *** hobo stew *** -->
+	<!-- *** hobo stew *** -->
 		<recipe name="foodHoboStew" count="1" craft_time="65" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
 			<ingredient name="foodCanDogfood" count="3"/>
 			<ingredient name="foodCropPotato" count="2"/>

@@ -1925,6 +1925,7 @@
 			<property name="CraftingIngredientTime" value=".2"/>
 			<property name="SoundPickup" value="oil_grab"/>
 			<property name="SoundPlace" value="oil_place"/>
+			<property name="TrackerIndexName" value="quest_wood"/>
 		</item>
 		
 		<!-- *** mod schematics *** -->

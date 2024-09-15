@@ -1,5 +1,7 @@
 Key,english
 challengeKillZombiesDesc,"[DECEA3]Zombies[-] are the primary threat to your survival.\n\n[cd853f]Rotten[-] zombies are weaker than\n[DECEA3]Normal[-] zombies, which walk during the day but move faster at night.\n[FF6666]Feral[-] zombies have glowing orange eyes, run during the day, hit harder, and take more damage.\n[00FF00]Radiated[-] zombies regenerate their health and deal severe damage, making them a stubborn threat until eliminated.\n[efcc00]Cowboy[-] zombies are found in the desert biome. They will dehydrate you each time the hit you.\n[c0c0c0]Frozen[-] zombies are found in the snow biome. They're slower and more brittle than normal zombies, but will chill & slow you if they hit you.\n[ffff00]Mutated[-] zombies and [ff0000]Mutants[-] are found in the wasteland biome, and will appear more in the world as you progress. Do not underestimate them - they will regenerate health much faster than [00FF00]Radiated[-] zombies, and are incredibly resilient."
+challengeMeetBobDesc,"[DECEA3]Bob's Salvage[-] in the [DECEA3]Burnt Forest[-] is home to scrapped vehicles, broken appliances, and local gear-head [DECEA3]Trader Bob[-]. If you're in the market for [DECEA3]Vehicles[-] and [DECEA3]Tools[-] he's the man to talk to."
+challengeMeetJenDesc,You can find [DECEA3]Trader Jen[-] in the makeshift hospital at [DECEA3]Jen's Clinic[-] in the [DECEA3]Desert[-]. She is much friendlier than [DECEA3]Trader Rekt[-] and deals mostly in [DECEA3]Medical[-] supplies.
 idcXuiModifiers,MODIFIERS
 idcXuiAnimalSnare,Output
 ctnChickenCoop,Chicken coop
@@ -91,6 +93,7 @@ goLootAbundanceDesc,The percentage of loot to spawn in containers and on zombies
 quest_WhiteRiverCitizen1_description,"This mod will challenge you in ways that the vanilla game doesn't,\nwhile keeping the familiar vanilla look & feel.\n\n[00FF00]Important Points![-]\nZombies only take MAXIMUM damage with [FFC800]headshots[-],[FFC800] fire[-], & [FFC800]explosives[-]!\nZombies[FF4500] DO NOT [-]bleed!\nThe Wasteland biome is [00FF00]IRRADIATED[-]! (a Hazmat suit is required)\n\nLoot is reduced, harvest counts are reduced, crafting costs more resources, and traders are more expensive.\n\nHave fun!!"
 quest_WhiteRiverCitizen1,"Welcome to [FFC800]28 ALPHAS LATER[-]!"
 quest_WhiteRiverCitizen1_description_title,28 Alphas Later
+
 4x4Bundle,4x4
 4x4BundleDesc,Take this bundle to where you want to place your 4x4 [FFC800]BEFORE[-] you open it!
 ammoArrowWood,Wooden arrow
@@ -197,6 +200,21 @@ buffDespairCureDisplayPositive02Name,Enthusiastic
 buffDespairCureDisplayPositive02Desc,"You feel enthusiastic and cheerful.\n\nYou have:\n10% decreased stamina loss.\n10% decreased health loss from damage taken.\n15% critical hit resistance."
 buffDespairCureDisplayPositive03Name,Confident
 buffDespairCureDisplayPositive03Desc,"You are brimming with confidence and energy.\n\nYou have:\n15% decreased stamina loss.\n15% decreased health loss from damage taken.\n20% critical hit resistance."
+buffDespairCounterTooltip,""
+buffDespairCounterName,"Despair"
+buffDespairCounterDesc,"This is a measure of how much your environment is affecting your rate of despair.\n\nPositive numbers means despair is increasing.\n\nNegative numbers means your despair is decreasing."
+buffDespairAOEName,Danger
+buffDespairAOEDesc,"These zombies are getting a bit too close for comfort ... \n\nEliminate them, or get the hell out of there!"
+buffDespairAOETooltip,Nearby zombies are affecting your mental health.
+buffDespairFeralAOEName,Danger Close
+buffDespairFeralAOEDesc,"These [ffff00]zombies[-] are getting tougher \n\nYou need to be careful ..."
+buffDespairFeralAOETooltip,Tougher zombies nearby are making your mental health worse.
+buffDespairRadiatedAOEName,Grave Danger
+buffDespairRadiatedAOEDesc,"What the hell!? These [00ff00]zombies[-] can regenerate?! \n\nMight need some specialized gear for these ..."
+buffDespairRadiatedAOETooltip,Nearby Radiated zombies are really affecting your ability to think straight ...
+buffDespairMutatedAOEName,Get the hell away from me!
+buffDespairMutatedAOEDesc,"What the actual F%&*?!! These [f5c71a]zombies[-] are even worse than the greenies!\n\nIf you don't have blessed metal, you'd better run ..."
+buffDespairMutatedAOETooltip,Nearby Mutated zombies are making you question your survival chances ...
 buffLithiumBlockerName,"Lithium"
 buffStJohnsWortBlockerName,"St. John's Wort"
 buffLithiumBlockerTooltip,"The treatment from Lithium and St. John's Wort must expire before the drug can be taken again."

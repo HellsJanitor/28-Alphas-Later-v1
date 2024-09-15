@@ -188,6 +188,7 @@
 	<set xpath="//item[@count='3000,8000']/@count">1500,4000</set>
 	
 	<set xpath="//item[@count='2']/@count">1</set>
+	<!-- <set xpath="//item[contains (@name,'SkillMagazine')]/@count">2</set> -->
 	<set xpath="//item[@count='3']/@count">1</set>
 	<set xpath="//item[@count='4']/@count">2</set>
 	<set xpath="//item[@count='5']/@count">2</set>

@@ -6,17 +6,25 @@
 	
 	<!-- *** add new lavender block to main biome *** -->
 	<append xpath="//biome[@name='pine_forest']/subbiome[@prob='0.31']/decorations">
-	<decoration type="block" blockname="forestFlower" prob=".06" rotatemax="7"/>
+	<decoration type="block" blockname="forestFlower" prob=".05" rotatemax="7"/>
 	</append>
 	<append xpath="//biome[@name='pine_forest']/subbiome[@prob='0.392']/decorations">
-	<decoration type="block" blockname="forestFlower" prob=".001" rotatemax="7"/>
+	<decoration type="block" blockname="forestFlower" prob=".0015" rotatemax="7"/>
 	</append>
 	<append xpath="//biome[@name='pine_forest']/subbiome[@prob='0.412']/decorations">
-	<decoration type="block" blockname="forestFlower" prob=".001" rotatemax="7"/>
+	<decoration type="block" blockname="forestFlower" prob=".0015" rotatemax="7"/>
 	</append>
 	<append xpath="//biome[@name='pine_forest']/decorations">
-	<decoration type="block" blockname="forestFlower" prob=".001" rotatemax="7"/>
+	<decoration type="block" blockname="forestFlower" prob=".0015" rotatemax="7"/>
 	</append>
+	
+	<insertafter xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedCotton3Harvest']">
+	<decoration type="block" blockname="plantedCottonDead" prob="0.035" rotatemax="7"/>
+	</insertafter>
+	
+	<set xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedGoldenrod3Harvest']/@prob">.004</set>
+	<set xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedCotton3Harvest' and @prob='0.07']/@prob">.001</set>
+	<set xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedChrysanthemum3Harvest' and @prob='0.07']/@prob">.001</set>	
 	
 	<!-- *** beehive stumps *** -->
 	<append xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations">

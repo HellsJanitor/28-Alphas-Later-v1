@@ -254,6 +254,11 @@
 				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffDespairMain"/>
 				<triggered_effect trigger="onSelfRespawn" action="AddBuff" buff="buffDespairMain"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffDespairMain"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespairCounter"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffDespairCounter"/>
+				<triggered_effect trigger="onSelfRespawn" action="AddBuff" buff="buffDespairCounter"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffDespairCounter"/>
 				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="despair_trigger" allow_client_call="true"/> -->
 				<!-- <triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="despair_trigger" allow_client_call="true"/> -->
 				<!-- <triggered_effect trigger="onSelfRespawn" action="CallGameEvent" event="despair_trigger" allow_client_call="true"/> -->
@@ -319,15 +324,15 @@
 			<!-- damage modifier for missed headshots -->
 			<effect_group>
 				<requirement name="HitLocation" body_parts="Torso,LeftUpperArm,RightUpperArm,LeftLowerArm,RightLowerArm,LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
-				<requirement name="EntityTagCompare" target="other" tags="zombie,feral,radiated,hazmat,mutated,mutant"/>
-				<requirement name="IsAlive" target="other" tags="zombie,feral,radiated,hazmat,mutated,mutant"/>
+				<requirement name="EntityTagCompare" target="other" tags="walker,feral,radiated,hazmat,mutated,mutant"/>
+				<requirement name="IsAlive" target="other" tags="walker,feral,radiated,hazmat,mutated,mutant"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.90"/>
 			</effect_group>
 			<effect_group>
 				<requirement name="HitLocation" body_parts="Head"/>
-				<requirement name="EntityTagCompare" target="other" tags="zombie,feral,radiated,hazmat,mutated,mutant"/>
-				<requirement name="IsAlive" target="other" tags="zombie,feral,radiated,hazmat,mutated,mutant"/>
-				<passive_effect name="DamageModifier" operation="perc_add" value=".50"/>
+				<requirement name="EntityTagCompare" target="other" tags="walker,feral,radiated,hazmat,mutated,mutant"/>
+				<requirement name="IsAlive" target="other" tags="walker,feral,radiated,hazmat,mutated,mutant"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value=".1"/>
 			</effect_group>
 			<!-- trigger for moving vehicle crates -->
 			<effect_group>
@@ -868,55 +873,55 @@
 			<!-- adjust despair tick rates based on conditional requirements -->
 			<!-- Indoors at night -->
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.25"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="1.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsNight"/>
 			</effect_group>
 		
 			<!-- outdoors at night -->
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="10"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 			</effect_group>
 			
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="10"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffHeldLight"/>
 			</effect_group>
 			
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="10"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffHeldTorch"/>
 			</effect_group>
 			
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="10"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffHelmetLight"/>
 			</effect_group>
 			
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="10"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffGunFlashlight"/>
 			</effect_group>
 			
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="10"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffNightVision"/>
 			</effect_group>
 			
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="15"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="10"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffBurningShaft"/>
@@ -924,42 +929,42 @@
 		
 			<!-- outdoors at night, with a light -->
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.75"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="1.75"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="HasBuff" target="self" buff="buffHeldLight"/>
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.75"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="1.75"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="HasBuff" target="self" buff="buffHeldTorch"/>
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.75"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="1.75"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="HasBuff" target="self" buff="buffHelmetLight"/>
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.75"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="1.75"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="HasBuff" target="self" buff="buffGunFlashlight"/>
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.75"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="1.75"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="HasBuff" target="self" buff="buffNightVision"/>
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="2.75"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="1.75"/>
 				<requirement name="!IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="HasBuff" target="self" buff="buffBurningShaft"/>
@@ -981,7 +986,7 @@
 		
 			<!-- indoors, with a light source, near a campfire, not freezing or sweltering, and dry -->
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsDay"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -990,7 +995,7 @@
 			</effect_group>
 
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsDay"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -999,7 +1004,7 @@
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsDay"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -1008,7 +1013,7 @@
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsDay"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -1017,7 +1022,7 @@
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsDay"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -1026,7 +1031,7 @@
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsDay"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -1034,17 +1039,17 @@
 				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
 			</effect_group>
 		
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.1"/>
-				<requirement name="IsIndoors"/>
-				<requirement name="IsDay"/>
-				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
-				<requirement name="HasBuff" target="self" buff="buffWallTorch"/>
-				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
-			</effect_group>
+			<!-- <effect_group> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.1"/> -->
+				<!-- <requirement name="IsIndoors"/> -->
+				<!-- <requirement name="IsDay"/> -->
+				<!-- <requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/> -->
+				<!-- <requirement name="HasBuff" target="self" buff="buffWallTorch"/> -->
+				<!-- <requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/> -->
+			<!-- </effect_group> -->
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -1053,7 +1058,7 @@
 			</effect_group>
 
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -1062,7 +1067,7 @@
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -1071,7 +1076,7 @@
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -1080,7 +1085,7 @@
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -1089,7 +1094,7 @@
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -1097,14 +1102,14 @@
 				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
 			</effect_group>
 		
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.1"/>
-				<requirement name="IsIndoors"/>
-				<requirement name="IsNight"/>
-				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
-				<requirement name="HasBuff" target="self" buff="buffWallTorch"/>
-				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
-			</effect_group>
+			<!-- <effect_group> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.1"/> -->
+				<!-- <requirement name="IsIndoors"/> -->
+				<!-- <requirement name="IsNight"/> -->
+				<!-- <requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/> -->
+				<!-- <requirement name="HasBuff" target="self" buff="buffWallTorch"/> -->
+				<!-- <requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/> -->
+			<!-- </effect_group> -->
 			
 			<!-- indoors, near a campfire -->
 			<effect_group>
@@ -1123,7 +1128,7 @@
 			</effect_group>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.65"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.5"/>
 				<requirement name="IsIndoors"/>
 				<requirement name="IsNight"/>
 				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
@@ -1138,21 +1143,21 @@
 				<requirement name="BlockStandingOn" tags="bedroll"/>
 			</effect_group>
 			
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.25"/>
-				<requirement name="IsIndoors"/>
-				<requirement name="IsNight"/>
-				<requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/>
-				<requirement name="!HasBuff" target="self" buff="buffHeldTorch"/>
-				<requirement name="!HasBuff" target="self" buff="buffHeldLight"/>
-				<requirement name="!HasBuff" target="self" buff="buffHelmetLight"/>
-				<requirement name="!HasBuff" target="self" buff="buffGunFlashlight"/>
-				<requirement name="!HasBuff" target="self" buff="buffNightVision"/>
-				<requirement name="!HasBuff" target="self" buff="buffBurningShaft"/>
-				<requirement name="!HasBuff" target="self" buff="buffWallTorch"/>
-				<requirement name="!BlockStandingOn" tags="bedroll"/>
-				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
-			</effect_group>
+			<!-- <effect_group> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounterModifier" operation="set" value="-.25"/> -->
+				<!-- <requirement name="IsIndoors"/> -->
+				<!-- <requirement name="IsNight"/> -->
+				<!-- <requirement name="!HasBuff" target="self" buff="buffDespairCureDisplay"/> -->
+				<!-- <requirement name="!HasBuff" target="self" buff="buffHeldTorch"/> -->
+				<!-- <requirement name="!HasBuff" target="self" buff="buffHeldLight"/> -->
+				<!-- <requirement name="!HasBuff" target="self" buff="buffHelmetLight"/> -->
+				<!-- <requirement name="!HasBuff" target="self" buff="buffGunFlashlight"/> -->
+				<!-- <requirement name="!HasBuff" target="self" buff="buffNightVision"/> -->
+				<!-- <requirement name="!HasBuff" target="self" buff="buffBurningShaft"/> -->
+				<!-- <requirement name="!HasBuff" target="self" buff="buffWallTorch"/> -->
+				<!-- <requirement name="!BlockStandingOn" tags="bedroll"/> -->
+				<!-- <requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/> -->
+			<!-- </effect_group> -->
 		
 			<!-- buffs/cvars for UI display -->
 			<effect_group>
@@ -1221,7 +1226,7 @@
 			</effect_group>
 			<!-- killing enemies -->
 			<effect_group>
-				<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-5"/>
+				<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-10"/>
 			</effect_group>
 			<!-- reduces tick rate if player has drone morale booster buff -->
 			<effect_group>
@@ -1607,9 +1612,9 @@
 				<requirement name="CVarCompare" cvar="DespairCounter" operation="LTE" value="0"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespair01Untreated"/>
 			</effect_group>
-			<effect_group>
-				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.05"/>
-			</effect_group>
+			<!-- <effect_group> -->
+				<!-- <passive_effect name="StaminaChangeOT" operation="perc_add" value="-.05"/> -->
+			<!-- </effect_group> -->
 		</buff>
 	
 		<buff name="buffDespair01GetBetter" remove_on_death="false" name_key="buffDespair01GetBetterName" description_key="buffDespair01GetBetterDesc" icon="ui_game_symbol_intellect" icon_color="219,112,147" showonhud="false">
@@ -1762,6 +1767,15 @@
 			</effect_group>
 		</buff>
 	
+		<!-- *** signal buff to show current despair rate *** -->
+		<buff name="buffDespairCounter" tooltip_key="buffDespairCounterTooltip" name_key="buffDespairCounterName" description_key="buffDespairCounterDesc" showonhud="false" icon_color="0,128,128" icon="ui_game_symbol_despair_counter">
+		<stack_type value="ignore"/>
+		<update_rate value="1"/>
+		<display_value_key value="{0:0.00}"/>
+		<!-- <display_value_format value="time"/> -->
+		<display_value value="DespairCounterModifier"/>
+		</buff>
+		
 		<!-- *** despair meds blocking buff *** -->
 		<buff name="buffLithiumBlocker" tooltip_key="buffLithiumBlockerTooltip" name_key="buffLithiumBlockerName" description_key="buffLithiumBlockerDesc" showonhud="true" icon_color="219,112,147" icon="ui_game_symbol_pills" icon_blink="true">
 			<stack_type value="ignore"/>
@@ -2018,8 +2032,8 @@
 				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8,.2" duration="0,6"/>
 				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.8,.2" duration="0,6"/>
 				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Assets/28al_ps_frosty.unity3d?PS_Frosty_Prefab" local_offset="0,0,0" local_scale="1,1,1" parent_transform="Spine1"/>
-				<triggered_effect trigger="onSelfEnteredGame" action="AttachPrefabToEntity" prefab="#@modfolder:Assets/28al_ps_frosty.unity3d?PS_Frosty_Prefab" local_offset="0,0,0" local_scale="1,1,1" parent_transform="Spine1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Assets/28al_ps_frosty.unity3d?PS_Frosty_Prefab" local_offset="0,0,0" local_rotation="0,180,0" local_scale="1,1,1" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachPrefabToEntity" prefab="#@modfolder:Assets/28al_ps_frosty.unity3d?PS_Frosty_Prefab" local_offset="0,0,0" local_rotation="0,180,0" local_scale="1,1,1" parent_transform="Hips"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="buff_burn_extinguish"/>
 
 				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" prefab="PS_Frosty_Prefab"/>
@@ -2345,7 +2359,7 @@
 		
 			<effect_group>
 				<passive_effect name="HealthMax" operation="perc_add" value=".5"/>
-				<passive_effect name="HealthChangeOT" operation="base_add" value="5"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="2"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="5"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="5" tags="coredamageresist"/>
 				<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
@@ -2359,98 +2373,124 @@
 			<duration value="0"/>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" buff="buffDespairAOE">
-					<requirement name="EntityTagCompare" target="other" tags="player"/>
-					<requirement name="!EntityTagCompare" target="other" tags="zombie"/>
-				</triggered_effect>
+				<requirement name="EntityTagCompare" tags="entity,zombie,walker"/>
+				<requirement name="!EntityTagCompare" tags="feral"/>
+				<requirement name="!EntityTagCompare" tags="radiated"/>
+				<requirement name="!EntityTagCompare" tags="mutated"/>
+				<requirement name="!EntityTagCompare" tags="frozen"/>
+				<requirement name="!HasBuff" buff="buffDespairFeralAOE"/>
+				<requirement name="!HasBuff" buff="buffDespairRadiatedAOE"/>
+				<requirement name="!HasBuff" buff="buffDespairMutatedAOE"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" buff="buffDespairAOE"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="entity,zombie,walker,feral" has_all_tags="true"/>
+				<requirement name="!EntityTagCompare" tags="radiated"/>
+				<requirement name="!EntityTagCompare" tags="mutated"/>
+				<requirement name="!EntityTagCompare" tags="frozen"/>
+				<requirement name="!HasBuff" buff="buffDespairRadiatedAOE"/>
+				<requirement name="!HasBuff" buff="buffDespairMutatedAOE"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" buff="buffDespairFeralAOE"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="selfAOE" buff="buffDespairAOE"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="entity,zombie,walker,frozen" has_all_tags="true"/>
+				<requirement name="!EntityTagCompare" tags="radiated"/>
+				<requirement name="!EntityTagCompare" tags="mutated"/>
+				<requirement name="!EntityTagCompare" tags="feral"/>
+				<requirement name="!HasBuff" buff="buffDespairRadiatedAOE"/>
+				<requirement name="!HasBuff" buff="buffDespairMutatedAOE"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" buff="buffDespairFeralAOE"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="selfAOE" buff="buffDespairAOE"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="entity,zombie,walker,feral,radiated" has_all_tags="true"/>
+				<requirement name="!HasBuff" buff="buffDespairMutatedAOE"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="4" buff="buffDespairRadiatedAOE"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="selfAOE" buff="buffDespairAOE"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="selfAOE" buff="buffDespairFeralAOE"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="EntityTagCompare" tags="entity,zombie,walker,feral,mutated" has_all_tags="true"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="buffDespairMutatedAOE"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="selfAOE" buff="buffDespairAOE"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="selfAOE" buff="buffDespairFeralAOE"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="selfAOE" buff="buffDespairRadiatedAOE"/>
 			</effect_group>
 		</buff>
 	
-		<buff name="buffDespairAOE" hidden="true" icon_color="139,0,0" remove_on_death="false">
+		<buff name="buffDespairAOE" name_key="buffDespairAOEName" description_key="buffDespairAOEDesc" tooltip_key="buffDespairAOETooltip" icon="ui_game_symbol_despair_counter" icon_color="139,0,0" remove_on_death="false" icon_blink="true">n
 			<stack_type value="replace"/>
-			<duration value="5"/>
+			<display_value value="zombiedespairmodifier"/>
+			<display_value_key value="+{0:0.00}"/>
+			<duration value="2"/>
 		
 			<effect_group>
 				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffDespair01Untreated,buffDespair01GetBetter,buffDespair02Untreated,buffDespair02GetBetter,buffDespair03Untreated,buffDespair03GetBetter,buffDespairCureDisplayPositive"/>
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffDespairAOE"/>
 			</effect_group>
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.25"/>
-			</effect_group>
-		</buff>
+			
+			<effect_group compare_type="or">
+				<requirement name="!HasBuff" buff="buffDespairFeralAOE"/>
+				<requirement name="!HasBuff" buff="buffDespairRadiatedAOE"/>
+				<requirement name="!HasBuff" buff="buffDespairMutatedAOE"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="zombiedespairmodifier" operation="set" value="1.25"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="@zombiedespairmodifier"/>
+			</effect_group>			
+		</buff>		
 	
-		<buff name="buffDespairAOEFeralTrigger" hidden="true">
-			<stack_type value="ignore"/>
-			<duration value="0"/>
-		
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" buff="buffDespairFeralAOE">
-					<requirement name="EntityTagCompare" target="other" tags="player"/>
-					<requirement name="!EntityTagCompare" target="other" tags="zombie"/>
-				</triggered_effect>
-			</effect_group>
-		</buff>
-	
-		<buff name="buffDespairFeralAOE" hidden="true" icon_color="255,255,0" remove_on_death="false">
+		<buff name="buffDespairFeralAOE" name_key="buffDespairFeralAOEName" description_key="buffDespairFeralAOEDesc" tooltip_key="buffDespairFeralAOETooltip" icon="ui_game_symbol_despair_counter" icon_color="255,255,0" remove_on_death="false" icon_blink="true">
 			<stack_type value="replace"/>
-			<duration value="5"/>
+			<display_value value="zombiedespairmodifier"/>
+			<display_value_key value="+{0:0.00}"/>
+			<duration value="2"/>
 		
 			<effect_group>
 				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffDespair01Untreated,buffDespair01GetBetter,buffDespair02Untreated,buffDespair02GetBetter,buffDespair03Untreated,buffDespair03GetBetter"/>
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffDespairFeralAOE"/>
+			</effect_group>	
+			
+			<effect_group compare_type="or">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="zombiedespairmodifier" operation="set" value="1.5"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="@zombiedespairmodifier"/>
 			</effect_group>
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.5"/>
-			</effect_group>
-		</buff>
+		</buff>		
 	
-		<buff name="buffDespairAOERadiatedTrigger" hidden="true">
-			<stack_type value="ignore"/>
-			<duration value="0"/>
-		
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="4" buff="buffDespairRadiatedAOE">
-					<requirement name="EntityTagCompare" target="other" tags="player"/>
-					<requirement name="!EntityTagCompare" target="other" tags="zombie"/>
-				</triggered_effect>
-			</effect_group>
-		</buff>
-	
-		<buff name="buffDespairRadiatedAOE" hidden="true" icon_color="0,255,0" remove_on_death="false">
+		<buff name="buffDespairRadiatedAOE" name_key="buffDespairRadiatedAOEName" description_key="buffDespairRadiatedAOEDesc" tooltip_key="buffDespairRadiatedAOETooltip" icon="ui_game_symbol_despair_counter" icon_color="0,255,0" remove_on_death="false" icon_blink="true">
 			<stack_type value="replace"/>
-			<duration value="5"/>
+			<display_value value="zombiedespairmodifier"/>
+			<display_value_key value="+{0:0.00}"/>
+			<duration value="2"/>
 		
 			<effect_group>
 				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffDespair01Untreated,buffDespair01GetBetter,buffDespair02Untreated,buffDespair02GetBetter,buffDespair03Untreated,buffDespair03GetBetter"/>
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffDespairRadiatedAOE"/>
 			</effect_group>
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.75"/>
+			
+			<effect_group compare_type="or">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="zombiedespairmodifier" operation="set" value="1.75"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="@zombiedespairmodifier"/>
 			</effect_group>
-		</buff>
+		</buff>		
 	
-		<buff name="buffDespairAOEMutatedTrigger" hidden="true">
-			<stack_type value="ignore"/>
-			<duration value="0"/>
-		
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="buffDespairMutatedAOE">
-					<requirement name="EntityTagCompare" target="other" tags="player"/>
-					<requirement name="!EntityTagCompare" target="other" tags="zombie"/>
-				</triggered_effect>
-			</effect_group>
-		</buff>
-	
-		<buff name="buffDespairMutatedAOE" hidden="true" icon_color="0,255,0" remove_on_death="false">
+		<buff name="buffDespairMutatedAOE" name_key="buffDespairMutatedAOEName" description_key="buffDespairMutatedAOEDesc" tooltip_key="buffDespairMutatedAOETooltip" icon="ui_game_symbol_despair_counter" icon_color="245,199,26" remove_on_death="false" icon_blink="true">
 			<stack_type value="replace"/>
-			<duration value="5"/>
+			<display_value value="zombiedespairmodifier"/>
+			<display_value_key value="+{0:0.00}"/>
+			<duration value="2"/>
 		
 			<effect_group>
 				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffDespair01Untreated,buffDespair01GetBetter,buffDespair02Untreated,buffDespair02GetBetter,buffDespair03Untreated,buffDespair03GetBetter"/>
 				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffDespairMutatedAOE"/>
 			</effect_group>
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2"/>
+			
+			<effect_group compare_type="or">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="zombiedespairmodifier" operation="set" value="2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="@zombiedespairmodifier"/>
 			</effect_group>
 		</buff>
 
@@ -2649,7 +2689,7 @@
 		</buff>
 	
 		<!-- *** vehicle can be picked up, but player becomes immobilized *** -->
-		<buff name="buffImmobilized" name_key="buffImmobilizedName" description_key="buffImmobilizedDesc" tooltip_key="buffImmobilizedTooltip" remove_on_death="false" icon="ui_game_symbol_pack_mule" icon_color="149,52,54">
+		<buff name="buffImmobilized" name_key="buffImmobilizedName" description_key="buffImmobilizedDesc" tooltip_key="buffImmobilizedTooltip" remove_on_death="false" icon="ui_game_symbol_twitch_pack_mule_plus" icon_color="149,52,54">
 			<stack_type value="replace"/>
 			<duration value="0"/>
 			<effect_group>
@@ -2659,7 +2699,7 @@
 			</effect_group>
 		</buff>
 		
-		<buff name="buffVehicleCrate" name_key="buffVehicleCrateName" description_key="buffVehicleCrateDesc" tooltip_key="buffVehicleCrateTooltip" remove_on_death="false" icon="ui_game_symbol_4x4" icon_color="0,255,0">
+		<buff name="buffVehicleCrate" name_key="buffVehicleCrateName" description_key="buffVehicleCrateDesc" tooltip_key="buffVehicleCrateTooltip" remove_on_death="false" icon="ui_game_symbol_weight" icon_color="0,255,0">
 			<stack_type value="replace"/>
 			<duration value="0"/>
 			<effect_group>

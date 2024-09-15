@@ -33,6 +33,88 @@
 		<!-- </trader_items> -->
 	<!-- </append> -->
 	
+	<!-- *** new traders *** -->
+	<append xpath="/traders">
+	<!-- *** TRADER HELLS ID:12 SPECIALTY: TOOLS AND VEHICLES -->
+	<trader_info id="12" reset_interval="3" open_time="4:05" close_time="21:50">
+		<!-- *** SPECIALTY -->
+		<trader_items count="all">
+			<item group="groupVehicles" unique_only="true" count="2"/>
+			<item group="groupMeleeMods" unique_only="true" count="1,2"/>
+			<item group="tools" unique_only="true" count="10"/>
+			<item group="rareTools" unique_only="true" count="2,3"/>
+			<item group="traderElectrical" unique_only="true" count="8,15"/>
+			<item group="skillMagazines" unique_only="true" count="7"/>
+			<item group="books" unique_only="true" count="3,4"/>
+			<item name="toolDewGatherer" count="1,3"/>
+			<item name="toolDewTarp" count="1,3"/>
+			<item name="toolDewFilter" count="1,3"/>
+			<item name="toolCookingPot" count="1,3"/>
+			<item name="toolCookingGrill" count="1,3"/>
+		</trader_items>
+		
+		<!-- *** GENERAL -->
+		<trader_items count="all">
+			<item group="traderAlways"/>
+			<item group="traderGeneral" count="4,10"/>
+			<item group="groupModsAll" count="7,10"/>
+			<item group="tools" unique_only="true" count="10"/>
+			<item group="generalResources" count="5,8"/>
+			<item group="traderElectrical" unique_only="true" count="2,5"/>
+			<item group="groupMeleeAll" count="5,7"/>
+			<item group="groupRangedAll" count="5,7"/>
+			<item group="weaponsGunParts" count="2,4"/>
+			<item name="armorParts" count="1,2"/>
+			<item name="resourceSewingKit" count="1,2"/>
+			<item group="groupArmorLight" unique_only="true" count="6"/>
+			<item group="groupArmorMedium" unique_only="true" count="6"/>
+			<item group="groupArmorHeavy" unique_only="true" count="6"/>
+			<item group="constructionSupplies" count="2,4"/>
+			<item group="decorativeBlocks" unique_only="true" count="6,10"/>
+		</trader_items>
+	</trader_info>
+	
+	<!-- *** TRADER RED ID:11 SPECIALTY: FOOD & FARMING -->
+	<trader_info id="11" reset_interval="3" open_time="4:05" close_time="21:50">
+		<!-- *** SPECIALTY -->
+		<trader_items count="all">
+			<item group="seeds" unique_only="true" count="2,5" />
+			<item group="cannedfood" count="3,6"/>
+			<item group="foodSupplies" count="2,5"/>
+			<item group="groupFoodAll" count="1,3"/>
+			<item group="tools" unique_only="true" count="10"/>
+			<item group="skillMagazines" unique_only="true" count="7"/>
+			<item group="books" unique_only="true" count="3,4"/>
+			<item name="toolDewGatherer" count="1,3"/>
+			<item name="toolDewTarp" count="1,3"/>
+			<item name="toolDewFilter" count="1,3"/>
+			<item name="toolCookingPot" count="1,3"/>
+			<item name="toolCookingGrill" count="1,3"/>
+		</trader_items>
+		
+		<!-- *** GENERAL -->
+		<trader_items count="all">
+			<item group="traderAlways"/>
+			<item group="traderGeneral" count="4,8"/>
+			<item group="generalResources" count="5,8"/>
+			<item group="groupModsAll" count="7,10"/>
+			<item group="tools" count="10"/>
+			<item group="rareTools" count="2,3"/>
+			<item group="groupMeleeAll" count="5,7"/>
+			<item group="groupRangedAll" count="5,7"/>
+			<item group="weaponsGunParts" count="2,4"/>
+			<item name="armorParts" count="1,2"/>
+			<item name="resourceSewingKit" count="1,2"/>
+			<item group="traderElectrical" unique_only="true" count="5,10"/>
+			<item group="groupArmorLight" unique_only="true" count="6"/>
+			<item group="groupArmorMedium" unique_only="true" count="6"/>
+			<item group="groupArmorHeavy" unique_only="true" count="6"/>
+			<item group="constructionSupplies" count="2,4"/>
+			<item group="decorativeBlocks" unique_only="true" count="6,10"/>
+		</trader_items>
+	</trader_info>
+	</append>
+	
 	<!-- *** iron hoe, schematic, and fertilzer added to trader stock *** -->
 	<append xpath="//trader_item_group[@name='perkBooks']">
 		<item name="meleeToolFarmT2IronHoeSchematic"/>
@@ -53,7 +135,7 @@
 	</append>
 	
 	<!-- *** increased buy markup, decreased sell markup *** -->
-	<setattribute xpath="/traders" name="buy_markup">6</setattribute>
+	<setattribute xpath="/traders" name="buy_markup">4</setattribute>
 	<setattribute xpath="/traders" name="sell_markdown">0.1</setattribute>
 	<removeattribute xpath="//trader_info[@id='4']/@override_buy_markup"/>
 	<removeattribute xpath="//trader_info[@id='10']/@override_buy_markup"/>

@@ -31,6 +31,7 @@
 			<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLight"/>
 			<!-- <triggered_effect trigger="onSelfItemActivate" action="SetPartActive" part="HeadLight" active="true"/> -->
 			<!-- <triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLight" active="false"/> -->
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHelmetLightActivate"/>
 			<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffHelmetLightActive"/>
 			<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffHelmetLightDeactivate"/>
 			<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffHelmetLightActivate"/>

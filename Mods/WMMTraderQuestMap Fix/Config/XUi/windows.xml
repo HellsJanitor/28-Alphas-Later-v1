@@ -2,7 +2,6 @@
 	<setattribute xpath="/windows/window[@name='mapTraderQuests']" name="height">770</setattribute>
 	<setattribute xpath="/windows/window[@name='mapTraderQuests']/rect[@name='content']" name="pos">-1024,-1024</setattribute>
 	<setattribute xpath="/windows/window[@name='mapTraderQuests']/rect[@name='content']" name="height">1</setattribute>
-	<remove xpath="/windows/window[@name='mapTraderQuests']/rect[@name='content']/rect[@name='searchControls']"/>
 
 	<setattribute xpath="/windows/window[@name='mapTraderQuests']/panel[@name='header'][@pos='2,-330']" name="pos">2,-45</setattribute>
 	<setattribute xpath="/windows/window[@name='mapTraderQuests']/panel[@name='content']" name="pos">2,-87</setattribute>

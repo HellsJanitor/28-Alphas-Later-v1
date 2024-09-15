@@ -7,17 +7,24 @@
 
 The idea behind this mod is to slow progression, make traders less powerful, and generally extend the time for a playthrough, while keeping the vanilla look and feel.
 
-16/08/24 - mod version 2.0.0, Updated for v1 of 7 Days to Die
+16/08/24 - mod version 2.0, Updated for v1 of 7 Days to Die
 
 *** FEATURES *** 
 
 *** GENERAL GAMEPLAY ***
 
-Player starts with a new debuff - Despair. Despair is dynamically affected by various different factors, including:
+Player starts with a new debuff - Despair.
+As your despair increases, so your abilities will be negatively affected. If despair reaches 100%, you'll be seconds from death.
+Conversely, if you can manage your despair well, you'll receive buffs for remaining positive.
+The despair indicator on the HUD will fill as your despair grows, and will change colour to indicate the level of your despair.
+If you're able to manage your despair and have a more positive outlook, the icon on the HUD will change, as will the fill colour to indicate your levels of positivity.
+Despair can also be checked from the player information screen.
+
+Despair is dynamically affected by various different factors, including:
 
 1. Darkness. Too dark, and your Despair will increase dramatically. Torches, helmet lights and flashlights will mitigate this. Use these in conjunction with a campfire for the best effect.
 2. Temperature. If you’re freezing or sweltering, your Despair will also increase dramatically. Find shelter!
-3. Environment: Varying degrees of “wetness” will change how Despair affects you, as will your shelter. If you’re warm, dry, sheltered, well lit, AND near an operating campfire,forge or chem station you can effectively “treat” Despair.
+3. Environment: Varying degrees of “wetness” will change how Despair affects you, as will your shelter. If you’re warm, dry, sheltered, well lit or resting on a bed or bedroll, AND near an operating campfire,forge or chem station you can effectively “treat” Despair.
 4. Hunger and thirst affect how quickly your despair increases. Starvation/dehydration will drastically increase the rate at which you become affected by despair.
 5. Injuries will affect how quickly your despair increases.
 6. There is medication in trader stock and rare medical loot to treat your despair.
@@ -30,7 +37,7 @@ Player starts with a new debuff - Despair. Despair is dynamically affected by va
 12. The trader has an effect. Being close to a trader will slow down and/or reduce your Despair.
 13. The perk "From the Shadows" also has an effect on the way Despair affects you at NIGHT. The more points in the perk, the less Despair affects you at night.
 
-Headshots ONLY. Zombies take maximum damage from headshots, however, they do take small damage if you miss the head.
+Headshots! Zombies take maximum damage from headshots, however, they do take small damage if you miss the head.
 
 Zombies DON'T bleed. Nothing undead takes bleed damage.
 
@@ -70,8 +77,6 @@ New clothing mod - cycling shorts. Install them in your leg armour/clothing and 
 
 The beehive. Find bees (and honey) in specific tree stumps (beehives) in the world, and use them to produce honey. Normal wild tree stumps have a higher chance of giving honey too.
 
-The dew collector now uses a filter WITH durability. It has to be replaced when it breaks, or the collector will stop.
-
 The rain collector. Works like a dew collector, but requires an empty bucket to collect water.
 
 The chicken snare. Place this block down, and load it with corn seed to attract and trap chickens, which can be used in coops to produce eggs.
@@ -85,7 +90,7 @@ The workbench now has slots for a wrench, hammer, ratchet, impact driver, and na
 
 The cement mixer now requires gasoline to work.
 
-The forge no longer requires you to smelt items. You can use the items directly from your inventory.
+The forge no longer requires you to smelt items. You can use the items directly from your inventory, and a lot of items are crafted in batches of 5.
 
 
 *** BUFFS/DEBUFFS ***
@@ -117,13 +122,15 @@ New Mutated zombie variant. Bigger, tankier, stronger, yellower, and with more r
 
 New Frozen zombie variant. Slightly tougher, slightly slower, slightly more XP, and take slightly more damage than their “Normal” counterparts. Immune to the effects of liquid nitrogen, and if they touch you, your movement is reduced by 20%. You can negate this by maxing out the Well Insulated perk.  Found in the snow biome.
 
-New Rotting zombie variant. They have lower HP, lower XP reward, and they take more damage. Found in the forest and desert biomes.
+New Rotting zombie variant. They have lower HP, lower XP reward, and they take more damage. Found in the forest biome.
 
-All "fatties" (Big Mama, tourist etc.) puke and explode …
+New Cowboy zombie variant. Similar to "normal" zombies, these enemies are exclusive to the desert biome, identifiable by their cowboy hats and/or gun belts. They are hot to the touch, and getting hit by them will overheat you briefly.
+
+All "fatties" (Big Mama, tourist etc.) explode …
 
 During bloodmoons, ‘some’ zombies have a 10% chance to respawn after death, unless they’re killed with fire or explosives. There is also a 5% chance that a “boss” zombie will spawn, which boosts all zombies within range; their damage by 20%, and gives them regenerative properties. The boss is marked with a specific symbol, so target them with extreme prejudice.
 
-All “Fat” zombies (Cop,Big Mama and Tourist) are filled with a substance that’s irresistible to all zombies. If you are within range when they explode, they’ll cover you in this stuff - and attract other zombies ….
+All “Fat” zombies (Cop,Big Mama and Tourist) are filled with a substance that’s irresistible to all zombies. If you are within range when they explode, they’ll cover you in this stuff - and attract other zombies. Cop and vulture vomit also has this effect.
 
 
 *** FOOD/FARMING ***
@@ -159,7 +166,7 @@ There is no more Daring Adventurer or Better Barter. Traders will give a drink a
 
 There is a new perk, Survival Instinct. It's a "single-player" version of Charismatic Nature. 5 levels, each level gains you an additional 5 health/stamina, 10% block damage, 5% entity damage, 3% XP, and carry capacity increases by 1.
 
-Living off the Land now offers a discount to crops needed to make seeds, level 2 costs 4 crops per seed, level 3 costs 3 crops per seed.
+Living off the Land now offers a discount to crops needed to make seeds.
 
 
 *** RESOURCES ***
@@ -170,7 +177,7 @@ Primitive weapons and ammo are now made from wood scraps, branches, plant fibres
 
 Cobblestone is now more expensive to make in your inventory. Use a cement mixer to make it cheaper.
 
-Concrete now requires a bucket of water and a new material, Feldspar. Concrete is crafted in batches of 250. Returns an empty bucket when crafting is complete.
+Concrete now requires a bucket of water and a new material, Feldspar. Concrete is crafted in batches of 250. Returns an empty bucket when crafting is complete. Feldspar can be obtained from Wasteland terrain and surface boulders.
 
 Most ammo can be dismantled into its component parts. Check ammo for recipes, and look at the 3rd tab to see what they dismantle into. Most need a workbench to do this, but basic arrows/bolts can be dismantled in your inventory.
 
@@ -180,6 +187,9 @@ Repair kits are more expensive, and top tier weapons/armour/tools now require a 
 *** VEHICLES ***
 
 All vehicles EXCEPT the bicycle are too heavy for you to carry. Crafted vehicles come in a crate for you to carry to their deploy position.
+
+Two new vehicles, the Ruin Runner and The Hornet.
+The Ruin Runner is a dirt bike, with similar speed to the motorcycle, but the inventory capacity of the minibike. The Hornet is an off-road dune buggy. As fast as a 4x4, but with the inventory capacity of a motorcycle.
 
 Vehicles CANNOT be used underwater.
 
