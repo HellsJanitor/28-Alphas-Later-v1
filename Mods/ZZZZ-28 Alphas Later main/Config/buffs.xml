@@ -675,7 +675,7 @@
 			<duration value="0"/>
 	
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="walktype" operation="set" value="randomint(1,20)"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="walktype" operation="set" value="randomint(1,6)"/>
 			</effect_group>			
 			<effect_group>
 				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="1"/>
@@ -695,68 +695,68 @@
 			</effect_group>
 			<effect_group>
 				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="5"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="5"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="6"/>
 			</effect_group>
 			<effect_group>
 				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="6"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="6"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="7"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="7"/>
 			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="8"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="1"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="9"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="2"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="10"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="11"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="12"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="5"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="13"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="6"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="14"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="1"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="15"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="1"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="16"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="2"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="17"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="18"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="5"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="19"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="6"/>
-			</effect_group>
-			<effect_group>
-				<requirement name="CVarCompare" cvar="walktype" operation="Equals" value="20"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="1"/>
-			</effect_group>							
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="7"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="8"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="9"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="10"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="11"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="12"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="3"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="13"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="5"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="14"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="5"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="15"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="5"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="16"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="5"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="17"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="5"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="18"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="2"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="19"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="6"/> -->
+			<!-- </effect_group> -->
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="walktype" operation="Equals" value="20"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="SetWalkType,IDCCore" value="7"/> -->
+			<!-- </effect_group>							 -->
 		</buff>		
 		
 
@@ -1617,7 +1617,7 @@
 			<!-- </effect_group> -->
 		</buff>
 	
-		<buff name="buffDespair01GetBetter" remove_on_death="false" name_key="buffDespair01GetBetterName" description_key="buffDespair01GetBetterDesc" icon="ui_game_symbol_intellect" icon_color="219,112,147" showonhud="false">
+		<buff name="buffDespair01GetBetter" remove_on_death="false" name_key="buffDespair01GetBetterName" description_key="buffDespair01GetBetterDesc" icon="ui_game_symbol_intellect" icon_color="219,112,147" showonhud="false" >
 			<damage_type value="Disease"/>
 			<stack_type value="ignore"/>
 			<duration value="0"/>
@@ -1656,7 +1656,7 @@
 			</effect_group>
 		</buff>
 	
-		<buff name="buffDespair02GetBetter" remove_on_death="false" name_key="buffDespair02GetBetterName" description_key="buffDespair02GetBetterDesc" icon="ui_game_symbol_intellect" icon_color="219,112,147" showonhud="false">
+		<buff name="buffDespair02GetBetter" remove_on_death="false" name_key="buffDespair02GetBetterName" description_key="buffDespair02GetBetterDesc" icon="ui_game_symbol_intellect" icon_color="219,112,147" showonhud="false" >
 			<damage_type value="Disease"/>
 			<stack_type value="ignore"/>
 			<duration value="0"/>
@@ -1702,7 +1702,7 @@
 			</effect_group>
 		</buff>
 	
-		<buff name="buffDespair03GetBetter" remove_on_death="false" name_key="buffDespair03GetBetterName" description_key="buffDespair03GetBetterDesc" icon="ui_game_symbol_intellect" icon_color="219,112,147" showonhud="false">
+		<buff name="buffDespair03GetBetter" remove_on_death="false" name_key="buffDespair03GetBetterName" description_key="buffDespair03GetBetterDesc" icon="ui_game_symbol_intellect" icon_color="219,112,147" showonhud="false" >
 			<damage_type value="Disease"/>
 			<stack_type value="ignore"/>
 			<duration value="0"/>
@@ -2423,7 +2423,7 @@
 			</effect_group>
 		</buff>
 	
-		<buff name="buffDespairAOE" name_key="buffDespairAOEName" description_key="buffDespairAOEDesc" tooltip_key="buffDespairAOETooltip" icon="ui_game_symbol_despair_counter" icon_color="139,0,0" remove_on_death="false" icon_blink="true">n
+		<buff name="buffDespairAOE" name_key="buffDespairAOEName" description_key="buffDespairAOEDesc" tooltip_key="" icon="ui_game_symbol_despair_counter" icon_color="139,0,0" remove_on_death="false" icon_blink="true">n
 			<stack_type value="replace"/>
 			<display_value value="zombiedespairmodifier"/>
 			<display_value_key value="+{0:0.00}"/>
@@ -2443,7 +2443,7 @@
 			</effect_group>			
 		</buff>		
 	
-		<buff name="buffDespairFeralAOE" name_key="buffDespairFeralAOEName" description_key="buffDespairFeralAOEDesc" tooltip_key="buffDespairFeralAOETooltip" icon="ui_game_symbol_despair_counter" icon_color="255,255,0" remove_on_death="false" icon_blink="true">
+		<buff name="buffDespairFeralAOE" name_key="buffDespairFeralAOEName" description_key="buffDespairFeralAOEDesc" tooltip_key="" icon="ui_game_symbol_despair_counter" icon_color="255,255,0" remove_on_death="false" icon_blink="true">
 			<stack_type value="replace"/>
 			<display_value value="zombiedespairmodifier"/>
 			<display_value_key value="+{0:0.00}"/>
@@ -2460,7 +2460,7 @@
 			</effect_group>
 		</buff>		
 	
-		<buff name="buffDespairRadiatedAOE" name_key="buffDespairRadiatedAOEName" description_key="buffDespairRadiatedAOEDesc" tooltip_key="buffDespairRadiatedAOETooltip" icon="ui_game_symbol_despair_counter" icon_color="0,255,0" remove_on_death="false" icon_blink="true">
+		<buff name="buffDespairRadiatedAOE" name_key="buffDespairRadiatedAOEName" description_key="buffDespairRadiatedAOEDesc" tooltip_key="" icon="ui_game_symbol_despair_counter" icon_color="0,255,0" remove_on_death="false" icon_blink="true">
 			<stack_type value="replace"/>
 			<display_value value="zombiedespairmodifier"/>
 			<display_value_key value="+{0:0.00}"/>
@@ -2477,7 +2477,7 @@
 			</effect_group>
 		</buff>		
 	
-		<buff name="buffDespairMutatedAOE" name_key="buffDespairMutatedAOEName" description_key="buffDespairMutatedAOEDesc" tooltip_key="buffDespairMutatedAOETooltip" icon="ui_game_symbol_despair_counter" icon_color="245,199,26" remove_on_death="false" icon_blink="true">
+		<buff name="buffDespairMutatedAOE" name_key="buffDespairMutatedAOEName" description_key="buffDespairMutatedAOEDesc" tooltip_key="" icon="ui_game_symbol_despair_counter" icon_color="245,199,26" remove_on_death="false" icon_blink="true">
 			<stack_type value="replace"/>
 			<display_value value="zombiedespairmodifier"/>
 			<display_value_key value="+{0:0.00}"/>
@@ -2558,7 +2558,7 @@
 			<duration value="5"/>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-2.5">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-1.5">
 					<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 				</triggered_effect>
 			</effect_group>

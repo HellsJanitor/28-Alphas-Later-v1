@@ -6,7 +6,7 @@
 			<property name="IndividualizedPlayerLevels" value="false"/>
 			
 			<property class="ZombieSpawningSettings">
-				<property name="GamestagedScouts" value="true"/>
+				<property name="GamestagedScouts" value="false"/>
 				<property name="GamestagedBiomeSpawns" value="true"/>
 				<property name="GameStagedBiomeSpawnsMinDifficulty" value="0"/>
 				<property name="PreventZombiesInLandclaims" value="true"/>
@@ -14,7 +14,7 @@
 
 			<property class="ZombieFeatures">
 				<property name="NoStumbleSwing" value="true"/>
-				<property name="NoCrouching" value="true"/>
+				<property name="NoCrouching" value="false"/>
 			</property>			
 
 			<property class="TraderIconsConfig">

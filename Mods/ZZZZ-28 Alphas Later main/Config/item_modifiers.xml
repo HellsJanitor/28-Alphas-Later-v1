@@ -137,7 +137,7 @@
 		<property name="DescriptionKey" value="modHazmatBootsDesc"/>
 		<property name="CustomIcon" value="apparelHazmatBoots"/>
 		<property name="Material" value="MresourceScrapLeadSmall"/>
-		<property name="Weight" value="1"/>		
+		<property name="Weight" value="0"/>		
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="EconomicValue" value="850"/>
 		
@@ -156,7 +156,7 @@
 		<property name="DescriptionKey" value="modHazmatGlovesDesc"/>
 		<property name="CustomIcon" value="apparelHazmatGloves"/>
 		<property name="Material" value="MresourceScrapLeadSmall"/>
-		<property name="Weight" value="1"/>		
+		<property name="Weight" value="0"/>		
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="EconomicValue" value="850"/>
 		
@@ -175,7 +175,7 @@
 		<property name="DescriptionKey" value="modHazmatJacketDesc"/>
 		<property name="CustomIcon" value="apparelHazmatJacket"/>
 		<property name="Material" value="MresourceScrapLeadSmall"/>
-		<property name="Weight" value="1"/>		
+		<property name="Weight" value="0"/>		
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="EconomicValue" value="850"/>
 		
@@ -194,7 +194,7 @@
 		<property name="DescriptionKey" value="modHazmatMaskDesc"/>
 		<property name="CustomIcon" value="apparelHazmatMask"/>
 		<property name="Material" value="MresourceScrapLeadSmall"/>
-		<property name="Weight" value="1"/>		
+		<property name="Weight" value="0"/>		
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="EconomicValue" value="850"/>		
 		

@@ -183,16 +183,16 @@ buffDespairCureDisplayDesc,You are feeling optimistic about your chances of surv
 buffDespair01UntreatedName,Despair
 buffDespair01UntreatedDesc,"You are not very optimistic about your survival.\n\nEating certain foods, finding warmth and shelter, or taking medication will help you start to feel better.\n\nResting on a bed near a campfire while sheltered will help ..."
 buffDespair01UntreatedTooltip,It's feeling a little hopeless ...
-buffDespair01GetBetterName,More optimistic
-buffDespair01GetBetterDesc,You are starting to feel better about your chances of surviving.
+buffDespair01GetBetterName,Feeling Better
+buffDespair01GetBetterDesc,"You have taken something - medication, food or drink, that is helping to treat your despair."
 buffDespair02UntreatedName,Isolation
 buffDespair02UntreatedDesc,"You are starting to feel worse about your chances of survival.\n\nEating certain foods, finding warmth and shelter, or taking medication will help you start to feel better.\n\nStamina regen is 12.5% slower."
-buffDespair02GetBetterName,Positive outlook
-buffDespair02GetBetterDesc,You are starting to feel better about your chances of surviving.
+buffDespair02GetBetterName,Feeling Better
+buffDespair02GetBetterDesc,"You have taken something - medication, food or drink, that is helping to treat your despair."
 buffDespair03UntreatedName,Depths of despair
 buffDespair03UntreatedDesc,"You feel the outlook is bleak, and are close to giving up.\n\nEating certain foods, finding warmth and shelter, or taking medication will help you start to feel better.\n\nStamina regen is 25% slower.\nAll Attributes are lowered by 1."
-buffDespair03GetBetterName,Hopeful
-buffDespair03GetBetterDesc,You are starting to feel better about your chances of surviving.
+buffDespair03GetBetterName,Feeling Better
+buffDespair03GetBetterDesc,"You have taken something - medication, food or drink, that is helping to treat your despair."
 buffDespair04Tooltip,The hopelessness of your situation has gotten too much for you to bear.
 buffDespairCureDisplayPositive01Name,Hope
 buffDespairCureDisplayPositive01Desc,"You are feeling hopeful and buoyant.\n\nYou have:\n5% decreased stamina loss.\n5% decreased health loss from damage taken.\n10% critical hit resistance."
@@ -205,16 +205,16 @@ buffDespairCounterName,"Despair"
 buffDespairCounterDesc,"This is a measure of how much your environment is affecting your rate of despair.\n\nPositive numbers means despair is increasing.\n\nNegative numbers means your despair is decreasing."
 buffDespairAOEName,Danger
 buffDespairAOEDesc,"These zombies are getting a bit too close for comfort ... \n\nEliminate them, or get the hell out of there!"
-buffDespairAOETooltip,Nearby zombies are affecting your mental health.
+buffDespairAOETooltip,"",,,,,,,Nearby zombies are affecting your mental health.
 buffDespairFeralAOEName,Danger Close
 buffDespairFeralAOEDesc,"These [ffff00]zombies[-] are getting tougher \n\nYou need to be careful ..."
-buffDespairFeralAOETooltip,Tougher zombies nearby are making your mental health worse.
+buffDespairFeralAOETooltip,"",,,,,,,,,Tougher zombies nearby are making your mental health worse.
 buffDespairRadiatedAOEName,Grave Danger
 buffDespairRadiatedAOEDesc,"What the hell!? These [00ff00]zombies[-] can regenerate?! \n\nMight need some specialized gear for these ..."
-buffDespairRadiatedAOETooltip,Nearby Radiated zombies are really affecting your ability to think straight ...
+buffDespairRadiatedAOETooltip,"",,,,,,,,,,Nearby Radiated zombies are really affecting your ability to think straight ...
 buffDespairMutatedAOEName,Get the hell away from me!
 buffDespairMutatedAOEDesc,"What the actual F%&*?!! These [f5c71a]zombies[-] are even worse than the greenies!\n\nIf you don't have blessed metal, you'd better run ..."
-buffDespairMutatedAOETooltip,Nearby Mutated zombies are making you question your survival chances ...
+buffDespairMutatedAOETooltip,"",,,,,,,,Nearby Mutated zombies are making you question your survival chances ...
 buffLithiumBlockerName,"Lithium"
 buffStJohnsWortBlockerName,"St. John's Wort"
 buffLithiumBlockerTooltip,"The treatment from Lithium and St. John's Wort must expire before the drug can be taken again."

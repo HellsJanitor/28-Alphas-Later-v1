@@ -248,7 +248,7 @@
 	</append>
 	
 	<append xpath="//lootgroup[@name='modGunMeleeT3']">
-		<item name="modGunMeleeBlessedMetal" loot_prob_template="ProbT1EarlyCap"/>
+		<item name="modGunMeleeBlessedMetal" loot_prob_template="ProbT2EarlyCap"/>
 	</append>
 	
 	<append xpath="//lootgroup[@name='modGunT3']">
@@ -282,9 +282,7 @@
 	</append>
 	
 	<!-- *** food/drinks in loot *** -->
-	<insertafter xpath="//lootgroup//item[@name='foodCanPeas']">
-	<item name="foodCanCarrots"/>
-	</insertafter>
+	
 	<remove xpath="//lootgroup[@name='groupDrinksUncommon']"/>
 	<remove xpath="//lootgroup[@name='groupDrinksRare']"/>
 	<remove xpath="//lootgroup[@name='rareFoodDrink']"/>
@@ -325,6 +323,10 @@
 		<item name="foodShamSandwich" loot_prob_template="low"/>
 		<item name="resourceAnimalFat" count="1,2" loot_prob_template="veryLow"/>		
 	</lootgroup>	
+	</insertafter>
+	
+	<insertafter xpath="//lootgroup//item[@name='foodCanPeas']">
+	<item name="foodCanCarrots"/>
 	</insertafter>
 	
 	<!-- *** remove resourceWood from trash piles *** -->

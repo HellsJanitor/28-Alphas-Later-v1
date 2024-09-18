@@ -112,22 +112,22 @@
 	<set xpath="//quest//reward[@value='6000']/@value">4000</set>	
 	
 	<!-- *** fixes for trader biome progression *** -->
-	<set xpath="//quest[contains(@id, 'nexttrader') and not(contains(@id, 'test'))]/objective[@type='Goto']/property[@name='location_name']/@value">xuiTrader</set>	
-	<set xpath="//quest[contains(@id, 'nexttrader') and not(contains(@id, 'test'))]/objective[@type='Goto']/property[@name='location_tag']/@value">trader</set>
+	<!-- <set xpath="//quest[contains(@id, 'nexttrader') and not(contains(@id, 'test'))]/objective[@type='Goto']/property[@name='location_name']/@value">xuiTrader</set>	 -->
+	<!-- <set xpath="//quest[contains(@id, 'nexttrader') and not(contains(@id, 'test'))]/objective[@type='Goto']/property[@name='location_tag']/@value">trader</set> -->
 	
-	<set xpath="//quest[contains(@id, 'nexttrader') and not(contains(@id, 'test'))]/objective[@type='Goto']/property[@name='biome_filter_type']/@value">OnlyBiome</set>
-    <removeattribute xpath="//quest[contains(@id, 'nexttrader') and not(contains(@id, 'test'))]/objective[@type='Goto']/property[@name='biome_filter_type']/@param1" />
+	<!-- <set xpath="//quest[contains(@id, 'nexttrader') and not(contains(@id, 'test'))]/objective[@type='Goto']/property[@name='biome_filter_type']/@value">OnlyBiome</set> -->
+    <!-- <removeattribute xpath="//quest[contains(@id, 'nexttrader') and not(contains(@id, 'test'))]/objective[@type='Goto']/property[@name='biome_filter_type']/@param1" /> -->
 
-    <append xpath="//quest[@id='tier2_nexttrader']/objective[@type='Goto']">
-        <property name="biome_filter" value="burnt_forest" />
-    </append>
-    <append xpath="//quest[@id='tier3_nexttrader']/objective[@type='Goto']">
-        <property name="biome_filter" value="desert" />
-    </append>
-    <append xpath="//quest[@id='tier4_nexttrader']/objective[@type='Goto']">
-        <property name="biome_filter" value="snow" />
-    </append>
-    <append xpath="//quest[@id='tier5_nexttrader']/objective[@type='Goto']">
-        <property name="biome_filter" value="wasteland" />
-    </append>
+    <!-- <append xpath="//quest[@id='tier2_nexttrader']/objective[@type='Goto']"> -->
+        <!-- <property name="biome_filter" value="burnt_forest" /> -->
+    <!-- </append> -->
+    <!-- <append xpath="//quest[@id='tier3_nexttrader']/objective[@type='Goto']"> -->
+        <!-- <property name="biome_filter" value="desert" /> -->
+    <!-- </append> -->
+    <!-- <append xpath="//quest[@id='tier4_nexttrader']/objective[@type='Goto']"> -->
+        <!-- <property name="biome_filter" value="snow" /> -->
+    <!-- </append> -->
+    <!-- <append xpath="//quest[@id='tier5_nexttrader']/objective[@type='Goto']"> -->
+        <!-- <property name="biome_filter" value="wasteland" /> -->
+    <!-- </append> -->
 </configs>

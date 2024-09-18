@@ -1,8 +1,8 @@
 <HellsJanitor>	
-	<setattribute xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_jen' and @biomeTags='burntforest']" name="partial_name">trader_bob</setattribute>
-	<setattribute xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_bob' and @biomeTags='desert']" name="partial_name">trader_jen</setattribute>
-	<setattribute xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_hugh' and @biomeTags='snow']" name="partial_name">trader_joel</setattribute>
-	<setattribute xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_joel' and @biomeTags='wasteland']" name="partial_name">trader_hugh</setattribute>	
+	<!-- <setattribute xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_jen' and @biomeTags='burntforest']" name="partial_name">trader_bob</setattribute> -->
+	<!-- <setattribute xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_bob' and @biomeTags='desert']" name="partial_name">trader_jen</setattribute> -->
+	<!-- <setattribute xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_hugh' and @biomeTags='snow']" name="partial_name">trader_joel</setattribute> -->
+	<!-- <setattribute xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_joel' and @biomeTags='wasteland']" name="partial_name">trader_hugh</setattribute>	 -->
 	
 	<append xpath="/rwgmixer">
 	<prefab_spawn_adjust partial_name="trader_hells" biomeTags="snow" bias="20" min_count="2" max_count="4"/>
