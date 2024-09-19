@@ -4,7 +4,7 @@
 	<!-- (required) Name used for display. Duh. -->
 	<DisplayName value="28 Alphas Later" />
 	<!-- (required) Nomen omen. Format: x.y.z (https://semver.org/) -->
-	<Version value="2.0.6" />
+	<Version value="2.0.5" />
 	<!-- (optional) Nomen omen. -->
 	<Description value="An overhaul mod for 7 Days to Die" />
 	<!-- (optional) Nomen omen. -->

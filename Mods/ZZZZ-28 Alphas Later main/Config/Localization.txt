@@ -224,8 +224,8 @@ buff_NoVehicleDesc,Internal combustion engines don't work underwater!!\n\nYou'll
 buffResurrectName,Double Tap!
 buffResurrectDesc,"You might wanna double check that these guys are actually dead ...\n\nDuring horde night, [FFC800]most[-] zombies have a 10% chance to respawn. Kill them with [CC5500]fire[-] damage or [CC5500]explosives[-] to ensure they stay dead."
 buffCampfireAOEEffectDesc,"You are warmed by the fire.\n\nCold Resist +15\n\nThis warming effect, combined with shelter and light, can slowly reduce your despair."
-buffGoodCompanyFromTraderName,Good Company
-buffGoodCompanyFromTraderDesc,Your spirits are raised by being in good company.
+buffGoodCompanyFromTraderName,Humanity
+buffGoodCompanyFromTraderDesc,Your spirits are raised by being around other humans.
 statCureDespair,Treat Despair
 drugLithium,Lithium
 drugLithiumDesc,"Lithium is the most effective treatment for despair, however, it has it's downside.\n\nEach time you use this drug, you develop a tolerance to it, reducing its efficacy over time.\n\n25% [CC5500]MAXIMUM[-] cure. At max tolerance, reduced to 15%"

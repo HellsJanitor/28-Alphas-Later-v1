@@ -250,7 +250,7 @@
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="MaxDamage" value="200"/>
-			<property name="HeatMapStrength" value="2"/>
+			<property name="HeatMapStrength" value="1"/>
 			<property name="HeatMapTime" value="5000"/>
 			<property name="HeatMapFrequency" value="1000"/>
 			<property class="RepairItems">
@@ -304,7 +304,7 @@
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="MaxDamage" value="1000"/>
-			<property name="HeatMapStrength" value="5"/>
+			<property name="HeatMapStrength" value="1"/>
 			<property name="HeatMapTime" value="5000"/>
 			<property name="HeatMapFrequency" value="1000"/>
 			<property class="RepairItems">
