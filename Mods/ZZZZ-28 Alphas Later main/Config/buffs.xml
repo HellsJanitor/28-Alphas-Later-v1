@@ -13,7 +13,7 @@
 	<!-- *** despair modifiers for debuffs *** -->
 	<append xpath="//buff[@name='buffElementWet']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
 			<requirement name="!IsIndoors"/>
 			<requirement name="CVarCompare" cvar="$WetTempModifierDisplay" operation="GTE" value="50"/>
 		</effect_group>
@@ -35,7 +35,7 @@
 	
 	<append xpath="//buff[@name='buffInfection01Untreated']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value=".5"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffInfection01Untreated"/>
 		</effect_group>
@@ -43,7 +43,7 @@
 	
 	<append xpath="//buff[@name='buffInfection02Untreated']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="3"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffInfection02Untreated"/>
 		</effect_group>
@@ -51,14 +51,14 @@
 	
 	<append xpath="//buff[@name='buffInfection03Untreated']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="3.5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.5"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffInfection03Untreated"/>
 		</effect_group>
 	</append>
 	<append xpath="//buff[@name='buffInjuryAbrasion']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value=".5"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffInjuryAbrasion"/>
 		</effect_group>
@@ -66,7 +66,7 @@
 	
 	<append xpath="//buff[@name='buffLegBroken']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.5"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffLegBroken"/>
 		</effect_group>
@@ -74,7 +74,7 @@
 	
 	<append xpath="//buff[@name='buffArmBroken']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.5"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffArmBroken"/>
 		</effect_group>
@@ -82,7 +82,7 @@
 	
 	<append xpath="//buff[@name='buffInjuryConcussion']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.5"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffInjuryConcussion"/>
 		</effect_group>
@@ -90,7 +90,7 @@
 	
 	<append xpath="//buff[@name='buffLaceration']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.5"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffLaceration"/>
 		</effect_group>
@@ -98,7 +98,7 @@
 	
 	<append xpath="//buff[@name='buffFatigued']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1.5"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffFatigued"/>
 		</effect_group>
@@ -106,7 +106,7 @@
 	
 	<append xpath="//buff[@name='buffStatusHungry01']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value=".5"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffStatusHungry01"/>
 		</effect_group>
@@ -114,7 +114,7 @@
 	
 	<append xpath="//buff[@name='buffStatusThirsty01']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value=".5"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffStatusThirsty01"/>
 		</effect_group>
@@ -122,7 +122,7 @@
 	
 	<append xpath="//buff[@name='buffStatusHungry02']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffStatusHungry02"/>
 		</effect_group>
@@ -130,7 +130,7 @@
 	
 	<append xpath="//buff[@name='buffStatusThirsty02']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2.5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="1"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffStatusThirsty02"/>
 		</effect_group>
@@ -138,7 +138,7 @@
 	
 	<append xpath="//buff[@name='buffStatusHungry03']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffStatusHungry03"/>
 		</effect_group>
@@ -146,7 +146,7 @@
 	
 	<append xpath="//buff[@name='buffStatusThirsty03']">
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="5"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="2"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 			<requirement name="HasBuff" buff="buffStatusThirsty03"/>
 		</effect_group>
