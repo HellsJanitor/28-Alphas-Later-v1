@@ -405,9 +405,9 @@ FertilizerDesc,Fertilizer is made in a Chemistry Station or Cement Mixer. Use a 
 resourceFeldspar,Feldspar
 resourceFeldsparDesc,"Feldspar is a crucial ingredient for concrete mix, allowing for fast-hardening while maintaining good workability during the setting process.\n\nFound exclusively in the Wasteland biome, in small quantities from surface terrain & boulders."
 medicalT3-4,Tier 3: The T-Virus Cure
-meleeToolFarmT2IronHoe,Fertilizer Bucket
+meleeToolFarmT2IronHoe,Garden Hoe
 meleeToolFarmT2IronHoeDesc,"Required for fertilizing terrain, and farmplots found in the world.\n\nNot required for crafted farm plots.\n\nRequires you to have fertilizer in your inventory.\nUse your secondary action[FFB400][action:local:Secondary][-] to use the fertilizer."
-meleeToolFarmT2IronHoeSchematic,Fertilzer Bucket Schematic
+meleeToolFarmT2IronHoeSchematic,Garden Hoe Schematic
 meleeToolAxeT2SteelAxeDesc,"The steel axe has a durable blade and is great for harvesting wood.\n\nRepair with a Steel Tools Repair Kit.\nScrap to Steel Tool parts."
 meleeToolAxeT3ChainsawDesc,"Chop down the biggest trees or zombies faster than Paul Bunyan with this great chainsaw that uses gasoline for fuel.\n\nRepair with a Motor Tools Repair Kit.\nScrap to Motor Tool Parts."
 meleeToolPickT2SteelPickaxeDesc,"The steel pickaxe is best for breaking stone and harvesting minerals.\n\nRepair with a Steel Tools Repair Kit.\nScrap to Steel Tool parts."

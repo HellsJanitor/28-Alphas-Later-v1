@@ -20,22 +20,14 @@
 		<property name="Material" value="Msteel"/>
 		<property name="LightValue" value=".4"/>
 		<effect_group tiered="false">
-			<!-- <triggered_effect trigger="onSelfEquipStart" action="AddPart" part="HeadLight" prefab="Entities/Lighting/miningHelmetLightSource" parentTransform="Spotlight" localPos="0,0,0" localRot="90,0,0"/> -->
-			<!-- <triggered_effect trigger="onSelfEquipStart" action="AddPart" part="HeadLightCam" prefab="Entities/Lighting/miningHelmetLightSource" parentTransform="CameraNode" localPos="0,0,0" localRot="-90,0,0"/> -->
-			<!-- <triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLight"/> -->
-			<!-- <triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLightCam"/> -->
-			<!-- <triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLight" active="false"/> -->
-			<!-- <triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLightCam" active="false"/> -->
 			<triggered_effect trigger="onSelfEquipChanged" action="AddPartFPV" part="HeadLight" prefab="Entities/Lighting/miningHelmetLightSource" parentTransform="CameraNode" localPos="0,0.1,0" localRot="-90,180,0"/>
 			<triggered_effect trigger="onSelfEquipChanged" action="AddPartTPV" part="HeadLight" prefab="Entities/Lighting/miningHelmetLightSource" parentTransform="Spotlight" localPos="0,0,0" localRot="90,0,0"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLight"/>
-			<!-- <triggered_effect trigger="onSelfItemActivate" action="SetPartActive" part="HeadLight" active="true"/> -->
-			<!-- <triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLight" active="false"/> -->
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHelmetLightActivate"/>
 			<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffHelmetLightActive"/>
 			<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffHelmetLightDeactivate"/>
 			<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffHelmetLightActivate"/>
-			<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffHelmetLightActive"/>
+			<triggered_effect trigger="onSelfItemDeactivate" action="AddBuff" buff="buffHelmetLightDeactivate"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHelmetLightActive"/>
 		</effect_group>
 	</set>
@@ -44,11 +36,8 @@
 	<set xpath="//item_modifier[@name='modGunFlashlight']//effect_group[@name='external attachment prefab (old way)']">
 		<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
 		<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Sides/side_attachment_flashlightPrefab.prefab" parent_transform="Attachments/Side"/>
-		<!-- <triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="Side" transform_path="lightSource"/> -->
 		<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="Side" transform_path="lightSource"/>
 		<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="Side" transform_path="lightSource"/>
-		<!-- <triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="Side" transform_path="lightSource"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="Side" transform_path="lightSource"/> -->
 		<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffWeaponLightActive"/>
 		<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffWeaponLightDeactivate"/>
 		<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffWeaponLightActivate"/>
@@ -59,8 +48,6 @@
 	<set xpath="//item_modifier[@name='modGunFlashlight']//effect_group[@name='internal attachment prefab (A19)']">
 		<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
 		<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashlight"/>
-		<!-- <triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="Gunjoint" transform_path="flashlight_lightSource"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="Gunjoint" transform_path="flashlight_lightSource"/> -->
 		<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource"/>
 		<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource"/>
 		<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffWeaponLightActive"/>
@@ -101,7 +88,6 @@
 	
 	<!-- *** burning shaft *** -->
 	<set xpath="//item_modifier[@name='modMeleeClubBurningShaft']//effect_group[@name='light/douse torch always']">
-		<!-- <triggered_effect trigger="onSelfWaterSurface" action="AddPart" part="Flames" prefab="property?FlameEffect" parentTransform="#HeldItemRoot"/> -->
 		<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffBurningShaftActive"/>
 		<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffBurningShaftDeactivate"/>
 		<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffBurningShaftActivate"/>
@@ -131,13 +117,5 @@
 		<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffNVGActivate"/>
 		<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffNVGActive"/>
 		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffNVGActive"/>
-
-		<!-- <triggered_effect trigger="onSelfEquipStart" action="AddPart" part="HeadLightTPV" prefab="ScreenEffects/DeferredNV/NVGLight" parentTransform="Spotlight" localPos="0,0,0" localRot="90,0,0"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStart" action="AddPart" part="HeadLightFPV" prefab="ScreenEffects/DeferredNV/NVGLight" parentTransform="CameraNode" localPos="0,0,.1" localRot="-90,0,0"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLightTPV"/> -->
-		<!-- <triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLightFPV"/> -->
-			
-		<!-- <triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLightTPV" active="false"/> -->
-		<!-- <triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLightFPV" active="false"/>		 -->
 	</set>
 </Hells_Janitor>

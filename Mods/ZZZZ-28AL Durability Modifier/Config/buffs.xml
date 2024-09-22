@@ -62,7 +62,7 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffHelmetPurifierActive"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffWaterPurifier"/>
-				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeWaterFilter">
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeWaterFilter" allow_client_call="true">
 					<requirement name="PlayerItemCount" item_name="resourceHelmetWaterFilter" operation="GT" value="0"/></triggered_effect>
 			</effect_group>
 		</buff>
@@ -113,8 +113,6 @@
 			<display_value_key value="Helmet: {0:0}%"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffHelmetLight"/>
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLight" active="@!.IsFPV"/> -->
-				<!-- <triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightCam" active="@.IsFPV"/> -->
 				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLight" active="true"/>
 				<!-- 100 = 100%, duration = 30 min, ticks every 10 seconds = 180 ticks; 0.556 per tick to be subtracted -->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$batteryHelmetLightTick" operation="set" value="0.556"/>
@@ -129,8 +127,6 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffHelmetLightReload">
 					<requirement name="CVarCompare" cvar="batteryHelmetLight" operation="LT" value="0"/>
 				</triggered_effect>
-				<!-- <triggered_effect trigger="onSelfBuffRemove" action="SetPartActive" part="HeadLight" active="false"/> -->
-				<!-- <triggered_effect trigger="onSelfBuffRemove" action="SetPartActive" part="HeadLightCam" active="false"/> -->
 				<triggered_effect trigger="onSelfBuffRemove" action="SetPartActive" part="HeadLight" active="false"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffHelmetLight"/>
 			</effect_group>
@@ -152,7 +148,7 @@
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffHelmetLightActive"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLight" active="false"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightCam" active="false"/>
-				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeHelmetBattery">
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeHelmetBattery" allow_client_call="true">
 					<requirement name="PlayerItemCount" item_name="resourceNiCdBattery" operation="GT" value="0"/></triggered_effect>
 			</effect_group>
 		</buff>
@@ -236,7 +232,7 @@
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffWeaponLightActive"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="Side" transform_path="lightSource"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="Gunjoint" transform_path="flashlight_lightSource"/>
-				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeWeaponBattery">
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeWeaponBattery" allow_client_call="true">
 					<requirement name="PlayerItemCount" item_name="resourceNiCdBattery" operation="GT" value="0"/></triggered_effect>
 			</effect_group>
 		</buff>
@@ -318,7 +314,7 @@
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLaserLightActive"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformChildrenActive" active="false" parent_transform="Side" transform_path="gun_laser"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="gunlaser" transform_path="gunlaser"/>
-				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeLaserBattery">
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeLaserBattery" allow_client_call="true">
 					<requirement name="PlayerItemCount" item_name="resourceNiCdBattery" operation="GT" value="0"/></triggered_effect>
 			</effect_group>
 		</buff>
@@ -396,7 +392,7 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffFlashLightActive"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="lightSource"/>
-				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeFlashLightBattery">
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeFlashLightBattery" allow_client_call="true">
 					<requirement name="PlayerItemCount" item_name="resourceNiCdBattery" operation="GT" value="0"/></triggered_effect>
 			</effect_group>
 		</buff>
@@ -484,7 +480,7 @@
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Bright" intensity="0" fade="0"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightTPV" active="false"/>
 				<triggered_effect trigger="onSelfBuffStart" action="SetPartActive" part="HeadLightFPV" active="false"/>
-				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeNVGBattery">
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeNVGBattery" allow_client_call="true">
 					<requirement name="PlayerItemCount" item_name="resourceNiCdBattery" operation="GT" value="0"/></triggered_effect>
 			</effect_group>
 		</buff>
@@ -566,7 +562,7 @@
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffHeldTorch"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffHandTorchActive"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="torch02_firePrefab" parent_transform="TorchLight"/>
-				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeHandTorchBattery">
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeHandTorchBattery" allow_client_call="true">
 					<requirement name="PlayerItemCount" item_name="ammoGasCan" operation="GTE" value="10"/></triggered_effect>
 			</effect_group>
 		</buff>
@@ -645,7 +641,7 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffBurningShaftActive"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemovePart" part="Flames"/>
-				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeBurningShaftBattery">
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="removeBurningShaftBattery" allow_client_call="true">
 					<requirement name="PlayerItemCount" item_name="ammoGasCan" operation="GTE" value="10"/></triggered_effect>
 			</effect_group>
 		</buff>

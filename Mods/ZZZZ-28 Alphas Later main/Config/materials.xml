@@ -24,13 +24,13 @@
 		<property name="stability_glue" value="20"/>
 		<property name="Mass" type="int" value="10"/>
 		<property name="MaxDamage" value="250"/>
-		<property name="Experience" value="2"/>
+		<property name="Experience" value="1"/>
 	</material>
 	
 	<material id="MresourceFertilizer">
 		<property name="damage_category" value="organic"/>
 		<property name="surface_category" value="organic"/>
-		<property name="Experience" value="2"/>
+		<property name="Experience" value="1"/>
 	</material>
 	
 	<material id="MresourceBricks">

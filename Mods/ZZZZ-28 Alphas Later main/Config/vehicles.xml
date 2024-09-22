@@ -162,14 +162,31 @@
 			<property name="tiltDampenThreshold" value="39"/>
 			<property name="tiltUpForce" value="2"/>
 			
-			<property name="motorTorque_turbo" value="2800, 900, 4500, 950"/>
-			<property name="velocityMax_turbo" value="15.8, 2, 22, 4"/>
-			<property name="brakeTorque" value="4500"/>
-			<property name="hopForce" value="1, .1"/>
-			
+			<property name="motorTorque_turbo" value="1200, 350, 1330, 400"/>
+			<property name="velocityMax_turbo" value="8.5, 5, 11.6, 6"/>
+			<property name="brakeTorque" value="3000"/>
+			<property name="hopForce" value="1, .8"/>
 			<property name="unstickForce" value="1"/>
 			<property name="waterDrag_y_velScale_velMaxScale" value="1.7, .9, .1"/>
 			<property name="wheelPtlScale" value=".5"/>
+			
+			<!-- minibike -->
+			<!-- <property name="motorTorque_turbo" value="400, 200, 560, 200"/>
+			<property name="velocityMax_turbo" value="7, 4, 9.2, 4"/>
+			<property name="brakeTorque" value="3000"/>
+			<property name="hopForce" value="1.5, .2"/>
+			<property name="unstickForce" value="1"/>
+			<property name="waterDrag_y_velScale_velMaxScale" value="1.5, .9, .15"/>
+			<property name="wheelPtlScale" value=".6"/> -->
+			
+			<!-- motorcycle -->
+			<!-- <property name="motorTorque_turbo" value="1400, 500, 2100, 650"/>
+			<property name="velocityMax_turbo" value="9.8, 6, 14, 8"/>
+			<property name="brakeTorque" value="3000"/>
+			<property name="hopForce" value="1, .8"/>
+			<property name="unstickForce" value="1"/>
+			<property name="waterDrag_y_velScale_velMaxScale" value="1.7, .9, .1"/>
+			<property name="wheelPtlScale" value="1"/> -->
 
 			<property name="hornSound" value="motorbike_horn"/>
 		
@@ -221,7 +238,7 @@
 
 			<property class="fuelTank">
 				<property name="class" value="FuelTank"/>
-				<property name="capacity" value="120"/>
+				<property name="capacity" value="80"/>
 				<property name="mod" value="fueltank"/>
 				<property name="modT" value="M/Fuel"/>
 			</property>

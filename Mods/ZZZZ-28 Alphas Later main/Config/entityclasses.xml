@@ -525,7 +525,7 @@
 	<!-- *** new zombies *** -->
 	<append xpath="/entity_classes">
 	
-		<!-- *** horde night bunker buster *** -->
+	<!-- *** horde night bunker buster *** -->
 		<entity_class name="zombieBunkerBuster" extends="zombieBurnt">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="SizeScale" value="0.95"/>
@@ -543,7 +543,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<!-- *** rotten *** -->
+	<!-- *** rotten *** -->
 		<entity_class name="zombieArleneRotten" extends="zombieArlene">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
@@ -1042,7 +1042,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<!-- *** frozen *** -->
+	<!-- *** frozen *** -->
 		<!-- slightly tougher, slightly slower, slightly more XP, and take more damage than their "standard" versions -->
 		<entity_class name="zombieArleneFrozen" extends="zombieArlene">
 			<property name="UserSpawnType" value="Menu"/>
@@ -1500,7 +1500,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<!-- *** cowboy/desert *** -->
+	<!-- *** cowboy/desert *** -->
 		<entity_class name="zombieArleneCowboy" extends="zombieArlene">
 			<effect_group>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="randomhat" operation="set" value="randomint(1,5)"/>
@@ -1852,7 +1852,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<!-- *** mutated *** -->
+	<!-- *** mutated *** -->
 		<entity_class name="zombieArleneMutated" extends="zombieArlene">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="SizeScale" value="1.01"/>
@@ -2963,7 +2963,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<!-- *** mutants and mythical *** -->
+	<!-- *** mutants and mythical *** -->
 		<entity_class name="hellsZombieHungryMutant" extends="zombieTemplateMale">
 			<property name="SizeScale" value=".95"/>
 			<property name="Mesh" value="#@modfolder:Resources/hjentities.unity3d?ZombieHungry"/>
@@ -3799,7 +3799,7 @@
 		<!-- </effect_group> -->
 		<!-- </entity_class> -->
 		
-		<!-- *** hazmat loot bags *** -->
+	<!-- *** hazmat loot bags *** -->
 		<entity_class name="zombieMaleHazmatLootBag">
 			<property name="Class" value="EntityLootContainer"/>
 			<property name="UserSpawnType" value="Console"/>
@@ -3841,7 +3841,7 @@
 			<property name="Faction" value="none"/>
 		</entity_class>
 		
-		<!-- *** Trader Red *** -->
+	<!-- *** Trader Red *** -->
 		<entity_class name="npcTraderRed" extends="npcTraderTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,npc,human,trader"/>
@@ -3854,7 +3854,7 @@
 			<property name="LookAtAngle" value="0"/>
 		</entity_class>
 		
-		<!-- *** Trader Hells *** -->
+	<!-- *** Trader Hells *** -->
 		<entity_class name="npcTraderHells" extends="npcTraderTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,npc,human,trader"/>
@@ -3867,7 +3867,7 @@
 			<property name="LookAtAngle" value="0"/>
 		</entity_class>
 		
-		<!-- *** The Hornet *** -->
+	<!-- *** The Hornet *** -->
 		<entity_class name="vehicleTheHornet">
 			<property name="Class" value="EntityVJeep"/>
 			<property name="Tags" value="vehicle,usesGas"/>
@@ -3888,7 +3888,8 @@
 			<property name="MapIcon" value="ui_game_symbol_buggy"/>
 			<property name="NavObject" value="buggy"/>
 		</entity_class>
-		
+	
+	<!-- *** Ruin Ripper *** -->	
 		<entity_class name="vehicleRuinRipper">
 			<property name="Class" value="EntityMotorcycle"/>
 			<property name="Tags" value="vehicle,usesGas,bikerSetBonus"/>

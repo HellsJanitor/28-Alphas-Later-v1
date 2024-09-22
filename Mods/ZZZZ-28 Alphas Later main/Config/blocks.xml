@@ -906,6 +906,10 @@
 		<property name="CanPickup" value="true" param1="pictureVariantHelper"/>
 	</append>
 	
+	<append xpath="/blocks/block[@name='pictureCanvas_01a']">
+	<property name="Weight" value="1"/>
+	</append>
+	
 	<!-- *** flags *** -->
 	<append xpath="//block[starts-with(@name,'flag') and not (starts-with(@name,'flagPole')) and not (@name='flagBlockVariantHelper')]">
 		<property name="CanPickup" value="true" param1="flagBlockVariantHelper"/>

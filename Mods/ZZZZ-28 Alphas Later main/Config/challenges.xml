@@ -4,4 +4,17 @@
 	
 	<set xpath="//challenges/challenge[@name='gatherResourcesStoneAxe']/objective[@item='resourceWood']/@count">3</set>
 	<set xpath="//challenges/challenge[@name='gatherResourcesStoneAxe']/objective[@item='resourceWood']/@item">woodLogPillar100</set>
+	
+	<!-- <set xpath="/challenges/challenge[starts-with (@name,'farming')]/objective/@type">Gather</set> -->
+	<!-- <removeattribute xpath="/challenges/challenge[starts-with (@name,'farming')]/objective/@block_tag"/> -->
+	
+	<append xpath="/challenges/challenge[@name='killLumberjack']/objective[@type='Kill']/@entity_names">,zombieLumberjackRotten,zombieLumberjackMutated</append>
+	<append xpath="/challenges/challenge[@name='killSpider']/objective[@type='Kill']/@entity_names">,zombieSpiderRotten,zombieSpiderMutated,zombieSpiderFrozen</append>
+	<append xpath="/challenges/challenge[@name='killBigMama']/objective[@type='Kill']/@entity_names">,zombieFemaleFatRotten,zombieFemaleFatMutated,zombieFemaleFatFrozen,zombieFemaleFatCowboy</append>
+	<append xpath="/challenges/challenge[@name='killTourist']/objective[@type='Kill']/@entity_names">,zombieFatHawaiianRotten,zombieFatHawaiianMutated,zombieFatHawaiianFrozen,zombieBowlerRotten,zombieBowlerMutated</append>
+	<append xpath="/challenges/challenge[@name='killMutated']/objective[@type='Kill']/@entity_names">,zombieMutatedMutated</append>
+	<append xpath="/challenges/challenge[@name='killCop']/objective[@type='Kill']/@entity_names">,zombieFatCopRotten,zombieFatCopMutated</append>
+	<append xpath="/challenges/challenge[@name='killWights']/objective[@type='Kill']/@entity_names">,zombieWightMutated,zombieWightFeralCowboy</append>
+	<append xpath="/challenges/challenge[@name='killDemolitions']/objective[@type='Kill']/@entity_names">,zombieMutatedDemolition</append>
+	
 </HellsJanitor>
