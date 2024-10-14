@@ -11,10 +11,7 @@
 				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/>
 			</effect_group>
 		</recipe>
-	</append>
-	
-	<!-- *** remove vanilla hobo stew recipe *** -->
-	<!-- <remove xpath="//recipe[@name='foodHoboStew']"/> -->
+	</append>	
 	
 	<!-- *** Urban Combat Volume 2 unlocks *** -->
 	<append xpath="/recipes">
@@ -33,12 +30,14 @@
 	<set xpath="//recipe//ingredient[@name='unit_stone']/@name">resourceRockSmall</set>
 	<set xpath="//recipe//ingredient[@name='unit_brass']/@name">resourceScrapBrass</set>
 	<set xpath="//recipe//ingredient[@name='unit_lead']/@name">resourceScrapLead</set>
-	<remove xpath="//recipe[@name='resourceClayLump']"/>
-	<remove xpath="//recipe[@name='resourceRockSmall']"/>
-	<remove xpath="//recipe[@name='resourceScrapBrass']"/>
-	<remove xpath="//recipe[@name='resourceScrapIron']"/>
-	<remove xpath="//recipe[@name='resourceScrapLead']"/>
-	<remove xpath="//recipe[@name='resourceCrushedSand']"/>
+	
+	<insertafter xpath="/recipes/recipe[@name='resourceBone']">
+		<recipe name="resourceWoodScraps" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
+		<recipe name="resourceBranch" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category />	</recipe>
+		<recipe name="resourceScrapBooks" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
+		<recipe name="resourceUraniumRaw" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
+	</insertafter>
+	
 	<append xpath="/recipes">
 		<recipe name="resourceCrushedSand" count="1" craft_area="cementMixer" tags="cementMixerCrafting">
 			<ingredient name="resourceRockSmall" count="1"/>
@@ -92,6 +91,7 @@
 	<set xpath="//recipe[@name='metalFenceRailingTrellisSheetBlockVariantHelper']/@count">5</set>
 	<set xpath="//recipe[@name='metalFenceRailingTrellisSheetBlockVariantHelper']//ingredient[@name='resourceScrapIron']/@count">75</set>
 	
+	<!-- *** The Hornet *** -->
 	<append xpath="/recipes">
 		<recipe name="vehicleTheHornetAccessories" count="1" craft_time="210" craft_area="workbench" tags="perkGreaseMonkey,learnable,workbenchCrafting">
 			<ingredient name="resourceElectricParts" count="25"/>
@@ -123,6 +123,7 @@
 			<ingredient name="carBattery" count="1"/>
 		</recipe>
 	
+	<!-- *** The Ruin Runner *** -->
 		<recipe name="vehicleRuinRipperChassis" count="1" craft_time="150" craft_area="workbench" tags="perkGreaseMonkey,learnable,workbenchCrafting">
 			<ingredient name="resourceForgedIron" count="25"/>
 			<ingredient name="resourceMechanicalParts" count="10"/>
@@ -136,7 +137,7 @@
 
 		<recipe name="vehicleRuinRipperHandlebars" count="1" craft_time="150" craft_area="workbench" tags="perkGreaseMonkey,learnable,workbenchCrafting">
 			<ingredient name="resourceMechanicalParts" count="10"/>
-			<ingredient name="resourceDuctTape" count="10"/>
+			<ingredient name="resourceDuctTape" count="5"/>
 			<ingredient name="resourceHeadlight" count="1"/>
 			<ingredient name="resourceElectricParts" count="6"/>
 			<ingredient name="resourceForgedIron" count="5"/>
@@ -151,61 +152,6 @@
 			<ingredient name="vehicleRuinRipperHandlebars" count="1"/>
 			<ingredient name="smallEngine" count="1"/>
 			<ingredient name="carBattery" count="1"/>
-		</recipe>
-	
-		<recipe name="resourceScrapPolymers" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceElectricParts" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceMechanicalParts" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceBrokenGlass" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceCloth" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceLeather" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourcePaper" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceRockSmall" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceScrapBrass" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceScrapIron" count="1" tooltip="ttScrapMetalIron" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceScrapLead" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceWood" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceYuccaFibers" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceClayLump" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourcePaint" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceBone" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceWoodScraps" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
-		</recipe>
-		<recipe name="resourceBranch" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap">
-			<wildcard_forge_category/>
 		</recipe>
 		
 	<!-- *** antivenom *** -->
@@ -266,7 +212,6 @@
 		<recipe name="modBicycleStaminaSaver" count="1" tags="learnable">
 			<ingredient name="resourceCloth" count="50"/>
 			<ingredient name="resourceScrapPolymers" count="25"/>
-			<!-- <ingredient name="resourceAcid" count="2"/> -->
 			<ingredient name="resourceSewingKit" count="2"/>
 		</recipe>
 
@@ -366,7 +311,36 @@
 			<ingredient name="resourceForgedIron" count="10"/>
 			<ingredient name="resourceNail" count="20"/>
 		</recipe>
-
+		
+	<!-- *** blast furnace *** -->
+		<recipe name="blastFurnace" count="1" craft_area="workbench" craft_tool="meleeToolSalvageT2Ratchet" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceForgedIron" count="50"/>
+			<ingredient name="resourceSpring" count="10"/>
+			<ingredient name="resourceScrapPolymers" count="25"/>
+			<ingredient name="resourceMechanicalParts" count="10"/>
+			<ingredient name="resourceElectricParts" count="30"/>
+			<ingredient name="resourceMetalPipe" count="10"/>
+		</recipe>
+		
+	<!-- *** ammo press *** -->	
+		<recipe name="playerAmmoPress" count="1" craft_area="workbench" craft_tool="meleeToolSalvageT1Wrench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceForgedIron" count="30"/>
+			<ingredient name="resourceSpring" count="10"/>
+			<ingredient name="resourceScrapPolymers" count="20"/>
+			<ingredient name="resourceMechanicalParts" count="10"/>
+			<ingredient name="resourceMetalPipe" count="10"/>
+		</recipe>
+	
+	<!-- *** sawmill *** -->
+		<recipe name="playerSawmill" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceForgedIron" count="25"/>
+			<ingredient name="resourceSpring" count="4"/>
+			<ingredient name="resourceScrapPolymers" count="10"/>
+			<ingredient name="resourceSawBlade" count="1"/>
+			<ingredient name="resourceMechanicalParts" count="10"/>
+			<ingredient name="resourceElectricParts" count="5"/>
+		</recipe>
+		
 	<!-- *** flags *** -->
 		<recipe name="flagBlockVariantHelper" count="1">
 			<ingredient name="resourceCloth" count="44"/>
@@ -567,11 +541,118 @@
 		<recipe name="ammoBundleCrossbowBoltStone" count="1" craft_time="240" craft_area="workbench" tags="learnable,workbenchCrafting">
 			<ingredient name="ammoCrossbowBoltStone" count="100"/>
 		</recipe>
+		
+	<!-- *** depleted uranium from raw material *** -->	
+		<recipe name="resourceUraniumDepleted" count="2" craft_time="0.50" craft_area="blastFurnace" tags="blastFurnaceCrafting">
+			<ingredient name="resourceUraniumRaw" count="1"/>
+		</recipe>
+		
+	<!-- *** depleted uranium rounds *** -->
+		<recipe name="resourceBulletTipDU" count="1" material_based="true" craft_area="blastFurnace" craft_tool="toolForgeCrucible" is_trackable="false" tags="perkAdvancedEngineering">
+			<ingredient name="resourceUraniumDepleted" count="5"/>
+			<!-- <ingredient name="resourceClayLump" count="5"/> -->
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="resourceUraniumDepleted"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="ammo9mmBulletDU" count="1" craft_area="playerAmmoPress" tags="ammoPressCrafting">
+			<ingredient name="resourceBulletTipDU" count="1"/>
+			<ingredient name="resourceGunPowder" count="2"/>
+			<ingredient name="resourceBulletCasing" count="1"/>
+			<ingredient name="resourceScrapPolymers" count="2"/>
+		</recipe>
+		
+		<recipe name="ammoBundle9mmBulletDU" count="1" craft_time="360" craft_area="playerAmmoPress" tags="learnable,ammoPressCrafting">
+			<ingredient name="ammo9mmBulletDU" count="100"/>
+		</recipe>
+		
+		<recipe name="ammoBundle9mmBulletDU" count="1" craft_time="360" craft_area="playerAmmoPress" tags="learnable,ammoPressCrafting">
+			<ingredient name="resourceBulletTipDU" count="80"/>
+			<ingredient name="resourceGunPowder" count="160"/>
+			<ingredient name="resourceBulletCasing" count="80"/>
+			<ingredient name="resourceScrapPolymers" count="160"/>
+		</recipe>
+		
+		<recipe name="ammo44MagnumBulletDU" count="1" craft_area="playerAmmoPress" tags="ammoPressCrafting">
+			<ingredient name="resourceBulletTipDU" count="1"/>
+			<ingredient name="resourceGunPowder" count="3"/>
+			<ingredient name="resourceBulletCasing" count="1"/>
+			<ingredient name="resourceScrapPolymers" count="2"/>
+		</recipe>
+		
+		<recipe name="ammoBundle44MagnumBulletDU" count="1" craft_time="360" craft_area="playerAmmoPress" tags="learnable,ammoPressCrafting">
+			<ingredient name="ammo44MagnumBulletDU" count="100"/>
+		</recipe>
+		
+		<recipe name="ammoBundle44MagnumBulletDU" count="1" craft_time="360" craft_area="playerAmmoPress" tags="learnable,ammoPressCrafting">
+			<ingredient name="resourceBulletTipDU" count="80"/>
+			<ingredient name="resourceGunPowder" count="240"/>
+			<ingredient name="resourceBulletCasing" count="80"/>
+			<ingredient name="resourceScrapPolymers" count="160"/>
+		</recipe>
+		
+		<recipe name="ammo762mmBulletDU" count="1" craft_area="playerAmmoPress" tags="ammoPressCrafting">
+			<ingredient name="resourceBulletTipDU" count="1"/>
+			<ingredient name="resourceGunPowder" count="5"/>
+			<ingredient name="resourceBulletCasing" count="1"/>
+			<ingredient name="resourceScrapPolymers" count="2"/>
+		</recipe>
+		
+		<recipe name="ammoBundle762mmBulletDU" count="1" craft_time="360" craft_area="playerAmmoPress" tags="learnable,ammoPressCrafting">
+			<ingredient name="ammo762mmBulletDU" count="100"/>
+		</recipe>
+		
+		<recipe name="ammoBundle762mmBulletDU" count="1" craft_time="360" craft_area="playerAmmoPress" tags="learnable,ammoPressCrafting">
+			<ingredient name="resourceBulletTipDU" count="80"/>
+			<ingredient name="resourceGunPowder" count="400"/>
+			<ingredient name="resourceBulletCasing" count="80"/>
+			<ingredient name="resourceScrapPolymers" count="160"/>
+		</recipe>
+		
+		<recipe name="ammoShotgunSlugDU" count="1" craft_area="playerAmmoPress" tags="ammoPressCrafting">
+			<ingredient name="resourceBulletTipDU" count="2"/>
+			<ingredient name="resourceGunPowder" count="5"/>
+			<ingredient name="resourceBulletCasing" count="1"/>
+			<ingredient name="resourceScrapPolymers" count="2"/>
+		</recipe>
+		
+		<recipe name="ammoBundleShotgunSlugDU" count="1" craft_time="360" craft_area="playerAmmoPress" tags="learnable,ammoPressCrafting">
+			<ingredient name="ammoShotgunSlugDU" count="100"/>
+		</recipe>
+		
+		<recipe name="ammoBundleShotgunSlugDU" count="1" craft_time="360" craft_area="playerAmmoPress" tags="learnable,ammoPressCrafting">
+			<ingredient name="resourceBulletTipDU" count="160"/>
+			<ingredient name="resourceGunPowder" count="400"/>
+			<ingredient name="resourceBulletCasing" count="80"/>
+			<ingredient name="resourceScrapPolymers" count="160"/>
+		</recipe>
+		
+	<!-- *** scrap polymer *** -->	
+		<recipe name="resourceScrapPolymers" count="10" craft_time="2.5" craft_area="chemistryStation" tags="chemStationCrafting">
+			<ingredient name="resourcePropylene" count="10"/>
+			<ingredient name="foodRottingFlesh" count="1"/>
+		</recipe>
+		
+		<recipe name="resourceScrapPolymers" count="1" craft_time=".25" craft_area="chemistryStation" tags="chemStationCrafting">
+			<ingredient name="resourcePropylene" count="1"/>
+			<ingredient name="resourceYuccaFibers" count="1"/>
+		</recipe>
 	</append>
+	
+	<!-- *** propylene from oil shale *** -->
+	<insertafter xpath="/recipes/recipe[@name='ammoGasCan']/ingredient[@name='resourceOilShale']">
+		<secondary_output name="resourcePropylene" count="2"/>
+	</insertafter>
+	
+	<insertafter xpath="/recipes/recipe[@name='ammoGasCanBundle']/ingredient[@name='resourceOilShale']">
+		<secondary_output name="resourcePropyleneBundle" count="1"/>
+	</insertafter>
 	
 	<!-- *** cooking pot and grill *** -->
 	<setattribute xpath="//recipe[@name='toolCookingPot']" name="craft_tool">toolAnvil</setattribute>
 	<setattribute xpath="//recipe[@name='toolCookingGrill']" name="craft_tool">toolAnvil</setattribute>
+	
 	<!-- *** ammo requires the ammo press tool *** -->
 	<setattribute xpath="//recipe[contains (@name,'9mmBullet')]" name="craft_tool">toolAmmoPress</setattribute>
 	<setattribute xpath="//recipe[contains (@name,'44MagnumBullet')]" name="craft_tool">toolAmmoPress</setattribute>
@@ -579,11 +660,6 @@
 	<setattribute xpath="//recipe[contains (@name,'ShotgunShell')]" name="craft_tool">toolAmmoPress</setattribute>
 	<setattribute xpath="//recipe[contains (@name,'ShotgunSlug')]" name="craft_tool">toolAmmoPress</setattribute>
 	<setattribute xpath="//recipe[contains (@name,'ShotgunBreaching')]" name="craft_tool">toolAmmoPress</setattribute>
-	<!-- *** paper *** -->
-	<set xpath="//recipe[@name='resourcePaper']/@count">50</set>
-	<set xpath="//recipe[@name='resourcePaper']//ingredient[@name='resourceWood']/@count">200</set>
-	<set xpath="//recipe[@name='resourcePaper']//ingredient[@name='resourceWood']/@name">resourceWoodScraps</set>
-	<remove xpath="//recipe[@name='resourcePaper']//ingredient[@name='resourceGlue']"/>
 	
 	<!-- *** farmplot uses fertilizer and nails *** -->
 	<setattribute xpath="//recipe[@name='farmPlotBlockVariantHelper']" name="craft_area">workbench</setattribute>
@@ -632,17 +708,7 @@
 	</append>
 	
 	<!-- *** dew collector replaced with advanced dew collector *** -->
-	<!-- <remove xpath="//recipe[@name='cntDewCollector']"/> -->
-	
-	<!-- *** tablesaw *** -->
-	<!-- <insertafter xpath="//recipe[@name='workbench']">
-		<recipe name="playerTableSaw" count="1" craft_area="workbench" tags="learnable,workbenchCrafting" craft_tool="meleeToolSalvageT1Wrench">
-			<ingredient name="resourceForgedIron" count="15"/>
-			<ingredient name="resourceMechanicalParts" count="10"/>
-			<ingredient name="resourceElectricParts" count="5"/>
-			<ingredient name="resourceSpring" count="5"/>
-		</recipe>
-	</insertafter> -->
+	<!-- <remove xpath="//recipe[@name='cntDewCollector']"/> -->	
 	
 	<!-- *** tools required for crafting *** -->
 	<setattribute xpath="//recipe[contains(@name,'Farmer')]" name="craft_tool">meleeToolRepairT1ClawHammer</setattribute>
@@ -1096,14 +1162,7 @@
 			<secondary_output name="ammoGasCan" count="250"/>
 			<secondary_output name="resourceRocketTip" count="1"/>
 			<ingredient name="ammoRocketHE" count="1"/>
-		</recipe>
-	
-	<!-- *** recipe for "spent" chicken *** -->
-		<!-- <recipe name="foodRawMeat" count="3" craft_area="workbench" tags="workbenchCrafting" craft_tool="meleeWpnBladeT1HuntingKnife">
-		<secondary_output name="resourceBone" count="5"/>
-		<secondary_output name="resourceFeather" count="10"/>
-		<ingredient name="fuelChicken" count="1"/>
-	</recipe> -->
+		</recipe>	
 	
 		<recipe name="foodRawMeat" count="3" tags="learnable">
 			<secondary_output name="resourceBone" count="5"/>
@@ -1380,10 +1439,6 @@
 			<ingredient name="resourceArmorCraftingKit" count="1"/>
 			<ingredient name="resourceRepairKit" count="1"/>
 		</recipe>
-		<!-- <recipe name="SteelArmourRepairKit" count="1"> -->
-		<!-- <ingredient name="resourceArmorCraftingKit" count="1"/> -->
-		<!-- <ingredient name="resourceRepairKit" count="1"/> -->
-		<!-- </recipe> -->
 	
 	<!-- *** lavender oil *** -->
 		<recipe name="drugLavenderOil" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
@@ -1422,12 +1477,6 @@
 	<!-- *** replace uncooked cans with cooked cans in recipes *** -->
 	<append xpath="//recipe[not (contains(@name,'cooked'))]//ingredient[starts-with (@name,'foodCan') and not (contains(@name,'Catfood')) and not (contains(@name,'Dogfood'))]/@name">cooked</append>
 	
-	<!-- <set xpath="//recipe[starts-with(@name,'food') or (starts-with(@name,'drink'))]/@craft_area">campfire,playerOvenModern</set> -->
-	<!-- *** adds eggs to paint recipe (disabled as it makes dye unscrappable?) *** -->
-	<!-- <append xpath="//recipe[@name='resourcePaint']">
-	<ingredient name="foodEgg" count="4"/>
-	</append> -->
-	
 	<!-- *** more uses for honey in food *** -->
 	<append xpath="//recipe[@name='foodBlueberryPie']">
 		<ingredient name="foodHoney" count="1"/>
@@ -1448,9 +1497,6 @@
 	<insertAfter xpath="/recipes/recipe[@name='foodBaconAndEggs']//ingredient[2]">
 		<ingredient name="resourceAnimalFat" count="1"/>
 	</insertAfter>
-	
-	<!-- *** triple pocket armour mod no longer craftable *** -->
-	<!-- <remove xpath="/recipes/recipe[@name='modArmorTripleStoragePocket']"/> -->
 
 	<!-- *** increased crafting costs (25%) *** -->
 	<set xpath="//recipe/ingredient[@count='1200']/@count">1500</set>
@@ -1459,7 +1505,6 @@
 	<set xpath="//recipe[not (contains(@name,'Bundle'))]/ingredient[@count='300']/@count">375</set>
 	<set xpath="//recipe[not (contains(@name,'Bundle'))]/ingredient[@count='250']/@count">312</set>
 	<set xpath="//recipe[not (contains(@name,'Bundle'))]/ingredient[@count='200']/@count">250</set>
-	<set xpath="//recipe[@name='resourcePaper']/ingredient[@count='250']/@count">200</set>
 	<set xpath="//recipe[not (contains(@name,'Bundle'))]/ingredient[@count='180']/@count">225</set>
 	<set xpath="//recipe[not (contains(@name,'Bundle'))]/ingredient[@count='125']/@count">156</set>
 	<set xpath="//recipe[not (contains(@name,'Bundle'))]/ingredient[@count='100']/@count">125</set>
@@ -1488,7 +1533,6 @@
 	<set xpath="//recipe[contains(@name,'Exploding')]/ingredient[@count='6']/@count">5</set>
 	<set xpath="//recipe[not (contains(@name,'Bundle'))]/ingredient[@count='4']/@count">5</set>
 	<set xpath="//recipe[not (contains(@name,'Bundle'))]/ingredient[@count='3']/@count">4</set>
-	<!-- <set xpath="//recipe[@name='resourceBricks']/ingredient/@count">3</set> -->
 	
 	<!-- *** new vehicle bundles *** -->
 	<remove xpath="//recipe[@name='vehicleTruck4x4Placeable']"/>
@@ -1606,9 +1650,6 @@
 		</recipe>
 	</insertafter>
 	
-	
-	<!-- <set xpath="//recipe/ingredient[contains(@name,'Parts')]/@count">2</set> -->
-	
 	<!-- *** concrete requires water & feldspar to craft, in batches of 250 *** -->
 	<set xpath="//recipe[@name='resourceConcreteMix']/@count">250</set>
 	<set xpath="/recipes/recipe[@name='resourceConcreteMix']">
@@ -1619,6 +1660,26 @@
 		<ingredient name="resourceFeldspar" count="250"/>
 		<ingredient name="bucketRiverWater" count="1"/>
 	</set>
+
+	<!-- *** wood burning stove *** -->
+	<append xpath="/recipes">
+	<recipe name="playerWoodBurningStove" count="1" craft_area="workbench" craft_tool="meleeToolRepairT1ClawHammer">
+		<ingredient name="resourceForgedIron" count="10"/>
+		<ingredient name="resourceMechanicalParts" count="5"/>
+		<ingredient name="resourceMetalPipe" count="5"/>
+	</recipe>
+	
+	<!-- *** trader walls *** -->	
+	<recipe name="logWallVariantHelper" count="1">
+		<ingredient name="woodLogPillar100" count="20"/>
+		<ingredient name="resourceNail" count="10"/>
+	</recipe>
+	
+	<!-- *** climbable rope *** -->
+	<recipe name="ropeVariantHelper" count="1">
+		<ingredient name="resourceYuccaFibers" count="20"/>
+	</recipe>
+	</append>
 </configs>
 
 

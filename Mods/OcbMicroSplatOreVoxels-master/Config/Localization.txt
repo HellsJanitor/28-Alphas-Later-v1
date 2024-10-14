@@ -1,0 +1,13 @@
+Key,english
+terrOreGold,Gold Ore
+terrOreLava,Lava Ore
+oreGoldBoulder,Gold Ore Boulder
+oreTestBoulderAqua,Aqua Ore Boulder
+oreTestBoulderRed,Red Ore Boulder
+terrOreStoneGoldRandom,= Gold Vein = Helper
+terrOreStoneGoldRandomDesc,Gold / Stone / Sandstone
+
+resourceUraniumRaw,Raw Uranium
+resourceUraniumRawDesc,"A material used for making Depleted Uranium rounds.\n\nTake to a Blast Furnace to process into Depleted Uranium."
+resourceUraniumDepleted,Depleted Uranium
+resourceUraniumDepletedDesc,"Depleted Uranium is a versatile waste product of uranium enrichment.\n\nCan be crafted into Depleted Uranium Rounds for various firearms. It has devastating damage, especially against mutants"

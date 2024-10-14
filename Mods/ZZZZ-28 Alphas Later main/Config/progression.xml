@@ -12,6 +12,12 @@
 	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="resourceAcid"/>
 	</append>
 	
+	<!-- *** add bundled DU rounds unlocks *** -->
+	<append xpath="/progression/perks/book[@name='perkEnforcerComplete']/effect_group/passive_effect/@tags">,ammoBundle44MagnumBulletDU</append>
+	<append xpath="/progression/perks/book[@name='perkPistolPeteComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,ammoBundle9mmBulletDU</append>
+	<append xpath="/progression/perks/book[@name='perkShotgunMessiahComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,ammoBundleShotgunSlugDU</append>
+	<append xpath="/progression/perks/book[@name='perkSniperComplete']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,ammoBundle762mmBulletDU</append>
+	
 	<!-- *** rad removing throwables unlocks *** -->
 	<set xpath="//crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT1-1,explosivesT1-2,explosivesT1-3']//unlock_entry[@item='thrownAmmoPipeBomb']/@item">thrownAmmoPipeBomb,thrownAmmoAntiRadPipeBomb</set>
 	<set xpath="//crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT1-1,explosivesT1-2,explosivesT1-3']//unlock_entry[@item='thrownGrenade']/@item">thrownGrenade,thrownAntiRadGrenade</set>
@@ -24,41 +30,11 @@
 	<!-- *** Urban Combat Vol. 2 unlocks *** -->
 	<set xpath="/progression/perks/book[@name='perkUrbanCombatCigar']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">modGunBrassCatcher</set>
 	
-	<!-- *** removes harvesting boost and bonus from crops (lines 47 & 48) *** -->
-	<set xpath="//perk[@name='perkLivingOffTheLand']">
-	<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="1" desc_key="reqFortitudeLevel01"/></level_requirements>
-		<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="3" desc_key="reqFortitudeLevel03"/></level_requirements>
-		<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="5" desc_key="reqFortitudeLevel05"/></level_requirements>
-		<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="7" desc_key="reqFortitudeLevel07"/></level_requirements>
-		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10" desc_key="reqFortitudeLevel10"/></level_requirements>
-
-		<effect_group>
-			<passive_effect name="CraftingTier" operation="base_set" level="0,3" value="0,3" tags="perkLivingOffTheLandCrafting"/><!-- fake crafting perk that is used to scale resources -->
-
-			<!-- <passive_effect name="HarvestCount" operation="perc_add" level="1,2,3" value="0,0,0" tags="cropHarvest,wildCropsHarvest"/> -->
-			<!-- <passive_effect name="HarvestCount" operation="base_set" level="2,3" value="1,1" tags="bonusCropHarvest"/> -->
-
-			<!-- Increase the chance to find seeds with each perk rank -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="seedSkill"/>
-
-			<!-- Increase the chance to find seed crafting skill magazines with each perk rank up to crafting skill 20 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="seedCSM">
-				<requirement name="ProgressionLevel" progression_name="craftingSeeds" operation="LT" value="20"/>
-			</passive_effect>
-
-			<!-- Once seed crafting skill reaches 20, set the probability bonus of finding seed crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="seedCSM">
-				<requirement name="ProgressionLevel" progression_name="craftingSeeds" operation="Equals" value="20"/>
-			</passive_effect>
-
-			<effect_description level="1" desc_key="perkLivingOffTheLandRank1Desc" long_desc_key="perkLivingOffTheLandRank1LongDesc"/>
-			<effect_description level="2" desc_key="perkLivingOffTheLandRank2Desc" long_desc_key="perkLivingOffTheLandRank2LongDesc"/>
-			<effect_description level="3" desc_key="perkLivingOffTheLandRank3Desc" long_desc_key="perkLivingOffTheLandRank3LongDesc"/>
-			<effect_description level="4" desc_key="perkLivingOffTheLandRank4Desc" long_desc_key="perkLivingOffTheLandRank4LongDesc"/>
-			<effect_description level="5" desc_key="perkLivingOffTheLandRank5Desc" long_desc_key="perkLivingOffTheLandRank5LongDesc"/>
-		</effect_group>	
-	</set>
+	<!-- *** removes harvesting boost and bonus from crops *** -->
+	<remove xpath="/progression/perks/perk/effect_group/passive_effect[@tags='cropHarvest,wildCropsHarvest']"/>
+	<remove xpath="/progression/perks/perk/effect_group/passive_effect[@tags='bonusCropHarvest']"/>
 	
+	<!-- *** crafting unlocks for new vehicles *** -->
 	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingVehicles']">
 	<display_entry icon="vehicleBicyclePlaceable" name_key="vehiclesT1" has_quality="false" unlock_level="5" >
 			<unlock_entry item="vehicleBicycleChassis,vehicleBicycleHandlebars,vehicleWheels" unlock_tier="1" />
@@ -138,12 +114,12 @@
 	</crafting_skill>
 	</insertafter>	
 	
-	<!-- *** new dew & rain collector *** -->
+	<!-- *** new dew & rain collector, ammo press, and blast furnace *** -->
 	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']">
 		<display_entry icon="cntDewCollector,forge" name_key="workstationsT1-1,workstationsT1-2" has_quality="false" unlock_level="2,5" >
 			<!-- <unlock_entry item="cntAdvancedDewCollector,cntRainCollector" unlock_tier="1" /> -->
 			<unlock_entry item="cntDewCollector,cntRainCollector" unlock_tier="1" />
-			<unlock_entry item="forge" unlock_tier="2" />
+			<unlock_entry item="forge,playerSawmill" unlock_tier="2" />
 		</display_entry>
 		<display_entry icon="workbench,resourceLockPick,toolBellows,toolAnvil" name_key="workstationsT2-1,workstationsT2-2,workstationsT2-3,workstationsT2-4" has_quality="false" unlock_level="10,15,20,25" >
 			<unlock_entry item="workbench" unlock_tier="1" />
@@ -151,11 +127,13 @@
 			<unlock_entry item="toolBellows" unlock_tier="3" />
 			<unlock_entry item="toolAnvil" unlock_tier="4" />
 		</display_entry>
-		<display_entry icon="cementMixer" name_key="workstationsT3-1" has_quality="false" unlock_level="30" >
+		<display_entry icon="cementMixer,playerAmmoPress" name_key="workstationsT3-1,workstationsT3-2" has_quality="false" unlock_level="30,35" >
 			<unlock_entry item="cementMixer" unlock_tier="1" />
+			<unlock_entry item="playerAmmoPress" unlock_tier="2" />
 		</display_entry>
-		<display_entry icon="chemistryStation" name_key="workstationsT4" has_quality="false" unlock_level="50" >
+		<display_entry icon="chemistryStation,blastFurnace" name_key="workstationsT4-1,workstationsT4-2" has_quality="false" unlock_level="50,60" >
 			<unlock_entry item="chemistryStation" unlock_tier="1" />
+			<unlock_entry item="blastFurnace" unlock_tier="2" />
 		</display_entry>
 		<display_entry icon="toolForgeCrucible" name_key="workstationsT5" has_quality="false" unlock_level="75" >
 			<unlock_entry item="toolForgeCrucible" unlock_tier="1" />
@@ -164,13 +142,15 @@
 		<effect_group>
 			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="cntAdvancedDewCollector,cntRainCollector"/> -->
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="cntDewCollector,cntRainCollector"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="forge"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="forge,playerSawmill"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="workbench"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="15,100" value="1" tags="resourceLockPick"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="toolBellows"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="toolAnvil"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="cementMixer"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="40,100" value="1" tags="playerAmmoPress"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="chemistryStation"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="blastFurnace"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="toolForgeCrucible"/>
 		</effect_group>
 	</set>
@@ -238,8 +218,8 @@
 	</perk>
 	</insertbefore>	
 	
+	<!-- *** Charismatic Nature is locked once Survival Instinct is purchased *** -->
 	<set xpath="//perk[@name='perkCharismaticNature']">
-	<!-- <perk name="perkCharismaticNature" max_level="5" parent="skillIntellectInfluence" name_key="perkCharismaticNatureName" desc_key="perkCharismaticNatureDesc" icon="ui_game_symbol_talk"> -->
 		<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="5" desc_key="reqIntellectLevel05"/>
 		<requirement name="CVarCompare" cvar="SurvivalInstinctLevel" operation="LTE" value="0" desc_key="reqSurvivalInstinctLevel00"/></level_requirements>
 		<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="7" desc_key="reqIntellectLevel07"/>
@@ -357,46 +337,4 @@
 		</effect_group>
 	</crafting_skill>
 	</insertafter>
-	
-	<!-- *** tablesaw unlock *** -->
-	<!-- <remove xpath="//crafting_skill[@name='craftingWorkstations']"/>
-	<insertafter xpath="//crafting_skill[@name='craftingTraps']">
-	<crafting_skill name="craftingWorkstations" max_level="75" parent="attCrafting" name_key="craftingWorkstationsName" desc_key="craftingWorkstationsDesc" long_desc_key="craftingWorkstationsLongDesc" icon="ui_game_symbol_workbench">
-
-		<display_entry icon="cntDewCollector,forge,tableSaw" name_key="workstationsT1-1,workstationsT1-2,workstationsT1-3" has_quality="false" unlock_level="1,7" >
-			<unlock_entry item="cntDewCollector" unlock_tier="1" />
-			<unlock_entry item="forge" unlock_tier="2" />
-			<unlock_entry item="tableSaw" unlock_tier="3" />			
-		</display_entry>
-		<display_entry icon="workbench,resourceLockPick,toolBellows,toolAnvil" name_key="workstationsT2-1,workstationsT2-2,workstationsT2-3,workstationsT2-4" has_quality="false" unlock_level="10,15,20,25" >
-			<unlock_entry item="workbench" unlock_tier="1" />			
-			<unlock_entry item="resourceLockPick" unlock_tier="2" />
-			<unlock_entry item="toolBellows" unlock_tier="3" />
-			<unlock_entry item="toolAnvil" unlock_tier="4" />
-		</display_entry>
-		<display_entry icon="cementMixer" name_key="workstationsT3-1" has_quality="false" unlock_level="30" >
-			<unlock_entry item="cementMixer" unlock_tier="1" />
-		</display_entry>
-		<display_entry icon="chemistryStation" name_key="workstationsT4" has_quality="false" unlock_level="50" >
-			<unlock_entry item="chemistryStation" unlock_tier="1" />
-		</display_entry>
-		<display_entry icon="toolForgeCrucible" name_key="workstationsT5" has_quality="false" unlock_level="75" >
-			<unlock_entry item="toolForgeCrucible" unlock_tier="1" />
-		</display_entry>
-		
-		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="cntDewCollector"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="forge"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="7,100" value="1" tags="playerTableSaw"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="workbench"/>			
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="15,100" value="1" tags="resourceLockPick"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="toolBellows"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="toolAnvil"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="cementMixer"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="chemistryStation"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="toolForgeCrucible"/>
-		</effect_group>
-	</crafting_skill>
-	</insertafter> -->
-	
 </configs>

@@ -1,14 +1,14 @@
 <configs>
-	<!-- search find all *** for changes -->
+	<!-- search find all *** for changes -->	
 	
-	<!-- *** adds legendary paintbrush to loot *** -->
+	<!-- *** legendary quality template *** -->
 	<insertafter xpath="//lootqualitytemplates/lootqualitytemplate[@name='qualQ1Template']">
 		<lootqualitytemplate name="qualLegendaryTemplate">
 			<qualitytemplate level="1,999999" default_quality="6">
 				<loot quality="6" prob="1"/>
 			</qualitytemplate>
 		</lootqualitytemplate>
-		
+	<!-- *** basic (hoe) quality template *** -->	
 		<lootqualitytemplate name="qualBasicTemplate">
 			<qualitytemplate level="1,999999" default_quality="1">
 				<loot quality="1" prob="1"/>
@@ -16,43 +16,74 @@
 		</lootqualitytemplate>
 	</insertafter>
 	
-	<insertafter xpath="//lootgroup[@name='groupToolsT3']">
-	<lootgroup name="groupLegendary" loot_quality_template="qualLegendaryTemplate">
-		<item name="meleeWpnBladeT666LegendaryPaintbrush"/>
+	<!-- *** adds legendary weapons to loot *** -->
+	<!-- <append xpath="//lootgroup[@name='groupToolsTiered']"> -->
+		<!-- <item group="groupLegendaryMelee" loot_prob_template="ProbT3"/> -->
+	<!-- </append> -->
+	
+	<!-- <append xpath="//lootgroup[@name='groupRareToolsTiered']"> -->
+		<!-- <item group="groupLegendaryMelee" loot_prob_template="ProbT3"/> -->
+	<!-- </append> -->
+	
+	<!-- <append xpath="//lootgroup[@name='groupToolsTieredBonus']"> -->
+		<!-- <item group="groupLegendaryMelee" loot_prob_template="ProbT3"/> -->
+	<!-- </append> -->
+
+	<append xpath="//lootgroup[@name='groupHardenedChestT5']">
+		<item group="groupLegendary" count="1" loot_prob_template="ProbT3"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupHardenedChestT4']">
+		<item group="groupLegendary" count="1" loot_prob_template="veryLow" force_prob="true"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupInfestedT4']">
+		<item group="groupLegendary" count="1" loot_prob_template="low" force_prob="true"/>
+	</append>	
+	
+	<append xpath="//lootgroup[@name='groupZpackBoss']">
+		<item group="groupLegendary" count="1" loot_prob_template="veryLow" force_prob="true"/>
+	</append>
+	
+	<insertafter xpath="//lootgroup[@name='groupToolsT3']">	
+	<lootgroup name="groupLegendaryMelee" count="1" loot_quality_template="qualLegendaryTemplate">
+		<item name="meleeWpnBladeT666LegendaryPaintbrush" count="1" />
+		<item name="meleeHellsScythe" count="1" />
+		<item name="meleeWpnSpearT0Pitchfork" count="1" />
+		<item name="meleeToolAxeT1GardenRake" count="1" />
 	</lootgroup>
 	
+	<lootgroup name="groupLegendaryRanged" count="1" loot_quality_template="qualLegendaryTemplate">
+		<item name="gunMGT4FNSCAR" count="1" />
+		<item name="gunHandgunT4MachinePistol" count="1" />
+		<item name="gunShotgunT4FabarmMartial" count="1" />
+		<item name="gunHandgunT4MagnumRagingHorn" count="1" />
+		<item name="gunRifleT4LegendarySniper" count="1" />
+	</lootgroup>
+	
+	<lootgroup name="groupLegendary">
+		<item group="groupLegendaryMelee"/>
+		<item group="groupLegendaryRanged"/>
+	</lootgroup>
+	
+	<!-- *** adds hoe to loot *** -->
 	<lootgroup name="groupBasic" loot_quality_template="qualBasicTemplate">
 		<item name="meleeToolFarmT2IronHoe"/>
 	</lootgroup>
 	</insertafter>
 	
+	<append xpath="//lootgroup[@name='groupToolsTiered']">
+		<item group="groupBasic" loot_prob_template="ProbT1"/>
+	</append>
+
+	<append xpath="//lootgroup[@name='groupToolsTieredBonus']">
+		<item group="groupBasic" loot_prob_template="ProbT1"/>
+	</append>
+	
+	<!-- *** adds ammopress (workbench tool) to loot *** -->
 	<append xpath="//lootgroup[@name='workstationToolsScaled']">
 		<item name="toolAmmoPress" loot_prob_template="ProbT1Cap"/>
 	</append>
-
-	<append xpath="//lootgroup[@name='groupToolsTiered']">
-		<item group="groupBasic" loot_prob_template="ProbT1"/>
-	</append>
-
-	<append xpath="//lootgroup[@name='groupToolsTieredBonus']">
-		<item group="groupBasic" loot_prob_template="ProbT1"/>
-	</append>
-	
-	<append xpath="//lootgroup[@name='groupToolsTiered']">
-		<item group="groupLegendary" loot_prob_template="ProbT3"/>
-	</append>
-	
-	<append xpath="//lootgroup[@name='groupRareToolsTiered']">
-		<item group="groupLegendary" loot_prob_template="ProbT3"/>
-	</append>
-	
-	<append xpath="//lootgroup[@name='groupToolsTieredBonus']">
-		<item group="groupLegendary" loot_prob_template="ProbT3"/>
-	</append>
-
-	<append xpath="//lootgroup[@name='groupHardenedChestT5']">
-		<item group="groupLegendary" loot_prob_template="ProbT3"/>
-	</append>	
 	
 	<!-- *** adjust the quest resources loot group *** -->
 	<!-- <set xpath="//lootgroup[@name='groupQuestResources']"> -->
@@ -66,7 +97,8 @@
 	<!-- </set> -->
 	
 	<!-- *** storage container size increases *** -->
-	<set xpath="//lootcontainer[@name='refrigeratorNOPOP']/@size">8,10</set>
+	<set xpath="//lootcontainer[@name='refrigerator_retroNOPOP']/@size">8,10</set>
+	<set xpath="//lootcontainer[@name='refrigerator_steelNOPOP']/@size">8,10</set>
 	<set xpath="//lootcontainer[@name='playerCooler']/@size">6,5</set>
 	<set xpath="//lootcontainer[@name='cupboard']/@size">8,6</set>
 	<set xpath="//lootcontainer[@name='sinks']/@size">8,6</set>
@@ -142,7 +174,7 @@
 	<set xpath="//item[@count='20,120']/@count">10,60</set>
 	
 	<set xpath="//item[@count='25,35']/@count">16,24</set>
-	<set xpath="//item[@count='25,50']/@count">13,25</set>
+	<set xpath="//item[@count='25,50']/@count">16,33</set>
 	
 	<set xpath="//item[@count='30,40']/@count">20,26</set>
 	<set xpath="//item[@count='30,45']/@count">15,22</set>
@@ -152,8 +184,9 @@
 	<set xpath="//item[@count='40,120']/@count">20,60</set>
 	<set xpath="//item[@count='40,250']/@count">20,125</set>
 	
-	<set xpath="//item[@count='50,75']/@count">25,37</set>
-	<set xpath="//item[@count='50,100']/@count">25,50</set>
+	<set xpath="//item[@count='50,75']/@count">33,50</set>
+	<set xpath="//item[not (starts-with(@name,'ammo')) and @count='50,100']/@count">25,50</set>
+	<set xpath="//item[starts-with(@name,'ammo') and @count='50,100']/@count">33,66</set>
 	<set xpath="//item[@count='50,200']/@count">25,100</set>
 	
 	<set xpath="//item[@count='60,90']/@count">30,45</set>
@@ -162,13 +195,15 @@
 	
 	<set xpath="//item[@count='90,120']/@count">45,60</set>
 	
-	<set xpath="//item[@count='100,150']/@count">50,75</set>
+	<!-- <set xpath="//item[not (starts-with(@name,'ammo')) and @count='100,150']/@count">50,75</set> -->
+	<set xpath="//item[starts-with(@name,'ammo') and @count='100,150']/@count">66,100</set>
 	<set xpath="//item[@count='100,200']/@count">50,100</set>
 	<set xpath="//item[@count='100,300']/@count">50,150</set>
 	<set xpath="//item[@count='100,400']/@count">50,200</set>
 	<set xpath="//item[@count='100,500']/@count">50,250</set>
 	
-	<set xpath="//item[@count='150,200']/@count">75,100</set>
+	<!-- <set xpath="//item[not (starts-with(@name,'ammo')) and @count='150,200']/@count">75,100</set> -->
+	<set xpath="//item[starts-with(@name,'ammo') and @count='150,200']/@count">100,132</set>
 	
 	<set xpath="//item[@count='200,250']/@count">100,125</set>
 	<set xpath="//item[@count='200,400']/@count">100,200</set>
@@ -198,10 +233,12 @@
 	<set xpath="//item[@count='30']/@count">15</set>
 	<set xpath="//item[@count='35']/@count">17</set>
 	<set xpath="//item[@count='45']/@count">22</set>
-	<set xpath="//item[@count='50']/@count">25</set>
+	<set xpath="//item[not (starts-with(@name,'ammo')) and @count='50']/@count">25</set>
+	<set xpath="//item[starts-with(@name,'ammo') and @count='50']/@count">33</set>
 	<set xpath="//item[@count='60']/@count">30</set>
 	<set xpath="//item[@count='75']/@count">37</set>
-	<set xpath="//item[@count='100']/@count">50</set>
+	<set xpath="//item[not (starts-with(@name,'ammo')) and @count='100']/@count">50</set>
+	<set xpath="//item[starts-with(@name,'ammo') and @count='100']/@count">66</set>
 	<set xpath="//item[contains(@name,'VariantHelper')]/@count">10</set>
 	<set xpath="//item[@count='150']/@count">75</set>
 	<set xpath="//item[@count='200']/@count">100</set>
@@ -217,23 +254,23 @@
 	
 	<!-- *** iron hoe *** -->
 	<append xpath="//lootgroup[@name='seeds']">
-		<item name="meleeToolFarmT2IronHoe" loot_prob_template="veryLow"/>
+		<item name="meleeToolFarmT2IronHoe" loot_prob_template="ProbT1"/>
 	</append>
 	
 	<append xpath="//lootgroup[@name='seedsNoFlowers']">
-		<item name="meleeToolFarmT2IronHoe" loot_prob_template="veryLow"/>
+		<item name="meleeToolFarmT2IronHoe" loot_prob_template="ProbT1"/>
 	</append>
 	
 	<append xpath="//lootgroup[@name='schematicsModsAndGeneralT0']">
-		<item name="modBicycleStaminaSaverSchematic" prob="0.75"/>
+		<item name="modBicycleStaminaSaverSchematic" loot_prob_template="ProbT0"/>
 	</append>
 	
 	<append xpath="/lootcontainers/lootgroup[@name='groupJunk02']">
-		<item name="meleeToolFarmT2IronHoeSchematic" prob="0.1"/>
+		<item name="meleeToolFarmT2IronHoeSchematic" loot_prob_template="ProbT0"/>
     </append>	
 	
     <append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralCommon']">
-        <item name="meleeToolFarmT2IronHoeSchematic" prob="0.1"/>
+        <item name="meleeToolFarmT2IronHoeSchematic" loot_prob_template="ProbT0"/>
     </append>
 
 	<!-- <append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralT2']">
@@ -242,19 +279,19 @@
 	
 	<!-- *** mods *** -->
 	<append xpath="//lootgroup[@name='modMeleeT3']">
-		<item name="modGunMeleeNiCdBattery" loot_prob_template="ProbT2"/>
-		<item name="modGunMeleeFlammableOil" loot_prob_template="ProbT2"/>
-		<item name="modGunMeleeLiquidNitrogen" loot_prob_template="ProbT2"/>
+		<item name="modGunMeleeNiCdBattery" loot_prob_template="ProbT2Cap"/>
+		<item name="modGunMeleeFlammableOil" loot_prob_template="ProbT2Cap"/>
+		<item name="modGunMeleeLiquidNitrogen" loot_prob_template="ProbT2Cap"/>
 	</append>
 	
 	<append xpath="//lootgroup[@name='modGunMeleeT3']">
-		<item name="modGunMeleeBlessedMetal" loot_prob_template="ProbT2EarlyCap"/>
+		<item name="modGunMeleeBlessedMetal" loot_prob_template="ProbT2Cap"/>
 	</append>
 	
 	<append xpath="//lootgroup[@name='modGunT3']">
-		<item name="modGunMeleeNiCdBattery" loot_prob_template="ProbT2"/>
-		<item name="modGunMeleeFlammableOil" loot_prob_template="ProbT2"/>
-		<item name="modGunMeleeLiquidNitrogen" loot_prob_template="ProbT2"/>
+		<item name="modGunMeleeNiCdBattery" loot_prob_template="ProbT2Cap"/>
+		<item name="modGunMeleeFlammableOil" loot_prob_template="ProbT2Cap"/>
+		<item name="modGunMeleeLiquidNitrogen" loot_prob_template="ProbT2Cap"/>
 		<item name="modGunBrassCatcher"/>
 	</append>
 	
@@ -426,8 +463,8 @@
 	</append>
 
 	<!-- *** remove triple & quad pocket mod schematic from loot *** -->
-	<remove xpath="//lootgroup[@name='schematicsModsAndGeneralT2']//item[@name='modArmorTripleStoragePocketSchematic']"/>
-	<remove xpath="//lootgroup[@name='schematicsModsAndGeneralT2']//item[@name='modArmorQuadStoragePocketSchematic']"/>
+	<!-- <remove xpath="//lootgroup[@name='schematicsModsAndGeneralT2']//item[@name='modArmorTripleStoragePocketSchematic']"/> -->
+	<!-- <remove xpath="//lootgroup[@name='schematicsModsAndGeneralT2']//item[@name='modArmorQuadStoragePocketSchematic']"/> -->
 
 	<!-- *** reduce murky water in loot *** -->
 	<set xpath="//lootgroup//item[@name='drinkJarRiverWater']/@count">0,1</set>

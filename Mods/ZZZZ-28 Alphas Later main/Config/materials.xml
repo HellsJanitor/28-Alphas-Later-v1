@@ -40,6 +40,31 @@
 		<property name="Experience" value="4"/>
 	</material>
 	
+	<material id="MscrapBooks">
+		<property name="damage_category" value="cloth"/>
+		<property name="surface_category" value="cloth"/>
+		<property name="forge_category" value="scrap_paper"/>
+		<property name="Hardness" type="float" value="1"/>
+		<property name="stepsound" value="wood"/>
+		<property name="stability_glue" value="20"/>
+		<property name="Mass" type="int" value="5"/>
+		<property name="MaxDamage" value="1"/>
+		<property name="Experience" value="2"/>
+	</material>
+	
+	<material id="MwoodStrong">
+		<property name="damage_category" value="wood"/>
+		<property name="surface_category" value="wood"/>
+		<property name="forge_category" value="wood"/>
+		<property name="Hardness" type="float" value="1"/>
+		<property name="stepsound" value="wood"/>
+		<property name="stability_glue" value="40"/>
+		<property name="Mass" type="int" value="5"/>
+		<property name="MaxDamage" value="1000"/>
+		<property name="Experience" value="2"/>
+	</material>
+	
+	
 	<!-- <material id="Mbrick_shapesPlayer">
 		<property name="damage_category" value="stone"/>
 		<property name="surface_category" value="stone"/>

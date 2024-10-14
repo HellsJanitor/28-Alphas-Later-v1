@@ -1,0 +1,41 @@
+<HellsJanitor>
+	<append xpath="/items">
+		<item name="resourceUraniumRaw">
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="resourceUraniumRaw"/>
+			<property name="DescriptionKey" value="resourceUraniumRawDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourceUraniumRaw"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="6000"/>
+			<property name="EconomicValue" value="10"/>
+			<property name="EconomicBundleSize" value="10"/>
+			<property name="Group" value="Resources"/>
+			<property name="RepairTime" value=".5"/>
+			<property name="RepairAmount" value="20"/>
+			<property name="CraftingIngredientTime" value=".2"/>
+			<property name="SoundPickup" value="scrapiron_grab"/>
+			<property name="SoundPlace" value="scrapiron_place"/>
+		</item>
+		
+		<item name="resourceUraniumDepleted">
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="resourceUraniumDepleted"/>
+			<property name="DescriptionKey" value="resourceUraniumDepletedDesc"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourceUraniumRaw"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="6000"/>
+			<property name="EconomicValue" value="10"/>
+			<property name="EconomicBundleSize" value="10"/>
+			<property name="Group" value="Resources"/>
+			<property name="RepairTime" value=".5"/>
+			<property name="RepairAmount" value="20"/>
+			<property name="CraftingIngredientTime" value=".2"/>
+			<property name="SoundPickup" value="scrapiron_grab"/>
+			<property name="SoundPlace" value="scrapiron_place"/>
+		</item>
+	</append>
+</HellsJanitor>

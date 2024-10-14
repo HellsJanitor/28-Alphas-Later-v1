@@ -33,6 +33,15 @@
 		<!-- </trader_items> -->
 	<!-- </append> -->
 	
+	<!-- *** remove books from regular trader stock *** -->
+	<remove xpath="/traders/trader_info/trader_items/item[@group='skillMagazines']"/>
+	<remove xpath="/traders/trader_info/trader_items/item[@group='books']"/>
+	<remove xpath="/traders/trader_info/trader_items/item[@group='commonBooks']"/>
+	<remove xpath="/traders/trader_info/trader_items/item[@group='rareBooks']"/>
+	<remove xpath="/traders/trader_info/trader_items/item[@group='perkBooks']"/>
+	
+	<remove xpath="/traders/trader_item_groups/trader_item_group/item[@group='books']"/>
+	
 	<!-- *** new traders *** -->
 	<append xpath="/traders">
 	<!-- *** TRADER HELLS ID:12 SPECIALTY: TOOLS AND VEHICLES -->
@@ -44,13 +53,11 @@
 			<item group="tools" unique_only="true" count="10"/>
 			<item group="rareTools" unique_only="true" count="2,3"/>
 			<item group="traderElectrical" unique_only="true" count="8,15"/>
-			<item group="skillMagazines" unique_only="true" count="7"/>
-			<item group="books" unique_only="true" count="3,4"/>
+			<!-- <item group="skillMagazines" unique_only="true" count="7"/> -->
+			<!-- <item group="books" unique_only="true" count="3,4"/> -->
 			<item name="toolDewGatherer" count="1,3"/>
 			<item name="toolDewTarp" count="1,3"/>
 			<item name="toolDewFilter" count="1,3"/>
-			<item name="toolCookingPot" count="1,3"/>
-			<item name="toolCookingGrill" count="1,3"/>
 		</trader_items>
 		
 		<!-- *** GENERAL -->
@@ -83,13 +90,11 @@
 			<item group="foodSupplies" count="2,5"/>
 			<item group="groupFoodAll" count="1,3"/>
 			<item group="tools" unique_only="true" count="10"/>
-			<item group="skillMagazines" unique_only="true" count="7"/>
-			<item group="books" unique_only="true" count="3,4"/>
+			<!-- <item group="skillMagazines" unique_only="true" count="7"/> -->
+			<!-- <item group="books" unique_only="true" count="3,4"/> -->
 			<item name="toolDewGatherer" count="1,3"/>
 			<item name="toolDewTarp" count="1,3"/>
 			<item name="toolDewFilter" count="1,3"/>
-			<item name="toolCookingPot" count="1,3"/>
-			<item name="toolCookingGrill" count="1,3"/>
 		</trader_items>
 		
 		<!-- *** GENERAL -->
@@ -113,16 +118,39 @@
 			<item group="decorativeBlocks" unique_only="true" count="6,10"/>
 		</trader_items>
 	</trader_info>
+	
+	<!-- *** TRADER LIBRARIAN ID:13 SPECIALTY: BOOKS & MAGAZINES -->
+	<trader_info id="13" reset_interval="3" open_time="4:05" close_time="21:50" override_buy_markup="3" allow_sell="false" currency_item="resourceScrapBooks">
+		<!-- *** SPECIALTY -->
+		<trader_items count="all">
+			<item group="skillMagazines" count="23"/>
+			<!-- <item group="librarianBooks" count="23"/> -->
+			<item group="perkBooks" count="125"/>
+			<item group="schematicsModsCommon" count="39"/>
+			<item group="schematicsVehiclesMods" count="7"/>
+			<item group="rareBooks" count="7"/>
+		</trader_items>
+	</trader_info>
 	</append>
 	
-	<!-- *** iron hoe, schematic, and fertilzer added to trader stock *** -->
+	<!-- *** custom book group for Librarian *** -->
+	<insertafter xpath="/traders/trader_item_groups/trader_item_group[@name='books']">
+		<trader_item_group name="librarianBooks">
+			<item group="perkBooks" prob="1"/>
+			<item group="rareBooks" prob="0.3"/>
+			<item group="schematicsModsCommon" prob="1"/>
+			<item group="schematicsVehiclesMods" prob="1"/>
+		</trader_item_group>	
+	</insertafter>
+	
+	<!-- *** iron hoe, schematic, and fertilizer added to trader stock *** -->
 	<append xpath="//trader_item_group[@name='perkBooks']">
 		<item name="meleeToolFarmT2IronHoeSchematic"/>
 	</append>
     
-	<append xpath="//trader_item_group[@name='traderAlways']">
-		<item name="meleeToolFarmT2IronHoeSchematic"/>
-	</append>
+	<!-- <append xpath="//trader_item_group[@name='traderAlways']"> -->
+		<!-- <item name="meleeToolFarmT2IronHoeSchematic"/> -->
+	<!-- </append> -->
 	
 	<append xpath="//trader_item_group[@name='seeds']">
 		<item name="meleeToolFarmT2IronHoe" quality="1"/>
@@ -161,9 +189,9 @@
 		<item name="resourceCropLavender" count="10,20"/>
 	</append>
 	
-	<!-- *** add tablesaw to trader stock *** -->
+	<!-- *** add sawblade to trader stock *** -->
 	<append xpath="//trader_item_group[@name='tools']">
-		<item name="playerTableSaw" prob="0.7"/>
+		<item name="resourceSawBlade" prob="0.7"/>
 		<item name="toolAmmoPress" prob="0.7"/>
 	</append>
 	
@@ -197,9 +225,9 @@
 	</append>
 	
 	<!-- *** legendary paintbrush *** -->
-	<append xpath="//trader_item_group[@name='rareTools']">
-		<item name="meleeWpnBladeT666LegendaryPaintbrush" quality="6"/>
-	</append>
+	<!-- <append xpath="//trader_item_group[@name='rareTools']"> -->
+		<!-- <item name="meleeWpnBladeT666LegendaryPaintbrush" quality="6"/> -->
+	<!-- </append> -->
 	
 	<set xpath="//trader_item_group[@name='groupArmorMods']">
 		<!-- *** T1_Armor_Mods -->

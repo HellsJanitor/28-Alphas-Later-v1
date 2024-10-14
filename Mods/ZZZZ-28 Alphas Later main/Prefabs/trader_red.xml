@@ -21,8 +21,6 @@
   <property name="QuestTags" value="trader" />
   <property name="TeleportVolumeSize" value="60, 14, 60" />
   <property name="TeleportVolumeStart" value="0, 5, 0" />
-  <property name="WallVolumeSize" value="4, 3, 3#4, 3, 2#4, 2, 6#2, 3, 6" />
-  <property name="WallVolumeStart" value="19, 7, 21#19, 7, 25#19, 8, 21#19, 6, 21" />
   <property name="SleeperVolumeSize" value="7, 4, 6" />
   <property name="SleeperVolumeStart" value="33, 5, 53" />
   <property name="SleeperVolumeGroupId" value="0" />
@@ -59,7 +57,8 @@
       <property name="1" value="48, 5, 22" />
     </property>
     <property class="Trader">
-      <property name="0" value="21, 6, 24" />
+      <property name="0" value="21, 6, 23" />
+      <property name="1" value="21, 6, 24" />
     </property>
     <property class="challenge_leather">
       <property name="0" value="22, 10, 26" />
@@ -76,11 +75,11 @@
     </property>
   </property>
   <property class="Stats">
-    <property name="TotalVertices" value="1676183" />
-    <property name="TotalTriangles" value="727322" />
+    <property name="TotalVertices" value="1656534" />
+    <property name="TotalTriangles" value="722249" />
     <property class="BlockEntities">
-      <property name="Vertices" value="1481398" />
-      <property name="Triangles" value="602470" />
+      <property name="Vertices" value="1461749" />
+      <property name="Triangles" value="597397" />
     </property>
     <property class="ChunkMeshes0">
       <property name="Vertices" value="173659" />

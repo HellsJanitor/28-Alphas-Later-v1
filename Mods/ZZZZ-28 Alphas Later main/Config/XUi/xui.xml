@@ -13,6 +13,20 @@
 	<!-- *** forge no longer needs smelted items *** -->
 	<remove xpath="//window_group[@name='workstation_forge']//window[@name='windowForgeInput']"/>
 	
+	<!-- *** blast furnace *** -->
+	<insertafter xpath="//window_group[@name='workstation_forge']">
+	<window_group name="workstation_blastFurnace" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true" defaultSelected="bp.content">
+		<window name="windowCraftingList"/>
+		<window name="craftingInfoPanel"/>
+		<window name="windowCraftingQueue"/>
+		<window name="windowToolsBlastFurnace" />
+		<window name="windowBlastFurnaceFuel" />
+		<!-- <window name="windowForgeInput" /> -->
+		<window name="windowOutput" />
+		<window name="windowNonPagingHeader" />
+	</window_group>
+	
+	</insertafter>
 	<!-- *** tablesaw *** -->
 	<insertafter xpath="//window_group[@name='workstation_workbench']">
 	<window_group name="workstation_playerTableSaw" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
@@ -21,7 +35,23 @@
 		<window name="windowCraftingQueue"/>
 		<window name="windowTablesawOutput" />
 		<window name="windowNonPagingHeader" />		
-	</window_group>	
+	</window_group>
+	<!-- *** sawmill *** -->
+	<window_group name="workstation_playerSawmill" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
+		<window name="windowTSCraftingList"/>
+		<window name="craftingInfoPanel"/>
+		<window name="windowCraftingQueue"/>
+		<window name="windowSawMillOutput" />
+		<window name="windowNonPagingHeader" />		
+	</window_group>
+	<!-- *** ammo press *** -->
+	<window_group name="workstation_playerAmmoPress" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
+		<window name="windowAmmoPressCraftingList"/>
+		<window name="craftingInfoPanel"/>
+		<window name="windowCraftingQueue"/>
+		<window name="windowAmmoPressOutput" />
+		<window name="windowNonPagingHeader" />		
+	</window_group>
 	</insertafter>
 	
 	<insertafter xpath="//window_group[@name='workstation_campfire']">

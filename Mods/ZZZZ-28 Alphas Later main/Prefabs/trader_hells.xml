@@ -23,8 +23,6 @@
   <property name="PrefabSize" value="60, 51, 60" />
   <property name="TeleportVolumeSize" value="49, 6, 53#4, 6, 41#6, 5, 7#6, 4, 2#7, 4, 1#51, 15, 55#4, 5, 42#7, 4, 1#59, 34, 59#15, 10, 10#3, 20, 3" />
   <property name="TeleportVolumeStart" value="4, 0, 3#53, 0, 15#53, 6, 8#1, 6, 57#34, 6, 1#3, 6, 2#54, 6, 15#25, 6, 57#1, 0, 1#10, 21, 11#16, 31, 15" />
-  <property name="WallVolumeSize" value="1, 3, 2#2, 4, 5#2, 4, 5#1, 2, 5#1, 2, 3" />
-  <property name="WallVolumeStart" value="17, 3, 14#18, 3, 14#15, 3, 14#17, 5, 14#17, 3, 14" />
   <property name="POIMarkerSize" value="7, 13, 3" />
   <property name="POIMarkerStart" value="34, 0, -3" />
   <property name="POIMarkerGroup" value="driveway" />
@@ -34,11 +32,11 @@
   <property name="POIMarkerPartRotations" value="2" />
   <property name="POIMarkerPartSpawnChance" value="1" />
   <property class="Stats">
-    <property name="TotalVertices" value="1689618" />
-    <property name="TotalTriangles" value="809656" />
+    <property name="TotalVertices" value="1690563" />
+    <property name="TotalTriangles" value="811811" />
     <property class="BlockEntities">
-      <property name="Vertices" value="1433099" />
-      <property name="Triangles" value="610035" />
+      <property name="Vertices" value="1434056" />
+      <property name="Triangles" value="612206" />
     </property>
     <property class="ChunkMeshes0">
       <property name="Vertices" value="247347" />
@@ -61,8 +59,8 @@
       <property name="Triangles" value="0" />
     </property>
     <property class="ChunkMeshes5">
-      <property name="Vertices" value="7760" />
-      <property name="Triangles" value="12972" />
+      <property name="Vertices" value="7748" />
+      <property name="Triangles" value="12956" />
     </property>
   </property>
   <property class="IndexedBlockOffsets">
@@ -104,7 +102,8 @@
       <property name="0" value="15, 25, 14" />
     </property>
     <property class="Trader">
-      <property name="0" value="17, 3, 17" />
+      <property name="0" value="17, 3, 15" />
+      <property name="1" value="17, 3, 17" />
     </property>
     <property class="challenge_mech_parts">
       <property name="0" value="54, 1, 48" />

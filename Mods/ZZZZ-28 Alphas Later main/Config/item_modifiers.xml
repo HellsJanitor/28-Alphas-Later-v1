@@ -45,17 +45,7 @@
 		<requirement name="CVarCompare" cvar="batteryBurningShaft" operation="GT" value="0.5"/></triggered_effect>
 		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffBurningShaft"/>
 	</effect_group>
-	</append>
-	
-	<!-- *** adds flat sell/scrap value for all mods (except dye. Changing the recipe makes it unscrappable??) *** -->
-	<insertafter xpath="//item_modifier[starts-with (@name,'modDye')]//property[@name='Weight']">
-	<property name="EconomicValue" value="50"/>
-	</insertafter>
-	
-	<insertafter xpath="//item_modifier[starts-with (@name,'mod') and not (@name='modGeneralMaster')  and not (@name='modArmorHelmetLight') and not (@name='modGunFlashlight') and not (contains(@name,'modDye'))]/property[1]">
-	<property name="EconomicValue" value="750"/>
-	<property name="Weight" value="20"/>
-	</insertafter>
+	</append>	
 	
 	<!-- *** bicycle stamina saver *** -->
 	<insertafter xpath="//item_modifier[@name='modVehicleMega']">	
@@ -75,8 +65,8 @@
 	</item_modifier>
 	</insertafter>
 	
-	<!-- *** serrated blade can be added to spears and knuckles ONLY, 100% bleed proc *** -->
-	<set xpath="//item_modifier[@name='modMeleeSerratedBlade']/@installable_tags">perkBrawler,perkJavelinMaster</set>
+	<!-- *** serrated blade has 100% bleed proc *** -->
+	<!-- <set xpath="//item_modifier[@name='modMeleeSerratedBlade']/@installable_tags">perkBrawler,perkJavelinMaster</set> -->
 	<set xpath="/item_modifiers/item_modifier[@name='modMeleeSerratedBlade']/effect_group[1]//requirement[1]/@value">100</set>
 
 	<!-- *** rad remover only works on radiated zombies *** -->
@@ -88,7 +78,7 @@
 		<!-- Increases damage against irradiated enemies, all melee only -->
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="radiated"/>
-			<requirement name="!EntityTagCompare" target="other" tags="mutated"/>
+			<requirement name="!EntityTagCompare" target="other" tags="mutated,mutant"/>
 				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
 		</effect_group>
 	</set>	
@@ -112,9 +102,14 @@
 		<triggered_effect trigger="onSelfChangedView" action="SetPartActive" part="HeadLightFPV" active="@.IsFPV"/>
 	</set>
 	
+	<!-- *** removes attachements from legendary weapons *** -->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunLaserSight']/@blocked_tags">,noLaser</append>
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSight']/@blocked_tags">,noSights</append>
+	<append xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']/@blocked_tags">,noFlashlight</append>	
+	
 	<!-- *** adds Blessed Metal back to the game *** -->
 	<append xpath="/item_modifiers">
-	<item_modifier name="modGunMeleeBlessedMetal" installable_tags="weapon,tool,bow,turretMelee,turretRanged" modifier_tags="blessedmetal" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modGunMeleeBlessedMetal" installable_tags="weapon,tool,bow,turretMelee,turretRanged" modifier_tags="blessedmetal" blocked_tags="legendary,noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>	
 		<property name="DescriptionKey" value="modGunMeleeBlessedMetalDesc"/>		
 		<property name="CustomIcon" value="modGunMeleeBlessedMetal"/>		
@@ -124,9 +119,11 @@
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		
 		<effect_group tiered="false">
-			<passive_effect name="EntityDamage" operation="perc_add" value=".30"/>			
+			<!-- <passive_effect name="DamageModifier" operation="perc_add" value="1" target="other" tags="radiated,mutated,mutant"/> -->
 			<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock">
 				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated,mutant"/></triggered_effect>
+			<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="10" buff="buffRadiatedRegenBlock">
+				<requirement name="HoldingItemHasTags" tags="rocketLauncher,launcher"/></triggered_effect>
 		</effect_group>		
 	</item_modifier>
 	
@@ -220,7 +217,7 @@
 			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="15"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffShocked"/>
 				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="10" buff="buffShocked">
-					<requirement name="HoldingItemHasTags" tags="rocketLauncher"/>
+					<requirement name="HoldingItemHasTags" tags="rocketLauncher,launcher"/>
 				</triggered_effect>
 		</effect_group>		
 	</item_modifier>
@@ -263,13 +260,13 @@
 				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>				
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryFrozen"/>
 				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="10" buff="buffInjuryFrozen">
-					<requirement name="HoldingItemHasTags" tags="rocketLauncher"/>
+					<requirement name="HoldingItemHasTags" tags="rocketLauncher,launcher"/>
 				</triggered_effect>
 			</effect_group>			
 		</item_modifier>
 		
 	<!-- *** brass catcher *** -->
-		<item_modifier name="modGunBrassCatcher" installable_tags="weapon" blocked_tags="shotgun,melee,perkArchery,turretMelee,turretRanged,noMods" modifier_tags="sideAttachment" type="attachment">
+		<item_modifier name="modGunBrassCatcher" installable_tags="weapon,shortRange" blocked_tags="shotgun,melee,perkArchery,turretMelee,turretRanged,noMods" modifier_tags="sideAttachment" type="attachment">
 			<property name="CustomIcon" value="resourceBulletCasing" />
 			<property name="DescriptionKey" value="modGunBrassCatcherDesc"/>
 			<property name="TraderStageTemplate" value="modsTier3"/>

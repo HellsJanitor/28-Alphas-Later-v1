@@ -1,4 +1,21 @@
 <HellsJanitor>
+
+	<!-- bicycle -->
+	<!-- <property name="motorTorque_turbo" value="500, 180, 750, 180"/> -->
+	<!-- <property name="velocityMax_turbo" value="6, 4, 8.5, 4"/> -->
+	
+	<!-- minibike -->
+	<!-- <property name="motorTorque_turbo" value="400, 200, 560, 200"/> -->
+	<!-- <property name="velocityMax_turbo" value="7, 4, 9.2, 4"/> -->
+	
+	<!-- motorcycle -->
+	<!-- <property name="motorTorque_turbo" value="1400, 500, 2100, 650"/> -->
+	<!-- <property name="velocityMax_turbo" value="9.8, 6, 14, 8"/> -->
+	
+	<!-- 4x4 -->
+	<!-- <property name="motorTorque_turbo" value="3500, 1500, 4500, 2000"/> -->
+	<!-- <property name="velocityMax_turbo" value="10, 8, 14, 10"/> -->
+	
 	<append xpath="/vehicles">
 		<vehicle name="vehicleTheHornet">
 			<property name="cameraDistance" value="5.5, 7"/>
@@ -40,7 +57,7 @@
 				<property name="mesh" value="engine_small"/>
 				<property name="transform" value="engine_small"/>
 				<property name="particle_transform" value="engine_small/MinibikeParticles/p_engine_fire"/>
-				<property name="fuelKmPerL" value=".1"/>
+				<property name="fuelKmPerL" value=".15"/>
 				<property name="foodDrain" value=".002,.00811"/><!-- driving/turbo, truck -->
 				<property name="gear1" value="
 								500,2500, -1400,800,0, 700,2200,900,
@@ -74,7 +91,7 @@
 
 			<property class="fuelTank">
 				<property name="class" value="FuelTank"/>
-				<property name="capacity" value="400"/>
+				<property name="capacity" value="200"/>
 			</property>
 
 			<property class="handlebars">
@@ -162,8 +179,9 @@
 			<property name="tiltDampenThreshold" value="39"/>
 			<property name="tiltUpForce" value="2"/>
 			
-			<property name="motorTorque_turbo" value="1200, 350, 1330, 400"/>
-			<property name="velocityMax_turbo" value="8.5, 5, 11.6, 6"/>
+			<property name="motorTorque_turbo" value="1400, 500, 2100, 650"/>
+			<property name="velocityMax_turbo" value="9.7, 6, 12, 6"/>
+			
 			<property name="brakeTorque" value="3000"/>
 			<property name="hopForce" value="1, .8"/>
 			<property name="unstickForce" value="1"/>
@@ -202,7 +220,7 @@
 				<property name="particleOn" value="Particles/p_on"/>
 				<property name="particleDamaged" value="Particles/p_damaged"/>
 				<property name="particleBroken" value="Particles/p_broken"/>
-				<property name="fuelKmPerL" value=".2"/>
+				<property name="fuelKmPerL" value=".3"/>
 				<property name="foodDrain" value=".002,.0101"/><!-- driving/turbo, motorcycle -->
 
 				<property name="gear1" value="

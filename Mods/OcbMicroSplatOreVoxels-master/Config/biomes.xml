@@ -1,0 +1,75 @@
+<HellsJanitor>
+
+	<set xpath="/worldgeneration/biomes/biome[@name='wasteland']/subbiome/layers/layer/resource[@blockname='terrOreIron']/@blockname">terrOreGold</set>
+	<set xpath="/worldgeneration/biomes/biome[@name='wasteland']/subbiome/decorations/decoration[@name='deco_iron_vein']/@name">deco_gold_vein</set>
+	
+	<!-- <insertbefore xpath="/worldgeneration/biomes/biome[@name='wasteland']/layers"> -->
+		<!-- <subbiome prob="0.451"> -->
+			<!-- <layers> -->
+				<!-- <layer depth="2" blockname="terrDestroyedStone"/> -->
+				<!-- <layer depth="2" blockname="terrDirt"/> -->
+				<!-- <layer depth="1" blockname="terrStone"> -->
+					<!-- <resource blockname="terrGravel" prob="0.7830" rwgGenerationType="all"/> -->
+				<!-- </layer> -->
+				<!-- <layer depth="*" blockname="terrStone"> -->
+					<!-- <resource blockname="terrOreGold" prob="0.6500" rwgGenerationType="all"/> -->
+					<!-- <resource blockname="terrGravel" prob="0.7830" rwgGenerationType="all"/> -->
+				<!-- </layer> -->
+				<!-- <layer depth="3" blockname="terrBedrock"/> -->
+			<!-- </layers> -->
+			<!-- <decorations> -->
+				<!-- <decoration type="prefab" name="deco_gold_vein" checkresource="-7" onslopes="true" prob=".00657" rotatemax="3"/> -->
+				<!-- <decoration type="block" blockname="treePineBurntLrg" prob="0.03" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="treePineBurntMed" prob="0.03" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="treePineBurntFullMed" prob="0.03" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="resourceRock01" prob=".00033" rotatemax="3"/> -->
+				<!-- <decoration type="block" blockname="resourceRock02" prob=".00033" rotatemax="3"/> -->
+				<!-- <decoration type="block" blockname="cntWastelandRandomLootHelper" prob="0.00025"/> -->
+				<!-- <decoration type="block" blockname="treeDeadPineLeaf" prob="0.010" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="scrapMetalPile" prob=".015" rotatemax="3"/> -->
+				<!-- <decoration type="block" blockname="brickShapes:brickDestroyed01" prob=".0004" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="brickShapes:brickDestroyed02" prob=".0004" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="brickShapes:brickDestroyed03" prob=".0004" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="rock01" prob=".004" rotatemax="3"/> -->
+				<!-- <decoration type="block" blockname="rock02" prob=".004" rotatemax="3"/> -->
+				<!-- <decoration type="block" blockname="cntBirdnest" prob="0.001"/> -->
+				<!-- <decoration type="block" blockname="cinderBlocks01" prob=".006" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="cinderBlocks02" prob=".006" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="cinderBlocks03" prob=".006" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="treeBurntMaple01" prob="0.0012" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="treeBurntMaple02" prob="0.0012" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="treeBurntMaple03" prob="0.0012" rotatemax="3"/> -->
+				<!-- <decoration type="block" blockname="treePineBurntLrg" prob="0.0006" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="treeDeadPineLeaf" prob="0.001" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="treeDeadTree02" prob="0.002" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="treeDeadPineLeaf" prob="0.010" rotatemax="7"/> -->
+				<!-- <decoration type="prefab" name="deco_remnant_stone_01" prob=".003"/> -->
+				<!-- <decoration type="prefab" name="deco_remnant_stone_02" prob=".003"/> -->
+				<!-- <decoration type="prefab" name="deco_remnant_stone_03" prob=".003"/> -->
+				<!-- <decoration type="prefab" name="deco_remnant_stone_04" prob=".002"/> -->
+				<!-- <decoration type="prefab" name="deco_remnant_stone_05" prob=".002"/> -->
+				<!-- <decoration type="prefab" name="deco_rubble_stone_01" prob=".0065"/> -->
+				<!-- <decoration type="prefab" name="deco_rubble_stone_02" prob=".0065"/> -->
+				<!-- <decoration type="prefab" name="deco_rubble_stone_03" prob=".005"/> -->
+				<!-- <decoration type="prefab" name="deco_rubble_stone_04" prob=".003"/> -->
+				<!-- <decoration type="prefab" name="deco_rubble_stone_05" prob=".003"/> -->
+				<!-- <decoration type="prefab" name="deco_rubble_stone_06" prob=".0065"/> -->
+				<!-- <decoration type="prefab" name="deco_rubble_stone_07" prob=".0065"/> -->
+				<!-- <decoration type="prefab" name="deco_rubble_stone_08" prob=".0065"/> -->
+				<!-- <decoration type="prefab" name="deco_rubble_stone_09" prob=".003"/> -->
+				<!-- <decoration type="prefab" name="deco_rubble_stone_10" prob=".003"/> -->
+				<!-- <decoration type="block" blockname="carWrecksRandomHelper" prob="0.0005" rotatemax="3"/> -->
+				<!-- <decoration type="block" blockname="treeBrownGrassDiagonal" prob=".05"/> -->
+				<!-- <decoration type="block" blockname="plantShrubDead" prob="0.0001" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="mineCandyTin" prob="0.00015"/> -->
+				<!-- <decoration type="block" blockname="mineHubcap" prob="0.0001"/> -->
+				<!-- <decoration type="block" blockname="hubcapNoMine" prob="0.0011"/> -->
+				<!-- *** New_Destruction_Blocks -->
+				<!-- <decoration type="block" blockname="rubblePileBricks" prob=".0004" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="rubblePileBricksLong" prob=".0004" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="rubblePileBricksSmall" prob=".0004" rotatemax="7"/> -->
+				<!-- <decoration type="block" blockname="rubblePileCement" prob=".0004" rotatemax="7"/> -->
+			<!-- </decorations> -->
+		<!-- </subbiome> -->
+	<!-- </insertbefore> -->
+</HellsJanitor>

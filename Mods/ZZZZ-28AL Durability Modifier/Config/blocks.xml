@@ -62,7 +62,7 @@
 	<set xpath="//block[@name='wallTorchLight']">
 		<property name="Extends" value="cropsGrowingMaster" param1="CustomIcon,DescriptionKey,MultiBlockDim,OnlySimpleRotations"/>
 		<property name="CustomIcon" value="wallTorchLight"/>
-		<property name="PlantGrowing.GrowthRate" value="95.0"/>
+		<property name="PlantGrowing.GrowthRate" value="190.0"/>
 		<property name="PlantGrowing.FertileLevel" value="0"/>		
 		<property name="PlantGrowing.Next" value="placedLitTorch3Harvest"/>
 		<property name="DisplayInfo" value="Name"/>
@@ -83,7 +83,7 @@
 	<set xpath="//block[@name='wallTorchLightPlayer']">
 		<property name="Extends" value="cropsGrowingMaster" param1="CustomIcon,DescriptionKey,MultiBlockDim,OnlySimpleRotations"/>
 		<property name="CustomIcon" value="wallTorchLight"/>
-		<property name="PlantGrowing.GrowthRate" value="95.0"/>
+		<property name="PlantGrowing.GrowthRate" value="190.0"/>
 		<property name="PlantGrowing.FertileLevel" value="0"/>		
 		<property name="PlantGrowing.Next" value="placedLitTorch3Harvest"/>
 		<property name="DisplayInfo" value="Name"/>
@@ -104,7 +104,7 @@
 	<set xpath="//block[@name='lanternDecorLightWhite_player']">
 		<property name="Extends" value="cropsGrowingMaster" param1="CustomIcon,DescriptionKey,MultiBlockDim,OnlySimpleRotations"/>
 		<property name="CustomIcon" value="lanternDecorLightWhite"/>
-		<property name="PlantGrowing.GrowthRate" value="95.0"/>
+		<property name="PlantGrowing.GrowthRate" value="190.0"/>
 		<property name="PlantGrowing.FertileLevel" value="0"/>		
 		<property name="PlantGrowing.Next" value="placedUnlitLantern"/>
 		<property name="DisplayInfo" value="Name"/>

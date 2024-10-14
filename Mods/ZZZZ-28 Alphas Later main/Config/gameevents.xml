@@ -12,6 +12,11 @@
 			<property name="item_counts" value="2,2,2,1,1" />
 			<property name="slot_numbers" value="0,1,2,3,4" />
 		</action>
+		
+		<action class="AddQuest">
+            <property name="quest" value="28AlphasLaterQuest" />
+            <property name="phase" value="3" />
+        </action>
 	</append>
 	
 	<append xpath="/gameevents">	

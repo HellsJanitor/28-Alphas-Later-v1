@@ -1,0 +1,37 @@
+<configs>
+	<append xpath="/worldglobal">
+		<microsplat-voxel name="voxelOre0">
+			<texture name="ore0" weight="1"/>
+		</microsplat-voxel>
+		<microsplat-voxel name="voxelLava0">
+			<texture name="lava0" weight="1"/>
+		</microsplat-voxel>
+
+		<microsplat-texture name="ore0">
+			<property name="Diffuse" value="#@modfolder:Resources/OreVoxels.unity3d?MicroSplatOreVoxels_diff_tarray[0]"/>
+			<property name="Normal" value="#@modfolder:Resources/OreVoxels.unity3d?MicroSplatOreVoxels_norm_tarray[0]"/>
+			<property name="Specular" value="#@modfolder:Resources/OreVoxels.unity3d?MicroSplatOreVoxels_shao_tarray[0]"/>
+			<property name="SwitchNormal" value="false"/>
+			<property name="SplatUVScale" value="4,4"/>
+			<!-- Metallic is now its own 5bit texture -->
+			<!-- <property name="Metallic" value="0.7"/> -->
+		</microsplat-texture>
+
+		<microsplat-texture name="lava0">
+			<property name="Diffuse" value="#@modfolder:Resources/OreVoxels.unity3d?MicroSplatOreVoxels_diff_tarray[1]"/>
+			<property name="Normal" value="#@modfolder:Resources/OreVoxels.unity3d?MicroSplatOreVoxels_norm_tarray[1]"/>
+			<property name="Specular" value="#@modfolder:Resources/OreVoxels.unity3d?MicroSplatOreVoxels_shao_tarray[1]"/>
+			<property name="SwitchNormal" value="false"/>
+			<property name="SplatUVScale" value="4,4"/>
+		</microsplat-texture>
+
+		<!-- overwrite existing iron ore texture -->
+		<microsplat-texture name="microsplat17">
+			<property name="Diffuse" value="#@modfolder:Resources/OreVoxels.unity3d?MicroSplatOreVoxels_diff_tarray[2]"/>
+			<property name="Normal" value="#@modfolder:Resources/OreVoxels.unity3d?MicroSplatOreVoxels_norm_tarray[2]"/>
+			<property name="Specular" value="#@modfolder:Resources/OreVoxels.unity3d?MicroSplatOreVoxels_shao_tarray[2]"/>
+			<property name="SwitchNormal" value="false"/>
+			<property name="SplatUVScale" value="4,4"/>
+		</microsplat-texture>
+	</append>
+</configs>

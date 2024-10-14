@@ -1,4 +1,7 @@
 Key,english
+challengeGathererWood,Gather Wood Logs
+challengeGathererWoodShort,Gather some Wood Logs.
+challengeGathererWoodDesc,[DECEA3]Wood Logs[-] can be gathered with an [DECEA3]Axe[-] by cutting down [DECEA3]Trees[-].\n\nGather some [DECEA3]Wood Logs[-] with an [DECEA3]Axe[DECEA3].
 challengeKillZombiesDesc,"[DECEA3]Zombies[-] are the primary threat to your survival.\n\n[cd853f]Rotten[-] zombies are weaker than\n[DECEA3]Normal[-] zombies, which walk during the day but move faster at night.\n[FF6666]Feral[-] zombies have glowing orange eyes, run during the day, hit harder, and take more damage.\n[00FF00]Radiated[-] zombies regenerate their health and deal severe damage, making them a stubborn threat until eliminated.\n[efcc00]Cowboy[-] zombies are found in the desert biome. They will dehydrate you each time the hit you.\n[c0c0c0]Frozen[-] zombies are found in the snow biome. They're slower and more brittle than normal zombies, but will chill & slow you if they hit you.\n[ffff00]Mutated[-] zombies and [ff0000]Mutants[-] are found in the wasteland biome, and will appear more in the world as you progress. Do not underestimate them - they will regenerate health much faster than [00FF00]Radiated[-] zombies, and are incredibly resilient."
 challengeMeetBobDesc,"[DECEA3]Bob's Salvage[-] in the [DECEA3]Burnt Forest[-] is home to scrapped vehicles, broken appliances, and local gear-head [DECEA3]Trader Bob[-]. If you're in the market for [DECEA3]Vehicles[-] and [DECEA3]Tools[-] he's the man to talk to."
 challengeMeetJenDesc,You can find [DECEA3]Trader Jen[-] in the makeshift hospital at [DECEA3]Jen's Clinic[-] in the [DECEA3]Desert[-]. She is much friendlier than [DECEA3]Trader Rekt[-] and deals mostly in [DECEA3]Medical[-] supplies.
@@ -70,6 +73,10 @@ barbedWireSpindleVariantHelperBlock,"Craft various barbed wire shapes with this 
 flagVariantHelper,"Craft various flags with this helper block.\nPut the crafted block on your hotbar, hold the Reload action and select the Shape entry from the menu. Click or Shift-Click to select a variant to build with."
 jailBlockVariantHelper,"Craft various jail doors & bars with this helper block.\nPut the crafted block on your hotbar, hold the Reload action and select the Shape entry from the menu. Click or Shift-Click to select a variant to build with."
 decoHoistVariantHelper,"Craft various hoists & hoist parts with this helper block.\nPut the crafted block on your hotbar, hold the Reload action and select the Shape entry from the menu. Click or Shift-Click to select a variant to build with."
+logWallVariantHelper,Log Walls
+logWallVariantHelperDesc,"Craft various log walls & pillars with this helper block.\nPut the crafted block on your hotbar, hold the Reload action and select the Shape entry from the menu. Click or Shift-Click to select a variant to build with."
+ropeVariantHelper,Rope
+ropeVariantHelperDesc,"Craft various decorative & climbable rope blocks with this helper.\nPut the crafted block on your hotbar, hold the Reload action and select the Shape entry from the menu. Click or Shift-Click to select a variant to build with."
 idcMeatCooker,Meat Cooker
 idcMeatCookerDesc,A meat cooker for the snare. It dropped out of culinary school so hopefully you like your steak well done.
 idcEnhancedSkinningDevice,Enhanced Skinning Device
@@ -94,12 +101,61 @@ quest_WhiteRiverCitizen1_description,"This mod will challenge you in ways that t
 quest_WhiteRiverCitizen1,"Welcome to [FFC800]28 ALPHAS LATER[-]!"
 quest_WhiteRiverCitizen1_description_title,28 Alphas Later
 
+questStartup_offer,"28 Alphas Later"
+questStartup_desc,"The idea behind this mod is to slow progression, make traders less powerful, and generally extend the time for a playthrough, while keeping the vanilla look and feel.\n\n[ffd700]GENERAL GAMEPLAY[-]\n\nPlayer starts with a new debuff - Despair.\n\nAs your despair increases, your abilities will be negatively affected. If despair reaches 100%, you'll be seconds from death.\nConversely, if you can manage your despair well, you'll receive buffs for remaining positive.\n\nThe despair indicator on the HUD will fill as your despair grows and will change colour to indicate the level of your despair.\n\nIf you're able to manage your despair and have a more positive outlook, the icon on the HUD will change, as will the fill colour to indicate your levels of positivity.\n\nDespair can also be checked from the player information screen.\n\nHeadshots! Zombies take maximum damage from headshots, however, they do take small damage if you miss the head.\n\nZombies DON'T bleed. Nothing undead takes bleed damage.\n\nHazmat zombies are a guaranteed source of hazmat gear. Kill one, and if it drops loot, it'll have some hazmat gear in there.\n\nThere are more zombies in the world. Biomes are gamestaged, which means zombies get tougher and their numbers increase as you level up.\n\nNights are dangerous, downtown is much more dangerous.\n\nTraders and vending machines are more expensive to buy from, and traders will buy from you at a much lower price.\n\nCrafting is 25% more expensive, and loot, harvesting and scrapping quantities are much lower.\n\nXP required to level is increased by 25%.\n\nDismember chance lowered to 1% per attribute level, max at 10%.\n\nAll blades base damage rebalanced to adjust for damage over time lost from enemies not bleeding."
+28AlphasLaterQuest1_title,"Despair"
+28AlphasLaterQuest1,"Despair is dynamically affected by various different factors, including:\n\n1. Darkness. Too dark, and your Despair will increase dramatically. Torches, helmet lights and flashlights will mitigate this. Use these in conjunction with a campfire & bedroll for the best effect.\n\n2. Temperature. If you’re freezing or sweltering, your Despair will also increase dramatically. Find shelter!\n\n3. Environment: Varying degrees of wetness will change how Despair affects you, as will your shelter. If you’re warm, dry, sheltered, well lit or resting on a bed or bedroll, AND near an operating campfire ,forge or chem station you can effectively treat Despair.\n\n4. Hunger and thirst affect how quickly your despair increases. Starvation/dehydration will drastically increase the rate at which you become affected by despair.\n\n5. Injuries will affect how quickly your despair increases, so treat them as quickly as you can!\n\n6. There is medication in trader stock and rare medical loot to treat your despair; St. John's Wort treats 10% and Lithium treats 25%.\n\n6a. There is also lavender growing wild, which can be collected to make your own lavender seeds, and is also used to make Lavender Oil in a cooking pot at a campfire. Treats 3% Despair.\n\n7. All food has a positive effect. The better the food, the more effective the treatment.\n\n8. Killing zombies and animals will reduce your overall despair. Conversely, getting hit by enemies will increase it.\n\n9. Being in close proximity to zombies increases your Despair. The tougher the zombie, the worse the effect. The effect is compounded, so the more zombies there are, the worse it'll be.\n\n10. Player wellness. Your maximum health will also slow down the effects of despair. Every 10 additional health slows down the rate at which Despair affects you.\n\n11. The morale booster from the drone will slow down the rate at which despair affects you.\n\n12. The trader has an effect. Being close to a trader will slow down and/or reduce your Despair.\n\n13. The perk From the Shadows also has an effect on the way Despair affects you at NIGHT. The more points in the perk, the less Despair affects you at night."
+28AlphasLaterQuest2_title,Enemies
+28AlphasLaterQuest2,"Bears and wolves are back in the forest.\n\nHazmat zombies are now immune to burning.\n\nNew Bunker Buster zombie. Only appears during bloodmoon(s), and can appear from the very first Bloodmoon. You’ll want to take it out quickly … think of it as a light demolition zombie.\n\nDemolition zombies appear at a much earlier gamestage.\n\nMutant zombie variant. Top of the food chain these guys. The toughest of all enemies, and will take some stopping. Blessed Metal is your friend ...\n\nMutated zombie variant. Bigger, tankier, stronger, yellower, and with more radiated regen. You'll need a Blessed Metal mod to take them down - the Wasteland biome is full of these guys.\n\nFrozen zombie variant. Slightly tougher, slightly slower, slightly more XP, and take slightly more damage than their Normal counterparts. Immune to the effects of liquid nitrogen, and if they touch you, your movement is reduced by 20%. You can negate this by maxing out the Well Insulated perk.  Found in the snow biome.\n\nRotting zombie variant. They have lower HP, lower XP reward, and they take more damage. Found in the forest biome.\n\nCowboy zombie variant. Similar to normal zombies, these enemies are exclusive to the desert biome, identifiable by their cowboy hats and/or gun belts. They are hot to the touch, and getting hit by them will overheat you briefly.\n\nAll fatties (Big Mama, tourist etc.) explode when their health gets low.\n\nDuring bloodmoons, zombies have a 10% chance to respawn after death, unless they’re killed with fire or explosives. There is also a 5% chance that a boss zombie will spawn, which boosts all zombies damage by 20%. The boss is marked with a specific symbol, so target them with extreme prejudice.\n\nAll Fat zombies (Cop,Big Mama and Tourist) are filled with a substance that’s irresistible to all zombies. If you are within range when they explode, they’ll cover you in this stuff - and attract other zombies. Cop and vulture vomit also has this effect.\n"
+28AlphasLaterQuest3_title,Progression
+28AlphasLaterQuest3,"There is no more Daring Adventurer or Better Barter.\nTraders will give a drink after every quest tier, which will increase bartering by 5% and trader level by one for each tier of quests completed.\n\nMAKE SURE YOU HAVE SPACE IN YOUR INVENTORY FOR IT!!\n\nThere is a new perk, Survival Instinct. It's a single-player version of Charismatic Nature.\n5 levels, each level gains you an additional:\n• 5 health/stamina\n• 10% block damage\n• 5% entity damage\n• 3% Experience gain\n• Carry capacity increases by 1.\n\nLiving off the Land now offers a discount to crops needed to make seeds."
+28AlphasLaterQuest4_title,Blocks & Workstations
+28AlphasLaterQuest4,"The beehive. Find bees (and honey) in specific beehive stumps in the world, and use them to produce honey. Normal wild tree stumps have a higher chance of giving honey too.\n\nThe rain collector. Works like a dew collector, but requires an empty bucket to collect water.\n\nThe chicken snare Place this block down, and load it with corn seed to attract and trap chickens, which can be used in coops to produce eggs.\n\nThese chickens can also be butchered for meat, feathers and eggs, with a hunting knife in your inventory.\n\nThe chicken coop. Place this block, add a chicken from a snare, and it will produce eggs over time. The chicken will stop producing eggs over time, and will need replacing.\n\nThe tablesa cannot be crafted, it can only be collected from POIs. Press 'E' to pick one up.\n\nThe workbench now has slots for a wrench, hammer, ratchet, impact driver, and nail gun. These tools are needed to craft a lot of items, and some items have been moved from inventory crafting to workbench crafting.\n\nThe cement mixer now requires gasoline to work.\n\nThe forge no longer requires you to smelt items. You can use the items directly from your inventory, and a lot of items are crafted in batches of 5."
+28AlphasLaterQuest5_title,Buffs & Debuffs
+28AlphasLaterQuest5,"Snakes and Spider zombies will envenom you when they attack. Kill snakes to extract their venom, which can be used to make antivenom. Antivenom crafting is unlocked after reading 10 medical magazines, and it can appear in loot and trader stock.\n\nThe Wasteland biome is irradiated, and very, VERY dangerous. You'll need hazmat mods before you venture in there.\n\nRadiated zombies now irradiate the player when they attack. A full set of hazmat mods negates this.\n\nSome Burnt zombies now set the player on fire when they attack. A full set of hazmat mods negates this.\n\nHoney infection treatment is reduced to 3% from 5%.\n\nDespair medication (Lavender, St. John’s Wort and Lithium) can be found in medical loot, and in trader stock. Lavender oil can be crafted from lavender flowers and used to treat despair."
+28AlphasLaterQuest6_title,Food & Farming
+28AlphasLaterQuest6,"All canned food found in loot, vending machines, and trader stock is uncooked. Cook it to make it safe to eat, or eat it and run the risk of food poisoning.\n\nUncooked cans don't replenish health, just food and water.\n\nFive new recipes - Chicken stew and chicken miso, top of the tier 3 food chain, along with Scrambled Eggs, a better use for eggs, and Tramp/Vagabond stew(s), which use cat/dog food. Basic recipes, unlocked by default. Needs a cooking pot.\n\nMegaCrush is craftable, in a campfire, with a beaker, and cheaper in a chemistry station.\n\nPies and cheesecake need honey for that sweet, sweet taste now.\n\nCrops growing time is double that of vanilla.\n\nFarming is reworked entirely. You need a hoe to till the ground to plant seeds. Use the hoe with fertiliser in your inventory to upgrade the tilled ground. Fertilized terrain yields 5 crops, same as a farmplot.\n\nFarm Plots require fertiliser and nails to craft, are crafted in the workbench with a hammer,  and are the same fertile level as fertilised ground.\n\nFarmplots found in POI’s are no longer plantable.\n\nThere is no harvest bonus for Living off the Land, instead, seeds cost less crops to make per level, and the amount of fertiliser required to make farmplots is reduced per level. Fertiliser is craftable in the cement mixer and chem station, and is in some trader stock.\n\nAll plants can be picked up - press 'E' by default to pick them up. Wild plants always give one crop, whether they’re picked up or punched.\n\nNew plant - lavender. Purple flower found growing in the Forest biome and in some POIs. Seeds are crafted from lavender flowers, no unlock required. Lavender flowers can be found in loot-] and trader stock, and Lavender seeds in trader stock."
+28AlphasLaterQuest7_title,Resources
+28AlphasLaterQuest7,"Trees no longer give wood, they give wood logs, scraps, and branches. Logs can be placed and then chopped with an axe for wood, or use the table saw to do it quicker and better.\n\nPrimitive weapons and ammo are now made fromwood scraps, branches, plant fibres, and/or stone.\n\nCobblestone is now more expensive to make in your inventory. Use a cement mixer to make it cheaper.\n\nConcrete now requires a bucket of water and a new material, Feldspar. Concrete is crafted in batches of 250. Returns an empty bucket when crafting is complete.\n\nFeldspar is a vital ingredient in the production of concrete. Find it by mining surface terrain & boulders in the Wasteland biome.\n\nMost ammo can be dismantled into its component parts. Check ammo for recipes, and look at the 3rd tab to see what they dismantle into. Most need a workbench with an ammo press-] to do this, but basic arrows/bolts can be dismantled in your inventory. Loose ammo can also be boxed.\n\nRepair kits are more expensive, and top tier weapons/armour/tools now require a specific repair kit."
+28AlphasLaterQuest8_title,Vehicles
+28AlphasLaterQuest8,"All vehicles EXCEPT the bicycle are too heavy for you to carry. Crafted vehicles come in a crate for you to carry to their deploy position.\n\nTwo new vehicles, the Ruin Runner, and The Hornet.\nThe Ruin Runner is a dirt bike, with similar speed to the motorcycle, but the inventory capacity of the minibike. The Hornet is an off-road dune buggy. As fast as a 4x4, but with the inventory capacity of a motorcycle.\n\nVehicles CANNOT be used underwater."
+28AlphasLaterQuest9_title,"Ammo, Weapons, Mods & Armour"
+28AlphasLaterQuest9,"All arrows and bolts have a 25% chance of causing bleeding on a living target. Shame it doesn't work on the undead.\n\nAmmo can be dismantled into its component parts.\n\nHazmat armour mods can be crafted. You’ll still need all four mods (head, gloves, outfit, and boots) for full radiation protection.\n\nNew mods:\n• Blessed metal for stopping mutated & mutant regen.\n• The NiCd battery - a weapon mod that gives a chance of shocking enemies on hit.\n• The Flaming Oil mod - another weapon mod that gives a chance to set enemies on fire.\n• The Liquid Nitrogen mod - a weapon mod that will freeze & slow enemies briefly when hit.\n\nNew clothing mod - cycling shorts. Install them in your leg armour and save 25% stamina when cycling.\n\n"
+
+reqCharismaticNatureLevel00,"Charismatic Nature Level 0"
+reqSurvivalInstinctLevel00,"Survival Instinct Level 0"
+
+challengePlantLavender,Plant Lavender
+challengePlantLavenderDesc,"To make a [DECEA3]lavender seed[-], [DECEA3]Gather[-] some [DECEA3]lavender flowers[-] in the [DECEA3]Forest biome[-], click [DECEA3]Recipes[-], then select [DECEA3]Craft[-].\n\nWhen the seed is crafted, equip it on your [DECEA3]toolbelt[-], and place it in a [DECEA3]Farm Plot[-], or on some [DECEA3]fertilized terrain[-]."
+challengePlantLavenderShort,Plant a Lavender seed.
+
+challengeCraftForgedIronDesc,"To use the [DECEA3]Forge[-], [DECEA3]Obtain[-] resources like [DECEA3]Iron[-] and [DECEA3]Clay[-], add [DECEA3]Fuel[-] to the fuel slot, then selecting [DECEA3]Turn On[-].\n\nInstalling an [DECEA3]Anvil[-] and/or [DECEA3]Bellows[-] will increase performance, while adding a [DECEA3]Crucible[-] allows you to craft [DECEA3]Forged Steel[-] & steel items."
+
 4x4Bundle,4x4
 4x4BundleDesc,Take this bundle to where you want to place your 4x4 [FFC800]BEFORE[-] you open it!
 ammoArrowWood,Wooden arrow
 ammoArrowWoodDesc,"A basic arrow made from a branch.\n\nA pointy stick, effectively."
 ammoCrossbowBoltWood,Wooden bolt
 ammoCrossbowBoltWoodDesc,"A basic bolt made from a branch.\n\nA pointy stick, effectively."
+ammoDUGroupDesc,"Armor piercing depleted uranium ammunition works especially well against armored, radiated & mutant targets but puts a bit more stress on the gun. It can penetrate two enemies or one block of up to 500 hit points to also damage the enemy standing behind it."
+ammoShotgunSlugDUDesc,"Armor piercing depleted uranium shotgun ammo that fires a single projectile.\nDamage falls off rapidly beyond the effective range.\nHold reload to use alternate ammo."
+ammo9mmBulletDU,"9mm Depleted Uranium round"
+ammo44MagnumBulletDU,".44 Depleted Uranium round"
+ammo762mmBulletDU,"7.62mm Depleted Uranium round"
+ammoShotgunSlugDU,"Depleted Uranium shotgun slug"
+ammoBundle9mmBulletDU,Box of DU 9mm Ammo (100)
+ammoBundle44MagnumBulletDU,Box of DU .44 Magnum Ammo (100)
+ammoBundle762mmBulletDU,Box of DU 7.62mm Ammo (100)
+ammoBundleShotgunSlugDU,Box of Shotgun DU Slugs (100)
+resourceBulletTipDU,"Depleted Uranium Bullet Tip"
+resourceBulletTipDUDesc,"A Depleted Uranium bullet tip.\n\nUsed to craft various DU rounds"
+blastFurnace,Blast Furnace
+blastFurnaceDesc,"Used to smelt Raw Uranium to craft Depleted Uranium and DU bullet tips. Install tools to increase performance.\n\nRepair with Forged Iron, Springs, and Mechanical Parts."
+playerAmmoPress,Ammo Press
+playerAmmoPressDesc,"Used to craft Depleted Uranium ammunition.\n\nRepair with Forged Iron, Springs, and Mechanical Parts."
+playerAmmoPressTip,"The Ammo Press unlocks the ability to craft Depleted Uranium ammunition. Inside your land claim area all workstations can be picked up by holding ''E'' and selecting ''TAKE'' from the radial menu."
+playerAmmoPressTip_title,Ammo Press
+
 animalBear,Grizzly Bear
 animalChickenDesc,"A chicken. Use this in a chicken coop to produce eggs.\n\nMust be replaced periodically"
 animalDireWolf,Timber Wolf
@@ -396,6 +452,22 @@ MacheteRepairKitDesc,This Repair Kit is used to repair machetes.
 MachinegunRepairKit,Machine Gun Repair Kit
 MachinegunRepairKitDesc,"This Repair Kit is used to repair AK47s, tactical assault rifles, and M60s."
 materialMresourceWoodScraps,Building
+gunMGT4FNSCAR,"Ol' Painless"
+gunMGT4FNSCARDesc,"Ol' Painless is a formidable zombie-slaying machine gun, built for nonstop action in apocalyptic battles. It fires high-calibre rounds with brutal efficiency, cutting down hordes of undead. Can be equipped with a scope for precise headshots, this weapon delivers relentless firepower, leaving nothing but destruction in its path. A devasting weapon against mutated zombies and mutants."
+gunHandgunT4MachinePistol,"Noisy Cricket"
+gunHandgunT4MachinePistolDesc,"The Noisy Cricket is an epic zombie-killing machine pistol, small but brutally effective. Firing rapid bursts, this compact weapon obliterates undead hordes with unmatched precision. Its recoil may catch you off guard, but the sheer destruction it delivers is legendary. The Noisy Cricket shreds through decayed flesh and bone, leaving no infected standing. Lightweight, quick to draw, and deadly efficient, its distinct, high-pitched firing sound is the last thing the undead hear before they fall."
+gunShotgunT4FabarmMartial,"Boomstick"
+gunHandgunT4MagnumRagingHorn,"Hand Cannon"
+gunHandgunT4MagnumRagingHornDesc,"The Hand Cannon is a legendary Magnum, forged for those who demand unmatched power in every shot.  This weapon is a devastating six shooter that can obliterate targets with pinpoint accuracy. Each pull of the trigger unleashes a shockwave of force, making it a perfect choice for those facing overwhelming odds. The Hand Cannon isn’t just a weapon—it’s a game-changer, feared by enemies and revered by those who wield it."
+gunShotgunT4FabarmMartialDesc,"The Boomstick is the ultimate zombie-slaying shotgun, revered for its devastating firepower and sheer stopping force. This pump-action beast blasts through hordes with thunderous shots, sending undead flying with every pull of the trigger. Rugged, reliable, and designed for close-quarters combat, its wide spread ensures no zombie gets too close, while its booming sound echoes like a war drum across the battlefield. Simple, brutal, and epic—the Boomstick is a survivor's best friend."
+gunRifleT4LegendarySniper,Long Shot
+gunRifleT4LegendarySniperDesc,"Description goes here"
+meleeHellsScythe,"Death's Whisper"
+meleeHellsScytheDesc,"A devastating slashing weapon, and when swung, Death's Whisper emits a haunting hum, resonating with the whispers of lost souls. Legends say it can slice through the fabric of reality itself, allowing its wielder to reap not just lives, but destinies. It is not merely a weapon; it is a harbinger of change, a symbol of inevitability. In the hands of a true master, it can unleash the fury of a tempest, or restore balance to a world in chaos."
+meleeToolAxeT1GardenRake,"Fury's Harvest"
+meleeToolAxeT1GardenRakeDesc,"Forged in the fires of a long-lost kingdom, this legendary battle rake known as Fury's Harvest is a fearsome weapon that combines beauty and brutality. Its handle, made from the heartwood of an ancient tree, is imbued with the strength of a thousand warriors. The tines, sharp as daggers and are said to have cleaved through armor and stone alike. In the annals of history, it was wielded by a legendary hero during a great war, turning the tide of battle with each swing"
+meleeWpnSpearT0Pitchfork,"Hells' Wrath"
+meleeWpnSpearT0PitchforkDesc,"Legends tell of its origin: crafted by a vengeful farmer who sought to protect his land from marauding invaders. With every thrust and sweep, Hells' Wrath channels the fury of the earth itself, stunning foes in it's tracks. This pitchfork is not merely a tool; it embodies the relentless spirit of those who defend their home, turning the very essence of agriculture into a weapon of epic proportions."
 noteDuke01,Anonymous Help
 noteDuke01Desc,"You don't know me, but I was able to sneak you some food, water and medical supplies in a backpack. I'll do what I can to sneak you some extra supplies by plane. Be safe out there!\n\nPS: I packed your favourite weapon.\n\nA good samaritan."
 PrimitiveRepairKit,Basic Repair Kit
@@ -404,6 +476,8 @@ resourceFertilizer,Fertilizer
 FertilizerDesc,Fertilizer is made in a Chemistry Station or Cement Mixer. Use a hoe to fertilize your farmland and increase crop yield.
 resourceFeldspar,Feldspar
 resourceFeldsparDesc,"Feldspar is a crucial ingredient for concrete mix, allowing for fast-hardening while maintaining good workability during the setting process.\n\nFound exclusively in the Wasteland biome, in small quantities from surface terrain & boulders."
+resourceSawBlade,Saw Blade
+resourceSawBladeDesc,A crucial compenent for constructing a sawmill.
 medicalT3-4,Tier 3: The T-Virus Cure
 meleeToolFarmT2IronHoe,Garden Hoe
 meleeToolFarmT2IronHoeDesc,"Required for fertilizing terrain, and farmplots found in the world.\n\nNot required for crafted farm plots.\n\nRequires you to have fertilizer in your inventory.\nUse your secondary action[FFB400][action:local:Secondary][-] to use the fertilizer."
@@ -444,7 +518,7 @@ modGlassesAgility,Ski Goggles mod
 modGlassesIntellectDesc,Wearing these nerdy looking glasses might not help your sex appeal but you boost your intellect.\n\nSlot this mod in your glasses or bandanna.
 modGlassesIntellect,Nerdy Glasses mod
 modGunMeleeBlessedMetal,"Blessed Metal mod"
-modGunMeleeBlessedMetalDesc,"Increase damage to all entities by 30%\n\nWill disable the regeneration ability of radiated & mutated zombies for 90 seconds."
+modGunMeleeBlessedMetalDesc,"Increase damage to radiated, mutated & mutant entities by 30%\n\nWill disable the regeneration ability of radiated, mutated & mutant zombies for 90 seconds."
 modHazmatBootsDesc,Slot this hazmat mod into your boots armour.\n\nAll [FFC800]four[-] seperate pieces are needed for full radiation protection.
 modHazmatBoots,Radiation protection (boots)
 modHazmatGlovesDesc,Slot this hazmat mod into your gloves armour.\n\nAll [FFC800]four[-] seperate pieces are needed for full radiation protection.
@@ -495,6 +569,7 @@ perkWasteTreasuresAcidLongDesc,"Acid: Acid is an extremely rare and powerful cra
 perkWellInsulatedRank3LongDesc,You can now handle severe weather and typically couldn't care less what the weather conditions are. You will never have the more severe stages of temperature status effects.\n\n[FFC800]Immune to slow effects from frozen zombie attacks.[-]
 toolAmmoPress,Ammunition Press
 toolAmmoPressDesc,This tool is required to assemble and dismantle firearm rounds at a workbench.
+playerSawmill,Sawmill
 playerTableSaw,Tablesaw
 playerWoodBurningStove,Wood Burning Stove
 potofbeefDesc,"Two cans of beef rations cooked in a pot. Tender and filling."
@@ -519,7 +594,13 @@ resourceBrickDesc,"Bricks can be used to build sturdy brick structures, which ar
 materialMbrick_shapesPlayer,Bricks
 resourceLiquidLead,Liquid Lead
 resourceLiquidLeadDesc,Liquid Lead is an ingredient that has radiation removing properties.\n\nUsed for crafting anti-rad thrown explosives.
+resourcePropylene,Propylene Glycol
+resourcePropyleneDesc,"A by-product of oil shale refining, this item, combined with organic matter, can be used to craft scrap polymer."
+resourcePropyleneBundle,Stack of Propylene Glycol (5000)
+resourcePropyleneBundleDesc,This is a compact stack of Propylene Glycol. Use this item to open and unpack it.
 resourcePaperDesc,"Paper can be used with other ingredients to make shotgun ammo and dynamite. Crafted in lots of 50."
+resourceScrapBooks,Scrap Paper
+resourceScrapBooksDesc,"Use this Scrap Paper at the Librarian (found in the trader compounds) to purchase magazines, books and schematics"
 resourceWaterFilter,Water Filter
 resourceWaterFilterDesc,"A tool used to convert murky water to drinkable water, used in the dew collector."
 resourceWoodDesc,"A piece of wood. Great for building tools and constructing wood frames for building.\n\nPlace logs like a block and chop with an axe, or use a tablesaw for a higher yield."
@@ -597,7 +678,12 @@ vehicleRuinRipperChassis,The Ruin Runner Chassis
 vehicleRuinRipperHandlebars,The Ruin Runner Handlebars
 vehiclesT2,"Tier 2: Minibike, Dirt Bike, Oil, & Gas"
 vehiclesT3,"Tier 3: Motorcycle, Dune Buggy & Stacks of Gas Cans"
+vehicleRuinRipperPlaceable,The Ruin Runner
+vehicleTheHornetPlaceable,The Hornet
 woodLogPillar100Desc,Wood logs are good for crude walls or palisades or as fuel for campfires.\n\nPlace them as a block and chop them with an axe for wood planks.
+workstationsT3-2,Tier 2: Ammo Press
+workstationsT4-1,Tier 1: Chemistry Station
+workstationsT4-2,Tier 2: Blast Furnace
 
 itemTooltipFocusedOne,[EEEE22]{0}[-] Collect: {1}
 itemTooltipFocusedSeveral,[EEEE22]{0}[-] Collect: {2} of {1}
@@ -626,6 +712,8 @@ xuiFilter,"Filter"
 xuiBucket,"Bucket"
 xuiFibers,Fibres
 xuiTSBasics,Basics
+xuiAmmoPressBasics,Basics
+
 zombieArlene,Putrid Girl
 zombieArleneFeral,Feral Putrid Girl
 zombieArleneFrozen,Frozen Putrid Girl
@@ -750,6 +838,7 @@ zombieYoRotten,Rotting Carcass
 zombieBunkerBuster,Bunker Buster
 npcTraderRed,Trader Red
 npcTraderHells,Trader Hells
+npcTraderBooks,Trader Nancy
 hellsZombieHungryMutant,Hungry Mutant
 hellsZombieHumanExperiment,Human Experiment
 hellsZombieParasite,Parasitic Mutant
@@ -770,3 +859,4 @@ animalMutantBug,Mutant Bug
 animalCockroach,Mutated Cockroach
 trader_red,Trader Red
 trader_hells,Trader Hells
+trader_books,Trader Nancy

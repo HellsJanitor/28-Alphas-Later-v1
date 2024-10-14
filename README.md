@@ -3,7 +3,7 @@ Will you survive?
 
 The idea behind this mod is to slow progression, make traders less powerful, and generally extend the time for a playthrough, while keeping the vanilla look and feel.
 
-16/08/24 - mod version 2.0.0, Updated for v1 of 7 Days to Die
+14/10/24 - mod version 3.0, Updated for v1.1 of 7 Days to Die
 
 # FEATURES 
 
@@ -74,6 +74,10 @@ New mods - blessed metal for stopping mutated regen. NiCd is back, as is Flaming
 
 New clothing mod - cycling shorts. Install them in your leg armour/clothing and save 25% stamina when cycling.
 
+New endgame Legendary weapons. Four melee, and 5 ranged; find these in tier 5 and above loot chests, with a small chance of finding them in tier 4 chests and boss loot bags.
+
+New depleted uranium ammo for legendary weapons. Insanely powerful against end game enemies, craft these from uranium mined in the wasteland.
+
 
 ## BLOCKS/WORKSTATIONS
 
@@ -86,13 +90,15 @@ These chickens can also be butchered for meat, feathers and eggs, with a hunting
 
 The chicken coop. Place this block, add a chicken from a trap, and it will produce eggs over time. The chicken will "dry out" over time, and will need replacing to keep producing eggs.
 
-The tablesaw cannot be crafted, it can only be collected from POIs. Press "E" to pick one up.
-
 The workbench now has slots for a wrench, hammer, ratchet, impact driver, and nail gun. These tools are needed to craft a lot of items, and some items have been moved from inventory crafting to workbench crafting.
 
 The cement mixer now requires gasoline to work.
 
-The forge no longer requires you to smelt items. You can use the items directly from your inventory, and a lot of items are crafted in batches of 5.
+The blast furnace. Unlocked at level 60 of workstations, the blast furnace is required to turn raw uranium into depleted uranium, and to craft depleted uranium bullet tips.
+
+The ammo press. Unlocked at level 35 of workstations, the ammo press is required to craft depleted uranium ammunition.
+
+The sawmill. Unlocked at the same level as the forge, use this workbench to craft wood logs into wood planks. Wrench a tablesaw for a sawblade, or purchase a sawblade from a trader.
 
 
 ## BUFFS/DEBUFFS
@@ -147,7 +153,7 @@ MegaCrush is craftable, in a campfire, with a beaker, and cheaper in a chemistry
 
 Pies and cheesecake need honey for that sweet, sweet taste now.
 
-Crops' growing time is double that of vanilla.
+Crops growing time is double that of vanilla.
 
 Farming is reworked entirely. You need a hoe to till the ground to plant seeds. Use the hoe with fertiliser to upgrade the tilled ground. Fertilzed terrain yields 3 crops, same as a farmplot.
 
@@ -170,20 +176,28 @@ There is a new perk, Survival Instinct. It's a "single-player" version of Charis
 
 Living off the Land now offers a discount to crops needed to make seeds.
 
+All tool and weapon skills are now governed exclusively by action skills.
+
+Books and magazines are now completely random finds in the world. Scrap any that you don't need or want, and use the scraps to purchase any that you DO want from a new trader, Trader Nancy.
+
 
 ## RESOURCES
 
-Trees no longer give wood, they give wood logs, scraps, and branches. Logs can be placed and then chopped with an axe for wood, or use the table saw to do it quicker and better.
+Trees no longer give wood, they give wood logs, scraps, and branches. Logs can be placed and then chopped with an axe for wood, or use the sawmill to do it quicker and better.
 
 Primitive weapons and ammo are now made from wood scraps, branches, plant fibres, and/or stone.
 
 Cobblestone is now more expensive to make in your inventory. Use a cement mixer to make it cheaper.
 
-Concrete now requires a bucket of water and a new material, Feldspar. Concrete is crafted in batches of 250. Returns an empty bucket when crafting is complete.
+Concrete now requires a bucket of water and a new material, Feldspar. Concrete is crafted in batches of 250. Returns an empty bucket when crafting is complete. Feldspar can be obtained from Wasteland terrain and surface boulders.
 
 Most ammo can be dismantled into its component parts. Check ammo for recipes, and look at the 3rd tab to see what they dismantle into. Most need a workbench to do this, but basic arrows/bolts can be dismantled in your inventory.
 
-Repair kits are more expensive, and top tier weapons/armour/tools now require a specific repair kit.
+Repair kits are more expensive, and any weapon/armour/tool that requires parts to craft now require a specific repair kit.
+
+Raw uranium. This ore is found exclusively in the wasteland. Take it to a blast furnace to process it into depleted uranium.
+
+Propylene Glycol. This by-product of refining oil shale into gasoline can be used with plant fibre or rotten flesh at a chemistry station to craft scrap polymer.
 
 
 ## VEHICLES
@@ -195,35 +209,53 @@ The Ruin Runner is a dirt bike, with similar speed to the motorcycle, but the in
 
 Vehicles CANNOT be used underwater.
 
+## TRADERS
+
+Traders are now unprotected and can be fully destroyed. You can also build in trader compounds, including placing bedrolls and landclaims.
+
+Three new traders. Trader Red, found in the burnt forest and another food/farming vendor, Trader Hells found in the snow, and Trader Nancy, a book/magazine trader found in all trader compounds.
+
+Trader Nancy has an exclusive currency, scrap research. Books, magazines and schematics can be scrapped, and these scrapped items can be used to purchase books, magazines and schematics.
+
 
 # Contributors:
 
-Particle systems/Unity edits 			- Author: redbeardt
+Particle systems/Unity edits 				- Author: redbeardt
 
-28AL Item Offsets/Core					- Author: redbeardt
+28AL Item Offsets/Core						- Author: redbeardt
 
-Custom mesh files						- Author: Schrader97
+Custom mesh files							- Author: Schrader97
 
-Farming template (xml code)				- Author: Gouki
+Farming template (xml code)					- Author: Gouki
 
-Original Chicken Coop model 			- Author: DocRabbit
+HJPlayerItemCount							- Author: w00kien00kie
 
-HJPlayerItemCount						- Author: w00kien00kie
+IDCCore										- Author: I Don't Care
 
-IDCCore									- Author: I Don't Care
+SCore										- Author: sphereII
 
-NVG changes (xml code)					- Author: Khaine
+Lockpicking									- Author: Xyth/sphereII/Mumpfy
 
-Khelldon Custom Menu 					- Author: Khelldon
+KFCommonUtilityLib							- Author: closer_ex
 
-Custom Menu Music						- Author: Khaine
+OcbMicroSplat and OcbMicroSplatOreVoxels	- Author: ocbMaurice
 
-Material Modifier 						- Author: Zilox
+NVG changes (xml code)						- Author: Khaine
 
-ColoredContainerStates					- Author: Scomar
+60 slot backpack							- Author: Khaine
 
-WMMTraderQuestMap						- Author: w00kien00kie
+Khelldon Custom Menu 						- Author: Khelldon
 
-Radiated Wasteland (xml code)			- Author: gemini
+Custom Menu Music							- Author: Khaine
+
+Material Modifier 							- Author: Zilox
+
+ColoredContainerStates						- Author: Scomar
+
+WMMTraderQuestMap							- Author: w00kien00kie
+
+Radiated Wasteland (xml code)				- Author: gemini
+
+Custom Difficulty							- Author: Mythix
 						
-Also a huge thank you to Frantic_Dan and redbeardt for the custom HUD base code, main menu localization changes, and to YubiNashi and Frantic_Dan for ideas/balancing and playtesting.
+Also a huge thank you to Frantic_Dan and redbeardt for the custom HUD base code and main menu localization changes, to Tormented Emu for retexturing of weapons, Frantic_Dan for xml contributions, and to YubiNashi and Frantic_Dan for ideas/balancing and playtesting.

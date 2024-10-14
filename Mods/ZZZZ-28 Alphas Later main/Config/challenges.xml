@@ -8,6 +8,25 @@
 	<!-- <set xpath="/challenges/challenge[starts-with (@name,'farming')]/objective/@type">Gather</set> -->
 	<!-- <removeattribute xpath="/challenges/challenge[starts-with (@name,'farming')]/objective/@block_tag"/> -->
 	
+	<remove xpath="/challenges/challenge[@name='scrapItems']"/>	
+	<remove xpath="/challenges/challenge[@name='placeDewCollector']"/>	
+	
+	<insertafter xpath="/challenges/challenge[@name='readMagazines']">
+	<challenge name="placeDewCollector" title_key="challengePlaceDewCollector" icon="ui_game_symbol_water" group="Workstations"
+	short_description_key="challengePlaceDewCollectorShort" description_key="challengePlaceDewCollectorDesc"
+	reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
+		<objective type="BlockPlace" block="cntDewCollector" count="1"/>
+	</challenge>
+	</insertafter>
+	
+	<insertafter xpath="/challenges/challenge[@name='craftFarmPlot']">
+	<challenge name="plantLavender" title_key="challengePlantLavender" icon="ui_game_symbol_crops" group="AdvancedSurvival"
+	short_description_key="challengePlantLavenderShort" description_key="challengePlantLavenderDesc"
+	reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
+		<objective type="BlockPlace" block="plantedLavender1" count="1"/>
+	</challenge>
+	</insertafter>
+	
 	<append xpath="/challenges/challenge[@name='killLumberjack']/objective[@type='Kill']/@entity_names">,zombieLumberjackRotten,zombieLumberjackMutated</append>
 	<append xpath="/challenges/challenge[@name='killSpider']/objective[@type='Kill']/@entity_names">,zombieSpiderRotten,zombieSpiderMutated,zombieSpiderFrozen</append>
 	<append xpath="/challenges/challenge[@name='killBigMama']/objective[@type='Kill']/@entity_names">,zombieFemaleFatRotten,zombieFemaleFatMutated,zombieFemaleFatFrozen,zombieFemaleFatCowboy</append>
@@ -16,5 +35,10 @@
 	<append xpath="/challenges/challenge[@name='killCop']/objective[@type='Kill']/@entity_names">,zombieFatCopRotten,zombieFatCopMutated</append>
 	<append xpath="/challenges/challenge[@name='killWights']/objective[@type='Kill']/@entity_names">,zombieWightMutated,zombieWightFeralCowboy</append>
 	<append xpath="/challenges/challenge[@name='killDemolitions']/objective[@type='Kill']/@entity_names">,zombieMutatedDemolition</append>
+	
+	<set xpath="/challenges/challenge[@name='gathererWood']/objective[@type='Harvest']/@count">200</set>
+	<set xpath="/challenges/challenge[@name='gathererWood']/objective[@type='Harvest']/@item">woodLogPillar100</set>
+	
+	<set xpath="/challenges/challenge[@name='questComplete']/objective[@type='QuestComplete']/@count">11</set>
 	
 </HellsJanitor>

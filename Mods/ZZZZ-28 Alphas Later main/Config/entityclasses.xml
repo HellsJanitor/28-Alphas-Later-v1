@@ -11,13 +11,13 @@
 	<!-- *** visible backpack *** -->
 	<append xpath="//entity_class[@name='animalZombieBear']">
 		<effect_group>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieAnimalbackpack"/>
 		</effect_group>
 	</append>
 	
 	<append xpath="//entity_class[@name='animalDireWolf']">
 		<effect_group>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieAnimalbackpack"/>
 		</effect_group>
 	</append>
 	
@@ -30,7 +30,7 @@
 			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
 				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
 			</triggered_effect>
-		</effect_group>
+		</effect_group>		
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieMarlene')]">
 		<effect_group>
@@ -144,7 +144,10 @@
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieMaleHazmat')]">
 		<effect_group>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieBossbackpack" operation="set" value="randomint(1,10)"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
+				<requirement name="HasBuff" buff="zombieBackpack"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieBossbackpack" operation="set" value="randomint(1,20)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieBossbackpack">
 				<requirement name="CVarCompare" cvar="zombieBossbackpack" operation="Equals" value="1"/>
 			</triggered_effect>
@@ -243,6 +246,9 @@
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieFatCop')]">
 		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
+				<requirement name="HasBuff" buff="zombieBackpack"/>
+			</triggered_effect>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
@@ -254,6 +260,9 @@
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieFatHawaiian')]">
 		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
+				<requirement name="HasBuff" buff="zombieBackpack"/>
+			</triggered_effect>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
@@ -265,6 +274,9 @@
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieBowler')]">
 		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
+				<requirement name="HasBuff" buff="zombieBackpack"/>
+			</triggered_effect>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
@@ -276,6 +288,9 @@
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieFemaleFat')]">
 		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
+				<requirement name="HasBuff" buff="zombieBackpack"/>
+			</triggered_effect>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
@@ -287,6 +302,9 @@
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieBiker')]">
 		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
+				<requirement name="HasBuff" buff="zombieBackpack"/>
+			</triggered_effect>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
@@ -298,6 +316,9 @@
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieLumberjack')]">
 		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
+				<requirement name="HasBuff" buff="zombieBackpack"/>
+			</triggered_effect>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
@@ -309,6 +330,9 @@
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieSoldier')]">
 		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
+				<requirement name="HasBuff" buff="zombieBackpack"/>
+			</triggered_effect>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
@@ -320,6 +344,12 @@
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieWight')]">
 		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
+				<requirement name="HasBuff" buff="zombieBackpack"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieFatbackpack">
+				<requirement name="HasBuff" buff="zombieFatbackpack"/>
+			</triggered_effect>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieWightBackpack" operation="set" value="randomint(1,30)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieWightBackpack">
 				<requirement name="CVarCompare" cvar="zombieWightBackpack" operation="Equals" value="1"/>
@@ -331,6 +361,15 @@
 	</append>
 	<append xpath="//entity_class[@name='zombieDemolition']">
 		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
+				<requirement name="HasBuff" buff="zombieBackpack"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieFatbackpack">
+				<requirement name="HasBuff" buff="zombieFatbackpack"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieWightBackpack">
+				<requirement name="HasBuff" buff="zombieWightBackpack"/>
+			</triggered_effect>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieBossbackpack" operation="set" value="randomint(1,30)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieBossbackpack">
 				<requirement name="CVarCompare" cvar="zombieBossbackpack" operation="Equals" value="1"/>
@@ -340,10 +379,11 @@
 			</triggered_effect>
 		</effect_group>
 	</append>
+	
 	<insertafter xpath="//entity_class[@name='zombieWightFeral']//property[@name='LootDropProb']">
 		<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
 	</insertafter>
-	<!-- <set xpath="//entity_class[@name='zombieWightRadiated']//property[@name='LootDropEntityClass']/@value">EntityLootContainerBoss</set> -->
+	
 	<set xpath="//entity_class[@name='EntityLootContainerRegular']//property[@name='Mesh']/@value">#@modfolder:Resources/backpacks.unity3d?BackpackFlat_Yellow</set>
 	<set xpath="//entity_class[@name='EntityLootContainerStrong']//property[@name='Mesh']/@value">#@modfolder:Resources/backpacks.unity3d?BackpackFlat_Blue</set>
 	<set xpath="//entity_class[@name='EntityLootContainerBoss']//property[@name='Mesh']/@value">#@modfolder:Resources/backpacks.unity3d?BackpackFlat_Red</set>
@@ -381,64 +421,31 @@
 		</effect_group>
 	</append>
 	
-	<!-- *** zombies health increase with difficulty *** -->
-	<!-- <set xpath="/entity_classes/entity_class//passive_effect[@name='HealthMax'][@operation='perc_add']/@value">0</set> -->
-	<!-- <insertafter xpath="/entity_classes/entity_class//passive_effect[@name='HealthMax'][@operation='perc_add']"> -->
-	<!-- <passive_effect name="HealthMax" operation="perc_add" value=".5,.20"> -->
-	<!-- <requirement name="CVarCompare" cvar="_difficulty" operation="Equals" value="1"/> -->
-	<!-- </passive_effect> -->
-	<!-- <passive_effect name="HealthMax" operation="perc_add" value=".15,.30"> -->
-	<!-- <requirement name="CVarCompare" cvar="_difficulty" operation="Equals" value="2"/> -->
-	<!-- </passive_effect> -->
-	<!-- <passive_effect name="HealthMax" operation="perc_add" value=".25,.40"> -->
-	<!-- <requirement name="CVarCompare" cvar="_difficulty" operation="Equals" value="3"/> -->
-	<!-- </passive_effect> -->
-	<!-- <passive_effect name="HealthMax" operation="perc_add" value=".35,.50"> -->
-	<!-- <requirement name="CVarCompare" cvar="_difficulty" operation="Equals" value="4"/> -->
-	<!-- </passive_effect> -->
-	<!-- <passive_effect name="HealthMax" operation="perc_add" value=".45,.60"> -->
-	<!-- <requirement name="CVarCompare" cvar="_difficulty" operation="Equals" value="5"/> -->
-	<!-- </passive_effect> -->
-	<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffEntitySpawnHeal"/> -->
-	<!-- </insertafter> -->
-	
 	<!-- *** custom tag for hazmat zombies *** -->
 	<set xpath="//entity_class[@name='zombieMaleHazmat']//property[@name='Tags']/@value">entity,zombie,walker,hazmat</set>
 	<set xpath="//entity_class[@name='zombieMaleHazmatFeral']//property[@name='Tags']/@value">entity,zombie,walker,feral,hazmat</set>
 	<set xpath="//entity_class[@name='zombieMaleHazmatRadiated']//property[@name='Tags']/@value">entity,zombie,walker,feral,radiated,hazmat</set>
 	
-	<!-- *** new start items *** -->
-	<!-- <remove xpath="entity_classes/entity_class[@name='playerMale']/property[@name='ItemsOnEnterGame.GameModeSurvival']"/> -->
-	<!-- <remove xpath="entity_classes/entity_class[@name='playerMale']/property[@name='ItemsOnEnterGame.GameModeSurvivalSP']"/> -->
-	<!-- <remove xpath="entity_classes/entity_class[@name='playerMale']/property[@name='ItemsOnEnterGame.GameModeSurvivalMP']"/> -->
-	<!-- <remove xpath="entity_classes/entity_class[@name='playerMale']/property[@name='ExperienceGain']"/> -->
-	<!-- <append xpath="entity_classes/entity_class[@name='playerMale']"> -->
-	<!-- <property name="ItemsOnEnterGame.GameModeSurvival" value="Backpack"/> -->
-	<!-- <property name="ItemsOnEnterGame.GameModeSurvivalSP" value="Backpack"/> -->
-	<!-- <property name="ItemsOnEnterGame.GameModeSurvivalMP" value="Backpack"/> -->
-	<!-- <property name="ExperienceGain" value="650"/> -->
-	<!-- </append> -->
-	
-	<!-- *** harvest counts reduced 33% *** -->
-	<set xpath="//entity_class//drop[@count='2']/@count">1,2</set>
+	<!-- *** harvest counts reduced 50% *** -->
+	<set xpath="//entity_class//drop[@count='2']/@count">1</set>
 	<set xpath="//entity_class//drop[@count='3']/@count">2</set>
-	<set xpath="//entity_class//drop[@count='4']/@count">2,3</set>
-	<set xpath="//entity_class//drop[@count='5']/@count">2,3</set>
-	<set xpath="//entity_class//drop[@count='6']/@count">4</set>
+	<set xpath="//entity_class//drop[@count='4']/@count">2</set>
+	<set xpath="//entity_class//drop[@count='5']/@count">3</set>
+	<set xpath="//entity_class//drop[@count='6']/@count">3</set>
 	<set xpath="//entity_class//drop[@count='7']/@count">4</set>
-	<set xpath="//entity_class//drop[@count='8']/@count">5</set>
-	<set xpath="//entity_class//drop[@count='9']/@count">6</set>
-	<set xpath="//entity_class//drop[@count='10']/@count">6</set>
-	<set xpath="//entity_class//drop[@count='12']/@count">9</set>
-	<set xpath="//entity_class//drop[@count='15']/@count">10</set>
-	<set xpath="//entity_class//drop[@count='20']/@count">14</set>
-	<set xpath="//entity_class//drop[@count='23']/@count">15</set>
-	<set xpath="//entity_class//drop[@count='25']/@count">16</set>
-	<set xpath="//entity_class//drop[@count='30']/@count">20</set>
-	<set xpath="//entity_class//drop[@count='35']/@count">24</set>
-	<set xpath="//entity_class//drop[@count='50']/@count">34</set>
-	<set xpath="//entity_class//drop[@count='70']/@count">46</set>
-	<set xpath="//entity_class//drop[@count='100']/@count">66</set>
+	<set xpath="//entity_class//drop[@count='8']/@count">4</set>
+	<set xpath="//entity_class//drop[@count='9']/@count">5</set>
+	<set xpath="//entity_class//drop[@count='10']/@count">5</set>
+	<set xpath="//entity_class//drop[@count='12']/@count">6</set>
+	<set xpath="//entity_class//drop[@count='15']/@count">7</set>
+	<set xpath="//entity_class//drop[@count='20']/@count">10</set>
+	<set xpath="//entity_class//drop[@count='23']/@count">11</set>
+	<set xpath="//entity_class//drop[@count='25']/@count">12</set>
+	<set xpath="//entity_class//drop[@count='30']/@count">15</set>
+	<set xpath="//entity_class//drop[@count='35']/@count">17</set>
+	<set xpath="//entity_class//drop[@count='50']/@count">25</set>
+	<set xpath="//entity_class//drop[@count='70']/@count">35</set>
+	<set xpath="//entity_class//drop[@count='100']/@count">50</set>
 	
 	<!-- *** anything undead immune to bleed *** -->
 	<set xpath="//entity_class[@name='zombieTemplateMale']/property[@name='Immunity']/@value">bleeding;sickness;disease;wellness</set>
@@ -454,18 +461,12 @@
 	</insertafter>
 	<set xpath="//entity_class[@name='zombieSpiderFeral']//property[@name='HandItem']/@value">meleeHandZombieSpiderFeral</set>
 	
-	<!-- *** remove cop spit *** -->
-	<!-- <remove xpath="//entity_class[@name='zombieFatCop']//property[@name='AITask']"/> -->
-	
 	<!-- *** snakes envenom *** -->
 	<set xpath="//entity_class[@name='animalSnake']//property[@name='HandItem']/@value">meleeHandVenomousSnake</set>
 	<insertafter xpath="//entity_class[@name='animalSnake']//property[@name='DeadBodyHitPoints']">
 		<drop event="Harvest" name="venom" count="0" tool_category="Butcher"/>
 		<drop event="Harvest" name="venom" tag="butcherHarvest" count="2"/>
-	</insertafter>
-	
-	<!-- *** start with infection *** -->
-	<!-- <set xpath="/entity_classes/entity_class[@name='playerMale']//property[@name='Buffs']/@value">buffStatusCheck01,buffStatusCheck02,buffInfectionMain,buffVehicleTrigger</set> -->
+	</insertafter>	
 	
 	<!-- *** set zombie dogs and bears to "Zombie" *** -->
 	<insertafter xpath="/entity_classes/entity_class[@name='animalZombieDog']/property[@name='Class']">
@@ -481,7 +482,6 @@
 	<!-- *** hazmat zombie guaranteed to drop hazmat gear *** -->
 	<append xpath="//entity_class[@name='zombieMaleHazmat']">
 		<property name="LootDropEntityClass" value="zombieMaleHazmatLootBag"/>
-		<!-- <property name="LootDropProb" value=".25"/> -->
 	</append>
 	<append xpath="//entity_class[@name='zombieMaleHazmatFeral']">
 		<property name="LootDropEntityClass" value="zombieMaleFeralHazmatLootBag"/>
@@ -1048,7 +1048,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZArlene.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh4"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1068,7 +1067,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMarlene.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1087,7 +1085,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCocktailWaitress.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1106,7 +1103,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZNurse.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh4"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1125,7 +1121,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZJoe.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1144,7 +1139,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSteve.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1163,7 +1157,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZTomClark.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1182,7 +1175,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSuit.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh4"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1202,7 +1194,6 @@
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSpider.prefab"/>
 			<property name="HandItem" value="meleeHandZombieSpider"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1221,7 +1212,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBoe.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1240,7 +1230,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,hazmat"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHazmat.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1259,7 +1248,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMechanic.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1278,7 +1266,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMoe.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1297,7 +1284,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLab.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1316,7 +1302,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZDarlene.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1335,7 +1320,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZYo.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1354,7 +1338,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWorker.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1372,8 +1355,7 @@
 		<entity_class name="zombieBikerFrozen" extends="zombieBiker">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
-			<!-- <property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBiker.prefab"/> -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh4"/> -->
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBiker.prefab"/>
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1393,7 +1375,6 @@
 			<property name="Class" value="EntityZombieCop"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBigMama.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
@@ -1421,7 +1402,6 @@
 			<property name="Class" value="EntityZombieCop"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHawaiian.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh0"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
@@ -1447,7 +1427,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZThug.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1466,7 +1445,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSoldier.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1485,7 +1463,6 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,crawler,frozen"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCrawler.prefab"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh1"/> -->
 			<property name="TintColor" value="#f8f8ff"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<!-- Gameplay zombieFrozen -->
@@ -1855,13 +1832,12 @@
 	<!-- *** mutated *** -->
 		<entity_class name="zombieArleneMutated" extends="zombieArlene">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.01"/>
+			<!-- <property name="SizeScale" value="1.01"/> -->
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZArlene.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieArlenemutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -1888,13 +1864,11 @@
 		
 		<entity_class name="zombieMarleneMutated" extends="zombieMarlene">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.07"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMarlene.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieMarleneMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -1920,13 +1894,11 @@
 		
 		<entity_class name="zombiePartyGirlMutated" extends="zombiePartyGirl">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.09"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCocktailWaitress.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombiePartyGirlMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -1952,13 +1924,11 @@
 		
 		<entity_class name="zombieNurseMutated" extends="zombieNurse">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZNurse.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieNurseMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -1984,13 +1954,11 @@
 		
 		<entity_class name="zombieJoeMutated" extends="zombieJoe">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZJoe.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieJoeMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2016,13 +1984,11 @@
 		
 		<entity_class name="zombieSteveMutated" extends="zombieSteve">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.05"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSteve.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieSteveMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2048,13 +2014,11 @@
 		
 		<entity_class name="zombieTomClarkMutated" extends="zombieTomClark">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.05"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZTomClark.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieTomClarkMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2080,13 +2044,11 @@
 		
 		<entity_class name="zombieBusinessManMutated" extends="zombieBusinessMan">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.05"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSuit.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieBusinessManMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2112,13 +2074,11 @@
 		
 		<entity_class name="zombieBurntMutated" extends="zombieBurnt">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.05"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieBurntMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2144,13 +2104,11 @@
 		
 		<entity_class name="zombieSpiderMutated" extends="zombieSpider">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.05"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieSpiderFeral"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSpider.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieSpiderMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2176,13 +2134,11 @@
 		
 		<entity_class name="zombieBoeMutated" extends="zombieBoe">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.18"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBoe.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieBoeMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2208,13 +2164,11 @@
 		
 		<entity_class name="zombieMaleHazmatMutated" extends="zombieMaleHazmat">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated,hazmat"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHazmat.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieMaleHazmatMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2240,13 +2194,11 @@
 		
 		<entity_class name="zombieJanitorMutated" extends="zombieJanitor">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMechanic.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieJanitorMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2272,13 +2224,11 @@
 		
 		<entity_class name="zombieInmateMutated" extends="zombieInmate">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZInmate.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieJanitorMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2304,13 +2254,11 @@
 		
 		<entity_class name="zombieMoeMutated" extends="zombieMoe">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.18"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMoe.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieMoeMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2336,13 +2284,11 @@
 		
 		<entity_class name="zombieLabMutated" extends="zombieLab">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLab.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieLabMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2368,13 +2314,11 @@
 		
 		<entity_class name="zombieDarleneMutated" extends="zombieDarlene">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.08"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZDarlene.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieDarleneMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2400,13 +2344,11 @@
 		
 		<entity_class name="zombieYoMutated" extends="zombieYo">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.12"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZYo.prefab"/>
-			<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/>-->
 			<!-- Gameplay zombieYoMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2432,15 +2374,11 @@
 		
 		<entity_class name="zombieUtilityWorkerMutated" extends="zombieUtilityWorker">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWorker.prefab"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieUtilityWorkerMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2466,15 +2404,11 @@
 		
 		<entity_class name="zombieBikerMutated" extends="zombieBiker">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.18"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBiker.prefab"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieBikerMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2500,15 +2434,11 @@
 		
 		<entity_class name="zombieLumberjackMutated" extends="zombieLumberjack">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandzombieMutatedRadiated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLumberjack.prefab"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieLumberjackMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2535,9 +2465,7 @@
 		<entity_class name="zombieFemaleFatMutated" extends="zombieFemaleFat">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Class" value="EntityZombieCop"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,zombieCop,feral,mutated"/>
-			<!-- <property name="HandItem" value="meleeHandZombieCopRadiated"/> -->
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBigMama.prefab"/>
@@ -2548,9 +2476,6 @@
 			<property name="SoundDeath" value="Enemies/Base_Zombie_Female2/zombiefemale2death"/>
 			<property name="SoundSense" value="Enemies/Base_Zombie_Female2/zombiefemale2sense"/>
 			<property name="SoundFootstepModifier" value="Animals/Bear/bear_footstep"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieFemaleFatMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2583,15 +2508,10 @@
 		<entity_class name="zombieFatHawaiianMutated" extends="zombieFatHawaiian">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Class" value="EntityZombieCop"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,zombieCop,feral,mutated"/>
-			<!-- <property name="HandItem" value="meleeHandZombieCopRadiated"/> -->
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHawaiian.prefab"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieFatHawaiianMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2624,15 +2544,10 @@
 		<entity_class name="zombieBowlerMutated" extends="zombieBowler">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Class" value="EntityZombieCop"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,zombieCop,feral,mutated"/>
-			<!-- <property name="HandItem" value="meleeHandZombieCopRadiated"/> -->
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBowler.prefab"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieFatHawaiianMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2664,15 +2579,11 @@
 		
 		<entity_class name="zombieFatCopMutated" extends="zombieFatCop">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,zombieCop,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCopRadiated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCop.prefab"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieFatCopMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2700,15 +2611,11 @@
 		
 		<entity_class name="zombieSkateboarderMutated" extends="zombieSkateboarder">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZThug.prefab"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieSkateboarderMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2734,15 +2641,11 @@
 		
 		<entity_class name="zombieSoldierMutated" extends="zombieSoldier">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSoldier.prefab"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieSoldierMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2768,15 +2671,11 @@
 		
 		<entity_class name="zombieWightMutated" extends="zombieWightFeral">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.2"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCustomMutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWightFeral.prefab"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieWightFeralMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2802,7 +2701,6 @@
 		
 		<entity_class name="zombieScreamerMutated" extends="zombieScreamer">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.2"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="HandItem" value="meleeHandZombieCopRadiated"/>
 			<property name="AITask" value="
@@ -2817,9 +2715,6 @@
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZScreamer.prefab"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieScreamerFeralMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2845,14 +2740,10 @@
 		
 		<entity_class name="zombieMutatedMutated" extends="zombieMutated">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.2"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMutated.prefab"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieMutatedFeralMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2932,14 +2823,10 @@
 		
 		<entity_class name="zombieSteveCrawlerMutated" extends="zombieSteveCrawler">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="SizeScale" value="1.1"/>
 			<property name="Tags" value="entity,zombie,crawler,feral,mutated"/>
 			<property name="TintColor" value="#ffc40c"/>
 			<property name="TintShaderProperties" value="_EmissiveColor"/>
 			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCrawler.prefab"/>
-			<!-- whole entity glows green with radiation -->
-			<!-- looks great, probably bad for FPS -->
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh3"/> -->
 			<!-- Gameplay zombieSteveCrawlerFeralMutated -->
 			<property name="DismemberMultiplierHead" value=".2"/>
 			<property name="DismemberMultiplierArms" value=".2"/>
@@ -2964,8 +2851,7 @@
 		</entity_class>
 		
 	<!-- *** mutants and mythical *** -->
-		<entity_class name="hellsZombieHungryMutant" extends="zombieTemplateMale">
-			<property name="SizeScale" value=".95"/>
+		<entity_class name="zombieHellsHungryMutant" extends="zombieTemplateMale">
 			<property name="Mesh" value="#@modfolder:Resources/hjentities.unity3d?ZombieHungry"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
@@ -2980,11 +2866,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieHungryMutant -->
+			<!-- Gameplay zombieHellsHungryMutant -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3008,7 +2891,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieHumanExperiment" extends="zombieTemplateMale">
+		<entity_class name="zombieHellsHumanExperiment" extends="zombieTemplateMale">
 			<property name="SizeScale" value=".95"/>
 			<property name="Mesh" value="#@modfolder:Resources/humanexperiment.unity3d?HumanExperiment"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
@@ -3024,11 +2907,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieHungryMutant -->
+			<!-- Gameplay zombieHellsHungryMutant -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3052,7 +2932,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieParasite" extends="zombieTemplateMale">
+		<entity_class name="zombieHellsParasite" extends="zombieTemplateMale">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="SizeScale" value=".85"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutant"/>
@@ -3062,11 +2942,8 @@
 			<property name="Mass" value="230"/>
 			<property name="WalkType" value="7"/>
 			<property name="PainResistPerHit" value=".75"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieParasite -->
+			<!-- Gameplay zombieHellsParasite -->
 			<property name="MoveSpeedAggro" value="0.2, 1.2"/><!-- strong, regular -->
 			<property name="JumpMaxDistance" value=".8, 1.1"/>
 			<property name="HandItem" value="meleeHandZombieStrong"/>
@@ -3088,8 +2965,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieGiantMutant" extends="zombieTemplateMale">
-			<property name="SizeScale" value="1.1"/>
+		<entity_class name="zombieHellsGiantMutant" extends="zombieTemplateMale">
 			<property name="Mesh" value="#@modfolder:Resources/giantmutant.unity3d?ZombieGiantMutant"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
@@ -3104,11 +2980,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieGiantMutant -->
+			<!-- Gameplay zombieHellsGiantMutant -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3132,7 +3005,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieBuffedMutant" extends="zombieTemplateMale">
+		<entity_class name="zombieHellsBuffedMutant" extends="zombieTemplateMale">
 			<property name="SizeScale" value=".9"/>
 			<property name="Mesh" value="#@modfolder:Resources/buffedmutant.unity3d?ZombieBuffedMutant"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
@@ -3148,11 +3021,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieBuffedMutant -->
+			<!-- Gameplay zombieHellsBuffedMutant -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3176,7 +3046,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieBlindMutant" extends="zombieTemplateMale">
+		<entity_class name="zombieHellsBlindMutant" extends="zombieTemplateMale">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="SizeScale" value=".85"/>
 			<property name="Tags" value="entity,zombie,walker,feral,mutant"/>
@@ -3186,11 +3056,8 @@
 			<property name="Mass" value="230"/>
 			<property name="WalkType" value="7"/>
 			<property name="PainResistPerHit" value=".75"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieBlindMutant -->
+			<!-- Gameplay zombieHellsBlindMutant -->
 			<property name="MoveSpeedAggro" value="0.2, 1.2"/><!-- strong, regular -->
 			<property name="JumpMaxDistance" value=".8, 1.1"/>
 			<property name="HandItem" value="meleeHandZombieStrong"/>
@@ -3212,8 +3079,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieHeavyDemon" extends="zombieTemplateMale">
-			<property name="SizeScale" value="1.1"/>
+		<entity_class name="zombieHellsHeavyDemon" extends="zombieTemplateMale">
 			<property name="Mesh" value="#@modfolder:Resources/demonheavy.unity3d?DemonHeavy"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
@@ -3228,11 +3094,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieHeavyDemon -->
+			<!-- Gameplay zombieHellsHeavyDemon -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3256,8 +3119,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieMutant4" extends="zombieTemplateMale">
-			<property name="SizeScale" value="1.1"/>
+		<entity_class name="zombieHellsMutant4" extends="zombieTemplateMale">
 			<property name="Mesh" value="#@modfolder:Resources/mutant4.unity3d?Mutant4"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
@@ -3272,11 +3134,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieMutant4 -->
+			<!-- Gameplay zombieHellsMutant4 -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3300,8 +3159,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieDoomDemon" extends="zombieTemplateMale">
-			<property name="SizeScale" value="1.1"/>
+		<entity_class name="zombieHellsDoomDemon" extends="zombieTemplateMale">
 			<property name="Mesh" value="#@modfolder:Resources/doomdemon.unity3d?DoomDemon"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
@@ -3316,11 +3174,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieDoomDemon -->
+			<!-- Gameplay zombieHellsDoomDemon -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3344,8 +3199,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieMutant1" extends="zombieTemplateMale">
-			<property name="SizeScale" value="1.1"/>
+		<entity_class name="zombieHellsMutant1" extends="zombieTemplateMale">
 			<property name="Mesh" value="#@modfolder:Resources/mutant1.unity3d?Mutant1"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
@@ -3360,11 +3214,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieMutant1 -->
+			<!-- Gameplay zombieHellsMutant1 -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3388,8 +3239,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieMutantTentacles" extends="zombieTemplateMale">
-			<property name="SizeScale" value=".95"/>
+		<entity_class name="zombieHellsMutantTentacles" extends="zombieTemplateMale">
 			<property name="Mesh" value="#@modfolder:Resources/mutanttentacles.unity3d?MutantTentacles"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
@@ -3404,11 +3254,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieMutantTentacles -->
+			<!-- Gameplay zombieHellsMutantTentacles -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3432,8 +3279,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieMutantHeadHunter" extends="zombieTemplateMale">
-			<property name="SizeScale" value="1.1"/>
+		<entity_class name="zombieHellsMutantHeadHunter" extends="zombieTemplateMale">
 			<property name="Mesh" value="#@modfolder:Resources/mutantheadhunter.unity3d?MutantHeadHunter"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
@@ -3448,11 +3294,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieMutantHeadHunter -->
+			<!-- Gameplay zombieHellsMutantHeadHunter -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3476,22 +3319,23 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieMutantBoomer" extends="zombieFatCopRadiated">
-			<property name="SizeScale" value="1.1"/>
+		<entity_class name="zombieHellsMutantBoomer" extends="zombieTemplateMale">
+			<property name="UserSpawnType" value="Menu"/>
 			<property name="Class" value="EntityZombieCop"/>
+			<property name="Tags" value="entity,zombie,walker,zombieCop,feral,mutant"/>
 			<property name="Mesh" value="#@modfolder:Resources/mutantboomer.unity3d?MutantBoomer"/>
 			<property name="LookAtAngle" value="0"/>
-			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,zombie,walker,zombieCop,feral,mutant"/>
+			<property name="RightHandJointName" value="Jaw"/>
+			<property name="ModelType" value="Standard"/>
+			<property name="WalkType" value="2"/>
+			<property name="Mass" value="210"/>
+			<property name="Weight" value="70"/>
+			<property name="PhysicsBody" value="zombieFat"/>
+			<property name="RootMotion" value="true"/>
+			<property name="HasDeathAnim" value="true"/>
+			<property name="PushFactor" value="20"/>
 			<property name="HandItem" value="meleeHandZombieCopRadiated"/>
-			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
-			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
-			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
-			<property name="SoundHurt" value="Enemies/Feral_Zombie/zombieferalpain"/>
-			<property name="SoundDeath" value="Enemies/Feral_Zombie/zombieferaldeath"/>
-			<property name="SoundSense" value="Enemies/Feral_Zombie/zombieferalsense"/>
-			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
-			
+
 			<property name="AITask" value="
 			BreakBlock|
 			ApproachDistraction|
@@ -3501,21 +3345,34 @@
 			Look|
 			Wander|
 			"/>
+
+			<property name="SoundRandom" value="hulkroam"/>
+			<property name="SoundAlert" value="hulkalert"/>
+			<property name="SoundAttack" value="hulkattack"/>
+			<property name="SoundHurt" value="hulkpain"/>
+			<property name="SoundDeath" value="hulkdeath"/>
+			<property name="SoundSense" value="hulksense"/>
+			<property name="SoundFootstepModifier" value="bear_footstep"/>
+			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
+
+			<property name="DismemberMultiplierLegs" value="0"/>
+			<property name="LegCrawlerThreshold" value="0"/>
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="0"/>
+			<property name="KnockdownKneelDamageThreshold" value="0"/>
+			<property name="LegsExplosionDamageMultiplier" value="2"/> <!-- volatile so vulnerable to land mines/explosives -->
+			<property name="ArmsExplosionDamageMultiplier" value="2"/>
+			<property name="HeadExplosionDamageMultiplier" value="2"/>
+			<property name="ChestExplosionDamageMultiplier" value="2"/>
 			
-			<property name="WalkType" value="2"/>
-			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
-
-			<!-- Gameplay hellsZombieMutantBoomer -->
+			<!-- Gameplay zombieHellsMutantBoomer -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
-			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
-			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
+			<property name="PainResistPerHit" value=".7"/>
+			<property name="MoveSpeedAggro" value="0.6, 1.45"/>
 			<property name="JumpMaxDistance" value="4.6, 5"/>
-			<property name="ExperienceGain" value="1750"/><!-- XP grunt feral -->
-			<property name="LootDropProb" value=".03"/><!-- Feral -->
-
+			<property name="ExperienceGain" value="1750"/>
+			<property name="LootDropProb" value=".03"/>
+			
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
 				<!-- Mutated damage -->
@@ -3529,10 +3386,20 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffDespairAOEMutatedTrigger"/>
 			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffExplodeEffect"/>
+				<requirement name="CVarCompare" cvar="is_bloodmoon" operation="Equals" value="0"/>
+			</effect_group>
+
+			<property name="Explosion.ParticleIndex" value="8"/>
+			<property name="Explosion.RadiusBlocks" value="5"/>
+			<property name="Explosion.RadiusEntities" value="6"/>
+			<property name="Explosion.BlockDamage" value="500"/>
+			<property name="Explosion.EntityDamage" value="150"/>
+			<property name="Explosion.DamageBonus.earth" value="0"/>
 		</entity_class>
 		
-		<entity_class name="hellsZombieMutantReaper" extends="zombieTemplateMale">
-			<property name="SizeScale" value="1.1"/>
+		<entity_class name="zombieHellsMutantReaper" extends="zombieTemplateMale">
 			<property name="Mesh" value="#@modfolder:Resources/mutantreaper.unity3d?MutantReaper"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="LookAtAngle" value="0"/>
@@ -3547,11 +3414,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieMutantReaper -->
+			<!-- Gameplay zombieHellsMutantReaper -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3575,7 +3439,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieWendigo1" extends="zombieTemplateMale">
+		<entity_class name="zombieHellsWendigo1" extends="zombieTemplateMale">
 			<property name="SizeScale" value=".85"/>
 			<property name="Mesh" value="#@modfolder:Resources/wendigo1.unity3d?WendigoSkin1"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
@@ -3591,11 +3455,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieWendigo1 -->
+			<!-- Gameplay zombieHellsWendigo1 -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3619,7 +3480,7 @@
 			</effect_group>
 		</entity_class>
 		
-		<entity_class name="hellsZombieWendigo2" extends="zombieTemplateMale">
+		<entity_class name="zombieHellsWendigo2" extends="zombieTemplateMale">
 			<property name="SizeScale" value=".85"/>
 			<property name="Mesh" value="#@modfolder:Resources/wendigo2.unity3d?WendigoSkin2"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
@@ -3635,11 +3496,8 @@
 			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 			<property name="WalkType" value="2"/>
 			<property name="Mass" value="210"/>
-			<!-- <property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>	 -->
-			<!-- <property name="TintColor" value="#f0e68c"/> -->
-			<!-- <property name="TintShaderProperties" value="_Color"/> -->
 
-			<!-- Gameplay hellsZombieWendigo2 -->
+			<!-- Gameplay zombieHellsWendigo2 -->
 			<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
 			<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/><!-- fit, feral -->
@@ -3719,85 +3577,11 @@
 			<drop event="Harvest" name="venom" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="venom" tag="butcherHarvest" count="2"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="10"/>
-			<!-- <drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="4"/> -->
-			<!-- <drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/> -->
-			<!-- <drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="15"/> -->
-			<!-- <drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/> -->
 			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-			<!-- <drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/> -->
-			<!-- <drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/> -->
-			<!-- <drop event="Destroy" name="resourceAnimalFat" tag="butcherHarvest" count="2"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="250"/>
 			</effect_group>
-		</entity_class>
-		
-		<!-- <entity_class name="animalCockroach" extends="animalTemplateHostile"> -->
-		<!-- <property name="SizeScale" value="1"/> -->
-		<!-- <property name="Mesh" value="#@modfolder:Resources/mutants.unity3d?Cockroach"/> -->
-		<!-- <property name="UserSpawnType" value="Menu"/> -->
-		<!-- <property name="Tags" value="entity,animal,hostile,mutant"/> -->
-		<!-- <property name="AvatarController" value="AvatarAnimalController"/> -->
-		<!-- <property name="LookAtAngle" value="0"/> -->
-		<!-- <property name="IsAnimalEntity" value="true"/> -->
-		<!-- <property name="IsEnemyEntity" value="true"/> -->
-		<!-- <property name="Faction" value="animals"/> -->
-			
-		<!-- <property name="ModelType" value="Standard"/> -->
-		<!-- <property name="HasRagdoll" value="true"/> -->
-		<!-- <property name="Mass" value="180"/> -->
-		<!-- <property name="HasDeathAnim" value="true"/> -->
-		<!-- <property name="RootMotion" value="false"/> -->
-		<!-- <property name="RagdollOnDeathChance" value=".5"/> -->
-
-		<!-- <property name="SoundRandomTime" value="45.0"/> -->
-		<!-- <property name="SoundAlertTime" value="25.0"/> -->
-		<!-- <property name="SoundHurt" value="Animals/Snake/snakepain"/> -->
-		<!-- <property name="SoundDeath" value="Animals/Snake/snakedeath"/> -->
-		<!-- <property name="SoundRandom" value="Animals/Snake/snakeroam"/> -->
-		<!-- <property name="SoundSense" value="Animals/Snake/snakesense"/> -->
-		<!-- <property name="SoundAlert" value="Animals/Snake/snakealert"/> -->
-		<!-- <property name="SoundAttack" value="Animals/Snake/snakeattack"/> -->
-
-		<!-- <property name="AIFeralSense" value="1.6"/> -->
-		<!-- <property name="AITask-1" value="BreakBlock"/> -->
-		<!-- <property name="AITask-2" value="Territorial"/> -->
-		<!-- <property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityPlayer,20,EntityBandit,20"/> -->
-		<!-- <property name="AITask-4" value="ApproachSpot"/> -->
-		<!-- <property name="AITask-5" value="Look"/> -->
-		<!-- <property name="AITask-6" value="Wander"/> -->
-		<!-- <property name="AITask-7" value=""/> -->
-		<!-- <property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityPlayer,EntityBandit"/> -->
-		<!-- <property name="AITarget-2" value="BlockingTargetTask"/> -->
-		<!-- <property name="AITarget-3" value="SetNearestCorpseAsTarget" data="flags=edible"/> -->
-		<!-- <property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,22,20,EntityBandit,0,-8"/> -->
-		<!-- <property name="AITarget-5" value=""/> -->
-
-		<!-- Gameplay  -->
-		<!-- <property name="MoveSpeed" value=".45"/> -->
-		<!-- <property name="MoveSpeedNight" value=".3"/> -->
-		<!-- <property name="MoveSpeedAggro" value="1.2, 1.3"/> -->
-		<!-- <property name="MoveSpeedPanic" value="1.5"/> -->
-
-		<!-- <property name="HandItem" value="meleeHandAnimalZombieDog"/> -->
-
-		<!-- <property name="Immunity" value="sickness;disease;wellness"/>  -->
-		<!-- <property name="PainResistPerHit" value=".9"/> -->
-
-		<!-- <drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/> -->
-		<!-- <drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="10"/>  -->
-		<!-- <drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="4"/> -->
-		<!-- <drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/> -->
-		<!-- <drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="15"/> -->
-		<!-- <drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/> -->
-		<!-- <drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/> -->
-		<!-- <drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/> -->
-		<!-- <drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/> -->
-		<!-- <drop event="Destroy" name="resourceAnimalFat" tag="butcherHarvest" count="2"/> -->
-		<!-- <effect_group name="Base Effects"> -->
-		<!-- <passive_effect name="HealthMax" operation="base_set" value="250"/> -->
-		<!-- </effect_group> -->
-		<!-- </entity_class> -->
+		</entity_class>		
 		
 	<!-- *** hazmat loot bags *** -->
 		<entity_class name="zombieMaleHazmatLootBag">
@@ -3844,7 +3628,7 @@
 	<!-- *** Trader Red *** -->
 		<entity_class name="npcTraderRed" extends="npcTraderTemplate">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,npc,human,trader"/>
+			<property name="Tags" value="entity,npc,human,trader,vanillatrader"/>
 			<property name="Mesh" value="#@modfolder:Resources/traderred.unity3d?Trader_Red_2"/>
 			<property name="NPCID" value="traderred"/>
 			<property name="DanceType" value="2"/>
@@ -3857,7 +3641,7 @@
 	<!-- *** Trader Hells *** -->
 		<entity_class name="npcTraderHells" extends="npcTraderTemplate">
 			<property name="UserSpawnType" value="Menu"/>
-			<property name="Tags" value="entity,npc,human,trader"/>
+			<property name="Tags" value="entity,npc,human,trader,vanillatrader"/>
 			<property name="Mesh" value="#@modfolder:Resources/traderhells.unity3d?Trader_Hells"/>
 			<property name="NPCID" value="traderhells"/>
 			<property name="DanceType" value="1"/>
@@ -3866,6 +3650,23 @@
 			<property name="RootMotion" value="true"/>
 			<property name="LookAtAngle" value="0"/>
 		</entity_class>
+		
+	<!-- *** Trader Librarian *** -->
+		<entity_class name="npcTraderBooks" extends="npcTraderTemplate">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,npc,human,trader,vanillatrader"/>
+			<property name="Mesh" value="#@modfolder:Resources/traderBooks.unity3d?traderLibrarian"/>
+			<property name="NPCID" value="traderbooks"/>
+			<property name="DanceType" value="2"/>
+			<property name="AvatarController" value="AvatarZombieController"/>
+			<property name="ModelType" value="Standard"/>
+			<property name="RootMotion" value="true"/>
+			<property name="LookAtAngle" value="0"/>
+			
+			<effect_group name="random dance type">
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="buffRandomDanceTrigger"/>				
+			</effect_group>
+		</entity_class>			
 		
 	<!-- *** The Hornet *** -->
 		<entity_class name="vehicleTheHornet">
@@ -3918,7 +3719,7 @@
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffDespairAOETrigger"/>
 		</effect_group>
 	</append>
-	<!-- <append xpath="//entity_class[starts-with(@name,'zombie') and not (contains(@name,'Template')) and not (contains(@name,'Feral')) and not (contains(@name,'Radiated'))]"> -->
+	
 	<append xpath="//entity_class[@name='zombieTemplateMale']">
 		<effect_group name="zombies increase despair in range">
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffDespairAOETrigger"/>
@@ -3935,7 +3736,6 @@
 	
 	<!-- *** adds particle effect to lumberjack *** -->
 	<insertafter xpath="//entity_class[@name='zombieLumberjack']//property[@name='Mesh']">
-		<!-- <property name="ParticleOnSpawn" value="ParticleEffects/p_breath" param1="SetShapeToMesh4"/> -->
 		<property name="TintColor" value="#f8f8ff"/>
 		<property name="TintShaderProperties" value="_EmissiveColor"/>
 	</insertafter>
@@ -3944,21 +3744,10 @@
 	<set xpath="//entity_class[@name='zombieLumberjack']//property[@name='Tags']/@value">entity,zombie,walker,frozen</set>
 	
 	<!-- *** 'Fat' zombies explode ... *** -->
-	<!-- <setattribute xpath="//entity_class[@name='zombieFemaleFat']" name="extends">zombieFatCop</setattribute> -->
 	<insertafter xpath="//entity_class[@name='zombieFemaleFat']//property[@name='Tags']">
 		<property name="Class" value="EntityZombieCop"/>
-		<!-- <property name="HandItem" value="meleeHandZombieCop"/> -->
 	</insertafter>
 	<insertafter xpath="//entity_class[@name='zombieFemaleFat']//property[@name='HasDeathAnim']">
-		<!-- <property name="AITask" value=" -->
-		<!-- BreakBlock| -->
-		<!-- ApproachDistraction| -->
-		<!-- RangedAttackTarget itemType=1;cooldown=4;duration=5| -->
-		<!-- ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal| -->
-		<!-- ApproachSpot| -->
-		<!-- Look| -->
-		<!-- Wander| -->
-		<!-- "/> -->
 		
 		<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
 		<property name="Explosion.ParticleIndex" value="8"/>
@@ -3969,21 +3758,10 @@
 		<property name="Explosion.DamageBonus.earth" value="0"/>
 	</insertafter>
 	
-	<!-- <setattribute xpath="//entity_class[@name='zombieFatHawaiian']" name="extends">zombieFatCop</setattribute> -->
 	<insertafter xpath="//entity_class[@name='zombieFatHawaiian']//property[@name='Tags']">
 		<property name="Class" value="EntityZombieCop"/>
-		<!-- <property name="HandItem" value="meleeHandZombieCop"/> -->
 	</insertafter>
 	<insertafter xpath="//entity_class[@name='zombieFatHawaiian']//property[@name='HasDeathAnim']">
-		<!-- <property name="AITask" value=" -->
-		<!-- BreakBlock| -->
-		<!-- ApproachDistraction| -->
-		<!-- RangedAttackTarget itemType=1;cooldown=4;duration=5| -->
-		<!-- ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal| -->
-		<!-- ApproachSpot| -->
-		<!-- Look| -->
-		<!-- Wander| -->
-		<!-- "/> -->
 		
 		<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
 		<property name="Explosion.ParticleIndex" value="8"/>
@@ -3996,18 +3774,8 @@
 	
 	<insertafter xpath="//entity_class[@name='zombieBowler']//property[@name='Tags']">
 		<property name="Class" value="EntityZombieCop"/>
-		<!-- <property name="HandItem" value="meleeHandZombieCop"/> -->
 	</insertafter>
 	<insertafter xpath="//entity_class[@name='zombieBowler']//property[@name='HasDeathAnim']">
-		<!-- <property name="AITask" value=" -->
-		<!-- BreakBlock| -->
-		<!-- ApproachDistraction| -->
-		<!-- RangedAttackTarget itemType=1;cooldown=4;duration=5| -->
-		<!-- ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal| -->
-		<!-- ApproachSpot| -->
-		<!-- Look| -->
-		<!-- Wander| -->
-		<!-- "/> -->
 		
 		<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
 		<property name="Explosion.ParticleIndex" value="8"/>
@@ -4018,11 +3786,11 @@
 		<property name="Explosion.DamageBonus.earth" value="0"/>
 	</insertafter>
 	
-	<!-- <set xpath="//entity_class[starts-with(@name,'zombie')]//property[@name='LootDropProb']/@value">-50</set> -->
-	<!-- <set xpath="//entity_class[starts-with(@name,'zombieMutated')]//property[@name='LootDropProb']/@value">.03</set>	 -->
+	<!-- *** slow Direwolf movespeed *** -->
+	<set xpath="/entity_classes/entity_class[@name='animalDireWolf']/property[@name='MoveSpeedAggro']/@value">0.9,1</set>
 	
 	<!-- *** buff for random zombie walk type *** -->
-	<append xpath="//entity_class[starts-with(@name,'zombie') or (starts-with(@name,'hellsZombie'))][not (starts-with(@name,'zombieTemplate')) and not (starts-with(@name,'zombieSpider')) and not (starts-with(@name,'zombieSteveCrawler'))]">
+	<append xpath="//entity_class[starts-with(@name,'zombie') or (starts-with(@name,'zombieHells'))][not (starts-with(@name,'zombieTemplate')) and not (starts-with(@name,'zombieSpider')) and not (starts-with(@name,'zombieSteveCrawler')) and not (contains(@name,'FatCop'))]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffRandomWalk"/>
 		</effect_group>

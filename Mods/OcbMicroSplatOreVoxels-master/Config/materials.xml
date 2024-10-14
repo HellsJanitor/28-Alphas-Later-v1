@@ -1,0 +1,10 @@
+<HellsJanitor>
+	<append xpath="/materials">
+		<material id="MresourceUraniumRaw">
+			<property name="damage_category" value="metal"/>
+			<property name="surface_category" value="metal"/>
+			<property name="forge_category" value="Uranium"/>
+			<property name="Experience" value="1.6"/>
+		</material>
+	</append>
+</HellsJanitor>

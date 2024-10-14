@@ -27,9 +27,73 @@
 		</grid>
 	</set>
 	
-	<!-- <set xpath="//window[@name='windowResponses']/@height">400</set> -->
-	<!-- <setattribute xpath="//window[@name='windowQuestList']" name="pos">9999,0</setattribute> -->
-	<!-- <set xpath="//window[@name='windowQuestList']/rect[@name='content']/@pos">9999,0</set> -->
+	<!-- <set xpath="/windows/window[@name='windowQuestList']/rect[@name='content']/rect[@depth='3']//button[3]/@pos">-3120,-21</set>	 -->
+	
+	<set xpath="/windows/window[@name='windowQuestDescription']/@width">903</set>
+	<set xpath="/windows/window[@name='windowQuestDescription']/@height">732</set>
+	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']/@height">732</set>
+	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']//sprite[1]/@height">732</set>
+	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']//sprite[1]/@width">903</set>
+	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']/label[@depth='3']/@height">732</set>
+	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']/label[@depth='3']/@width">892</set>
+	
+	<remove xpath="/windows/window[@name='windowQuestObjectives']"/>
+	
+	<insertafter xpath="/windows/window[@name='windowQuestDescription']">
+		<window name="windowQuestObjectives" width="533" height="30" panel="Center" controller="QuestObjectivesWindow" cursor_area="true" >
+ 	<!--#$-IGS END.-$#-->
+		<panel name="header" pos="1,-44" height="40" depth="1" backgroundspritename="ui_game_panel_header">
+			<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_quest"/>
+			<label style="header.name" text="OBJECTIVES" text_key="xuiObjectives" />
+			
+			<!-- <label depth="2" pos="445,-8" width="200" height="28" text="{tieradd}" justify="right" upper_case="true" /> -->
+		</panel>
+		<rect name="content" pos="1,-84" height="40" depth="1">
+			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+			<sprite color="[darkGrey]" type="sliced" />
+			<rect visible="{showquest}">
+				<grid name="objectiveList" rows="5" cols="2" pos="12,-10" width="300" height="40" cell_width="300" cell_height="30" repeat_content="true" arrangement="horizontal" controller="QuestObjectiveList">
+					<quest_objective_entry name="0" />
+				</grid>
+				
+				<label depth="3" pos="45,-8" text="{questrequirementstitle}: {questrequirements}" width="290" visible="{showrequirements}" height="30" />
+			</rect>
+			<rect visible="{showempty}">
+				<label pos="0,-70" depth="3" name="descriptionText" width="100%" height="65" text="OBJECTIVES NOT AVAILABLE AT THIS TIME." text_key="xuiObjectivesNotAvailable" justify="center" font_size="28" />
+			</rect>
+		</rect>
+		</window>	
+	</insertafter>
+	
+	<remove xpath="/windows/window[@name='windowQuestRewards']"/>
+	
+	<insertafter xpath="/windows/window[@name='windowQuestObjectives']">
+		<window name="windowQuestRewards" width="370" height="40" panel="Center" controller="QuestRewardsWindow" cursor_area="true" >
+	<!--#$-IGS END.-$#-->
+		<panel name="header" pos="534,-5" height="40" depth="1" backgroundspritename="ui_game_panel_header">
+			<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_treasure"/>
+			<label style="header.name" text="REWARDS" text_key="xuiRewards" />
+			<label depth="2" pos="3145,-8" width="300" height="28" text="{finishtime}" justify="right" upper_case="true" />
+		</panel>
+		<rect name="content" pos="534,-45" height="40" depth="1">
+			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+			<sprite color="[darkGrey]" type="sliced" />
+			<rect visible="{showquest}">
+				<!-- <grid name="rewardList" rows="5" cols="1" pos="12,-10" width="600" height="368" cell_width="300" cell_height="30" repeat_content="true" arrangement="vertical" controller="QuestRewardList"> -->
+					<!-- <quest_reward_entry2 name="0" /> -->
+				<!-- </grid> -->
+				<label pos="6,-6" depth="3" name="descriptionText" text="{commonrewards}
+				{chaintitle}{chainrewards}" font_size="28" width="365" height="145" />
+			</rect>
+			<rect visible="{showempty}">
+				<label pos="0,-70" depth="3" name="descriptionText" width="100%" height="145" text="REWARDS NOT AVAILABLE AT THIS TIME." text_key="xuiRewardsNotAvailable" justify="center" pivot="left" font_size="28" />
+			</rect>
+		</rect>
+		</window>	
+	</insertafter>
+	
+	<set xpath="/windows/window[@name='windowQuestRewards']/@height">40</set>
+	<set xpath="/windows/window[@name='windowQuestRewards']/rect[@name='content']/@height">40</set>
 	
 	<append xpath="/windows">
 		<!-- *** adds workbench tools *** -->
@@ -141,6 +205,59 @@
 				</rect>
 			</panel>
 		</window>
+		
+		<window name="windowBlastFurnaceFuel" width="228" height="166" panel="Right" cursor_area="true">
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_fire"/>
+				<label style="header.name" text="FUEL" text_key="xuiFuel"/>
+				<label style="header.timer"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="79">
+				<rect disablefallthrough="true">
+					<grid rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationFuelGrid" repeat_content="true">
+						<item_stack name="0"/>
+					</grid>
+				</rect>
+				<grid name="slot_preview" depth="1" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="SlotPreview">
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="resourceCoal" color="220,220,220,240" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="resourceCoal" color="220,220,220,240" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+					<rect>
+						<sprite name="slot" depth="2" width="64" height="64" sprite="resourceCoal" color="220,220,220,240" atlas="ItemIconAtlasGreyscale" pos="35,-35" pivot="center" foregroundlayer="true"/>
+					</rect>
+				</grid>
+			</rect>
+
+			<panel name="buttonContent" depth="5" pos="0, -121" height="40" backgroundcolor="[black]" bordercolor="[black]">
+				<sprite depth="5" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
+				<rect depth="1" pos="3,-3" width="225" height="34">
+					<button name="button" sprite="menu_empty" defaultcolor="[mediumGrey]" disabledcolor="[mediumGrey]" hoversprite="ui_game_select_row" hovercolor="[white]" type="sliced" width="222" hoverscale="1.0"/>
+					<sprite depth="2" name="flameIcon" style="icon32px" pos="5,0" sprite="ui_game_symbol_fire"/>
+					<label depth="2" name="onoff" pos="0,-6" justify="center" text="TURN ON" text_key="xuiTurnOn" font_size="26"/>
+				</rect>
+			</panel>
+		</window>
+		
+		<window name="windowToolsBlastFurnace" width="228" height="121" panel="Right" cursor_area="true" >
+		<!--#$-IGS END.-$#-->
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_wrench"/>
+				<label style="header.name" text="TOOLS" text_key="xuiTools" />
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true">
+
+				<grid name="inventory" rows="1" cols="2" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationToolGrid" repeat_content="true"
+				required_tools="toolBellows,toolForgeCrucible" required_tools_only="true">
+					<item_stack controller="RequiredItemStack" name="0"/>
+				</grid>
+			</rect>
+
+		</window>
 	
 		<!-- *** tablesaw *** -->
 		<window name="windowTablesawOutput" width="228" height="198" anchor="CenterTop" panel="Right" cursor_area="true" controller="WorkstationOutputWindow">
@@ -168,6 +285,130 @@
 			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 				<sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="Craft_Icon_Basics"/>
 				<label style="header.name" text="basics" text_key="xuiTSBasics"/>
+
+				<!-- <label pos="387, -6" depth="2" name="unlockedCount" width="64" height="32" text="0/65" font_size="32" color="[lightGrey]" justify="right" pivot="topright"/> -->
+				<!-- <sprite pos="328, -5" depth="2" name="unlockedIcon" style="icon32px" sprite="ui_game_symbol_book" color="[lightGrey]" pivot="topright"/> -->
+			</panel>
+
+			<panel name="content" width="100%" height="650" depth="1" pos="0,-43" on_scroll="true" disableautobackground="true">
+
+				<rect depth="2" name="categorySelector" width="390" height="44" pos="3,-6">
+					<sprite name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="396" height="49" color="[black]" type="sliced" fillcenter="false"/>
+					<sprite color="[mediumGrey]" type="sliced"/>
+					<grid name="categories" pos="23,-21" rows="1" cols="9" width="390" height="43" cell_width="43" cell_height="43" repeat_content="true" controller="CategoryList">
+						<category_icon/>
+					</grid>
+				</rect>
+
+				<rect depth="3" name="searchControls" width="390" height="44" pos="3,-52">
+					<sprite name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="396" height="49" color="[black]" type="sliced" fillcenter="false"/>
+					<sprite color="[darkGrey]" type="sliced"/>
+					<button depth="4" name="favorites" style="icon30px, press" pos="18,-22" sprite="server_favorite" pivot="center" sound="[paging_click]" tooltip="Favorites" tooltip_key="lblFavorites" collider_scale="1.5"/>
+
+					<panel pos="104,0" width="200" disableautobackground="true">
+						<sprite depth="4" name="searchIcon" style="icon30px" pos="0,-22" sprite="ui_game_symbol_search" pivot="center"/>
+						<textfield depth="5" name="searchInput" pos="22,-7" width="140" height="30" virtual_keyboard_prompt="vkPromptSearchTerm" search_field="true" close_group_on_tab="true" clear_button="true"/>
+					</panel>
+
+					<panel pos="286,0" width="104" height="43" disableautobackground="true">
+						<pager name="pager" pos="4,-6"/>
+					</panel>
+				</rect>
+
+				<grid name="recipes" rows="12" cols="1" pos="3,-98" width="390" height="552" cell_width="390" cell_height="46" controller="RecipeList" repeat_content="true" arrangement="vertical">
+					<recipe_entry name="0"/>
+				</grid>
+			</panel>
+		</window>
+		
+		<!-- *** sawmill *** -->
+		<window name="windowSawMillOutput" width="228" height="198" anchor="CenterTop" panel="Right" cursor_area="true" controller="WorkstationOutputWindow">
+	
+			<panel style="header.panel" pos="0,0">
+				<sprite style="header.icon" sprite="ui_game_symbol_loot_sack"/>
+				<label style="header.name" text="OUTPUT" text_key="xuiOutput"/>
+			
+				<rect pivot="topleft" pos="0,0" controller="ContainerStandardControls" createuiwidget="true" visible="{buttons_visible}">
+					<button depth="3" name="btnMoveAll" sprite="ui_game_symbol_store_all_up" tooltip="{take_all_tooltip}" pos="203, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]"/>
+				</rect>
+			</panel>
+
+
+			<rect name="content" depth="0" pos="0,-47" height="150" disablefallthrough="true" on_press="true">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" height="150" color="[black]" type="sliced" fillcenter="false" on_press="true"/>
+				<grid depth="10" name="inventory" rows="2" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationOutputGrid" repeat_content="true">
+					<item_stack name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="windowTSCraftingList" width="397" height="688" controller="CraftingListInfo" panel="Left" cursor_area="true">
+
+			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+				<sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="Craft_Icon_Basics"/>
+				<label style="header.name" text="basics" text_key="xuiTSBasics"/>
+
+				<!-- <label pos="387, -6" depth="2" name="unlockedCount" width="64" height="32" text="0/65" font_size="32" color="[lightGrey]" justify="right" pivot="topright"/> -->
+				<!-- <sprite pos="328, -5" depth="2" name="unlockedIcon" style="icon32px" sprite="ui_game_symbol_book" color="[lightGrey]" pivot="topright"/> -->
+			</panel>
+
+			<panel name="content" width="100%" height="650" depth="1" pos="0,-43" on_scroll="true" disableautobackground="true">
+
+				<rect depth="2" name="categorySelector" width="390" height="44" pos="3,-6">
+					<sprite name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="396" height="49" color="[black]" type="sliced" fillcenter="false"/>
+					<sprite color="[mediumGrey]" type="sliced"/>
+					<grid name="categories" pos="23,-21" rows="1" cols="9" width="390" height="43" cell_width="43" cell_height="43" repeat_content="true" controller="CategoryList">
+						<category_icon/>
+					</grid>
+				</rect>
+
+				<rect depth="3" name="searchControls" width="390" height="44" pos="3,-52">
+					<sprite name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="396" height="49" color="[black]" type="sliced" fillcenter="false"/>
+					<sprite color="[darkGrey]" type="sliced"/>
+					<button depth="4" name="favorites" style="icon30px, press" pos="18,-22" sprite="server_favorite" pivot="center" sound="[paging_click]" tooltip="Favorites" tooltip_key="lblFavorites" collider_scale="1.5"/>
+
+					<panel pos="104,0" width="200" disableautobackground="true">
+						<sprite depth="4" name="searchIcon" style="icon30px" pos="0,-22" sprite="ui_game_symbol_search" pivot="center"/>
+						<textfield depth="5" name="searchInput" pos="22,-7" width="140" height="30" virtual_keyboard_prompt="vkPromptSearchTerm" search_field="true" close_group_on_tab="true" clear_button="true"/>
+					</panel>
+
+					<panel pos="286,0" width="104" height="43" disableautobackground="true">
+						<pager name="pager" pos="4,-6"/>
+					</panel>
+				</rect>
+
+				<grid name="recipes" rows="12" cols="1" pos="3,-98" width="390" height="552" cell_width="390" cell_height="46" controller="RecipeList" repeat_content="true" arrangement="vertical">
+					<recipe_entry name="0"/>
+				</grid>
+			</panel>
+		</window>
+		
+		<!-- *** ammo press *** -->
+		<window name="windowAmmoPressOutput" width="228" height="198" anchor="CenterTop" panel="Right" cursor_area="true" controller="WorkstationOutputWindow">
+	
+			<panel style="header.panel" pos="0,0">
+				<sprite style="header.icon" sprite="ui_game_symbol_loot_sack"/>
+				<label style="header.name" text="OUTPUT" text_key="xuiOutput"/>
+			
+				<rect pivot="topleft" pos="0,0" controller="ContainerStandardControls" createuiwidget="true" visible="{buttons_visible}">
+					<button depth="3" name="btnMoveAll" sprite="ui_game_symbol_store_all_up" tooltip="{take_all_tooltip}" pos="203, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]"/>
+				</rect>
+			</panel>
+
+
+			<rect name="content" depth="0" pos="0,-47" height="150" disablefallthrough="true" on_press="true">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" height="150" color="[black]" type="sliced" fillcenter="false" on_press="true"/>
+				<grid depth="10" name="inventory" rows="2" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationOutputGrid" repeat_content="true">
+					<item_stack name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+		<window name="windowAmmoPressCraftingList" width="397" height="688" controller="CraftingListInfo" panel="Left" cursor_area="true">
+
+			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+				<sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="Craft_Icon_Basics"/>
+				<label style="header.name" text="basics" text_key="xuiAmmoPressBasics"/>
 
 				<!-- <label pos="387, -6" depth="2" name="unlockedCount" width="64" height="32" text="0/65" font_size="32" color="[lightGrey]" justify="right" pivot="topright"/> -->
 				<!-- <sprite pos="328, -5" depth="2" name="unlockedIcon" style="icon32px" sprite="ui_game_symbol_book" color="[lightGrey]" pivot="topright"/> -->

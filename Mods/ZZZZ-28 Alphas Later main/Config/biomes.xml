@@ -19,12 +19,32 @@
 	</append>
 	
 	<insertafter xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedCotton3Harvest']">
-	<decoration type="block" blockname="plantedCottonDead" prob="0.035" rotatemax="7"/>
+	<decoration type="block" blockname="plantedCottonDead" prob="0.001" rotatemax="7"/>
 	</insertafter>
 	
-	<set xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedGoldenrod3Harvest']/@prob">.004</set>
-	<set xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedCotton3Harvest' and @prob='0.07']/@prob">.001</set>
-	<set xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedChrysanthemum3Harvest' and @prob='0.07']/@prob">.001</set>	
+	<set xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedGoldenrod3Harvest']/@prob">.003</set>
+	<set xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedCotton3Harvest' and @prob='0.07']/@prob">.002</set>
+	<set xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedChrysanthemum3Harvest' and @prob='0.07']/@prob">.002</set>	
+	
+	<set xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedYucca3Harvest']/@prob">0.001</set>
+	<insertafter xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedYucca3Harvest']">
+	<decoration type="block" blockname="plantedAloeDead" prob=".001" rotatemax="3"/>
+	</insertafter>
+	
+	<set xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedAloe3Harvest']/@prob">0.001</set>
+	<insertafter xpath="/worldgeneration/biomes/biome/subbiome/decorations/decoration[@blockname='plantedYucca3Harvest']">
+	<decoration type="block" blockname="plantedYuccaDead" prob=".001" rotatemax="3"/>
+	</insertafter>
+	
+	<set xpath="/worldgeneration/biomes/biome/decorations/decoration[@blockname='plantedYucca3Harvest']/@prob">0.001</set>
+	<insertafter xpath="//worldgeneration/biomes/biome/decorations/decoration[@blockname='plantedYucca3Harvest']">
+	<decoration type="block" blockname="plantedYuccaDead" prob="0.001" rotatemax="3"/>
+	</insertafter>
+	
+	<set xpath="/worldgeneration/biomes/biome/decorations/decoration[@blockname='plantedAloe3Harvest']/@prob">0.001</set>
+	<insertafter xpath="/worldgeneration/biomes/biome/decorations/decoration[@blockname='plantedAloe3Harvest']">
+	<decoration type="block" blockname="plantedAloeDead" prob="0.001" rotatemax="3"/>
+	</insertafter>
 	
 	<!-- *** beehive stumps *** -->
 	<append xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations">
