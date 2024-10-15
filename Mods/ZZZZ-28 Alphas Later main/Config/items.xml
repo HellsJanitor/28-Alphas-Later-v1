@@ -590,7 +590,7 @@
 			<property name="DescriptionKey" value="meleeToolAxeT1GardenRakeDesc"/>
 			<property name="DisplayType" value="melee"/>
 			<property name="HoldType" value="17"/>
-			<property name="Meshfile" value="#@modfolder:Resources/basicGardenWeapons.unity3d?Rake"/>
+			<property name="Meshfile" value="#@modfolder:Resources/Rake_HJ.unity3d?Rake_HJ"/>
 			<property name="Material" value="Mmetal"/>
 			<property name="RepairTools" value="resourceRepairKit"/>
 			<property name="EconomicValue" value="1100"/>
@@ -656,7 +656,7 @@
 			<property name="Group" value="Tools/Traps"/>
 			<property name="HoldType" value="33"/>
 			<property name="Material" value="Mwood"/>
-			<property name="Meshfile" value="#@modfolder:Resources/HellsScythe.unity3d?ReaperScythe"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ReaperScythe_02_HJ.unity3d?ReaperScythe_HJ"/>
 			<property name="PositionOffset" value="0,0,-.01"/>
 			<property name="RepairExpMultiplier" value="5.5"/>
 			<property name="RepairTools" value="resourceRepairKit"/>

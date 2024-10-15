@@ -2,16 +2,16 @@
 	<!-- search find all *** for changes -->
 	
 	<!-- *** short iron pipe *** -->
-	<remove xpath="//recipe[@name='resourceMetalPipe']"/>
-	<append xpath="/recipes">
-		<recipe name="resourceMetalPipe" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
-			<ingredient name="unit_iron" count="10"/>
-			<ingredient name="unit_clay" count="5"/>
-			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/>
-			</effect_group>
-		</recipe>
-	</append>	
+	<!-- <remove xpath="//recipe[@name='resourceMetalPipe']"/> -->
+	<!-- <append xpath="/recipes"> -->
+		<!-- <recipe name="resourceMetalPipe" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering"> -->
+			<!-- <ingredient name="unit_iron" count="10"/> -->
+			<!-- <ingredient name="unit_clay" count="5"/> -->
+			<!-- <effect_group> -->
+				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/> -->
+			<!-- </effect_group> -->
+		<!-- </recipe> -->
+	<!-- </append>	 -->
 	
 	<!-- *** Urban Combat Volume 2 unlocks *** -->
 	<append xpath="/recipes">
@@ -24,12 +24,12 @@
 	</append>
 	
 	<!-- *** removes forge smelting *** -->
-	<set xpath="//recipe//ingredient[@name='unit_iron']/@name">resourceScrapIron</set>
-	<set xpath="//recipe//ingredient[@name='unit_clay']/@name">resourceClayLump</set>
-	<set xpath="//recipe//ingredient[@name='unit_glass']/@name">resourceCrushedSand</set>
-	<set xpath="//recipe//ingredient[@name='unit_stone']/@name">resourceRockSmall</set>
-	<set xpath="//recipe//ingredient[@name='unit_brass']/@name">resourceScrapBrass</set>
-	<set xpath="//recipe//ingredient[@name='unit_lead']/@name">resourceScrapLead</set>
+	<!-- <set xpath="//recipe//ingredient[@name='unit_iron']/@name">resourceScrapIron</set> -->
+	<!-- <set xpath="//recipe//ingredient[@name='unit_clay']/@name">resourceClayLump</set> -->
+	<!-- <set xpath="//recipe//ingredient[@name='unit_glass']/@name">resourceCrushedSand</set> -->
+	<!-- <set xpath="//recipe//ingredient[@name='unit_stone']/@name">resourceRockSmall</set> -->
+	<!-- <set xpath="//recipe//ingredient[@name='unit_brass']/@name">resourceScrapBrass</set> -->
+	<!-- <set xpath="//recipe//ingredient[@name='unit_lead']/@name">resourceScrapLead</set> -->
 	
 	<insertafter xpath="/recipes/recipe[@name='resourceBone']">
 		<recipe name="resourceWoodScraps" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
@@ -38,58 +38,58 @@
 		<recipe name="resourceUraniumRaw" count="1" tooltip="ttScrapMetalLead" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
 	</insertafter>
 	
-	<append xpath="/recipes">
-		<recipe name="resourceCrushedSand" count="1" craft_area="cementMixer" tags="cementMixerCrafting">
-			<ingredient name="resourceRockSmall" count="1"/>
-		</recipe>
-	</append>
+	<!-- <append xpath="/recipes"> -->
+		<!-- <recipe name="resourceCrushedSand" count="1" craft_area="cementMixer" tags="cementMixerCrafting"> -->
+			<!-- <ingredient name="resourceRockSmall" count="1"/> -->
+		<!-- </recipe> -->
+	<!-- </append> -->
 	
 	<!-- *** adjust forge recipes to reflect raw ingredients used *** -->
-	<set xpath="//recipe[@name='ammoDartIron']/@count">5</set>
-	<set xpath="//recipe[@name='ammoDartIron']//ingredient[1]/@count">15</set>
-	<set xpath="//recipe[@name='ironBars']//ingredient[2]/@count">4</set>
-	<set xpath="//recipe[@name='ironBarsCentered']//ingredient[2]/@count">4</set>
-	<set xpath="//recipe[@name='ironBarsCNR']//ingredient[2]/@count">4</set>
-	<set xpath="//recipe[@name='metalTrussingIBeamBlockVariantHelper']//ingredient[2]/@count">1</set>
-	<set xpath="//recipe[@name='toolAnvil']//ingredient[2]/@count">20</set>
-	<set xpath="//recipe[@name='toolCookingGrill']//ingredient[2]/@count">1</set>
-	<set xpath="//recipe[@name='toolCookingPot']//ingredient[2]/@count">1</set>
-	<set xpath="//recipe[@name='resourceNail']/@count">5</set>
-	<set xpath="//recipe[@name='resourceNail']//ingredient[@name='resourceScrapIron']/@count">5</set>
-	<set xpath="//recipe[@name='glassBlockVariantHelper']/@count">5</set>
-	<set xpath="//recipe[@name='glassBlockVariantHelper']//ingredient[@name='resourceCrushedSand']/@count">70</set>
-	<set xpath="//recipe[@name='glassBlockVariantHelper']//ingredient[@name='resourceScrapLead']/@count">25</set>
-	<set xpath="//recipe[@name='resourceArrowHeadIron']/@count">5</set>
-	<set xpath="//recipe[@name='resourceArrowHeadIron']//ingredient[@name='resourceScrapIron']/@count">10</set>
-	<set xpath="//recipe[@name='resourceArrowHeadSteelAP']/@count">5</set>
-	<set xpath="//recipe[@name='resourceArrowHeadSteelAP']//ingredient[@name='resourceScrapIron']/@count">25</set>
-	<set xpath="//recipe[@name='resourceBuckshot']/@count">5</set>
-	<set xpath="//recipe[@name='resourceBuckshot']//ingredient[@name='resourceScrapLead']/@count">15</set>
-	<set xpath="//recipe[@name='resourceBulletCasing']/@count">5</set>
-	<set xpath="//recipe[@name='resourceBulletCasing']//ingredient[@name='resourceScrapBrass']/@count">25</set>
-	<set xpath="//recipe[@name='resourceBulletTip']/@count">5</set>
-	<set xpath="//recipe[@name='resourceBulletTip']//ingredient[@name='resourceScrapLead']/@count">10</set>
-	<set xpath="//recipe[@name='resourceCement']//ingredient[@name='resourceRockSmall']/@count">2</set>
-	<set xpath="//recipe[@name='resourceForgedIron']/@count">5</set>
-	<set xpath="//recipe[@name='resourceForgedIron']//ingredient[@name='resourceScrapIron']/@count">50</set>
-	<set xpath="//recipe[@name='resourceForgedSteel']/@count">5</set>
-	<set xpath="//recipe[@name='resourceForgedSteel']//ingredient[@name='resourceScrapIron']/@count">100</set>
-	<set xpath="//recipe[@name='resourceMetalPipe']/@count">5</set>
-	<set xpath="//recipe[@name='resourceMetalPipe']//ingredient[@name='resourceScrapIron']/@count">50</set>
-	<set xpath="//recipe[@name='resourceRocketCasing']/@count">5</set>
-	<set xpath="//recipe[@name='resourceRocketCasing']//ingredient[@name='resourceScrapIron']/@count">250</set>
-	<set xpath="//recipe[@name='resourceRocketTip']/@count">5</set>
-	<set xpath="//recipe[@name='resourceRocketTip']//ingredient[@name='resourceScrapLead']/@count">250</set>
-	<set xpath="//recipe[@name='trapGlassBusinessCTRSheet1x1']/@count">5</set>
-	<set xpath="//recipe[@name='trapGlassBusinessCTRSheet1x1']//ingredient[@name='resourceCrushedSand']/@count">100</set>
-	<set xpath="//recipe[@name='trapGlassBusinessCTRSheet1x1']//ingredient[@name='resourceRockSmall']/@count">25</set>
-	<set xpath="//recipe[@name='trapGlassBusinessCTRSheet1x1']//ingredient[@name='resourceScrapLead']/@count">25</set>
-	<set xpath="//recipe[@name='trapGlassBusinessSheet1x1']/@count">5</set>
-	<set xpath="//recipe[@name='trapGlassBusinessSheet1x1']//ingredient[@name='resourceCrushedSand']/@count">100</set>
-	<set xpath="//recipe[@name='trapGlassBusinessSheet1x1']//ingredient[@name='resourceRockSmall']/@count">25</set>
-	<set xpath="//recipe[@name='trapGlassBusinessSheet1x1']//ingredient[@name='resourceScrapLead']/@count">25</set>
-	<set xpath="//recipe[@name='metalFenceRailingTrellisSheetBlockVariantHelper']/@count">5</set>
-	<set xpath="//recipe[@name='metalFenceRailingTrellisSheetBlockVariantHelper']//ingredient[@name='resourceScrapIron']/@count">75</set>
+	<!-- <set xpath="//recipe[@name='ammoDartIron']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='ammoDartIron']//ingredient[1]/@count">15</set> -->
+	<!-- <set xpath="//recipe[@name='ironBars']//ingredient[2]/@count">4</set> -->
+	<!-- <set xpath="//recipe[@name='ironBarsCentered']//ingredient[2]/@count">4</set> -->
+	<!-- <set xpath="//recipe[@name='ironBarsCNR']//ingredient[2]/@count">4</set> -->
+	<!-- <set xpath="//recipe[@name='metalTrussingIBeamBlockVariantHelper']//ingredient[2]/@count">1</set> -->
+	<!-- <set xpath="//recipe[@name='toolAnvil']//ingredient[2]/@count">20</set> -->
+	<!-- <set xpath="//recipe[@name='toolCookingGrill']//ingredient[2]/@count">1</set> -->
+	<!-- <set xpath="//recipe[@name='toolCookingPot']//ingredient[2]/@count">1</set> -->
+	<!-- <set xpath="//recipe[@name='resourceNail']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='resourceNail']//ingredient[@name='resourceScrapIron']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='glassBlockVariantHelper']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='glassBlockVariantHelper']//ingredient[@name='resourceCrushedSand']/@count">70</set> -->
+	<!-- <set xpath="//recipe[@name='glassBlockVariantHelper']//ingredient[@name='resourceScrapLead']/@count">25</set> -->
+	<!-- <set xpath="//recipe[@name='resourceArrowHeadIron']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='resourceArrowHeadIron']//ingredient[@name='resourceScrapIron']/@count">10</set> -->
+	<!-- <set xpath="//recipe[@name='resourceArrowHeadSteelAP']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='resourceArrowHeadSteelAP']//ingredient[@name='resourceScrapIron']/@count">25</set> -->
+	<!-- <set xpath="//recipe[@name='resourceBuckshot']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='resourceBuckshot']//ingredient[@name='resourceScrapLead']/@count">15</set> -->
+	<!-- <set xpath="//recipe[@name='resourceBulletCasing']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='resourceBulletCasing']//ingredient[@name='resourceScrapBrass']/@count">25</set> -->
+	<!-- <set xpath="//recipe[@name='resourceBulletTip']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='resourceBulletTip']//ingredient[@name='resourceScrapLead']/@count">10</set> -->
+	<!-- <set xpath="//recipe[@name='resourceCement']//ingredient[@name='resourceRockSmall']/@count">2</set> -->
+	<!-- <set xpath="//recipe[@name='resourceForgedIron']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='resourceForgedIron']//ingredient[@name='resourceScrapIron']/@count">50</set> -->
+	<!-- <set xpath="//recipe[@name='resourceForgedSteel']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='resourceForgedSteel']//ingredient[@name='resourceScrapIron']/@count">100</set> -->
+	<!-- <set xpath="//recipe[@name='resourceMetalPipe']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='resourceMetalPipe']//ingredient[@name='resourceScrapIron']/@count">50</set> -->
+	<!-- <set xpath="//recipe[@name='resourceRocketCasing']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='resourceRocketCasing']//ingredient[@name='resourceScrapIron']/@count">250</set> -->
+	<!-- <set xpath="//recipe[@name='resourceRocketTip']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='resourceRocketTip']//ingredient[@name='resourceScrapLead']/@count">250</set> -->
+	<!-- <set xpath="//recipe[@name='trapGlassBusinessCTRSheet1x1']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='trapGlassBusinessCTRSheet1x1']//ingredient[@name='resourceCrushedSand']/@count">100</set> -->
+	<!-- <set xpath="//recipe[@name='trapGlassBusinessCTRSheet1x1']//ingredient[@name='resourceRockSmall']/@count">25</set> -->
+	<!-- <set xpath="//recipe[@name='trapGlassBusinessCTRSheet1x1']//ingredient[@name='resourceScrapLead']/@count">25</set> -->
+	<!-- <set xpath="//recipe[@name='trapGlassBusinessSheet1x1']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='trapGlassBusinessSheet1x1']//ingredient[@name='resourceCrushedSand']/@count">100</set> -->
+	<!-- <set xpath="//recipe[@name='trapGlassBusinessSheet1x1']//ingredient[@name='resourceRockSmall']/@count">25</set> -->
+	<!-- <set xpath="//recipe[@name='trapGlassBusinessSheet1x1']//ingredient[@name='resourceScrapLead']/@count">25</set> -->
+	<!-- <set xpath="//recipe[@name='metalFenceRailingTrellisSheetBlockVariantHelper']/@count">5</set> -->
+	<!-- <set xpath="//recipe[@name='metalFenceRailingTrellisSheetBlockVariantHelper']//ingredient[@name='resourceScrapIron']/@count">75</set> -->
 	
 	<!-- *** The Hornet *** -->
 	<append xpath="/recipes">
@@ -939,15 +939,15 @@
 	<set xpath="//recipe[@name='frameShapes:VariantHelper']/ingredient[@name='resourceWood']/@name">resourceWoodScraps</set>
 
 	<!-- *** removes all block crafting except basic frames *** -->
-	<remove xpath="//recipe[@name='woodShapes:VariantHelper']"/>
-	<remove xpath="//recipe[@name='cobblestoneShapes:VariantHelper']"/>
-	<remove xpath="//recipe[@name='concreteShapes:VariantHelper']"/>
-	<remove xpath="//recipe[@name='steelShapes:VariantHelper']"/>
+	<!-- <remove xpath="//recipe[@name='woodShapes:VariantHelper']"/> -->
+	<!-- <remove xpath="//recipe[@name='cobblestoneShapes:VariantHelper']"/> -->
+	<!-- <remove xpath="//recipe[@name='concreteShapes:VariantHelper']"/> -->
+	<!-- <remove xpath="//recipe[@name='steelShapes:VariantHelper']"/> -->
 	
 	<!-- *** logs from trees make planks in a tablesaw *** -->
 	<remove xpath="//recipe[@name='woodLogPillar100']"/>
 	<insertbefore xpath="//recipe[@name='workbench']">
-		<recipe name="resourceWood" count="10" craft_time="15" craft_area="playerTableSaw" craft_exp_gain="0" tags="resourceWood,tablesawCrafting">
+		<recipe name="resourceWood" count="10" craft_time="15" craft_area="playerSawmill" craft_exp_gain="0" tags="resourceWood,tablesawCrafting">
 			<ingredient name="woodLogPillar100" count="1"/>
 		</recipe>
 	</insertbefore>
@@ -1441,12 +1441,12 @@
 		</recipe>
 	
 	<!-- *** lavender oil *** -->
-		<recipe name="drugLavenderOil" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
+		<recipe name="drugLavenderOil" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkPhysician">
 			<ingredient name="resourceCropLavender" count="8"/>
 			<ingredient name="drinkJarBoiledWater" count="1"/>
 			<ingredient name="resourceCloth" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" level="1,2,3" operation="base_add" value="-2,-2,-4" tags="resourceCropLavender"/>
+				<passive_effect name="CraftingIngredientCount" level="1,2,3,4,5" operation="base_add" value="-2,-2,-4,-4,-4" tags="resourceCropLavender"/>
 			</effect_group>
 		</recipe>
 	

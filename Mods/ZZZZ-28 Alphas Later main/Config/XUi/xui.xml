@@ -11,7 +11,7 @@
 	</insertafter>
 	
 	<!-- *** forge no longer needs smelted items *** -->
-	<remove xpath="//window_group[@name='workstation_forge']//window[@name='windowForgeInput']"/>
+	<!-- <remove xpath="//window_group[@name='workstation_forge']//window[@name='windowForgeInput']"/> -->
 	
 	<!-- *** blast furnace *** -->
 	<insertafter xpath="//window_group[@name='workstation_forge']">
@@ -21,7 +21,6 @@
 		<window name="windowCraftingQueue"/>
 		<window name="windowToolsBlastFurnace" />
 		<window name="windowBlastFurnaceFuel" />
-		<!-- <window name="windowForgeInput" /> -->
 		<window name="windowOutput" />
 		<window name="windowNonPagingHeader" />
 	</window_group>

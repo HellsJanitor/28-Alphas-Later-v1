@@ -131,6 +131,14 @@
 			<AudioClip ClipName="Sounds/Twitch/Silly/m60_fire_silly3" AltSound="true"/>
 			<LocalCrouchVolumeScale value="1"/><CrouchNoiseScale value="1"/><NoiseScale value="1"/><MaxVoices value="30"/><MaxVoicesPerEntity value="10"/><MaxRepeatRate value="0.001"/>
 		</SoundDataNode>
+		
+		<SoundDataNode name="playerPiano">
+			<AudioSource name="Sounds/AudioSource_Notifications"/>
+			<AudioClip ClipName="#@modfolder:Resources/playerPiano.unity3d?audio.mp3"/>
+			<maxVoicesPerEntity value="1"/>
+			<MaxVoices value="30"/> 
+			<MaxRepeatRate value="30.1"/>			
+		</SoundDataNode>
 	</append>
 	
 	<set xpath="//SoundDataNode[@name='suv_horn']//AudioClip[@ClipName='Sounds/Vehicles/Suv/truck_horn']/@ClipName">#@modfolder:Resources/4x4horn.unity3d?truckHorn</set>
