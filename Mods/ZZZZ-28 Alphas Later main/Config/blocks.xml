@@ -1697,7 +1697,7 @@
 			<property name="Class" value="Workstation"/>
 			<property class="Workstation">
 				<property name="Modules" value="output"/>
-				<property name="CraftingAreaRecipes" value="playerTableSaw"/>
+				<property name="CraftingAreaRecipes" value="playerSawmill"/>
 			</property>
 			<property name="UnlockedBy" value="craftingWorkstations"/>
 			<property name="CreativeMode" value="Player"/>

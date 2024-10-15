@@ -947,7 +947,7 @@
 	<!-- *** logs from trees make planks in a tablesaw *** -->
 	<remove xpath="//recipe[@name='woodLogPillar100']"/>
 	<insertbefore xpath="//recipe[@name='workbench']">
-		<recipe name="resourceWood" count="10" craft_time="15" craft_area="playerSawmill" craft_exp_gain="0" tags="resourceWood,tablesawCrafting">
+		<recipe name="resourceWood" count="10" craft_time="15" craft_area="playerSawmill" craft_exp_gain="0" tags="resourceWood">
 			<ingredient name="woodLogPillar100" count="1"/>
 		</recipe>
 	</insertbefore>
