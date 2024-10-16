@@ -23,7 +23,7 @@
 			<spawn maxcount="1" respawndelay="2.5" time="Night" entitygroup="EnemyAnimalsForest" spawnDeadChance="0" />
 		</biome>
 		<biome name="pine_forest_GS25">
-			<spawn maxcount="2" respawndelay="1.2" time="Day" entitygroup="ZombiesAll" notags="commercial,industrial,downtown" />
+			<spawn maxcount="2" respawndelay="1.2" time="Day" entitygroup="ZombiesWeakAll" notags="commercial,industrial,downtown" />
 			<spawn maxcount="3" respawndelay="1.2" time="Night" entitygroup="ZombiesNight" notags="commercial,industrial,downtown" />
 			<spawn maxcount="3" respawndelay="0.2" time="Day" entitygroup="ZombiesAll" tags="commercial,industrial" notags="downtown" />
 			<spawn maxcount="4" respawndelay="0.09" time="Night" entitygroup="ZombiesNight" tags="commercial,industrial" notags="downtown" />
