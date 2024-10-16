@@ -700,10 +700,10 @@
 		</recipe>
 	
 	<!-- *** bricks *** -->
-		<recipe name="resourceBricks" count="1" craft_area="forge" tags="perkAdvancedEngineering">
-			<ingredient name="resourceClayLump" count="2"/>
-			<ingredient name="resourceRockSmall" count="2"/>
-			<ingredient name="resourceCrushedSand" count="2"/>
+		<recipe name="resourceBricks" count="1" material_based="true" is_trackable="false" craft_area="forge" tags="perkAdvancedEngineering">
+			<ingredient name="unit_clay" count="10"/>
+			<ingredient name="unit_stone" count="10"/>
+			<ingredient name="unit_glass" count="8"/>
 		</recipe>
 	</append>
 	
