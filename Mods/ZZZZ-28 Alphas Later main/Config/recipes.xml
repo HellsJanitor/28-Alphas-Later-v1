@@ -937,7 +937,14 @@
 	<!-- *** frameshapes recipe *** -->
 	<set xpath="//recipe[@name='frameShapes:VariantHelper']/ingredient[@name='resourceWood']/@count">5</set>
 	<set xpath="//recipe[@name='frameShapes:VariantHelper']/ingredient[@name='resourceWood']/@name">resourceWoodScraps</set>
-
+	
+	<!-- *** brick variant helper *** -->
+	<insertafter xpath="/recipes/recipe[@name='cobblestoneShapes:VariantHelper']">
+		<recipe name="brickShapes:VariantHelper" count="1">
+			<ingredient name="resourceBricks" count="10"/>
+		</recipe>	
+	</insertafter>
+	
 	<!-- *** removes all block crafting except basic frames *** -->
 	<!-- <remove xpath="//recipe[@name='woodShapes:VariantHelper']"/> -->
 	<!-- <remove xpath="//recipe[@name='cobblestoneShapes:VariantHelper']"/> -->
