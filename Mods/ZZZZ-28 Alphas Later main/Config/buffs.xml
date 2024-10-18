@@ -2760,7 +2760,7 @@
 			<stack_type value="ignore"/>
 			<update_rate value="1"/>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="6" buff="buffGoodCompanyFromTrader">
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" buff="buffGoodCompanyFromTrader">
 					<requirement name="EntityTagCompare" target="other" tags="player"/>
 				</triggered_effect>
 			</effect_group>
@@ -2771,7 +2771,7 @@
 			<duration value="5"/>
 		
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-1.5">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-1.25">
 					<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
 				</triggered_effect>
 			</effect_group>

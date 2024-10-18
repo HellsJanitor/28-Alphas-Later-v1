@@ -53,8 +53,6 @@
 			<item group="tools" unique_only="true" count="10"/>
 			<item group="rareTools" unique_only="true" count="2,3"/>
 			<item group="traderElectrical" unique_only="true" count="8,15"/>
-			<!-- <item group="skillMagazines" unique_only="true" count="7"/> -->
-			<!-- <item group="books" unique_only="true" count="3,4"/> -->
 			<item name="toolDewGatherer" count="1,3"/>
 			<item name="toolDewTarp" count="1,3"/>
 			<item name="toolDewFilter" count="1,3"/>
@@ -90,8 +88,6 @@
 			<item group="foodSupplies" count="2,5"/>
 			<item group="groupFoodAll" count="1,3"/>
 			<item group="tools" unique_only="true" count="10"/>
-			<!-- <item group="skillMagazines" unique_only="true" count="7"/> -->
-			<!-- <item group="books" unique_only="true" count="3,4"/> -->
 			<item name="toolDewGatherer" count="1,3"/>
 			<item name="toolDewTarp" count="1,3"/>
 			<item name="toolDewFilter" count="1,3"/>
@@ -125,10 +121,10 @@
 		<trader_items count="all">
 			<item group="skillMagazines" count="23"/>
 			<!-- <item group="librarianBooks" count="23"/> -->
-			<item group="perkBooks" count="125"/>
-			<item group="schematicsModsCommon" count="39"/>
-			<item group="schematicsVehiclesMods" count="7"/>
-			<item group="rareBooks" count="7"/>
+			<item group="perkBooks" count="25"/>
+			<item group="schematicsModsCommon" count="10"/>
+			<item group="schematicsVehiclesMods" count="2"/>
+			<item group="rareBooks" count="2"/>
 		</trader_items>
 	</trader_info>
 	</append>

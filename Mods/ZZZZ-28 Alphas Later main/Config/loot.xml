@@ -73,11 +73,11 @@
 	</insertafter>
 	
 	<append xpath="//lootgroup[@name='groupToolsTiered']">
-		<item group="groupBasic" loot_prob_template="ProbT1"/>
+		<item group="groupBasic" loot_prob_template="ProbT1" force_prob="true"/>
 	</append>
 
 	<append xpath="//lootgroup[@name='groupToolsTieredBonus']">
-		<item group="groupBasic" loot_prob_template="ProbT1"/>
+		<item group="groupBasic" loot_prob_template="ProbT1" force_prob="true"/>
 	</append>
 	
 	<!-- *** adds ammopress (workbench tool) to loot *** -->
