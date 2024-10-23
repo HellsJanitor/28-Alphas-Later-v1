@@ -55,4 +55,6 @@
 			<display_entry name="dCureDespair" title_key="statCureDespair" display_type="Percent"/>
 		</item_display_info>		
 	</append>
+	
+	<set xpath="/ui_display_info/item_display/item_display_info[@display_type='armorFarmerOutfit']/display_entry/@display_type">Decimal1</set>
 </configs>

@@ -768,14 +768,18 @@
 			<property name="CustomIcon" value="piano"/>
 			<property name="DescriptionKey" value="playerPianoDesc"/>
 			<property name="Class" value="Activate"/>
-			<property name="ActivationDistance" value="1"/>			
-			<property name="ActivateSound" value="playerPiano"/>					
+			<property name="ActivateSound" value="playerPiano"/>
+			<!-- <property name="Class" value="GameEvent"/> -->
+			<!-- <property name="ActivateEvent" value="play_piano_sound"/> -->
+			<!-- <property name="DestroyOnEvent" value="false"/> -->
 			<property name="Material" value="Mwood"/>
 			<property name="DisplayType" value="blockMulti"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="Model" value="#@modfolder:Resources/playerPiano.unity3d?playerAudiblePiano"/>
 			<property name="MultiBlockDim" value="2,2,1"/>
-			<property name="ModelOffset" value="0,0,0"/>	
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="CanPickup" value="true" />
+			<property name="TakeDelay" value="15"/>
 			<property name="ImposterExchange" value="imposterBlock" param1="11"/>
 			<property name="WaterFlow" value="permitted"/>
 			<property name="OnlySimpleRotations" value="true"/>
@@ -786,8 +790,44 @@
 			<property class="RepairItems">
 				<property name="resourceWood" value="30"/>
 			</property>
-			<drop event="Harvest" name="resourceWood" count="15" tag="oreWoodHarvest,lumberjackHarvest"/>
-			<drop event="Destroy" name="resourceScrapIron" count="4,10"/>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Destroy" name="playerPiano" count="1" prob="1" tag="salvageHarvest" tool_category="Disassemble"/>
+			<property name="SortOrder1" value="B428"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_building,SC_decor"/>
+		</block>
+		
+		<!-- *** player radio with audio *** -->
+		<block name="playerRadio">
+			<property name="CustomIcon" value="radioHam"/>
+			<property name="DescriptionKey" value="playerRadioDesc"/>
+			<property name="Class" value="Activate"/>
+			<property name="ActivateSound" value="playerRadio"/>
+			<!-- <property name="Class" value="GameEvent"/> -->
+			<!-- <property name="ActivateEvent" value="play_radio_sound"/> -->
+			<!-- <property name="DestroyOnEvent" value="false"/> -->
+			<property name="Material" value="Mmetal_weak"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/playerRadio.unity3d?playerAudibleRadioHam"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="ModelOffset" value="0,0,0"/>	
+			<property name="ImposterExchange" value="imposterBlock" param1="11"/>
+			<property name="CanPickup" value="true" />
+			<property name="TakeDelay" value="15"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="PlacementDistance" value="2"/>
+			<property name="Path" value="solid"/>
+			<property name="EconomicValue" value="0"/>
+			<property name="MaxDamage" value="500"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property class="RepairItems">
+				<property name="resourceScrapPolymers" value="4"/>
+				<property name="resourceElectricParts" value="6"/>
+			</property>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Destroy" name="playerRadio" count="1" prob="1" tag="salvageHarvest" tool_category="Disassemble"/>
 			<property name="SortOrder1" value="B428"/>
 			<property name="SortOrder2" value="0000"/>
 			<property name="FilterTags" value="MC_building,SC_decor"/>
@@ -881,6 +921,7 @@
 		<property name="Texture" value="567"/>
 		<drop event="Harvest" name="resourceCropLavender" count="1" tag="wildCropsHarvest"/>
 		<drop event="Harvest" name="resourceCropLavender" prob="0.5" count="1" tag="bonusCropHarvest"/>
+		<drop event="Harvest" name="resourceCropLavender" count="1" tag="farmerBonusHarvest"/>
 		<property name="SortOrder1" value="B910"/>
 		<property name="SortOrder2" value="0007"/>
 		<property name="CanPickup" value="true" param1="resourceCropLavender"/>
@@ -923,9 +964,13 @@
 			<property name="CustomIcon" value="resourceCropLavenderPlayer"/>
 			<property name="DescriptionKey" value="plantedLavender3HarvestDesc"/>
 			<property name="Texture" value="567"/>
-			<drop event="Harvest" name="resourceCropLavender" count="1" tag="cropHarvest"/>
+			
+			<drop event="Harvest" name="resourceCropLavender" count="2" tag="cropHarvest"/>
 			<drop event="Harvest" name="resourceCropLavender" prob="0.5" count="1" tag="bonusCropHarvest"/>
+			<drop event="Harvest" name="resourceCropLavender" count="1" tag="farmerBonusHarvest"/>
+			<drop event="Harvest" name="plantedLavender1" count="1" tag="farmerBonusSeed"/>
 			<drop event="Destroy" name="plantedLavender1" count="1" prob="0.5"/>
+			
 			<!-- <property name="DowngradeBlock" value="plantedLavender1"/> -->
 			<property name="SortOrder1" value="B954"/>
 			<property name="SortOrder2" value="0002"/>
@@ -989,7 +1034,7 @@
 	<append xpath="//block[@name='piano']">
 		<!-- <property name="CanPickup" value="true"/> -->
 		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-		<drop event="Destroy" name="piano" count="1" prob="1" tag="salvageHarvest" tool_category="Disassemble"/>
+		<drop event="Destroy" name="playerPiano" count="1" prob="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	</append>
 	
 	<!-- *** signs *** -->
@@ -1064,7 +1109,7 @@
 	<append xpath="//block[@name='radioHam']">
 		<!-- <property name="CanPickup" value="true"/> -->
 		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-		<drop event="Destroy" name="radioHam" count="1" prob="1" tag="salvageHarvest" tool_category="Disassemble"/>
+		<drop event="Destroy" name="playerRadio" count="1" prob="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	</append>
 	
 	<!-- *** pictures *** -->

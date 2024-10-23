@@ -120,6 +120,12 @@
 			<gamestage stage="1">
 				<spawn group="burnt_forest_GS1" num="1" maxAlive="1" duration="1"/>
 			</gamestage>
+			<gamestage stage="10">
+				<spawn group="burnt_forest_GS10" num="1" maxAlive="1" duration="1"/>
+			</gamestage>
+			<gamestage stage="25">
+				<spawn group="burnt_forest_GS25" num="1" maxAlive="1" duration="1"/>
+			</gamestage>
 			<gamestage stage="50">
 				<spawn group="burnt_forest_GS50" num="1" maxAlive="1" duration="1"/>
 			</gamestage>
@@ -131,6 +137,12 @@
 			</gamestage>
 			<gamestage stage="200">
 				<spawn group="burnt_forest_GS200" num="1" maxAlive="1" duration="1"/>
+			</gamestage>
+			<gamestage stage="250">
+				<spawn group="burnt_forest_GS250" num="1" maxAlive="1" duration="1"/>
+			</gamestage>
+			<gamestage stage="300">
+				<spawn group="burnt_forest_GS300" num="1" maxAlive="1" duration="1"/>
 			</gamestage>
 		</spawner>
 		<spawner name="ScoutGamestagedSpawner">

@@ -2929,7 +2929,7 @@
 				<requirement name="PlayerItemCount" item_name="MinibikeBundle" operation="GTE" value="1"/>
 				<requirement name="PlayerItemCount" item_name="RuinRipperBundle" operation="GTE" value="1"/>
 				<requirement name="PlayerItemCount" item_name="MotorcycleBundle" operation="GTE" value="1"/>
-				<requirement name="PlayerItemCount" item_name="TheHornetBundle" operation="GTE" value="1"/>
+				<requirement name="PlayerItemCount" item_name="vehicleDuneBuggyBundle" operation="GTE" value="1"/>
 				<requirement name="PlayerItemCount" item_name="4x4Bundle" operation="GTE" value="1"/>
 				<requirement name="PlayerItemCount" item_name="GyroBundle" operation="GTE" value="1"/>
 			</effect_group>
@@ -2938,7 +2938,7 @@
 				<requirement name="PlayerItemCount" item_name="MinibikeBundle" operation="equals" value="0"/>
 				<requirement name="PlayerItemCount" item_name="RuinRipperBundle" operation="equals" value="0"/>
 				<requirement name="PlayerItemCount" item_name="MotorcycleBundle" operation="equals" value="0"/>
-				<requirement name="PlayerItemCount" item_name="TheHornetBundle" operation="equals" value="0"/>
+				<requirement name="PlayerItemCount" item_name="vehicleDuneBuggyBundle" operation="equals" value="0"/>
 				<requirement name="PlayerItemCount" item_name="4x4Bundle" operation="equals" value="0"/>
 				<requirement name="PlayerItemCount" item_name="GyroBundle" operation="equals" value="0"/>
 			</effect_group>
@@ -2954,7 +2954,7 @@
 					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleMinibikePlaceable" operation="GTE" value="1"/>
 					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleRuinRipperPlaceable" operation="GTE" value="1"/>
 					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleMotorcyclePlaceable" operation="GTE" value="1"/>
-					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleTheHornetPlaceable" operation="GTE" value="1"/>
+					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleDuneBuggyPlaceable" operation="GTE" value="1"/>
 					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleTruck4x4Placeable" operation="GTE" value="1"/>
 					<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleGyrocopterPlaceable" operation="GTE" value="1"/>
 				</requirements>
@@ -2964,7 +2964,7 @@
 				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleMinibikePlaceable" operation="equals" value="0"/>
 				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleRuinRipperPlaceable" operation="equals" value="0"/>
 				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleMotorcyclePlaceable" operation="equals" value="0"/>
-				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleTheHornetPlaceable" operation="equals" value="0"/>
+				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleDuneBuggyPlaceable" operation="equals" value="0"/>
 				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleTruck4x4Placeable" operation="equals" value="0"/>
 				<requirement name="HJPlayerItemCount, HJPlayerItemCount" item_name="vehicleGyrocopterPlaceable" operation="equals" value="0"/>
 			</effect_group>

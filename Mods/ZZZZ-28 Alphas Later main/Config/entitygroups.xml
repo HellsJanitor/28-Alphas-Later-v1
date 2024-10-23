@@ -28,8 +28,7 @@
 		zombieJoeRotten
 		zombieSteveRotten 
 		zombieTomClarkRotten  
-		zombieBusinessManRotten 
-		zombieBurntRotten 
+		zombieBusinessManRotten		 
 		zombieBoeRotten
 		zombieJanitorRotten 
 		zombieInmateRotten
@@ -39,6 +38,12 @@
 		zombieYoRotten
 		zombieSkateboarderRotten
 		zombieSteveCrawlerRotten
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3
 		</entitygroup>
 		<entitygroup name="ZombiesWeakAll">
 		zombieArleneRotten
@@ -48,8 +53,7 @@
 		zombieJoeRotten
 		zombieSteveRotten 
 		zombieTomClarkRotten  
-		zombieBusinessManRotten 
-		zombieBurntRotten 
+		zombieBusinessManRotten 		 
 		zombieSpiderRotten 
 		zombieBoeRotten 
 		zombieMaleHazmatRotten 
@@ -69,6 +73,17 @@
 		zombieSkateboarderRotten 
 		zombieSoldierRotten 
 		zombieSteveCrawlerRotten
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3
+		</entitygroup>
+		
+		<entitygroup name="zombiesBurntWeak">
+		zombieBurntRotten, .2
+		zombieSteveCrawlerRotten, .05
 		</entitygroup>
 	</insertafter>
 	
@@ -143,6 +158,12 @@
 		zombieSkateboarderRotten 
 		zombieSoldierRotten 
 		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3
 	</csv>
 	
 	<csv xpath="/entitygroups/entitygroup[@name='ZombiesForestDowntownNight']/text()" delim="\n" op="add">
@@ -484,10 +505,11 @@
 	</csv>
 	
 	<csv xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']/text()" delim="\n" op="add">
-		animalSnake, 5
+		animalSnake, 10
 		animalZombieVulture, 30
 		animalZombieDog, 20
-		animalZombieBear, 5		
+		animalZombieBear, 10	
+		animalMutantBug, 30		
 	</csv>
 	<!-- animalMutantBug, 40 -->
 	<csv xpath="/entitygroups/entitygroup[@name='ZombieBadassGroup']/text()" delim="\n" op="add">
@@ -664,6 +686,8 @@
 	zombieSkateboarderRotten
 	zombieSteveCrawlerRotten
 	zombieYoRotten
+	zombieGirl1
+	zombieGuy3
 		</entitygroup>
 	</insertafter>
 	
@@ -680,6 +704,8 @@
 	zombieMarleneRotten
 	zombieSkateboarderRotten
 	zombieJoeRotten
+	zombieGirl2
+	zombieGuy2
 		</entitygroup>
 	</insertafter>
 	
@@ -713,6 +739,8 @@
 	zombieSkateboarderRotten
 	zombieBoeRotten
 	zombieMoeRotten
+	zombieGirl3
+	zombieGuy1
 		</entitygroup>
 	</insertafter>
 	
@@ -1014,7 +1042,13 @@
 		zombieYoRotten 
 		zombieUtilityWorkerRotten		
 		zombieSkateboarderRotten
-		zombieSteveCrawlerRotten 
+		zombieSteveCrawlerRotten
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3		
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS2">
 		zombieArleneRotten
@@ -1034,7 +1068,13 @@
 		zombieYoRotten 
 		zombieUtilityWorkerRotten		
 		zombieSkateboarderRotten
-		zombieSteveCrawlerRotten  
+		zombieSteveCrawlerRotten
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3			
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS5">
 		zombieArleneRotten
@@ -1054,7 +1094,13 @@
 		zombieYoRotten 
 		zombieUtilityWorkerRotten		
 		zombieSkateboarderRotten
-		zombieSteveCrawlerRotten 
+		zombieSteveCrawlerRotten
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3		
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS8">
 		zombieArleneRotten
@@ -1075,6 +1121,12 @@
 		zombieUtilityWorkerRotten		
 		zombieSkateboarderRotten
 		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3		
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS11">
 		zombieArleneRotten
@@ -1095,6 +1147,12 @@
 		zombieUtilityWorkerRotten		
 		zombieSkateboarderRotten
 		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3		
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS14">
 		zombieArleneRotten
@@ -1123,6 +1181,12 @@
 		zombieSkateboarderRotten 
 		zombieSoldierRotten 
 		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3		
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS18">
 		zombieArleneRotten
@@ -1151,71 +1215,184 @@
 		zombieSkateboarderRotten 
 		zombieSoldierRotten 
 		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3		
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS22">
-		zombieDarlene
-		zombieBoe
-		zombieUtilityWorker
-		zombieYo
-		zombiePartyGirl
-		zombieJanitor
-		zombieTomClark
-		zombieBusinessMan
-		zombieMarlene
-		zombieSteve
-		zombieSteveCrawler, .5
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten
+		zombieFatCopRotten
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS27">
-		zombieJoe
-		zombieDarlene
-		zombieMoe
-		zombieYo
-		zombiePartyGirl
-		zombieMarlene
-		zombieBusinessMan
-		zombieUtilityWorker
-		zombieTomClark
-		zombieNurse
-		zombieSteve
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten
+		zombieFatCopRotten
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS31">
-		zombiePartyGirl
-		zombieSteve
-		zombieBusinessMan
-		zombieYo
-		zombieBoe
-		zombieArlene
-		zombieJanitor
-		zombieJoe
-		zombieSteveCrawler, .5
-		zombieUtilityWorker
-		zombieTomClark
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten
+		zombieFatCopRotten
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS36">
-		zombieBusinessMan
-		zombieDarlene
-		zombieJoe
-		zombieLumberjack, .31
-		zombieNurse
-		zombieMoe
-		zombieSpider, .22
-		zombieArlene
-		zombieJanitor
-		zombieSteve
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten
+		zombieFatCopRotten
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		zombieSteveCrawler, .5
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS41">
 		zombieSteveCrawler, .5
-		zombieJoe
-		zombieBusinessMan
-		zombieDarlene
-		zombieNurse
-		zombieLumberjack, .36
-		zombieSpider, .25
-		zombieMarlene
-		zombieUtilityWorker
-		zombieJanitor
-		zombiePartyGirl
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten
+		zombieFatCopRotten
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS46">
 		zombieArlene
@@ -1229,6 +1406,38 @@
 		zombieMarlene
 		zombieMaleHazmat, .38
 		zombieMoe
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten
+		zombieFatCopRotten
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="sleeperHordeStageGS52">
 		zombieUtilityWorker
@@ -5977,10 +6186,17 @@
 		zombieBikerRotten 
 		zombieLumberjackRotten 
 		zombieFemaleFatRotten  
-		zombieFatHawaiianRotten 
+		zombieFatHawaiianRotten
+		zombieFatCopRotten
 		zombieSkateboarderRotten 
 		zombieSoldierRotten 
 		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="defenseHordeStageGS2">
 		zombieArleneRotten
@@ -6008,6 +6224,12 @@
 		zombieSkateboarderRotten 
 		zombieSoldierRotten 
 		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="defenseHordeStageGS5">
 		zombieArleneRotten
@@ -6035,6 +6257,12 @@
 		zombieSkateboarderRotten 
 		zombieSoldierRotten 
 		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="defenseHordeStageGS8">
 		zombieArleneRotten
@@ -6062,6 +6290,12 @@
 		zombieSkateboarderRotten 
 		zombieSoldierRotten 
 		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="defenseHordeStageGS11">
 		zombieArleneRotten
@@ -6089,6 +6323,12 @@
 		zombieSkateboarderRotten 
 		zombieSoldierRotten 
 		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		zombieUtilityWorker
 		</entitygroup>
 		<entitygroup name="defenseHordeStageGS14">
@@ -6117,6 +6357,12 @@
 		zombieSkateboarderRotten 
 		zombieSoldierRotten 
 		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		zombieUtilityWorker
 		zombieMarlene
 		</entitygroup>
@@ -6146,6 +6392,12 @@
 		zombieSkateboarderRotten 
 		zombieSoldierRotten 
 		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		zombieDarlene
 		zombieYo
 		</entitygroup>
@@ -6153,50 +6405,145 @@
 		zombieDarlene
 		zombieBoe
 		zombieUtilityWorker
-		zombieYo
-		zombiePartyGirl
-		zombieJanitor
-		zombieTomClark
-		zombieBusinessMan
-		zombieMarlene
-		zombieSteve
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="defenseHordeStageGS27">
 		zombieJoe
 		zombieDarlene
 		zombieMoe
-		zombieYo
-		zombiePartyGirl
-		zombieMarlene
-		zombieBusinessMan
-		zombieUtilityWorker
-		zombieTomClark
-		zombieNurse
-		zombieSteve
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="defenseHordeStageGS31">
 		zombiePartyGirl
 		zombieSteve
 		zombieBusinessMan
-		zombieYo
-		zombieBoe
-		zombieArlene
-		zombieJanitor
-		zombieJoe
-		zombieUtilityWorker
-		zombieTomClark
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="defenseHordeStageGS36">
 		zombieBusinessMan
 		zombieDarlene
 		zombieJoe
-		zombieLumberjack, .31
-		zombieNurse
-		zombieMoe
-		zombieSpider, .22
-		zombieArlene
-		zombieJanitor
-		zombieSteve
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="defenseHordeStageGS41">
 		zombieJoe
@@ -6205,10 +6552,37 @@
 		zombieNurse
 		zombieLumberjack, .36
 		zombieSpider, .25
-		zombieMarlene
-		zombieUtilityWorker
-		zombieJanitor
-		zombiePartyGirl
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="defenseHordeStageGS46">
 		zombieArlene
@@ -6218,10 +6592,37 @@
 		zombieBusinessMan
 		zombieYo
 		zombieLumberjack, .41
-		zombiePartyGirl
-		zombieMarlene
-		zombieMaleHazmat, .38
-		zombieMoe
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="defenseHordeStageGS52">
 		zombieUtilityWorker
@@ -10136,103 +10537,268 @@
 	
 		<!-- screamer horde -->
 		<entitygroup name="scoutHordeStageGS1">
-		zombieJanitorRotten
+		zombieArleneRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
 		zombieNurseRotten
 		zombieJoeRotten
-		zombieMarleneRotten
-		zombieArleneRotten
-		zombieBoeRotten
-		zombieBusinessManRotten
-		zombieTomClarkRotten
-		zombieYoRotten
-		zombieSteveRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="scoutHordeStageGS2">
-		zombieBoeRotten
-		zombieJanitorRotten
-		zombieTomClarkRotten
-		zombieYoRotten
+		zombieArleneRotten
+		zombieMarleneRotten
 		zombiePartyGirlRotten
 		zombieNurseRotten
-		zombieMoeRotten
-		zombieDarleneRotten
-		zombieSteveRotten
-		zombieMarleneRotten
-		zombieArleneRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="scoutHordeStageGS5">
-		zombieYoRotten
-		zombieTomClarkRotten
-		zombieBusinessManRotten
-		zombieJanitorRotten
-		zombieJoeRotten
-		zombieMoeRotten
-		zombieSteveRotten
-		zombieNurseRotten
+		zombieArleneRotten
 		zombieMarleneRotten
-		zombieBoeRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="scoutHordeStageGS8">
-		zombieBusinessManRotten
-		zombieMoeRotten
-		zombieSteveRotten
-		zombieJanitorRotten
-		zombieYoRotten
-		zombieNurseRotten
-		zombieTomClarkRotten
-		zombieBoeRotten
+		zombieArleneRotten
 		zombieMarleneRotten
-		zombieDarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
 		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="scoutHordeStageGS11">
-		zombieDarleneRotten
-		zombieJoeRotten
-		zombieMoeRotten
-		zombieYoRotten
-		zombieJanitorRotten
-		zombieMarleneRotten
-		zombieBusinessManRotten
-		zombieBoeRotten
 		zombieArleneRotten
-		zombieTomClarkRotten
-		zombieUtilityWorkerRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="scoutHordeStageGS14">
-		zombieJoeRotten
-		zombieNurseRotten
-		zombieTomClarkRotten
-		zombieMoeRotten
-		zombieYoRotten
-		zombieBoeRotten
-		zombiePartyGirlRotten
-		zombieJanitorRotten
-		zombieUtilityWorkerRotten
+		zombieArleneRotten
 		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="scoutHordeStageGS18">
-		zombieSteveRotten
-		zombieTomClarkRotten
-		zombieJanitorRotten
-		zombieUtilityWorkerRotten
-		zombiePartyGirlRotten
-		zombieMarleneRotten
 		zombieArleneRotten
-		zombieMoeRotten
-		zombieDarleneRotten
-		zombieYoRotten
+		zombieMarleneRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="scoutHordeStageGS22">
-		zombieDarleneRotten
-		zombieBoeRotten
-		zombieUtilityWorkerRotten
-		zombieYoRotten
-		zombiePartyGirlRotten
-		zombieJanitorRotten
-		zombieTomClarkRotten
-		zombieBusinessManRotten
+		zombieArleneRotten
 		zombieMarleneRotten
-		zombieSteveRotten
+		zombiePartyGirlRotten
+		zombieNurseRotten
+		zombieJoeRotten
+		zombieSteveRotten 
+		zombieTomClarkRotten  
+		zombieBusinessManRotten 
+		zombieBurntRotten 
+		zombieSpiderRotten 
+		zombieBoeRotten 
+		zombieMaleHazmatRotten 
+		zombieJanitorRotten 
+		zombieMoeRotten 
+		zombieLabRotten 
+		zombieDarleneRotten 
+		zombieYoRotten 
+		zombieUtilityWorkerRotten  
+		zombieBikerRotten 
+		zombieLumberjackRotten 
+		zombieFemaleFatRotten  
+		zombieFatHawaiianRotten 
+		zombieSkateboarderRotten 
+		zombieSoldierRotten 
+		zombieSteveCrawlerRotten 
+		zombieGirl1
+		zombieGirl2
+		zombieGirl3
+		zombieGuy1
+		zombieGuy2
+		zombieGuy3	
 		</entitygroup>
 		<entitygroup name="scoutHordeStageGS27">
 		zombieJoe
@@ -14241,7 +14807,7 @@
 	</append>
 		
 	<csv xpath="/entitygroups/entitygroup[starts-with(@name,'feralHordeStage')]/text()" delim="\n" op="add">
-		zombieBunkerBuster, .9
+		zombieBunkerBuster, .5
 	</csv>	
 
 	<csv xpath="/entitygroups/entitygroup[substring-after(@name, 'feralHordeStageGS') &gt; 149]/text()" delim="\n" op="add">
@@ -14274,7 +14840,8 @@
 		zombieLumberjackMutated, .4
 		zombieWightMutated, .4
 		zombieMutatedMutated, .4
-		zombieSteveCrawlerMutated, .4		
+		zombieSteveCrawlerMutated, .4
+		animalMutantBug, .4
 	</csv>
 	
 	<csv xpath="/entitygroups/entitygroup[substring-after(@name, 'feralHordeStageGS') &gt; 199]/text()" delim="\n" op="add">

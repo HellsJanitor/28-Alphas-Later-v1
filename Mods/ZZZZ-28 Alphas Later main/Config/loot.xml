@@ -449,8 +449,8 @@
 	
 	<insertafter xpath="//lootgroup[@name='motorcycleParts']">
 	<lootgroup name="buggyParts">
-		<item name="vehicleTheHornetChassis"/>
-		<item name="vehicleTheHornetAccessories"/>
+		<item name="vehicleDuneBuggyChassis"/>
+		<item name="vehicleDuneBuggyAccessories"/>
 		<item name="vehicleWheels"/>
 		<item name="smallEngine"/>
 		<item name="carBattery"/>

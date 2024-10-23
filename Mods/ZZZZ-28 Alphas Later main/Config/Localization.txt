@@ -167,6 +167,7 @@ antivenom,"Anti-venom"
 antivenomDesc,"Use this to instantly remove the effects of venom.\n\nCan be crafted at the campfire, in a cooking pot, or use a beaker to save on ingredients."
 armorSteelGroupDesc,Heavy armor will encumber you but provides good protection against damage.\nIt will not protect you from the weather.\n\nRepair with a Steel Armor Repair Kit.\nScrap to steel armor parts.
 armorMilitaryGroupDesc,Light armor will encumber you a little and provides some protection against damage.\nIt will not protect you from the weather.\n\nRepair with a Military Armour Repair Kit.\nScrap to military armor parts.
+armorFarmerOutfitDesc,"Medium Armor\nBeing ready for the square dance isn't all these overalls are good for.\n[00ff00]HARVEST[-], not [ff0000]'collect'[-], an extra crop per quality level.\n\nFull Set Bonus: Gain more health and stamina from food."
 attAgilityRank01LongDesc,"You are as clumsy as they come but you still do 200% head shot damage and have a 1% chance to dismember with bows, handguns, and knives."
 attAgilityRank02LongDesc,"You didn't make the football team but that didn't stop you from practicing. Deal 210% head shot damage and have a 2% chance to dismember with bows, handguns and knives."
 attAgilityRank03LongDesc,"You are still loud and clunky but can deal 220% head shot damage and have a 3% chance to dismember with bows, handguns and knives."
@@ -470,6 +471,10 @@ meleeWpnSpearT0Pitchfork,"Hells' Wrath"
 meleeWpnSpearT0PitchforkDesc,"Legends tell of its origin: crafted by a vengeful farmer who sought to protect his land from marauding invaders. With every thrust and sweep, Hells' Wrath channels the fury of the earth itself, stunning foes in it's tracks. This pitchfork is not merely a tool; it embodies the relentless spirit of those who defend their home, turning the very essence of agriculture into a weapon of epic proportions."
 noteDuke01,Anonymous Help
 noteDuke01Desc,"You don't know me, but I was able to sneak you some food, water and medical supplies in a backpack. I'll do what I can to sneak you some extra supplies by plane. Be safe out there!\n\nPS: I packed your favourite weapon.\n\nA good samaritan."
+playerPiano,Piano
+playerPianoDesc,"Place this block and interact with it.\n\nGo on - try it. You know you want to ..."
+playerRadio,Ham Radio
+playerRadioDesc,"Place this block and interact with it.\n\nGo on - try it. You know you want to ..."
 PrimitiveRepairKit,Basic Repair Kit
 PrimitiveRepairKitDesc,"This Repair Kit is used to repair Primitive Armour"
 resourceFertilizer,Fertilizer
@@ -603,7 +608,7 @@ resourceScrapBooks,Scrap Paper
 resourceScrapBooksDesc,"Use this Scrap Paper at the Librarian (found in the trader compounds) to purchase magazines, books and schematics"
 resourceWaterFilter,Water Filter
 resourceWaterFilterDesc,"A tool used to convert murky water to drinkable water, used in the dew collector."
-resourceWoodDesc,"A piece of wood. Great for building tools and constructing wood frames for building.\n\nPlace logs like a block and chop with an axe, or use a tablesaw for a higher yield."
+resourceWoodDesc,"A piece of wood. Great for building tools and constructing wood frames for building.\n\nPlace logs like a block and chop with an axe, or use a sawmill for a higher yield."
 resourceWoodScraps,Wood scraps
 resourceWoodScrapsDesc,"Small fragments of wood.\n\nCan be used for fuel and basic building blocks, but not much else."
 resourceCropLavender,Lavender Flower
@@ -656,7 +661,7 @@ tablesawTip_title,Tablesaw
 TheCure,"The T-Virus Cure"
 TheCureDesc,"Cures 100% of infections, and protects against re-infection."
 TheCureDescShort,Immune
-TheHornetBundle,The Hornet
+vehicleDuneBuggyBundle,The Hornet
 TheHornetBundleDesc,Take this bundle to where you want to place your dune buggy [FFC800]BEFORE[-] you open it!
 thrownAmmoAntiRadPipeBomb,Rad-removing Pipe Bomb
 thrownAmmoAntiRadPipeBombDesc,"Make pipe bombs with gunpowder, pipes & plant fibers.\nLight with [action:local:Secondary]\nThrow with [action:local:Primary]\n\nContains radiation removing properties."
@@ -670,16 +675,16 @@ toolBellowsDesc,A tool that can be installed in a forge. It increases air flow a
 ttItemNeedsRepair,"This item is knackered and needs fixing"
 ttRepairBeforePickup,"It's knackered and needs repairing before picking it up."
 venomDesc,"Key ingredient for antivenom."
-vehicleTheHornet,The Hornet
-vehicleTheHornetChassis,The Hornet Chassis
-vehicleTheHornetAccessories,The Hornet Accessories
+vehicleDuneBuggy,The Hornet
+vehicleDuneBuggyChassis,The Hornet Chassis
+vehicleDuneBuggyAccessories,The Hornet Accessories
 vehicleRuinRipper,The Ruin Runner
 vehicleRuinRipperChassis,The Ruin Runner Chassis
 vehicleRuinRipperHandlebars,The Ruin Runner Handlebars
 vehiclesT2,"Tier 2: Minibike, Dirt Bike, Oil, & Gas"
 vehiclesT3,"Tier 3: Motorcycle, Dune Buggy & Stacks of Gas Cans"
 vehicleRuinRipperPlaceable,The Ruin Runner
-vehicleTheHornetPlaceable,The Hornet
+vehicleDuneBuggyPlaceable,The Hornet
 woodLogPillar100Desc,Wood logs are good for crude walls or palisades or as fuel for campfires.\n\nPlace them as a block and chop them with an axe for wood planks.
 workstationsT3-2,Tier 2: Ammo Press
 workstationsT4-1,Tier 1: Chemistry Station
@@ -839,22 +844,28 @@ zombieBunkerBuster,Bunker Buster
 npcTraderRed,Trader Red
 npcTraderHells,Trader Hells
 npcTraderBooks,Trader Nancy
-hellsZombieHungryMutant,Hungry Mutant
-hellsZombieHumanExperiment,Human Experiment
-hellsZombieParasite,Parasitic Mutant
-hellsZombieGiantMutant,Giant Mutant
-hellsZombieBuffedMutant,Buffed Mutant
-hellsZombieBlindMutant,Blind Hunter
-hellsZombieHeavyDemon,Nyaphim
-hellsZombieMutant4,Mutant Neomorph
-hellsZombieDoomDemon,Nyaphim Exo
-hellsZombieMutant1,Mutant Amorph
-hellsZombieMutantTentacles,Mutant Hypermorph
-hellsZombieMutantHeadHunter,Mutant Hypomorph
-hellsZombieMutantBoomer,Mutated Boomer
-hellsZombieMutantReaper,Mutant Reaper
-hellsZombieWendigo1,Lupine Mutant
-hellsZombieWendigo2,Canine Mutant
+zombieHellsHungryMutant,Hungry Mutant
+zombieHellsHumanExperiment,Human Experiment
+zombieHellsParasite,Parasitic Mutant
+zombieHellsGiantMutant,Giant Mutant
+zombieHellsBuffedMutant,Buffed Mutant
+zombieHellsBlindMutant,Blind Hunter
+zombieHellsHeavyDemon,Nyaphim
+zombieHellsMutant4,Mutant Neomorph
+zombieHellsDoomDemon,Nyaphim Exo
+zombieHellsMutant1,Mutant Amorph
+zombieHellsMutantTentacles,Mutant Hypermorph
+zombieHellsMutantHeadHunter,Mutant Hypomorph
+zombieHellsMutantBoomer,Mutated Boomer
+zombieHellsMutantReaper,Mutant Reaper
+zombieHellsWendigo1,Lupine Mutant
+zombieHellsWendigo2,Canine Mutant
+zombieGirl1,Polly
+zombieGirl2,Holly
+zombieGirl3,Molly
+zombieGuy1,Barry
+zombieGuy2,Harry
+zombieGuy3,Larry
 animalMutantBug,Mutant Bug
 animalCockroach,Mutated Cockroach
 trader_red,Trader Red

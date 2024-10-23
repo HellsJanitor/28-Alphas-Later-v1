@@ -93,7 +93,7 @@
 	
 	<!-- *** The Hornet *** -->
 	<append xpath="/recipes">
-		<recipe name="vehicleTheHornetAccessories" count="1" craft_time="210" craft_area="workbench" tags="perkGreaseMonkey,learnable,workbenchCrafting">
+		<recipe name="vehicleDuneBuggyAccessories" count="1" craft_time="210" craft_area="workbench" tags="perkGreaseMonkey,learnable,workbenchCrafting">
 			<ingredient name="resourceElectricParts" count="25"/>
 			<ingredient name="resourceHeadlight" count="8"/>
 			<ingredient name="resourceMetalPipe" count="50"/>
@@ -104,7 +104,7 @@
 			</effect_group>
 		</recipe>
 
-		<recipe name="vehicleTheHornetChassis" count="1" craft_time="210" craft_area="workbench" tags="perkGreaseMonkey,learnable,workbenchCrafting">
+		<recipe name="vehicleDuneBuggyChassis" count="1" craft_time="210" craft_area="workbench" tags="perkGreaseMonkey,learnable,workbenchCrafting">
 			<ingredient name="resourceForgedSteel" count="150"/>
 			<ingredient name="resourceMechanicalParts" count="30"/>
 			<ingredient name="resourceDuctTape" count="15"/>
@@ -115,10 +115,10 @@
 			</effect_group>
 		</recipe>
 
-		<recipe name="TheHornetBundle" count="1" craft_time="800" craft_area="workbench" craft_tool="meleeToolSalvageT1Wrench" tags="workbenchCrafting,perkGreaseMonkey">
+		<recipe name="vehicleDuneBuggyBundle" count="1" craft_time="800" craft_area="workbench" craft_tool="meleeToolSalvageT1Wrench" tags="workbenchCrafting,perkGreaseMonkey">
 			<ingredient name="vehicleWheels" count="4"/>
-			<ingredient name="vehicleTheHornetChassis" count="1"/>
-			<ingredient name="vehicleTheHornetAccessories" count="1"/>
+			<ingredient name="vehicleDuneBuggyChassis" count="1"/>
+			<ingredient name="vehicleDuneBuggyAccessories" count="1"/>
 			<ingredient name="smallEngine" count="1"/>
 			<ingredient name="carBattery" count="1"/>
 		</recipe>

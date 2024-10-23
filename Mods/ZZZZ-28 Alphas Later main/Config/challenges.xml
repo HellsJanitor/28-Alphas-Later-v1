@@ -5,8 +5,8 @@
 	<set xpath="//challenges/challenge[@name='gatherResourcesStoneAxe']/objective[@item='resourceWood']/@count">3</set>
 	<set xpath="//challenges/challenge[@name='gatherResourcesStoneAxe']/objective[@item='resourceWood']/@item">woodLogPillar100</set>
 	
-	<!-- <set xpath="/challenges/challenge[starts-with (@name,'farming')]/objective/@type">Gather</set> -->
-	<!-- <removeattribute xpath="/challenges/challenge[starts-with (@name,'farming')]/objective/@block_tag"/> -->
+	<set xpath="/challenges/challenge[starts-with (@name,'farming')]/objective/@type">Gather</set>
+	<removeattribute xpath="/challenges/challenge[starts-with (@name,'farming')]/objective/@block_tag"/>
 	
 	<remove xpath="/challenges/challenge[@name='scrapItems']"/>	
 	<remove xpath="/challenges/challenge[@name='placeDewCollector']"/>	

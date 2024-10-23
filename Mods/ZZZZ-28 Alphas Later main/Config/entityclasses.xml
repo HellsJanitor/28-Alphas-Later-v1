@@ -524,7 +524,98 @@
 	
 	<!-- *** new zombies *** -->
 	<append xpath="/entity_classes">
-	
+	<!-- testing -->
+		<entity_class name="zombieGirl1" extends="zombieTemplateSlimFemale">
+			<property name="SizeScale" value="1.1"/>
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Mesh" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGirl1"/>
+			<property name="AltMats" value="#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl1B.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl1C.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl1D.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl1E.mat"/>
+			<!-- Gameplay -->
+			<property name="ExperienceGain" value="300"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.2"/>
+				<passive_effect name="HealthMax" operation="base_set" value="65"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-5"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieGirl2" extends="zombieTemplateSlimFemale">
+			<property name="SizeScale" value="1.1"/>
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Mesh" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGirl2"/>
+			<property name="AltMats" value="#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl2B.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl2C.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl2D.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl2E.mat"/>
+			<!-- Gameplay -->
+			<property name="ExperienceGain" value="300"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.2"/>
+				<passive_effect name="HealthMax" operation="base_set" value="65"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-5"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieGirl3" extends="zombieTemplateSlimFemale">
+			<property name="SizeScale" value="1.1"/>
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Mesh" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGirl3"/>
+			<property name="AltMats" value="#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl3B.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl3C.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl3D.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl3E.mat"/>
+			<!-- Gameplay -->
+			<property name="ExperienceGain" value="300"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.2"/>
+				<passive_effect name="HealthMax" operation="base_set" value="65"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-5"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieGuy1" extends="zombieTemplateMale">
+			<property name="SizeScale" value="1.1"/>
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Mesh" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy1"/>
+			<property name="AltMats" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy1B.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy1C.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy1D.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy1E.mat"/>
+			<!-- Gameplay -->
+			<property name="ExperienceGain" value="300"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.2"/>
+				<passive_effect name="HealthMax" operation="base_set" value="65"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-5"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieGuy2" extends="zombieTemplateMale">
+			<property name="SizeScale" value="1.1"/>
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Mesh" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy2"/>
+			<property name="AltMats" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy2B.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy2C.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy2D.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy2E.mat"/>
+			<!-- Gameplay -->
+			<property name="ExperienceGain" value="300"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.2"/>
+				<passive_effect name="HealthMax" operation="base_set" value="65"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-5"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieGuy3" extends="zombieTemplateMale">
+			<property name="SizeScale" value="1.1"/>
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="Mesh" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy3"/>
+			<property name="AltMats" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy3B.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy3C.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy3D.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy3E.mat"/>
+			<!-- Gameplay -->
+			<property name="ExperienceGain" value="300"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.2"/>
+				<passive_effect name="HealthMax" operation="base_set" value="65"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="-5"/>
+			</effect_group>
+		</entity_class>
+
+		
 	<!-- *** horde night bunker buster *** -->
 		<entity_class name="zombieBunkerBuster" extends="zombieBurnt">
 			<property name="UserSpawnType" value="Menu"/>
@@ -3522,15 +3613,16 @@
 		</entity_class>
 			
 		<entity_class name="animalMutantBug" extends="animalTemplateHostile">
-			<property name="SizeScale" value=".45"/>
-			<property name="Mesh" value="#@modfolder:Resources/mutantbug.unity3d?mutantbug"/>
+			<property name="SizeScale" value=".8"/>
+			<property name="Mesh" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonsterSM"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,animal,hostile,mutant"/>
 			<property name="AvatarController" value="AvatarAnimalController"/>
 			<property name="LookAtAngle" value="0"/>
 			<property name="IsAnimalEntity" value="true"/>
-			<property name="IsEnemyEntity" value="true"/><!-- Set this if you want this entity to be spawned when user chooses 'enemy entities off' -->
+			<property name="IsEnemyEntity" value="true"/>
 			<property name="Faction" value="animals"/>
+			<property name="AltMats" value="#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBlack.mat,#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBlue.mat,#@modfolder:Resources/mutantbug.unity3d?InsectMonsterBrown.mat"/>
 			
 			<property name="ModelType" value="Standard"/>
 			<property name="HasRagdoll" value="true"/>
@@ -3539,8 +3631,8 @@
 			<property name="RootMotion" value="false"/>
 			<property name="RagdollOnDeathChance" value=".5"/>
 
-			<property name="SoundRandomTime" value="45.0"/>
-			<property name="SoundAlertTime" value="25.0"/>
+			<property name="SoundRandomTime" value="20"/>
+			<property name="SoundAlertTime" value="10"/>
 			<property name="SoundHurt" value="Animals/Snake/snakepain"/>
 			<property name="SoundDeath" value="Animals/Snake/snakedeath"/>
 			<property name="SoundRandom" value="Animals/Snake/snakeroam"/>
@@ -3563,9 +3655,9 @@
 			<property name="AITarget-5" value=""/>
 
 			<!-- Gameplay  -->
-			<property name="MoveSpeed" value=".45"/>
-			<property name="MoveSpeedNight" value=".3"/>
-			<property name="MoveSpeedAggro" value="1.2, 1.3"/>
+			<property name="MoveSpeed" value=".2"/>
+			<property name="MoveSpeedNight" value=".25"/>
+			<property name="MoveSpeedAggro" value="1, 1.1"/>
 			<property name="MoveSpeedPanic" value="1.5"/>
 
 			<property name="HandItem" value="meleeHandAnimalMutantBug"/>
@@ -3580,7 +3672,7 @@
 			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="250"/>
-			</effect_group>
+			</effect_group>			
 		</entity_class>		
 		
 	<!-- *** hazmat loot bags *** -->
@@ -3668,12 +3760,12 @@
 			</effect_group>
 		</entity_class>			
 		
-	<!-- *** The Hornet *** -->
-		<entity_class name="vehicleTheHornet">
+	<!-- *** The Hornet *** -->		
+		<entity_class name="vehicleDuneBuggy">
 			<property name="Class" value="EntityVJeep"/>
 			<property name="Tags" value="vehicle,usesGas"/>
 			<property name="Parent" value="Cars"/>
-			<property name="Prefab" value="#@modfolder:Resources/HornetMKII.unity3d?The_Hornet_Mark_2"/>
+			<property name="Prefab" value="#@modfolder:Resources/DuneBuggy.unity3d?DuneBuggyV1"/>
 			<property name="ModelType" value="Standard"/>
 			<property name="SurfaceCategory" value="metal"/>
 			<property name="IgnoreTrigger" value="true"/>

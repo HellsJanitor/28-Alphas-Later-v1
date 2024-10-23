@@ -19,7 +19,31 @@
         </action>
 	</append>
 	
-	<append xpath="/gameevents">	
+	<append xpath="/gameevents">
+	<!-- *** piano audio *** -->
+	<action_sequence name="play_piano_sound">
+		<property name="action_type" value="Game"/>
+		<property name="target_type" value="Block"/>
+		<property name="allow_while_dead" value="false"/>
+		<action class="PlaySound">
+			<property name="sound" value="playerPiano"/>
+			<property name="can_disable" value="true" />
+			<property name="phase" value="1"/>
+		</action>
+	</action_sequence>
+	
+	<!-- *** radio audio *** -->
+	<action_sequence name="play_radio_sound">
+		<property name="action_type" value="Game"/>
+		<property name="target_type" value="Block"/>
+		<property name="allow_while_dead" value="false"/>
+		<action class="PlaySound">
+			<property name="sound" value="playerRadio"/>
+			<property name="can_disable" value="true" />
+			<property name="phase" value="1"/>
+		</action>
+	</action_sequence>
+	
 	<!-- *** prevents use of vehicles underwater *** -->	
 	<action_sequence name="buff_novehicle_submerged">
 		<property name="category" value="twitch_actions" />
