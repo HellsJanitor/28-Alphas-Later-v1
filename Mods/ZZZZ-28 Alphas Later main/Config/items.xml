@@ -2902,13 +2902,13 @@
 	</set>
 	
 	<!-- *** modify blade(s) base damage *** -->
-	<set xpath="//item[@name='meleeWpnBladeT0BoneKnife']/effect_group[@name='meleeWpnBladeT0BoneKnife']//passive_effect[@name='EntityDamage'][@operation='base_set']/@value">6</set>
+	<!-- <set xpath="//item[@name='meleeWpnBladeT0BoneKnife']/effect_group[@name='meleeWpnBladeT0BoneKnife']//passive_effect[@name='EntityDamage'][@operation='base_set']/@value">6</set> -->
 	<!-- <set xpath="//item[@name='meleeWpnBladeT0BoneKnife']/effect_group[@name='Power Attack']//passive_effect[@value='5.1']/@value">4</set> -->
 	
-	<set xpath="//item[@name='meleeWpnBladeT1HuntingKnife']/effect_group[@name='meleeWpnBladeT1HuntingKnife']//passive_effect[@name='EntityDamage'][@operation='base_set']/@value">12.5</set>
+	<!-- <set xpath="//item[@name='meleeWpnBladeT1HuntingKnife']/effect_group[@name='meleeWpnBladeT1HuntingKnife']//passive_effect[@name='EntityDamage'][@operation='base_set']/@value">12.5</set> -->
 	<!-- <set xpath="//item[@name='meleeWpnBladeT1HuntingKnife']/effect_group[@name='Power Attack']//passive_effect[@value='6']/@value">6.5</set> -->
 	
-	<set xpath="//item[@name='meleeWpnBladeT3Machete']/effect_group[@name='meleeWpnBladeT3Machete']//passive_effect[@name='EntityDamage'][@operation='base_set']/@value">26</set>
+	<!-- <set xpath="//item[@name='meleeWpnBladeT3Machete']/effect_group[@name='meleeWpnBladeT3Machete']//passive_effect[@name='EntityDamage'][@operation='base_set']/@value">26</set> -->
 	
 	<!-- *** new quest reward, increase bartering and trader level per quest tier completed *** -->
 	<append xpath="/items">

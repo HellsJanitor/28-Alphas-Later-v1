@@ -1133,6 +1133,307 @@
 			</effect_group>
 		</entity_class>
 		
+	<!-- *** weak (in between rotten and normal) *** -->
+		<entity_class name="zombieArleneWeak" extends="zombieArlene">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="105"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieMarleneWeak" extends="zombieMarlene">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="105"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombiePartyGirlWeak" extends="zombiePartyGirl">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="105"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieNurseWeak" extends="zombieNurse">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="105"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieJoeWeak" extends="zombieJoe">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="105"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSteveWeak" extends="zombieSteve">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="105"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieTomClarkWeak" extends="zombieTomClark">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="105"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieBusinessManWeak" extends="zombieBusinessMan">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="105"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieBurntWeak" extends="zombieBurnt">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="105"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSpiderWeak" extends="zombieSpider">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="105"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieBoeWeak" extends="zombieBoe">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="130"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieMaleHazmatWeak" extends="zombieMaleHazmat">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="130"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieJanitorWeak" extends="zombieJanitor">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="130"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieInmateWeak" extends="zombieInmate">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="130"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieMoeWeak" extends="zombieMoe">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="130"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieLabWeak" extends="zombieLab">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="130"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieDarleneWeak" extends="zombieDarlene">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="130"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieYoWeak" extends="zombieYo">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="130"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieUtilityWorkerWeak" extends="zombieUtilityWorker">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="130"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieBikerWeak" extends="zombieBiker">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="300"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieLumberjackWeak" extends="zombieLumberjack">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="250"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieFemaleFatWeak" extends="zombieFemaleFat">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Class" value="EntityZombieCop"/>
+			
+			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
+			<property name="Explosion.ParticleIndex" value="8"/>
+			<property name="Explosion.RadiusBlocks" value="5"/>
+			<property name="Explosion.RadiusEntities" value="6"/>
+			<property name="Explosion.BlockDamage" value="250"/>
+			<property name="Explosion.EntityDamage" value="100"/>
+			<property name="Explosion.DamageBonus.earth" value="0"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="250"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffExplodeEffect"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieFatHawaiianWeak" extends="zombieFatHawaiian">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Class" value="EntityZombieCop"/>
+			
+			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
+			<property name="Explosion.ParticleIndex" value="8"/>
+			<property name="Explosion.RadiusBlocks" value="5"/>
+			<property name="Explosion.RadiusEntities" value="6"/>
+			<property name="Explosion.BlockDamage" value="250"/>
+			<property name="Explosion.EntityDamage" value="100"/>
+			<property name="Explosion.DamageBonus.earth" value="0"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="250"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffExplodeEffect"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieBowlerWeak" extends="zombieBowler">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			<property name="Class" value="EntityZombieCop"/>
+			
+			<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
+			<property name="Explosion.ParticleIndex" value="8"/>
+			<property name="Explosion.RadiusBlocks" value="5"/>
+			<property name="Explosion.RadiusEntities" value="6"/>
+			<property name="Explosion.BlockDamage" value="250"/>
+			<property name="Explosion.EntityDamage" value="100"/>
+			<property name="Explosion.DamageBonus.earth" value="0"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="250"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffExplodeEffect"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieFatCopWeak" extends="zombieFatCop">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="250"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffExplodeEffect"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSkateboarderWeak" extends="zombieSkateboarder">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="200"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSoldierWeak" extends="zombieSoldier">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="200"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieScreamerWeak" extends="zombieScreamer">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="150"/>
+			</effect_group>
+		</entity_class>
+		
+		<entity_class name="zombieSteveCrawlerWeak" extends="zombieSteveCrawler">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="Tags" value="entity,zombie,walker,weak"/>
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="150"/>
+			</effect_group>
+		</entity_class>
+		
 	<!-- *** frozen *** -->
 		<!-- slightly tougher, slightly slower, slightly more XP, and take more damage than their "standard" versions -->
 		<entity_class name="zombieArleneFrozen" extends="zombieArlene">

@@ -1,10 +1,10 @@
 <config>
 	<append xpath="/spawning">
 		<biome name="pine_forest_GS1">
-			<spawn maxcount="1" respawndelay="1.5" time="Day" entitygroup="ZombiesWeakNoTough" notags="commercial,industrial,downtown" />
-			<spawn maxcount="2" respawndelay="1.5" time="Night" entitygroup="ZombiesWeakAll" notags="commercial,industrial,downtown" />
-			<spawn maxcount="2" respawndelay="0.3" time="Day" entitygroup="ZombiesWeakNoTough" tags="commercial,industrial" notags="downtown" />
-			<spawn maxcount="3" respawndelay="0.15" time="Night" entitygroup="ZombiesWeakAll" tags="commercial,industrial" notags="downtown" />
+			<spawn maxcount="1" respawndelay="1.5" time="Day" entitygroup="ZombiesRottenNoTough" notags="commercial,industrial,downtown" />
+			<spawn maxcount="2" respawndelay="1.5" time="Night" entitygroup="ZombiesRottenAll" notags="commercial,industrial,downtown" />
+			<spawn maxcount="2" respawndelay="0.3" time="Day" entitygroup="ZombiesRottenNoTough" tags="commercial,industrial" notags="downtown" />
+			<spawn maxcount="3" respawndelay="0.15" time="Night" entitygroup="ZombiesRottenAll" tags="commercial,industrial" notags="downtown" />
 			<spawn maxcount="3" respawndelay="0.3" time="Day" entitygroup="ZombiesForestDowntown" tags="downtown" />
 			<spawn maxcount="4" respawndelay="0.1" time="Night" entitygroup="ZombiesForestDowntownNight" tags="downtown" />
 			<spawn maxcount="2" respawndelay="1" time="Any" entitygroup="WildGameForest" spawnDeadChance="0" />
@@ -12,10 +12,10 @@
 			<spawn maxcount="1" respawndelay="3.2" time="Night" entitygroup="EnemyAnimalsForest" spawnDeadChance="0" />
 		</biome>
 		<biome name="pine_forest_GS10">
-			<spawn maxcount="1" respawndelay="1.3" time="Day" entitygroup="ZombiesWeakAll" notags="commercial,industrial,downtown" />
-			<spawn maxcount="2" respawndelay="1.3" time="Night" entitygroup="ZombiesWeakAll" notags="commercial,industrial,downtown" />
-			<spawn maxcount="2" respawndelay="0.25" time="Day" entitygroup="ZombiesWeakAll" tags="commercial,industrial" notags="downtown" />
-			<spawn maxcount="3" respawndelay="0.1" time="Night" entitygroup="ZombiesWeakAll" tags="commercial,industrial" notags="downtown" />
+			<spawn maxcount="1" respawndelay="1.3" time="Day" entitygroup="ZombiesRottenAll" notags="commercial,industrial,downtown" />
+			<spawn maxcount="2" respawndelay="1.3" time="Night" entitygroup="ZombiesWeakNoTough" notags="commercial,industrial,downtown" />
+			<spawn maxcount="2" respawndelay="0.25" time="Day" entitygroup="ZombiesRottenAll" tags="commercial,industrial" notags="downtown" />
+			<spawn maxcount="3" respawndelay="0.1" time="Night" entitygroup="ZombiesWeakNoTough" tags="commercial,industrial" notags="downtown" />
 			<spawn maxcount="2" respawndelay="0.25" time="Day" entitygroup="ZombiesForestDowntown" tags="downtown" />
 			<spawn maxcount="4" respawndelay="0.08" time="Night" entitygroup="ZombiesForestDowntownNight" tags="downtown" />
 			<spawn maxcount="2" respawndelay="1" time="Any" entitygroup="WildGameForest" spawnDeadChance="0" />
@@ -24,9 +24,9 @@
 		</biome>
 		<biome name="pine_forest_GS25">
 			<spawn maxcount="2" respawndelay="1.2" time="Day" entitygroup="ZombiesWeakAll" notags="commercial,industrial,downtown" />
-			<spawn maxcount="3" respawndelay="1.2" time="Night" entitygroup="ZombiesNight" notags="commercial,industrial,downtown" />
+			<spawn maxcount="3" respawndelay="1.2" time="Night" entitygroup="ZombiesWeakAll" notags="commercial,industrial,downtown" />
 			<spawn maxcount="3" respawndelay="0.2" time="Day" entitygroup="ZombiesWeakAll" tags="commercial,industrial" notags="downtown" />
-			<spawn maxcount="4" respawndelay="0.09" time="Night" entitygroup="ZombiesNight" tags="commercial,industrial" notags="downtown" />
+			<spawn maxcount="4" respawndelay="0.09" time="Night" entitygroup="ZombiesWeakAll" tags="commercial,industrial" notags="downtown" />
 			<spawn maxcount="4" respawndelay="0.2" time="Day" entitygroup="ZombiesForestDowntown" tags="downtown" />
 			<spawn maxcount="5" respawndelay="0.06" time="Night" entitygroup="ZombiesForestDowntownNight" tags="downtown" />
 			<spawn maxcount="2" respawndelay="1" time="Any" entitygroup="WildGameForest" spawnDeadChance="0" />
@@ -361,22 +361,22 @@
 			<spawn maxcount="1" respawndelay="0.3" time="Any" entitygroup="EnemyAnimalsWasteland" spawnDeadChance="0"/>
 		</biome>
 		<biome name="burnt_forest_GS1">
-			<spawn maxcount="1" respawndelay="1.5" time="Day" entitygroup="zombiesBurntWeak" notags="commercial,industrial,downtown"/>
-			<spawn maxcount="2" respawndelay="1.5" time="Night" entitygroup="ZombiesWeakAll" notags="commercial,industrial,downtown"/>
-			<spawn maxcount="2" respawndelay="0.25" time="Day" entitygroup="ZombiesWeakAll" tags="commercial,industrial" notags="downtown"/>
-			<spawn maxcount="3" respawndelay="0.15" time="Night" entitygroup="ZombiesWeakAll" tags="commercial,industrial" notags="downtown"/>
-			<spawn maxcount="3" respawndelay="0.15" time="Day" entitygroup="ZombiesDowntown" tags="downtown"/>
-			<spawn maxcount="4" respawndelay="0.1" time="Night" entitygroup="ZombiesDowntown" tags="downtown"/>
+			<spawn maxcount="1" respawndelay="1.5" time="Day" entitygroup="ZombiesRottenBurnt" notags="commercial,industrial,downtown"/>
+			<spawn maxcount="2" respawndelay="1.5" time="Night" entitygroup="ZombiesRottenNoTough" notags="commercial,industrial,downtown"/>
+			<spawn maxcount="2" respawndelay="0.25" time="Day" entitygroup="ZombiesRottenBurnt" tags="commercial,industrial" notags="downtown"/>
+			<spawn maxcount="3" respawndelay="0.15" time="Night" entitygroup="ZombiesRottenNoTough" tags="commercial,industrial" notags="downtown"/>
+			<spawn maxcount="3" respawndelay="0.15" time="Day" entitygroup="ZombiesWeakNoTough" tags="downtown"/>
+			<spawn maxcount="4" respawndelay="0.1" time="Night" entitygroup="ZombiesWeakAll" tags="downtown"/>
 			<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="WildGameForest" spawnDeadChance="0" />
 			<spawn maxcount="1" respawndelay="1.1" time="Any" entitygroup="EnemyAnimalsBurntForestAny" spawnDeadChance="0" />
 			<spawn maxcount="2" respawndelay="1" time="Night" entitygroup="WildGameForestNight" spawnDeadChance="0" />
 			<spawn maxcount="2" respawndelay="1.1" time="Night" entitygroup="EnemyAnimalsBurntForestNight" spawnDeadChance="0" />
 		</biome>
 		<biome name="burnt_forest_GS10">
-			<spawn maxcount="1" respawndelay="1.3" time="Day" entitygroup="zombiesBurntWeak" notags="commercial,industrial,downtown"/>
-			<spawn maxcount="2" respawndelay="1.3" time="Night" entitygroup="ZombiesWeakAll" notags="commercial,industrial,downtown"/>
-			<spawn maxcount="2" respawndelay="0.25" time="Day" entitygroup="ZombiesWeakAll" tags="commercial,industrial" notags="downtown"/>
-			<spawn maxcount="3" respawndelay="0.15" time="Night" entitygroup="ZombiesWeakAll" tags="commercial,industrial" notags="downtown"/>
+			<spawn maxcount="1" respawndelay="1.3" time="Day" entitygroup="ZombiesRottenBurnt" notags="commercial,industrial,downtown"/>
+			<spawn maxcount="2" respawndelay="1.3" time="Night" entitygroup="ZombiesRottenAll" notags="commercial,industrial,downtown"/>
+			<spawn maxcount="2" respawndelay="0.25" time="Day" entitygroup="ZombiesRottenAll" tags="commercial,industrial" notags="downtown"/>
+			<spawn maxcount="3" respawndelay="0.15" time="Night" entitygroup="ZombiesRottenAll" tags="commercial,industrial" notags="downtown"/>
 			<spawn maxcount="3" respawndelay="0.15" time="Day" entitygroup="ZombiesDowntown" tags="downtown"/>
 			<spawn maxcount="4" respawndelay="0.1" time="Night" entitygroup="ZombiesDowntown" tags="downtown"/>
 			<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="WildGameForest" spawnDeadChance="0" />
@@ -385,10 +385,10 @@
 			<spawn maxcount="2" respawndelay="1.1" time="Night" entitygroup="EnemyAnimalsBurntForestNight" spawnDeadChance="0" />
 		</biome>
 		<biome name="burnt_forest_GS25">
-			<spawn maxcount="1" respawndelay="1.2" time="Day" entitygroup="zombiesBurntWeak" notags="commercial,industrial,downtown"/>
-			<spawn maxcount="2" respawndelay="1.2" time="Night" entitygroup="ZombiesNight" notags="commercial,industrial,downtown"/>
-			<spawn maxcount="2" respawndelay="0.25" time="Day" entitygroup="ZombiesWeakAll" tags="commercial,industrial" notags="downtown"/>
-			<spawn maxcount="3" respawndelay="0.15" time="Night" entitygroup="ZombiesNight" tags="commercial,industrial" notags="downtown"/>
+			<spawn maxcount="1" respawndelay="1.2" time="Day" entitygroup="ZombiesRottenBurnt" notags="commercial,industrial,downtown"/>
+			<spawn maxcount="2" respawndelay="1.2" time="Night" entitygroup="ZombiesRottenAll" notags="commercial,industrial,downtown"/>
+			<spawn maxcount="2" respawndelay="0.25" time="Day" entitygroup="ZombiesWeakNoTough" tags="commercial,industrial" notags="downtown"/>
+			<spawn maxcount="3" respawndelay="0.15" time="Night" entitygroup="ZombiesWeakAll" tags="commercial,industrial" notags="downtown"/>
 			<spawn maxcount="3" respawndelay="0.15" time="Day" entitygroup="ZombiesDowntown" tags="downtown"/>
 			<spawn maxcount="4" respawndelay="0.1" time="Night" entitygroup="ZombiesDowntown" tags="downtown"/>
 			<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="WildGameForest" spawnDeadChance="0" />
