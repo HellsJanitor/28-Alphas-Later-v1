@@ -156,7 +156,13 @@
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.1"/>
 			<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+			<requirement name="!HasBuff" buff="buffGoodCompanyFromTrader"/>
 			<requirement name="HasBuff" buff="buffCampfireAOEEffect"/>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffCampfireAOEEffect">
+				<requirement name="HasBuff" buff="buffGoodCompanyFromTrader"/>
+			</triggered_effect>
 		</effect_group>
 	</append>
 	
@@ -1332,6 +1338,7 @@
 				<requirement name="!HasBuff" target="self" buff="buffNightVision"/>
 				<requirement name="!HasBuff" target="self" buff="buffBurningShaft"/>
 				<requirement name="!HasBuff" target="self" buff="buffWallTorch"/>
+				<requirement name="!HasBuff" target="self" buff="buffGoodCompanyFromTrader"/>
 				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
 			</effect_group>
 		
@@ -1347,6 +1354,7 @@
 				<requirement name="!HasBuff" target="self" buff="buffNightVision"/>
 				<requirement name="!HasBuff" target="self" buff="buffBurningShaft"/>
 				<requirement name="!HasBuff" target="self" buff="buffWallTorch"/>
+				<requirement name="!HasBuff" target="self" buff="buffGoodCompanyFromTrader"/>
 				<requirement name="HasBuff" target="self" buff="buffCampfireAOEEffect"/>
 				<requirement name="BlockStandingOn" tags="bedroll"/>
 			</effect_group>
@@ -2762,6 +2770,7 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" buff="buffGoodCompanyFromTrader">
 					<requirement name="EntityTagCompare" target="other" tags="player"/>
+					<requirement name="!HasBuff" buff="buffCampfireAOEEffect" target="other" tags="player"/>
 				</triggered_effect>
 			</effect_group>
 		</buff>
@@ -2773,6 +2782,12 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-1.25">
 					<requirement name="!HasBuff" buff="buffDespairCureDisplay"/>
+					<requirement name="!HasBuff" buff="buffCampfireAOEEffect"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffGoodCompanyFromTrader">
+					<requirement name="HasBuff" buff="buffCampfireAOEEffect"/>
 				</triggered_effect>
 			</effect_group>
 		</buff>
