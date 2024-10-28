@@ -119,7 +119,7 @@
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		
 		<effect_group tiered="false">
-			<!-- <passive_effect name="DamageModifier" operation="perc_add" value="1" target="other" tags="radiated,mutated,mutant"/> -->
+			<passive_effect name="DamageModifier" operation="perc_add" value=".3" target="other" tags="radiated,mutated,mutant"/>
 			<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock">
 				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated,mutant"/></triggered_effect>
 			<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="10" buff="buffRadiatedRegenBlock">
