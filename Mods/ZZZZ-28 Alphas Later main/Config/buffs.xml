@@ -1451,34 +1451,34 @@
 			</effect_group>
 			<!-- perk From the Shadows negates effects of despair from darkness -->
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.5">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.25">
 					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="GTE" value="5"/>
 					<requirement name="IsNight"/>
 				</triggered_effect>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.4">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.2">
 					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="GTE" value="4"/>
 					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="LT" value="5"/>
 					<requirement name="IsNight"/>
 				</triggered_effect>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.3">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.15">
 					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="GTE" value="3"/>
 					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="LT" value="4"/>
 					<requirement name="IsNight"/>
 				</triggered_effect>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.2">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.1">
 					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="GTE" value="2"/>
 					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="LT" value="3"/>
 					<requirement name="IsNight"/>
 				</triggered_effect>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.1">
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value="-.05">
 					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="GTE" value="1"/>
 					<requirement name="ProgressionLevel" progression_name="perkFromTheShadows" operation="LT" value="2"/>
 					<requirement name="IsNight"/>
@@ -1750,8 +1750,8 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value=".8"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositivePerc" operation="set" value="@.DespairDisplayPerc"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositivePerc" operation="multiply" value="-1"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive02HUD" operation="set" value="@.DespairDisplayPositivePerc"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive02HUD" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive01HUD" operation="set" value="@.DespairDisplayPositivePerc"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive01HUD" operation="divide" value="100"/>
 					
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.1"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".15" tags="buffInjuryBleeding,buffInjuryStunned00,buffInjuryStunned01,buffInjuryStunned01Shotgun,buffInjuryStunned02,buffInjuryStunned02Shotgun,buffInjuryStunned03,buffInjuryStunned03Shotgun,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
@@ -1790,8 +1790,8 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="DespairCounter" operation="add" value=".85"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositivePerc" operation="set" value="@.DespairDisplayPerc"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositivePerc" operation="multiply" value="-1"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive03HUD" operation="set" value="@.DespairDisplayPositivePerc"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive03HUD" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive01HUD" operation="set" value="@.DespairDisplayPositivePerc"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".DespairDisplayPositive01HUD" operation="divide" value="100"/>
 					
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.15"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".2" tags="buffInjuryBleeding,buffInjuryStunned00,buffInjuryStunned01,buffInjuryStunned01Shotgun,buffInjuryStunned02,buffInjuryStunned02Shotgun,buffInjuryStunned03,buffInjuryStunned03Shotgun,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
@@ -1984,7 +1984,7 @@
 		</buff>
 	
 		<!-- *** signal buff to show current despair rate *** -->
-		<buff name="buffDespairCounter" tooltip_key="buffDespairCounterTooltip" name_key="buffDespairCounterName" description_key="buffDespairCounterDesc" showonhud="false" icon_color="0,128,128" icon="ui_game_symbol_despair_counter">
+		<buff name="buffDespairCounter" tooltip_key="buffDespairCounterTooltip" name_key="buffDespairCounterName" description_key="buffDespairCounterDesc" hidden="true" icon_color="0,128,128" icon="ui_game_symbol_despair_counter">
 			<stack_type value="ignore"/>
 			<update_rate value="1"/>
 			<display_value_key value="{0:0.00}"/>

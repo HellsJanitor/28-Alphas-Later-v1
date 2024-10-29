@@ -987,7 +987,7 @@
 					<!-- <sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/> -->
 				</rect>
 		
-				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayHUD') &lt; 0 and cvar('.DespairDisplayPositive01HUD') &lt; 0.3}">
+				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayHUD') &lt; 0 and cvar('.DespairDisplayPositive01HUD') &lt; 0.32}">
 					<!-- <sprite depth="1" name="background" color="0,0,0,220" type="sliced"/> -->
 					<!-- <filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="255,165,0,128" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}"/> -->
 					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_muscle" color="255,165,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
@@ -995,14 +995,14 @@
 					
 					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_muscle" color="8,8,8" globalopacitymod="1.4" />
 					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" color="192,192,192" globalopacitymod="1.4" />
-					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="255,165,0,250" globalopacitymod="1.8" tooltip_key="" />
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="208,255,20,250" globalopacitymod="1.8" tooltip_key="" />
 					
 					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_muscle" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
 					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayPositive01HUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
 					<!-- <sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/> -->
 				</rect>
 				
-				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayPositive01HUD') &gt; 0.3 and cvar('.DespairDisplayPositive01HUD') &lt; 0.65}">
+				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayPositive01HUD') &gt; 0.33 and cvar('.DespairDisplayPositive01HUD') &lt; 0.65}">
 					<!-- <sprite depth="1" name="background" color="0,0,0,220" type="sliced"/> -->
 					<!-- <filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="255,255,0,128" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}"/> -->
 					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_muscle" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
@@ -1011,13 +1011,13 @@
 					
 					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_muscle" color="8,8,8" globalopacitymod="1.4" />
 					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" color="192,192,192" globalopacitymod="1.4" />
-					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="255,255,0,250" globalopacitymod="1.8" tooltip_key="" />
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="144,238,144,250" globalopacitymod="1.8" tooltip_key="" />
 					
 					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayPositive01HUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
 					<!-- <sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/> -->
 				</rect>
 				
-				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayPositive01HUD') &gt; 0.65}">
+				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayPositive01HUD') &gt; 0.66}">
 					<!-- <sprite depth="1" name="background" color="0,0,0,220" type="sliced"/> -->
 					<!-- <filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="50,205,50,128" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}"/> -->
 					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_muscle" color="50,205,50,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->

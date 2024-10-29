@@ -22,15 +22,16 @@
 	</append>
 	
 	<append xpath="//entity_class[starts-with(@name,'zombieArlene')]">
-		<effect_group>
+		<effect_group>			
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpackBM" operation="set" value="randomint(1,10)"/>							
+		</effect_group>	
+
+		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
 				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-		</effect_group>		
+		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieMarlene')]">
 		<effect_group>
