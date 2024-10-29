@@ -148,7 +148,7 @@
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="toolBellows"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="toolAnvil"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="cementMixer"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="40,100" value="1" tags="playerAmmoPress"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="35,100" value="1" tags="playerAmmoPress"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="chemistryStation"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="blastFurnace"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="toolForgeCrucible"/>
