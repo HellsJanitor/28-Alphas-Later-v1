@@ -58,6 +58,19 @@
 				</passive_effect>
 			</effect_group>
 			
+			<effect_group>
+				<requirement name="ItemHasTags" tags="perkDeadEye"/>
+				<requirement name="ProgressionLevel" progression_name="lbu_DeadEye" operation="GTE" value="30"/>
+					<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffDeadEye"/>
+					<!-- aiming stamina buff in buffHoldBreathAiming01 -->
+
+				<effect_description level="1" desc_key="perkDeadEyeRank1Desc" long_desc_key="perkDeadEyeRank1LongDesc" desc_base="Non localized modder descriptions go here"/>
+				<effect_description level="2" desc_key="perkDeadEyeRank2Desc" long_desc_key="perkDeadEyeRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkDeadEyeRank3Desc" long_desc_key="perkDeadEyeRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkDeadEyeRank4Desc" long_desc_key="perkDeadEyeRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkDeadEyeRank5Desc" long_desc_key="perkDeadEyeRank5LongDesc"/>
+			</effect_group>
+			
 			<!-- Increase the chance to find rifles and ammo with each perk rank -->
 			<effect_group>
 				<passive_effect name="LootProb" operation="perc_add" level="1,50" value=".2,10" tags="rifleSkill"/>
@@ -236,6 +249,40 @@
 					<requirement name="CVarCompare" cvar="lbu_Degradation" operation="GTE" value="1"/>
 				</passive_effect>
 			</effect_group>
+			
+			<effect_group>
+			<requirement name="ItemHasTags" tags="perkJavelinMaster"/>
+				
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryCrippled01">
+					<requirement name="ProgressionLevel" progression_name="lbu_SpearMaster" operation="GTE" value="0"/>
+					<requirement name="ProgressionLevel" progression_name="lbu_SpearMaster" operation="LT" value="10"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryCrippled01">
+					<requirement name="ProgressionLevel" progression_name="lbu_SpearMaster" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="lbu_SpearMaster" operation="LT" value="20"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryCrippled01">
+					<requirement name="ProgressionLevel" progression_name="lbu_SpearMaster" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="lbu_SpearMaster" operation="LT" value="30"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryCrippled01">
+					<requirement name="ProgressionLevel" progression_name="lbu_SpearMaster" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="lbu_SpearMaster" operation="LT" value="40"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryCrippled01">
+					<requirement name="ProgressionLevel" progression_name="lbu_SpearMaster" operation="GTE" value="40"/>
+					<requirement name="ProgressionLevel" progression_name="lbu_SpearMaster" operation="LT" value="50"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="80"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryCrippled01">
+					<requirement name="ProgressionLevel" progression_name="lbu_SpearMaster" operation="GTE" value="50"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="100"/>
+				</triggered_effect>
+		</effect_group>
 			
 			<!-- Increase the chance to find spears with each perk rank -->
 			<effect_group>
