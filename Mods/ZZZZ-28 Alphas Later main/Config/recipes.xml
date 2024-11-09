@@ -949,7 +949,7 @@
 	<!-- <remove xpath="//recipe[@name='woodShapes:VariantHelper']"/> -->
 	<!-- <remove xpath="//recipe[@name='cobblestoneShapes:VariantHelper']"/> -->
 	<!-- <remove xpath="//recipe[@name='concreteShapes:VariantHelper']"/> -->
-	<!-- <remove xpath="//recipe[@name='steelShapes:VariantHelper']"/> -->
+	<remove xpath="//recipe[@name='steelShapes:VariantHelper']"/>
 	
 	<!-- *** logs from trees make planks in a tablesaw *** -->
 	<remove xpath="//recipe[@name='woodLogPillar100']"/>
@@ -1242,9 +1242,9 @@
 		<recipe name="foodChickenStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
 			<ingredient name="foodCanChicken" count="2"/>
 			<ingredient name="foodCanSoup" count="1"/>
-			<ingredient name="foodCropPotato" count="2"/>
-			<ingredient name="foodCropCorn" count="2"/>
-			<ingredient name="foodCanCarrots" count="2"/>
+			<ingredient name="foodCropMushrooms" count="2"/>
+			<ingredient name="foodCropOnion" count="2"/>
+			<ingredient name="foodCropCarrot" count="2"/>
 			<effect_group>
 				<passive_effect name="CraftingIngredientCount" level="3" operation="base_add" value="-1" tags="foodCanChicken"/>
 			</effect_group>
@@ -1261,8 +1261,8 @@
 		</recipe>
 		<recipe name="foodMeatStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
 			<ingredient name="foodRawMeat" count="5"/>
-			<ingredient name="foodCanCarrots" count="2"/>
-			<ingredient name="foodCropCorn" count="2"/>
+			<ingredient name="foodCropCarrot" count="2"/>
+			<ingredient name="foodCropPotato" count="2"/>
 			<ingredient name="resourceAnimalFat" count="1"/>
 			<ingredient name="drinkJarBoiledWater" count="1"/>
 			<effect_group>
@@ -1311,6 +1311,18 @@
 			<ingredient name="foodCanPeas" count="2"/>
 			<ingredient name="foodCanCarrots" count="2"/>
 			<ingredient name="foodCanStock" count="1"/>
+		</recipe>
+		<recipe name="foodVegetableStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+			<ingredient name="foodCropPotato" count="2"/>
+			<ingredient name="foodCropCorn" count="2"/>
+			<ingredient name="foodCropCarrot" count="2"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<recipe name="foodVegetableStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+			<ingredient name="foodCropOnion" count="2"/>
+			<ingredient name="foodCropTurnip" count="2"/>
+			<ingredient name="foodCropCarrot" count="2"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
 		</recipe>
 
 	<!-- *** MegaCrush recipe *** -->
@@ -1647,12 +1659,33 @@
 		</effect_group>
 	</insertafter>
 	
-	<!-- *** new crop - lavender *** -->
+	<!-- *** new crops *** -->
 	<insertafter xpath="//recipe[@name='plantedPumpkin1']">
 		<recipe name="plantedLavender1" count="1" craft_time="1" tags="perkLivingOffTheLandCrafting">
 			<ingredient name="resourceCropLavender" count="4"/>
 			<effect_group>
 				<passive_effect name="CraftingIngredientCount" level="1,2,3" operation="base_add" value="0,-1,-2" tags="resourceCropLavender"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="plantedCarrot1" count="1" craft_time="1" tags="perkLivingOffTheLandCrafting,learnable">
+			<ingredient name="foodCropCarrot" count="4"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="1,2,3" operation="base_add" value="0,-1,-2" tags="foodCropCarrot"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="plantedOnion1" count="1" craft_time="1" tags="perkLivingOffTheLandCrafting,learnable">
+			<ingredient name="foodCropOnion" count="4"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="1,2,3" operation="base_add" value="0,-1,-2" tags="foodCropOnion"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="plantedTurnip1" count="1" craft_time="1" tags="perkLivingOffTheLandCrafting,learnable">
+			<ingredient name="foodCropTurnip" count="4"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="1,2,3" operation="base_add" value="0,-1,-2" tags="foodCropTurnip"/>
 			</effect_group>
 		</recipe>
 	</insertafter>

@@ -32,7 +32,7 @@ idcXuiAnimalSnare,Contents
 idcXuiBait,Animal Feed
 bedrollTip,When you place a Bedroll you will see a Bed Icon on your compass and map. This will lead you back to your home and will act as a respawn point if you die.\nYou can only have one bedroll active and your last placed bedroll is your active bedroll. Placing a new bed or picking up the last placed bed will permanently clear all previous respawn points.\n\nA placed and active bedroll will prevent enemy respawn in the area. The size of this area is shown while you place a bedroll.\n\nReceive a [008000 ]Well Rested[-] buff by standing on it while [ff4500]inside[-] and next to a [ff4500]campfire[-].
 cntIDCAnimalSnare,Chicken trap
-cntIDCAnimalSnareDesc,A chicken trap. Will trap a chicken to use in a chicken coop. Can be upgraded with tools.
+cntIDCAnimalSnareDesc,A chicken trap. Will trap a chicken to use in a chicken coop.
 cntMedicineCabinetPlayer,Medicine Cabinet
 flagBlockVariantHelper,Flags
 JailVariantHelper,Jail Doors
@@ -89,9 +89,9 @@ idcAnimalBait,Animal Bait
 idcAnimalBaitDesc,It attracts animals. Place in the animal snare.
 idcXuiBaitSnare,Bait
 ctnIDCBeehive,Beehive
-ctnIDCBeehiveDesc,Produces honey.\n\nCan be crafted with any [FF4500]repair tool[-] in your [008000]inventory[-].
+ctnIDCBeehiveDesc,"Produces honey, requires a bee.\n\nCan be crafted with any [FF4500]repair tool[-] in your [008000]inventory[-]."
 cntCompostBin,Composter
-cntCompostBinDesc,"Produces fertilizer very slowly over time.\n\nCan be crafted with any [FF4500]repair tool[-] in your [008000]inventory[-]."
+cntCompostBinDesc,"Produces fertilizer very slowly over time.\n\nAdd plant fibre to produce fertilizer.\n\nCan be crafted with any [FF4500]repair tool[-] in your [008000]inventory[-]."
 idcXuiBait,Bee
 beehiveTreeStump,Beehive
 honeyBeeDesc,A wild honey bee. Will produce up to 20 honey when placed in a bee hive.
@@ -114,9 +114,9 @@ questStartup_desc,"The idea behind this mod is to slow progression, make traders
 28AlphasLaterQuest5_title,Buffs & Debuffs
 28AlphasLaterQuest5,"Snakes and Spider zombies will envenom you when they attack. Kill snakes to extract their venom, which can be used to make antivenom. Antivenom crafting is unlocked after reading 10 medical magazines, and it can appear in loot and trader stock.\n\nThe Wasteland biome is irradiated, and very, VERY dangerous. You'll need hazmat mods before you venture in there.\n\nRadiated zombies now irradiate the player when they attack. A full set of hazmat mods negates this.\n\nSome Burnt zombies now set the player on fire when they attack. A full set of hazmat mods negates this.\n\nHoney infection treatment is reduced to 3% from 5%.\n\nDespair medication (Lavender, St. John’s Wort and Lithium) can be found in medical loot, and in trader stock. Lavender oil can be crafted from lavender flowers and used to treat despair."
 28AlphasLaterQuest6_title,Food & Farming
-28AlphasLaterQuest6,"All canned food found in loot, vending machines, and trader stock is uncooked. Cook it to make it safe to eat, or eat it and run the risk of food poisoning.\n\nUncooked cans don't replenish health, just food and water.\n\nFive new recipes - Chicken stew and chicken miso, top of the tier 3 food chain, along with Scrambled Eggs, a better use for eggs, and Tramp/Vagabond stew(s), which use cat/dog food. Basic recipes, unlocked by default. Needs a cooking pot.\n\nMegaCrush is craftable, in a campfire, with a beaker, and cheaper in a chemistry station.\n\nPies and cheesecake need honey for that sweet, sweet taste now.\n\nCrops growing time is double that of vanilla.\n\nFarming is reworked entirely. You need a hoe to till the ground to plant seeds. Use the hoe with fertiliser in your inventory to upgrade the tilled ground. Fertilized terrain yields 5 crops, same as a farmplot.\n\nFarm Plots require fertiliser and nails to craft, are crafted in the workbench with a hammer,  and are the same fertile level as fertilised ground.\n\nFarmplots found in POI’s are no longer plantable.\n\nThere is no harvest bonus for Living off the Land, instead, seeds cost less crops to make per level, and the amount of fertiliser required to make farmplots is reduced per level. Fertiliser is craftable in the cement mixer and chem station, and is in some trader stock.\n\nAll plants can be picked up - press 'E' by default to pick them up. Wild plants always give one crop, whether they’re picked up or punched.\n\nNew plant - lavender. Purple flower found growing in the Forest biome and in some POIs. Seeds are crafted from lavender flowers, no unlock required. Lavender flowers can be found in loot-] and trader stock, and Lavender seeds in trader stock."
+28AlphasLaterQuest6,"All canned food found in loot, vending machines, and trader stock is uncooked. Cook it to make it safe to eat, or eat it and run the risk of food poisoning.\n\nUncooked cans don't replenish health, just food and water.\n\nFive new recipes - Chicken stew and chicken miso, top of the tier 3 food chain, along with Scrambled Eggs, a better use for eggs, and Tramp/Vagabond stew(s), which use cat/dog food. Basic recipes, unlocked by default. Needs a cooking pot.\n\nMegaCrush is craftable, in a campfire, with a beaker, and cheaper in a chemistry station.\n\nPies and cheesecake need honey for that sweet, sweet taste now.\n\nCrops growing time is double that of vanilla.\n\nFarming is reworked entirely. You need a hoe to till the ground to plant seeds. Use the hoe with fertiliser in your inventory to upgrade the tilled ground. Fertilized terrain yields 5 crops, same as a farmplot.\n\nFarm Plots require fertiliser and nails to craft, are crafted in the workbench with a hammer,  and are the same fertile level as fertilised ground.\n\nFarmplots found in POI’s are no longer plantable.\n\nThere is no harvest bonus for Living off the Land, instead, seeds cost less crops to make per level, and the amount of fertiliser required to make farmplots is reduced per level. Fertiliser is craftable in the cement mixer and chem station, and is in some trader stock.\n\nAll plants can be picked up - press 'E' by default to pick them up. Wild plants always give one crop, whether they’re picked up or punched.\n\nNew plant - lavender. Purple flower found growing in the Forest biome and in some POIs. Seeds are crafted from lavender flowers, no unlock required. Lavender flowers can be found in loot and trader stock, and Lavender seeds in trader stock."
 28AlphasLaterQuest7_title,Resources
-28AlphasLaterQuest7,"Trees no longer give wood, they give wood logs, scraps, and branches. Logs can be placed and then chopped with an axe for wood, or use the table saw to do it quicker and better.\n\nPrimitive weapons and ammo are now made fromwood scraps, branches, plant fibres, and/or stone.\n\nCobblestone is now more expensive to make in your inventory. Use a cement mixer to make it cheaper.\n\nConcrete now requires a bucket of water and a new material, Feldspar. Concrete is crafted in batches of 250. Returns an empty bucket when crafting is complete.\n\nFeldspar is a vital ingredient in the production of concrete. Find it by mining surface terrain & boulders in the Wasteland biome.\n\nMost ammo can be dismantled into its component parts. Check ammo for recipes, and look at the 3rd tab to see what they dismantle into. Most need a workbench with an ammo press-] to do this, but basic arrows/bolts can be dismantled in your inventory. Loose ammo can also be boxed.\n\nRepair kits are more expensive, and top tier weapons/armour/tools now require a specific repair kit.\n\nRaw uranium. This ore is found exclusively in the wasteland. Take it to a blast furnace to process it into depleted uranium.\n\nPropylene Glycol. This by-product of refining oil shale into gasoline can be used with plant fibre or rotten flesh at a chemistry station to craft scrap polymer."
+28AlphasLaterQuest7,"Trees no longer give wood, they give wood logs, scraps, and branches. Logs can be placed and then chopped with an axe for wood, or use the table saw to do it quicker and better.\n\nPrimitive weapons and ammo are now made fromwood scraps, branches, plant fibres, and/or stone.\n\nCobblestone is now more expensive to make in your inventory. Use a cement mixer to make it cheaper.\n\nConcrete now requires a bucket of water and a new material, Feldspar. Concrete is crafted in batches of 250. Returns an empty bucket when crafting is complete.\n\nFeldspar is a vital ingredient in the production of concrete. Find it by mining surface terrain & boulders in the Wasteland biome.\n\nMost ammo can be dismantled into its component parts. Check ammo for recipes, and look at the 3rd tab to see what they dismantle into. Most need a workbench with an ammo press to do this, but basic arrows/bolts can be dismantled in your inventory. Loose ammo can also be boxed.\n\nRepair kits are more expensive, and top tier weapons/armour/tools now require a specific repair kit.\n\nRaw uranium. This ore is found exclusively in the wasteland. Take it to a blast furnace to process it into depleted uranium.\n\nPropylene Glycol. This by-product of refining oil shale into gasoline can be used with plant fibre or rotten flesh at a chemistry station to craft scrap polymer.\n"
 28AlphasLaterQuest8_title,Vehicles
 28AlphasLaterQuest8,"All vehicles EXCEPT the bicycle are too heavy for you to carry. Crafted vehicles come in a crate for you to carry to their deploy position.\n\nTwo new vehicles, the Ruin Runner, and The Hornet.\nThe Ruin Runner is a dirt bike, with similar speed to the motorcycle, but the inventory capacity of the minibike. The Hornet is an off-road dune buggy. As fast as a 4x4, but with the inventory capacity of a motorcycle.\n\nVehicles CANNOT be used underwater."
 28AlphasLaterQuest9_title,"Ammo, Weapons, Mods & Armour"
@@ -129,7 +129,111 @@ challengePlantLavender,Plant Lavender
 challengePlantLavenderDesc,"To make a [DECEA3]lavender seed[-], [DECEA3]Gather[-] some [DECEA3]lavender flowers[-] in the [DECEA3]Forest biome[-], click [DECEA3]Recipes[-], then select [DECEA3]Craft[-].\n\nWhen the seed is crafted, equip it on your [DECEA3]toolbelt[-], and place it in a [DECEA3]Farm Plot[-], or on some [DECEA3]fertilized terrain[-]."
 challengePlantLavenderShort,Plant a Lavender seed.
 
-challengeCraftForgedIronDesc,"To use the [DECEA3]Forge[-], [DECEA3]Obtain[-] resources like [DECEA3]Iron[-] and [DECEA3]Clay[-], add [DECEA3]Fuel[-] to the fuel slot, then selecting [DECEA3]Turn On[-].\n\nInstalling an [DECEA3]Anvil[-] and/or [DECEA3]Bellows[-] will increase performance, while adding a [DECEA3]Crucible[-] allows you to craft [DECEA3]Forged Steel[-] & steel items."
+challenge_buythefarm,Buy the Farm
+challenge_buythefarm_offer,"Well Survivor,\nI guess you found the note we left you. Now that the cat's out of the bag let's get down to business. We've been watching you and think you might make a good recruit. But before we open our doors to a stranger let's see if you can do this simple job.\n\nI'm slicker than cat shit on linoleum... Willie\n\nChallenge: Kill some Animals"
+challenge_buythefarm_subtitle,Kill some Animals
+challenge_cableguysnevermadeit,Cable Guys Never Made It
+challenge_cableguysnevermadeit_offer,"Dear Dumbass,\nI'm sure you are busy with your pathetic attempt to survive. But I have a proposition, finish this task for me and you can join the craziest gang in Navezgane. Or you can try to survive on your own.\n\n'Puts the F in Crazy' Jake\n\nChallenge: Kill some Zombie Utility Workers"
+challenge_cableguysnevermadeit_subtitle,Kill some Zombie Utility Workers
+challenge_dishonorabledischarge,Dishonorable Discharge
+challenge_dishonorabledischarge_offer,"To the idiot stirring up all the zombies,\nWe keep placing bets on how long you are going to survive...you surprised us. There are some pesky zombies that we want you to deal with. Maybe if you live then we can talk about what you can do for us.\n\nCray-J\n\nChallenge: Kill some zombie soldiers"
+challenge_dishonorabledischarge_subtitle,Kill some Zombie Soldiers
+challenge_dogdaysareover,The Dog Days Are Over
+challenge_dogdaysareover_offer,"Congrats Recruit,\nThis note is a personal invitation to join our clan. We've been following you and see potential. Do this job and we'll think about letting you join. Let's see if you're tough enough to kill some zombie dogs.\n\nI'm fucking Crazy Jake\n\nChallenge: Kill some zombie dogs"
+challenge_dogdaysareover_subtitle,Kill some Zombie Dogs
+challenge_dontfeedthebears,Don't Feed the Bears
+challenge_dontfeedthebears_offer,"Howdy Friend,\nUnless you got shit for brains you probably know we've been following you. Now that we've got the pleasantries out of the way let me get right to the point. We want you to join the Willies but first you have to pass this initiation for us to consider it.\n\nSlicker than a minnow's dick... Willie\n\nChallenge: Kill some Bears"
+challenge_dontfeedthebears_subtitle,Kill Bears
+challenge_drunkanddisorderly,Drunk and Disorderly
+challenge_drunkanddisorderly_offer,"Listen Punk,\nIf you've come to possess this note then know this. We've been watching you. You're pretty crafty but let's see if you can do this task and just maybe you can join our little band of merry survivors.\n\nCrazy is my middle name... Jake\n\nChallenge: Kill some zombies with your fists while drunk"
+challenge_drunkanddisorderly_subtitle,Fist Fight Zombies Drunk
+challenge_givemeaz,Give me a Z
+challenge_givemeaz_offer,"Hey Dirtbag,\nYou didn't find this note by accident. We've been watching you for days and think you are a waste of oxygen. But maybe if you prove yourself by finishing this challenge then we may be able to find a use for you.\n\nJake, 'King of Crazies'\n\nChallenge: Kill Zombie Cheerleaders"
+challenge_givemeaz_subtitle,Kill some Zombie Cheerleaders
+challenge_imalumberjackandimokay,I'm a Lumberjack and I'm Okay
+challenge_imalumberjackandimokay_offer,"Hey Bastard,\nWe've been watching you and we know who you are. You seem like you can take care of yourself pretty well but let's see if you can handle this challenge. Do this and we might just induct you into our private club. You better dress warm.\n\nI'm crazy in the head, Crazy Jake\n\nChallenge: Kill some lumberjack zombies"
+challenge_imalumberjackandimokay_subtitle,Kill some Lumberjack Zombies
+challenge_itsybitsyspider,Itsy Bitsy Spider
+challenge_itsybitsyspider_offer,"Hey Jackass,\nIf you're reading this note it should come as no surprise that we've been sizing you up. I've got just the test for a simpleton like you. Do it and we might take you in.\n\nCrazier than ever... Jake\n\nChallenge: Kill some spider zombies"
+challenge_itsybitsyspider_subtitle,Kill some Spider Zombies
+challenge_killthewabbit,Kill the Wabbit
+challenge_killthewabbit_offer,"Howdy Survivor,\nIf you've picked up this note then you know we've been observing you. You've got survival skills I'll give you that but let's see if you can pass this challenge and just maybe we'll let you join us.\n\nGood Luck Slick Willie\n\nChallenge: Kill some rabbits with a shotgun"
+challenge_killthewabbit_subtitle,Kill Rabbits with Shotgun
+challenge_ladykiller,Lady Killer
+challenge_ladykiller_offer,"Dear Stranger,\nMy crew have been following you and have reported some potential. That said if you can pass this challenge we may have room for one more new recruit in our camp.\n\nCrazy ‘Like a Fox' Jake\n\nChallenge: Kill some female zombies"
+challenge_ladykiller_subtitle,Kill some Female Zombies
+challenge_maneater,The Man Eater
+challenge_maneater_offer,"Hey Asshole,\nThe wasteland is a lonely desolate place. We've been looking in on you and think you might be a good addition to our clan. But before we take in another mouth to feed you'll need to prove yourself worthy. Do this task and we'll consider taking you in.\n\nCrazy ‘but still kicking' Jake\n\nChallenge: Kill some male zombies"
+challenge_maneater_subtitle,Kill some Male Zombies
+challenge_nailsomechicks,Nail Some Chicks
+challenge_nailsomechicks_offer,"Hello Friend,\nIf you're reading this note then you know we've been watching you. We're looking to add some new recruits and I think you've got what it takes. Do this little job and we might just make room for one more chicken in our coop. That is unless you're chicken ha ha.\n\nSlicker than greased goose shit... Willie\n\nChallenge: Kill some chickens with a Nailgun"
+challenge_nailsomechicks_subtitle,Kill Chickens with Nailgun
+challenge_nurseyoubacktohealth,Nurse You Back to Health
+challenge_nurseyoubacktohealth_offer,"Hey Survivor,\nIf you've come into possession of this note then you should know we've been tailing you. We like your style but before we roll out the red carpet to our camp let's see if you can handle this little test.\n\nCrazy ‘and I like it' Jake\n\nChallenge: Kill some nurse zombies"
+challenge_nurseyoubacktohealth_subtitle,Kill some Nurse Zombies
+challenge_silenceofthelambs,Silence of the Lambs
+challenge_silenceofthelambs_offer,"Dear Survivor,\nIf you've found this note then you know my crew and I have been watching you from afar. You're pretty good at survival but let's see if you can pass this test and just maybe we'll let you join our clan.\n\nGood Luck, Crazy Jake\n\nChallenge: Kill some Screamer Zombies."
+challenge_silenceofthelambs_subtitle,Kill some Screamer Zombies
+challenge_stagparty,Stag Party
+challenge_stagparty_offer,"Well how do you do,\nFriend if you've reading this letter than you should know my crew has been watching you. Do this little task for us and we might let you join the Willies. If not don't let the door hit you where the good lord split you.\n\nSlick ‘as a whistle' Willie\n\nChallenge: Kill some Deer"
+challenge_stagparty_subtitle,Kill Deer
+challenge_starvingtourists,Starving Tourists
+challenge_starvingtourists_offer,"Traveler,\nThe fact that you're reading this note is no accident. My boys have been watching you and we're always looking for new recruits that are still on the living side of things. But before we get all chummy we'd like you to do this little thing to see what you're made of.\n\nThey call me Crazy Jake\n\nChallenge: Kill some disturbed tourists."
+challenge_starvingtourists_subtitle,Kill some Disturbed Tourists
+challenge_thatlldopig,That'll Do Pig
+challenge_thatlldopig_offer,"Greetings Traveler,\nIf you ‘all are holding this note then you should know my boys have been sticking to you like flies on pig shit. That's because we think you just might be Slick Willie material. Now if you can pull off this wee little task we might just call you kin.\n\nI ain't no city slicker... Willie\n\nChallenge: Kill some boars"
+challenge_thatlldopig_subtitle,Kill Boars
+challenge_yournothingspecial,You're nothing Special
+challenge_yournothingspecial_offer,"Listen up Fucker,\nThe only reason you're not dead is because I like you. That's right we've been watching you. We could use someone with your talents so if you can handle this little tiny task you might just make it onto Team Crazy.\n\nI'm batshit crazy & loving it, Crazy Jake\n\nChallenge: Kill some special infected zombies"
+challenge_yournothingspecial_subtitle,Kill some Special infected
+
+quest_tier2_accelerated_annihiliation_name,Tier 2 Infested Speed Clear
+quest_tier3_accelerated_annihiliation_name,Tier 3 Infested Speed Clear
+quest_tier4_accelerated_annihiliation_name,Tier 4 Infested Speed Clear
+quest_tier5_accelerated_annihiliation_name,Tier 5 Infested Speed Clear
+quest_tier6_accelerated_annihiliation_name,Tier 6 Infested Speed Clear
+quest_accelerated_annihiliation_subtitle,Accelerated Annihiliation
+quest_accelerated_annihiliation_description,I need your help clearing out [DECEA3]{poi.name}[-] which is infested with zombies. An operative is inbound and I need it cleared ASAP so I'm paying a bonus for a fast clear.  Get in there and get it done!
+quest_tier1_accelerated_annihiliation_offer,I need your help clearing out [DECEA3]{poi.name}[-] which is infested with zombies. An operative is inbound and I need it cleared ASAP so I'm paying a bonus for a fast clear.  Get in there and get it done!
+quest_accelerated_annihiliation_statement,Infested Speed Clear
+quest_accelerated_annihiliation_response,Infested Speed Clear ([DECEA3]{poi.distance} {poi.direction}[-])
+quest_accelerated_annihiliation_completion,Thanks for your help clearing out the zombies - great job!
+quest_accelerated_annihiliation_completion_silver,Pretty quick job - nice work! Take some ammo for your efforts.  (Silver Clear)
+quest_accelerated_annihiliation_completion_gold,Amazing - I can't believe you took out all the zombies like that!  Take an extra reward on the house! (Gold Clear)
+tier1_contraband_collection_name,Tier 1 Supply Drop
+tier2_contraband_collection_name,Tier 2 Supply Drop
+tier3_contraband_collection_name,Tier 3 Supply Drop
+tier4_contraband_collection_name,Tier 4 Supply Drop
+tier5_contraband_collection_name,Tier 5 Supply Drop
+contraband_collection_subtitle,Contraband Collection
+contraband_collection_description,So... I might have setup a delivery from a buddy of mine in the military who's slipped a special package for me into a supply crate - but he can only deliver when a supply crate going missing from the official drops might go unnoticed.  Are you up for heading out and collecting it for me?  Oh and a warning - the package is a bit volatile - be wary of explosions!
+contraband_collection_offer,So... I might have setup a delivery from a buddy of mine in the military who's slipped a special package for me into a supply crate - but he can only deliver when a supply crate going missing from the official drops might go unnoticed.  Are you up for heading out and collecting it for me? Oh and a warning - the package is a bit volatile - be wary of explosions!
+contraband_collection_statement,Supply Drop
+contraband_collection_response,Supply Drop [[DECEA3]Night Only[-]] ([DECEA3]{treasure.distance} {treasure.direction}[-])
+contraband_collection_responseT1_2_3,Supply Drop ([DECEA3]{treasure.distance} {treasure.direction}[-])
+tier1_courier_rescue_name,Tier 1 Defend Safehouse
+tier2_courier_rescue_name,Tier 2 Defend Safehouse
+tier3_courier_rescue_name,Tier 3 Defend Safehouse
+tier4_courier_rescue_name,Tier 4 Defend Safehouse
+tier5_courier_rescue_name,Tier 5 Defend Safehouse
+courier_rescue_subtitle,Defend the Safehouse
+courier_rescue_description,A scout spotted a horde heading towards our safehouse at [DECEA3]{poi.name}[-].  Head there and clear out any zombies inside - then reinforce the structure and kill all the incoming zombies so that we can continue to use the building. If you feel like grabbing the satchel of goods you can - but I won't pay you any extra for it!
+courier_rescue_offer,One of our scouts spotted a small horde heading towards our safehouse at [DECEA3]{poi.name}[-]. Go and clear out any zombies inside - then stop the horde from trashing the place. If you feel like grabbing the satchel of goods you can - but I won't pay you any extra for it!
+courier_rescue_statement,Defend the safehouse.
+courier_rescue_response,Defend Safehouse ([DECEA3]{poi.distance} {poi.direction}[-])
+quest_tier1_speed_clear_name,Tier 1 Speed Clear
+quest_tier2_speed_clear_name,Tier 2 Speed Clear
+quest_tier3_speed_clear_name,Tier 3 Speed Clear
+quest_tier4_speed_clear_name,Tier 4 Speed Clear
+quest_tier5_speed_clear_name,Tier 5 Speed Clear
+quest_speed_clear_subtitle,Expedited Eradication
+quest_speed_clear_description,I need your help clearing out all the zombies at [DECEA3]{poi.name}[-]. An operative is inbound and I need it cleared ASAP so I'm paying a bonus for a fast clear.  Get in there and get it done!
+quest_tier1_speed_clear_offer,I need your help clearing out all the zombies at [DECEA3]{poi.name}[-]. An operative is inbound and I need it cleared ASAP so I'm paying a bonus for a fast clear.  Get in there and get it done!
+quest_speed_clear_statement,Speed Clear
+quest_speed_clear_response,Speed Clear ([DECEA3]{poi.distance} {poi.direction}[-])
+quest_speed_clear_completion,Thanks for your help clearing out the zombies - great job!
+quest_speed_clear_completion_silver,Pretty quick job - nice work! Take some ammo for your efforts.  (Silver Clear)
+quest_speed_clear_completion_gold,Amazing - I can't believe you took out all the zombies like that!  Take an extra reward on the house! (Gold Clear)
 
 4x4Bundle,4x4
 4x4BundleDesc,Take this bundle to where you want to place your 4x4 [FFC800]BEFORE[-] you open it!
@@ -158,7 +262,7 @@ playerAmmoPressTip_title,Ammo Press
 
 animalBear,Grizzly Bear
 animalChickenDesc,"A chicken. Use this in a chicken coop to produce eggs.\n\nMust be replaced periodically"
-animalDireWolf,Timber Wolf
+animalDireWolf,Zombie Wolf
 animalDoe,Mule Doe
 animalSnake,Rattlesnake
 animalStag,Mule Stag
@@ -351,6 +455,30 @@ buffWastelanddTooltip,"You are in a wasteland biome"
 chickenCoopDesc,"A home for your chickens.\n\n Place a chicken in the fuel slot to produce eggs over time.\n\nWill stop producing eggs when the chicken is spent."
 ClubRepairKit,Club Repair Kit
 ClubRepairKitDesc,This Repair Kit is used to repair steel clubs.
+
+craftingBladesDesc,Reading [DECEA3]Knife Guy[-] will increase the quality of crafted blades.
+craftingBowsDesc,Reading [DECEA3]Bow Hunters[-] will increase the quality of crafted bows.
+craftingClubsDesc,Reading [DECEA3]Big Hitters[-] will increase the quality of crafted clubs.
+craftingElectricianDesc,Reading [DECEA3]Wiring 101[-] will unlock various tiers of electrical items.
+craftingExplosivesDesc,Reading [DECEA3]Explosive Magazine[-] will unlock various explosives.
+craftingFoodDesc,Reading [DECEA3]Home Cooking Weekly[-] will unlock various tiers of food items.
+craftingHandgunsDesc,Reading [DECEA3]Handgun Magazine[-] will increase the quality of crafted handguns.
+craftingHarvestingToolsDesc,Reading [DECEA3]Tools Digest[-] will increase the quality of crafted harvesting tools.
+craftingKnucklesDesc,Reading [DECEA3]Furious Fists[-] magazines will increase the quality of crafted knuckles.
+craftingMachineGunsDesc,Reading [DECEA3]Tactical Warfare[-] will increase the quality of crafted machine guns.
+craftingMedicalDesc,Reading [DECEA3]Medical Journal[-] will unlock various tiers of medical items.
+craftingRepairToolsDesc,Reading [DECEA3]Handy Land[-] will increase the quality of crafted repair tools.
+craftingRiflesDesc,Reading [DECEA3]Rifle World[-] will increase the quality of crafted rifles.
+craftingRoboticsDesc,Reading [DECEA3]Tech Planet[-] will increase the quality of crafted robotics.
+craftingSalvageToolsDesc,Reading [DECEA3]Scrapping 4 Fun[-] magazines will increase the quality of crafted salvage tools.
+craftingSeedsDesc,Reading [DECEA3]Southern Farming[-] will unlock various tiers of seeds.
+craftingShotgunsDesc,Reading [DECEA3]Shotgun Weekly[-] will increase the quality of crafted shotguns.
+craftingSledgehammersDesc,Reading [DECEA3]Get Hammered[-] will increase the quality of crafted sledgehammers.
+craftingSpearsDesc,Reading [DECEA3]Sharp Sticks[-] will increase the quality of crafted spears.
+craftingTrapsDesc,Reading [DECEA3]Electrical Traps[-] will unlock various tiers of traps.
+craftingVehiclesDesc,Reading [DECEA3]Vehicle Adventures[-] will unlock various tiers of vehicles.
+craftingWorkstationsDesc,Reading [DECEA3]Forge Ahead[-] will unlock various workstations and their tools.
+
 foodCanBeefcooked,Cooked Beef Ration
 foodCanBeefcookedDesc,"It's not from your favorite steakhouse but this can of cooked beef will fill you up, and not be as likely to give you the shits..."
 foodCanCarrots,Can of Carrots
@@ -485,7 +613,7 @@ resourceSawBlade,Saw Blade
 resourceSawBladeDesc,A crucial compenent for constructing a sawmill.
 medicalT3-4,Tier 3: The T-Virus Cure
 meleeToolFarmT2IronHoe,Garden Hoe
-meleeToolFarmT2IronHoeDesc,"Required for fertilizing terrain, and farmplots found in the world.\n\nNot required for crafted farm plots.\n\nRequires you to have fertilizer in your inventory.\nUse your secondary action[FFB400][action:local:Secondary][-] to use the fertilizer."
+meleeToolFarmT2IronHoeDesc,"Required for fertilizing terrain, and farmplots found in the world.\n\nNot required for crafted farm plots.\n\nRequires you to have fertilizer in your inventory.\nUse your secondary action[FFB400][action:local:Secondary][-] to hoe the ground and use the fertilizer."
 meleeToolFarmT2IronHoeSchematic,Garden Hoe Schematic
 meleeToolAxeT2SteelAxeDesc,"The steel axe has a durable blade and is great for harvesting wood.\n\nRepair with a Steel Tools Repair Kit.\nScrap to Steel Tool parts."
 meleeToolAxeT3ChainsawDesc,"Chop down the biggest trees or zombies faster than Paul Bunyan with this great chainsaw that uses gasoline for fuel.\n\nRepair with a Motor Tools Repair Kit.\nScrap to Motor Tool Parts."
@@ -619,8 +747,30 @@ plantedLavender1,Lavender (Seed)
 plantedLavender2,Lavender (Growing)
 plantedLavender3HarvestPlayer,Lavender Flower
 plantedLavender3HarvestDesc,Lavender Flower
-plantedCropsGroupDesc,"Plant these seeds on a craftable Farm Plot block, or on tilled ground to grow plants for you to harvest.\n\nWhen harvested, you'll need to craft a seed for replanting.\n\nFertilize the ground twice, or use a Farm Plot for maximum yield."
-plantedMushroom1Desc,"Mushroom spores can be planted on all surfaces and walls and will grow without sunlight.\n\nWhen harvested, you'll need to craft a seed for replanting.\n\nPlant in twice-fertilized ground or a Farm Plot for maximum yield."
+plantedCarrot1,Carrot (Seed)
+plantedCarrot2,Carrot (Growing)
+plantedCarrot3HarvestPlayer,Carrot
+plantedCarrot3HarvestPlayerDesc,Carrot
+plantedCarrot3Harvest,Carrot
+foodCropCarrot,Carrot
+plantedOnion1,Onion (Seed)
+plantedOnion2,Onion (Growing)
+plantedOnion3HarvestPlayer,Onion
+plantedOnion3HarvestPlayerDesc,Onion
+plantedOnion3Harvest,Onion
+foodCropOnion,Onion
+plantedTurnip1,Turnip (Seed)
+plantedTurnip2,Turnip (Growing)
+plantedTurnip3HarvestPlayer,Turnip
+plantedTurnip3HarvestPlayerDesc,Turnip
+plantedTurnip3Harvest,Turnip
+foodCropTurnip,Turnip
+
+foodCropCarrotDesc,"Carrots can be eaten, crafted into seeds or used in several recipes at a campfire or stove"
+foodCropOnionDesc,"Onions can be eaten, crafted into seeds or used in several recipes at a campfire or stove"
+foodCropTurnipDesc,"Turnips can be eaten, crafted into seeds or used in several recipes at a campfire or stove"
+plantedCropsGroupDesc,"Plant these seeds on a craftable Farm Plot block, or on tilled ground to grow plants for you to harvest.\n\nWhen harvested, you'll need to craft a seed for replanting."
+plantedMushroom1Desc,"Mushroom spores MUST be planted on a craftable Farm Plot block, or on tilled ground in order to grow.\n\nIf you place them on non-fertilized terrain, they won't grow.\n\nWhen harvested, you'll need to craft a seed for replanting."
 RifleRepairKit,Rifle Repair Kit
 RifleRepairKitDesc,"This Repair Kit is used to repair hunting, lever-action, and sniper rifles."
 RobotRepairKit,Robot Repair Kit
@@ -629,6 +779,9 @@ RocketLauncherRepairKit,Rocket Launcher Repair Kit
 RocketLauncherRepairKitDesc,This Repair Kit is used to repair rocket launchers.
 RuinRipperBundle,The Ruin Runner
 RuinRipperBundleDesc,Take this bundle to where you want to place your dirt bike [FFC800]BEFORE[-] you open it!
+seedsT2-2,Tier 2: Pumpkin & Carrots
+seedsT2-3,Tier 2: Mushroom & Onion
+seedsT2-4,Tier 2: Corn & Turnip
 ShotgunRepairKit,Shotgun Repair Kit
 ShotgunRepairKitDesc,"This Repair Kit is used to repair double barrel, pump action, and auto shotguns."
 SledgehammerRepairKit,Sledgehammer Repair Kit
@@ -642,17 +795,17 @@ SteelToolRepairKitDesc,"This Repair Kit is used to repair steel axes, picks, and
 StunBatonRepairKit,Stun Baton Repair Kit
 StunBatonRepairKitDesc,This Repair Kit is used to repair stun batons.
 startermeleeWpnSpearT0StoneSpear,Stone spear
-startermeleeWpnSpearT0StoneSpearDesc,Read this to receive a Q4 stone spear.
+startermeleeWpnSpearT0StoneSpearDesc,Read this to receive a stone spear.
 startermeleeWpnClubT0WoodenClub,Wooden club
-startermeleeWpnClubT0WoodenClubDesc,Read this to receive a Q4 wooden club.
+startermeleeWpnClubT0WoodenClubDesc,Read this to receive a wooden club.
 startermeleeWpnSledgeT0StoneSledgehammer,Stone sledgehammer
-startermeleeWpnSledgeT0StoneSledgehammerDesc,Read this to receive a Q4 stone sledgehammer.
+startermeleeWpnSledgeT0StoneSledgehammerDesc,Read this to receive a stone sledgehammer.
 startermeleeWpnKnucklesT0LeatherKnuckles,Knuckle wraps
-startermeleeWpnKnucklesT0LeatherKnucklesDesc,Read this to receive Q4 knuckle wraps.
+startermeleeWpnKnucklesT0LeatherKnucklesDesc,Read this to receive knuckle wraps.
 startermeleeWpnBladeT0BoneKnife,Bone knife
-startermeleeWpnBladeT0BoneKnifeDesc,Read this to receive a Q4 bone knife.
+startermeleeWpnBladeT0BoneKnifeDesc,Read this to receive a bone knife.
 startergunBowT0PrimitiveBow,Primitive bow
-startergunBowT0PrimitiveBowDesc,Read this to receive a Q4 primitive bow\nand 10 stone arrows.
+startergunBowT0PrimitiveBowDesc,Read this to receive a primitive bow\nand 10 stone arrows.
 startermeleeWpnBatonT0PipeBaton,Pipe baton
 startermeleeWpnBatonT0PipeBatonDesc,Read this to receive a Q4 pipe baton.
 tableSawDesc,"A workstation for turning logs into wood planks more quickly and effeciently."
@@ -725,29 +878,35 @@ zombieArleneFrozen,Frozen Putrid Girl
 zombieArleneMutated,Mutated Putrid Girl
 zombieArleneRadiated,Radiated Putrid Girl
 zombieArleneRotten,Rotting Putrid Girl
+zombieArleneWeak,Weak Putrid Girl
 zombieBikerFrozen,Frozen Biker
 zombieBikerMutated,Mutated Biker
 zombieBikerRotten,Rotting Biker
+zombieBikerWeak,Weakened Biker
 zombieBoe,Infected Survivor
 zombieBoeFeral,Feral Infected Survivor
 zombieBoeFrozen,Frozen Infected Survivor
 zombieBoeMutated,Mutated Infected Survivor
 zombieBoeRotten,Rotting Infected Survivor
+zombieBoeWeak,Weakened Infected Survivor
 zombieBoeRadiated,Radiated Infected Survivor
 zombieBurnt,Burn Victim
 zombieBurntMutated,Mutated Burn Victim
 zombieBurntRotten,Rotting Burn Victim
 zombieBurntRadiated,Radiated Burn Victim
 zombieBurntFeral,Feral Burn Victim
+zombieBurntWeak,Weakened Burn Victim
 zombieBusinessManFrozen,Frozen Businessman
 zombieBusinessManMutated,Mutated Businessman
 zombieBusinessManRotten,Rotting Businessman
+zombieBusinessManWeak,Weakened Businessman
 zombieDarlene,Decayed Mother
 zombieDarleneFeral,Feral Mother
 zombieDarleneFrozen,Frozen Mother
 zombieDarleneMutated,Mutated Mother
 zombieDarleneRotten,Rotting Mother
 zombieDarleneRadiated,Radiated Mother
+zombieDarleneWeak,Weakened Mother
 zombieFatCop,Infected Cop
 zombieFatCopFeral,Feral Cop
 zombieFatCopMutated,Mutated Cop
@@ -756,31 +915,38 @@ zombieFatHawaiian,Disturbed Tourist
 zombieFatHawaiianFrozen,Frozen Tourist
 zombieFatHawaiianMutated,Mutated Tourist
 zombieFatHawaiianRotten,Rotting Tourist
+zombieFatHawaiianWeak,Weakened Tourist
 zombieFemaleFat,Hungry Zombie
 zombieFemaleFatFeral,Feral Hungry Zombie
 zombieFemaleFatFrozen,Frozen Hungry Zombie
 zombieFemaleFatMutated,Mutated Hungry Zombie
 zombieFemaleFatRotten,Rotting Hungry Zombie
 zombieFemaleFatRadiated,Radiated Hungry Zombie
+zombieFemaleFatWeak,Weakened Hungry Zombie
 zombieJanitorFrozen,Frozen Janitor
 zombieJanitorMutated,Mutated Janitor
 zombieJanitorRotten,Rotting Janitor
+zombieJanitorWeak,Weakened Janitor
 zombieJoe,Festering Cadaver
 zombieJoeFrozen,Frozen Cadaver
 zombieJoeMutated,Mutated Cadaver
 zombieJoeRotten,Rotting Cadaver
 zombieJoeRadiated,Radiated Cadaver
 zombieJoeFeral,Feral Cadaver
+zombieJoeWeak,Weakened Cadaver
 zombieLabFrozen,Frozen Labworker
 zombieLabMutated,Mutated Labworker
 zombieLabRotten,Rotting Labworker
+zombieLabWeak,Weakened Labworker
 zombieLumberjackMutated,Mutated Lumberjack
 zombieLumberjackRotten,Rotting Lumberjack
+zombieLumberjackWeak,Weakened Lumberjack
 zombieMaleFeralHazmatLootBag,Dropped Hazmat Loot
 zombieMaleHazmatFrozen,Frozen Hazmat
 zombieMaleHazmatLootBag,Dropped Hazmat Loot
 zombieMaleHazmatMutated,Mutated Hazmat
 zombieMaleHazmatRotten,Rotting Hazmat
+zombieMaleHazmatWeak,Weakened Hazmat
 zombieMaleMutatedHazmatLootBag,Dropped Hazmat Loot
 zombieMarlene,Departed Woman
 zombieMarleneFrozen,Frozen Departed Woman
@@ -788,20 +954,24 @@ zombieMarleneMutated,Mutated Departed Woman
 zombieMarleneRotten,Rotting Departed Woman
 zombieMarleneRadiated,Radiated Departed Woman
 zombieMarleneFeral,Feral Departed Woman
+zombieMarleneWeak,Weakened Departed Woman
 zombieMoe,Bloated Walker
 zombieMoeFrozen,Frozen Walker
 zombieMoeMutated,Mutated Walker
 zombieMoeRotten,Rotting  Walker
 zombieMoeRadiated,Radiated Walker
 zombieMoeFeral,Feral Walker
+zombieMoeWeak,Weakened Walker
 zombieMutatedDemolition,Nuclear Demolition
 zombieMutatedMutated,Mutated Hulk
 zombieNurseFrozen,Frozen Nurse
 zombieNurseMutated,Mutated Nurse
 zombieNurseRotten,Rotting Nurse
+zombieNurseWeak,Weakened Nurse
 zombiePartyGirlFrozen,Frozen Party Girl
 zombiePartyGirlMutated,Mutated Party Girl
 zombiePartyGirlRotten,Rotting Party Girl
+zombiePartyGirlWeak,Weakened Party Girl
 zombieScreamerMutated,Mutated Screamer
 zombieSkateboarderFrozen,Frozen Thug
 zombieSkateboarderMutated,Mutated Thug
@@ -809,30 +979,37 @@ zombieSkateboarderRotten,Rotting Thug
 zombieSkateboarderRadiated,Radiated Thug
 zombieSkateboarderFeral,Feral Thug
 zombieSkateboarder,Thug
+zombieSkateboarderWeak,Weakened Thug
 zombieSoldierFrozen,Frozen Soldier
 zombieSoldierMutated,Mutated Soldier
 zombieSoldierRotten,Rotting Soldier
+zombieSoldierWeak,Weakened Soldier
 zombieSpiderFrozen,Frozen Spider
 zombieSpiderMutated,Mutated Spider
 zombieSpiderRotten,Rotting Spider
+zombieSpiderWeak,Weakened Spider
 zombieSteve,Reanimated Corpse
 zombieSteveFeral,Feral Reanimated Corpse
 zombieSteveRadiated,Radiated Reanimated Corpse
+zombieSteveWeak,Weakened Reanimated Corpse
 zombieSteveCrawlerFrozen,Frozen Crawler
 zombieSteveCrawlerMutated,Mutated Crawler
 zombieSteveCrawlerRotten,Rotting Crawler
 zombieSteveCrawlerRadiated,Radiated Crawler
 zombieSteveCrawlerFeral,Feral Crawler
 zombieSteveCrawler,Crawler
+zombieSteveCrawlerWeak,Weakened Crawler
 zombieSteveFrozen,Frozen Reanimated Corpse
 zombieSteveMutated,Mutated Reanimated Corpse
 zombieSteveRotten,Rotting Reanimated Corpse
 zombieTomClarkFrozen,Frozen Tom Clark
 zombieTomClarkMutated,Mutated Tom Clark
 zombieTomClarkRotten,Rotting Tom Clark
+zombieTomClarkWeak,Weakened Tom Clark
 zombieUtilityWorkerFrozen,Frozen Utility Worker
 zombieUtilityWorkerMutated,Mutated Utility Worker
 zombieUtilityWorkerRotten,Rotting Utility Worker
+zombieUtilityWorkerWeak,Weakened Utility Worker
 zombieWightMutated,Mutated Wight
 zombieYo,Walking Carcass
 zombieYoFeral,Feral Carcass
@@ -840,6 +1017,7 @@ zombieYoRadiated,Radiated Carcass
 zombieYoFrozen,Frozen Carcass
 zombieYoMutated,Mutated Carcass
 zombieYoRotten,Rotting Carcass
+zombieYoWeak,Weakened Carcass
 zombieBunkerBuster,Bunker Buster
 npcTraderRed,Trader Red
 npcTraderHells,Trader Hells

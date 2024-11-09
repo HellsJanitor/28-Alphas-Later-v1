@@ -30,70 +30,66 @@
 	<!-- <set xpath="/windows/window[@name='windowQuestList']/rect[@name='content']/rect[@depth='3']//button[3]/@pos">-3120,-21</set>	 -->
 	
 	<set xpath="/windows/window[@name='windowQuestDescription']/@width">903</set>
-	<set xpath="/windows/window[@name='windowQuestDescription']/@height">732</set>
-	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']/@height">732</set>
-	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']//sprite[1]/@height">732</set>
+	<set xpath="/windows/window[@name='windowQuestDescription']/@height">532</set>
+	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']/@height">532</set>
+	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']//sprite[1]/@height">532</set>
 	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']//sprite[1]/@width">903</set>
-	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']/label[@depth='3']/@height">732</set>
+	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']/label[@depth='3']/@height">532</set>
 	<set xpath="/windows/window[@name='windowQuestDescription']/rect[@name='content']/label[@depth='3']/@width">892</set>
 	
 	<remove xpath="/windows/window[@name='windowQuestObjectives']"/>
 	
 	<insertafter xpath="/windows/window[@name='windowQuestDescription']">
-		<window name="windowQuestObjectives" width="533" height="30" panel="Center" controller="QuestObjectivesWindow" cursor_area="true" >
- 	<!--#$-IGS END.-$#-->
-		<panel name="header" pos="1,-44" height="40" depth="1" backgroundspritename="ui_game_panel_header">
-			<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_quest"/>
-			<label style="header.name" text="OBJECTIVES" text_key="xuiObjectives" />
+		<window name="windowQuestObjectives" width="633" height="230" panel="Center" controller="QuestObjectivesWindow" cursor_area="true">
+			<!--#$-IGS END.-$#-->
+			<panel name="header" pos="1,-44" height="40" depth="1" backgroundspritename="ui_game_panel_header">
+				<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_quest"/>
+				<label style="header.name" text="OBJECTIVES" text_key="xuiObjectives"/>
 			
-			<!-- <label depth="2" pos="445,-8" width="200" height="28" text="{tieradd}" justify="right" upper_case="true" /> -->
-		</panel>
-		<rect name="content" pos="1,-84" height="40" depth="1">
-			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
-			<sprite color="[darkGrey]" type="sliced" />
-			<rect visible="{showquest}">
-				<grid name="objectiveList" rows="5" cols="2" pos="12,-10" width="300" height="40" cell_width="300" cell_height="30" repeat_content="true" arrangement="horizontal" controller="QuestObjectiveList">
-					<quest_objective_entry name="0" />
-				</grid>
+			</panel>
+			<rect name="content" pos="1,-84" height="165" depth="1">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
+				<sprite color="[darkGrey]" type="sliced"/>
+				<rect visible="{showquest}">
+					<grid name="objectiveList" rows="5" cols="2" pos="12,-10" width="280" height="165" cell_width="280" cell_height="28" repeat_content="true" arrangement="horizontal" controller="QuestObjectiveList">
+						<quest_objective_entry name="0"/>
+					</grid>
 				
-				<label depth="3" pos="45,-8" text="{questrequirementstitle}: {questrequirements}" width="290" visible="{showrequirements}" height="30" />
+					<label depth="3" pos="45,-8" text="{questrequirementstitle}: {questrequirements}" font_size="20" width="290" visible="{showrequirements}" height="30"/>
+				</rect>
+				<rect visible="{showempty}">
+					<label pos="0,-70" depth="3" name="descriptionText" width="100%" height="65" text="OBJECTIVES NOT AVAILABLE AT THIS TIME." text_key="xuiObjectivesNotAvailable" justify="center" font_size="20"/>
+				</rect>
 			</rect>
-			<rect visible="{showempty}">
-				<label pos="0,-70" depth="3" name="descriptionText" width="100%" height="65" text="OBJECTIVES NOT AVAILABLE AT THIS TIME." text_key="xuiObjectivesNotAvailable" justify="center" font_size="28" />
-			</rect>
-		</rect>
-		</window>	
+		</window>
 	</insertafter>
 	
 	<remove xpath="/windows/window[@name='windowQuestRewards']"/>
 	
 	<insertafter xpath="/windows/window[@name='windowQuestObjectives']">
-		<window name="windowQuestRewards" width="370" height="40" panel="Center" controller="QuestRewardsWindow" cursor_area="true" >
-	<!--#$-IGS END.-$#-->
-		<panel name="header" pos="534,-5" height="40" depth="1" backgroundspritename="ui_game_panel_header">
-			<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_treasure"/>
-			<label style="header.name" text="REWARDS" text_key="xuiRewards" />
-			<label depth="2" pos="3145,-8" width="300" height="28" text="{finishtime}" justify="right" upper_case="true" />
-		</panel>
-		<rect name="content" pos="534,-45" height="40" depth="1">
-			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
-			<sprite color="[darkGrey]" type="sliced" />
-			<rect visible="{showquest}">
-				<!-- <grid name="rewardList" rows="5" cols="1" pos="12,-10" width="600" height="368" cell_width="300" cell_height="30" repeat_content="true" arrangement="vertical" controller="QuestRewardList"> -->
-					<!-- <quest_reward_entry2 name="0" /> -->
-				<!-- </grid> -->
-				<label pos="6,-6" depth="3" name="descriptionText" text="{commonrewards}
-				{chaintitle}{chainrewards}" font_size="28" width="365" height="145" />
+		<window name="windowQuestRewards" width="270" height="230" panel="Center" controller="QuestRewardsWindow" cursor_area="true">
+			<panel name="header" pos="634,195" height="40" depth="1" backgroundspritename="ui_game_panel_header">
+				<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_treasure"/>
+				<label style="header.name" text="REWARDS" text_key="xuiRewards"/>
+				<label depth="2" pos="3145,-8" width="300" height="28" text="{finishtime}" justify="right" upper_case="true"/>
+			</panel>
+			<rect name="content" pos="634,155" height="165" depth="1">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false"/>
+				<sprite color="[darkGrey]" type="sliced"/>
+				<rect visible="{showquest}">
+					<label pos="6,-6" depth="3" name="descriptionText" text="{commonrewards}" font_size="28" width="195" height="145"/>
+					<label pos="6,-90" depth="3" name="descriptionText" text="{chaintitle}" font_size="28" width="195" height="145"/>
+					<label pos="6,-120" depth="3" name="descriptionText" text="{chainrewards}" font_size="28" width="195" height="145"/>
+				</rect>
+				<rect visible="{showempty}">
+					<label pos="0,-70" depth="3" name="descriptionText" width="100%" height="145" text="REWARDS NOT AVAILABLE AT THIS TIME." text_key="xuiRewardsNotAvailable" justify="center" pivot="left" font_size="28"/>
+				</rect>
 			</rect>
-			<rect visible="{showempty}">
-				<label pos="0,-70" depth="3" name="descriptionText" width="100%" height="145" text="REWARDS NOT AVAILABLE AT THIS TIME." text_key="xuiRewardsNotAvailable" justify="center" pivot="left" font_size="28" />
-			</rect>
-		</rect>
-		</window>	
+		</window>
 	</insertafter>
 	
-	<set xpath="/windows/window[@name='windowQuestRewards']/@height">40</set>
-	<set xpath="/windows/window[@name='windowQuestRewards']/rect[@name='content']/@height">40</set>
+	<!-- <set xpath="/windows/window[@name='windowQuestRewards']/@height">165</set> -->
+	<!-- <set xpath="/windows/window[@name='windowQuestRewards']/rect[@name='content']/@height">165</set> -->
 	
 	<append xpath="/windows">
 		<!-- *** adds workbench tools *** -->
@@ -242,17 +238,17 @@
 			</panel>
 		</window>
 		
-		<window name="windowToolsBlastFurnace" width="228" height="121" panel="Right" cursor_area="true" >
-		<!--#$-IGS END.-$#-->
+		<window name="windowToolsBlastFurnace" width="228" height="121" panel="Right" cursor_area="true">
+			<!--#$-IGS END.-$#-->
 			<panel style="header.panel">
 				<sprite style="header.icon" sprite="ui_game_symbol_wrench"/>
-				<label style="header.name" text="TOOLS" text_key="xuiTools" />
+				<label style="header.name" text="TOOLS" text_key="xuiTools"/>
 			</panel>
 
 			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true">
 
 				<grid name="inventory" rows="1" cols="2" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationToolGrid" repeat_content="true"
-				required_tools="toolBellows,toolForgeCrucible" required_tools_only="true">
+				      required_tools="toolBellows,toolForgeCrucible" required_tools_only="true">
 					<item_stack controller="RequiredItemStack" name="0"/>
 				</grid>
 			</rect>
@@ -733,22 +729,22 @@
 	<!-- removes zombie name from HP bar -->
 	<!-- <set xpath="//window[@name='windowTargetBar']/rect[@visible='{isnotboss}']/label[@depth='3']/@text">{currentwithmax}</set> -->
 	<!-- <set xpath="//window[@name='windowTargetBar']"> -->
-		<!-- <rect pos="-200,-85" width="400" height="36" visible="{isnotboss}"> -->
-			<!-- <sprite depth="1" name="border" color="0,0,0,210" type="sliced" width="400" globalopacity="false"/> -->
-			<!-- <filledsprite depth="2" name="BarContent" type="filled" color="200,0,0,180" width="400" fill="{fill}" globalopacity="false"/> -->
-			<!-- <label depth="3" name="TextContent" pos="9,-4" font_size="28" color="[white]" justify="center" pivot="topleft" text="{currentwithmax}" height="30"/> -->
-			<!-- <sprite depth="4" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/> -->
-		<!-- </rect> -->
+	<!-- <rect pos="-200,-85" width="400" height="36" visible="{isnotboss}"> -->
+	<!-- <sprite depth="1" name="border" color="0,0,0,210" type="sliced" width="400" globalopacity="false"/> -->
+	<!-- <filledsprite depth="2" name="BarContent" type="filled" color="200,0,0,180" width="400" fill="{fill}" globalopacity="false"/> -->
+	<!-- <label depth="3" name="TextContent" pos="9,-4" font_size="28" color="[white]" justify="center" pivot="topleft" text="{currentwithmax}" height="30"/> -->
+	<!-- <sprite depth="4" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/> -->
+	<!-- </rect> -->
 		
-		<!-- <rect pos="-267,-85" width="725" height="25" visible="{isboss}"> -->
-			<!-- <sprite pos="60,-45" width="448" depth="1" name="border" color="0,0,0,255" type="sliced" globalopacity="false"/> -->
-			<!-- <filledsprite pos="60,-45" width="448" depth="2" name="BarContent" type="filled" fill="{fill}" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar_HP"/> -->
-			<!-- <sprite depth="3" name="Icon" size="84,84" pos="45,-42" pivot="center" sprite="{boss_sprite}" globalopacity="false"/> -->
-			<!-- <sprite depth="4" name="overlay" width="517" height="84" type="sliced" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar"/> -->
+	<!-- <rect pos="-267,-85" width="725" height="25" visible="{isboss}"> -->
+	<!-- <sprite pos="60,-45" width="448" depth="1" name="border" color="0,0,0,255" type="sliced" globalopacity="false"/> -->
+	<!-- <filledsprite pos="60,-45" width="448" depth="2" name="BarContent" type="filled" fill="{fill}" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar_HP"/> -->
+	<!-- <sprite depth="3" name="Icon" size="84,84" pos="45,-42" pivot="center" sprite="{boss_sprite}" globalopacity="false"/> -->
+	<!-- <sprite depth="4" name="overlay" width="517" height="84" type="sliced" globalopacity="false" sprite="ui_game_symbol_twitch_boss_bar"/> -->
 			
-			<!-- <label depth="5" name="TextContent" pos="100,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="{name}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/> -->
-			<!-- <label depth="5" name="MinionCount" pos="482,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="x{minioncount}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/> -->
-		<!-- </rect> -->
+	<!-- <label depth="5" name="TextContent" pos="100,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="{name}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/> -->
+	<!-- <label depth="5" name="MinionCount" pos="482,-13" font_size="30" color="[white]" justify="left" pivot="topleft" text="x{minioncount}" height="30" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/> -->
+	<!-- </rect> -->
 	<!-- </set> -->
 	
 	<!-- big health bars -->
@@ -912,26 +908,26 @@
 				<!-- <sprite depth="5" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="35,35" pos="26,-24" pivot="center" foregroundlayer="true"/> -->
 				<label depth="6" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{statcurrent}" width="125" height="35"/>
 				
-				<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" atlas="{staticonatlas|once}" sprite="{staticon|once}" color="115,115,115" globalopacitymod="1.4" />
-				<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" atlas="{staticonatlas|once}" sprite="{staticon|once}" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="vertical" color="{stealthcolor}" globalopacitymod="1.8" tooltip_key="" />
+				<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" atlas="{staticonatlas|once}" sprite="{staticon|once}" color="115,115,115" globalopacitymod="1.4"/>
+				<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" atlas="{staticonatlas|once}" sprite="{staticon|once}" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="vertical" color="{stealthcolor}" globalopacitymod="1.8" tooltip_key=""/>
 
 				<!-- <sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/> -->
 				<!-- <filledsprite depth="8" name="background" color="0,0,0,255" width="171" fillcenter="false" type="filled" fill="1"/> -->
 				<!-- <filledsprite depth="3" name="background" color="0,0,0,255" width="170" fillcenter="false" type="filled" fill="1"/> -->
-			</rect>			
+			</rect>
 		</rect>
 
 		<!-- <rect name="hud" pos="90,40" side="left" controller="BuffPopoutList" pivot="BottomLeft"> -->
-			<!-- <panel width="168" height="22" name="item" visible="false" pivot="right" disableautobackground="true" pos="70, 0" style="press" sound="[recipe_click]" on_hover="true"> -->
-				<!-- <sprite depth="3" pos="0,0" name="Background" sprite="ui_game_popup" height="22" width="162" pivot="center" flip="Horizontally" color="[transparent]"/> -->
-				<!-- <sprite depth="4" name="Icon" size="20,20" pos="-54,0" pivot="center" color="[transparent]"/> -->
-				<!-- <label depth="6" name="TextContent" pos="-37,0" font_size="28" color="[white]" justify="center" width="118" height="20" pivot="left"/> -->
-			<!-- </panel> -->
+		<!-- <panel width="168" height="22" name="item" visible="false" pivot="right" disableautobackground="true" pos="70, 0" style="press" sound="[recipe_click]" on_hover="true"> -->
+		<!-- <sprite depth="3" pos="0,0" name="Background" sprite="ui_game_popup" height="22" width="162" pivot="center" flip="Horizontally" color="[transparent]"/> -->
+		<!-- <sprite depth="4" name="Icon" size="20,20" pos="-54,0" pivot="center" color="[transparent]"/> -->
+		<!-- <label depth="6" name="TextContent" pos="-37,0" font_size="28" color="[white]" justify="center" width="118" height="20" pivot="left"/> -->
+		<!-- </panel> -->
 		<!-- </rect> -->
 		
-		<rect name="hud" pos="90,132" side="left" controller="BuffPopoutList" pivot="BottomLeft" >
-			<panel width="168" height="46" name="item" visible="false" pivot="right" disableautobackground="true" pos="70, 0" style="press" sound="[recipe_click]" on_hover="true" >
-				<sprite depth="3" pos="0,0"  name="Background" sprite="ui_game_popup" height="46" width="162" pivot="center" flip="Horizontally" color="[transparent]" />
+		<rect name="hud" pos="90,132" side="left" controller="BuffPopoutList" pivot="BottomLeft">
+			<panel width="168" height="46" name="item" visible="false" pivot="right" disableautobackground="true" pos="70, 0" style="press" sound="[recipe_click]" on_hover="true">
+				<sprite depth="3" pos="0,0" name="Background" sprite="ui_game_popup" height="46" width="162" pivot="center" flip="Horizontally" color="[transparent]"/>
 				<sprite depth="4" name="Icon" size="40,40" pos="-54,0" pivot="center" color="[transparent]"/>
 				<label depth="6" name="TextContent" pos="-37,0" font_size="28" color="[white]" justify="center" width="118" height="40" pivot="left"/>
 			</panel>
@@ -940,17 +936,17 @@
 	
 	<append xpath="/windows">
 		<window name="HUDBottomLeftStatBars">
-			<rect name="HUDEnvironment" pos="182,165" >
+			<rect name="HUDEnvironment" pos="182,165">
 				<rect width="171" height="44" pos="{# cvar('wellrestedHUD') &gt; 0 ? '0,-54' : '0,-100'}" controller="HUDStatBar" visible="{# cvar('.DespairDisplayHUD') &gt; 0 and cvar('.DespairDisplayHUD') &lt; 0.3}">
 					<!-- <sprite depth="1" name="background" color="0,0,0,220" type="sliced"/> -->
 					<!-- <filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="255,244,79,128" type="filled" fill="{cvar(.DespairDisplayHUD)}"/> -->
 					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_intellect" color="0,255,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
-					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_intellect" color="115,115,115" pivot="center" globalopacity="false"/> -->					
+					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_intellect" color="115,115,115" pivot="center" globalopacity="false"/> -->
 					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_intellect" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
 					
-					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_intellect" color="8,8,8" globalopacitymod="1.4" />
-					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" color="192,192,192" globalopacitymod="1.4" />
-					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="vertical" color="255,225,53,250" globalopacitymod="1.8" tooltip_key="" />
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_intellect" color="8,8,8" globalopacitymod="1.4"/>
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" color="192,192,192" globalopacitymod="1.4"/>
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="vertical" color="255,225,53,250" globalopacitymod="1.8" tooltip_key=""/>
 					
 					
 					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayHUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
@@ -963,9 +959,9 @@
 					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_intellect" color="255,128,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
 					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_intellect" color="169,169,169" pivot="center" globalopacity="false"/> -->
 					
-					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_intellect" color="8,8,8" globalopacitymod="1.4" />
-					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" color="192,192,192" globalopacitymod="1.4" />
-					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="vertical" color="255,128,0,250" globalopacitymod="1.8" tooltip_key="" />
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_intellect" color="8,8,8" globalopacitymod="1.4"/>
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" color="192,192,192" globalopacitymod="1.4"/>
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="vertical" color="255,128,0,250" globalopacitymod="1.8" tooltip_key=""/>
 					
 					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_intellect" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
 					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayHUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
@@ -978,9 +974,9 @@
 					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_intellect" color="255,0,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
 					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_intellect" color="115,115,115" pivot="center" globalopacity="false"/> -->
 					
-					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_intellect" color="8,8,8" globalopacitymod="1.4" />
-					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" color="192,192,192" globalopacitymod="1.4" />
-					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="vertical" color="255,0,0,250" globalopacitymod="1.8" tooltip_key="" />
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_intellect" color="8,8,8" globalopacitymod="1.4"/>
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" color="192,192,192" globalopacitymod="1.4"/>
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_intellect" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="vertical" color="255,0,0,250" globalopacitymod="1.8" tooltip_key=""/>
 					
 					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_intellect" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
 					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayHUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
@@ -993,9 +989,9 @@
 					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_muscle" color="255,165,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
 					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_muscle" color="115,115,115" pivot="center" globalopacity="false"/> -->
 					
-					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_muscle" color="8,8,8" globalopacitymod="1.4" />
-					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" color="192,192,192" globalopacitymod="1.4" />
-					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="208,255,20,250" globalopacitymod="1.8" tooltip_key="" />
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_muscle" color="8,8,8" globalopacitymod="1.4"/>
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" color="192,192,192" globalopacitymod="1.4"/>
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="208,255,20,250" globalopacitymod="1.8" tooltip_key=""/>
 					
 					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_muscle" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
 					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayPositive01HUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
@@ -1009,9 +1005,9 @@
 					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_muscle" color="255,255,0,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
 					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_muscle" color="115,115,115" pivot="center" globalopacity="false"/> -->
 					
-					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_muscle" color="8,8,8" globalopacitymod="1.4" />
-					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" color="192,192,192" globalopacitymod="1.4" />
-					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="144,238,144,250" globalopacitymod="1.8" tooltip_key="" />
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_muscle" color="8,8,8" globalopacitymod="1.4"/>
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" color="192,192,192" globalopacitymod="1.4"/>
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="144,238,144,250" globalopacitymod="1.8" tooltip_key=""/>
 					
 					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayPositive01HUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
 					<!-- <sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/> -->
@@ -1023,9 +1019,9 @@
 					<!-- <sprite depth="2" height="40" width="40" name="background" pos="22,-22" sprite="ui_game_symbol_muscle" color="50,205,50,250" pivot="center" foregroundlayer="true" type="filled" fill="{cvar(.DespairDisplayHUD)}" filldirection="radial360"/> -->
 					<!-- <sprite depth="3" width="35" height="35" name="center" pos="22,-22" sprite="ui_game_symbol_muscle" color="115,115,115" pivot="center" globalopacity="false"/> -->
 					
-					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_muscle" color="8,8,8" globalopacitymod="1.4" />
-					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" color="192,192,192" globalopacitymod="1.4" />
-					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="50,205,50,250" globalopacitymod="1.8" tooltip_key="" />
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_muscle" color="8,8,8" globalopacitymod="1.4"/>
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" color="192,192,192" globalopacitymod="1.4"/>
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_muscle" type="filled" fill="{cvar(.DespairDisplayPositive01HUD)}" filldirection="vertical" color="50,205,50,250" globalopacitymod="1.8" tooltip_key=""/>
 					
 					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_muscle" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
 					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="{# round(cvar('.DespairDisplayPositive01HUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
@@ -1037,9 +1033,9 @@
 					<!-- <filledsprite depth="2" name="BarContent" pos="2,-2" width="167" height="40" color="50,205,50,128" type="filled" fill="{cvar(wellrestedHUD)}"/> -->
 					<!-- <sprite depth="3" name="Icon" sprite="ui_game_symbol_map_bed" size="35,35" pos="26,-22" pivot="center" foregroundlayer="true"/> -->
 					
-					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_map_bed" color="8,8,8" globalopacitymod="1.4" />
-					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_map_bed" color="192,192,192" globalopacitymod="1.4" />
-					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_map_bed" type="filled" fill="{cvar(wellrestedHUD)}" filldirection="vertical" color="50,205,50,250" globalopacitymod="1.8" tooltip_key="" />
+					<sprite name="Background" depth="10" pos="2,-2" width="40" height="40" sprite="ui_game_symbol_map_bed" color="8,8,8" globalopacitymod="1.4"/>
+					<sprite name="Background" depth="11" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_map_bed" color="192,192,192" globalopacitymod="1.4"/>
+					<sprite name="BarContent" depth="12" pos="4,-4" width="36" height="36" sprite="ui_game_symbol_map_bed" type="filled" fill="{cvar(wellrestedHUD)}" filldirection="vertical" color="50,205,50,250" globalopacitymod="1.8" tooltip_key=""/>
 					
 					<label depth="4" name="TextContent" pos="44,-23" font_size="32" color="[white]" justify="center" pivot="left" text="Rested: {# round(cvar('wellrestedHUD') * 100, 1)}%" width="120" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
 					<!-- <sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,240" type="sliced"/> -->

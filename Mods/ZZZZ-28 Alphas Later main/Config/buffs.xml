@@ -7,7 +7,6 @@
 		</triggered_effect>
 		<!-- corpse run trigger -->
 		<triggered_effect trigger="onSelfRespawn" action="AddBuff" buff="buffCorpseRun"/>
-			
 	</append>
 	
 	<!-- *** despair modifiers for debuffs *** -->
@@ -234,7 +233,7 @@
 		</effect_group>
 	</set>
 	
-		<!-- *** add/remove healthloss to hungry buff(s) *** -->
+	<!-- *** add/remove healthloss to hungry buff(s) *** -->
 	<append xpath="/buffs/buff[@name='buffStatusHungry02']/effect_group[1]">
 		<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInjuryStarvation"/>
 	</append>
@@ -3180,6 +3179,551 @@
 				<requirement name="CVarCompare" cvar="hordedelay" operation="GTE" value="900"/>
 				<requirement name="CVarCompare" cvar="hordetimer" operation="Equals" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="random_horde_sequence"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** Infested Speed Clear *** -->
+		<buff name="AcceleratedAnnihiliationGoldBuffTier2" icon="ui_game_symbol_clock" icon_color="255,215,0" name_key="AcceleratedAnnihiliationGoldBuffName" description_key="AcceleratedAnnihiliationGoldBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="45"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationGoldBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="set" value="45"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="set" value="45"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationSilverBuffTier2" icon="ui_game_symbol_clock" icon_color="192,192,192" name_key="AcceleratedAnnihiliationSilverBuffName" description_key="AcceleratedAnnihiliationSilverBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="75"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationSilverBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="set" value="75"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="set" value="75"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationBronzeBuffTier2" icon="ui_game_symbol_clock" icon_color="205,127,50" name_key="AcceleratedAnnihiliationBronzeBuffName" description_key="AcceleratedAnnihiliationBronzeBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="120"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="set" value="120"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="set" value="120"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationGoldBuffTier3" icon="ui_game_symbol_clock" icon_color="255,215,0" name_key="AcceleratedAnnihiliationGoldBuffName" description_key="AcceleratedAnnihiliationGoldBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="90"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationGoldBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="set" value="90"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="set" value="90"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationSilverBuffTier3" icon="ui_game_symbol_clock" icon_color="192,192,192" name_key="AcceleratedAnnihiliationSilverBuffName" description_key="AcceleratedAnnihiliationSilverBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="135"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationSilverBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="set" value="135"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="set" value="135"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationBronzeBuffTier3" icon="ui_game_symbol_clock" icon_color="205,127,50" name_key="AcceleratedAnnihiliationBronzeBuffName" description_key="AcceleratedAnnihiliationBronzeBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="180"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="set" value="180"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="set" value="180"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationGoldBuffTier4" icon="ui_game_symbol_clock" icon_color="255,215,0" name_key="AcceleratedAnnihiliationGoldBuffName" description_key="AcceleratedAnnihiliationGoldBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="180"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationGoldBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="set" value="180"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="set" value="180"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationSilverBuffTier4" icon="ui_game_symbol_clock" icon_color="192,192,192" name_key="AcceleratedAnnihiliationSilverBuffName" description_key="AcceleratedAnnihiliationSilverBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="270"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationSilverBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="set" value="270"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="set" value="270"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationBronzeBuffTier4" icon="ui_game_symbol_clock" icon_color="205,127,50" name_key="AcceleratedAnnihiliationBronzeBuffName" description_key="AcceleratedAnnihiliationBronzeBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="360"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="set" value="360"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="set" value="360"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationGoldBuffTier5" icon="ui_game_symbol_clock" icon_color="255,215,0" name_key="AcceleratedAnnihiliationGoldBuffName" description_key="AcceleratedAnnihiliationGoldBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="240"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationGoldBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="set" value="240"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="set" value="240"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationSilverBuffTier5" icon="ui_game_symbol_clock" icon_color="192,192,192" name_key="AcceleratedAnnihiliationSilverBuffName" description_key="AcceleratedAnnihiliationSilverBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="360"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationSilverBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="set" value="360"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="set" value="360"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationBronzeBuffTier5" icon="ui_game_symbol_clock" icon_color="205,127,50" name_key="AcceleratedAnnihiliationBronzeBuffName" description_key="AcceleratedAnnihiliationBronzeBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="480"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="set" value="480"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="set" value="480"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationGoldBuffTier6" icon="ui_game_symbol_clock" icon_color="255,215,0" name_key="AcceleratedAnnihiliationGoldBuffName" description_key="AcceleratedAnnihiliationGoldBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="1200"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationGoldBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="set" value="1200"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="set" value="1200"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationGoldBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationSilverBuffTier6" icon="ui_game_symbol_clock" icon_color="192,192,192" name_key="AcceleratedAnnihiliationSilverBuffName" description_key="AcceleratedAnnihiliationSilverBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="1800"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationSilverBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="set" value="1800"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="set" value="1800"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationSilverBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="AcceleratedAnnihiliationBronzeBuffTier6" icon="ui_game_symbol_clock" icon_color="205,127,50" name_key="AcceleratedAnnihiliationBronzeBuffName" description_key="AcceleratedAnnihiliationBronzeBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="2400"/>
+			<display_value_format value="time"/>
+			<display_value value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="set" value="2400"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="set" value="2400"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="AcceleratedAnnihiliationBronzeBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="ContrabandCollectionBuff" hidden="true" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="10"/>
+			<duration value="120"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier1_contraband_collection_spawn"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier2_contraband_collection_spawn"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier3_contraband_collection_spawn"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier4_contraband_collection_spawn"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier5_contraband_collection_spawn"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** Defend Airdrop *** -->
+		<buff name="ContrabandCollectionExplodeCrateOnQuestFailBuff" hidden="true" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="5"/>
+			<duration value="135"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="contraband_collection_crate_explode_crate_on_quest_fail"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="ContrabandCollectionExplodeCrateAfterTimeBuff" hidden="true" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="125"/>
+			<duration value="130"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="explode_me"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="tier1_remove_satchel_buff" hidden="true" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<update_rate value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier1_contraband_collection_remove_satchel_b"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="tier2_remove_satchel_buff" hidden="true" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<update_rate value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier2_contraband_collection_remove_satchel_b"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="tier3_remove_satchel_buff" hidden="true" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<update_rate value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier3_contraband_collection_remove_satchel_b"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="tier4_remove_satchel_buff" hidden="true" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<update_rate value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier4_contraband_collection_remove_satchel_b"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="tier5_remove_satchel_buff" hidden="true" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<update_rate value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier5_contraband_collection_remove_satchel_b"/>
+			</effect_group>
+		</buff>
+	
+		<!-- *** Defend the Safehouse *** -->
+		<buff name="buffSpawner1a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier1_courier_rescue_mainLoop"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffSpawner1b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier1_courier_rescue_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffSpawner2a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier2_courier_rescue_mainLoop"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffSpawner2b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier2_courier_rescue_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffSpawner3a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier3_courier_rescue_mainLoop"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffSpawner3b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier3_courier_rescue_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffSpawner4a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier4_courier_rescue_mainLoop"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffSpawner4b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier4_courier_rescue_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffSpawner5a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier5_courier_rescue_mainLoop"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="buffSpawner5b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier5_courier_rescue_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<!-- *** Speed Clear *** -->
+		<buff name="SpeedClearGoldBuff" icon="ui_game_symbol_clock" icon_color="255,215,0" name_key="SpeedClearGoldBuffName" description_key="SpeedClearGoldBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="45"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearGoldBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="set" value="45"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="set" value="45"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="SpeedClearSilverBuff" icon="ui_game_symbol_clock" icon_color="192,192,192" name_key="SpeedClearSilverBuffName" description_key="SpeedClearSilverBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="75"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearSilverBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="set" value="75"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="set" value="75"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="SpeedClearBronzeBuff" icon="ui_game_symbol_clock" icon_color="205,127,50" name_key="SpeedClearBronzeBuffName" description_key="SpeedClearBronzeBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="120"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearBronzeBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="set" value="120"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="set" value="120"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="SpeedClearGoldBuffTier2" icon="ui_game_symbol_clock" icon_color="255,215,0" name_key="SpeedClearGoldBuffName" description_key="SpeedClearGoldBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="90"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearGoldBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="set" value="90"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="set" value="90"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="SpeedClearSilverBuffTier2" icon="ui_game_symbol_clock" icon_color="192,192,192" name_key="SpeedClearSilverBuffName" description_key="SpeedClearSilverBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="135"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearSilverBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="set" value="135"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="set" value="135"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="SpeedClearBronzeBuffTier2" icon="ui_game_symbol_clock" icon_color="205,127,50" name_key="SpeedClearBronzeBuffName" description_key="SpeedClearBronzeBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="180"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearBronzeBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="set" value="180"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="set" value="180"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="SpeedClearGoldBuffTier3" icon="ui_game_symbol_clock" icon_color="255,215,0" name_key="SpeedClearGoldBuffName" description_key="SpeedClearGoldBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="180"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearGoldBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="set" value="180"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="set" value="180"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="SpeedClearSilverBuffTier3" icon="ui_game_symbol_clock" icon_color="192,192,192" name_key="SpeedClearSilverBuffName" description_key="SpeedClearSilverBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="270"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearSilverBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="set" value="270"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="set" value="270"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="SpeedClearBronzeBuffTier3" icon="ui_game_symbol_clock" icon_color="205,127,50" name_key="SpeedClearBronzeBuffName" description_key="SpeedClearBronzeBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="360"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearBronzeBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="set" value="360"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="set" value="360"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	   
+		<buff name="SpeedClearGoldBuffTier4" icon="ui_game_symbol_clock" icon_color="255,215,0" name_key="SpeedClearGoldBuffName" description_key="SpeedClearGoldBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="240"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearGoldBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="set" value="240"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="set" value="240"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="SpeedClearSilverBuffTier4" icon="ui_game_symbol_clock" icon_color="192,192,192" name_key="SpeedClearSilverBuffName" description_key="SpeedClearSilverBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="360"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearSilverBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="set" value="360"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="set" value="360"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="SpeedClearBronzeBuffTier4" icon="ui_game_symbol_clock" icon_color="205,127,50" name_key="SpeedClearBronzeBuffName" description_key="SpeedClearBronzeBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="480"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearBronzeBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="set" value="480"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="set" value="480"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+    
+		<buff name="SpeedClearGoldBuffTier5" icon="ui_game_symbol_clock" icon_color="255,215,0" name_key="SpeedClearGoldBuffName" description_key="SpeedClearGoldBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="1200"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearGoldBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="set" value="1200"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="set" value="1200"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearGoldBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="SpeedClearSilverBuffTier5" icon="ui_game_symbol_clock" icon_color="192,192,192" name_key="SpeedClearSilverBuffName" description_key="SpeedClearSilverBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="1800"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearSilverBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="set" value="1800"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="set" value="1800"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearSilverBuffCvar" operation="subtract" value="1"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="SpeedClearBronzeBuffTier5" icon="ui_game_symbol_clock" icon_color="205,127,50" name_key="SpeedClearBronzeBuffName" description_key="SpeedClearBronzeBuffDesc" remove_on_death="true">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<duration value="2400"/>
+			<display_value_format value="time"/>
+			<display_value value="SpeedClearBronzeBuffCvar"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="set" value="2400"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="set" value="2400"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SpeedClearBronzeBuffCvar" operation="subtract" value="1"/>
 			</effect_group>
 		</buff>
 	</append>

@@ -2,272 +2,272 @@
 	<!-- <set xpath="/gameevents/action_sequence[@name='game_first_spawn']/action[@class='AddJournalTip']/property[@name='tip_name']/@value">HellsModSpawnText</set> -->
 	<append xpath="//action_sequence[@name='game_first_spawn']">
 		<action class="Delay">
-			<property name="time" value="2" />
-			<property name="phase" value="4" />
+			<property name="time" value="2"/>
+			<property name="phase" value="4"/>
 		</action>
 		
 		<action class="SetItemSlots">
-			<property name="items_location" value="Toolbelt" />
-			<property name="items" value="drinkJarPureMineralWater,foodSteakAndPotato,medicalFirstAidBandage,meleeToolFlashlight02,resourceNiCdBattery" />
-			<property name="item_counts" value="2,2,2,1,1" />
-			<property name="slot_numbers" value="0,1,2,3,4" />
+			<property name="items_location" value="Toolbelt"/>
+			<property name="items" value="drinkJarPureMineralWater,foodSteakAndPotato,medicalFirstAidBandage,meleeToolFlashlight02,resourceNiCdBattery"/>
+			<property name="item_counts" value="2,2,2,1,1"/>
+			<property name="slot_numbers" value="0,1,2,3,4"/>
 		</action>
 		
 		<action class="AddQuest">
-            <property name="quest" value="28AlphasLaterQuest" />
-            <property name="phase" value="3" />
-        </action>
+			<property name="quest" value="28AlphasLaterQuest"/>
+			<property name="phase" value="3"/>
+		</action>
 	</append>
 	
 	<append xpath="/gameevents">
-	<!-- *** piano audio *** -->
-	<action_sequence name="play_piano_sound">
-		<property name="action_type" value="Game"/>
-		<property name="target_type" value="Block"/>
-		<property name="allow_while_dead" value="false"/>
-		<action class="PlaySound">
-			<property name="sound" value="playerPiano"/>
-			<property name="can_disable" value="true" />
-			<property name="phase" value="1"/>
-		</action>
-	</action_sequence>
+		<!-- *** piano audio *** -->
+		<action_sequence name="play_piano_sound">
+			<property name="action_type" value="Game"/>
+			<property name="target_type" value="Block"/>
+			<property name="allow_while_dead" value="false"/>
+			<action class="PlaySound">
+				<property name="sound" value="playerPiano"/>
+				<property name="can_disable" value="true"/>
+				<property name="phase" value="1"/>
+			</action>
+		</action_sequence>
 	
-	<!-- *** radio audio *** -->
-	<action_sequence name="play_radio_sound">
-		<property name="action_type" value="Game"/>
-		<property name="target_type" value="Block"/>
-		<property name="allow_while_dead" value="false"/>
-		<action class="PlaySound">
-			<property name="sound" value="playerRadio"/>
-			<property name="can_disable" value="true" />
-			<property name="phase" value="1"/>
-		</action>
-	</action_sequence>
+		<!-- *** radio audio *** -->
+		<action_sequence name="play_radio_sound">
+			<property name="action_type" value="Game"/>
+			<property name="target_type" value="Block"/>
+			<property name="allow_while_dead" value="false"/>
+			<action class="PlaySound">
+				<property name="sound" value="playerRadio"/>
+				<property name="can_disable" value="true"/>
+				<property name="phase" value="1"/>
+			</action>
+		</action_sequence>
 	
-	<!-- *** prevents use of vehicles underwater *** -->	
-	<action_sequence name="buff_novehicle_submerged">
-		<property name="category" value="twitch_actions" />
+		<!-- *** prevents use of vehicles underwater *** -->
+		<action_sequence name="buff_novehicle_submerged">
+			<property name="category" value="twitch_actions"/>
 
-		<requirement class="HasBuff">
-			<property name="buff_name" value="buffNoVehicle" param1="hasbuff" />
-			<property name="invert" value="true" />
-		</requirement>
-		
-		<action class="AddPartyToGroup">
-			<property name="phase" value="0" />
-			<property name="group_name" value="party" />
-		</action>
-
-		<action class="PlaySound">
-			<property name="sound" value="minibike_empty_" />
-			<property name="phase" value="1" />
-			<property name="inside_head" value="true" />
-			<property name="target_group" value="party" />
-		</action>
-
-		<action class="PlaySound">
-			<property name="phase" value="1" />
-			<property name="sound" value="twitch_vehicle_overlay" />
-			<property name="inside_head" value="true" />
-			<property name="target_group" value="party" />
-			<property name="delay" value="1.6" />
-		</action>
-
-		<action class="EjectFromVehicle">
-			<property name="phase" value="1" />
-			<property name="target_group" value="party" />
-		</action>		
-
-		<action class="AddBuff">
-			<property name="phase" value="1" />
-			<property name="buff_name" value="buffNoVehicle" />
-			<property name="target_group" value="party" />
-		</action>
-	</action_sequence>
-
-	<!-- *** checks if TI is active before adding Despair *** -->
-	<action_sequence name="despair_trigger">
-		<property name="allow_user_trigger" value="false" />
-		<action class="AddBuff">
-			<property name="phase" value="1" />
-			<property name="buff_name" value="buffDespairTICheck" />
-			
-			<requirement class="IsTwitchActive">
-				<property name="invert" value="true" />
+			<requirement class="HasBuff">
+				<property name="buff_name" value="buffNoVehicle" param1="hasbuff"/>
+				<property name="invert" value="true"/>
 			</requirement>
-		</action>
 		
-		<action class="AddBuff">
-			<property name="phase" value="2" />
-			<property name="buff_name" value="buffDespairMain" />
+			<action class="AddPartyToGroup">
+				<property name="phase" value="0"/>
+				<property name="group_name" value="party"/>
+			</action>
+
+			<action class="PlaySound">
+				<property name="sound" value="minibike_empty_"/>
+				<property name="phase" value="1"/>
+				<property name="inside_head" value="true"/>
+				<property name="target_group" value="party"/>
+			</action>
+
+			<action class="PlaySound">
+				<property name="phase" value="1"/>
+				<property name="sound" value="twitch_vehicle_overlay"/>
+				<property name="inside_head" value="true"/>
+				<property name="target_group" value="party"/>
+				<property name="delay" value="1.6"/>
+			</action>
+
+			<action class="EjectFromVehicle">
+				<property name="phase" value="1"/>
+				<property name="target_group" value="party"/>
+			</action>
+
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffNoVehicle"/>
+				<property name="target_group" value="party"/>
+			</action>
+		</action_sequence>
+
+		<!-- *** checks if TI is active before adding Despair *** -->
+		<action_sequence name="despair_trigger">
+			<property name="allow_user_trigger" value="false"/>
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffDespairTICheck"/>
 			
-			<requirement class="IsTwitchActive">
-				<property name="invert" value="true" />
-			</requirement>				
-		</action>
-	</action_sequence>
-	
-	<!-- *** random wandering horde spawner *** -->
-	<action_sequence name="random_horde_sequence">		
-	<property name="allow_user_trigger" value="true" />
-	<property name="category" value="twitch_actions" />		
+				<requirement class="IsTwitchActive">
+					<property name="invert" value="true"/>
+				</requirement>
+			</action>
 		
-		<requirement class="InQuestZone">
-			<property name="invert" value="true" />
-		</requirement>
-		
-		<action class="SpawnEntity">
-			<property name="entity_group" value="SleeperGSList" />
-			<property name="spawn_count" value="11"  />
-			<property name="air_spawn" value="false" />
-			<property name="add_to_group" value="zombies" />
-			<property name="safe_spawn" value="true" />
-			<property name="min_distance" value="10" />
-			<property name="max_distance" value="20" />
-			<property name="spawn_type" value="WanderingHorde" />
-		</action>		
-		
-		<action class="AddEntitiesToGroup">
-			<property name="phase" value="0" />
-			<property name="group_name" value="zombies" />
-			<property name="max_distance" value="20" />
-		</action>
-
-		<action class="RageZombies">
-			<property name="time" value="30" />
-			<property name="speed_percent" value=".10" />
-			<property name="target_group" value="zombies" />
-		</action>		
-	</action_sequence>
-	
-	<!-- *** hordes called in from Boomer explosions *** -->
-	<action_sequence name="boomer_horde_sequence">		
-	<property name="allow_user_trigger" value="true" />
-	<property name="action_type" value="Game" />
-	<!-- <property name="category" value="twitch_actions" /> -->
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffDespairMain"/>
 			
-		<action class="SetScreenEffect">
-			<property name="phase" value="2" />
-			<property name="screen_effect" value="Blur" />
-			<property name="intensity" value="1" />
-			<property name="fade_time" value="0.1" />
-		</action>
+				<requirement class="IsTwitchActive">
+					<property name="invert" value="true"/>
+				</requirement>
+			</action>
+		</action_sequence>
+	
+		<!-- *** random wandering horde spawner *** -->
+		<action_sequence name="random_horde_sequence">
+			<property name="allow_user_trigger" value="true"/>
+			<property name="category" value="twitch_actions"/>
 		
-		<action class="Delay">
-			<property name="time" value=".5" />
-			<property name="phase" value="3" />
-		</action>
+			<requirement class="InQuestZone">
+				<property name="invert" value="true"/>
+			</requirement>
 		
-		<action class="SetScreenEffect">
-			<property name="phase" value="4" />
-			<property name="screen_effect" value="Blur" />
-			<property name="intensity" value="0" />
-			<property name="fade_time" value="10" />
-		</action>
+			<action class="SpawnEntity">
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="11"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="min_distance" value="20"/>
+				<property name="max_distance" value="30"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+			</action>
+		
+			<action class="AddEntitiesToGroup">
+				<property name="phase" value="0"/>
+				<property name="group_name" value="zombies"/>
+				<property name="max_distance" value="20"/>
+			</action>
 
-		<action class="SpawnEntity">			
-			<property name="entity_group" value="SleeperGSList" />
-			<property name="spawn_count" value="5" />
-			<property name="air_spawn" value="false" />
-			<property name="add_to_group" value="zombies" />
-			<property name="safe_spawn" value="true" />
-			<property name="min_distance" value="10" />
-			<property name="max_distance" value="20" />
-			<property name="spawn_type" value="WanderingHorde" />
-		</action>
+			<action class="RageZombies">
+				<property name="time" value="5"/>
+				<property name="speed_percent" value=".10"/>
+				<property name="target_group" value="zombies"/>
+			</action>
+		</action_sequence>
+	
+		<!-- *** hordes called in from Boomer explosions *** -->
+		<action_sequence name="boomer_horde_sequence">
+			<property name="allow_user_trigger" value="true"/>
+			<property name="action_type" value="Game"/>
+			<!-- <property name="category" value="twitch_actions" /> -->
+			
+			<action class="SetScreenEffect">
+				<property name="phase" value="2"/>
+				<property name="screen_effect" value="Blur"/>
+				<property name="intensity" value="1"/>
+				<property name="fade_time" value="0.1"/>
+			</action>
 		
-		<action class="AddEntitiesToGroup">
-			<property name="phase" value="0" />
-			<property name="group_name" value="zombies" />
-			<property name="max_distance" value="20" />
-		</action>
+			<action class="Delay">
+				<property name="time" value=".5"/>
+				<property name="phase" value="3"/>
+			</action>
+		
+			<action class="SetScreenEffect">
+				<property name="phase" value="4"/>
+				<property name="screen_effect" value="Blur"/>
+				<property name="intensity" value="0"/>
+				<property name="fade_time" value="10"/>
+			</action>
 
-		<!-- <action class="PlaySound"> -->
+			<action class="SpawnEntity">
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="5"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="min_distance" value="10"/>
+				<property name="max_distance" value="20"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+			</action>
+		
+			<action class="AddEntitiesToGroup">
+				<property name="phase" value="0"/>
+				<property name="group_name" value="zombies"/>
+				<property name="max_distance" value="20"/>
+			</action>
+
+			<!-- <action class="PlaySound"> -->
 			<!-- <property name="sound" value="twitch_enrage" /> -->
-		<!-- </action> -->
+			<!-- </action> -->
 
-		<action class="RageZombies">
-			<property name="time" value="30" />
-			<property name="speed_percent" value=".10" />
-			<property name="target_group" value="zombies" />
-		</action>
+			<action class="RageZombies">
+				<property name="time" value="5"/>
+				<property name="speed_percent" value=".10"/>
+				<property name="target_group" value="zombies"/>
+			</action>
 		
-		<!-- <action class="CallGameEvent">
+			<!-- <action class="CallGameEvent">
 			<property name="game_events" value="boomer_horde_normal" />
 		</action>	 -->
-	</action_sequence>
+		</action_sequence>
 
-	<action_sequence name="000_action_pull">
-		<property name="allow_user_trigger" value="true"/>
-		<property name="action_type" value="Game"/>
+		<action_sequence name="000_action_pull">
+			<property name="allow_user_trigger" value="true"/>
+			<property name="action_type" value="Game"/>
 		
-		<action class="AddEntitiesToGroup">
-			<property name="phase" value="0"/>
-			<property name="group_name" value="pulledEntities"/>
-			<property name="entity_tags" value="entity"/>
-			<property name="max_distance" value="150"/>
-			<property name="target_only" value="false"/>
-			<property name="y_height" value="5" />
-			<property name="exclude_target" value="true" />
-		</action>
+			<action class="AddEntitiesToGroup">
+				<property name="phase" value="0"/>
+				<property name="group_name" value="pulledEntities"/>
+				<property name="entity_tags" value="entity"/>
+				<property name="max_distance" value="150"/>
+				<property name="target_only" value="false"/>
+				<property name="y_height" value="5"/>
+				<property name="exclude_target" value="true"/>
+			</action>
 		
-		<action class="AddSpawnedEntitiesToGroup">
-			<property name="phase" value="0"/>
-			<property name="group_name" value="pulledEntities"/>
-			<property name="entity_tags" value="entity"/>
-			<property name="max_distance" value="150"/>
-			<property name="target_only" value="false"/>
-			<property name="y_height" value="5" />
-			<property name="exclude_target" value="true" />
-		</action>
+			<action class="AddSpawnedEntitiesToGroup">
+				<property name="phase" value="0"/>
+				<property name="group_name" value="pulledEntities"/>
+				<property name="entity_tags" value="entity"/>
+				<property name="max_distance" value="150"/>
+				<property name="target_only" value="false"/>
+				<property name="y_height" value="5"/>
+				<property name="exclude_target" value="true"/>
+			</action>
 		
-		<action class="PlaySound">
-			<property name="phase" value="1"/>
-			<property name="sound" value="zombieferalalert"/>
-		</action>
+			<action class="PlaySound">
+				<property name="phase" value="1"/>
+				<property name="sound" value="zombieferalalert"/>
+			</action>
 		
-        <action class="PullEntities">
-            <property name="phase" value="1"/>
-            <property name="target_group" value="pulledEntities"/>
-            <property name="pull_sound" value="twitch_pull"/>
-        </action>
+			<action class="PullEntities">
+				<property name="phase" value="1"/>
+				<property name="target_group" value="pulledEntities"/>
+				<property name="pull_sound" value="twitch_pull"/>
+			</action>
 					
-		<action class="RageZombies">
-			<property name="phase" value="4"/>
-			<property name="time" value="30"/>
-			<property name="speed_percent" value=".25"/>
-			<property name="target_group" value="pulledEntities"/>
-		</action>
-		<action class="TwitchAddEntitiesToSpawned">
-			<property name="target_group" value="pulledEntities" />
-		</action>	
-        <action class="AddChatMessage">
-            <property name="text" value="[[6441a5]Twitch[-]] Land Claim Broken! [ff0000]Your safe zone has been removed![-]"/>
-            <property name="phase" value="2"/>
-        </action>
-    </action_sequence>
+			<action class="RageZombies">
+				<property name="phase" value="4"/>
+				<property name="time" value="30"/>
+				<property name="speed_percent" value=".25"/>
+				<property name="target_group" value="pulledEntities"/>
+			</action>
+			<action class="TwitchAddEntitiesToSpawned">
+				<property name="target_group" value="pulledEntities"/>
+			</action>
+			<action class="AddChatMessage">
+				<property name="text" value="[[6441a5]Twitch[-]] Land Claim Broken! [ff0000]Your safe zone has been removed![-]"/>
+				<property name="phase" value="2"/>
+			</action>
+		</action_sequence>
 	
-	<action_sequence name="boomer_horde_normal" template="vote_minor">
-		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
-		<variable name="spawncount" value="5" />
-		<variable name="alertsound" value="zombiemalealert" />	
-		<variable name="gamestage_extra1" value="25" />
-		<variable name="spawncount_extra1" value="5" />
-		<variable name="gamestage_extra2" value="50" />
-		<variable name="spawncount_extra2" value="5" />
-	</action_sequence>
+		<action_sequence name="boomer_horde_normal" template="vote_minor">
+			<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor"/>
+			<variable name="spawncount" value="5"/>
+			<variable name="alertsound" value="zombiemalealert"/>
+			<variable name="gamestage_extra1" value="25"/>
+			<variable name="spawncount_extra1" value="5"/>
+			<variable name="gamestage_extra2" value="50"/>
+			<variable name="spawncount_extra2" value="5"/>
+		</action_sequence>
 	
-	<action_sequence name="boomer_horde_feral" template="vote_minor">
-		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral" />
-		<variable name="spawncount" value="5" />
-		<variable name="alertsound" value="zombieferalalert" />
-		<variable name="gamestage_extra1" value="25" />
-		<variable name="spawncount_extra1" value="5" />
-		<variable name="gamestage_extra2" value="50" />
-		<variable name="spawncount_extra2" value="5" />
-	</action_sequence>
+		<action_sequence name="boomer_horde_feral" template="vote_minor">
+			<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral"/>
+			<variable name="spawncount" value="5"/>
+			<variable name="alertsound" value="zombieferalalert"/>
+			<variable name="gamestage_extra1" value="25"/>
+			<variable name="spawncount_extra1" value="5"/>
+			<variable name="gamestage_extra2" value="50"/>
+			<variable name="spawncount_extra2" value="5"/>
+		</action_sequence>
 	
-	<!-- <action_sequence name="action_boomerpull">
+		<!-- <action_sequence name="action_boomerpull">
 		<property name="category" value="twitch_actions" />
 		
 		<requirement class="HasSpawnedEntities">
@@ -293,20 +293,2428 @@
 		</action>
 	</action_sequence> -->
 	
-	<!-- *** headshot only *** -->
-	<action_sequence name="buffAlwaysHeadShotsOnly" template="buff_template">
-		<variable name="addbuff" value="buffAlwaysHeadShotsOnly" />
-		<variable name="removebuff" value="" />
-		<!-- <variable name="twitch_negative" value="true" /> -->
-	</action_sequence>
+		<!-- *** headshot only *** -->
+		<action_sequence name="buffAlwaysHeadShotsOnly" template="buff_template">
+			<variable name="addbuff" value="buffAlwaysHeadShotsOnly"/>
+			<variable name="removebuff" value=""/>
+			<!-- <variable name="twitch_negative" value="true" /> -->
+		</action_sequence>
 	
-	<!-- *** brass catcher *** -->
-	<action_sequence name="modBrassCatcher">
-	<property name="action_type" value="Game" />
-		<action class="AddItems">
-		<property name="added_items" value="resourceBulletCasing" />
-		<property name="added_item_counts" value="1" />
-		</action>
-	</action_sequence>
+		<!-- *** brass catcher *** -->
+		<action_sequence name="modBrassCatcher">
+			<property name="action_type" value="Game"/>
+			<action class="AddItems">
+				<property name="added_items" value="resourceBulletCasing"/>
+				<property name="added_item_counts" value="1"/>
+			</action>
+		</action_sequence>
 	</append>
+	
+	<insertAfter xpath="/gameevents/action_sequence[@name='action_block_DowngradedTo']">
+		<!-- *** Infested Speed Clear *** -->
+		<action_sequence name="tier2_accelerated_annihiliation_start">
+			<!--<action class="AddChatMessage">
+				<property name="text" value="tier2_accelerated_annihiliation_start"/>
+			</action>-->
+			<!-- reverse order so gold is on top in the display -->
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationBronzeBuffTier2"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationSilverBuffTier2"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationGoldBuffTier2"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="tier2_accelerated_annihiliation_stop">
+			<!--<action class="AddChatMessage">
+				<property name="text" value="tier2_accelerated_annihiliation_stop"/>
+			</action>-->
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationGoldBuffTier2" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationSilverBuffTier2" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationBronzeBuffTier2" param1="removebuff"/>
+			</action>
+			<action class="BeltTooltip">
+				<property name="text" value="Time completed: GOLD!!"/>
+				<property name="sound" value="twitch_celebrate"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: SILVER!"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: BRONZE"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+		<action_sequence name="tier2_accelerated_annihiliation_reward">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<!--<action class="AddChatMessage">
+				<property name="text" value="reward time!"/>
+			</action>-->
+			<loop class="While">
+				<property name="phase" value="1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier2_accelerated_annihilation"/>
+				</requirement>
+			</loop>
+			<!-- Gold rewards -->
+			<!--<action class="AddChatMessage">
+				<property name="text" value="Gold!"/>
+			<property name="phase" value="2" />
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>-->
+			<action class="AddQuest">
+				<property name="quest" value="tier2_accelerated_annihiliation_reward_quest_gold"/>
+				<property name="phase" value="2"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!--<action class="AddChatMessage">
+				<property name="text" value="Silver!"/>
+			<property name="phase" value="3" />
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>-->
+			<action class="AddQuest">
+				<property name="quest" value="tier2_accelerated_annihiliation_reward_quest_silver"/>
+				<property name="phase" value="3"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!--<action class="AddChatMessage">
+				<property name="text" value="Bronze!"/>
+			<property name="phase" value="4" />
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>-->
+			<action class="AddXP">
+				<property name="xp_amount" value="2875"/>
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<action class="AddItems">
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<property name="added_items" value="resourceScrapBooks"/>
+				<property name="added_item_counts" value="12"/>
+			</action>
+		</action_sequence>
+		<!-- TIER 2-->
+		<action_sequence name="tier3_accelerated_annihiliation_start">
+			<!-- reverse order so gold is on top in the display -->
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationBronzeBuffTier3"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationSilverBuffTier3"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationGoldBuffTier3"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier3_accelerated_annihiliation_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationGoldBuffTier3" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationSilverBuffTier3" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationBronzeBuffTier3" param1="removebuff"/>
+			</action>
+			<action class="BeltTooltip">
+				<property name="text" value="Time completed: GOLD!!"/>
+				<property name="sound" value="twitch_celebrate"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: SILVER!"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: BRONZE"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+		</action_sequence>
+		<action_sequence name="tier3_accelerated_annihiliation_reward">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<loop class="While">
+				<property name="phase" value="1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier3_accelerated_annihilation"/>
+				</requirement>
+			</loop>
+			<!-- Gold rewards -->
+			<action class="AddQuest">
+				<property name="quest" value="tier3_accelerated_annihiliation_reward_quest_gold"/>
+				<property name="phase" value="2"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Silver -->
+			<action class="AddQuest">
+				<property name="quest" value="tier3_accelerated_annihiliation_reward_quest_silver"/>
+				<property name="phase" value="3"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Bronze -->
+			<action class="AddXP">
+				<property name="xp_amount" value="3750"/>
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<action class="AddItems">
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<property name="added_items" value="resourceScrapBooks"/>
+				<property name="added_item_counts" value="24"/>
+			</action>
+		</action_sequence>
+		<!-- TIER 3-->
+		<action_sequence name="tier4_accelerated_annihiliation_start">
+			<!-- reverse order so gold is on top in the display -->
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationBronzeBuffTier4"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationSilverBuffTier4"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationGoldBuffTier4"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier4_accelerated_annihiliation_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationGoldBuffTier4" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationSilverBuffTier4" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationBronzeBuffTier4" param1="removebuff"/>
+			</action>
+			<action class="BeltTooltip">
+				<property name="text" value="Time completed: GOLD!!"/>
+				<property name="sound" value="twitch_celebrate"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: SILVER!"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: BRONZE"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+		</action_sequence>
+		<action_sequence name="tier4_accelerated_annihiliation_reward">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<loop class="While">
+				<property name="phase" value="1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier4_accelerated_annihilation"/>
+				</requirement>
+			</loop>
+			<!-- Gold rewards -->
+			<action class="AddQuest">
+				<property name="quest" value="tier4_accelerated_annihiliation_reward_quest_gold"/>
+				<property name="phase" value="2"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Silver -->
+			<action class="AddQuest">
+				<property name="quest" value="tier4_accelerated_annihiliation_reward_quest_silver"/>
+				<property name="phase" value="3"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Bronze -->
+			<action class="AddXP">
+				<property name="xp_amount" value="4625"/>
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<action class="AddItems">
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<property name="added_items" value="resourceScrapBooks"/>
+				<property name="added_item_counts" value="36"/>
+			</action>
+		</action_sequence>
+		<!-- TIER 4-->
+		<action_sequence name="tier5_accelerated_annihiliation_start">
+			<!-- reverse order so gold is on top in the display -->
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationBronzeBuffTier5"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationSilverBuffTier5"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationGoldBuffTier5"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier5_accelerated_annihiliation_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationGoldBuffTier5" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationSilverBuffTier5" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationBronzeBuffTier5" param1="removebuff"/>
+			</action>
+			<action class="BeltTooltip">
+				<property name="text" value="Time completed: GOLD!!"/>
+				<property name="sound" value="twitch_celebrate"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: SILVER!"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: BRONZE"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+		</action_sequence>
+		<action_sequence name="tier5_accelerated_annihiliation_reward">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<loop class="While">
+				<property name="phase" value="1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier5_accelerated_annihilation"/>
+				</requirement>
+			</loop>
+			<!-- Gold rewards -->
+			<action class="AddQuest">
+				<property name="quest" value="tier5_accelerated_annihiliation_reward_quest_gold"/>
+				<property name="phase" value="2"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Silver -->
+			<action class="AddQuest">
+				<property name="quest" value="tier5_accelerated_annihiliation_reward_quest_silver"/>
+				<property name="phase" value="3"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Bronze -->
+			<action class="AddXP">
+				<property name="xp_amount" value="9250"/>
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<action class="AddItems">
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<property name="added_items" value="resourceScrapBooks"/>
+				<property name="added_item_counts" value="48"/>
+			</action>
+		</action_sequence>
+		<!-- TIER 5-->
+		<action_sequence name="tier6_accelerated_annihiliation_start">
+			<!-- reverse order so gold is on top in the display -->
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationBronzeBuffTier6"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationSilverBuffTier6"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="AcceleratedAnnihiliationGoldBuffTier6"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier6_accelerated_annihiliation_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationGoldBuffTier6" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationSilverBuffTier6" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="AcceleratedAnnihiliationBronzeBuffTier6" param1="removebuff"/>
+			</action>
+			<action class="BeltTooltip">
+				<property name="text" value="Time completed: GOLD!!"/>
+				<property name="sound" value="twitch_celebrate"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: SILVER!"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: BRONZE"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+		</action_sequence>
+		<action_sequence name="tier6_accelerated_annihiliation_reward">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<loop class="While">
+				<property name="phase" value="1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier6_accelerated_annihilation"/>
+				</requirement>
+			</loop>
+			<!-- Gold rewards -->
+			<action class="AddQuest">
+				<property name="quest" value="tier6_accelerated_annihiliation_reward_quest_gold"/>
+				<property name="phase" value="2"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Silver -->
+			<action class="AddQuest">
+				<property name="quest" value="tier6_accelerated_annihiliation_reward_quest_silver"/>
+				<property name="phase" value="3"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Bronze -->
+			<action class="AddXP">
+				<property name="xp_amount" value="15000"/>
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<action class="AddItems">
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="AcceleratedAnnihiliationBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<property name="added_items" value="resourceScrapBooks"/>
+				<property name="added_item_counts" value="60"/>
+			</action>
+		</action_sequence>
+		
+		<!-- *** Contraband Collection *** -->
+		<action_sequence name="playairdropsound">
+			<action class="PlaySound">
+				<property name="sound" value="Supply_Crate_Plane_Custom" param1="alertsound"/>
+				<property name="phase" value="1"/>
+				<!-- <property name="loop_duration" value="5"/> -->
+				<!-- was 3 -->
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="spawn_airdrop">
+			<property name="allow_user_trigger" value="false"/>
+			<property name="category" value="twitch_actions"/>
+			<action class="SpawnContainer">
+				<property name="entity_names" value="ContrabandCollectionCrate" param1="cratename"/>
+				<property name="spawn_count" value="1" param1="spawncount"/>
+				<property name="air_spawn" value="true" param1="airspawn"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="min_distance" value="1"/>
+				<property name="max_distance" value="1"/>
+				<property name="yoffset" value="150"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="tier1_contraband_collection_spawn">
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier1_contraband_collection"/>
+				</requirement>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="tier2_contraband_collection_spawn">
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier2_contraband_collection"/>
+				</requirement>
+			</action>
+			<!-- <action class="Delay"> -->
+			<!-- <property name="phase" value="2"/> -->
+			<!-- <property name="time" value="5"/> -->
+			<!-- </action> -->
+			<!-- <action class="SpawnEntity"> -->
+			<!-- <property name="phase" value="3"/> -->
+			<!-- <property name="entity_group" value="SleeperGSList"/> -->
+			<!-- <property name="spawn_count" value="1"/> -->
+			<!-- <property name="air_spawn" value="false"/> -->
+			<!-- <property name="add_to_group" value="zombies"/> -->
+			<!-- <property name="safe_spawn" value="true"/> -->
+			<!-- <property name="attack_target" value="true"/> -->
+			<!-- <requirement class="OnQuest"> -->
+			<!-- <property name="quest" value="tier2_contraband_collection"/> -->
+			<!-- </requirement> -->
+			<!-- </action> -->
+		</action_sequence>
+		
+		<action_sequence name="tier3_contraband_collection_spawn">
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier3_contraband_collection"/>
+				</requirement>
+			</action>
+			<action class="Delay">
+				<property name="phase" value="2"/>
+				<property name="time" value="3"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier3_contraband_collection"/>
+				</requirement>
+			</action>
+			<!-- <action class="Delay"> -->
+			<!-- <property name="phase" value="4"/> -->
+			<!-- <property name="time" value="3"/> -->
+			<!-- </action> -->
+			<!-- <action class="SpawnEntity"> -->
+			<!-- <property name="phase" value="5"/> -->
+			<!-- <property name="entity_group" value="SleeperGSList"/> -->
+			<!-- <property name="spawn_count" value="1"/> -->
+			<!-- <property name="air_spawn" value="false"/> -->
+			<!-- <property name="add_to_group" value="zombies"/> -->
+			<!-- <property name="safe_spawn" value="true"/> -->
+			<!-- <property name="attack_target" value="true"/> -->
+			<!-- <requirement class="OnQuest"> -->
+			<!-- <property name="quest" value="tier3_contraband_collection"/> -->
+			<!-- </requirement> -->
+			<!-- </action> -->
+		</action_sequence>
+		
+		<action_sequence name="tier4_contraband_collection_spawn">
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier4_contraband_collection"/>
+				</requirement>
+			</action>
+			<action class="Delay">
+				<property name="phase" value="2"/>
+				<property name="time" value="2"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier4_contraband_collection"/>
+				</requirement>
+			</action>
+			<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="3"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="5"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier4_contraband_collection"/>
+				</requirement>
+			</action>
+			<action class="Delay">
+				<property name="phase" value="6"/>
+				<property name="time" value="2"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="7"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier4_contraband_collection"/>
+				</requirement>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="tier5_contraband_collection_spawn">
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier5_contraband_collection"/>
+				</requirement>
+			</action>
+			<action class="Delay">
+				<property name="phase" value="2"/>
+				<property name="time" value="2"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier5_contraband_collection"/>
+				</requirement>
+			</action>
+			<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="5"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier5_contraband_collection"/>
+				</requirement>
+			</action>
+			<action class="Delay">
+				<property name="phase" value="6"/>
+				<property name="time" value="2"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="7"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier5_contraband_collection"/>
+				</requirement>
+			</action>
+			<!-- <action class="Delay"> -->
+			<!-- <property name="phase" value="8"/> -->
+			<!-- <property name="time" value="2"/> -->
+			<!-- </action> -->
+			<!-- <action class="SpawnEntity"> -->
+			<!-- <property name="phase" value="9"/> -->
+			<!-- <property name="entity_group" value="SleeperGSList"/> -->
+			<!-- <property name="spawn_count" value="1"/> -->
+			<!-- <property name="air_spawn" value="false"/> -->
+			<!-- <property name="add_to_group" value="zombies"/> -->
+			<!-- <property name="safe_spawn" value="true"/> -->
+			<!-- <property name="attack_target" value="true"/> -->
+			<!-- <requirement class="OnQuest"> -->
+			<!-- <property name="quest" value="tier5_contraband_collection"/> -->
+			<!-- </requirement> -->
+			<!-- </action> -->
+		</action_sequence>
+
+		<action_sequence name="add_contraband_collection_buff">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="ContrabandCollectionBuff"/>
+			</action>
+			
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+			</action>
+		</action_sequence>
+
+		<action_sequence name="tier1_contraband_collection_remove_satchel_a">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="tier1_remove_satchel_buff"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="tier1_contraband_collection_remove_satchel_b">
+			<action class="RemoveItems">
+				<property name="phase" value="1"/>
+				<property name="items_location" value="Toolbelt, Backpack, Equipment, Held"/>
+				<property name="items_tags" value="ContrabandCollection_cntFetchQuestSatchel"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="1"/>
+				<requirement class="OnQuest">
+					<property name="invert" value="true"/>
+					<property name="quest" value="tier1_contraband_collection"/>
+				</requirement>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="removes_buff" value="tier1_remove_satchel_buff" param1="removebuff"/>
+				<requirement class="OnQuest">
+					<property name="invert" value="true"/>
+					<property name="quest" value="tier1_contraband_collection"/>
+				</requirement>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="tier2_contraband_collection_remove_satchel_a">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="tier2_remove_satchel_buff"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="tier2_contraband_collection_remove_satchel_b">
+			<action class="RemoveItems">
+				<property name="phase" value="1"/>
+				<property name="items_location" value="Toolbelt, Backpack, Equipment, Held"/>
+				<property name="items_tags" value="ContrabandCollection_cntFetchQuestSatchel"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="1"/>
+				<requirement class="OnQuest">
+					<property name="invert" value="true"/>
+					<property name="quest" value="tier2_contraband_collection"/>
+				</requirement>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="removes_buff" value="tier2_remove_satchel_buff" param1="removebuff"/>
+				<requirement class="OnQuest">
+					<property name="invert" value="true"/>
+					<property name="quest" value="tier2_contraband_collection"/>
+				</requirement>
+			</action>
+		</action_sequence>
+		
+		<!-- tier 3-->
+		<action_sequence name="tier3_contraband_collection_remove_satchel_a">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="tier3_remove_satchel_buff"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="tier3_contraband_collection_remove_satchel_b">
+			<action class="RemoveItems">
+				<property name="phase" value="1"/>
+				<property name="items_location" value="Toolbelt, Backpack, Equipment, Held"/>
+				<property name="items_tags" value="ContrabandCollection_cntFetchQuestSatchel"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="1"/>
+				<requirement class="OnQuest">
+					<property name="invert" value="true"/>
+					<property name="quest" value="tier3_contraband_collection"/>
+				</requirement>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="removes_buff" value="tier3_remove_satchel_buff" param1="removebuff"/>
+				<requirement class="OnQuest">
+					<property name="invert" value="true"/>
+					<property name="quest" value="tier3_contraband_collection"/>
+				</requirement>
+			</action>
+		</action_sequence>
+		
+		<!-- tier 4 -->
+		<action_sequence name="tier4_contraband_collection_remove_satchel_a">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="tier4_remove_satchel_buff"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="tier4_contraband_collection_remove_satchel_b">
+			<action class="RemoveItems">
+				<property name="phase" value="1"/>
+				<property name="items_location" value="Toolbelt, Backpack, Equipment, Held"/>
+				<property name="items_tags" value="ContrabandCollection_cntFetchQuestSatchel"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="1"/>
+				<requirement class="OnQuest">
+					<property name="invert" value="true"/>
+					<property name="quest" value="tier4_contraband_collection"/>
+				</requirement>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="removes_buff" value="tier4_remove_satchel_buff" param1="removebuff"/>
+				<requirement class="OnQuest">
+					<property name="invert" value="true"/>
+					<property name="quest" value="tier4_contraband_collection"/>
+				</requirement>
+			</action>
+		</action_sequence>
+		
+		<!-- tier 5 -->
+		<action_sequence name="tier5_contraband_collection_remove_satchel_a">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="tier5_remove_satchel_buff"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="tier5_contraband_collection_remove_satchel_b">
+			<action class="RemoveItems">
+				<property name="phase" value="1"/>
+				<property name="items_location" value="Toolbelt, Backpack, Equipment, Held"/>
+				<property name="items_tags" value="ContrabandCollection_cntFetchQuestSatchel"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="1"/>
+				<requirement class="OnQuest">
+					<property name="invert" value="true"/>
+					<property name="quest" value="tier5_contraband_collection"/>
+				</requirement>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="removes_buff" value="tier5_remove_satchel_buff" param1="removebuff"/>
+				<requirement class="OnQuest">
+					<property name="invert" value="true"/>
+					<property name="quest" value="tier5_contraband_collection"/>
+				</requirement>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="contraband_collection_crate_explode_crate_on_quest_fail">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<!--<property name="refund_inactivity" value="false"/>-->
+			<!--	<loop class="While">
+				<property name="phase" value="1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier1_contraband_collection"/>
+				</requirement>
+			</loop>-->
+			<action class="ExplodeTarget">
+				<property name="phase" value="1"/>
+				<property name="blast_power" value="75"/>
+				<property name="block_damage" value="300"/>
+				<property name="block_radius" value="10"/>
+				<property name="entity_damage" value="50"/>
+				<property name="entity_radius" value="6"/>
+				<!--<requirement class="OnQuest"> - onquest does nothing
+					<property name="invert" value="true"/>
+					<property name="quest" value="tier1_contraband_collection"/>
+				</requirement>-->
+				<!--<requirement class="CVar"> - cvars don't pass between entities
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="tier1_contraband_collection"/>
+					<property name="value" value="1"/>
+				</requirement>-->
+				<!--<requirement class="InQuestZone">  - questzone does nothing					
+				</requirement>-->
+			</action>
+			
+			<action class="Kill">
+				<property name="phase" value="2"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="explode_me">
+			<!--<property name="action_type" value="Game"/>
+			<property name="target_type" value="Block"/>-->
+			<action class="PlaySound">
+				<property name="phase" value="1"/>
+				<property name="sound" value="demolitionz_beep"/>
+			</action>
+			
+			<action class="Delay">
+				<property name="phase" value="2"/>
+				<property name="time" value="1"/>
+			</action>
+			
+			<action class="PlaySound">
+				<property name="phase" value="3"/>
+				<property name="sound" value="demolitionz_beep"/>
+			</action>
+			
+			<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="1"/>
+			</action>
+			
+			<action class="PlaySound">
+				<property name="phase" value="5"/>
+				<property name="sound" value="demolitionz_beep"/>
+			</action>
+			
+			<action class="Delay">
+				<property name="phase" value="6"/>
+				<property name="time" value="1"/>
+			</action>
+			
+			<action class="ExplodeTarget">
+				<property name="phase" value="7"/>
+				<property name="blast_power" value="75"/>
+				<property name="block_damage" value="300"/>
+				<property name="block_radius" value="10"/>
+				<property name="entity_damage" value="50"/>
+				<property name="entity_radius" value="6"/>
+			</action>
+			
+			<action class="Kill">
+				<property name="phase" value="8"/>
+			</action>
+		</action_sequence>
+		
+		<!-- *** Defend the Safehouse *** -->
+		<action_sequence name="tier1_courier_rescue_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffSpawner1a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t1_courier_rescue_kill_counter"/>
+				<property name="value" value="0"/>
+				<property name="operation" value="Set"/>
+			</action>
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="safehouse"/>
+			</action>
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier1_courier_rescue_mainLoop">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffSpawner1a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffSpawner1b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="4"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="safehouse"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+			</action>
+			<action class="PlaySound">
+				<property name="sound" value="zombiemalealert" param1="alertsound"/>
+				<property name="phase" value="4"/>
+			</action>
+			<action class="Delay">
+				<property name="phase" value="5"/>
+				<property name="time" value="5"/>
+			</action>
+			<loop class="While">
+				<property name="phase" value="6"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffSpawner1b"/>
+				</requirement>
+				<!-- remove buff if player has killed 15 -->
+				<decision class="If">
+					<requirement class="CVar">
+						<property name="operation" value="GTE"/>
+						<property name="cvar" value="cvar_t1_courier_rescue_kill_counter"/>
+						<property name="value" value="15"/>
+					</requirement>
+					<action class="AddBuff">
+						<property name="phase" value="1"/>
+						<property name="removes_buff" value="buffSpawner1b" param1="removebuff"/>
+					</action>
+				</decision>
+				<!-- spawn more if less than 3 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="safehouse"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="3"/>
+					</requirement>
+					<action class="SpawnEntity">
+						<property name="phase" value="1"/>
+						<property name="entity_group" value="SleeperGSList"/>
+						<property name="spawn_count" value="1"/>
+						<property name="air_spawn" value="true"/>
+						<property name="add_to_group" value="safehouse"/>
+						<property name="safe_spawn" value="true"/>
+						<property name="attack_target" value="true"/>
+					</action>
+					<action class="PlaySound">
+						<property name="sound" value="zombiemalealert" param1="alertsound"/>
+						<property name="phase" value="2"/>
+					</action>
+					<action class="Delay">
+						<property name="phase" value="3"/>
+						<property name="time" value="3"/>
+					</action>
+					<action class="RageZombies">
+						<property name="phase" value="4"/>
+						<property name="time" value="10"/>
+						<property name="speed_percent" value="10.0"/>
+						<property name="target_group" value="safehouse"/>
+					</action>
+				</decision>
+			</loop>
+		</action_sequence>
+		<action_sequence name="tier1_courier_rescue_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffSpawner1a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffSpawner1b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier1_courier_rescue_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier1_courier_rescue"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffSpawner1b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+		<!-- TIER 2 start -->
+		<action_sequence name="tier2_courier_rescue_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffSpawner2a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t2_courier_rescue_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="safehouse"/>
+			</action>
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier2_courier_rescue_mainLoop">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffSpawner2a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffSpawner2b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="9"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="safehouse"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+			</action>
+			<action class="PlaySound">
+				<property name="sound" value="zombiemalealert" param1="alertsound"/>
+				<property name="phase" value="4"/>
+			</action>
+			<action class="Delay">
+				<property name="phase" value="5"/>
+				<property name="time" value="5"/>
+			</action>
+			<loop class="While">
+				<property name="phase" value="6"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffSpawner2b"/>
+				</requirement>
+				<!-- remove buff if player has killed 30 -->
+				<decision class="If">
+					<requirement class="CVar">
+						<property name="operation" value="GTE"/>
+						<property name="cvar" value="cvar_t2_courier_rescue_kill_counter"/>
+						<property name="value" value="30"/>
+					</requirement>
+					<action class="AddBuff">
+						<property name="phase" value="1"/>
+						<property name="removes_buff" value="buffSpawner2b" param1="removebuff"/>
+					</action>
+				</decision>
+				<!-- spawn more if less than 5 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="safehouse"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="5"/>
+					</requirement>
+					<action class="SpawnEntity">
+						<property name="phase" value="1"/>
+						<property name="entity_group" value="SleeperGSList"/>
+						<property name="spawn_count" value="1"/>
+						<property name="air_spawn" value="true"/>
+						<property name="add_to_group" value="safehouse"/>
+						<property name="safe_spawn" value="true"/>
+						<property name="attack_target" value="true"/>
+					</action>
+					<action class="PlaySound">
+						<property name="sound" value="zombiemalealert" param1="alertsound"/>
+						<property name="phase" value="2"/>
+					</action>
+					<action class="Delay">
+						<property name="phase" value="3"/>
+						<property name="time" value="3"/>
+					</action>
+					<action class="RageZombies">
+						<property name="phase" value="4"/>
+						<property name="time" value="10"/>
+						<property name="speed_percent" value="10.0"/>
+						<property name="target_group" value="safehouse"/>
+					</action>
+				</decision>
+			</loop>
+		</action_sequence>
+		<action_sequence name="tier2_courier_rescue_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffSpawner2a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffSpawner2b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier2_courier_rescue_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier2_courier_rescue"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffSpawner2b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+		<!-- TIER 3 start -->
+		<action_sequence name="tier3_courier_rescue_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffSpawner3a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t3_courier_rescue_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="safehouse"/>
+			</action>
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier3_courier_rescue_mainLoop">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffSpawner3a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffSpawner3b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="14"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="safehouse"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+			</action>
+			<action class="PlaySound">
+				<property name="sound" value="zombiemalealert" param1="alertsound"/>
+				<property name="phase" value="4"/>
+			</action>
+			<action class="Delay">
+				<property name="phase" value="5"/>
+				<property name="time" value="5"/>
+			</action>
+			<loop class="While">
+				<property name="phase" value="6"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffSpawner3b"/>
+				</requirement>
+				<!-- remove buff if player has killed 45 -->
+				<decision class="If">
+					<requirement class="CVar">
+						<property name="operation" value="GTE"/>
+						<property name="cvar" value="cvar_t3_courier_rescue_kill_counter"/>
+						<property name="value" value="45"/>
+					</requirement>
+					<action class="AddBuff">
+						<property name="phase" value="1"/>
+						<property name="removes_buff" value="buffSpawner3b" param1="removebuff"/>
+					</action>
+				</decision>
+				<!-- spawn more if less than 10 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="safehouse"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="10"/>
+					</requirement>
+					<action class="SpawnEntity">
+						<property name="phase" value="1"/>
+						<property name="entity_group" value="SleeperGSList"/>
+						<property name="spawn_count" value="1"/>
+						<property name="air_spawn" value="true"/>
+						<property name="add_to_group" value="safehouse"/>
+						<property name="safe_spawn" value="true"/>
+						<property name="attack_target" value="true"/>
+					</action>
+					<action class="PlaySound">
+						<property name="sound" value="zombiemalealert" param1="alertsound"/>
+						<property name="phase" value="2"/>
+					</action>
+					<action class="Delay">
+						<property name="phase" value="3"/>
+						<property name="time" value="3"/>
+					</action>
+					<action class="RageZombies">
+						<property name="phase" value="4"/>
+						<property name="time" value="10"/>
+						<property name="speed_percent" value="10.0"/>
+						<property name="target_group" value="safehouse"/>
+					</action>
+				</decision>
+			</loop>
+		</action_sequence>
+		<action_sequence name="tier3_courier_rescue_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffSpawner3a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffSpawner3b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier3_courier_rescue_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier3_courier_rescue"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffSpawner3b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+		<!-- TIER 4 start -->
+		<action_sequence name="tier4_courier_rescue_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffSpawner4a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t4_courier_rescue_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="safehouse"/>
+			</action>
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier4_courier_rescue_mainLoop">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffSpawner4a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffSpawner4b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="20"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="safehouse"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+			</action>
+			<action class="PlaySound">
+				<property name="sound" value="zombiemalealert" param1="alertsound"/>
+				<property name="phase" value="4"/>
+			</action>
+			<action class="Delay">
+				<property name="phase" value="5"/>
+				<property name="time" value="5"/>
+			</action>
+			<loop class="While">
+				<property name="phase" value="6"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffSpawner4b"/>
+				</requirement>
+				<!-- remove buff if player has killed 60 -->
+				<decision class="If">
+					<requirement class="CVar">
+						<property name="operation" value="GTE"/>
+						<property name="cvar" value="cvar_t4_courier_rescue_kill_counter"/>
+						<property name="value" value="60"/>
+					</requirement>
+					<action class="AddBuff">
+						<property name="phase" value="1"/>
+						<property name="removes_buff" value="buffSpawner4b" param1="removebuff"/>
+					</action>
+				</decision>
+				<!-- spawn more if less than 15 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="safehouse"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="15"/>
+					</requirement>
+					<action class="SpawnEntity">
+						<property name="phase" value="1"/>
+						<property name="entity_group" value="SleeperGSList"/>
+						<property name="spawn_count" value="1"/>
+						<property name="air_spawn" value="true"/>
+						<property name="add_to_group" value="safehouse"/>
+						<property name="safe_spawn" value="true"/>
+						<property name="attack_target" value="true"/>
+					</action>
+					<action class="PlaySound">
+						<property name="sound" value="zombiemalealert" param1="alertsound"/>
+						<property name="phase" value="2"/>
+					</action>
+					<action class="Delay">
+						<property name="phase" value="3"/>
+						<property name="time" value="3"/>
+					</action>
+					<action class="RageZombies">
+						<property name="phase" value="4"/>
+						<property name="time" value="10"/>
+						<property name="speed_percent" value="10.0"/>
+						<property name="target_group" value="safehouse"/>
+					</action>
+				</decision>
+			</loop>
+		</action_sequence>
+		<action_sequence name="tier4_courier_rescue_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffSpawner4a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffSpawner4b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier4_courier_rescue_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier4_courier_rescue"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffSpawner4b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+		<!-- TIER 5 start -->
+		<action_sequence name="tier5_courier_rescue_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffSpawner5a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t5_courier_rescue_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="safehouse"/>
+			</action>
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier5_courier_rescue_mainLoop">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffSpawner5a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffSpawner5b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="25"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="safehouse"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+			</action>
+			<action class="PlaySound">
+				<property name="sound" value="zombiemalealert" param1="alertsound"/>
+				<property name="phase" value="4"/>
+			</action>
+			<action class="Delay">
+				<property name="phase" value="5"/>
+				<property name="time" value="5"/>
+			</action>
+			<loop class="While">
+				<property name="phase" value="6"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffSpawner5b"/>
+				</requirement>
+				<!-- remove buff if player has killed 75 -->
+				<decision class="If">
+					<requirement class="CVar">
+						<property name="operation" value="GTE"/>
+						<property name="cvar" value="cvar_t5_courier_rescue_kill_counter"/>
+						<property name="value" value="75"/>
+					</requirement>
+					<action class="AddBuff">
+						<property name="phase" value="1"/>
+						<property name="removes_buff" value="buffSpawner5b" param1="removebuff"/>
+					</action>
+				</decision>
+				<!-- spawn more if less than 20 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="safehouse"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="20"/>
+					</requirement>
+					<action class="SpawnEntity">
+						<property name="phase" value="1"/>
+						<property name="entity_group" value="SleeperGSList"/>
+						<property name="spawn_count" value="1"/>
+						<property name="air_spawn" value="true"/>
+						<property name="add_to_group" value="safehouse"/>
+						<property name="safe_spawn" value="true"/>
+						<property name="attack_target" value="true"/>
+					</action>
+					<action class="PlaySound">
+						<property name="sound" value="zombiemalealert" param1="alertsound"/>
+						<property name="phase" value="2"/>
+					</action>
+					<action class="Delay">
+						<property name="phase" value="3"/>
+						<property name="time" value="3"/>
+					</action>
+					<action class="RageZombies">
+						<property name="phase" value="4"/>
+						<property name="time" value="10"/>
+						<property name="speed_percent" value="10.0"/>
+						<property name="target_group" value="safehouse"/>
+					</action>
+				</decision>
+			</loop>
+		</action_sequence>
+		<action_sequence name="tier5_courier_rescue_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffSpawner5a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffSpawner5b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier5_courier_rescue_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier5_courier_rescue"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffSpawner5b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+		<!-- *** Speed Clear *** -->
+		<action_sequence name="tier1_speed_clear_start">
+			<!--<action class="AddChatMessage">
+				<property name="text" value="tier1_speed_clear_start"/>
+			</action>-->
+			<!-- reverse order so gold is on top in the display -->
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearBronzeBuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearSilverBuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearGoldBuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier1_speed_clear_stop">
+			<!--<action class="AddChatMessage">
+				<property name="text" value="tier1_speed_clear_stop"/>
+			</action>-->
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearGoldBuff" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearSilverBuff" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearBronzeBuff" param1="removebuff"/>
+			</action>
+			
+
+			<action class="BeltTooltip">
+				<property name="text" value="Time completed: GOLD!!"/>
+				<property name="sound" value="twitch_celebrate"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			
+			
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: SILVER!"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+			
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: BRONZE"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+			
+		</action_sequence>
+		<action_sequence name="tier1_speed_clear_reward">
+		
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			
+			
+			<!--<action class="AddChatMessage">
+				<property name="text" value="reward time!"/>
+			</action>-->
+			<loop class="While">
+				<property name="phase" value="1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier1_speed_clear"/>
+				</requirement>
+			</loop>
+			<!-- Gold rewards -->
+			<!--<action class="AddChatMessage">
+				<property name="text" value="Gold!"/>
+			<property name="phase" value="2" />
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>-->
+			<action class="AddQuest">
+				<property name="quest" value="tier1_speed_clear_reward_quest_gold"/>
+				<property name="phase" value="2"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!--<action class="AddChatMessage">
+				<property name="text" value="Silver!"/>
+			<property name="phase" value="3" />
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>-->
+			<action class="AddQuest">
+				<property name="quest" value="tier1_speed_clear_reward_quest_silver"/>
+				<property name="phase" value="3"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!--<action class="AddChatMessage">
+				<property name="text" value="Bronze!"/>
+			<property name="phase" value="4" />
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>-->
+			<action class="AddXP">
+				<property name="xp_amount" value="1500"/>
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<action class="AddItems">
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<property name="added_items" value="resourceScrapBooks"/>
+				<property name="added_item_counts" value="2"/>
+			</action>
+		</action_sequence>
+		<!-- TIER 2-->
+		<action_sequence name="tier2_speed_clear_start">
+			<!-- reverse order so gold is on top in the display -->
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearBronzeBuffTier2"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearSilverBuffTier2"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearGoldBuffTier2"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier2_speed_clear_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearGoldBuffTier2" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearSilverBuffTier2" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearBronzeBuffTier2" param1="removebuff"/>
+			</action>
+			
+			<action class="BeltTooltip">
+				<property name="text" value="Time completed: GOLD!!"/>
+				<property name="sound" value="twitch_celebrate"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			
+			
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: SILVER!"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+			
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: BRONZE"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+		</action_sequence>
+		<action_sequence name="tier2_speed_clear_reward">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<loop class="While">
+				<property name="phase" value="1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier2_speed_clear"/>
+				</requirement>
+			</loop>
+			<!-- Gold rewards -->
+			<action class="AddQuest">
+				<property name="quest" value="tier2_speed_clear_reward_quest_gold"/>
+				<property name="phase" value="2"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Silver -->
+			<action class="AddQuest">
+				<property name="quest" value="tier2_speed_clear_reward_quest_silver"/>
+				<property name="phase" value="3"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+
+			<!-- Bronze -->
+			<action class="AddXP">
+				<property name="xp_amount" value="2250"/>
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<action class="AddItems">
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<property name="added_items" value="resourceScrapBooks"/>
+				<property name="added_item_counts" value="4"/>
+			</action>
+		</action_sequence>
+		<!-- TIER 3-->
+		<action_sequence name="tier3_speed_clear_start">
+			<!-- reverse order so gold is on top in the display -->
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearBronzeBuffTier3"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearSilverBuffTier3"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearGoldBuffTier3"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier3_speed_clear_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearGoldBuffTier3" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearSilverBuffTier3" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearBronzeBuffTier3" param1="removebuff"/>
+			</action>
+			
+			<action class="BeltTooltip">
+				<property name="text" value="Time completed: GOLD!!"/>
+				<property name="sound" value="twitch_celebrate"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			
+			
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: SILVER!"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+			
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: BRONZE"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+		</action_sequence>
+		<action_sequence name="tier3_speed_clear_reward">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<loop class="While">
+				<property name="phase" value="1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier3_speed_clear"/>
+				</requirement>
+			</loop>
+			<!-- Gold rewards -->
+			<action class="AddQuest">
+				<property name="quest" value="tier3_speed_clear_reward_quest_gold"/>
+				<property name="phase" value="2"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Silver -->
+			<action class="AddQuest">
+				<property name="quest" value="tier3_speed_clear_reward_quest_silver"/>
+				<property name="phase" value="3"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+
+			<!-- Bronze -->
+			<action class="AddXP">
+				<property name="xp_amount" value="3000"/>
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<action class="AddItems">
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<property name="added_items" value="resourceScrapBooks"/>
+				<property name="added_item_counts" value="6"/>
+			</action>
+		</action_sequence>
+		<!-- TIER 4-->
+		<action_sequence name="tier4_speed_clear_start">
+			<!-- reverse order so gold is on top in the display -->
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearBronzeBuffTier4"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearSilverBuffTier4"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearGoldBuffTier4"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier4_speed_clear_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearGoldBuffTier4" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearSilverBuffTier4" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearBronzeBuffTier4" param1="removebuff"/>
+			</action>
+			
+			<action class="BeltTooltip">
+				<property name="text" value="Time completed: GOLD!!"/>
+				<property name="sound" value="twitch_celebrate"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			
+			
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: SILVER!"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+			
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: BRONZE"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+		</action_sequence>
+		<action_sequence name="tier4_speed_clear_reward">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<loop class="While">
+				<property name="phase" value="1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier4_speed_clear"/>
+				</requirement>
+			</loop>
+			<!-- Gold rewards -->
+			<action class="AddQuest">
+				<property name="quest" value="tier4_speed_clear_reward_quest_gold"/>
+				<property name="phase" value="2"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Silver -->
+			<action class="AddQuest">
+				<property name="quest" value="tier4_speed_clear_reward_quest_silver"/>
+				<property name="phase" value="3"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Bronze -->
+			<action class="AddXP">
+				<property name="xp_amount" value="3750"/>
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<action class="AddItems">
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<property name="added_items" value="resourceScrapBooks"/>
+				<property name="added_item_counts" value="8"/>
+			</action>
+		</action_sequence>
+		<!-- TIER 5-->
+		<action_sequence name="tier5_speed_clear_start">
+			<!-- reverse order so gold is on top in the display -->
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearBronzeBuffTier5"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearSilverBuffTier5"/>
+			</action>
+			<action class="AddBuff">
+				<property name="buff_name" value="SpeedClearGoldBuffTier5"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier5_speed_clear_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearGoldBuffTier5" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearSilverBuffTier5" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="SpeedClearBronzeBuffTier5" param1="removebuff"/>
+			</action>
+			
+			<action class="BeltTooltip">
+				<property name="text" value="Time completed: GOLD!!"/>
+				<property name="sound" value="twitch_celebrate"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			
+			
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: SILVER!"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+			
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="Equals"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<action class="BeltTooltip">
+					<property name="text" value="Time completed: BRONZE"/>
+					<property name="sound" value="twitch_celebrate"/>
+				</action>
+			</decision>
+		</action_sequence>
+		<action_sequence name="tier5_speed_clear_reward">
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false"/>
+			<loop class="While">
+				<property name="phase" value="1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier5_speed_clear"/>
+				</requirement>
+			</loop>
+			<!-- Gold rewards -->
+			<action class="AddQuest">
+				<property name="quest" value="tier5_speed_clear_reward_quest_gold"/>
+				<property name="phase" value="2"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearGoldBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Silver -->
+			<action class="AddQuest">
+				<property name="quest" value="tier5_speed_clear_reward_quest_silver"/>
+				<property name="phase" value="3"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearSilverBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<!-- Bronze -->
+			<action class="AddXP">
+				<property name="xp_amount" value="7500"/>
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+			</action>
+			<action class="AddItems">
+				<property name="phase" value="4"/>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="SpeedClearBronzeBuffCvar"/>
+					<property name="value" value="0"/>
+				</requirement>
+				<property name="added_items" value="resourceScrapBooks"/>
+				<property name="added_item_counts" value="12"/>
+			</action>
+		</action_sequence>
+	</insertAfter>
+
 </configs>

@@ -66,13 +66,13 @@
 		
 		<SoundDataNode name="blastFurnacecomplete">
 			<AudioSource name="Sounds/AudioSource_UI"/>
-			<AudioClip ClipName="#@modfolder:Resources/uraniumWorkbenches.unity3d?furnaceend.mp3" />
+			<AudioClip ClipName="#@modfolder:Resources/uraniumWorkbenches.unity3d?furnaceend.mp3"/>
 			<LocalCrouchVolumeScale value="1.0"/>
 			<CrouchNoiseScale value="0.5"/>
 			<NoiseScale value="1"/>
 			<MaxVoices value="10"/>
 			<MaxRepeatRate value="0.01"/>
-		</SoundDataNode>		
+		</SoundDataNode>
 		
 		<SoundDataNode name="buggy_horn"><AudioSource name="Sounds/AudioSource_SmallHorn"/>
 			<Noise ID="4" noise="60" time="3" heat_map_strength="0.2" heat_map_time="90"/>
@@ -86,7 +86,7 @@
 			<MaxRepeatRate value="0.01"/>
 		</SoundDataNode>
 		
-		<SoundDataNode name="rifle05_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
+		<SoundDataNode name="rifle05_fire"><AudioSource name="Sounds/AudioSource_WeaponFire"/><NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 			<Noise ID="0" noise="54" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
 			<AudioClip ClipName="#@modfolder:Resources/LegendaryAssaultRifle.unity3d?Rifle_Shot_1"/>
 			<AudioClip ClipName="#@modfolder:Resources/LegendaryAssaultRifle.unity3d?Rifle_Shot_3"/>
@@ -96,36 +96,36 @@
 			<LocalCrouchVolumeScale value="1"/><CrouchNoiseScale value="1"/><NoiseScale value="1"/><MaxVoices value="30"/><MaxVoicesPerEntity value="10"/><MaxRepeatRate value="0.001"/>
 		</SoundDataNode>
 		
-		<SoundDataNode name="tommyGun_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
+		<SoundDataNode name="tommyGun_fire"><AudioSource name="Sounds/AudioSource_WeaponFire"/><NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 			<Noise ID="0" noise="54" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
-			<AudioClip ClipName="#@modfolder:Resources/machinePistol.unity3d?Gun"/>			
+			<AudioClip ClipName="#@modfolder:Resources/machinePistol.unity3d?Gun"/>
 			<AudioClip ClipName="Sounds/Twitch/Silly/smg_fire_silly1" AltSound="true"/>
 			<AudioClip ClipName="Sounds/Twitch/Silly/smg_fire_silly2" AltSound="true"/>
 			<AudioClip ClipName="Sounds/Twitch/Silly/smg_fire_silly3" AltSound="true"/>
 			<LocalCrouchVolumeScale value="1"/><CrouchNoiseScale value="1"/><NoiseScale value="1"/><MaxVoices value="30"/><MaxVoicesPerEntity value="10"/><MaxRepeatRate value="0.001"/>
 		</SoundDataNode>
 		
-		<SoundDataNode name="shotGunFM_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
+		<SoundDataNode name="shotGunFM_fire"><AudioSource name="Sounds/AudioSource_WeaponFire"/><NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 			<Noise ID="0" noise="54" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
-			<AudioClip ClipName="#@modfolder:Resources/LegendaryShotgun.unity3d?Shot_Full"/>			
+			<AudioClip ClipName="#@modfolder:Resources/LegendaryShotgun.unity3d?Shot_Full"/>
 			<AudioClip ClipName="Sounds/Twitch/Silly/shotgun_fire_silly1" AltSound="true"/>
 			<AudioClip ClipName="Sounds/Twitch/Silly/shotgun_fire_silly2" AltSound="true"/>
 			<AudioClip ClipName="Sounds/Twitch/Silly/shotgun_fire_silly3" AltSound="true"/>
 			<LocalCrouchVolumeScale value="1"/><CrouchNoiseScale value="1"/><NoiseScale value="1"/><MaxVoices value="30"/><MaxVoicesPerEntity value="10"/><MaxRepeatRate value="0.001"/>
 		</SoundDataNode>
 		
-		<SoundDataNode name="magnumRH_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
+		<SoundDataNode name="magnumRH_fire"><AudioSource name="Sounds/AudioSource_WeaponFire"/><NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 			<Noise ID="0" noise="54" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
-			<AudioClip ClipName="#@modfolder:Resources/LegendaryMagnum.unity3d?MagnumShot"/>			
+			<AudioClip ClipName="#@modfolder:Resources/LegendaryMagnum.unity3d?MagnumShot"/>
 			<AudioClip ClipName="Sounds/Twitch/Silly/44magnum_fire_silly1" AltSound="true"/>
 			<AudioClip ClipName="Sounds/Twitch/Silly/44magnum_fire_silly2" AltSound="true"/>
 			<AudioClip ClipName="Sounds/Twitch/Silly/44magnum_fire_silly3" AltSound="true"/>
 			<LocalCrouchVolumeScale value="1"/><CrouchNoiseScale value="1"/><NoiseScale value="1"/><MaxVoices value="30"/><MaxVoicesPerEntity value="10"/><MaxRepeatRate value="0.001"/>
 		</SoundDataNode>
 		
-		<SoundDataNode name="legendarySniper_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
+		<SoundDataNode name="legendarySniper_fire"><AudioSource name="Sounds/AudioSource_WeaponFire"/><NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 			<Noise ID="0" noise="54" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
-			<AudioClip ClipName="#@modfolder:Resources/LegendarySniper.unity3d?Sniper_Rifle_Shot_3"/>			
+			<AudioClip ClipName="#@modfolder:Resources/LegendarySniper.unity3d?Sniper_Rifle_Shot_3"/>
 			<AudioClip ClipName="Sounds/Twitch/Silly/hunting_rifle_fire_silly1" AltSound="true"/>
 			<AudioClip ClipName="Sounds/Twitch/Silly/hunting_rifle_fire_silly2" AltSound="true"/>
 			<AudioClip ClipName="Sounds/Twitch/Silly/hunting_rifle_fire_silly3" AltSound="true"/>
@@ -136,16 +136,27 @@
 			<AudioSource name="Sounds/AudioSource_Interact"/>
 			<AudioClip ClipName="#@modfolder:Resources/playerPiano.unity3d?audio.mp3"/>
 			<maxVoicesPerEntity value="1"/>
-			<MaxVoices value="30"/> 
-			<MaxRepeatRate value="30.1"/>			
+			<MaxVoices value="30"/>
+			<MaxRepeatRate value="30.1"/>
 		</SoundDataNode>
 		
 		<SoundDataNode name="playerRadio">
 			<AudioSource name="Sounds/AudioSource_Interact"/>
 			<AudioClip ClipName="#@modfolder:Resources/playerRadio.unity3d?EmergencyBroadcast.mp3"/>
 			<maxVoicesPerEntity value="1"/>
-			<MaxVoices value="30"/> 
-			<MaxRepeatRate value="60.1"/>			
+			<MaxVoices value="30"/>
+			<MaxRepeatRate value="60.1"/>
+		</SoundDataNode>
+		
+		<SoundDataNode name="Supply_Crate_Plane_Custom">
+			<AudioSource name="Sounds/AudioSource_Airdrop"/>
+			<AudioClip ClipName="#@modfolder:Resources/propPlane.unity3d?overheadPlane.mp3"/>
+			<IgnoreDistanceCheck/>
+			<LocalCrouchVolumeScale value="0.5"/>
+			<CrouchNoiseScale value="0.5"/>
+			<NoiseScale value="1"/>
+			<MaxVoices value="3"/>
+			<MaxRepeatRate value="0.01"/>
 		</SoundDataNode>
 	</append>
 	

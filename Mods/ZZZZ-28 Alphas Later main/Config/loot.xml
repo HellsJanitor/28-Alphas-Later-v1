@@ -1,5 +1,5 @@
 <configs>
-	<!-- search find all *** for changes -->	
+	<!-- search find all *** for changes -->
 	
 	<!-- *** legendary quality template *** -->
 	<insertafter xpath="//lootqualitytemplates/lootqualitytemplate[@name='qualQ1Template']">
@@ -8,7 +8,7 @@
 				<loot quality="6" prob="1"/>
 			</qualitytemplate>
 		</lootqualitytemplate>
-	<!-- *** basic (hoe) quality template *** -->	
+		<!-- *** basic (hoe) quality template *** -->
 		<lootqualitytemplate name="qualBasicTemplate">
 			<qualitytemplate level="1,999999" default_quality="1">
 				<loot quality="1" prob="1"/>
@@ -18,15 +18,15 @@
 	
 	<!-- *** adds legendary weapons to loot *** -->
 	<!-- <append xpath="//lootgroup[@name='groupToolsTiered']"> -->
-		<!-- <item group="groupLegendaryMelee" loot_prob_template="ProbT3"/> -->
+	<!-- <item group="groupLegendaryMelee" loot_prob_template="ProbT3"/> -->
 	<!-- </append> -->
 	
 	<!-- <append xpath="//lootgroup[@name='groupRareToolsTiered']"> -->
-		<!-- <item group="groupLegendaryMelee" loot_prob_template="ProbT3"/> -->
+	<!-- <item group="groupLegendaryMelee" loot_prob_template="ProbT3"/> -->
 	<!-- </append> -->
 	
 	<!-- <append xpath="//lootgroup[@name='groupToolsTieredBonus']"> -->
-		<!-- <item group="groupLegendaryMelee" loot_prob_template="ProbT3"/> -->
+	<!-- <item group="groupLegendaryMelee" loot_prob_template="ProbT3"/> -->
 	<!-- </append> -->
 
 	<append xpath="//lootgroup[@name='groupHardenedChestT5']">
@@ -39,37 +39,37 @@
 	
 	<append xpath="//lootgroup[@name='groupInfestedT4']">
 		<item group="groupLegendary" count="1" loot_prob_template="low" force_prob="true"/>
-	</append>	
+	</append>
 	
 	<append xpath="//lootgroup[@name='groupZpackBoss']">
 		<item group="groupLegendary" count="1" loot_prob_template="veryLow" force_prob="true"/>
 	</append>
 	
-	<insertafter xpath="//lootgroup[@name='groupToolsT3']">	
-	<lootgroup name="groupLegendaryMelee" count="1" loot_quality_template="qualLegendaryTemplate">
-		<item name="meleeWpnBladeT666LegendaryPaintbrush" count="1" />
-		<item name="meleeHellsScythe" count="1" />
-		<item name="meleeWpnSpearT0Pitchfork" count="1" />
-		<item name="meleeToolAxeT1GardenRake" count="1" />
-	</lootgroup>
+	<insertafter xpath="//lootgroup[@name='groupToolsT3']">
+		<lootgroup name="groupLegendaryMelee" count="1" loot_quality_template="qualLegendaryTemplate">
+			<item name="meleeWpnBladeT666LegendaryPaintbrush" count="1"/>
+			<item name="meleeHellsScythe" count="1"/>
+			<item name="meleeWpnSpearT0Pitchfork" count="1"/>
+			<item name="meleeToolAxeT1GardenRake" count="1"/>
+		</lootgroup>
 	
-	<lootgroup name="groupLegendaryRanged" count="1" loot_quality_template="qualLegendaryTemplate">
-		<item name="gunMGT4FNSCAR" count="1" />
-		<item name="gunHandgunT4MachinePistol" count="1" />
-		<item name="gunShotgunT4FabarmMartial" count="1" />
-		<item name="gunHandgunT4MagnumRagingHorn" count="1" />
-		<item name="gunRifleT4LegendarySniper" count="1" />
-	</lootgroup>
+		<lootgroup name="groupLegendaryRanged" count="1" loot_quality_template="qualLegendaryTemplate">
+			<item name="gunMGT4FNSCAR" count="1"/>
+			<item name="gunHandgunT4MachinePistol" count="1"/>
+			<item name="gunShotgunT4FabarmMartial" count="1"/>
+			<item name="gunHandgunT4MagnumRagingHorn" count="1"/>
+			<item name="gunRifleT4LegendarySniper" count="1"/>
+		</lootgroup>
 	
-	<lootgroup name="groupLegendary">
-		<item group="groupLegendaryMelee"/>
-		<item group="groupLegendaryRanged"/>
-	</lootgroup>
+		<lootgroup name="groupLegendary">
+			<item group="groupLegendaryMelee"/>
+			<item group="groupLegendaryRanged"/>
+		</lootgroup>
 	
-	<!-- *** adds hoe to loot *** -->
-	<lootgroup name="groupBasic" loot_quality_template="qualBasicTemplate">
-		<item name="meleeToolFarmT2IronHoe"/>
-	</lootgroup>
+		<!-- *** adds hoe to loot *** -->
+		<lootgroup name="groupBasic" loot_quality_template="qualBasicTemplate">
+			<item name="meleeToolFarmT2IronHoe"/>
+		</lootgroup>
 	</insertafter>
 	
 	<append xpath="//lootgroup[@name='groupToolsTiered']">
@@ -87,13 +87,13 @@
 	
 	<!-- *** adjust the quest resources loot group *** -->
 	<!-- <set xpath="//lootgroup[@name='groupQuestResources']"> -->
-		<!-- <item name="resourceWood" count="500"/> -->
-		<!-- <item name="resourceCoal" count="300"/> -->
-		<!-- <item name="resourceGunPowder" count="200"/> -->
-		<!-- <item name="resourceGlue" count="5"/> -->
-		<!-- <item name="resourceDuctTape" count="5"/> -->
-		<!-- <item name="resourceMechanicalParts" count="5"/> -->
-		<!-- <item name="resourceRepairKit" count="2"/> -->
+	<!-- <item name="resourceWood" count="500"/> -->
+	<!-- <item name="resourceCoal" count="300"/> -->
+	<!-- <item name="resourceGunPowder" count="200"/> -->
+	<!-- <item name="resourceGlue" count="5"/> -->
+	<!-- <item name="resourceDuctTape" count="5"/> -->
+	<!-- <item name="resourceMechanicalParts" count="5"/> -->
+	<!-- <item name="resourceRepairKit" count="2"/> -->
 	<!-- </set> -->
 	
 	<!-- *** storage container size increases *** -->
@@ -267,11 +267,11 @@
 	
 	<append xpath="/lootcontainers/lootgroup[@name='groupJunk02']">
 		<item name="meleeToolFarmT2IronHoeSchematic" loot_prob_template="ProbT0"/>
-    </append>	
+	</append>
 	
-    <append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralCommon']">
-        <item name="meleeToolFarmT2IronHoeSchematic" loot_prob_template="ProbT0"/>
-    </append>
+	<append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralCommon']">
+		<item name="meleeToolFarmT2IronHoeSchematic" loot_prob_template="ProbT0"/>
+	</append>
 
 	<!-- <append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralT2']">
 		<item name="modGunBrassCatcherSchematic"/>
@@ -297,25 +297,31 @@
 	
 	<!-- *** despair meds in loot *** -->
 	<append xpath="//lootgroup[@name='groupMedicalUncommon']">
-	<item name="drugStJohnsWort" loot_prob_template="veryLow"/>
-	<item name="drugLavenderOil" loot_prob_template="low"/>
+		<item name="drugStJohnsWort" loot_prob_template="veryLow"/>
+		<item name="drugLavenderOil" loot_prob_template="low"/>
 	</append>
 	
 	<append xpath="//lootgroup[@name='groupMedicalRare']">
-	<item name="drugLithium" loot_prob_template="veryLow"/>
+		<item name="drugLithium" loot_prob_template="veryLow"/>
 	</append>
 	
 	<append xpath="//lootgroup[@name='groupMedicalCommon']">
-	<item name="resourceCropLavender" count="5,10"/>
+		<item name="resourceCropLavender" count="5,10"/>
 	</append>
 	
 	<!-- *** cotton seeds added to loot *** -->
 	<append xpath="//lootgroup[@name='seeds']">
-	<item name="plantedCotton1"/>
+		<item name="plantedCotton1"/>
+		<item name="plantedCarrot1"/>
+		<item name="plantedOnion1"/>
+		<item name="plantedTurnip1"/>
 	</append>
 	
 	<append xpath="//lootgroup[@name='seedsNoFlowers']">
-	<item name="plantedCotton1"/>
+		<item name="plantedCotton1"/>
+		<item name="plantedCarrot1"/>
+		<item name="plantedOnion1"/>
+		<item name="plantedTurnip1"/>
 	</append>
 	
 	<!-- *** food/drinks in loot *** -->
@@ -328,137 +334,149 @@
 	<remove xpath="//lootgroup//item[@group='groupFoodRare']"/>
 	
 	<insertafter xpath="//lootgroup[@name='groupDrinksCommon']">
-	<lootgroup name="groupDrinksUncommon">
-		<item name="drinkJarBoiledWater"/>
-		<item name="drinkJarRiverWater"/>		
-	</lootgroup>
+		<lootgroup name="groupDrinksUncommon">
+			<item name="drinkJarBoiledWater"/>
+			<item name="drinkJarRiverWater"/>
+		</lootgroup>
 	
-	<lootgroup name="groupDrinksRare">
-		<item name="drinkYuccaJuiceSmoothie"/>
-		<item name="drinkJarBlackStrapCoffee"/>
-		<item name="drinkJarPureMineralWater"/>
-		<item name="drinkCanMegaCrush"/>
-		<item name="drinkJarYuccaJuice"/>
-		<item name="drinkJarGoldenRodTea"/>
-		<item name="drinkJarRedTea"/>
-		<item name="drinkJarCoffee"/>		
-	</lootgroup>
+		<lootgroup name="groupDrinksRare">
+			<item name="drinkYuccaJuiceSmoothie"/>
+			<item name="drinkJarBlackStrapCoffee"/>
+			<item name="drinkJarPureMineralWater"/>
+			<item name="drinkCanMegaCrush"/>
+			<item name="drinkJarYuccaJuice"/>
+			<item name="drinkJarGoldenRodTea"/>
+			<item name="drinkJarRedTea"/>
+			<item name="drinkJarCoffee"/>
+		</lootgroup>
 	
-	<lootgroup name="rareFoodDrink">
-		<item name="drinkJarYuccaJuice"/>
-		<item name="drinkJarGoldenRodTea"/>
-		<item name="drinkJarRedTea"/>
-		<item name="foodShamChowder"/>
-		<item name="foodHoboStew"/>
-		<item name="drinkJarCoffee"/>
-		<item name="drinkCanMegaCrush"/>
-	</lootgroup>
+		<lootgroup name="rareFoodDrink">
+			<item name="drinkJarYuccaJuice"/>
+			<item name="drinkJarGoldenRodTea"/>
+			<item name="drinkJarRedTea"/>
+			<item name="foodShamChowder"/>
+			<item name="foodHoboStew"/>
+			<item name="drinkJarCoffee"/>
+			<item name="drinkCanMegaCrush"/>
+		</lootgroup>
 	
-	<lootgroup name="groupFoodTrashUncommon">
-		<item name="foodRottingFlesh" count="1,3" loot_prob_template="medLow"/>
-		<item name="resourceBone" count="1,3" loot_prob_template="med"/>
-		<item name="foodShamSandwich" loot_prob_template="low"/>
-		<item name="resourceAnimalFat" count="1,2" loot_prob_template="veryLow"/>		
-	</lootgroup>	
+		<lootgroup name="groupFoodTrashUncommon">
+			<item name="foodRottingFlesh" count="1,3" loot_prob_template="medLow"/>
+			<item name="resourceBone" count="1,3" loot_prob_template="med"/>
+			<item name="foodShamSandwich" loot_prob_template="low"/>
+			<item name="resourceAnimalFat" count="1,2" loot_prob_template="veryLow"/>
+		</lootgroup>
 	</insertafter>
 	
 	<insertafter xpath="//lootgroup//item[@name='foodCanPeas']">
-	<item name="foodCanCarrots"/>
+		<item name="foodCanCarrots"/>
 	</insertafter>
+	
+	<append xpath="//lootgroup[@name='groupIngredientsUncommon']">
+		<item name="foodCropCarrot" count="1,4"/>
+		<item name="foodCropOnion" count="1,4"/>
+		<item name="foodCropTurnip" count="1,4"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupIngredientsUncommon']">
+		<item name="foodCropCarrot" count="1,2" loot_prob_template="low"/>
+		<item name="foodCropOnion" count="1,2" loot_prob_template="low"/>
+		<item name="foodCropTurnip" count="1,2" loot_prob_template="low"/>
+	</append>
 	
 	<!-- *** remove resourceWood from trash piles *** -->
 	<set xpath="//lootgroup[@name='groupBuildingCommon']//item[@name='resourceWood']/@name">resourceWoodScraps</set>
 	
-	<set xpath="//lootgroup//item[starts-with(@name,'drinkJarBeer')]">resourceCropHopsFlower</set>	
+	<set xpath="//lootgroup//item[starts-with(@name,'drinkJarBeer')]">resourceCropHopsFlower</set>
 	
 	<!-- *** hazmat zombies guaranteed hazmat gear when loot drops *** -->
-	<insertbefore xpath="//lootgroup[@name='groupZpackReg01']">		
-	<lootgroup name="groupApparelHazmat">
-		<item name="modHazmatBoots"/>
-		<item name="modHazmatGloves"/>
-		<item name="modHazmatOutfit"/>
-		<item name="modHazmatHelmet"/>
-	</lootgroup>
+	<insertbefore xpath="//lootgroup[@name='groupZpackReg01']">
+		<lootgroup name="groupApparelHazmat">
+			<item name="modHazmatBoots"/>
+			<item name="modHazmatGloves"/>
+			<item name="modHazmatOutfit"/>
+			<item name="modHazmatHelmet"/>
+		</lootgroup>
 	</insertbefore>
 	
 	<insertbefore xpath="//lootgroup[@name='groupBuriedTreasure']">
-	<lootgroup name="groupHazmat" count="all">
-		<item group="groupApparelHazmat" loot_prob_template="guaranteed" force_prob="true"/>
-		<item group="groupAmmoMedium" count="1"/>
-		<item group="groupZpackReg01" count="2"/>
-		<item group="groupZpackReg02" loot_prob_template="med" force_prob="true"/>
-		<item group="groupZpackReg03" loot_prob_template="low" force_prob="true"/>
-	</lootgroup>
-	<lootgroup name="groupHazmatFeral" count="all">
-		<item group="groupApparelHazmat" loot_prob_template="guaranteed" force_prob="true"/>
-		<item group="groupAmmoLarge" count="1"/>
-		<item group="groupZpackStrong01" count="2"/>
-		<item group="groupZpackStrong02" count="1"/>
-		<item group="groupZpackStrong03" loot_prob_template="low" force_prob="true"/>
-	</lootgroup>
-	<lootgroup name="groupHazmatMutated" count="all">
-		<item group="groupApparelHazmat" loot_prob_template="guaranteed" force_prob="true"/>
-		<item group="groupAmmoLarge" count="2"/>
-		<item group="groupZpackBoss01" count="2"/>
-		<item group="groupZpackBoss02" count="1"/>
-		<item group="groupZpackBoss03" loot_prob_template="med" force_prob="true"/>
-	</lootgroup>	
+		<lootgroup name="groupHazmat" count="all">
+			<item group="groupApparelHazmat" loot_prob_template="guaranteed" force_prob="true"/>
+			<item group="groupAmmoMedium" count="1"/>
+			<item group="groupZpackReg01" count="2"/>
+			<item group="groupZpackReg02" loot_prob_template="med" force_prob="true"/>
+			<item group="groupZpackReg03" loot_prob_template="low" force_prob="true"/>
+		</lootgroup>
+		<lootgroup name="groupHazmatFeral" count="all">
+			<item group="groupApparelHazmat" loot_prob_template="guaranteed" force_prob="true"/>
+			<item group="groupAmmoLarge" count="1"/>
+			<item group="groupZpackStrong01" count="2"/>
+			<item group="groupZpackStrong02" count="1"/>
+			<item group="groupZpackStrong03" loot_prob_template="low" force_prob="true"/>
+		</lootgroup>
+		<lootgroup name="groupHazmatMutated" count="all">
+			<item group="groupApparelHazmat" loot_prob_template="guaranteed" force_prob="true"/>
+			<item group="groupAmmoLarge" count="2"/>
+			<item group="groupZpackBoss01" count="2"/>
+			<item group="groupZpackBoss02" count="1"/>
+			<item group="groupZpackBoss03" loot_prob_template="med" force_prob="true"/>
+		</lootgroup>
 	</insertbefore>
 	
 	<!-- *** add hazmat gear to zombie strong and boss loot bags *** -->
 	<append xpath="//lootgroup[@name='groupZpackStrong02']">
-	<item group="groupApparelHazmat" loot_prob_template="med" force_prob="true"/>
+		<item group="groupApparelHazmat" loot_prob_template="med" force_prob="true"/>
 	</append>
 	<append xpath="//lootgroup[@name='groupZpackBoss02']">
-	<item group="groupApparelHazmat" loot_prob_template="medHigh" force_prob="true"/>
+		<item group="groupApparelHazmat" loot_prob_template="medHigh" force_prob="true"/>
 	</append>
 	
 	<insertbefore xpath="//lootcontainer[@name='playerWoodWritableStorage']">
-	<lootcontainer name="zombieMaleHazmatLoot" count="1" size="6,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">	
-	<item group="groupHazmat" />	
-	</lootcontainer>	
+		<lootcontainer name="zombieMaleHazmatLoot" count="1" size="6,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">
+			<item group="groupHazmat"/>
+		</lootcontainer>
 	
-	<lootcontainer name="zombieMaleFeralHazmatLoot" count="1" size="6,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">	
-	<item group="groupHazmatFeral" />
-	</lootcontainer>	
+		<lootcontainer name="zombieMaleFeralHazmatLoot" count="1" size="6,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">
+			<item group="groupHazmatFeral"/>
+		</lootcontainer>
 	
-	<lootcontainer name="zombieMaleMutatedHazmatLoot" count="1" size="6,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">	
-	<item group="groupHazmatMutated" />
-	</lootcontainer>
+		<lootcontainer name="zombieMaleMutatedHazmatLoot" count="1" size="6,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">
+			<item group="groupHazmatMutated"/>
+		</lootcontainer>
 	
-	<lootcontainer name="beehiveTreeStump" count="1,2" size="6,2" sound_open="UseActions/open_stump" sound_close="UseActions/close_stump" loot_quality_template="qualBaseTemplate">
-		<item name="foodHoney" loot_prob_template="high" count="1,2"/>
-		<item name="honeyBee" loot_prob_template="med" count="1"/>
-	</lootcontainer>
+		<lootcontainer name="beehiveTreeStump" count="1,2" size="6,2" sound_open="UseActions/open_stump" sound_close="UseActions/close_stump" loot_quality_template="qualBaseTemplate">
+			<item name="foodHoney" loot_prob_template="high" count="1,2"/>
+			<item name="honeyBee" loot_prob_template="med" count="1"/>
+		</lootcontainer>
 
-	<lootcontainer name="cardboardboxloot" count="0,1" size="6,2" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="qualBaseTemplate">
-		<item group="groupJunk"/>
-	</lootcontainer>
-	</insertbefore>	
+		<lootcontainer name="cardboardboxloot" count="0,1" size="6,2" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="qualBaseTemplate">
+			<item group="groupJunk"/>
+		</lootcontainer>
+	</insertbefore>
 	
 	<!-- *** new vehicle parts *** -->
 	<insertafter xpath="//lootgroup[@name='minibikeParts']">
-	<lootgroup name="dirtbikeParts">
-		<item name="vehicleRuinRipperChassis"/>
-		<item name="vehicleRuinRipperHandlebars"/>
-		<item name="vehicleWheels"/>
-		<item name="smallEngine"/>
-		<item name="carBattery"/>
-	</lootgroup>	
+		<lootgroup name="dirtbikeParts">
+			<item name="vehicleRuinRipperChassis"/>
+			<item name="vehicleRuinRipperHandlebars"/>
+			<item name="vehicleWheels"/>
+			<item name="smallEngine"/>
+			<item name="carBattery"/>
+		</lootgroup>
 	</insertafter>
 	
 	<insertafter xpath="//lootgroup[@name='motorcycleParts']">
-	<lootgroup name="buggyParts">
-		<item name="vehicleDuneBuggyChassis"/>
-		<item name="vehicleDuneBuggyAccessories"/>
-		<item name="vehicleWheels"/>
-		<item name="smallEngine"/>
-		<item name="carBattery"/>
-	</lootgroup>
+		<lootgroup name="buggyParts">
+			<item name="vehicleDuneBuggyChassis"/>
+			<item name="vehicleDuneBuggyAccessories"/>
+			<item name="vehicleWheels"/>
+			<item name="smallEngine"/>
+			<item name="carBattery"/>
+		</lootgroup>
 	</insertafter>
 	
 	<append xpath="//lootgroup[@name='vehiclePartsTiered']">
-		<item group="dirtbikeParts"  loot_prob_template="ProbT1Cap"/>
+		<item group="dirtbikeParts" loot_prob_template="ProbT1Cap"/>
 		<item group="buggyParts" loot_prob_template="ProbT2Cap"/>
 	</append>
 
@@ -474,4 +492,19 @@
 	<!-- <remove xpath="//lootgroup[contains(@name,'Concrete')]"/> -->
 	<set xpath="//lootgroup[contains(@name,'groupCementMixer') or (contains(@name,'groupBuilding')) or (contains(@name,'twitch'))]//item[@name='resourceConcreteMix']/@name">resourceCrushedSand</set>
 	<set xpath="//lootgroup//item[contains(@name,'concrete')]/@name">resourceCement</set>
+	
+	<!-- *** Contraband Collection Loot *** -->
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAirDrop']">
+		<lootgroup name="ContrabandCollectionLootGroup" count="all">
+			<item name="cntFetchQuestSatchel" count="1"/>
+			<item name="questRewardT1SkillMagazineBundle" count="1"/>
+			<item group="groupAirDrop01" count="1"/>
+			<item group="groupAirDrop02" count="1"/>
+			<item group="groupAirDrop03" count="1"/>
+		</lootgroup>
+	
+		<lootcontainer name="ContrabandCollectionLootContainer" count="1" size="8,4" destroy_on_close="true" sound_open="SupplyDrops/open_supply_crate" sound_close="SupplyDrops/close_supply_crate" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">
+			<item group="ContrabandCollectionLootGroup"/>
+		</lootcontainer>
+	</insertAfter>
 </configs>

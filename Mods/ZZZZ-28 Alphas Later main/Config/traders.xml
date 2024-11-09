@@ -178,6 +178,16 @@
 	<!-- *** add lavender seed *** -->
 	<append xpath="//trader_item_group[@name='seeds']">
 		<item name="plantedLavender1"/>
+		<item name="plantedCarrot1"/>
+		<item name="plantedOnion1"/>
+		<item name="plantedTurnip1"/>
+	</append>
+	
+	<!-- *** add food carrot *** -->
+	<append xpath="//trader_item_group[@name='foodSupplies']">
+		<item name="foodCropCarrot" count="4,18"/>
+		<item name="foodCropOnion" count="4,18"/>
+		<item name="foodCropTurnip" count="4,18"/>
 	</append>
 	
 	<!-- *** add lavender flower *** -->

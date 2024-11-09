@@ -337,4 +337,37 @@
 		</effect_group>
 	</crafting_skill>
 	</insertafter>
+	
+	<!-- *** adds new crops to seeds progression *** -->
+	<set xpath="/progression/crafting_skills/crafting_skill[@name='craftingSeeds']">
+		<display_entry icon="plantedCotton1,plantedGoldenrod1,plantedCoffee1,plantedYucca1,plantedAloe1" name_key="seedsT1-1,seedsT1-2,seedsT1-3,seedsT1-4,seedsT1-5" has_quality="false" unlock_level="2,4,6,8,10" >
+			<unlock_entry item="plantedCotton1" unlock_tier="1" />
+			<unlock_entry item="plantedGoldenrod1,plantedChrysanthemum1" unlock_tier="2" />
+			<unlock_entry item="plantedCoffee1" unlock_tier="3" />
+			<unlock_entry item="plantedYucca1" unlock_tier="4" />
+			<unlock_entry item="plantedAloe1" unlock_tier="5" />
+		</display_entry>
+		<display_entry icon="plantedBlueberry1,plantedPumpkin1,plantedMushroom1,plantedCorn1,plantedPotato1" name_key="seedsT2-1,seedsT2-2,seedsT2-3,seedsT2-4,seedsT2-5" has_quality="false" unlock_level="12,14,16,18,20" >
+			<unlock_entry item="plantedBlueberry1,plantedHop1" unlock_tier="1" />
+			<unlock_entry item="plantedPumpkin1,plantedCarrot1" unlock_tier="2" />
+			<unlock_entry item="plantedMushroom1,plantedOnion1" unlock_tier="3" />
+			<unlock_entry item="plantedCorn1,plantedTurnip1" unlock_tier="4" />
+			<unlock_entry item="plantedPotato1" unlock_tier="5" />
+		</display_entry>
+
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="plantedCotton1"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,100" value="1" tags="plantedGoldenrod1,plantedChrysanthemum1"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="6,100" value="1" tags="plantedCoffee1"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="8,100" value="1" tags="plantedYucca1"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="plantedAloe1"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="12,100" value="1" tags="plantedBlueberry1,plantedHop1"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="14,100" value="1" tags="plantedPumpkin1,plantedCarrot1"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="16,100" value="1" tags="plantedMushroom1,plantedOnion1"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="18,100" value="1" tags="plantedCorn1,plantedTurnip1"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="plantedPotato1"/>
+		</effect_group>
+	</set>
+	
 </configs>

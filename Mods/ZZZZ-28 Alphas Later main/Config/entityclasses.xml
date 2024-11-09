@@ -22,10 +22,10 @@
 	</append>
 	
 	<append xpath="//entity_class[starts-with(@name,'zombieArlene')]">
-		<effect_group>			
+		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpackBM" operation="set" value="randomint(1,10)"/>							
-		</effect_group>	
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpackBM" operation="set" value="randomint(1,10)"/>
+		</effect_group>
 
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
@@ -467,7 +467,7 @@
 	<insertafter xpath="//entity_class[@name='animalSnake']//property[@name='DeadBodyHitPoints']">
 		<drop event="Harvest" name="venom" count="0" tool_category="Butcher"/>
 		<drop event="Harvest" name="venom" tag="butcherHarvest" count="2"/>
-	</insertafter>	
+	</insertafter>
 	
 	<!-- *** set zombie dogs and bears to "Zombie" *** -->
 	<insertafter xpath="/entity_classes/entity_class[@name='animalZombieDog']/property[@name='Class']">
@@ -525,11 +525,13 @@
 	
 	<!-- *** new zombies *** -->
 	<append xpath="/entity_classes">
-	<!-- testing -->
+		<!-- testing -->
 		<entity_class name="zombieGirl1" extends="zombieTemplateSlimFemale">
 			<property name="SizeScale" value="1.1"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
+			<property name="LookAtAngle" value="0"/>
 			<property name="Mesh" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGirl1"/>
 			<property name="AltMats" value="#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl1B.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl1C.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl1D.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl1E.mat"/>
 			<!-- Gameplay -->
@@ -545,6 +547,8 @@
 			<property name="SizeScale" value="1.1"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
+			<property name="LookAtAngle" value="0"/>
 			<property name="Mesh" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGirl2"/>
 			<property name="AltMats" value="#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl2B.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl2C.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl2D.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl2E.mat"/>
 			<!-- Gameplay -->
@@ -560,6 +564,8 @@
 			<property name="SizeScale" value="1.1"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
+			<property name="LookAtAngle" value="0"/>
 			<property name="Mesh" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGirl3"/>
 			<property name="AltMats" value="#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl3B.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl3C.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl3D.mat,#@modfolder:Resources/zombieSlaughter.unity3d?ZombieGirl3E.mat"/>
 			<!-- Gameplay -->
@@ -575,6 +581,8 @@
 			<property name="SizeScale" value="1.1"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
+			<property name="LookAtAngle" value="0"/>
 			<property name="Mesh" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy1"/>
 			<property name="AltMats" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy1B.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy1C.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy1D.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy1E.mat"/>
 			<!-- Gameplay -->
@@ -590,6 +598,8 @@
 			<property name="SizeScale" value="1.1"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
+			<property name="LookAtAngle" value="0"/>
 			<property name="Mesh" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy2"/>
 			<property name="AltMats" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy2B.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy2C.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy2D.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy2E.mat"/>
 			<!-- Gameplay -->
@@ -605,6 +615,8 @@
 			<property name="SizeScale" value="1.1"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
+			<property name="LookAtAngle" value="0"/>
 			<property name="Mesh" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy3"/>
 			<property name="AltMats" value="#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy3B.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy3C.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy3D.mat,#@modfolder:Resources/zombieSlaughter.unity3d?zombieGuy3E.mat"/>
 			<!-- Gameplay -->
@@ -617,7 +629,7 @@
 		</entity_class>
 
 		
-	<!-- *** horde night bunker buster *** -->
+		<!-- *** horde night bunker buster *** -->
 		<entity_class name="zombieBunkerBuster" extends="zombieBurnt">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="SizeScale" value="0.95"/>
@@ -635,7 +647,7 @@
 			</effect_group>
 		</entity_class>
 		
-	<!-- *** rotten *** -->
+		<!-- *** rotten *** -->
 		<entity_class name="zombieArleneRotten" extends="zombieArlene">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker"/>
@@ -1134,12 +1146,13 @@
 			</effect_group>
 		</entity_class>
 		
-	<!-- *** weak (in between rotten and normal) *** -->
+		<!-- *** weak (in between rotten and normal) *** -->
 		<entity_class name="zombieArleneWeak" extends="zombieArlene">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="105"/>
 			</effect_group>
 		</entity_class>
@@ -1149,6 +1162,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="105"/>
 			</effect_group>
 		</entity_class>
@@ -1158,6 +1172,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="105"/>
 			</effect_group>
 		</entity_class>
@@ -1167,6 +1182,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="105"/>
 			</effect_group>
 		</entity_class>
@@ -1176,6 +1192,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="105"/>
 			</effect_group>
 		</entity_class>
@@ -1185,6 +1202,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="105"/>
 			</effect_group>
 		</entity_class>
@@ -1194,6 +1212,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="105"/>
 			</effect_group>
 		</entity_class>
@@ -1203,6 +1222,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="105"/>
 			</effect_group>
 		</entity_class>
@@ -1212,6 +1232,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="105"/>
 			</effect_group>
 		</entity_class>
@@ -1221,6 +1242,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="105"/>
 			</effect_group>
 		</entity_class>
@@ -1230,6 +1252,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="130"/>
 			</effect_group>
 		</entity_class>
@@ -1239,6 +1262,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="130"/>
 			</effect_group>
 		</entity_class>
@@ -1248,6 +1272,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="130"/>
 			</effect_group>
 		</entity_class>
@@ -1257,6 +1282,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="130"/>
 			</effect_group>
 		</entity_class>
@@ -1266,6 +1292,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="130"/>
 			</effect_group>
 		</entity_class>
@@ -1275,6 +1302,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="130"/>
 			</effect_group>
 		</entity_class>
@@ -1284,6 +1312,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="130"/>
 			</effect_group>
 		</entity_class>
@@ -1293,6 +1322,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="130"/>
 			</effect_group>
 		</entity_class>
@@ -1302,6 +1332,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="130"/>
 			</effect_group>
 		</entity_class>
@@ -1311,6 +1342,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="300"/>
 			</effect_group>
 		</entity_class>
@@ -1320,6 +1352,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="250"/>
 			</effect_group>
 		</entity_class>
@@ -1338,6 +1371,7 @@
 			<property name="Explosion.DamageBonus.earth" value="0"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="250"/>
 			</effect_group>
 			<effect_group>
@@ -1359,6 +1393,7 @@
 			<property name="Explosion.DamageBonus.earth" value="0"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="250"/>
 			</effect_group>
 			<effect_group>
@@ -1381,6 +1416,7 @@
 			
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="250"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffExplodeEffect"/>
@@ -1393,6 +1429,7 @@
 			
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="250"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffExplodeEffect"/>
@@ -1404,6 +1441,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="200"/>
 			</effect_group>
 		</entity_class>
@@ -1413,6 +1451,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="200"/>
 			</effect_group>
 		</entity_class>
@@ -1422,6 +1461,7 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="150"/>
 			</effect_group>
 		</entity_class>
@@ -1431,11 +1471,12 @@
 			<property name="Tags" value="entity,zombie,walker,weak"/>
 			
 			<effect_group name="Base Effects">
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1"/>
 				<passive_effect name="HealthMax" operation="base_set" value="150"/>
 			</effect_group>
 		</entity_class>
 		
-	<!-- *** frozen *** -->
+		<!-- *** frozen *** -->
 		<!-- slightly tougher, slightly slower, slightly more XP, and take more damage than their "standard" versions -->
 		<entity_class name="zombieArleneFrozen" extends="zombieArlene">
 			<property name="UserSpawnType" value="Menu"/>
@@ -1870,7 +1911,7 @@
 			</effect_group>
 		</entity_class>
 		
-	<!-- *** cowboy/desert *** -->
+		<!-- *** cowboy/desert *** -->
 		<entity_class name="zombieArleneCowboy" extends="zombieArlene">
 			<effect_group>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="randomhat" operation="set" value="randomint(1,5)"/>
@@ -2222,7 +2263,7 @@
 			</effect_group>
 		</entity_class>
 		
-	<!-- *** mutated *** -->
+		<!-- *** mutated *** -->
 		<entity_class name="zombieArleneMutated" extends="zombieArlene">
 			<property name="UserSpawnType" value="Menu"/>
 			<!-- <property name="SizeScale" value="1.01"/> -->
@@ -3243,7 +3284,7 @@
 			</effect_group>
 		</entity_class>
 		
-	<!-- *** mutants and mythical *** -->
+		<!-- *** mutants and mythical *** -->
 		<entity_class name="zombieHellsHungryMutant" extends="zombieTemplateMale">
 			<property name="Mesh" value="#@modfolder:Resources/hjentities.unity3d?ZombieHungry"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
@@ -3753,7 +3794,7 @@
 			<property name="LegCrippleThreshold" value="0"/>
 			<property name="KnockdownProneDamageThreshold" value="0"/>
 			<property name="KnockdownKneelDamageThreshold" value="0"/>
-			<property name="LegsExplosionDamageMultiplier" value="2"/> <!-- volatile so vulnerable to land mines/explosives -->
+			<property name="LegsExplosionDamageMultiplier" value="2"/><!-- volatile so vulnerable to land mines/explosives -->
 			<property name="ArmsExplosionDamageMultiplier" value="2"/>
 			<property name="HeadExplosionDamageMultiplier" value="2"/>
 			<property name="ChestExplosionDamageMultiplier" value="2"/>
@@ -3974,10 +4015,10 @@
 			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="250"/>
-			</effect_group>			
-		</entity_class>		
+			</effect_group>
+		</entity_class>
 		
-	<!-- *** hazmat loot bags *** -->
+		<!-- *** hazmat loot bags *** -->
 		<entity_class name="zombieMaleHazmatLootBag">
 			<property name="Class" value="EntityLootContainer"/>
 			<property name="UserSpawnType" value="Console"/>
@@ -4019,10 +4060,11 @@
 			<property name="Faction" value="none"/>
 		</entity_class>
 		
-	<!-- *** Trader Red *** -->
+		<!-- *** Trader Red *** -->
 		<entity_class name="npcTraderRed" extends="npcTraderTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,npc,human,trader,vanillatrader"/>
+			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="Mesh" value="#@modfolder:Resources/traderred.unity3d?Trader_Red_2"/>
 			<property name="NPCID" value="traderred"/>
 			<property name="DanceType" value="2"/>
@@ -4032,10 +4074,11 @@
 			<property name="LookAtAngle" value="0"/>
 		</entity_class>
 		
-	<!-- *** Trader Hells *** -->
+		<!-- *** Trader Hells *** -->
 		<entity_class name="npcTraderHells" extends="npcTraderTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,npc,human,trader,vanillatrader"/>
+			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="Mesh" value="#@modfolder:Resources/traderhells.unity3d?Trader_Hells"/>
 			<property name="NPCID" value="traderhells"/>
 			<property name="DanceType" value="1"/>
@@ -4045,10 +4088,11 @@
 			<property name="LookAtAngle" value="0"/>
 		</entity_class>
 		
-	<!-- *** Trader Librarian *** -->
+		<!-- *** Trader Librarian *** -->
 		<entity_class name="npcTraderBooks" extends="npcTraderTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,npc,human,trader,vanillatrader"/>
+			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
 			<property name="Mesh" value="#@modfolder:Resources/traderBooks.unity3d?traderLibrarian"/>
 			<property name="NPCID" value="traderbooks"/>
 			<property name="DanceType" value="2"/>
@@ -4058,11 +4102,11 @@
 			<property name="LookAtAngle" value="0"/>
 			
 			<effect_group name="random dance type">
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="buffRandomDanceTrigger"/>				
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="buffRandomDanceTrigger"/>
 			</effect_group>
-		</entity_class>			
+		</entity_class>
 		
-	<!-- *** The Hornet *** -->		
+		<!-- *** The Hornet *** -->
 		<entity_class name="vehicleDuneBuggy">
 			<property name="Class" value="EntityVJeep"/>
 			<property name="Tags" value="vehicle,usesGas"/>
@@ -4084,7 +4128,7 @@
 			<property name="NavObject" value="buggy"/>
 		</entity_class>
 	
-	<!-- *** Ruin Ripper *** -->	
+		<!-- *** Ruin Ripper *** -->
 		<entity_class name="vehicleRuinRipper">
 			<property name="Class" value="EntityMotorcycle"/>
 			<property name="Tags" value="vehicle,usesGas,bikerSetBonus"/>
@@ -4118,7 +4162,7 @@
 		<effect_group name="zombies increase despair in range">
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffDespairAOETrigger"/>
 		</effect_group>
-	</append>	
+	</append>
 	
 	<!-- *** add slow effect to lumberjack *** -->
 	<append xpath="//entity_class[@name='zombieLumberjack']">
@@ -4179,6 +4223,57 @@
 		<property name="Explosion.EntityDamage" value="150"/>
 		<property name="Explosion.DamageBonus.earth" value="0"/>
 	</insertafter>
+	
+	<!-- *** Contraband Collection Crate *** -->
+	<insertAfter xpath="/entity_classes/entity_class[@name='sc_General']">
+		<entity_class name="ContrabandCollectionCrate" extends="sc_General">
+			<property name="Class" value="EntitySupplyCrate"/>
+			<property name="EntityFlags" value="ContrabandCollectionCrateFlag"/>
+			<property name="Parent" value="SupplyCrates"/>
+			<property name="Prefab" value="SupplyCrate"/>
+			<property name="Mesh" value="SupplyCrate/SupplyCrateEntityPrefab"/>
+			<property name="ModelType" value="SupplyCrate"/>
+			<property name="Faction" value="none"/>
+			<property name="MaxHealth" value="200"/>
+			<property name="Weight" value="100"/>
+			<property name="HasRagdoll" value="false"/>
+			<property name="SurfaceCategory" value="wood"/>
+			<property name="ParticleOnDeath" value="supply_crate_gib_Prefab"/>
+			<property name="LootListAlive" value="ContrabandCollectionLootContainer"/>
+			<property name="IsEnemyEntity" value="false"/>
+			<property name="SoundParachuteOpen" value="SupplyDrops/Parachute_Opens"/>
+			<property name="SoundLanding" value="SupplyDrops/Supply_Crate_Land"/>
+			<property name="TimeStayAfterDeath" value="0"/>
+			<property name="Tags" value="ContrabandCollection_ContrabandCollectionCrate"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="200"/>
+			</effect_group>
+			<property name="NavObject" value="supply_drop"/>
+			<effect_group name="Base Effects">
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ContrabandCollectionExplodeCrateAfterTimeBuff"/>
+				<!--<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ContrabandCollectionExplodeCrateOnQuestFailBuff"/>-->
+			</effect_group>
+		</entity_class>
+	</insertAfter>
+	
+	<!-- *** clear all buffs on entering the game, in case of exit/crash during quest *** -->
+	<insertAfter xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/triggered_effect[@trigger='onSelfEnteredGame']">
+		<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier1_courier_rescue_stop"/>
+		<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier2_courier_rescue_stop"/>
+		<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier3_courier_rescue_stop"/>
+		<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier4_courier_rescue_stop"/>
+		<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier5_courier_rescue_stop"/>
+	</insertAfter>
+	
+	<!-- *** give points and coins when zombies are killed *** -->
+	<append xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/effect_group" >
+		<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t1_courier_rescue_kill_counter" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t2_courier_rescue_kill_counter" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t3_courier_rescue_kill_counter" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t4_courier_rescue_kill_counter" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t5_courier_rescue_kill_counter" operation="add" value="1"/>
+		<!--<triggered_effect trigger="onSelfDied" target="other" action="CallGameEvent" event="tier1_courier_rescue_spawn1"/>-->
+	</append>
 	
 	<!-- *** slow Direwolf movespeed *** -->
 	<set xpath="/entity_classes/entity_class[@name='animalDireWolf']/property[@name='MoveSpeedAggro']/@value">0.9,1</set>

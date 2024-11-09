@@ -56,7 +56,8 @@
 	</placeholder>
 	
 	<placeholder name="plantedCorn3Harvest">
-		<block name="plantedCorn3HarvestPlayer" prob=".34" randomrotation="true"/>
+		<block name="plantedCorn3HarvestPlayer" prob=".17" randomrotation="true"/>
+		<block name="plantedOnion3HarvestPlayer" prob=".17" randomrotation="true"/>
 		<block name="plantedCornDead" prob=".66" randomrotation="true"/>
 	</placeholder>
 	
@@ -91,7 +92,8 @@
 	</placeholder>
 	
 	<placeholder name="plantedPotato3Harvest">
-		<block name="plantedPotato3HarvestPlayer" prob=".34" randomrotation="true"/>
+		<block name="plantedPotato3HarvestPlayer" prob=".17" randomrotation="true"/>
+		<block name="plantedTurnip3HarvestPlayer" prob=".17" randomrotation="true"/>
 		<block name="plantedPotatoDead" prob=".66" randomrotation="true"/>
 	</placeholder>
 	
@@ -101,7 +103,8 @@
 	</placeholder>
 	
 	<placeholder name="plantedPumpkin3Harvest">
-		<block name="plantedPumpkin3HarvestPlayer" prob=".34" randomrotation="true"/>
+		<block name="plantedPumpkin3HarvestPlayer" prob=".17" randomrotation="true"/>
+		<block name="plantedCarrot3HarvestPlayer" prob=".17" randomrotation="true"/>
 		<block name="treeSnowyGrassDiagonal" prob=".66" biome="snow" randomrotation="true"/>
 		<block name="treeTallGrassDiagonal" prob=".66" biome="pine_forest" randomrotation="true"/>
 		<block name="treeBrownGrassDiagonal" prob=".66" biome="desert" randomrotation="true"/>
@@ -111,7 +114,8 @@
 	</placeholder>
 	
 	<placeholder name="plantedCornHarvestRandomHelper">
-		<block name="plantedCorn3Harvest" prob=".0066" randomrotation="true"/>
+		<block name="plantedCorn3Harvest" prob=".0033" randomrotation="true"/>
+		<block name="plantedOnion3Harvest" prob=".0033" randomrotation="true"/>
 		<block name="plantedCorn2Deco" prob=".0034" randomrotation="true"/>
 		<block name="plantedCornDead" prob=".16" randomrotation="true"/>
 		<block name="treeSnowyGrassDiagonal" prob=".83" biome="snow" randomrotation="true"/>
@@ -188,8 +192,9 @@
 	</placeholder>
 	
 	<placeholder name="plantedPotatoHarvestRandomHelper">
-		<block name="plantedPotato3Harvest" prob=".01" randomrotation="true"/>
-		<block name="plantedPotatoDead" prob=".16" randomrotation="true"/>
+		<block name="plantedPotato3Harvest" prob=".02" randomrotation="true"/>
+		<block name="plantedTurnip3Harvest" prob=".02" randomrotation="true"/>
+		<block name="plantedPotatoDead" prob=".13" randomrotation="true"/>
 		<block name="treeSnowyGrassDiagonal" prob=".83" biome="snow" randomrotation="true"/>
 		<block name="treeTallGrassDiagonal" prob=".83" biome="pine_forest" randomrotation="true"/>
 		<block name="treeBrownGrassDiagonal" prob=".83" biome="desert" randomrotation="true"/>
@@ -220,13 +225,14 @@
 	</placeholder>
 	
 	<placeholder name="plantedPumpkin3HarvestRandomHelper">
-		<block name="plantedPumpkin3Harvest" prob=".01" randomrotation="true"/>
-		<block name="treeSnowyGrassDiagonal" prob=".99" biome="snow" randomrotation="true"/>
-		<block name="treeTallGrassDiagonal" prob=".99" biome="pine_forest" randomrotation="true"/>
-		<block name="treeBrownGrassDiagonal" prob=".99" biome="desert" randomrotation="true"/>
-		<block name="treeBrownGrassDiagonal" prob=".99" biome="water" randomrotation="true"/>
-		<block name="treeBrownGrassDiagonal" prob=".99" biome="wasteland" randomrotation="true"/>
-		<block name="treeBrownGrassDiagonal" prob=".99" biome="burnt_forest" randomrotation="true"/>
+		<block name="plantedPumpkin3Harvest" prob=".02" randomrotation="true"/>
+		<block name="plantedCarrot3Harvest" prob=".02" randomrotation="true"/>
+		<block name="treeSnowyGrassDiagonal" prob=".96" biome="snow" randomrotation="true"/>
+		<block name="treeTallGrassDiagonal" prob=".96" biome="pine_forest" randomrotation="true"/>
+		<block name="treeBrownGrassDiagonal" prob=".96" biome="desert" randomrotation="true"/>
+		<block name="treeBrownGrassDiagonal" prob=".96" biome="water" randomrotation="true"/>
+		<block name="treeBrownGrassDiagonal" prob=".96" biome="wasteland" randomrotation="true"/>
+		<block name="treeBrownGrassDiagonal" prob=".96" biome="burnt_forest" randomrotation="true"/>
 	</placeholder>
 	
 </append>	

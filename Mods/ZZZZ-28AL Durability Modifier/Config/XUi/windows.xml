@@ -17,9 +17,9 @@
 					<sprite depth="12" width="28" height="28" name="center" sprite="modArmorHelmetLight" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
 					
 					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
-					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="0,255,0,250" type="filled" fill="{cvar(batteryHelmetLightDisplay)}" flip="Horizontally"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="0,255,0,250" type="filled" fill="{# cvar('batteryHelmetLightDisplay') &gt; 0 ? cvar('batteryHelmetLightDisplay') : 1}" flip="Horizontally"/>
 					<sprite depth="3" name="Icon" sprite="modArmorHelmetLight" atlas="ItemIconAtlas" color="[iconColor]" size="40,40" pos="24,-24" pivot="center" foregroundlayer="true"/>
-					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryHelmetLightDisplay') &gt; 0 ? round(cvar('batteryHelmetLightDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryHelmetLightDisplay') &gt; 0 ? round(cvar('batteryHelmetLightDisplay') * 100,1) : '100'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
 					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
 				</rect>	
 
@@ -38,9 +38,9 @@
 					<sprite depth="12" width="24" height="24" name="center" sprite="apparelNightvisionGoggles" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
 					
 					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
-					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="255,99,71,250" type="filled" fill="{cvar(batteryNVGDisplay)}" flip="Horizontally"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="255,99,71,250" type="filled" fill="{# cvar('batteryNVGDisplay') &gt; 0 ? cvar('batteryNVGDisplay') : 1}" flip="Horizontally"/>
 					<sprite depth="3" name="Icon" sprite="modArmorNightVision" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
-					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryNVGDisplay') &gt; 0 ? round(cvar('batteryNVGDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryNVGDisplay') &gt; 0 ? round(cvar('batteryNVGDisplay') * 100,1) : '100'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
 					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
 				</rect>
 				
@@ -59,9 +59,9 @@
 					<sprite depth="12" width="24" height="24" name="center" sprite="modGunFlashlight" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
 					
 					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
-					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="255,165,0,250" type="filled" fill="{cvar(batteryWeaponLightDisplay)}" flip="Horizontally"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="255,165,0,250" type="filled" fill="{cvar(batteryWeaponLightDisplay) &gt; 0 ? cvar('batteryWeaponLightDisplay') : 1}" flip="Horizontally"/>
 					<sprite depth="3" name="Icon" sprite="modGunFlashlight" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
-					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryWeaponLightDisplay') &gt; 0 ? round(cvar('batteryWeaponLightDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryWeaponLightDisplay') &gt; 0 ? round(cvar('batteryWeaponLightDisplay') * 100,1) : '100'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
 					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
 				</rect>	
 				
@@ -80,9 +80,9 @@
 					<sprite depth="12" width="24" height="24" name="center" sprite="modGunLaserSight" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
 					
 					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
-					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="204,0,0,250" type="filled" fill="{cvar(batteryLaserLightDisplay)}" flip="Horizontally"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="204,0,0,250" type="filled" fill="{cvar(batteryLaserLightDisplay) &gt; 0 ? cvar('batteryLaserLightDisplay') : 1}" flip="Horizontally"/>
 					<sprite depth="3" name="Icon" sprite="modGunLaserSight" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
-					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryLaserLightDisplay') &gt; 0 ? round(cvar('batteryLaserLightDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryLaserLightDisplay') &gt; 0 ? round(cvar('batteryLaserLightDisplay') * 100,1) : '100'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
 					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
 				</rect>
 
@@ -101,9 +101,9 @@
 					<sprite depth="12" width="24" height="24" name="center" sprite="meleeToolFlashlight02" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
 					
 					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
-					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="192,192,192,250" type="filled" fill="{cvar(batteryFlashLightDisplay)}" flip="Horizontally"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="192,192,192,250" type="filled" fill="{cvar(batteryFlashLightDisplay) &gt; 0 ? cvar('batteryFlashLightDisplay') : 1}" flip="Horizontally"/>
 					<sprite depth="3" name="Icon" sprite="meleeToolFlashlight02" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
-					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryFlashLightDisplay') &gt; 0 ? round(cvar('batteryFlashLightDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryFlashLightDisplay') &gt; 0 ? round(cvar('batteryFlashLightDisplay') * 100,1) : '100'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
 					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
 				</rect>	
 
@@ -122,9 +122,9 @@
 					<sprite depth="12" width="24" height="24" name="center" sprite="meleeToolTorch" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
 					
 					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
-					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="255,69,0,250" type="filled" fill="{cvar(batteryHandTorchDisplay)}" flip="Horizontally"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="255,69,0,250" type="filled" fill="{cvar(batteryHandTorchDisplay) &gt; 0 ? cvar('batteryHandTorchDisplay') : 1}" flip="Horizontally"/>
 					<sprite depth="3" name="Icon" sprite="meleeToolTorch" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
-					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryHandTorchDisplay') &gt; 0 ? round(cvar('batteryHandTorchDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryHandTorchDisplay') &gt; 0 ? round(cvar('batteryHandTorchDisplay') * 100,1) : '100'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
 					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
 				</rect>
 
@@ -143,9 +143,9 @@
 					<sprite depth="12" width="24" height="24" name="center" sprite="modMeleeClubBurningShaft" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
 					
 					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
-					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="255,69,0,250" type="filled" fill="{cvar(batteryBurningShaftDisplay)}" flip="Horizontally"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="255,69,0,250" type="filled" fill="{cvar(batteryBurningShaftDisplay) &gt; 0 ? cvar('batteryBurningShaftDisplay') : 1}" flip="Horizontally"/>
 					<sprite depth="3" name="Icon" sprite="modMeleeClubBurningShaft" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
-					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryBurningShaftDisplay') &gt; 0 ? round(cvar('batteryBurningShaftDisplay') * 100,1) : '0'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
+					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{# cvar('batteryBurningShaftDisplay') &gt; 0 ? round(cvar('batteryBurningShaftDisplay') * 100,1) : '100'}%" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
 					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>
 				</rect>
 				
@@ -164,7 +164,7 @@
 					<sprite depth="12" width="24" height="24" name="center" sprite="resourceWaterFilter" atlas="ItemIconAtlas" color="[iconColor]" pivot="center" globalopacity="false"/> -->
 					
 					<sprite depth="1" name="background" color="0,0,0,190" type="sliced"/>
-					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="0,255,255,250" type="filled" fill="{cvar(helmetPurifierDurabilityDisplay)}" flip="Horizontally"/>
+					<filledsprite depth="2" name="BarContent" pos="2,-2" width="43" height="43" color="0,255,255,250" type="filled" fill="{cvar(helmetPurifierDurabilityDisplay) &gt; 0 ? cvar('helmetPurifierDurabilityDisplay') : 1}" flip="Horizontally"/>
 					<sprite depth="3" name="Icon" sprite="resourceWaterFilter" atlas="ItemIconAtlas" color="[iconColor]" size="32,32" pos="24,-24" pivot="center" foregroundlayer="true"/>
 					<label depth="4" name="TextContent" pos="26,-24" font_size="32" color="255,255,255,255" justify="center" pivot="left" text="{cvar(helmetPurifierDurability)} uses" width="125" height="35" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1"/>
 					<sprite depth="5" name="border" sprite="menu_empty3px" fillcenter="false" color="0,0,0,255" type="sliced"/>

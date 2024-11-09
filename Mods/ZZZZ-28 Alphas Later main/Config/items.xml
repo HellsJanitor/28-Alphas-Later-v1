@@ -70,7 +70,7 @@
 			<property name="Extends" value="vehicleMinibikePlaceable"/>
 			<property name="CustomIcon" value="vehicleTheHornetPlaceable"/>
 			<property name="Tags" value="vehicle,vengine,vfuel,vlight,vplow,vseat,canHaveCosmetic"/>
-			<property name="Prefab" value="#@modfolder:Resources/DuneBuggy.unity3d?DuneBuggyV1"/>
+			<property name="Meshfile" value="#@modfolder:Resources/DuneBuggy.unity3d?DuneBuggyV1"/>
 			<property name="EconomicValue" value="30000"/>
 			<property name="TraderStageTemplate" value="vehicleTier4"/>
 			<!-- vehicleDuneBuggyPlaceable -->
@@ -240,6 +240,88 @@
 			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 			<property name="SoundPickup" value="plantfibers_grab"/>
 			<property name="SoundPlace" value="plantfibers_place"/>
+		</item>
+		
+		<!-- *** Carrots *** -->
+		<item name="foodCropCarrot">
+			<property name="DescriptionKey" value="foodCropCarrotDesc"/>
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="foodRaw"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="CustomIcon" value="foodCropCarrot"/>
+			<property name="Material" value="MresourceCrop"/>
+			<property name="Stacknumber" value="500"/><!-- STK resource -->
+			<property name="EconomicValue" value="12"/>
+			<!-- <property name="EconomicBundleSize" value="5"/> -->
+			<property name="CraftingIngredientTime" value="5"/>
+			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+			<property name="SoundPickup" value="potato_grab"/>
+			<property name="SoundPlace" value="potato_place"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="player_eating"/>
+			</property>
+			
+			<effect_group tiered="false" name="Food Tier 0">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="2"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+			</effect_group>
+		</item>
+		
+		<item name="foodCropOnion">
+			<property name="DescriptionKey" value="foodCropOnionDesc"/>
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="foodRaw"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="CustomIcon" value="foodCropOnion"/>
+			<property name="Material" value="MresourceCrop"/>
+			<property name="Stacknumber" value="500"/><!-- STK resource -->
+			<property name="EconomicValue" value="12"/>
+			<!-- <property name="EconomicBundleSize" value="5"/> -->
+			<property name="CraftingIngredientTime" value="5"/>
+			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+			<property name="SoundPickup" value="potato_grab"/>
+			<property name="SoundPlace" value="potato_place"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="player_eating"/>
+			</property>
+			
+			<effect_group tiered="false" name="Food Tier 0">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="2"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+			</effect_group>
+		</item>
+		
+		<item name="foodCropTurnip">
+			<property name="DescriptionKey" value="foodCropTurnipDesc"/>
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="foodRaw"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="CustomIcon" value="foodCropTurnip"/>
+			<property name="Material" value="MresourceCrop"/>
+			<property name="Stacknumber" value="500"/><!-- STK resource -->
+			<property name="EconomicValue" value="12"/>
+			<!-- <property name="EconomicBundleSize" value="5"/> -->
+			<property name="CraftingIngredientTime" value="5"/>
+			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+			<property name="SoundPickup" value="potato_grab"/>
+			<property name="SoundPlace" value="potato_place"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="player_eating"/>
+			</property>
+			
+			<effect_group tiered="false" name="Food Tier 0">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="2"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+			</effect_group>
 		</item>
 		
 		<!-- *** chicken coop "fuel" *** -->
@@ -1713,7 +1795,7 @@
 			<property name="SoundPickup" value="club_wood_grab"/>
 			<property name="SoundPlace" value="club_wood_place"/>
 			<property class="Action0">
-				<property name="Create_item" value="vehicleTheHornetPlaceable"/>
+				<property name="Create_item" value="vehicleDuneBuggyPlaceable"/>
 				<property name="Create_item_count" value="1"/>
 			</property>
 		</item>
@@ -1728,9 +1810,9 @@
 			<property name="SoundPickup" value="club_wood_grab"/>
 			<property name="SoundPlace" value="club_wood_place"/>
 			<property class="Action0">
-				<property name="Create_item" value="vehicle4x4TruckPlaceable"/>
+				<property name="Create_item" value="vehicleTruck4x4Placeable"/>
 				<property name="Create_item_count" value="1"/>
-			</property>
+			</property>			
 		</item>
 	
 		<item name="GyroBundle">
