@@ -47,7 +47,7 @@
 		
 		<display_entry icon="vehicleMotorcyclePlaceable" name_key="vehiclesT3" has_quality="false" unlock_level="45,55" >
 			<unlock_entry item="vehicleMotorcycleChassis,vehicleMotorcycleHandlebars,ammoGasCanBundle" unlock_tier="1" />
-			<unlock_entry item="vehicleTheHornetChassis,vehicleTheHornetAccessories" unlock_tier="2" />
+			<unlock_entry item="vehicleDuneBuggyChassis,vehicleDuneBuggyAccessories" unlock_tier="2" />
 		</display_entry>
 		
 		<display_entry icon="vehicleTruck4x4Placeable" name_key="vehiclesT4" has_quality="false" unlock_level="70" >

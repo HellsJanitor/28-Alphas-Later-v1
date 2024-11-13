@@ -172,8 +172,10 @@
 			<property name="tiltDampenThreshold" value="39"/>
 			<property name="tiltUpForce" value="2"/>
 			
+			<!-- <property name="motorTorque_turbo" value="1400, 500, 2100, 650"/> -->
+			<!-- <property name="velocityMax_turbo" value="9.7, 6, 12, 6"/> -->
 			<property name="motorTorque_turbo" value="1400, 500, 2100, 650"/>
-			<property name="velocityMax_turbo" value="9.7, 6, 12, 6"/>
+			<property name="velocityMax_turbo" value="9.8, 6, 14, 8"/>
 			
 			<property name="brakeTorque" value="3000"/>
 			<property name="hopForce" value="1, .8"/>
@@ -213,7 +215,7 @@
 				<property name="particleOn" value="Particles/p_on"/>
 				<property name="particleDamaged" value="Particles/p_damaged"/>
 				<property name="particleBroken" value="Particles/p_broken"/>
-				<property name="fuelKmPerL" value=".3"/>
+				<property name="fuelKmPerL" value=".35"/>
 				<property name="foodDrain" value=".002,.0101"/><!-- driving/turbo, motorcycle -->
 
 				<property name="gear1" value="
