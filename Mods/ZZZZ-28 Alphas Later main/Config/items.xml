@@ -1381,6 +1381,11 @@
 		</item>
 	</append>
 	
+	<!-- *** adjustments for farm bundles *** -->
+	<set xpath="/items/item[starts-with(@name,'questRewardFarm')]/property[@class='Action0']/property[@name='Create_item']/@value">resourceFertilizer,seedSkillMagazine</set>
+	<set xpath="/items/item[starts-with(@name,'questRewardFarm')]/property[@class='Action0']/property[@name='Create_item_count']/@value">45,3</set>
+	<append xpath="/items/item[@name='questRewardFarmT2Bundle']/property[@class='Action0']/property[@name='Random_item']/@value">,plantedCarrot1,plantedOnion1,plantedTurnip1</append>
+	
 	<!-- *** allowed upgrade items for repair tools *** -->
 	<append xpath="//item/property//property[@name='Allowed_upgrade_items']/@value">,resourceBricks,resourceWoodScraps</append>
 	
