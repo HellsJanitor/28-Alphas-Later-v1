@@ -1,5 +1,5 @@
 Key,English,French
-takeandreplace,"Rip off ","Changer"
+takeandreplace,"Pick Up","Changer"
 musicbox_turnOn,"Turn On","Allumer"
 musicbox_turnOff,"Turn Off","Eteindre"
 BanditFactionSchematic,"Master of disguse","Maitre de l'écoeurement"
@@ -188,7 +188,6 @@ BreakBlock04Short,"Destroy any metal block in the pine forest"
 
 SCore02challenges_key,"Fire Bug"
 onStartFire,"Start a Fire"
-
 BurnWithFire02,"Start a fire"
 BurnWithFire02Desc,"Start a fire with the Fire Mod active."
 onBigFire,"Start an out of control fire"
@@ -210,3 +209,8 @@ NPC_title,"Hire NPCs"
 SCore03challenges_key,"Harvests"
 challengeKillZombiesWithItemDesc,"Kill Zombies"
 challengeKillWithItemDesc,"Kill"
+challengeObjectiveWearTags,"Wear with tag(s) "
+challengeObjectiveGatherTags,"Gather items with the tag(s)"
+challengeObjectiveOnCVar,"Get CVar"
+challengeObjectiveOnBlockUpgrade,"Upgrade Block"
+challengeObjectiveCraftWithTags,"Craft with tags"

@@ -832,6 +832,20 @@
 			<property name="SortOrder2" value="0000"/>
 			<property name="FilterTags" value="MC_building,SC_decor"/>
 		</block>
+		
+		<!-- *** Trader Hells sign *** -->
+		<block name="signTraderHellsExterior">
+            <property name="CreativeMode" value="Dev"/>
+            <property name="DisplayType" value="blockMulti"/>
+            <property name="Material" value="Mwood"/>
+            <property name="Shape" value="ModelEntity"/>
+            <property name="Model" value="#@modfolder:Resources/HellsTraderSign.unity3d?HellsSignPrefab"/>
+            <property name="ModelOffset" value="0,1.5,-0.5"/>
+            <property name="MultiBlockDim" value="7,2,1"/>
+            <property name="WaterFlow" value="permitted"/>
+            <property name="SortOrder1" value="B702"/>
+            <property name="SortOrder2" value="0007"/>
+        </block>
 	</append>
 	
 	<!-- *** biome terrain upgrades to plantable terrain with hoe *** -->
@@ -1755,7 +1769,7 @@
 		<block name="cntMedicineCabinetPlayer">
 			<property name="CreativeMode" value="Player"/>
 			<property name="Class" value="Loot"/>
-			<property name="LootList" value="playerStorage"/>
+			<property name="LootList" value="playerWoodWritableStorage"/>
 			<property name="CustomIcon" value="cntPillCaseClosed"/>
 			<property name="DescriptionKey" value="furnitureGroupDesc"/>
 			<property name="Material" value="Mwood_weak"/>
@@ -1956,6 +1970,16 @@
 	<!-- *** adds honeybee harvest from trees with WastelandTreasures book *** -->
 	<insertafter xpath="//block[@name='treeMaster']//drop[@event='Harvest'][@name='foodHoney']">
 		<drop event="Harvest" name="honeyBee" prob=".05" count="1" tag="WasteTreasuresHoneyHarvest"/>
+	</insertafter>
+	
+	<!-- *** adds chance of solar cell from harvesting solar banks *** -->
+	<!-- <insertafter xpath="/blocks/block[@name='cntCollapsedSolarbank']/drop[@event='Harvest'][@name='resourceScrapPolymers']"> -->
+		<!-- <drop event="Harvest" name="solarCell" prob=".1" count="1" tag="salvageHarvest"/> -->
+	<!-- </insertafter> -->
+	
+	<insertafter xpath="/blocks/block[@name='cntCollapsedSolarbank']/property[@name='CreativeMode']">
+		<property name="Class" value="Loot"/>
+		<property name="LootList" value="collapsedSolarBank"/>
 	</insertafter>
 	
 	<!-- *** player crafted tablesaw *** -->

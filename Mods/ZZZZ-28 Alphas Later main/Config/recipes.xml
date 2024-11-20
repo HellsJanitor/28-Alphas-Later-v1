@@ -23,6 +23,13 @@
 		</recipe>
 	</append>
 	
+	<set xpath="/recipes/recipe[@name='modArmorCigar']">
+		<ingredient name="resourceYuccaFibers" count="250"/>
+		<ingredient name="resourcePaper" count="5"/>
+		<ingredient name="resourceTestosteroneExtract" count="2"/>
+	</set>
+	<removeattribute xpath="/recipes/recipe[@name='modArmorCigar']/@tags"/>
+	
 	<!-- *** removes forge smelting *** -->
 	<!-- <set xpath="//recipe//ingredient[@name='unit_iron']/@name">resourceScrapIron</set> -->
 	<!-- <set xpath="//recipe//ingredient[@name='unit_clay']/@name">resourceClayLump</set> -->
@@ -956,6 +963,7 @@
 	<insertbefore xpath="//recipe[@name='workbench']">
 		<recipe name="resourceWood" count="10" craft_time="15" craft_area="playerSawmill" craft_exp_gain="0" tags="resourceWood">
 			<ingredient name="woodLogPillar100" count="1"/>
+			<secondary_output name="resourceWoodScraps" count="20"/>
 		</recipe>
 	</insertbefore>
 	
@@ -1324,7 +1332,15 @@
 			<ingredient name="foodCropCarrot" count="2"/>
 			<ingredient name="drinkJarBoiledWater" count="1"/>
 		</recipe>
-
+		<recipe name="foodGrilledCarrot" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef">
+			<ingredient name="foodCropCarrot" count="1"/>
+		</recipe>
+		<recipe name="foodGrilledOnion" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef">
+			<ingredient name="foodCropOnion" count="1"/>
+		</recipe>
+		<recipe name="foodMashedTurnip" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
+			<ingredient name="foodCropTurnip" count="1"/>
+		</recipe>			
 	<!-- *** MegaCrush recipe *** -->
 		<recipe name="drinkCanMegaCrush" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="60" tags="perkMasterChef,learnable">
 			<ingredient name="drinkJarPureMineralWater" count="1"/>

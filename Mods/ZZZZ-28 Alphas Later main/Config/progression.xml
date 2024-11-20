@@ -63,7 +63,7 @@
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="vehicleMinibikeChassis,vehicleMinibikeHandlebars,resourceOil,ammoGasCan,MinibikeBundle"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="vehicleRuinRipperChassis,vehicleRuinRipperHandlebars,RuinRipperBundle"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="vehicleMotorcycleChassis,vehicleMotorcycleHandlebars,ammoGasCanBundle,MotorcycleBundle"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,100" value="1" tags="vehicleTheHornetChassis,vehicleTheHornetAccessories,TheHornetBundle"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,100" value="1" tags="vehicleDuneBuggyChassis,vehicleDuneBuggyAccessories,vehicleDuneBuggyBundle"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="70,100" value="1" tags="vehicleTruck4x4Chassis,vehicleTruck4x4Accessories,4x4Bundle"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1" tags="vehicleGyroCopterChassis,vehicleGyroCopterAccessories,GyroBundle"/>
 		</effect_group>

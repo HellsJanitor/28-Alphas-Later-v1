@@ -155,8 +155,6 @@ public class ConsoleCmdCalibrateWeapon : ConsoleCmdAbstract
 
     public override bool IsExecuteOnClient => true;
 
-    public override int DefaultPermissionLevel => 1000;
-
     private enum CalibrateType
     {
         pos,

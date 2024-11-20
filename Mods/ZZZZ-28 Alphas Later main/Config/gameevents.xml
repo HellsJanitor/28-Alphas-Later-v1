@@ -110,7 +110,7 @@
 		<!-- *** random wandering horde spawner *** -->
 		<action_sequence name="random_horde_sequence">
 			<property name="allow_user_trigger" value="true"/>
-			<property name="category" value="twitch_actions"/>
+			<!-- <property name="category" value="twitch_actions"/> -->
 		
 			<requirement class="InQuestZone">
 				<property name="invert" value="true"/>
@@ -132,6 +132,26 @@
 				<property name="group_name" value="zombies"/>
 				<property name="max_distance" value="20"/>
 			</action>
+			
+			<decision class="If">
+				<property name="condition_type" value="All"/>
+				<requirement class="CVar">
+					<property name="operation" value="LessThan"/>
+					<property name="cvar" value="zombiebackpack"/>
+					<property name="value" value="6"/>
+					<property name="target_group" value="zombies"/>
+				</requirement>
+				<requirement class="CVar">
+					<property name="operation" value="GreaterThan"/>
+					<property name="cvar" value="zombiebackpack"/>
+					<property name="value" value="1"/>
+					<property name="target_group" value="zombies"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="target_group" value="zombies"/>
+					<property name="buff_name" value="zombieBackpack"/>
+				</action>
+			</decision>
 
 			<action class="RageZombies">
 				<property name="time" value="5"/>
@@ -969,9 +989,11 @@
 		</action_sequence>
 		
 		<action_sequence name="spawn_airdrop">
-			<property name="allow_user_trigger" value="false"/>
-			<property name="category" value="twitch_actions"/>
-			<action class="SpawnContainer">
+			<!--<property name="allow_user_trigger" value="false"/>
+			<property name="category" value="twitch_actions"/>-->
+
+
+			<!--<action class="SpawnContainer">
 				<property name="entity_names" value="ContrabandCollectionCrate" param1="cratename"/>
 				<property name="spawn_count" value="1" param1="spawncount"/>
 				<property name="air_spawn" value="true" param1="airspawn"/>
@@ -979,10 +1001,28 @@
 				<property name="min_distance" value="1"/>
 				<property name="max_distance" value="1"/>
 				<property name="yoffset" value="150"/>
-			</action>
+			</action>-->
+			
+			<action class="AddPartyToGroup">
+				<property name="phase" value="0"/>
+				<property name="group_name" value="party"/>
+				<property name="twitch_negative" value="false"/>
+			</action>		
+			
+			<action class="SpawnContainer">
+				<property name="entity_names" value="ContrabandCollectionCrate" param1="cratename"/>
+				<property name="spawn_count" value="1" param1="spawncount"/>
+				<property name="air_spawn" value="true" param1="airspawn"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="phase" value="1"/>
+				<property name="target_group" value="party"/>
+				<property name="spawn_type" value="Position"/>
+				<property name="yoffset" value="95"/>
+			</action>			
 		</action_sequence>
 		
 		<action_sequence name="tier1_contraband_collection_spawn">
+			
 			<action class="SpawnEntity">
 				<property name="phase" value="1"/>
 				<property name="entity_group" value="SleeperGSList"/>
@@ -991,12 +1031,19 @@
 				<property name="add_to_group" value="zombies"/>
 				<property name="safe_spawn" value="true"/>
 				<property name="attack_target" value="true"/>
+				
 				<requirement class="OnQuest">
 					<property name="quest" value="tier1_contraband_collection"/>
 				</requirement>
+				
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="95"/>
+				</requirement>				
 			</action>
 		</action_sequence>
-		
+			
 		<action_sequence name="tier2_contraband_collection_spawn">
 			<action class="SpawnEntity">
 				<property name="phase" value="1"/>
@@ -1006,26 +1053,42 @@
 				<property name="add_to_group" value="zombies"/>
 				<property name="safe_spawn" value="true"/>
 				<property name="attack_target" value="true"/>
+				
 				<requirement class="OnQuest">
 					<property name="quest" value="tier2_contraband_collection"/>
 				</requirement>
+				
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="85"/>
+				</requirement>
 			</action>
-			<!-- <action class="Delay"> -->
-			<!-- <property name="phase" value="2"/> -->
-			<!-- <property name="time" value="5"/> -->
-			<!-- </action> -->
-			<!-- <action class="SpawnEntity"> -->
-			<!-- <property name="phase" value="3"/> -->
-			<!-- <property name="entity_group" value="SleeperGSList"/> -->
-			<!-- <property name="spawn_count" value="1"/> -->
-			<!-- <property name="air_spawn" value="false"/> -->
-			<!-- <property name="add_to_group" value="zombies"/> -->
-			<!-- <property name="safe_spawn" value="true"/> -->
-			<!-- <property name="attack_target" value="true"/> -->
-			<!-- <requirement class="OnQuest"> -->
-			<!-- <property name="quest" value="tier2_contraband_collection"/> -->
-			<!-- </requirement> -->
-			<!-- </action> -->
+			
+			<action class="Delay">
+				<property name="phase" value="2"/>
+				<property name="time" value="5"/>
+			</action>
+			
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				
+				<requirement class="OnQuest">
+					<property name="quest" value="tier2_contraband_collection"/>
+				</requirement>
+				
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="40"/>
+				</requirement>
+			</action>
 		</action_sequence>
 		
 		<action_sequence name="tier3_contraband_collection_spawn">
@@ -1037,14 +1100,23 @@
 				<property name="add_to_group" value="zombies"/>
 				<property name="safe_spawn" value="true"/>
 				<property name="attack_target" value="true"/>
+				
 				<requirement class="OnQuest">
 					<property name="quest" value="tier3_contraband_collection"/>
 				</requirement>
+				
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="90"/>
+				</requirement>
 			</action>
+			
 			<action class="Delay">
 				<property name="phase" value="2"/>
 				<property name="time" value="3"/>
 			</action>
+			
 			<action class="SpawnEntity">
 				<property name="phase" value="3"/>
 				<property name="entity_group" value="SleeperGSList"/>
@@ -1053,26 +1125,42 @@
 				<property name="add_to_group" value="zombies"/>
 				<property name="safe_spawn" value="true"/>
 				<property name="attack_target" value="true"/>
+				
 				<requirement class="OnQuest">
 					<property name="quest" value="tier3_contraband_collection"/>
 				</requirement>
+				
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="60"/>
+				</requirement>
 			</action>
-			<!-- <action class="Delay"> -->
-			<!-- <property name="phase" value="4"/> -->
-			<!-- <property name="time" value="3"/> -->
-			<!-- </action> -->
-			<!-- <action class="SpawnEntity"> -->
-			<!-- <property name="phase" value="5"/> -->
-			<!-- <property name="entity_group" value="SleeperGSList"/> -->
-			<!-- <property name="spawn_count" value="1"/> -->
-			<!-- <property name="air_spawn" value="false"/> -->
-			<!-- <property name="add_to_group" value="zombies"/> -->
-			<!-- <property name="safe_spawn" value="true"/> -->
-			<!-- <property name="attack_target" value="true"/> -->
-			<!-- <requirement class="OnQuest"> -->
-			<!-- <property name="quest" value="tier3_contraband_collection"/> -->
-			<!-- </requirement> -->
-			<!-- </action> -->
+			
+			<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="3"/>
+			</action>
+			
+			<action class="SpawnEntity">
+				<property name="phase" value="5"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				
+				<requirement class="OnQuest">
+					<property name="quest" value="tier3_contraband_collection"/>
+				</requirement>
+				
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="20"/>
+				</requirement>
+			</action>
 		</action_sequence>
 		
 		<action_sequence name="tier4_contraband_collection_spawn">
@@ -1084,14 +1172,23 @@
 				<property name="add_to_group" value="zombies"/>
 				<property name="safe_spawn" value="true"/>
 				<property name="attack_target" value="true"/>
+				
 				<requirement class="OnQuest">
 					<property name="quest" value="tier4_contraband_collection"/>
 				</requirement>
+				
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="95"/>
+				</requirement>
 			</action>
+			
 			<action class="Delay">
 				<property name="phase" value="2"/>
 				<property name="time" value="2"/>
 			</action>
+			
 			<action class="SpawnEntity">
 				<property name="phase" value="3"/>
 				<property name="entity_group" value="SleeperGSList"/>
@@ -1103,11 +1200,18 @@
 				<requirement class="OnQuest">
 					<property name="quest" value="tier4_contraband_collection"/>
 				</requirement>
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="70"/>
+				</requirement>
 			</action>
+			
 			<action class="Delay">
 				<property name="phase" value="4"/>
 				<property name="time" value="3"/>
 			</action>
+			
 			<action class="SpawnEntity">
 				<property name="phase" value="5"/>
 				<property name="entity_group" value="SleeperGSList"/>
@@ -1116,14 +1220,23 @@
 				<property name="add_to_group" value="zombies"/>
 				<property name="safe_spawn" value="true"/>
 				<property name="attack_target" value="true"/>
+				
 				<requirement class="OnQuest">
 					<property name="quest" value="tier4_contraband_collection"/>
 				</requirement>
+				
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="30"/>
+				</requirement>
 			</action>
+			
 			<action class="Delay">
 				<property name="phase" value="6"/>
 				<property name="time" value="2"/>
 			</action>
+			
 			<action class="SpawnEntity">
 				<property name="phase" value="7"/>
 				<property name="entity_group" value="SleeperGSList"/>
@@ -1132,8 +1245,15 @@
 				<property name="add_to_group" value="zombies"/>
 				<property name="safe_spawn" value="true"/>
 				<property name="attack_target" value="true"/>
+				
 				<requirement class="OnQuest">
 					<property name="quest" value="tier4_contraband_collection"/>
+				</requirement>
+				
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="10"/>
 				</requirement>
 			</action>
 		</action_sequence>
@@ -1147,14 +1267,17 @@
 				<property name="add_to_group" value="zombies"/>
 				<property name="safe_spawn" value="true"/>
 				<property name="attack_target" value="true"/>
+				
 				<requirement class="OnQuest">
 					<property name="quest" value="tier5_contraband_collection"/>
 				</requirement>
 			</action>
+			
 			<action class="Delay">
 				<property name="phase" value="2"/>
 				<property name="time" value="2"/>
 			</action>
+			
 			<action class="SpawnEntity">
 				<property name="phase" value="3"/>
 				<property name="entity_group" value="SleeperGSList"/>
@@ -1163,14 +1286,23 @@
 				<property name="add_to_group" value="zombies"/>
 				<property name="safe_spawn" value="true"/>
 				<property name="attack_target" value="true"/>
+				
 				<requirement class="OnQuest">
 					<property name="quest" value="tier5_contraband_collection"/>
 				</requirement>
+				
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="80"/>
+				</requirement>
 			</action>
+			
 			<action class="Delay">
 				<property name="phase" value="4"/>
 				<property name="time" value="2"/>
 			</action>
+			
 			<action class="SpawnEntity">
 				<property name="phase" value="5"/>
 				<property name="entity_group" value="SleeperGSList"/>
@@ -1179,16 +1311,50 @@
 				<property name="add_to_group" value="zombies"/>
 				<property name="safe_spawn" value="true"/>
 				<property name="attack_target" value="true"/>
+				
 				<requirement class="OnQuest">
 					<property name="quest" value="tier5_contraband_collection"/>
 				</requirement>
+				
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="60"/>
+				</requirement>
 			</action>
+			
 			<action class="Delay">
 				<property name="phase" value="6"/>
 				<property name="time" value="2"/>
 			</action>
+			
 			<action class="SpawnEntity">
 				<property name="phase" value="7"/>
+				<property name="entity_group" value="SleeperGSList"/>
+				<property name="spawn_count" value="1"/>
+				<property name="air_spawn" value="false"/>
+				<property name="add_to_group" value="zombies"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				
+				<requirement class="OnQuest">
+					<property name="quest" value="tier5_contraband_collection"/>
+				</requirement>
+				
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="40"/>
+				</requirement>
+			</action>
+			
+			<action class="Delay">
+				<property name="phase" value="8"/>
+				<property name="time" value="2"/>
+			</action>
+			
+			<action class="SpawnEntity">
+				<property name="phase" value="9"/>
 				<property name="entity_group" value="SleeperGSList"/>
 				<property name="spawn_count" value="1"/>
 				<property name="air_spawn" value="false"/>
@@ -1198,29 +1364,58 @@
 				<requirement class="OnQuest">
 					<property name="quest" value="tier5_contraband_collection"/>
 				</requirement>
+				<requirement class="RandomRoll">
+					<property name="min_max" value="0,100"/>
+					<property name="operation" value="LTE"/>
+					<property name="value" value="20"/>
+				</requirement>
 			</action>
-			<!-- <action class="Delay"> -->
-			<!-- <property name="phase" value="8"/> -->
-			<!-- <property name="time" value="2"/> -->
-			<!-- </action> -->
-			<!-- <action class="SpawnEntity"> -->
-			<!-- <property name="phase" value="9"/> -->
-			<!-- <property name="entity_group" value="SleeperGSList"/> -->
-			<!-- <property name="spawn_count" value="1"/> -->
-			<!-- <property name="air_spawn" value="false"/> -->
-			<!-- <property name="add_to_group" value="zombies"/> -->
-			<!-- <property name="safe_spawn" value="true"/> -->
-			<!-- <property name="attack_target" value="true"/> -->
-			<!-- <requirement class="OnQuest"> -->
-			<!-- <property name="quest" value="tier5_contraband_collection"/> -->
-			<!-- </requirement> -->
-			<!-- </action> -->
 		</action_sequence>
 
 		<action_sequence name="add_contraband_collection_buff">
 			<action class="AddBuff">
 				<property name="phase" value="1"/>
 				<property name="buff_name" value="ContrabandCollectionBuff"/>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="ContrabandCollectionBuff_checkFail_t1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier1_contraband_collection"/>
+				</requirement>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="ContrabandCollectionBuff_checkFail_t2"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier2_contraband_collection"/>
+				</requirement>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="ContrabandCollectionBuff_checkFail_t3"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier3_contraband_collection"/>
+				</requirement>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="ContrabandCollectionBuff_checkFail_t4"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier4_contraband_collection"/>
+				</requirement>
+			</action>
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="ContrabandCollectionBuff_checkFail_t5"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier5_contraband_collection"/>
+				</requirement>
 			</action>
 			
 			<action class="SpawnEntity">
@@ -1231,6 +1426,7 @@
 				<property name="add_to_group" value="zombies"/>
 				<property name="safe_spawn" value="true"/>
 				<property name="attack_target" value="true"/>
+				<property name="delay" value="1-3"/>
 			</action>
 		</action_sequence>
 
@@ -1364,7 +1560,7 @@
 			</action>
 		</action_sequence>
 		
-		<action_sequence name="tier5_contraband_collection_remove_satchel_b">
+		<action_sequence name="tier5_contraband_collection_remove_satchel_b">			
 			<action class="RemoveItems">
 				<property name="phase" value="1"/>
 				<property name="items_location" value="Toolbelt, Backpack, Equipment, Held"/>
@@ -1384,7 +1580,7 @@
 					<property name="invert" value="true"/>
 					<property name="quest" value="tier5_contraband_collection"/>
 				</requirement>
-			</action>
+			</action>			
 		</action_sequence>
 		
 		<action_sequence name="contraband_collection_crate_explode_crate_on_quest_fail">
@@ -1402,25 +1598,13 @@
 				<property name="block_damage" value="300"/>
 				<property name="block_radius" value="10"/>
 				<property name="entity_damage" value="50"/>
-				<property name="entity_radius" value="6"/>
-				<!--<requirement class="OnQuest"> - onquest does nothing
-					<property name="invert" value="true"/>
-					<property name="quest" value="tier1_contraband_collection"/>
-				</requirement>-->
-				<!--<requirement class="CVar"> - cvars don't pass between entities
-					<property name="operation" value="Equals"/>
-					<property name="cvar" value="tier1_contraband_collection"/>
-					<property name="value" value="1"/>
-				</requirement>-->
-				<!--<requirement class="InQuestZone">  - questzone does nothing					
-				</requirement>-->
+				<property name="entity_radius" value="6"/>				
 			</action>
 			
 			<action class="Kill">
-				<property name="phase" value="2"/>
+				<property name="phase" value="2"/>				
 			</action>
 		</action_sequence>
-		
 		<action_sequence name="explode_me">
 			<!--<property name="action_type" value="Game"/>
 			<property name="target_type" value="Block"/>-->
@@ -1465,6 +1649,90 @@
 			
 			<action class="Kill">
 				<property name="phase" value="8"/>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="contraband_collection_checkForFail_t1">
+			<!--
+			if not on the quest, then remove the buff
+			on buff remove, do an aoe add buff to add the "blow up now" buff to the crate
+			on buff remove, remove the quest satchel from player inventory.-->
+			<action class="RemoveBuff">
+				<property name="buff_name" value="ContrabandCollectionBuff_checkFail_t1"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier1_contraband_collection"/>
+					<property name="invert" value="true"/>
+				</requirement>
+			</action>			
+		</action_sequence>
+		
+		<action_sequence name="contraband_collection_checkForFail_t2">
+			<!--
+			if not on the quest, then remove the buff
+			on buff remove, do an aoe add buff to add the "blow up now" buff to the crate
+			on buff remove, remove the quest satchel from player inventory.-->
+			<action class="RemoveBuff">
+				<property name="buff_name" value="ContrabandCollectionBuff_checkFail_t2"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier2_contraband_collection"/>
+					<property name="invert" value="true"/>
+				</requirement>
+			</action>
+		</action_sequence>
+		
+		<action_sequence name="contraband_collection_checkForFail_t3">
+			<!--
+			if not on the quest, then remove the buff
+			on buff remove, do an aoe add buff to add the "blow up now" buff to the crate
+			on buff remove, remove the quest satchel from player inventory.-->
+			<action class="RemoveBuff">
+				<property name="buff_name" value="ContrabandCollectionBuff_checkFail_t3"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier3_contraband_collection"/>
+					<property name="invert" value="true"/>
+				</requirement>
+			</action>
+		</action_sequence>
+			
+		<action_sequence name="contraband_collection_checkForFail_t4">
+			<!--
+			if not on the quest, then remove the buff
+			on buff remove, do an aoe add buff to add the "blow up now" buff to the crate
+			on buff remove, remove the quest satchel from player inventory.-->
+			<action class="RemoveBuff">
+				<property name="buff_name" value="ContrabandCollectionBuff_checkFail_t4"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier4_contraband_collection"/>
+					<property name="invert" value="true"/>
+				</requirement>
+			</action>			
+		</action_sequence>
+		
+		<action_sequence name="contraband_collection_checkForFail_t5">
+			<!--
+			if not on the quest, then remove the buff
+			on buff remove, do an aoe add buff to add the "blow up now" buff to the crate
+			on buff remove, remove the quest satchel from player inventory.-->
+			<action class="RemoveBuff">
+				<property name="buff_name" value="ContrabandCollectionBuff_checkFail_t5"/>
+				<requirement class="OnQuest">
+					<property name="quest" value="tier5_contraband_collection"/>
+					<property name="invert" value="true"/>
+				</requirement>
+			</action>			
+		</action_sequence>
+		
+		<action_sequence name="contraband_collection_removesatchel">
+			<action class="RemoveItems">
+				<property name="phase" value="1"/>
+				<property name="items_location" value="Toolbelt, Backpack, Equipment, Held"/>
+				<property name="items_tags" value="ContrabandCollection_cntFetchQuestSatchel"/>
+				<property name="count_type" value="Items"/>
+				<property name="count" value="1"/>
+				<requirement class="OnQuest">
+					<property name="invert" value="true"/>
+					<property name="quest" value="tier1_contraband_collection"/>
+				</requirement>
 			</action>
 		</action_sequence>
 		

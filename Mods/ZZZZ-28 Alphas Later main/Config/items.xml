@@ -242,7 +242,7 @@
 			<property name="SoundPlace" value="plantfibers_place"/>
 		</item>
 		
-		<!-- *** Carrots *** -->
+		<!-- *** new food crops *** -->
 		<item name="foodCropCarrot">
 			<property name="DescriptionKey" value="foodCropCarrotDesc"/>
 			<property name="HoldType" value="31"/>
@@ -2293,18 +2293,18 @@
 	</insertbefore>
 
 	<!-- *** bellows increases craft time, not smelt time *** -->
-	<set xpath="//item[@name='toolBellows']//property[@name='DisplayType']/@value">toolAnvil</set>
-	<set xpath="//item[@name='toolBellows']/effect_group[@tiered='false']">
-		<passive_effect name="CraftingTime" operation="perc_add" value="-.25"/>
-		<display_value name="dCraftingTime" value=".25"/>
-	</set>
+	<!-- <set xpath="//item[@name='toolBellows']//property[@name='DisplayType']/@value">toolAnvil</set> -->
+	<!-- <set xpath="//item[@name='toolBellows']/effect_group[@tiered='false']"> -->
+		<!-- <passive_effect name="CraftingTime" operation="perc_add" value="-.25"/> -->
+		<!-- <display_value name="dCraftingTime" value=".25"/> -->
+	<!-- </set> -->
 	
 	<!-- *** anvil craft speed bonus reduced *** -->
-	<set xpath="//item[@name='toolAnvil']/effect_group[@tiered='false']">
-		<requirement name="!HoldingItemHasTags" tags="toolAnvil"/>
-		<passive_effect name="CraftingTime" operation="perc_add" value="-.25"/>
-		<display_value name="dCraftingTime" value=".25"/>
-	</set>
+	<!-- <set xpath="//item[@name='toolAnvil']/effect_group[@tiered='false']"> -->
+		<!-- <requirement name="!HoldingItemHasTags" tags="toolAnvil"/> -->
+		<!-- <passive_effect name="CraftingTime" operation="perc_add" value="-.25"/> -->
+		<!-- <display_value name="dCraftingTime" value=".25"/> -->
+	<!-- </set> -->
 	
 	<!-- *** nerf honey to 3% cure for infection (and change sound pickup and place)*** -->
 	<set xpath="//item[@name='foodHoney']/property[@name='SoundPickup']/@value">aloe_grab</set>
@@ -3869,7 +3869,7 @@
 	
 		<!-- *** new cooked food *** -->
 		<item name="foodChickenStew">
-			<property name="Tags" value="food"/>
+			<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 			<property name="DescriptionKey" value="foodChickenStewDesc"/>
 			<property name="CustomIcon" value="foodChickenStew"/>
 			<property name="HoldType" value="31"/>
@@ -3893,6 +3893,8 @@
 			<effect_group tiered="false" name="Food Tier 2">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="70"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="35"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="35">
+				<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="30"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -3900,7 +3902,7 @@
 		</item>
 	
 		<item name="foodChickenMiso">
-			<property name="Tags" value="food"/>
+			<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 			<property name="DescriptionKey" value="foodChickenMisoDesc"/>
 			<property name="CustomIcon" value="foodChickenMiso"/>
 			<property name="HoldType" value="31"/>
@@ -3925,6 +3927,8 @@
 			<effect_group tiered="false" name="Food Tier 2">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="80"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="40"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="40">
+				<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="30"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -3932,7 +3936,7 @@
 		</item>
 	
 		<item name="foodScrambledEggs">
-			<property name="Tags" value="food,foodSkill"/>
+			<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 			<property name="DescriptionKey" value="foodScrambledEggsDesc"/>
 			<property name="CustomIcon" value="foodScrambledEggs"/>
 			<property name="HoldType" value="31"/>
@@ -3955,13 +3959,15 @@
 			<effect_group tiered="false" name="Food Tier 0/1">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="10">
+				<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="5"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 			</effect_group>
 		</item>
 	
 		<item name="foodTrampStew">
-			<property name="Tags" value="food,foodSkill"/>
+			<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 			<property name="DescriptionKey" value="foodTrampStewDesc"/>
 			<property name="CustomIcon" value="foodTrampStew"/>
 			<property name="HoldType" value="31"/>
@@ -3984,13 +3990,15 @@
 			<effect_group tiered="false" name="Food Tier 0/1">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="10">
+				<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="5"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 			</effect_group>
 		</item>
 	
 		<item name="foodVagabondStew">
-			<property name="Tags" value="food,foodSkill"/>
+			<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 			<property name="DescriptionKey" value="foodVagabondStewDesc"/>
 			<property name="CustomIcon" value="foodTrampStew"/>
 			<property name="HoldType" value="31"/>
@@ -4013,8 +4021,112 @@
 			<effect_group tiered="false" name="Food Tier 0/1">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="10">
+				<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="5"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+			</effect_group>
+		</item>
+		
+		<item name="foodGrilledCarrot">
+			<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+			<property name="DescriptionKey" value="foodGrilledCarrotDesc"/>
+			<property name="CustomIcon" value="foodGrilledCarrot"/>
+			<property name="HoldType" value="31"/>
+			<!-- <property name="DisplayType" value="food"/> -->
+			<property name="DisplayType" value="foodWaterNegative"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="10"/> <!-- STK food -->
+			<property name="EconomicValue" value="30"/>
+			<property name="SoundPickup" value="corn_grilled_grab"/>
+			<property name="SoundPlace" value="corn_grilled_place"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="player_eating"/>
+				<!-- jar from cooking food <property name="Create_item" value="drinkJarEmpty"/> -->
+			</property>
+			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+			<effect_group tiered="false" name="Food Tier 1">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+					<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+				<display_value name="$waterAmountAdd" value="-5"/>
+			</effect_group>
+		</item>
+		
+		<item name="foodGrilledOnion">
+			<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+			<property name="DescriptionKey" value="foodGrilledOnionDesc"/>
+			<property name="CustomIcon" value="foodGrilledOnion"/>
+			<property name="HoldType" value="31"/>
+			<!-- <property name="DisplayType" value="food"/> -->
+			<property name="DisplayType" value="foodWaterNegative"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="10"/> <!-- STK food -->
+			<property name="EconomicValue" value="30"/>
+			<property name="SoundPickup" value="corn_grilled_grab"/>
+			<property name="SoundPlace" value="corn_grilled_place"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="player_eating"/>
+				<!-- jar from cooking food <property name="Create_item" value="drinkJarEmpty"/> -->
+			</property>
+			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+			<effect_group tiered="false" name="Food Tier 1">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+					<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+				<display_value name="$waterAmountAdd" value="-5"/>
+			</effect_group>
+		</item>
+		
+		<item name="foodMashedTurnip">
+			<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+			<property name="DescriptionKey" value="foodMashedTurnipDesc"/>
+			<property name="CustomIcon" value="foodMashedTurnip"/>
+			<property name="HoldType" value="31"/>
+			<!-- <property name="DisplayType" value="food"/> -->
+			<property name="DisplayType" value="foodWaterNegative"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="10"/> <!-- STK food -->
+			<property name="EconomicValue" value="30"/>
+			<property name="SoundPickup" value="corn_grilled_grab"/>
+			<property name="SoundPlace" value="corn_grilled_place"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Sound_start" value="player_eating"/>
+				<!-- jar from cooking food <property name="Create_item" value="drinkJarEmpty"/> -->
+			</property>
+			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+			<effect_group tiered="false" name="Food Tier 1">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+					<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+				<display_value name="$waterAmountAdd" value="-5"/>
 			</effect_group>
 		</item>
 	

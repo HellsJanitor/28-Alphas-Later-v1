@@ -183,7 +183,7 @@
 		<item name="plantedTurnip1"/>
 	</append>
 	
-	<!-- *** add food carrot *** -->
+	<!-- *** add new food crops *** -->
 	<append xpath="//trader_item_group[@name='foodSupplies']">
 		<item name="foodCropCarrot" count="4,18"/>
 		<item name="foodCropOnion" count="4,18"/>

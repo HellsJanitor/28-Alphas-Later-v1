@@ -393,9 +393,18 @@
 					<requirement name="CVarCompare" cvar="is_bloodmoon" operation="Equals" value="1"/>
 				</passive_effect>
 			</effect_group>
+			<!-- signalling buff for bloodmoon -->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="buffBloodmoon"/>
+				<requirement name="CVarCompare" cvar="is_bloodmoon" operation="Equals" value="1"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBloodmoon"/>
+				<requirement name="CVarCompare" cvar="is_bloodmoon" operation="Equals" value="0"/>
+			</effect_group>
 			<!-- adjustments for loot drops for zombie backpacks -->
 			<effect_group>
-				<passive_effect name="LootDropProb" operation="base_set" value="-1"/>
+				<passive_effect name="LootDropProb" operation="base_set" value="-10"/>
 			</effect_group>
 			<effect_group compare_type="or">
 				<requirement name="HasBuff" target="other" buff="zombieBackpack"/>
@@ -540,24 +549,39 @@
 			<duration value="0"/>
 			
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Yellow" local_offset="0,-.1,-.125" local_rotation="0,115,-10" local_scale="1,1,1" parent_transform="Spine2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="zombiebackpackBM" operation="set" value="1"/>
+				<requirement name="HasBuff" buff="buffBloodmoon"/>
+				<requirement name="CVarCompare" cvar="zombiebackpack" operation="GT" value="1"/>
+				<requirement name="CVarCompare" cvar="zombiebackpack" operation="LTE" value="5"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Yellow" local_offset="0,-.1,-.125" local_rotation="0,115,-10" local_scale="1,1,1" parent_transform="Spine2"/>
+				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Yellow" local_offset="0,-.1,-.125" local_rotation="0,115,-10" local_scale="1,1,1" parent_transform="Spine2"/>
+				<requirement name="CVarCompare" cvar="zombiebackpackBM" operation="Equals" value="1"/>
 			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow"/>
 				<requirement name="HasBuff" buff="zombieBackpack"/>
-				<requirement name="HasAttachedPrefab" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Yellow" parent_transform="Spine2"/>
+				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
 			</effect_group>
-			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow"/>
+				<requirement name="HasBuff" buff="buffBloodmoon"/>
+				<requirement name="CVarCompare" cvar="zombiebackpackBM" operation="Equals" value="1"/>
+			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onOtherKilledSelf" action="SetTransformActive" active="false" transform_path="modelYellow"/>
-			</effect_group>
-			
-			<effect_group>
-				<!-- <requirement name="HasBuff" buff="buffBurningMolotov"/> -->
 				<triggered_effect trigger="onSelfDied" action="SetTransformActive" active="false" transform_path="modelYellow"/>
-				<triggered_effect trigger="onSelfDied" action="_28AL.CC.MinEventActions.DropLootBag,28ALCC" target="self"/>
 			</effect_group>
-			
+			<effect_group compare_type="or">
+				<!-- <requirement name="HasBuff" buff="buffBurningMolotov"/> -->
+				<triggered_effect trigger="onSelfDied" action="_28AL.CC.MinEventActions.DropLootBag,28ALCC" target="self"/>
+				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="zombiebackpackBM" operation="Equals" value="1"/>
+			</effect_group>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Yellow" parent_transform="Spine2"/>
 			</effect_group>
@@ -568,21 +592,21 @@
 			<duration value="0"/>
 			
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Blue" local_offset="0,-.1,-.125" local_rotation="0,115,-10" local_scale="1,1,1" parent_transform="Spine2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Red" local_offset="0,-.1,-.125" local_rotation="0,115,-10" local_scale="1,1,1" parent_transform="Spine2"/>
 			</effect_group>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelBlue"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelRed"/>
 				<requirement name="HasBuff" buff="zombieBackpack"/>
 				<requirement name="HasAttachedPrefab" prefab="#@modfolder:Resources/backpacks.unity3d?Backpack_Blue" parent_transform="Spine2"/>
 			</effect_group>
 			
 			<effect_group>
-				<triggered_effect trigger="onOtherKilledSelf" action="SetTransformActive" active="false" transform_path="modelBlue"/>
+				<triggered_effect trigger="onOtherKilledSelf" action="SetTransformActive" active="false" transform_path="modelRed"/>
 			</effect_group>
 			
 			<effect_group>
 				<!-- <requirement name="HasBuff" buff="buffBurningMolotov"/> -->
-				<triggered_effect trigger="onSelfDied" action="SetTransformActive" active="false" transform_path="modelBlue"/>
+				<triggered_effect trigger="onSelfDied" action="SetTransformActive" active="false" transform_path="modelRed"/>
 				<triggered_effect trigger="onSelfDied" action="_28AL.CC.MinEventActions.DropLootBag,28ALCC" target="self"/>
 			</effect_group>
 			
@@ -2790,6 +2814,9 @@
 				</triggered_effect>
 			</effect_group>
 		</buff>
+		
+		<!-- *** Bloodmoon signalling buff *** -->
+		<buff name="buffBloodmoon"/>
 	
 		<!-- *** radiated wasteland *** -->
 		<buff name="buffRadiation01" name_key="buffRadiation01Name" description_key="buffRadiation01Desc" tooltip_key="buffRadiation01Tooltip" icon="ui_game_symbol_radiation" icon_color="255,69,0" icon_blink="true">
@@ -3380,7 +3407,7 @@
 	
 		<buff name="ContrabandCollectionBuff" hidden="true" remove_on_death="true">
 			<stack_type value="ignore"/>
-			<update_rate value="10"/>
+			<update_rate value="14"/>
 			<duration value="120"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier1_contraband_collection_spawn"/>
@@ -3391,13 +3418,82 @@
 			</effect_group>
 		</buff>
 	
-		<!-- *** Defend Airdrop *** -->
+		<buff name="ContrabandCollectionBuff_checkFail_t1" hidden="true" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="2"/>
+			<duration value="140"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="contraband_collection_checkForFail_t1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="positionAOE" range="300" buff="ContrabandCollectionExplodeCrateOnQuestFailBuff">
+					<requirement name="EntityTagCompare" target="other" tags="ContrabandCollection_ContrabandCollectionCrate"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="contraband_collection_removesatchel"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" target="self" buff="ContrabandCollectionBuff"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="ContrabandCollectionBuff_checkFail_t2" hidden="true" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="2"/>
+			<duration value="140"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="contraband_collection_checkForFail_t2"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="positionAOE" range="300" buff="ContrabandCollectionExplodeCrateOnQuestFailBuff">
+					<requirement name="EntityTagCompare" target="other" tags="ContrabandCollection_ContrabandCollectionCrate"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="contraband_collection_removesatchel"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" target="self" buff="ContrabandCollectionBuff"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="ContrabandCollectionBuff_checkFail_t3" hidden="true" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="2"/>
+			<duration value="140"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="contraband_collection_checkForFail_t3"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="positionAOE" range="300" buff="ContrabandCollectionExplodeCrateOnQuestFailBuff">
+					<requirement name="EntityTagCompare" target="other" tags="ContrabandCollection_ContrabandCollectionCrate"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="contraband_collection_removesatchel"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" target="self" buff="ContrabandCollectionBuff"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="ContrabandCollectionBuff_checkFail_t4" hidden="true" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="2"/>
+			<duration value="140"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="contraband_collection_checkForFail_t4"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="positionAOE" range="300" buff="ContrabandCollectionExplodeCrateOnQuestFailBuff">
+					<requirement name="EntityTagCompare" target="other" tags="ContrabandCollection_ContrabandCollectionCrate"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="contraband_collection_removesatchel"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" target="self" buff="ContrabandCollectionBuff"/>
+			</effect_group>
+		</buff>
+	
+		<buff name="ContrabandCollectionBuff_checkFail_t5" hidden="true" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="2"/>
+			<duration value="140"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="contraband_collection_checkForFail_t5"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="positionAOE" range="300" buff="ContrabandCollectionExplodeCrateOnQuestFailBuff">
+					<requirement name="EntityTagCompare" target="other" tags="ContrabandCollection_ContrabandCollectionCrate"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="contraband_collection_removesatchel"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" target="self" buff="ContrabandCollectionBuff"/>
+
+			</effect_group>
+		</buff>
+	
 		<buff name="ContrabandCollectionExplodeCrateOnQuestFailBuff" hidden="true" remove_on_death="true">
 			<stack_type value="ignore"/>
-			<update_rate value="5"/>
-			<duration value="135"/>
+			<duration value="1"/>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="contraband_collection_crate_explode_crate_on_quest_fail"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="CallGameEvent" event="contraband_collection_crate_explode_crate_on_quest_fail"/>
 			</effect_group>
 		</buff>
 	
@@ -3449,6 +3545,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier5_contraband_collection_remove_satchel_b"/>
 			</effect_group>
 		</buff>
+
 	
 		<!-- *** Defend the Safehouse *** -->
 		<buff name="buffSpawner1a" hidden="false" remove_on_death="true">

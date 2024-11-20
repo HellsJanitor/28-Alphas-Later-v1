@@ -15,7 +15,5 @@
     //public static PassiveEffects ProjectileImpactDamagePercentBlock;
     public static PassiveEffects PartialReloadCount;
     public static PassiveEffects CustomTaggedEffect;
-    public static PassiveEffects KickDegreeHorizontalModifier;
-    public static PassiveEffects KickDegreeVerticalModifier;
     #endregion
 }

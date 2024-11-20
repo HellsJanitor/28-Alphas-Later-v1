@@ -21,126 +21,109 @@
 		</effect_group>
 	</append>
 	
-	<append xpath="//entity_class[starts-with(@name,'zombieArlene')]">
+	<append xpath="//entity_class[@name='animalBossGrace']">
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieAnimalbackpack"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//entity_class[starts-with(@name,'zombieArlene') and not (contains(@name,'Mutated'))]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpackBM" operation="set" value="randomint(1,10)"/>
 		</effect_group>
-
+		
 		<effect_group>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieMarlene')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombiePartyGirl')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieNurse')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieJoe')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieSteve')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieTomClark')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieBusinessMan')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieBurnt')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieSpider')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieBoe')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieMaleHazmat')]">
@@ -152,97 +135,78 @@
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieBossbackpack">
 				<requirement name="CVarCompare" cvar="zombieBossbackpack" operation="Equals" value="1"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelRed">
-				<requirement name="CVarCompare" cvar="zombieBossbackpack" operation="Equals" value="1"/>
-			</triggered_effect>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieJanitor')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieInmate')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieMoe')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieLab')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieDarlene')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieYo')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieUtilityWorker')]">
 		<effect_group>
 			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,33)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieSkateboarder')]">
 		<effect_group>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,25)"/>
-			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelYellow">
-				<requirement name="CVarCompare" cvar="zombiebackpack" operation="Equals" value="1"/>
-			</triggered_effect>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombiebackpack" operation="set" value="randomint(1,30)"/>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombiebackpack"/>
 		</effect_group>
 	</append>
 	<append xpath="//entity_class[starts-with(@name,'zombieFatCop')]">
@@ -250,7 +214,7 @@
 			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
 				<requirement name="HasBuff" buff="zombieBackpack"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,25)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
 			</triggered_effect>
@@ -264,7 +228,7 @@
 			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
 				<requirement name="HasBuff" buff="zombieBackpack"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,25)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
 			</triggered_effect>
@@ -278,7 +242,7 @@
 			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
 				<requirement name="HasBuff" buff="zombieBackpack"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,25)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
 			</triggered_effect>
@@ -292,7 +256,7 @@
 			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
 				<requirement name="HasBuff" buff="zombieBackpack"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,25)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
 			</triggered_effect>
@@ -306,7 +270,7 @@
 			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
 				<requirement name="HasBuff" buff="zombieBackpack"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,25)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
 			</triggered_effect>
@@ -320,7 +284,7 @@
 			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
 				<requirement name="HasBuff" buff="zombieBackpack"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,25)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
 			</triggered_effect>
@@ -334,7 +298,7 @@
 			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieBackpack">
 				<requirement name="HasBuff" buff="zombieBackpack"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,30)"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieFatbackpack" operation="set" value="randomint(1,25)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="CVarCompare" cvar="zombieFatbackpack" operation="Equals" value="1"/>
 			</triggered_effect>
@@ -351,11 +315,11 @@
 			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieFatbackpack">
 				<requirement name="HasBuff" buff="zombieFatbackpack"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieWightBackpack" operation="set" value="randomint(1,30)"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieWightBackpack" operation="set" value="randomint(1,25)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieWightBackpack">
 				<requirement name="CVarCompare" cvar="zombieWightBackpack" operation="Equals" value="1"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelBlue">
+			<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="modelRed">
 				<requirement name="CVarCompare" cvar="zombieWightBackpack" operation="Equals" value="1"/>
 			</triggered_effect>
 		</effect_group>
@@ -371,7 +335,7 @@
 			<triggered_effect trigger="onSelfFirstSpawn" action="RemoveBuff" target="self" buff="zombieWightBackpack">
 				<requirement name="HasBuff" buff="zombieWightBackpack"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieBossbackpack" operation="set" value="randomint(1,30)"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="zombieBossbackpack" operation="set" value="randomint(1,20)"/>
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="zombieBossbackpack">
 				<requirement name="CVarCompare" cvar="zombieBossbackpack" operation="Equals" value="1"/>
 			</triggered_effect>
@@ -2281,8 +2245,8 @@
 			<!-- Mutated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt mutated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1250"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2311,8 +2275,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1250"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2341,8 +2305,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1250"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2371,8 +2335,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1250"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2401,8 +2365,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1250"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2431,8 +2395,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1250"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2461,8 +2425,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1250"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2491,8 +2455,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1350"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2521,8 +2485,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1250"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2551,8 +2515,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1075"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2581,8 +2545,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1300"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2611,8 +2575,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="zombieMaleMutatedHazmatLootBag"/>
-			<property name="LootDropProb" value=".5"/>
+			<!-- <property name="LootDropEntityClass" value="zombieMaleMutatedHazmatLootBag"/> -->
+			<!-- <property name="LootDropProb" value=".5"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1300"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2641,8 +2605,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1300"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2671,8 +2635,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1300"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2701,8 +2665,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1300"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2731,8 +2695,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1300"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2761,8 +2725,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1300"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2791,8 +2755,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1300"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2821,8 +2785,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1400"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2851,8 +2815,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1900"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2881,8 +2845,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2918,8 +2882,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2954,8 +2918,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -2990,8 +2954,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -3026,8 +2990,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="2000"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -3058,8 +3022,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1500"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -3088,8 +3052,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1750"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -3118,8 +3082,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="2500"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -3157,8 +3121,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="750"/>
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>-->
@@ -3244,7 +3208,7 @@
 			<property name="SoundTick" value="demolitionz_beep,.5,.9"/>
 			<property name="ExperienceGain" value="1500"/>
 			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1750"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="40"/>
@@ -3269,8 +3233,8 @@
 			<!-- Radiated -->
 			<property name="ExperienceGain" value="1500"/>
 			<!-- XP grunt radiated -->
-			<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-			<property name="LootDropProb" value=".3"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerBoss"/> -->
+			<!-- <property name="LootDropProb" value=".3"/> -->
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="500"/>
 				<!-- <passive_effect name="EntityDamage" operation="perc_add" value="0.05"/> -->
@@ -3382,7 +3346,7 @@
 			<property name="JumpMaxDistance" value=".8, 1.1"/>
 			<property name="HandItem" value="meleeHandZombieStrong"/>
 			<property name="ExperienceGain" value="1750"/><!-- XP strong -->
-			<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerStrong"/> -->
 
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1600"/>
@@ -3496,7 +3460,7 @@
 			<property name="JumpMaxDistance" value=".8, 1.1"/>
 			<property name="HandItem" value="meleeHandZombieStrong"/>
 			<property name="ExperienceGain" value="1750"/><!-- XP strong -->
-			<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerStrong"/> -->
 
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1500"/>
@@ -4234,10 +4198,10 @@
 			<property name="Mesh" value="SupplyCrate/SupplyCrateEntityPrefab"/>
 			<property name="ModelType" value="SupplyCrate"/>
 			<property name="Faction" value="none"/>
-			<property name="MaxHealth" value="200"/>
+			<property name="MaxHealth" value="100"/>
 			<property name="Weight" value="100"/>
 			<property name="HasRagdoll" value="false"/>
-			<property name="SurfaceCategory" value="wood"/>
+			<property name="SurfaceCategory" value="metal"/>
 			<property name="ParticleOnDeath" value="supply_crate_gib_Prefab"/>
 			<property name="LootListAlive" value="ContrabandCollectionLootContainer"/>
 			<property name="IsEnemyEntity" value="false"/>
@@ -4254,6 +4218,7 @@
 				<!--<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ContrabandCollectionExplodeCrateOnQuestFailBuff"/>-->
 			</effect_group>
 		</entity_class>
+
 	</insertAfter>
 	
 	<!-- *** clear all buffs on entering the game, in case of exit/crash during quest *** -->
@@ -4266,7 +4231,7 @@
 	</insertAfter>
 	
 	<!-- *** give points and coins when zombies are killed *** -->
-	<append xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/effect_group" >
+	<append xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/effect_group">
 		<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t1_courier_rescue_kill_counter" operation="add" value="1"/>
 		<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t2_courier_rescue_kill_counter" operation="add" value="1"/>
 		<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t3_courier_rescue_kill_counter" operation="add" value="1"/>
@@ -4284,6 +4249,9 @@
 			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffRandomWalk"/>
 		</effect_group>
 	</append>
+	
+	<!-- *** set minimal value for loot drops *** -->
+	<set xpath="/entity_classes/entity_class/property[@name='LootDropProb']/@value">0.001</set>
 </configs>
 <!-- *** potential particle effects for zombies *** -->
 <!--use1 with name="TintShaderProperties" value="_TintColor"-->

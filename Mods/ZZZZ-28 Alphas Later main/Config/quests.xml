@@ -1794,6 +1794,7 @@
 			<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="4"/>
 			<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="4"/>
 		</quest>
+		
 		<quest id="tier5_accelerated_annihiliation_reward_quest_silver">
 			<property name="name_key" value="quest_tier5_accelerated_annihiliation_name" param1="name"/>
 			<property name="subtitle_key" value="quest_accelerated_annihiliation_subtitle"/>
@@ -1878,6 +1879,7 @@
 			<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="3"/>
 			<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true"/>
 		</quest>
+		
 		<quest id="tier3_accelerated_annihiliation_reward_quest_gold">
 			<property name="name_key" value="quest_tier3_accelerated_annihiliation_name" param1="name"/>
 			<property name="subtitle_key" value="quest_accelerated_annihiliation_subtitle"/>
@@ -2004,53 +2006,45 @@
 			<property name="difficulty_tier" value="1" param1="difficulty"/>
 			<property name="offer_key" value="contraband_collection_offer" param1="offer"/>
 			<property name="statement_key" value="contraband_collection_statement"/>
-			<property name="response_key" value="contraband_collection_responseT1_2_3"/>
+			<property name="response_key" value="contraband_collection_response"/>
 			<property name="login_rally_reset" value="true"/>
 			<property name="reward_choices_count" value="5"/>
 			<property name="extra_tags" value="" param1="extra_tags"/>
 			<property name="shareable" value="true"/>
 			<property name="completiontype" value="TurnIn"/>
 			<property name="completion_key" value="quest_fetch_completion"/>
-		
 			<objective type="RandomGotoNPC" phase="1">
 				<property name="completion_distance" value="30"/>
 				<property name="distance" value="150-300"/>
 				<property name="nav_object" value="quest"/>
 			</objective>
-		
 			<objective type="RallyPoint">
 				<property name="start_mode" value="Create"/>
 				<property name="phase" value="2"/>
 				<property name="nav_object" value="rally"/>
-				<!-- <property name="allowed_start_hour" value="22"/> -->
-				<!-- <property name="allowed_end_hour" value="1"/> -->
+				<!--<property name="allowed_start_hour" value="22"/>
+				<property name="allowed_end_hour" value="1"/>-->
 			</objective>
-		
 			<objective type="Time" time="4" value="3" phase="3"/>
-		
 			<action type="GameEvent">
 				<property name="event" value="playairdropsound"/>
 				<property name="phase" value="3"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
 			<action type="GameEvent">
 				<property name="event" value="spawn_airdrop"/>
 				<property name="phase" value="3"/>
 				<property name="hidden" value="true"/>
-				<property name="delay" value="3"/>
+				<property name="delay" value="1"/>
 			</action>
-		
 			<objective type="StayWithin">
 				<property name="phase" value="3"/>
-				<property name="radius" value="10"/>
+				<property name="radius" value="20"/>
 			</objective>
-		
 			<objective type="StayWithin">
 				<property name="phase" value="4"/>
-				<property name="radius" value="10"/>
+				<property name="radius" value="20"/>
 			</objective>
-		
 			<objective type="TreasureChest">
 				<property name="phase" value="4"/>
 				<property name="block" value="cntBuriedFoodStashChest" param1="container"/>
@@ -2065,42 +2059,33 @@
 				<property name="hidden" value="true"/>
 				<property name="optional" value="true"/>
 			</objective>
-		
 			<objective type="Time" time="4" value="120" phase="4">
 				<property name="force_phase_finish" value="true"/>
 			</objective>
-		
 			<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="4">
 				<property name="optional" value="true"/>
 			</objective>
-		
 			<action type="GameEvent">
 				<property name="event" value="add_contraband_collection_buff"/>
 				<property name="phase" value="4"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
-			<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="5"/>
-		
+			<!-- <objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="5"/> -->
 			<objective type="ReturnToNPC">
 				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader"/>
 			</objective>
-		
 			<!--<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="6"/>-->
-		
 			<action type="GameEvent">
 				<property name="event_tag" value="Game"/>
 				<property name="event" value="tier1_contraband_collection_remove_satchel_a"/>
 				<property name="phase" value="5"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
 			<objective type="InteractWithNPC">
 				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader"/>
 			</objective>
-		
 			<reward type="Exp" value="100"/>
 			<reward type="Item" id="resourceScrapBooks" value="12"/>
 		
@@ -2123,7 +2108,7 @@
 			<reward type="Item" id="roboticsSkillMagazine" ischosen="true" value="1"/>
 			<reward type="Item" id="vehiclesSkillMagazine" ischosen="true" value="1"/>
 		</quest>
-	
+		
 		<!-- TIER 2 -->
 		<quest id="tier2_contraband_collection">
 			<property name="name_key" value="tier2_contraband_collection_name"/>
@@ -2136,53 +2121,45 @@
 			<property name="difficulty_tier" value="2" param1="difficulty"/>
 			<property name="offer_key" value="contraband_collection_offer" param1="offer"/>
 			<property name="statement_key" value="contraband_collection_statement"/>
-			<property name="response_key" value="contraband_collection_responseT1_2_3"/>
+			<property name="response_key" value="contraband_collection_response"/>
 			<property name="login_rally_reset" value="true"/>
 			<property name="reward_choices_count" value="5"/>
 			<property name="extra_tags" value="" param1="extra_tags"/>
 			<property name="shareable" value="true"/>
 			<property name="completiontype" value="TurnIn"/>
 			<property name="completion_key" value="quest_fetch_completion"/>
-		
 			<objective type="RandomGotoNPC" phase="1">
 				<property name="completion_distance" value="30"/>
 				<property name="distance" value="300-600"/>
 				<property name="nav_object" value="quest"/>
 			</objective>
-		
 			<objective type="RallyPoint">
 				<property name="start_mode" value="Create"/>
 				<property name="phase" value="2"/>
 				<property name="nav_object" value="rally"/>
-				<!-- <property name="allowed_start_hour" value="22"/> -->
-				<!-- <property name="allowed_end_hour" value="1"/> -->
+				<!--<property name="allowed_start_hour" value="22"/>
+				<property name="allowed_end_hour" value="1"/>-->
 			</objective>
-		
 			<objective type="Time" time="4" value="3" phase="3"/>
-		
 			<action type="GameEvent">
 				<property name="event" value="playairdropsound"/>
 				<property name="phase" value="3"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
 			<action type="GameEvent">
 				<property name="event" value="spawn_airdrop"/>
 				<property name="phase" value="3"/>
 				<property name="hidden" value="true"/>
-				<property name="delay" value="3"/>
+				<property name="delay" value="1"/>
 			</action>
-		
 			<objective type="StayWithin">
 				<property name="phase" value="3"/>
-				<property name="radius" value="15"/>
+				<property name="radius" value="20"/>
 			</objective>
-		
 			<objective type="StayWithin">
 				<property name="phase" value="4"/>
-				<property name="radius" value="15"/>
+				<property name="radius" value="20"/>
 			</objective>
-		
 			<objective type="TreasureChest">
 				<property name="phase" value="4"/>
 				<property name="block" value="cntBuriedFoodStashChest" param1="container"/>
@@ -2197,42 +2174,33 @@
 				<property name="hidden" value="true"/>
 				<property name="optional" value="true"/>
 			</objective>
-		
 			<objective type="Time" time="4" value="120" phase="4">
 				<property name="force_phase_finish" value="true"/>
 			</objective>
-		
 			<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="4">
 				<property name="optional" value="true"/>
 			</objective>
-		
 			<action type="GameEvent">
 				<property name="event" value="add_contraband_collection_buff"/>
 				<property name="phase" value="4"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
-			<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="5"/>
-		
+			<!-- <objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="5"/> -->
 			<objective type="ReturnToNPC">
 				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader"/>
 			</objective>
-		
 			<!--<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="6"/>-->
-		
 			<action type="GameEvent">
 				<property name="event_tag" value="Game"/>
 				<property name="event" value="tier2_contraband_collection_remove_satchel_a"/>
 				<property name="phase" value="5"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
 			<objective type="InteractWithNPC">
 				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader"/>
 			</objective>
-		
 			<reward type="Exp" value="150"/>
 			<reward type="Item" id="resourceScrapBooks" value="18"/>
 		
@@ -2255,7 +2223,7 @@
 			<reward type="Item" id="roboticsSkillMagazine" ischosen="true" value="2"/>
 			<reward type="Item" id="vehiclesSkillMagazine" ischosen="true" value="2"/>
 		</quest>
-	
+		
 		<!-- TIER 3 -->
 		<quest id="tier3_contraband_collection">
 			<property name="name_key" value="tier3_contraband_collection_name"/>
@@ -2268,53 +2236,45 @@
 			<property name="difficulty_tier" value="3" param1="difficulty"/>
 			<property name="offer_key" value="contraband_collection_offer" param1="offer"/>
 			<property name="statement_key" value="contraband_collection_statement"/>
-			<property name="response_key" value="contraband_collection_responseT1_2_3"/>
+			<property name="response_key" value="contraband_collection_response"/>
 			<property name="login_rally_reset" value="true"/>
 			<property name="reward_choices_count" value="5"/>
 			<property name="extra_tags" value="" param1="extra_tags"/>
 			<property name="shareable" value="true"/>
 			<property name="completiontype" value="TurnIn"/>
 			<property name="completion_key" value="quest_fetch_completion"/>
-		
 			<objective type="RandomGotoNPC" phase="1">
 				<property name="completion_distance" value="30"/>
 				<property name="distance" value="600-1200"/>
 				<property name="nav_object" value="quest"/>
 			</objective>
-		
 			<objective type="RallyPoint">
 				<property name="start_mode" value="Create"/>
 				<property name="phase" value="2"/>
 				<property name="nav_object" value="rally"/>
-				<!-- <property name="allowed_start_hour" value="22"/> -->
-				<!-- <property name="allowed_end_hour" value="1"/> -->
+				<!--<property name="allowed_start_hour" value="22"/>
+				<property name="allowed_end_hour" value="1"/>-->
 			</objective>
-		
 			<objective type="Time" time="4" value="3" phase="3"/>
-		
 			<action type="GameEvent">
 				<property name="event" value="playairdropsound"/>
 				<property name="phase" value="3"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
 			<action type="GameEvent">
 				<property name="event" value="spawn_airdrop"/>
 				<property name="phase" value="3"/>
 				<property name="hidden" value="true"/>
-				<property name="delay" value="3"/>
+				<property name="delay" value="1"/>
 			</action>
-		
 			<objective type="StayWithin">
 				<property name="phase" value="3"/>
 				<property name="radius" value="20"/>
 			</objective>
-		
 			<objective type="StayWithin">
 				<property name="phase" value="4"/>
 				<property name="radius" value="20"/>
 			</objective>
-		
 			<objective type="TreasureChest">
 				<property name="phase" value="4"/>
 				<property name="block" value="cntBuriedFoodStashChest" param1="container"/>
@@ -2329,42 +2289,33 @@
 				<property name="hidden" value="true"/>
 				<property name="optional" value="true"/>
 			</objective>
-		
 			<objective type="Time" time="4" value="120" phase="4">
 				<property name="force_phase_finish" value="true"/>
 			</objective>
-		
 			<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="4">
 				<property name="optional" value="true"/>
 			</objective>
-		
 			<action type="GameEvent">
 				<property name="event" value="add_contraband_collection_buff"/>
 				<property name="phase" value="4"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
-			<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="5"/>
-		
+			<!-- <objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="5"/> -->
 			<objective type="ReturnToNPC">
 				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader"/>
 			</objective>
-		
 			<!--<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="6"/>-->
-		
 			<action type="GameEvent">
 				<property name="event_tag" value="Game"/>
 				<property name="event" value="tier3_contraband_collection_remove_satchel_a"/>
 				<property name="phase" value="5"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
 			<objective type="InteractWithNPC">
 				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader"/>
 			</objective>
-		
 			<reward type="Exp" value="200"/>
 			<reward type="Item" id="resourceScrapBooks" value="24"/>
 		
@@ -2387,7 +2338,7 @@
 			<reward type="Item" id="roboticsSkillMagazine" ischosen="true" value="3"/>
 			<reward type="Item" id="vehiclesSkillMagazine" ischosen="true" value="3"/>
 		</quest>
-	
+		
 		<!-- TIER 4 -->
 		<quest id="tier4_contraband_collection">
 			<property name="name_key" value="tier4_contraband_collection_name"/>
@@ -2407,46 +2358,38 @@
 			<property name="shareable" value="true"/>
 			<property name="completiontype" value="TurnIn"/>
 			<property name="completion_key" value="quest_fetch_completion"/>
-		
 			<objective type="RandomGotoNPC" phase="1">
 				<property name="completion_distance" value="30"/>
 				<property name="distance" value="1000-2000"/>
 				<property name="nav_object" value="quest"/>
 			</objective>
-		
 			<objective type="RallyPoint">
 				<property name="start_mode" value="Create"/>
 				<property name="phase" value="2"/>
 				<property name="nav_object" value="rally"/>
-				<property name="allowed_start_hour" value="22"/>
-				<property name="allowed_end_hour" value="1"/>
+				<!--<property name="allowed_start_hour" value="22"/>
+				<property name="allowed_end_hour" value="1"/>-->
 			</objective>
-		
 			<objective type="Time" time="4" value="3" phase="3"/>
-		
 			<action type="GameEvent">
 				<property name="event" value="playairdropsound"/>
 				<property name="phase" value="3"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
 			<action type="GameEvent">
 				<property name="event" value="spawn_airdrop"/>
 				<property name="phase" value="3"/>
 				<property name="hidden" value="true"/>
-				<property name="delay" value="3"/>
+				<property name="delay" value="1"/>
 			</action>
-		
 			<objective type="StayWithin">
 				<property name="phase" value="3"/>
-				<property name="radius" value="25"/>
+				<property name="radius" value="20"/>
 			</objective>
-		
 			<objective type="StayWithin">
 				<property name="phase" value="4"/>
-				<property name="radius" value="25"/>
+				<property name="radius" value="20"/>
 			</objective>
-		
 			<objective type="TreasureChest">
 				<property name="phase" value="4"/>
 				<property name="block" value="cntBuriedFoodStashChest" param1="container"/>
@@ -2461,42 +2404,33 @@
 				<property name="hidden" value="true"/>
 				<property name="optional" value="true"/>
 			</objective>
-		
 			<objective type="Time" time="4" value="120" phase="4">
 				<property name="force_phase_finish" value="true"/>
 			</objective>
-		
 			<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="4">
 				<property name="optional" value="true"/>
 			</objective>
-		
 			<action type="GameEvent">
 				<property name="event" value="add_contraband_collection_buff"/>
 				<property name="phase" value="4"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
-			<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="5"/>
-		
+			<!-- <objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="5"/> -->
 			<objective type="ReturnToNPC">
 				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader"/>
 			</objective>
-		
 			<!--<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="6"/>-->
-		
 			<action type="GameEvent">
 				<property name="event_tag" value="Game"/>
 				<property name="event" value="tier4_contraband_collection_remove_satchel_a"/>
 				<property name="phase" value="5"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
 			<objective type="InteractWithNPC">
 				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader"/>
 			</objective>
-		
 			<reward type="Exp" value="250"/>
 			<reward type="Item" id="resourceScrapBooks" value="30"/>
 		
@@ -2519,7 +2453,7 @@
 			<reward type="Item" id="roboticsSkillMagazine" ischosen="true" value="4"/>
 			<reward type="Item" id="vehiclesSkillMagazine" ischosen="true" value="4"/>
 		</quest>
-	
+		
 		<!-- TIER 5 -->
 		<quest id="tier5_contraband_collection">
 			<property name="name_key" value="tier5_contraband_collection_name"/>
@@ -2539,46 +2473,38 @@
 			<property name="shareable" value="true"/>
 			<property name="completiontype" value="TurnIn"/>
 			<property name="completion_key" value="quest_fetch_completion"/>
-		
 			<objective type="RandomGotoNPC" phase="1">
 				<property name="completion_distance" value="30"/>
 				<property name="distance" value="1800-3000"/>
 				<property name="nav_object" value="quest"/>
 			</objective>
-		
 			<objective type="RallyPoint">
 				<property name="start_mode" value="Create"/>
 				<property name="phase" value="2"/>
 				<property name="nav_object" value="rally"/>
-				<property name="allowed_start_hour" value="22"/>
-				<property name="allowed_end_hour" value="1"/>
+				<!--<property name="allowed_start_hour" value="22"/>
+				<property name="allowed_end_hour" value="1"/>-->
 			</objective>
-		
 			<objective type="Time" time="4" value="3" phase="3"/>
-		
 			<action type="GameEvent">
 				<property name="event" value="playairdropsound"/>
 				<property name="phase" value="3"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
 			<action type="GameEvent">
 				<property name="event" value="spawn_airdrop"/>
 				<property name="phase" value="3"/>
 				<property name="hidden" value="true"/>
-				<property name="delay" value="3"/>
+				<property name="delay" value="1"/>
 			</action>
-		
 			<objective type="StayWithin">
 				<property name="phase" value="3"/>
-				<property name="radius" value="25"/>
+				<property name="radius" value="20"/>
 			</objective>
-		
 			<objective type="StayWithin">
 				<property name="phase" value="4"/>
-				<property name="radius" value="25"/>
+				<property name="radius" value="20"/>
 			</objective>
-		
 			<objective type="TreasureChest">
 				<property name="phase" value="4"/>
 				<property name="block" value="cntBuriedFoodStashChest" param1="container"/>
@@ -2593,42 +2519,33 @@
 				<property name="hidden" value="true"/>
 				<property name="optional" value="true"/>
 			</objective>
-		
 			<objective type="Time" time="4" value="120" phase="4">
 				<property name="force_phase_finish" value="true"/>
 			</objective>
-		
 			<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="4">
 				<property name="optional" value="true"/>
 			</objective>
-		
 			<action type="GameEvent">
 				<property name="event" value="add_contraband_collection_buff"/>
 				<property name="phase" value="4"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
-			<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="5"/>
-		
+			<!-- <objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="5"/> -->
 			<objective type="ReturnToNPC">
 				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader"/>
 			</objective>
-		
 			<!--<objective type="FetchKeep" id="cntFetchQuestSatchel" value="1" phase="6"/>-->
-		
 			<action type="GameEvent">
 				<property name="event_tag" value="Game"/>
 				<property name="event" value="tier5_contraband_collection_remove_satchel_a"/>
 				<property name="phase" value="5"/>
 				<property name="hidden" value="true"/>
 			</action>
-		
 			<objective type="InteractWithNPC">
 				<property name="phase" value="5"/>
 				<property name="nav_object" value="return_to_trader"/>
 			</objective>
-		
 			<reward type="Exp" value="300"/>
 			<reward type="Item" id="resourceScrapBooks" value="36"/>
 		

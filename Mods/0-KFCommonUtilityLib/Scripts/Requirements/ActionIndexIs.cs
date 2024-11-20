@@ -10,8 +10,7 @@ public class ActionIndexIs : RequirementBase
         //{
         //    Log.Out($"Action index is not {index} : {(_params.ItemActionData == null ? "null" : _params.ItemActionData.indexInEntityOfAction.ToString())}\n{StackTraceUtility.ExtractStackTrace()}");
         //}
-        var res = (_params.ItemActionData == null && index == 0) || _params.ItemActionData?.indexInEntityOfAction == index;
-        return invert ? !res : res;
+        return (_params.ItemActionData == null && index == 0) || _params.ItemActionData?.indexInEntityOfAction == index;
     }
 
     public override bool ParamsValid(MinEventParams _params)

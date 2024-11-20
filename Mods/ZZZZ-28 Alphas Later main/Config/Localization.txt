@@ -209,7 +209,7 @@ contraband_collection_subtitle,Contraband Collection
 contraband_collection_description,So... I might have setup a delivery from a buddy of mine in the military who's slipped a special package for me into a supply crate - but he can only deliver when a supply crate going missing from the official drops might go unnoticed.  Are you up for heading out and collecting it for me?  Oh and a warning - the package is a bit volatile - be wary of explosions!
 contraband_collection_offer,So... I might have setup a delivery from a buddy of mine in the military who's slipped a special package for me into a supply crate - but he can only deliver when a supply crate going missing from the official drops might go unnoticed.  Are you up for heading out and collecting it for me? Oh and a warning - the package is a bit volatile - be wary of explosions!
 contraband_collection_statement,Supply Drop
-contraband_collection_response,Supply Drop [[DECEA3]Night Only[-]] ([DECEA3]{treasure.distance} {treasure.direction}[-])
+contraband_collection_response,Supply Drop ([DECEA3]{treasure.distance} {treasure.direction}[-])
 contraband_collection_responseT1_2_3,Supply Drop ([DECEA3]{treasure.distance} {treasure.direction}[-])
 tier1_courier_rescue_name,Tier 1 Defend Safehouse
 tier2_courier_rescue_name,Tier 2 Defend Safehouse
@@ -534,6 +534,12 @@ foodTrampStew,Tramp Stew
 foodTrampStewDesc,"A meal fit for a ... well, a tramp.\n\nGood use for cat food though."
 foodVagabondStew,Vagabond Stew
 foodVagabondStewDesc,"No dogs anymore, so someone might as well eat it.\n\nMakes dog food just about edible."
+foodGrilledCarrot,Grilled Carrot
+foodGrilledCarrotDesc,"A grilled carrot. Not the fanciest of foods, but it does taste good."
+foodGrilledOnion,Grilled Onion
+foodGrilledOnionDesc,A much more palatable way to eat onions.
+foodMashedTurnip,Mashed Turnip
+foodMashedTurnipDesc,Easier on your teeth than eating it raw ...
 foodT2-6,Tier 2: MegaCrush
 foodT3-6,Tier 3: Chicken Stew
 foodT3-7,Tier 3: Chicken Miso
@@ -873,6 +879,7 @@ xuiTSBasics,Basics
 xuiAmmoPressBasics,Basics
 
 zombieArlene,Putrid Girl
+zombieArleneCowboy,Putrid Cowgirl
 zombieArleneFeral,Feral Putrid Girl
 zombieArleneFrozen,Frozen Putrid Girl
 zombieArleneMutated,Mutated Putrid Girl
@@ -884,6 +891,7 @@ zombieBikerMutated,Mutated Biker
 zombieBikerRotten,Rotting Biker
 zombieBikerWeak,Weakened Biker
 zombieBoe,Infected Survivor
+zombieBoeCowboy,Infected Cowboy
 zombieBoeFeral,Feral Infected Survivor
 zombieBoeFrozen,Frozen Infected Survivor
 zombieBoeMutated,Mutated Infected Survivor
@@ -896,11 +904,13 @@ zombieBurntRotten,Rotting Burn Victim
 zombieBurntRadiated,Radiated Burn Victim
 zombieBurntFeral,Feral Burn Victim
 zombieBurntWeak,Weakened Burn Victim
+zombieBusinessManCowboy,Cowboy Businessman
 zombieBusinessManFrozen,Frozen Businessman
 zombieBusinessManMutated,Mutated Businessman
 zombieBusinessManRotten,Rotting Businessman
 zombieBusinessManWeak,Weakened Businessman
 zombieDarlene,Decayed Mother
+zombieDarleneCowboy,Decayed Cowgirl
 zombieDarleneFeral,Feral Mother
 zombieDarleneFrozen,Frozen Mother
 zombieDarleneMutated,Mutated Mother
@@ -917,6 +927,7 @@ zombieFatHawaiianMutated,Mutated Tourist
 zombieFatHawaiianRotten,Rotting Tourist
 zombieFatHawaiianWeak,Weakened Tourist
 zombieFemaleFat,Hungry Zombie
+zombieFemaleFatCowboy,Hungry Cowgirl
 zombieFemaleFatFeral,Feral Hungry Zombie
 zombieFemaleFatFrozen,Frozen Hungry Zombie
 zombieFemaleFatMutated,Mutated Hungry Zombie
@@ -927,6 +938,7 @@ zombieJanitorFrozen,Frozen Janitor
 zombieJanitorMutated,Mutated Janitor
 zombieJanitorRotten,Rotting Janitor
 zombieJanitorWeak,Weakened Janitor
+zombieJoeCowboy,Festering Cowboy
 zombieJoe,Festering Cadaver
 zombieJoeFrozen,Frozen Cadaver
 zombieJoeMutated,Mutated Cadaver
@@ -949,6 +961,7 @@ zombieMaleHazmatRotten,Rotting Hazmat
 zombieMaleHazmatWeak,Weakened Hazmat
 zombieMaleMutatedHazmatLootBag,Dropped Hazmat Loot
 zombieMarlene,Departed Woman
+zombieMarleneCowboy,Departed Cowgirl
 zombieMarleneFrozen,Frozen Departed Woman
 zombieMarleneMutated,Mutated Departed Woman
 zombieMarleneRotten,Rotting Departed Woman
@@ -957,6 +970,7 @@ zombieMarleneFeral,Feral Departed Woman
 zombieMarleneWeak,Weakened Departed Woman
 zombieMoe,Bloated Walker
 zombieMoeFrozen,Frozen Walker
+zombieMoeCowboy,Cowboy Walker
 zombieMoeMutated,Mutated Walker
 zombieMoeRotten,Rotting  Walker
 zombieMoeRadiated,Radiated Walker
@@ -968,6 +982,7 @@ zombieNurseFrozen,Frozen Nurse
 zombieNurseMutated,Mutated Nurse
 zombieNurseRotten,Rotting Nurse
 zombieNurseWeak,Weakened Nurse
+zombiePartyGirlCowboy,Party Cowgirl
 zombiePartyGirlFrozen,Frozen Party Girl
 zombiePartyGirlMutated,Mutated Party Girl
 zombiePartyGirlRotten,Rotting Party Girl
@@ -989,6 +1004,7 @@ zombieSpiderMutated,Mutated Spider
 zombieSpiderRotten,Rotting Spider
 zombieSpiderWeak,Weakened Spider
 zombieSteve,Reanimated Corpse
+zombieSteveCowboy,Reanimated Cowboy
 zombieSteveFeral,Feral Reanimated Corpse
 zombieSteveRadiated,Radiated Reanimated Corpse
 zombieSteveWeak,Weakened Reanimated Corpse
@@ -1002,6 +1018,7 @@ zombieSteveCrawlerWeak,Weakened Crawler
 zombieSteveFrozen,Frozen Reanimated Corpse
 zombieSteveMutated,Mutated Reanimated Corpse
 zombieSteveRotten,Rotting Reanimated Corpse
+zombieTomClarkCowboy,Cowboy Tom Clark
 zombieTomClarkFrozen,Frozen Tom Clark
 zombieTomClarkMutated,Mutated Tom Clark
 zombieTomClarkRotten,Rotting Tom Clark
@@ -1011,7 +1028,9 @@ zombieUtilityWorkerMutated,Mutated Utility Worker
 zombieUtilityWorkerRotten,Rotting Utility Worker
 zombieUtilityWorkerWeak,Weakened Utility Worker
 zombieWightMutated,Mutated Wight
+zombieWightFeralCowboy,Cowboy Wight
 zombieYo,Walking Carcass
+zombieYoCowboy,Cowboy Carcass
 zombieYoFeral,Feral Carcass
 zombieYoRadiated,Radiated Carcass
 zombieYoFrozen,Frozen Carcass

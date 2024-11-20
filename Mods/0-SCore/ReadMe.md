@@ -20,6 +20,253 @@ Direct Download to the 0-SCore.zip available on gitlab mirror: https://github.co
 ### Change Logs
 
 [ Change Log ]
+Version:
+	[ SpawnCube2SDX ]
+		- Added an additional check to see if an entity has already spawned, and blocks further spawns.
+
+	[ Challenges ]
+		- Fixed an issue with Craft With Ingredient, where an item had no recipe, causing a null reference.
+
+	[ EntityAliveSDX ]
+		- Removed a debug log about Weapon not found, but was actually there.
+
+	[ Take And Replace ]
+		- Added a new property that will trigger the drop event Harvest.
+       		<property name="HarvestOnPickUp" value="true" />
+		- If this property is set to true, the following drop event style will be triggered:
+            <drop event="Harvest" name="resourceCrushedSand" count="9" tag="oreWoodHarvest"/>
+            <drop event="Harvest" name="resourceClayLump" count="9" tag="oreWoodHarvest"/>
+		- The block itself will only do the harvest; it will not give you the PickUpValue back.
+		- By default, Harvest On pick up is false.
+
+Version: 1.1.42.847
+	[ ConfigurationBlock ]
+		- Added new section called "AdvancedQuests" to allow more control over quests.
+
+	[ Fire Manager ]
+		- Added a null check for the NetPackage for AddFirePosition
+		- Removed extra checks that may have been block fire from being cleared on quest reset
+
+	[ GotoPOISDX ]
+		- Added new Property block in ConfigurationBlock called AdvancedQuests
+		- New Property value in AdvancedQuests block in ConfigurationBlock for re-using quest locations
+		- If "ReusePOILocations" is set to true, it will not filter quest locations based on if they were already visited.
+
+	[ SpawnCube2SDX ]
+		- Added potential fix for duplicate spawns.
+
+Version: 1.1.36.1627
+	[ Client Kill Event ]
+		- Changed ClientKill() patch to be a Prefix vs Postfix to fix an issue where it'd fire multiple times
+			- ie, chopping up a dead body would count as a kill for each hit.
+
+	[ Fire Manager ]
+		- Fixed an issue where a molotov would not trigger the OnStartFire
+		- This caused a molotov not to trigger the Start A Fire Challenge
+		- Fixed an issue with the NetPackage for calling AddBlock instead of Add(), skipping player assigning
+			- Fixes an issue with the challenge Fire Started on dedicated servers.
+
+	[ Remote Crafting ]
+		- Added an additional property to AdvancedRecipes for Checking if Enemy is nearby
+		- BlockOnNearbyEnemies is now available in both BlockUpgradeRepair and AdvancedRecipes.
+				<property name="BlockOnNearbyEnemies" value="false"/>
+		- Previously, this toggle was defined in BlockUpgradeRepair only, but used to block crafting as well.
+
+	[ Error Handling ]
+		- Default is false, these errors are NOT handled. Change to true to use them, under ErrorHandling.
+
+		- Added a ConfigBlock entry for a null reference in TraderData.ReadInventoryData()
+			- This error would be thrown sometimes when a POI was being reset, and a workstation / vending machine
+			went from working / non-working. 
+			<property name="TraderDataReadInventory" value="false" />
+
+		- Added a ConfigBlock entry for TileEntity.CopyFrom()
+			- This error could occur during POI resets. Base class for CopyFrom throws an exception. This blocks it.
+				<property name="TileEntityCopyFrom" value="false" />
+			- When set to true, it will also log an entry in the log file saying which block its causing on.
+			- It may be a sign the block is not configured correctly.
+                Debug.Log($"ErrorHandling::TileEntityCopyFrom::Prefix:: {_other.blockValue.Block.GetBlockName()}. No Defined CopyFrom()");
+
+
+Version: 1.1.28.1028
+	[ Farming ]
+		- Added "MuteSound" to the BlockWaterSourceSDX to turn off sprinkler sound.
+			<property name="MuteSound" value="true" />
+		- Default is false, the sound is not muted.
+
+		- Added GetWaterRange(), RequireWater(), and WillWilt() public methods as part of the BlockPlantGrowingSDX
+			- No functionality change, just makes it easier for others to read values through code.
+
+Version: 1.1.22.1530
+	[ Challenges ]
+		- Added a description_override attribute to completely over-ride the Localization key to the following Challenges:
+		- if description_override= does not exist, a generated Localized entry will be used.
+			- ChallengeObjectiveBlockDestroyed
+			- ChallengeObjectiveBlockUpgrade
+			- ChallengeObjectiveCompleteQuestStealth
+			- ChallengeObjectiveCraftWithIngredients
+			- ChallengeObjectiveCraftWithTags
+			- ChallengeObjectiveCVar
+			- ChallengeObjectiveDecapitation
+			- ChallengeObjectiveEnterPOI
+			- ChallengeObjectiveGatherTags
+			- ChallengeObjectiveKillWithItem
+			- ChallengeObjectiveStealthKillStreak
+
+	[ Events ]
+		- Fixed an issue with OnBuffAdded not parsing multiple buffs
+		- Removed Debug Log
+	
+
+Version: 1.1.21.1123
+	[ Challenges ]
+		- Fixed an issue where Block Upgrade did not do properly localization
+		- Fixed an issue where the WearTags was not working properly on mods
+
+		- Added a description_override attribute to completely over-ride the Localization key to the following Challenges:
+		- if description_override= does not exist, a generated Localized entry will be used.
+			- ChallengeObjectiveHarvest
+			- ChallengeObjectiveWearTags
+			- ChallengeObjectiveCraftWithTags
+			- ChallengeObjectiveCraftWithIngredient
+
+Version: 1.1.20.1108
+
+	[ Challenges ]
+		- Expanded support for WearTags Objective to support installable_tags and modifier_tags.
+             <objective type="WearTags,SCore" item_tags="armorHead"/>
+             <objective type="WearTags,SCore" item_mod="modGunBarrelExtender"/>
+             <objective type="WearTags,SCore" installable_tags="turretRanged"/>
+             <objective type="WearTags,SCore" modifier_tags="modGunBarrelExtender"/>
+
+Version: 1.1.18.1635
+
+	[ Documentation ]
+		- Added some Documentation on Challenges and MinEvents
+
+	[ OnBuffAdded Event ]
+		- Added a if buff is null to the OnBuffAdded event, silently failing if the requested buff does not exist.
+
+	[ ObjectiveBuffSDX Quest Objective ]
+		- Added a if buff is null check, silently failing if the requested buff does not exist.
+
+	[ Min Events ]
+		- Found a few MinEvents that were combined in a single file.
+		- Seperated so that each MinEvent is in its own file.
+		- No changes necessary. This is just a clean up.
+
+	[ Challenges ]
+		- WearTags : Takes an item_tags, rather than an Item name.
+			- Also searches for the tag in Mod / Cosmectic slots.
+
+			Default Localization Key: challengeObjectiveWearTags
+            <objective type="WearTags,SCore" item_tags="armorHead"/>
+
+		- GatherTags : Takes an item_tags instead.
+			Default Localization Key: challengeObjectiveGatherTags
+            <objective type="GatherTags, SCore" item_tags="junk" count="10"/>
+
+		- Craft With Tags
+			Default Localization Key: challengeObjectiveCraftWithTags
+			<objective type="CraftWithTags, SCore" count="2" item_tags="tag01"/>
+
+		- Get CVar
+			Default Localization Key: challengeObjectiveOnCVar
+			<objective type="CVar, SCore" cvar="myCVar" count="20" description_key="onCVar" />
+
+	[ Nexus Release ]
+		- Fixed an issue where the zip files were not in the correct format for Vortex.
+ 
+	[ Block Ground Patch ]
+		- There is a bug with the PathingCubes and quickly moving into their chunk while being loaded.
+		- Throws a Block.GroundAlign null error because there is no ebcd (yet?)
+			NullReferenceException
+				at (wrapper managed-to-native) UnityEngine.Component.get_gameObject(UnityEngine.Component)
+				at Block.GroundAlign (BlockEntityData _data) [0x0001f] in <e8e43063270440388d2e6b7642da1a62>:0
+				at ChunkManager.GroundAlignFrameUpdate () [0x00028] in <e8e43063270440388d2e6b7642da1a62>:0
+				at GameManager.gmUpdate () [0x00393] in <e8e43063270440388d2e6b7642da1a62>:0
+				at GameManager.Update () [0x00000] in <e8e43063270440388d2e6b7642da1a62>:0
+
+Version: 1.1.10.1307
+	[ Food Spoilage ]
+		- Fixed an issue when using PreserveBonus -99, where a full stack would instant spoil.
+
+Version: 1.1.9.2008
+	[ Faction Manager ]
+		- Added a Harmony Patch to GetFactionByName() to catch for invalid factions.
+		- If a faction is requested from an entityclass, but it's not defined in npc.xml,
+			the undead faction is used.
+		- A message in the console is printed when a faction was not found.
+
+	[ POI Error Check ]
+		- Added in two Harmony patches, gated by two new blocks.xml entry.
+		- Under the ErrorHandling section:
+				EnablePoolBlockEntityTransformCheck
+				LogPoolBlockEntityTransformCheck
+		- Some POis were throwing errors about block entity's without a proper transform:
+			BlockEntity {0} at pos {1} null transform!
+			2: {0} on pos {1} with empty transform/gameobject!
+		- These were being thrown in the Chunk class.
+		- These two patches block that error from being thrown, and silently returns.
+		- The LogPoolBlockEntityTransformCheck will throw an error, but it'll tell you which block it's failing at.
+		- Both these should be false, unless you are specifically having a problem
+			
+	[ TileEntitySign Gif ]
+		- Fixed an issue where some older signs did not have the correct amount of transforms
+		- ie, pathing cubes
+
+	[ Challenges ]
+		- Fixed an issue with the StartAFire / Extinguish Fire where any entity would contribute
+
+	[ Fire Manager ]
+		- Updated the Fire Manager's StartFire / ExtinguishFire event takes an entity ID.
+
+Version: 1.1.4.1542  
+	[ Entity Targetting ]
+		- Updated the code for the ItemItemAction to first check if it's hitting an EntityAlive
+		- Then checks if the entity alive is dead. If so, let the damage through.
+		- If it's an EntityAlive, and it's alive, do the faction checks.
+
+Version: 1.1.4.1015
+	[ SCore Options ]
+		- Hide SCore Options window when in prefab editor
+
+	[ ConfigBlock ]
+		- Pathing cube reverted to 1,1,1 multidim.
+
+	[ Challenges ]
+		- Fixed a typo in the comment section of StealthKill showing an example.
+
+	[ EntityAliveSDX ]
+		- Changed the requirements for when to check if an EntityAliveSDX is near a campfire.
+		- Moved UpdateBlockStatusEffect from EntityAliveSDX to EntityUtilities
+
+	[ Entity Alive Patch ]
+		- Added a patch to EntityAlive's OnUpdateLive()
+		- If an entity has this cvar "UpdateBlockStatusEffect" with a value of non-0, then it will process the BlockStatus Effect
+		- This means it'll pick up buffs and effects from blocks like BlockAoE.
+
+	[ One Block Crouch ]
+		- Exposed the crouch height modifier to xml, with the default being still 0.49 in code, and through xml.
+		- Any numbers below 0.10 will be set to 0.10.
+		- No max threshold is protected.
+		- This is adjusted in the AdvancedPlayerFeatures's section of the Config Block called PhysicsCrouchHeightModifier
+		    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedPlayerFeatures']/property[@name='PhysicsCrouchHeightModifier']/@value">0.45</set>
+
+	[ Merged in Raycast change from khzmusik ]
+		From Commit Notes: 
+		- Disable ray hit events when entities can't be damaged
+		- This is a Harmony patch on `ItemActionDynamic.hitTarget` to disable the firing of "on[SelfPrimary|Secondary]Action[Ray|Graze]Hit" events 
+			if the holding entity can't damage the target entity.
+
+		- This is the cause of the stun baton "shock" issue with friendly NPCs. The stun baton itself wasn't hitting or doing damage, but the 
+			baton was still charging, and when fully charged, it still shocked the friendly NPC.
+
+		- I also refactored the logic to determine when an entity should use faction targeting. It was already repeated in two 
+			places in the code, and I would need to repeat it a third time in my patch.
+		- I did test to make sure that there were no regressions. I tested with a friendly NPC (Baker), and enemy NPC (Harley), and animal (bear), 
+			and zombies (mainly Boe). I made sure that I could still shock everyone except the Baker, and that when they attacked each other, they did damage.
+
 Version: 1.0.94.1336
 	[ Challenges ]
 		- Created an Interface for challenges to help future development work

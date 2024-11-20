@@ -70,6 +70,11 @@
 		<lootgroup name="groupBasic" loot_quality_template="qualBasicTemplate">
 			<item name="meleeToolFarmT2IronHoe"/>
 		</lootgroup>
+		
+		<!-- *** lootgroup for solar banks *** -->
+		<lootgroup name="groupSolarBank" loot_quality_template="qualBaseTemplate">
+			<item name="solarCell"/>
+		</lootgroup>
 	</insertafter>
 	
 	<append xpath="//lootgroup[@name='groupToolsTiered']">
@@ -265,9 +270,9 @@
 		<item name="modBicycleStaminaSaverSchematic" loot_prob_template="ProbT0"/>
 	</append>
 	
-	<append xpath="/lootcontainers/lootgroup[@name='groupJunk02']">
-		<item name="meleeToolFarmT2IronHoeSchematic" loot_prob_template="ProbT0"/>
-	</append>
+	<!-- <append xpath="/lootcontainers/lootgroup[@name='groupJunk02']"> -->
+	<!-- <item name="meleeToolFarmT2IronHoeSchematic" loot_prob_template="ProbT0"/> -->
+	<!-- </append> -->
 	
 	<append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralCommon']">
 		<item name="meleeToolFarmT2IronHoeSchematic" loot_prob_template="ProbT0"/>
@@ -279,20 +284,20 @@
 	
 	<!-- *** mods *** -->
 	<append xpath="//lootgroup[@name='modMeleeT3']">
-		<item name="modGunMeleeNiCdBattery" loot_prob_template="ProbT2Cap"/>
-		<item name="modGunMeleeFlammableOil" loot_prob_template="ProbT2Cap"/>
-		<item name="modGunMeleeLiquidNitrogen" loot_prob_template="ProbT2Cap"/>
+		<item name="modGunMeleeNiCdBattery" loot_prob_template="veryLowDelayed"/>
+		<item name="modGunMeleeFlammableOil" loot_prob_template="veryLowDelayed"/>
+		<item name="modGunMeleeLiquidNitrogen" loot_prob_template="veryLowDelayed"/>
 	</append>
 	
 	<append xpath="//lootgroup[@name='modGunMeleeT3']">
-		<item name="modGunMeleeBlessedMetal" loot_prob_template="ProbT2Cap"/>
+		<item name="modGunMeleeBlessedMetal" loot_prob_template="veryLowDelayed"/>
 	</append>
 	
 	<append xpath="//lootgroup[@name='modGunT3']">
-		<item name="modGunMeleeNiCdBattery" loot_prob_template="ProbT2Cap"/>
-		<item name="modGunMeleeFlammableOil" loot_prob_template="ProbT2Cap"/>
-		<item name="modGunMeleeLiquidNitrogen" loot_prob_template="ProbT2Cap"/>
-		<item name="modGunBrassCatcher"/>
+		<item name="modGunMeleeNiCdBattery" loot_prob_template="veryLowDelayed"/>
+		<item name="modGunMeleeFlammableOil" loot_prob_template="veryLowDelayed"/>
+		<item name="modGunMeleeLiquidNitrogen" loot_prob_template="veryLowDelayed"/>
+		<item name="modGunBrassCatcher" loot_prob_template="veryLowDelayed"/>
 	</append>
 	
 	<!-- *** despair meds in loot *** -->
@@ -452,6 +457,10 @@
 		<lootcontainer name="cardboardboxloot" count="0,1" size="6,2" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="qualBaseTemplate">
 			<item group="groupJunk"/>
 		</lootcontainer>
+		
+		<lootcontainer name="collapsedSolarBank" count="0,1" size="3,2" sound_open="open_vending" sound_close="close_vending" loot_quality_template="qualBaseTemplate">
+			<item group="groupSolarBank"/>
+		</lootcontainer>
 	</insertbefore>
 	
 	<!-- *** new vehicle parts *** -->
@@ -494,13 +503,13 @@
 	<set xpath="//lootgroup//item[contains(@name,'concrete')]/@name">resourceCement</set>
 	
 	<!-- *** Contraband Collection Loot *** -->
-	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAirDrop']">
+	<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAirDrop']">		
 		<lootgroup name="ContrabandCollectionLootGroup" count="all">
 			<item name="cntFetchQuestSatchel" count="1"/>
 			<item name="questRewardT1SkillMagazineBundle" count="1"/>
-			<item group="groupAirDrop01" count="1"/>
-			<item group="groupAirDrop02" count="1"/>
-			<item group="groupAirDrop03" count="1"/>
+			<item group="groupAirDrop01" count="1" loot_prob_template="low"/>
+			<item group="groupAirDrop02" count="1" loot_prob_template="veryLow"/>
+			<item group="groupAirDrop03" count="1" loot_prob_template="low"/>
 		</lootgroup>
 	
 		<lootcontainer name="ContrabandCollectionLootContainer" count="1" size="8,4" destroy_on_close="true" sound_open="SupplyDrops/open_supply_crate" sound_close="SupplyDrops/close_supply_crate" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true">

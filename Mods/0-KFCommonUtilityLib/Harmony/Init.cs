@@ -59,8 +59,6 @@ public class CommonUtilityLibInit : IModApi
         CustomEnums.PartialReloadCount = CustomEffectEnumManager.RegisterOrGetEnum<PassiveEffects>("PartialReloadCount");
 
         CustomEnums.CustomTaggedEffect = CustomEffectEnumManager.RegisterOrGetEnum<PassiveEffects>("CustomTaggedEffect");
-        CustomEnums.KickDegreeHorizontalModifier = CustomEffectEnumManager.RegisterOrGetEnum<PassiveEffects>("KickDegreeHorizontalModifier");
-        CustomEnums.KickDegreeVerticalModifier = CustomEffectEnumManager.RegisterOrGetEnum<PassiveEffects>("KickDegreeVerticalModifier");
     }
 }
 

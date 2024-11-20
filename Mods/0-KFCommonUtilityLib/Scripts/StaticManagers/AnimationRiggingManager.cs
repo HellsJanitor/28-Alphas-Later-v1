@@ -118,8 +118,7 @@ namespace KFCommonUtilityLib.Scripts.StaticManagers
                 }
                 //vroid workaround
                 //it seems to use a separate animator for vroid model and does not replace CharacterBody
-                //controller.UpdateInt(AvatarController.weaponHoldTypeHash, -1, false);
-                controller.FPSArms.Animator.Play("idle", 0, 0f);
+                controller.UpdateInt(AvatarController.weaponHoldTypeHash, -1, false);
                 foreach (var hash in resetHashes)
                 {
                     AnimationRiggingPatches.VanillaResetTrigger(controller, hash, false);
