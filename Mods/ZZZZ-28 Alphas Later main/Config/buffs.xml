@@ -2568,10 +2568,15 @@
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="bloodmoonboss" operation="set" value="randomint(1,20)"/>
 			</effect_group>
 			
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="bloodmoonboss" operation="Equals" value="1"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="SetNavObject" nav_object="twitch_vote_boss" add="true"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffFinish" action="SetNavObject" nav_object="twitch_vote_boss" add="true"/> -->
+			<!-- </effect_group> -->
+			
 			<effect_group>
 				<requirement name="CVarCompare" cvar="bloodmoonboss" operation="Equals" value="1"/>
-				<triggered_effect trigger="onSelfBuffStart" action="SetNavObject" nav_object="twitch_vote_boss" add="true"/>
-				<triggered_effect trigger="onSelfBuffFinish" action="SetNavObject" nav_object="twitch_vote_boss" add="true"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/SmokyFire.unity3d?Effect2" local_offset="0,0,0" local_rotation="0,0,0" local_scale="1,1,1" parent_transform="Head"/>
 			</effect_group>
 			
 			<effect_group>
