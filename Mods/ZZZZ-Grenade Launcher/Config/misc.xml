@@ -1,5 +1,0 @@
-<HellsJanitor>
-	<append xpath="/iteminfo/animation">
-		<hold_type id="86" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true"/>		<!-- 86 Grenade Launcher -->
-	</append>
-</HellsJanitor>

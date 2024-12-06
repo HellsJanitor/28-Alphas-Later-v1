@@ -2276,13 +2276,13 @@
 				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8,.2" duration="0,6"/>
 				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.8,.2" duration="0,6"/>
 				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Assets/28al_ps_frosty.unity3d?PS_Frosty_Prefab" local_offset="0,0,0" local_rotation="0,180,0" local_scale="1,1,1" parent_transform="Hips"/>
-				<triggered_effect trigger="onSelfEnteredGame" action="AttachPrefabToEntity" prefab="#@modfolder:Assets/28al_ps_frosty.unity3d?PS_Frosty_Prefab" local_offset="0,0,0" local_rotation="0,180,0" local_scale="1,1,1" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/particles.unity3d?PS_Frosty_Prefab" parent_transform="LOD0" shape_mesh="true"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/particles.unity3d?PS_Frosty_Prefab" parent_transform="LOD0" shape_mesh="true"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="buff_burn_extinguish"/>
 
-				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" prefab="PS_Frosty_Prefab"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="PS_Frosty_Prefab"/>
-				<triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="PS_Frosty_Prefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="PS_Frosty_Prefab"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="PS_Frosty_Prefab"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="PS_Frosty_Prefab"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="buff_burn_extinguish"/>
 				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="buff_burn_extinguish"/>
 			</effect_group>
@@ -2574,9 +2574,14 @@
 				<!-- <triggered_effect trigger="onSelfBuffFinish" action="SetNavObject" nav_object="twitch_vote_boss" add="true"/> -->
 			<!-- </effect_group> -->
 			
+			<!-- <effect_group> -->
+				<!-- <requirement name="CVarCompare" cvar="bloodmoonboss" operation="Equals" value="1"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/SmokyFire.unity3d?Effect2" local_offset="0,0,0" local_rotation="0,0,0" local_scale="1,1,1" parent_transform="Head"/> -->
+			<!-- </effect_group> -->
+			
 			<effect_group>
 				<requirement name="CVarCompare" cvar="bloodmoonboss" operation="Equals" value="1"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/SmokyFire.unity3d?Effect2" local_offset="0,0,0" local_rotation="0,0,0" local_scale="1,1,1" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/particles.unity3d?Effect2_Shape" parent_transform="Head"/>
 			</effect_group>
 			
 			<effect_group>

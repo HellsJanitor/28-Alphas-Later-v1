@@ -1,0 +1,275 @@
+<FranticDan>
+<append xpath="/items">
+
+<item name="gunExplosivesT2GrenadeLauncher">
+
+	<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,launcher,attPerception,perkDemolitionsExpert,canHaveCosmetic,barrelAttachments,noSilencer,sideAttachments,drumMagazine,explosivesSkill"/>
+	<property name="DisplayType" value="rangedLauncher"/>
+	<property name="HoldType" value="76"/>
+	<!-- <property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Auto Shotgun/autoShotgunPrefab.prefab"/> -->
+	<!-- <property name="Meshfile" value="#@modfolder:Resources/gunGrenadeLauncherNew.unity3d?Grenade-gun_Mesh"/> -->
+	<property name="Meshfile" value="#@modfolder:Resources/grenadeLauncher.unity3d?Hands_Grenade_gun_m.prefab"/>
+	<property name="CustomIcon" value="grenadeLauncher"/>
+	<property name="DescriptionKey" value="Launcherdesc"/>
+	<property name="Material" value="MRocketLauncherParts"/>
+	<!-- <property name="TintColor" value="77, 77, 51"/> -->
+	<property name="Weight" value="1"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="weapon_jam"/>
+	<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+	<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+	<property name="Sound_Sight_In" value="launcher_sight_in"/>
+	<property name="Sound_Sight_Out" value="launcher_sight_out"/>
+	<property name="Group" value="Ammo/Weapons,Ranged Weapons"/>
+	<property name="RepairExpMultiplier" value="10.8"/>
+	<property name="EconomicValue" value="1200"/>
+	<property name="UnlockedBy" value="craftingExplosives"/>
+	<property name="ShowQuality" value="true"/>
+	<property name="SoundUnholster" value="weapon_unholster"/>
+	<property name="SoundHolster" value="weapon_holster"/>
+	<property name="SoundPickup" value="rpg_grab"/>
+	<property name="SoundPlace" value="rpg_place"/>
+	<!-- <property name="TakeOverReloadTime" value="true"/> -->
+
+	<property class="Action0">
+		<property name="Class" value="Launcher"/>
+		<property name="Delay" value=".8"/> <!-- obsolete if rounds per minute exists -->
+		<!-- <property name="Range" value="200"/> -->
+		<property name="Magazine_items" value="ammoGrenadeExplosive,ammoGrenadeAcid,ammoGrenadeFlame"/>
+		<property name="Reload_time" value="1.1"/>
+		<!-- <property name="Sound_start" value="m136_fire"/> -->
+		<property name="Sound_start" value="m136_reload_part_02"/>
+		<property name="Sound_repeat" value=""/>
+		<property name="Sound_end" value=""/>
+		<property name="Sound_empty" value="dryfire"/>
+		<!-- <property name="Sound_reload" value="GrenadeLauncher_reload"/> -->
+		<property name="AutoReload" value="false"/>
+		<property name="Particles_muzzle_fire" value="gunfire_autoshotgun"/>
+		<property name="Particles_muzzle_fire_fpv" value="gunfire_autoshotgun_fpv"/>
+		<property name="Particles_muzzle_smoke" value="nozzlesmoke_m136"/>
+		<property name="Particles_muzzle_smoke_fpv" value="nozzlesmoke_m136"/>
+		<property name="ScopeOffset" value="-.00062,.088,.065"/>
+		<property name="SideOffset" value="0,0,0"/>
+		<property name="BarrelOffset" value="0,0,0"/>
+		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+	        <property name="triggerEffectTriggerShootDualsense" value="PistolShoot"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="Zoom"/>
+	        <property name="triggerEffectTriggerPullDualsense" value="PistolZoom"/>
+	</property>
+	<effect_group name="gunExplosivesT2GrenadeLauncher" >
+		<passive_effect name="ReloadSpeedRatioFPV2TPV" operation="base_set" value=".8">
+			<requirement name="RoundsInMagazine" operation="LTE" value="0"/>
+		</passive_effect>
+		<passive_effect name="ReloadSpeedRatioFPV2TPV" operation="base_set" value=".8">
+			<requirement name="RoundsInMagazine" operation="GT" value="0"/>
+		</passive_effect>
+		<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkDemolitionsExpert"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="70" tags="perkDemolitionsExpert"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkDemolitionsExpert"/> <!-- random effective rng -->
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkDemolitionsExpert"/> <!-- tier bonus -->
+		<passive_effect name="ExplosionEntityDamage" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/> <!-- random EntityDmg -->
+		<passive_effect name="ExplosionEntityDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkDemolitionsExpert"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkDemolitionsExpert"/> <!-- tier bonus -->
+		<passive_effect name="ExplosionBlockDamage" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/> <!-- random BlockDmg -->
+		<passive_effect name="ExplosionBlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkDemolitionsExpert"/> <!-- tier bonus -->
+		<!-- <passive_effect name="RoundsPerMinute" operation="base_set" value="75" tags="perkDemolitionsExpert"/> -->
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDemolitionsExpert"/>
+		<passive_effect name="MagazineSize" operation="base_set" value="6" tags="perkDemolitionsExpert"/>
+		<!-- <passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".8" tags="perkDemolitionsExpert"/> -->
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1" tags="perkDemolitionsExpert"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1" tags="perkDemolitionsExpert"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".15" tags="perkDemolitionsExpert"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkDemolitionsExpert"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkDemolitionsExpert"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2" tags="perkDemolitionsExpert"/>
+
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="2" tags="perkDemolitionsExpert"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="2" tags="perkDemolitionsExpert"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.5" tags="perkDemolitionsExpert"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".5" tags="perkDemolitionsExpert"/>
+
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2.2" tags="perkDemolitionsExpert"/>
+		<passive_effect name="WeaponHandling" operation="base_set" value=".4" tags="perkDemolitionsExpert"/>
+
+		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6" tags="perkDemolitionsExpert"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDemolitionsExpert"/>
+		
+		<triggered_effect trigger="onSelfPrimaryActionStart" action="AnimatorSetBool" target="self" property="shoot" value="true"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AnimatorSetBool" target="self" property="shoot" value="false"/>
+		
+		<!-- <triggered_effect trigger="onReloadStart" action="AnimatorSetBool" target="self" property="reload" value="true"/> -->
+		<!-- <triggered_effect trigger="onReloadStop" action="AnimatorSetBool" target="self" property="reload" value="false"/> -->
+	</effect_group>
+</item>
+
+<item name="ammoGrenadeExplosive">
+	<property name="Tags" value="ammo,perkDemolitionsExpert"/>
+	<property name="DisplayType" value="ammoGrenadeExplosive"/>
+	<property name="CustomIcon" value="grenade-shells"/>
+	<property name="DescriptionKey" value="GrenadeExplosiveDesc"/>
+	<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Grenade/GrenadePrefab.prefab"/>
+	<!-- <property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/> -->
+	<property name="HoldType" value="45"/>
+	<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Mlead_scrap"/>
+	<property name="EconomicValue" value="125"/>
+	<property name="UnlockedBy" value="craftingExplosives"/>
+	<property name="Weight" value="0"/>
+	<property name="Stacknumber" value="60"/>
+	<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+	<property name="SoundPickup" value="ammocan_grab"/>
+	<property name="SoundPlace" value="ammocan_place"/>
+	
+	<property class="Action1">
+		<property name="Class" value="Projectile"/>
+		<property name="Explosion.BlockDamage" value="10"/>
+		<property name="Explosion.EntityDamage" value="365"/>
+		<property name="Explosion.RadiusBlocks" value="4"/> <!-- damage radius for blocks -->
+		<property name="Explosion.RadiusEntities" value="5"/> <!-- damage radius for entities -->
+		<property name="Explosion.ParticleIndex" value="13"/> <!-- which Prefab/particle is used -->
+		<property name="Explosion.DamageBonus.water" value="0"/>
+		<property name="Gravity" value="-15"/>
+		<property name="FlyTime" value=".2"/>
+		<property name="LifeTime" value="20"/>
+
+	</property>
+	<effect_group name="ammoGrenadeExplosive" tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="10" />
+		<passive_effect name="EntityDamage" operation="base_set" value="50" />
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="15" tags="perkDemolitionsExpert"/>
+		<display_value name="dExRadius" value="2.5"/>
+		<display_value name="dExBlockDamage" value="10"/>
+		<display_value name="dExEntityDamage" value="365"/>
+	</effect_group>
+</item>
+
+<item name="ammoGrenadeAcid">
+	<property name="Tags" value="ammo,perkDemolitionsExpert,livingEntity"/>
+	<property name="DisplayType" value="ammoGrenadeAcid"/>
+	<property name="CustomIcon" value="acid-shells"/>
+	<property name="DescriptionKey" value="GrenadeAcidDesc"/>
+	<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Grenade/GrenadePrefab.prefab"/>
+	<!-- <property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/> -->
+	<property name="HoldType" value="45"/>
+	<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Mlead_scrap"/>
+	<property name="Weight" value="0"/>
+	<property name="Stacknumber" value="60"/>
+	<property name="EconomicValue" value="125"/>
+	<property name="UnlockedBy" value="craftingExplosives"/>
+	<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+	<property name="SoundPickup" value="ammocan_grab"/>
+	<property name="SoundPlace" value="ammocan_place"/>
+	
+	<property class="Action1">
+		<property name="Class" value="Projectile"/>
+		<property name="Explosion.BlockDamage" value="10"/>
+		<property name="Explosion.EntityDamage" value="200"/>
+		<property name="Explosion.RadiusBlocks" value="3"/> <!-- damage radius for blocks -->
+		<property name="Explosion.RadiusEntities" value="4"/> <!-- damage radius for entities -->
+		<property name="Explosion.ParticleIndex" value="7"/> <!-- which Prefab/particle is used -->
+		<property name="Explosion.DamageBonus.water" value="0"/>
+		<property name="Gravity" value="-15"/>
+		<property name="FlyTime" value=".2"/>
+		<property name="LifeTime" value="20"/>
+
+	</property>
+	<effect_group name="ammoGrenadeAcid" tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="10" />
+		<passive_effect name="EntityDamage" operation="base_set" value="50" />
+		<passive_effect name="ExplosionEntityDamage" operation="base_add" value="400">
+				<requirement name="EntityTagCompare" target="other" tags="radiated,mutated,mutant"/>
+		</passive_effect>
+
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="15" tags="perkDemolitionsExpert"/>
+		<display_value name="dExRadius" value="2"/>
+		<display_value name="dExBlockDamage" value="10"/>
+		<display_value name="dExEntityDamage" value="200"/>
+		<display_value name="dExEntityDamageLiving" value="400" tags="radiated,mutated"/>
+		<display_value name="dExEntityDamageLivingImpact" value="100" tags="radiated,mutated"/>
+	</effect_group>
+	<effect_group tiered="false">
+			<requirement name="EntityTagCompare" target="other" tags="radiated,mutated"/>
+			<passive_effect name="EntityDamage" operation="base_add" value="100"/>
+	</effect_group>	
+<!-- 	<effect_group tiered="false">
+			<passive_effect name="ExplosionEntityDamage" operation="base_add" value="400"/>
+	</effect_group>
+	<effect_group tiered="false">
+			<requirement name="EntityTagCompare" target="other" tags="radiated,mutated"/>
+			<passive_effect name="ExplosionEntityDamage" operation="base_add" value="-400"/>
+	</effect_group> -->
+</item>
+
+<item name="ammoGrenadeFlame">
+	<property name="Tags" value="ammo,perkDemolitionsExpert"/>
+	<property name="DisplayType" value="ammoGrenadeFlame"/>
+	<property name="CustomIcon" value="incendiary-shells"/>
+	<property name="DescriptionKey" value="GrenadeFlameDesc"/>
+	<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Grenade/GrenadePrefab.prefab"/>
+	<!-- <property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketPrefab.prefab"/> -->
+	<property name="HoldType" value="45"/>
+	<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Mlead_scrap"/>
+	<property name="Weight" value="0"/>
+	<property name="Stacknumber" value="60"/>
+	<property name="EconomicValue" value="125"/>
+	<property name="UnlockedBy" value="craftingExplosives"/>
+	<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+	<property name="SoundPickup" value="ammocan_grab"/>
+	<property name="SoundPlace" value="ammocan_place"/>
+	
+	<property class="Action1">
+		<property name="Class" value="Projectile"/>
+		<property name="Explosion.BlockDamage" value="1"/>
+		<property name="Explosion.EntityDamage" value="1"/>
+		<property name="Explosion.Duration" value="8"/>
+		<property name="Explosion.RadiusBlocks" value="1"/> <!-- damage radius for blocks -->
+		<property name="Explosion.RadiusEntities" value="3"/> <!-- damage radius for entities -->
+		<property name="Explosion.ParticleIndex" value="10"/> <!-- which Prefab/particle is used -->
+		<property name="Explosion.DamageBonus.water" value="0"/>
+		<property name="Explosion.Buff" value="buffBurningMolotov"/>
+		<property name="Gravity" value="-15"/>
+		<property name="FlyTime" value=".2"/>
+		<property name="LifeTime" value="20"/>
+
+	</property>
+	<effect_group name="ammoGrenadeFlame" tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="1" />
+		<passive_effect name="EntityDamage" operation="base_set" value="1" />
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="15" tags="perkDemolitionsExpert"/>
+		<display_value name="dExRadius" value="1.5"/>
+		<display_value name="dExBlockDamage" value="1"/>
+		<display_value name="dExEntityDamage" value="1"/>
+	</effect_group>
+	
+		<effect_group tiered="false">
+		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="positionAOE" range="2.7" cvar="buffBurningMolotovDuration" operation="set" value="16">
+			<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="positionAOE" range="2.7" cvar="buffBurningMolotovDuration" operation="set" value="17">
+			<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="NotEquals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="2.7" buff="buffBurningMolotov">
+			<requirement name="CVarCompare" target="other" cvar="_underwater" operation="LT" value="0.3"/>
+		</triggered_effect>
+
+		<display_value name="dExDamageFire" value="250"/>
+		<display_value name="dExRadius" value="3"/>
+		<display_value name="dDuration" value="16"/>
+	</effect_group>
+</item>
+
+</append>
+</FranticDan>

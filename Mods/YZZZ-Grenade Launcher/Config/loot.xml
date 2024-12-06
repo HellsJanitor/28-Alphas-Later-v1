@@ -1,0 +1,17 @@
+<FranticDan>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Demolitionist']">
+		<item name="ammoGrenadeExplosive" count="1,3"/>
+		<item name="ammoGrenadeAcid" count="1,3"/>
+		<item name="ammoGrenadeFlame" count="1,3"/>
+	</append>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT3_Demolitionist']">
+		<item name="ammoGrenadeExplosive" count="1,3"/>
+		<item name="ammoGrenadeAcid" count="1,3"/>
+		<item name="ammoGrenadeFlame" count="1,3"/>
+	</append>
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT3_Demolitionist01']">
+		<item name="gunExplosivesT2GrenadeLauncher"/>
+	</append>	
+</FranticDan>

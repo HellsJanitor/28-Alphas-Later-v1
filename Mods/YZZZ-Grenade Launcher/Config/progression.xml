@@ -1,0 +1,108 @@
+<configs>
+
+<remove xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']"/>
+
+
+<insertafter xpath="/progression/crafting_skills/crafting_skill[@name='craftingMachineGuns']">
+	<crafting_skill name="craftingExplosives" max_level="100" parent="attCrafting" name_key="craftingExplosivesName" desc_key="craftingExplosivesDesc" long_desc_key="craftingExplosivesLongDesc" icon="ui_game_symbol_explosion">
+
+		<display_entry icon="thrownAmmoPipeBomb,thrownGrenade,mineCookingPot" name_key="explosivesT1-1,explosivesT1-2,explosivesT1-3" has_quality="false" unlock_level="2,5,10" >
+			<unlock_entry item="thrownAmmoPipeBomb" unlock_tier="1" />
+			<unlock_entry item="thrownGrenade" unlock_tier="2" />
+			<unlock_entry item="mineCookingPot" unlock_tier="3" />
+		</display_entry>
+		<display_entry icon="thrownDynamite,thrownGrenadeContact,mineHubcap" name_key="explosivesT2-1,explosivesT2-2,explosivesT2-3" has_quality="false" unlock_level="12,16,20" >
+			<unlock_entry item="thrownDynamite" unlock_tier="1" />
+			<unlock_entry item="thrownGrenadeContact" unlock_tier="2" />
+			<unlock_entry item="mineHubcap" unlock_tier="3" />
+		</display_entry>
+		<display_entry icon="gunShotgunT3AutoShotgun,ammoGrenadeExplosive,ammoGrenadeAcid,ammoGrenadeFlame,mineAirFilter,resourceGunPowder,thrownTimedCharge" name_key="explosivesT3-1GL,explosivesT3-2GL,explosivesT3-3GL" has_quality="false" unlock_level="25,30,35" >
+			<unlock_entry item="gunExplosivesT2GrenadeLauncher,ammoGrenadeExplosive,ammoGrenadeAcid,ammoGrenadeFlame,mineAirFilter" unlock_tier="1" />
+			<unlock_entry item="gunExplosivesT2GrenadeLauncher,resourceGunPowderBundle" unlock_tier="2" />
+			<unlock_entry item="gunExplosivesT2GrenadeLauncher,thrownTimedCharge" unlock_tier="3" />
+		</display_entry>
+				<display_entry icon="ammoRocketFrag" name_key="explosivesT4-0GL,explosivesT4GL" has_quality="false" unlock_level="40,45" >
+			<unlock_entry item="gunExplosivesT2GrenadeLauncher" unlock_tier="1" />
+			<unlock_entry item="gunExplosivesT2GrenadeLauncher,resourceRocketTip,resourceRocketCasing,ammoRocketFrag,ammoRocketHE" unlock_tier="2" />
+		</display_entry>
+		<display_entry icon="gunExplosivesT3RocketLauncher" name_key="explosivesT5" has_quality="true" unlock_level="50,60,70,80,90,100" >
+			<unlock_entry item="gunExplosivesT2GrenadeLauncher,gunExplosivesT3RocketLauncher" unlock_tier="1" />
+		</display_entry>
+
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="thrownAmmoPipeBomb"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="thrownGrenade"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="mineCookingPot"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="12,100" value="1" tags="thrownDynamite"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="16,100" value="1" tags="thrownGrenadeContact"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="mineHubcap"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="ammoGrenadeExplosive,ammoGrenadeAcid,ammoGrenadeFlame,resourceRocketCasing,mineAirFilter"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="resourceGunPowderBundle"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="35,100" value="1" tags="thrownTimedCharge"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="resourceRocketTip,ammoRocketFrag,ammoRocketHE"/>
+			
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="gunExplosivesT2GrenadeLauncher"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="gunExplosivesT3RocketLauncher"/>
+			
+			<passive_effect name="CraftingTier" operation="base_add" level="30,35,40,45,50,100" value="1,2,3,4,5,6" tags="gunExplosivesT2GrenadeLauncher"/>
+
+			<passive_effect name="CraftingTier" operation="base_add" level="60,70,80,90,100" value="1,2,3,4,5,6" tags="gunExplosivesT3RocketLauncher"/>
+
+		</effect_group>
+	</crafting_skill>
+</insertafter>
+
+<!-- <append xpath="/progression">
+
+<crafting_skill name="craftingExplosives" max_level="100" parent="attCrafting" name_key="craftingExplosivesName" desc_key="craftingExplosivesDesc" long_desc_key="craftingExplosivesLongDesc" icon="ui_game_symbol_explosion">
+
+		<display_entry icon="thrownAmmoPipeBomb,thrownGrenade,mineCookingPot" name_key="explosivesT1-1,explosivesT1-2,explosivesT1-3" has_quality="false" unlock_level="2,5,10" >
+			<unlock_entry item="thrownAmmoPipeBomb" unlock_tier="1" />
+			<unlock_entry item="thrownGrenade" unlock_tier="2" />
+			<unlock_entry item="mineCookingPot" unlock_tier="3" />
+		</display_entry>
+		<display_entry icon="thrownDynamite,thrownGrenadeContact,mineHubcap" name_key="explosivesT2-1,explosivesT2-2,explosivesT2-3" has_quality="false" unlock_level="12,16,20" >
+			<unlock_entry item="thrownDynamite" unlock_tier="1" />
+			<unlock_entry item="thrownGrenadeContact" unlock_tier="2" />
+			<unlock_entry item="mineHubcap" unlock_tier="3" />
+		</display_entry>
+		<display_entry icon="mineAirFilter,resourceGunPowder,thrownTimedCharge" name_key="explosivesT3-1,explosivesT3-2,explosivesT3-3" has_quality="false" unlock_level="25,30,35" >
+			<unlock_entry item="mineAirFilter" unlock_tier="1" />
+			<unlock_entry item="resourceGunPowderBundle" unlock_tier="2" />
+			<unlock_entry item="thrownTimedCharge" unlock_tier="3" />
+		</display_entry>
+				<display_entry icon="ammoRocketFrag" name_key="explosivesT4" has_quality="false" unlock_level="45" >
+			<unlock_entry item="resourceRocketTip,resourceRocketCasing,ammoRocketFrag,ammoRocketHE" unlock_tier="1" />
+		</display_entry>
+		<display_entry icon="gunExplosivesT3RocketLauncher" name_key="explosivesT5" has_quality="true" unlock_level="50,60,70,80,90,100" >
+			<unlock_entry item="gunExplosivesT3RocketLauncher" unlock_tier="1" />
+		</display_entry>
+
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="thrownAmmoPipeBomb"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="thrownGrenade"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="mineCookingPot"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="12,100" value="1" tags="thrownDynamite"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="16,100" value="1" tags="thrownGrenadeContact"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="mineHubcap"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="mineAirFilter"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="resourceGunPowderBundle"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="35,100" value="1" tags="thrownTimedCharge"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="resourceRocketTip,resourceRocketCasing,ammoRocketFrag,ammoRocketHE"/>
+
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="gunExplosivesT3RocketLauncher"/>
+
+			<passive_effect name="CraftingTier" operation="base_add" level="60,70,80,90,100" value="1,2,3,4,5" tags="gunExplosivesT3RocketLauncher"/>
+
+		</effect_group>
+	</crafting_skill>
+
+</append> -->
+</configs>

@@ -81,7 +81,7 @@
 			<effect_group name="main" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="5"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="8000"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="10000"/>
 			</effect_group>
 		</item>
 		

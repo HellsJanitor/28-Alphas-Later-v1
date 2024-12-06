@@ -611,6 +611,23 @@
 			</effect_group>
 		</entity_class>
 		
+		<entity_class name="zombieTest" extends="zombieBurnt">
+			<property name="UserSpawnType" value="Menu"/>
+			<property name="SizeScale" value="0.95"/>
+			<property name="Tags" value="entity,zombie,walker,buster"/>
+			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
+			<property name="WalkType" value="7"/>
+			<property name="TintColor" value="#FF0000"/>
+			<property name="TintShaderProperties" value="_EmissiveColor"/>
+			<!-- Gameplay -->
+			<property name="MoveSpeedAggro" value="0.2, 1.2"/>
+			<property name="JumpMaxDistance" value=".8, 1.1"/>
+			<property name="ExperienceGain" value="450"/>
+			<effect_group name="Base Effects">
+				<triggered_effect trigger="onSelfFirstSpawn" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/particles.unity3d?Effect2_Shape" parent_transform="Head"/>
+			</effect_group>
+		</entity_class>
+		
 		<!-- *** rotten *** -->
 		<entity_class name="zombieArleneRotten" extends="zombieArlene">
 			<property name="UserSpawnType" value="Menu"/>
